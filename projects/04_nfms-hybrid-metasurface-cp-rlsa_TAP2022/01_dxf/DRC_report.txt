@@ -1,0 +1,21 @@
+cell library: closed-form models (cells.py, C_SCALE 1.42)
+== RLSA
+   TOP_SLOT: 1920 slots, min copper web between slots 1.505 mm, outermost slot centre r = 173.28 mm, copper disc r = 179 mm
+   paper aperture r = 172.5 mm -> outermost slots extend 3.2 mm beyond it (see guide)
+   slots over the probe head: 0.0000 mm2;  innermost slot centre r = 6.00 mm
+== HMI
+   M1: 1670 patches, min copper gap 1.500 mm, smallest patch 0.30 mm
+   M2: 1670 patches, min copper gap 0.700 mm, smallest patch 0.30 mm
+   M3: 1670 patches, min copper gap 1.500 mm, smallest patch 0.30 mm
+   M4: 1670 patches, min copper gap 0.700 mm, smallest patch 0.30 mm
+   DRILL: 120 Type II holes, d 1.50-6.80 mm, min dielectric web 0.700 mm; holes through copper: 0.0000 mm2
+   cells: 1804 (Type I 1670, Type II 134 of which 120 drilled, 14 bare dielectric); metal-free fraction 7.4 %
+   phase error: rms 1.85 deg, max 6.29 deg;  |S21| model: mean -0.77 dB, worst -2.55 dB, cells below -1 dB: 648
+== HMII
+   M1: 1500 patches, min copper gap 2.500 mm, smallest patch 1.50 mm
+   M2: 1500 patches, min copper gap 2.500 mm, smallest patch 1.50 mm
+   M3: 1500 patches, min copper gap 2.500 mm, smallest patch 1.50 mm
+   M4: 1500 patches, min copper gap 2.500 mm, smallest patch 1.50 mm
+   DRILL: 304 Type II holes, d 6.80-6.80 mm, min dielectric web 0.700 mm; holes through copper: 0.0000 mm2
+   cells: 1804 (Type I 1500, Type II 304 of which 304 drilled, 0 bare dielectric); metal-free fraction 16.9 %
+   phase error: rms 0.94 deg, max 2.20 deg;  |S21| model: mean -0.77 dB, worst -1.73 dB, cells below -1 dB: 902

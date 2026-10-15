@@ -1,0 +1,73 @@
+NFMS RLSA + hybrid metasurfaces - model study (Afzal, Esselle, Koli, IEEE TAP 70(1) 2022)
+lambda0 = 14.990 mm at 20.0 GHz
+
+[1] Gradient: eq. (5) dphi = 360 d sin(theta0)/lambda0 = 60.13 deg (paper uses 60); theta0 for 60 deg exactly = 19.46 deg
+    max elevation (psi1 = psi2): asin(2 sin 19.5) = 41.88 deg; paper's 40.6 deg is the psi2 = 30 case, the psi2 = 0 state was not measured
+
+[2] Table I with eqs. (1), (6):  psi2 | phi_p paper/ours | theta_p paper/ours | theta_m measured
+     30 |    15 /  15.00 |  40.2 /  40.16 |  40.6
+     60 |    30 /  30.00 |  35.3 /  35.32 |  35.7
+     90 |    45 /  45.00 |  28.2 /  28.17 |  28.2
+    120 |    60 /  60.00 |  19.5 /  19.50 |  20.0
+    150 |    75 /  75.00 |   9.9 /   9.95 |  10.0
+    180 |  None /    nan |   0.0 /   0.00 |   0.0
+
+[3] Inverse problem, eqs. (3)-(4).  The printed form acos[(k sin th)^2 / p1^2 - 1] is wrong by a factor 2:
+    theta   0.0 phi 30: paper -> (120.00, -60.00) ; corrected acos[(k sin th)^2/(2 p^2) - 1] -> (120.00, -60.00), forward check theta 0.00 phi nan
+    theta  20.0 phi 30: paper -> (73.57, -13.57) ; corrected acos[(k sin th)^2/(2 p^2) - 1] -> (89.18, -29.18), forward check theta 20.00 phi 30.00
+    theta  35.3 phi 30: paper -> undefined (|arg|>1) ; corrected acos[(k sin th)^2/(2 p^2) - 1] -> (60.05, -0.05), forward check theta 35.30 phi 30.00
+    theta  40.2 phi 30: paper -> undefined (|arg|>1) ; corrected acos[(k sin th)^2/(2 p^2) - 1] -> (44.80, 15.20), forward check theta 40.20 phi 30.00
+
+[4] Radial waveguide (3 mm air + 1.6 mm TLY-5): eps_eff paper 1.41 (volume average) -> lambda_g 12.62 mm (paper 12.56)
+    quasi-static series value 1.234 -> lambda_g 13.49 mm;  exact TM0 at 20 GHz: eps_eff 1.294 -> lambda_g 13.18 mm
+      f 19.0 GHz: TM0 eps_eff 1.287 lambda_g 13.91 mm
+      f 19.5 GHz: TM0 eps_eff 1.290 lambda_g 13.53 mm
+      f 20.0 GHz: TM0 eps_eff 1.294 lambda_g 13.18 mm
+      f 20.5 GHz: TM0 eps_eff 1.297 lambda_g 12.84 mm
+      f 21.0 GHz: TM0 eps_eff 1.301 lambda_g 12.52 mm
+
+[5] RLSA slot model (960 pairs on 13.02 turns; outermost slot reaches r = 175.7 mm vs the 172.5 mm aperture)
+    radial wave lambda_g = S_rho = 12.6 mm (design) broadside   0.00 dB rel. design case, peak at   0.0 deg, AR(broadside) 0.01 dB
+    lambda_g = 13.18 mm (exact TM0)              broadside  -3.70 dB rel. design case, peak at   0.0 deg, AR(broadside) 0.01 dB
+    lambda_g = 13.49 mm (series eps)             broadside  -9.05 dB rel. design case, peak at   0.0 deg, AR(broadside) 0.03 dB
+    uniform-aperture directivity D = 4 pi A / lambda^2 = 37.18 dBi; 6 dB taper efficiency 0.962 -> 37.02 dBi (paper simulated 34 dBi)
+    aperture efficiency of 30.9 dBic at 20.0 GHz over D = 345 mm: 23.5 %
+    aperture efficiency of 30.9 dBic at 20.0 GHz over D = 360 mm: 21.6 %
+    aperture efficiency of 31.5 dBic at 19.4 GHz over D = 345 mm: 28.7 %
+
+[6] Cells (closed-form models, see cells.py):
+    Type II r = 0: -170.3 deg (paper -169); r = 3.4: -133.3 deg (paper -134)
+    Type II r = 1.4 mm -> normalised -29.9 deg
+    Type II r = 2.8 mm -> normalised -10.9 deg
+    -> the paper's 'hole diameter 2.8 mm' for the -13.8 deg edge cell fits a RADIUS of 2.8 mm (diameter 2.8 gives about -30 deg)
+    Type I grid-capacitance factor fitted to the paper example (a 4, b 3.7 -> -171 deg): C_SCALE = 1.420
+    usable (> -1 dB) Type I: 782 cells, unwrapped -170.7 .. -511.1 deg (paper -169 .. -458);  largest uncovered arc 83 deg (paper 35)
+    largest patch among usable Type I cells 7.1 mm = 90 % of the cell area (paper: limited to 36 %, i.e. 4.5 mm)
+    with the 36 % area limit the usable set leaves a 125 deg gap
+
+[7] HM cell assignment (complex-error rule used for the DXFs vs the paper's closest-phase-above-1 dB rule):
+    complex HMI : rms phase error  1.85 deg, max  6.29, mean |S21| -0.77 dB, worst -2.55 dB, metal-free cells 7.4 %
+    complex HMII: rms phase error  0.94 deg, max  2.20, mean |S21| -0.77 dB, worst -1.73 dB, metal-free cells 16.9 %
+    paper   HMI : rms phase error 13.82 deg, max 41.84, mean |S21| -0.56 dB, worst -0.99 dB, metal-free cells 7.4 %
+    paper   HMII: rms phase error 11.91 deg, max 21.62, mean |S21| -0.59 dB, worst -0.99 dB, metal-free cells 16.9 %
+    paper: '1/3 of HM II is metal-free'. With Type II covering 0..-35 deg only the 0-deg column of the 6-column period is Type II -> 1/6.
+
+[8] Steered system (aperture model; psi1 = 0, psi2 = 30..180):
+    psi2 | theta eq / model / meas | phi eq / model / meas | model gain dBi (complex rule, paper rule) | meas. max gain | model SLL dB
+      30 |  40.2 /  40.0 /  40.6 |  15.0 /  15.0 /    15 |  33.26,  33.18 |  27.1 |  -14.9
+      60 |  35.3 /  35.2 /  35.7 |  30.0 /  30.0 /    30 |  33.51,  33.41 |  28.2 |  -15.6
+      90 |  28.2 /  28.1 /  28.2 |  45.0 /  44.9 /    45 |  33.76,  33.64 |  29.6 |  -16.1
+     120 |  19.5 /  19.5 /  20.0 |  60.0 /  59.9 /    60 |  34.09,  33.98 |  30.0 |  -18.0
+     150 |  10.0 /   9.9 /  10.0 |  75.0 /  75.3 /    75 |  34.26,  34.18 |  30.0 |  -19.6
+     180 |   0.0 /   0.1 /   0.0 |   nan /   nan /  None |  33.88,  33.92 |  31.5 |  -15.3
+    psi1 = psi2 = 0 (not in the paper): theta 41.8 deg, gain 32.05 dBi -> the true elevation limit of this hardware
+    model gains exclude dielectric/copper loss (paper: ~0.7 dB), feed mismatch and RLSA radiation efficiency; compare trends, not absolutes.
+
+[9] Frequency: a fixed phase gradient steers to sin(theta) = (f0/f) * 2 sin(theta0) cos(dpsi/2); at the max-elevation case:
+    f 19.0 GHz: theta 42.75 deg
+    f 19.5 GHz: theta 41.41 deg
+    f 20.0 GHz: theta 40.16 deg
+    f 20.5 GHz: theta 38.99 deg
+
+[10] Stack height from the ground-plate top with the assumed 15 mm gaps: 44.2 mm (+3 mm plate = 47.2); paper 45 mm = 3 lambda0
+     HM-HM gap that gives exactly 45.0 mm from the plate top: 15.8 mm

@@ -1,0 +1,39 @@
+== RLSA_feed_assembly: 6 bodies, total volume 550196.9 mm3, faces 7752
+   ground_plate             bodies     1  volume   357762.770 mm3  z   -3.000 ..    0.000
+   rlsa_tly5                bodies     1  volume   190852.002 mm3  z    3.000 ..    4.600
+   rlsa_tly5_over_pocket    bodies     1  volume        6.157 mm3  z    3.600 ..    4.600
+   rlsa_top_cu              bodies     1  volume     1557.826 mm3  z    4.600 ..    4.617
+   probe_pin                bodies     1  volume        5.826 mm3  z   -3.000 ..    1.600
+   probe_head               bodies     1  volume       12.314 mm3  z    1.600 ..    3.600
+== HM1: 6681 bodies, total volume 562989.7 mm3, faces 41248
+   HM1_tly5_stack           bodies     1  volume   561206.026 mm3  z    0.000 ..    4.800
+   HM1_M1                   bodies  1670  volume      430.165 mm3  z   -0.017 ..    0.000
+   HM1_M2                   bodies  1670  volume      461.651 mm3  z    1.592 ..    1.609
+   HM1_M3                   bodies  1670  volume      430.165 mm3  z    3.192 ..    3.208
+   HM1_M4                   bodies  1670  volume      461.651 mm3  z    4.800 ..    4.817
+== HM2: 6001 bodies, total volume 521023.1 mm3, faces 37352
+   HM2_tly5_stack           bodies     1  volume   519558.457 mm3  z    0.000 ..    4.800
+   HM2_M1                   bodies  1500  volume      361.882 mm3  z   -0.017 ..    0.000
+   HM2_M2                   bodies  1500  volume      370.430 mm3  z    1.592 ..    1.609
+   HM2_M3                   bodies  1500  volume      361.882 mm3  z    3.192 ..    3.208
+   HM2_M4                   bodies  1500  volume      370.430 mm3  z    4.800 ..    4.817
+== NFMS_system_psi1_0_psi2_120: 12760 bodies, total volume 1645202.2 mm3, faces 86640
+   ground_plate             bodies     1  volume   357762.770 mm3  z   -3.000 ..    0.000
+   rlsa_tly5                bodies     1  volume   190852.002 mm3  z    3.000 ..    4.600
+   rlsa_tly5_over_pocket    bodies     1  volume        6.157 mm3  z    3.600 ..    4.600
+   rlsa_top_cu              bodies     1  volume     1557.826 mm3  z    4.600 ..    4.617
+   probe_pin                bodies     1  volume        5.826 mm3  z   -3.000 ..    1.600
+   probe_head               bodies     1  volume       12.314 mm3  z    1.600 ..    3.600
+   HM1_tly5_stack           bodies     1  volume   561206.026 mm3  z   19.600 ..   24.400
+   HM1_M1                   bodies  1670  volume      430.165 mm3  z   19.583 ..   19.600
+   HM1_M2                   bodies  1670  volume      461.651 mm3  z   21.192 ..   21.209
+   HM1_M3                   bodies  1670  volume      430.165 mm3  z   22.791 ..   22.808
+   HM1_M4                   bodies  1670  volume      461.651 mm3  z   24.400 ..   24.417
+   HM2_tly5_stack           bodies     1  volume   519558.457 mm3  z   39.400 ..   44.200
+   HM2_M1                   bodies  1500  volume      361.882 mm3  z   39.383 ..   39.400
+   HM2_M2                   bodies  1500  volume      370.430 mm3  z   40.992 ..   41.009
+   HM2_M3                   bodies  1500  volume      361.882 mm3  z   42.592 ..   42.609
+   HM2_M4                   bodies  1500  volume      370.430 mm3  z   44.200 ..   44.217
+   spacers_gnd_rlsa         bodies    24  volume     1001.407 mm3  z    0.000 ..    3.000
+   spacers_rlsa_hm1         bodies    24  volume     4995.580 mm3  z    4.617 ..   19.583
+   spacers_hm1_hm2          bodies    24  volume     4995.580 mm3  z   24.417 ..   39.383

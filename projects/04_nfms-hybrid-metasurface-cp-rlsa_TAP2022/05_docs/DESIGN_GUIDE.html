@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>NFMS RLSA Guide</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style type="text/css">body{font-family:"DejaVu Sans",Arial,sans-serif;font-size:10.2pt;line-height:1.45;color:#1a1a1a;max-width:1000px;margin:24px auto;padding:0 18px}
+  h1{color:#0B1E33;border-bottom:3px solid #00C8FF;padding-bottom:6px;font-size:19pt}
+  h2{color:#0F2942;border-left:6px solid #FF6B35;padding-left:8px;margin-top:26px;font-size:13.5pt}
+  table{border-collapse:collapse;width:100%;margin:10px 0;font-size:9pt;page-break-inside:avoid}
+  th{background:#0F2942;color:#fff;padding:5px 7px;text-align:left}
+  td{border:1px solid #c9d3de;padding:4px 7px;vertical-align:top}
+  tr:nth-child(even) td{background:#f3f7fb}
+  code{background:#eef3f8;padding:1px 4px;border-radius:3px;font-size:8.6pt}
+
+  img{max-width:100%;page-break-inside:avoid}</style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">NFMS RLSA Guide</h1>
+</header>
+<h1
+id="nfms-beam-steering-of-a-cp-rlsa-with-hybrid-metasurfaces-designer-verification-guide">NFMS
+Beam Steering of a CP RLSA with Hybrid Metasurfaces: Designer &amp;
+Verification Guide</h1>
+<p>Companion to: M. U. Afzal, K. P. Esselle, M. N. Y. Koli, “A
+Beam-Steering Solution With Highly Transmitting Hybrid Metasurfaces and
+Circularly Polarized High-Gain Radial-Line Slot Array Antennas”,
+<em>IEEE Trans. Antennas Propag.</em>, vol. 70, no. 1, pp. 365–377,
+Jan. 2022, DOI 10.1109/TAP.2021.3111522.</p>
+<p>Everything numerical in this guide comes from
+<code>02_python/results/study_report.txt</code> and
+<code>01_dxf/DRC_report.txt</code>. Rerun <code>build_nfms.py</code>,
+<code>nfms_study.py</code> and <code>build_step.py</code> after any
+change.</p>
+<hr />
+<h2 id="the-design-in-one-page">1. The design in one page</h2>
+<ul>
+<li><strong>Base antenna:</strong> a fixed, circularly polarised (CP)
+radial-line slot array (RLSA) at 20 GHz, 345 mm across (23λ0).
+<ul>
+<li>The radial waveguide is 4.6 mm high: a 3 mm air gap above an
+aluminium plate, then a 1.6 mm TLY-5 laminate.</li>
+<li>The radiating slots are etched in the top copper of the
+laminate.</li>
+<li>A probe with a flat disc head feeds it from the centre.</li>
+<li>960 orthogonal slot pairs on a 13-turn outward spiral (pitch λg)
+radiate a broadside CP beam, about 34 dBic simulated.</li>
+</ul></li>
+<li><strong>Steering:</strong> two thin, highly transmitting
+<strong>hybrid metasurfaces (HMs)</strong> sit in the near field of the
+RLSA. HM I is λ0 above it; HM II is above HM I.
+<ul>
+<li>Each HM imposes a linear phase gradient of −60° per 7.5 mm cell
+along its <em>phase-delay axis</em>. Alone, that tilts the beam by θ0 =
+19.5°.</li>
+<li>Rotating HM I to ψ1 and HM II to ψ2 adds the two gradients as
+vectors.</li>
+<li>The beam goes to θ = asin(2 sin θ0 cos((ψ1−ψ2)/2)) and φ =
+(ψ1+ψ2)/2.</li>
+<li>That covers a cone up to 41.9° (40.6° measured) at any azimuth, with
+the RLSA and its RF connector fixed.</li>
+</ul></li>
+<li><strong>HM I also corrects the RLSA’s own non-uniform near-field
+phase</strong> (about 190° spread, Fig. 12a). It uses a circularly
+symmetric approximation so that HM I can still rotate.</li>
+<li><strong>Why “hybrid”:</strong> a conventional metasurface cell can’t
+cover 360° with |S21| &gt; −1 dB. The paper’s multilayer patch cell
+misses a 70° arc.
+<ul>
+<li>The HM mixes two unlike cells with non-overlapping phase ranges:
+<ul>
+<li><strong>Type I:</strong> four square patches a, b, a, b on 3 × 1.6
+mm TLY-5.</li>
+<li><strong>Type II:</strong> all dielectric, with a non-plated hole of
+radius r.</li>
+</ul></li>
+<li>Together they leave only a 35° arc uncovered.</li>
+</ul></li>
+<li><strong>Measured:</strong> peak 30.9 dBic (Table II gives 31.5 dBic
+at broadside), 26–27.1 dBic at 40.6°. AR &lt; 3 dB within the 3 dB
+beamwidth. 3 dB gain bandwidth ≥ 0.89 GHz. Height 4.5 cm (3λ0).</li>
+</ul>
+<hr />
+<h2 id="terminology">2. Terminology</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Meaning here</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>NFMS, near-field meta-steering</strong></td>
+<td>Beam steering by rotating phase-gradient metasurfaces placed in the
+near field (0.25–1λ0) of a fixed antenna. Similar to Risley prisms, but
+thin and close to the antenna.</td>
+</tr>
+<tr class="even">
+<td><strong>RLSA, radial-line slot array</strong></td>
+<td>Planar high-gain antenna: a centre-fed radial parallel-plate
+waveguide whose top plate carries slots that leak the outward-travelling
+wave.</td>
+</tr>
+<tr class="odd">
+<td><strong>Slot pair (CP)</strong></td>
+<td>Two orthogonal slots, each at 45° to the radial direction, with the
+second one λg/4 further out. The 90° excitation delay plus the
+orthogonality gives CP.</td>
+</tr>
+<tr class="even">
+<td><strong>Spiral arrangement</strong></td>
+<td>Rotating a CP pair by φ around the feed adds phase e^{jφ}. Placing
+the pairs on a spiral ρ = ρ0 + λg·φ/2π cancels it, so all pairs add in
+phase at broadside.</td>
+</tr>
+<tr class="odd">
+<td><strong>λg, guided wavelength</strong></td>
+<td>Wavelength of the radial wave in the partially filled waveguide. It
+sets the spiral pitch S_ρ.</td>
+</tr>
+<tr class="even">
+<td><strong>Phase-gradient (gradient phase profile)</strong></td>
+<td>Linear transmission phase −Δφ per cell along one axis. It tilts a
+normally incident beam by θ0 = asin(Δφ λ0 / (2π d)) (eq. 5).</td>
+</tr>
+<tr class="odd">
+<td><strong>Phase-delay axis</strong></td>
+<td>The direction of decreasing transmission phase. The beam tilts
+toward it. Marked by the arrow and the +x notch on each HM.</td>
+</tr>
+<tr class="even">
+<td><strong>Correction phase</strong></td>
+<td>Inverse of the RLSA’s near-field phase, so that HM I sees an
+equi-phase aperture.</td>
+</tr>
+<tr class="odd">
+<td><strong>Normalised phase</strong></td>
+<td>Cell phase minus the phase of the Type II cell with the largest
+hole, so 0° = largest hole (paper, Sec. III-B).</td>
+</tr>
+<tr class="even">
+<td><strong>Supercell</strong></td>
+<td>One period of the wrapped gradient: here 6 cells = 45 mm (0, −60, …,
+−300°).</td>
+</tr>
+<tr class="odd">
+<td><strong>Unit-cell (Floquet) simulation</strong></td>
+<td>One cell with periodic boundaries and a normally incident plane
+wave. It gives the S21 used to choose cells.</td>
+</tr>
+<tr class="even">
+<td><strong>Phase method</strong></td>
+<td>The ray-optics prediction of the beam direction from p1, p2, ψ1, ψ2
+(eqs. 1–2, ref. [27]).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="verification-of-the-papers-claims-done-here">3. Verification of
+the paper’s claims (done here)</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Claim / number in the paper</th>
+<th>Check</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Eq. (5): Δφ = 60° for θ0 = 19.5°, d = 7.5 mm</td>
+<td>360·d·sin θ0 / λ0</td>
+<td>60.13°, OK (rounded). 60° exactly ↔︎ θ0 = 19.46°</td>
+</tr>
+<tr class="even">
+<td>Table I predicted (θp, φp), eqs. (1), (6)</td>
+<td><code>nfms_study.py</code> [2]</td>
+<td>All six reproduced to 0.05°, OK</td>
+</tr>
+<tr class="odd">
+<td>Table I measured vs model</td>
+<td>Aperture model with the chosen cells, rotated HM II</td>
+<td>Model θ 40.0 / 35.2 / 28.1 / 19.5 / 9.9 / 0.1°, measured 40.6 / 35.7
+/ 28.2 / 20 / 10 / 0. Within 0.6°, OK</td>
+</tr>
+<tr class="even">
+<td>Eqs. (3)–(4), inverse problem</td>
+<td>Forward-check the inverse</td>
+<td><strong>Wrong by a factor 2.</strong> The printed acos[(k sin
+θ)²/p1² − 1] is undefined above θ ≈ 28° and gives wrong angles below.
+The correct form is ψ1,2 = φ ± ½ acos[(k sin θ)²/(2p²) − 1], verified by
+the forward equations. <code>LUT_beam_to_rotation.csv</code> uses
+it.</td>
+</tr>
+<tr class="odd">
+<td>Max elevation 40.6°</td>
+<td>Eq. (1) with ψ1 = ψ2</td>
+<td>The hardware limit is <strong>41.9°</strong>. 40.6° is the ψ2 = 30°
+case; ψ1 = ψ2 was not measured. Model at ψ1 = ψ2 = 0: 41.8°.</td>
+</tr>
+<tr class="even">
+<td>ε_eff = 1.41, λg = 12.56 mm in the radial line</td>
+<td>Exact TM0 transverse resonance of air 3 mm + TLY-5 1.6 mm</td>
+<td>1.41 is the volume average (gives λg = 12.62 mm). The physical TM0
+value is <strong>ε_eff = 1.294, λg = 13.18 mm</strong> (quasi-static
+series limit 1.234 / 13.49 mm).</td>
+</tr>
+<tr class="odd">
+<td>Consequence of the λg mismatch</td>
+<td>Slot-dipole model with S_ρ = 12.6 mm, radial wave at the TM0 λg</td>
+<td>Broadside drops <strong>3.7 dB</strong> (9 dB with the series
+value). This is a likely cause of the ~190° near-field phase ripple of
+Fig. 12(a), and of 34 dBi simulated against 37 dBi ideal. The correction
+phase in HM I partly undoes it. <strong>Confirm λg with a 2-D eigenmode
+run before cutting the RLSA (sec. 8).</strong></td>
+</tr>
+<tr class="even">
+<td>960 pairs on 13 rings</td>
+<td>Spiral ρ0 = 6, S_ρ = 12.6, S_φ = 7.5 mm</td>
+<td>960 pairs give 13.02 turns, OK, and confirms the spiral reading</td>
+</tr>
+<tr class="odd">
+<td>Aperture D = 345 mm</td>
+<td>Outermost slot of the spiral</td>
+<td>Outermost slot centre r = 173.3 mm. With L/2 the slot reaches 175.7
+mm, <strong>3.2 mm beyond 172.5</strong>, so copper ≥ Ø352. We use
+Ø358.</td>
+</tr>
+<tr class="even">
+<td>Ideal directivity</td>
+<td>4πA/λ² with the 6 dB taper</td>
+<td>37.2 dBi uniform, 37.0 dBi tapered. Paper simulated 34 dBi, a 3 dB
+shortfall (see the λg row).</td>
+</tr>
+<tr class="odd">
+<td>Aperture efficiency 22 %</td>
+<td>30.9 dBic at 20 GHz</td>
+<td>23.5 % over Ø345, <strong>21.6 % over Ø360</strong> (the HM
+aperture). The paper’s 22 % uses the HM diameter.</td>
+</tr>
+<tr class="even">
+<td>Peak gain 30.9 dBic (abstract, text) vs 31.5 dBic (Table II)</td>
+<td>Read Fig. 22</td>
+<td>31.5 is the band maximum (19.4 GHz). 30.9 is at the design
+frequency. Not a contradiction, but the paper does not say so.</td>
+</tr>
+<tr class="odd">
+<td>Gain at 40.6°: 26 dBic (text) vs 27.1 dBic (Table II)</td>
+<td>Same reason</td>
+<td>Band maximum vs single frequency</td>
+</tr>
+<tr class="even">
+<td>Type II cell, r 0 → 3.4 mm gives −169° → −134°</td>
+<td>MG effective medium, exact slab</td>
+<td>−170.3° → −133.3°, OK. The closed-form cell agrees within 1°.</td>
+</tr>
+<tr class="odd">
+<td>Edge cell −13.8°: “Type II with hole <strong>diameter</strong> 2.8
+mm”</td>
+<td>Type II model</td>
+<td>Diameter 2.8 (r = 1.4) gives −29.9°. <strong>Radius</strong> 2.8
+gives −10.9°. The text very probably means r = 2.8 mm.</td>
+</tr>
+<tr class="even">
+<td>Centre cell −171°: Type I a = 4, b = 3.7 mm</td>
+<td>Type I quasi-static ABCD</td>
+<td>Quasi-static gives −134°. We fit one factor (C_SCALE = 1.42) on the
+grid capacitance so this cell lands on −171° (−0.63 dB).</td>
+</tr>
+<tr class="odd">
+<td>Type I with</td>
+<td>S21</td>
+<td>&gt; −1 dB: −169° … −458°, 70° gap; HM: 35° gap</td>
+</tr>
+<tr class="even">
+<td>Patch area limited to 36 % of the cell (a, b ≤ 4.5 mm)</td>
+<td>Library with the limit</td>
+<td>Inconsistent with the 0.2–7.2 mm sweep. With the limit the model
+leaves a 125° gap. Not applied.</td>
+</tr>
+<tr class="odd">
+<td>“1/3 of HM II is metal-free”</td>
+<td>Count Type II cells</td>
+<td>With Type II covering 0…−35°, only the 0° column of each 6-column
+supercell is Type II, giving <strong>1/6</strong> (16.9 % here). 1/3
+would need the −300° column to be Type II too.</td>
+</tr>
+<tr class="even">
+<td>Total height 4.5 cm = 3λ0</td>
+<td>Stack 4.6 + 15 + 4.8 + gap + 4.8</td>
+<td>With a 15 mm HM–HM gap the stack is 44.2 mm from the plate top. A
+15.8 mm gap gives exactly 45. The HM–HM gap is not stated.</td>
+</tr>
+<tr class="odd">
+<td>AR &lt; 3 dB while steering</td>
+<td>Slot model, broadside</td>
+<td>0.01 dB ideal at broadside. Steered AR depends on cell polarisation
+purity (sec. 8).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Model gain vs measured:</strong> the aperture model gives
+33.3–34.3 dBi, against 27.1–31.5 dBic measured. It leaves out dielectric
+and copper loss (about 0.7 dB per the paper), RLSA radiation efficiency,
+feed mismatch, the cells’ oblique-incidence response, and HM–RLSA
+multiple reflections. So the model’s scan loss (1 dB) is smaller than
+the measured 4.4 dB. Use the model for <strong>direction and
+trends</strong>, and HFSS or CST for gain.</p>
+<hr />
+<h2 id="geometry-and-assumptions">4. Geometry and assumptions</h2>
+<p><strong>Frame:</strong> z = 0 on the <strong>top face of the Al
+ground plate</strong>, z up. HM local frame: x = phase-delay axis.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>Value</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>f0, λ0</td>
+<td>20 GHz, 14.99 mm (paper uses 15)</td>
+<td>Sec. IV</td>
+</tr>
+<tr class="even">
+<td>Ground plate</td>
+<td>Al, 3 mm, z −3 … 0</td>
+<td>Sec. V</td>
+</tr>
+<tr class="odd">
+<td>Radial waveguide</td>
+<td>air 3.0 mm (z 0 … 3) + TLY-5 1.6 mm (z 3 … 4.6), Wh = 4.6 mm</td>
+<td>Fig. 9(a)</td>
+</tr>
+<tr class="even">
+<td>RLSA laminate</td>
+<td>TLY-5 εr 2.2, tan δ 0.0009; bottom copper fully removed</td>
+<td>Sec. V</td>
+</tr>
+<tr class="odd">
+<td>Feed</td>
+<td>SMA pin to z = 1.6, disc head Ø2.8 × 2.0 mm (z 1.6 … 3.6), 0.6 mm
+into a TLY-5 pocket</td>
+<td>Fig. 9(a), read from the drawing</td>
+</tr>
+<tr class="even">
+<td>Slots</td>
+<td>w = 1.0 mm, L 4.3 → 4.9 mm, first pair at ρ0 = 6 mm, S_ρ = 12.6 mm,
+S_φ = 7.5 mm, 960 pairs</td>
+<td>Sec. IV-A</td>
+</tr>
+<tr class="odd">
+<td>Slot length taper</td>
+<td><strong>linear in radius</strong></td>
+<td><strong>[ASSUMED]</strong>. The paper refers to [43]</td>
+</tr>
+<tr class="even">
+<td>Pair layout</td>
+<td>slot A at ρ, +45° to radial; slot B on A’s normal, λg/4 = 3.15 mm
+further out (radially), −45° (a “T”)</td>
+<td><strong>[ASSUMED from the Fig. 9(b) inset]</strong></td>
+</tr>
+<tr class="odd">
+<td>Spiral sense / CP hand</td>
+<td>outward counter-clockwise; radiates ρ̂ − jφ̂ = e^{jφ}(x̂ − jŷ),
+<strong>RHCP</strong> for e^{jωt}</td>
+<td><strong>[ASSUMED]</strong>. The paper does not give the hand. Mirror
+the DXF for LHCP.</td>
+</tr>
+<tr class="even">
+<td>Top copper</td>
+<td>Ø358 (outermost slot + 3 mm)</td>
+<td><strong>[ASSUMED]</strong> (see sec. 3)</td>
+</tr>
+<tr class="odd">
+<td>Waveguide rim</td>
+<td>open (no shorting wall, no absorber)</td>
+<td><strong>[ASSUMED]</strong>. The paper shows a bare dielectric rim
+(Fig. 16).</td>
+</tr>
+<tr class="even">
+<td>Dielectric / plate diameter</td>
+<td>Ø390 incl. assembly rim</td>
+<td><strong>[ASSUMED]</strong></td>
+</tr>
+<tr class="odd">
+<td>HM cell</td>
+<td>d = 7.5 mm, h = 4.8 mm (3 × 1.6 TLY-5), Cu 17 µm, prepreg
+ignored</td>
+<td>Sec. III, V</td>
+</tr>
+<tr class="even">
+<td>HM grid</td>
+<td>48 × 48, centres −176.25 … +176.25; cells used where the centre
+radius ≤ 180 mm (1804 cells)</td>
+<td>Fig. 11(b), Sec. IV-B (“extended by λ0/2”)</td>
+</tr>
+<tr class="odd">
+<td>Gradient</td>
+<td>column i: −(180 + 60 i) mod 360 (−180, −240, −300, 0, −60, −120,
+…)</td>
+<td>Sec. IV-B</td>
+</tr>
+<tr class="even">
+<td>Correction</td>
+<td>−(Fig. 12a field phase) of the nearest of 24 rings</td>
+<td>Fig. 12, digitised (<code>FIG12A_PHASE</code>)</td>
+</tr>
+<tr class="odd">
+<td>HM rim</td>
+<td>Ø390, 24 holes Ø3.0 on R187.5 (15° indexing), V notch at +x</td>
+<td>holes Ø3 from the paper; count, radius and notch
+<strong>[ASSUMED]</strong></td>
+</tr>
+<tr class="even">
+<td>Heights</td>
+<td>HM I input face z = 19.6 (λ0 above the RLSA); HM I–HM II gap 15
+mm</td>
+<td>λ0 from the paper (Sec. IV-B); HM gap
+<strong>[ASSUMED]</strong></td>
+</tr>
+<tr class="odd">
+<td>Smallest drilled hole</td>
+<td>r 0.4 mm (Ø0.8, 6:1 in 4.8 mm); smaller holes left out (&lt; 0.6°
+effect)</td>
+<td>ours</td>
+</tr>
+<tr class="even">
+<td>Cell choice</td>
+<td>min ‖e^{jφt} − S21‖ over the whole library</td>
+<td>ours (the paper: closest phase among &gt; −1 dB). Both are in the
+study.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="boards-and-files">5. Boards and files</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Folder</th>
+<th>Files</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>01_dxf/A_rlsa</code></td>
+<td><code>RLSA_TLY5_1p6_960pairs.dxf</code>: copper with the slots cut,
+plus a separate <code>TOP_SLOT</code> layer.
+<code>RLSA_TOP_CU_uncut_plus_SLOT_layer.dxf</code> is for HFSS
+subtraction. <code>GROUND_PLATE_Al_3mm.dxf</code>.
+<code>slot_table.csv</code> lists all 960 pairs: centres, angles,
+lengths.</td>
+</tr>
+<tr class="even">
+<td><code>01_dxf/B_hm1</code>, <code>C_hm2</code></td>
+<td><code>HMn_48x48_all_layers.dxf</code> has M1–M4, DRILL, NPTH, silk
+and fab notes. <code>HMn_cell_assignment.csv</code> gives target and
+chosen phase, a, b, r, error and</td>
+</tr>
+<tr class="odd">
+<td><code>01_dxf/D_fab_laminates</code></td>
+<td>One file per laminate: LAM1 (M1 bottom / M2 top), LAM2 (no Cu), LAM3
+(M3 bottom / M4 top), plus the post-bond drill file. Top view, not
+mirrored.</td>
+</tr>
+<tr class="even">
+<td><code>01_dxf/E_unit_cells</code></td>
+<td>The paper’s two example cells (a 4 / b 3.7; r 2.8) plus r 1.4, for
+HFSS unit-cell checks</td>
+</tr>
+<tr class="odd">
+<td><code>06_step</code></td>
+<td>SolidCraft STEP AP242 files: RLSA + feed; HM1; HM2; the full stack
+at ψ1 = 0, ψ2 = 120° with spacers. The big files are zipped.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Stack-up (HM):</strong> RLSA side → LAM1 (M1 | TLY-5 1.6 |
+M2) → prepreg → LAM2 (TLY-5 1.6) → prepreg → LAM3 (M3 | TLY-5 1.6 | M4)
+→ output.</p>
+<p><strong>Layers:</strong> - M1 = M3 hold the a-patches. - M2 = M4 hold
+the b-patches. - DRILL holes are non-plated, drilled after bonding.</p>
+<p><strong>DRC (DRC_report.txt):</strong> - RLSA copper web between
+slots ≥ 1.5 mm. - HM copper gap ≥ 0.7 mm. Smallest patch 0.3 mm. -
+Drilled holes Ø1.5–6.8 mm, leaving ≥ 0.7 mm dielectric web.</p>
+<hr />
+<h2 id="values-for-the-first-simulations">6. Values for the first
+simulations</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Quantity</th>
+<th>Start value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TLY-5</td>
+<td>εr 2.20, tan δ 0.0009</td>
+</tr>
+<tr class="even">
+<td>Copper</td>
+<td>σ 5.8e7 S/m, 17 µm (PerfE sheets for the first passes)</td>
+</tr>
+<tr class="odd">
+<td>Al plate</td>
+<td>σ 3.8e7 S/m</td>
+</tr>
+<tr class="even">
+<td>Prepreg (optional, 2 × 0.1 mm)</td>
+<td>εr ≈ 2.7 (FR-27 class), tan δ 0.002</td>
+</tr>
+<tr class="odd">
+<td>Unit-cell sweep</td>
+<td>Type I a, b 0.2 … 7.2 step 0.1; Type II r 0 … 3.4 step 0.05;
+18.5–21.5 GHz</td>
+</tr>
+<tr class="even">
+<td>RLSA solver</td>
+<td>time domain (paper: CST transient), or HFSS FE-BI. Radiation box ≥
+λ0/4</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="hfss-steps-and-plots-to-check">7. HFSS steps and plots to
+check</h2>
+<p><code>04_hfss/hfss_nfms_build.py</code> (PyAEDT, written for AEDT
+2024.x, <strong>not executed here</strong>):</p>
+<ol type="1">
+<li><strong><code>cell1</code> / <code>cell2</code>:</strong> unit cells
+with Floquet ports de-embedded to the cell faces, and the parametric
+sweep.
+<ul>
+<li>Export S21 at 20 GHz as
+<code>02_python/results/hfss_cell_table.csv</code>, in the same columns
+as <code>cell_library.csv</code>.</li>
+<li>Normalise the phase to Type II r = 3.4.</li>
+<li>Rerun <code>build_nfms.py</code>. It picks the HFSS table up
+automatically and rewrites every HM DXF with full-wave cells.</li>
+</ul></li>
+<li><strong><code>rlsa</code>:</strong> the RLSA alone, with probe, PTFE
+and wave port.
+<ul>
+<li>Check |S11| &lt; −10 dB over 18–21 GHz (Fig. 18).</li>
+<li>Check D ≈ 34 dBic at 20.1 GHz and the pattern cuts (Fig. 10).</li>
+<li>Plot the Ey phase on z = 19.6 mm along −x and compare with Fig.
+12(a) and <code>FIG12A_PHASE</code>. <strong>If it differs, replace
+<code>FIG12A_PHASE</code> with your own probe values and rebuild HM
+I.</strong> The correction must match <em>your</em> RLSA.</li>
+</ul></li>
+<li><strong><code>system psi1 psi2</code>:</strong> the full stack, with
+HMs rotated.
+<ul>
+<li>Compare θ, φ with <code>results/steering_table.csv</code>.</li>
+<li>Compare gain with Table II and AR with Fig. 21.</li>
+</ul></li>
+</ol>
+<p>GUI fallback for any step: 1. Modeler → Import → DXF. 2. Set the
+elevations from sec. 4. 3. Subtract <code>TOP_SLOT</code> from
+<code>TOP_CU</code>, or the DRILL cylinders from the HM dielectric. 4.
+Assign PerfE to the copper sheets.</p>
+<hr />
+<h2 id="what-the-paper-leaves-out-important-for-a-real-build">8. What
+the paper leaves out (important for a real build)</h2>
+<ol type="1">
+<li><strong>λg of the radial line.</strong> Don’t build with S_ρ = 12.6
+mm on trust.
+<ul>
+<li>A 2-D eigenmode of the 3 mm air + 1.6 mm TLY-5 parallel plate (or
+our TM0 solver, 13.18 mm) says S_ρ should be about 13.2 mm.</li>
+<li>Either set <code>R["S_rho"]</code> to the solved λg and regenerate,
+or keep 12.6 mm and rely on HM I’s correction. That copies the paper but
+wastes about 3–4 dB of RLSA directivity.</li>
+</ul></li>
+<li><strong>Slot-length taper law and per-slot coupling.</strong> The
+paper only gives 4.3/4.9 mm (ref. [43] holds the synthesis). For a
+uniform or tapered aperture, design the coupling vs radius with a few
+unit-slot simulations.</li>
+<li><strong>Radial-line termination</strong> at the rim (open, shorted,
+or absorber). This sets the residual wave and the RLSA S11 ripple.</li>
+<li><strong>Probe dimensions:</strong> the pin diameter and SMA type are
+not given. Tune the head height and diameter for S11 (variables
+<code>head_h</code>, <code>head_d</code>).</li>
+<li><strong>Cell data:</strong> the paper does not tabulate a, b, r
+against phase. Our closed-form models are a starting point. Run the
+unit-cell sweep before fabrication.</li>
+<li><strong>Oblique incidence and polarisation:</strong> HM I sees the
+RLSA near field, HM II a 19.5°-tilted wave. Check Type I/II S21 at 20°
+incidence and for both linear polarisations. A cell with unequal TE/TM
+phase degrades the AR.</li>
+<li><strong>Edge cells:</strong> the paper treats them like centre cells
+(Sec. VI). Expect small edge-diffraction lobes.</li>
+<li><strong>Rotation hardware:</strong> 24 rim holes give manual 15°
+steps. A motorised version (bearing + pancake stepper at the rim, Sec.
+VI) only adds lateral size.</li>
+<li><strong>Handedness:</strong> state RHCP or LHCP to the fabricator.
+Mirroring the RLSA DXF flips it, and the HMs are unchanged.</li>
+</ol>
+<hr />
+<h2 id="paper-targets-measured">9. Paper targets (measured)</h2>
+<table>
+<thead>
+<tr class="header">
+<th>ψ2 (ψ1 = 0)</th>
+<th>θ / φ</th>
+<th>Max gain (dBic)</th>
+<th>3 dB gain BW (GHz)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>30</td>
+<td>40.6 / 15</td>
+<td>27.1</td>
+<td>1.10</td>
+</tr>
+<tr class="even">
+<td>60</td>
+<td>35.7 / 30</td>
+<td>28.2</td>
+<td>1.05</td>
+</tr>
+<tr class="odd">
+<td>90</td>
+<td>28.2 / 45</td>
+<td>29.6</td>
+<td>0.94</td>
+</tr>
+<tr class="even">
+<td>120</td>
+<td>20 / 60</td>
+<td>30.0</td>
+<td>0.94</td>
+</tr>
+<tr class="odd">
+<td>150</td>
+<td>10 / 75</td>
+<td>30.0</td>
+<td>0.94</td>
+</tr>
+<tr class="even">
+<td>180</td>
+<td>0 / —</td>
+<td>31.5</td>
+<td>0.89</td>
+</tr>
+</tbody>
+</table>
+<p>The RLSA alone has |S11| &lt; −10 dB over 18–21 GHz and D = 34 dB at
+20.1 GHz with &gt; 1 GHz 3 dB bandwidth. The full system has AR &lt; 3
+dB within the 3 dB beamwidth in all six cases.</p>
+<hr />
+<h2 id="figures-generated">10. Figures (generated)</h2>
+<figure>
+<img src="../01_dxf/A_rlsa/RLSA_TLY5_1p6_960pairs_preview.png"
+alt="RLSA top copper, slot detail and length taper" />
+<figcaption aria-hidden="true">RLSA top copper, slot detail and length
+taper</figcaption>
+</figure>
+<figure>
+<img src="../01_dxf/B_hm1/HM1_48x48_all_layers_preview.png"
+alt="HM I: required phase, phase error, M1 and M2 layers" />
+<figcaption aria-hidden="true">HM I: required phase, phase error, M1 and
+M2 layers</figcaption>
+</figure>
+<figure>
+<img src="../01_dxf/C_hm2/HM2_48x48_all_layers_preview.png"
+alt="HM II" />
+<figcaption aria-hidden="true">HM II</figcaption>
+</figure>
+<figure>
+<img src="../02_python/results/uv_patterns_six_cases.png"
+alt="Model u-v patterns for the six steering cases (compare Fig. 20)" />
+<figcaption aria-hidden="true">Model u-v patterns for the six steering
+cases (compare Fig. 20)</figcaption>
+</figure>
+<figure>
+<img src="../02_python/results/rlsa_pattern_lambda_g_sensitivity.png"
+alt="RLSA pattern vs the true guided wavelength" />
+<figcaption aria-hidden="true">RLSA pattern vs the true guided
+wavelength</figcaption>
+</figure>
+<figure>
+<img src="../06_step/NFMS_system_iso.png"
+alt="STEP model of the full stack (SolidCraft render, HM II at 120 deg)" />
+<figcaption aria-hidden="true">STEP model of the full stack (SolidCraft
+render, HM II at 120 deg)</figcaption>
+</figure>
+</body>
+</html>

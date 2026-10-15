@@ -1,0 +1,192 @@
+{
+"commands": [
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0.0,
+"name": "HM2_tly5_stack_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/HM2_diel_0.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 4.800000000000001,
+"profiles": [
+{
+"point": [
+190.3574133837716,
+25.061028906249902
+]
+}
+],
+"operation": "new",
+"body_name": "HM2_tly5_stack"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"HM2_tly5_stack"
+],
+"color": "#d9cfb0"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0.0,
+"name": "HM2_M1_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/HM2_M1_0.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.017,
+"profiles": "all",
+"operation": "new",
+"body_name": "HM2_M1",
+"direction": "negative"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"HM2_M1"
+],
+"color": "#c8823a"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 1.5915000000000001,
+"name": "HM2_M2_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/HM2_M2_0.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.017,
+"profiles": "all",
+"operation": "new",
+"body_name": "HM2_M2"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"HM2_M2"
+],
+"color": "#c8823a"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 3.1915,
+"name": "HM2_M3_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/HM2_M3_0.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.017,
+"profiles": "all",
+"operation": "new",
+"body_name": "HM2_M3"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"HM2_M3"
+],
+"color": "#c8823a"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 4.800000000000001,
+"name": "HM2_M4_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/HM2_M4_0.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.017,
+"profiles": "all",
+"operation": "new",
+"body_name": "HM2_M4"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"HM2_M4"
+],
+"color": "#c8823a"
+}
+}
+]
+}
