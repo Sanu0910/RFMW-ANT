@@ -1,0 +1,9 @@
+part number,description,material,qty,note
+RFE-PD-UWB-01-01,"Base, machined",Aluminium 6061-T6 (EN AW-6061 T6),1,"Chromate conversion MIL-DTL-5541 Type II Class 3 (conductive), clear; or Ni plating"
+RFE-PD-UWB-01-02,"Lid with RF lip, engraved",Aluminium 6061-T6 (EN AW-6061 T6),1,"Chromate conversion MIL-DTL-5541 Type II Class 3 (conductive), clear; or Ni plating"
+23030310,HUBER+SUHNER 23_SMA-50-0-272/133_N (item 23030310),"brass / BeCu, PTFE",3,solder pin to the trace
+ISO 4762 M2.5 x 5,connector flange screw,A2 stainless,12,thread-lock low strength
+ISO 7380 M2.5 x 8,lid screw (button head),A2 stainless,27,torque 0.35 N m
+ISO 4762 M2 x 4,PCB hold-down / launch ground,A2 stainless,8,torque 0.2 N m
+absorber sheet,"RF absorber 1 mm, e.g. Laird Eccosorb MCS / ARC WAVE-X (cut 46.5 x 41.5)",silicone/ferrite,1,"optional, bond in the lid recess"
+RFE-PD-UWB-01-PCB,RF board (customer),RO4003C 0.508 mm (20 mil),1,"50.00 x 45.00, holes per PCB interface DXF"

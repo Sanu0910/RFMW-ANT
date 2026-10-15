@@ -1,0 +1,1039 @@
+{
+"commands": [
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0
+}
+},
+{
+"command": "sketch.rectangle.rounded",
+"params": {
+"p0": [
+-30.1,
+-25.1
+],
+"p1": [
+30.1,
+25.1
+],
+"radius": 2.0
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 14.42,
+"operation": "new",
+"body_name": "BASE"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 14.42
+}
+},
+{
+"command": "sketch.rectangle.rounded",
+"params": {
+"p0": [
+-25.1,
+-20.1
+],
+"p1": [
+25.1,
+20.1
+],
+"radius": 1.0
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.997,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"BASE"
+]
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-30.1,
+0.0,
+6.8500000000000005
+],
+"direction": [
+1,
+0,
+0
+],
+"diameter": 4.25,
+"depth": 5.3
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-30.1,
+4.32,
+2.5300000000000002
+],
+"direction": [
+1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-30.1,
+4.32,
+11.170000000000002
+],
+"direction": [
+1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-30.1,
+-4.32,
+2.5300000000000002
+],
+"direction": [
+1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-30.1,
+-4.32,
+11.170000000000002
+],
+"direction": [
+1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+30.1,
+10.0,
+6.8500000000000005
+],
+"direction": [
+-1,
+0,
+0
+],
+"diameter": 4.25,
+"depth": 5.3
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+30.1,
+5.68,
+2.5300000000000002
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+30.1,
+5.68,
+11.170000000000002
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+30.1,
+14.32,
+2.5300000000000002
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+30.1,
+14.32,
+11.170000000000002
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+30.1,
+-10.0,
+6.8500000000000005
+],
+"direction": [
+-1,
+0,
+0
+],
+"diameter": 4.25,
+"depth": 5.3
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+30.1,
+-14.32,
+2.5300000000000002
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+30.1,
+-14.32,
+11.170000000000002
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+30.1,
+-5.68,
+2.5300000000000002
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+30.1,
+-5.68,
+11.170000000000002
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-27.6,
+0.0,
+14.42
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+27.6,
+10.0,
+14.42
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+27.6,
+-10.0,
+14.42
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-27.6,
+-22.6,
+14.42
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+27.6,
+-22.6,
+14.42
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+27.6,
+22.6,
+14.42
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-27.6,
+22.6,
+14.42
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-16.56,
+-22.6,
+14.42
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-5.52,
+-22.6,
+14.42
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+5.52,
+-22.6,
+14.42
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+16.56,
+-22.6,
+14.42
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+27.6,
+0.0,
+14.42
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+16.56,
+22.6,
+14.42
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+5.52,
+22.6,
+14.42
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-5.52,
+22.6,
+14.42
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-16.56,
+22.6,
+14.42
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-27.6,
+11.3,
+14.42
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-27.6,
+-11.3,
+14.42
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-22.5,
+-17.5,
+5.423
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2",
+"depth": 3.5
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-22.5,
+17.5,
+5.423
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2",
+"depth": 3.5
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+22.5,
+-17.5,
+5.423
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2",
+"depth": 3.5
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+22.5,
+17.5,
+5.423
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2",
+"depth": 3.5
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-22.1,
+4.0,
+5.423
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2",
+"depth": 3.5
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-22.1,
+-4.0,
+5.423
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2",
+"depth": 3.5
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+22.1,
+6.0,
+5.423
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2",
+"depth": 3.5
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+22.1,
+-6.0,
+5.423
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2",
+"depth": 3.5
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-11.04,
+-22.6,
+0
+],
+"direction": [
+0,
+0,
+1
+],
+"thread": "M3",
+"depth": 6.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+11.04,
+-22.6,
+0
+],
+"direction": [
+0,
+0,
+1
+],
+"thread": "M3",
+"depth": 6.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-11.04,
+22.6,
+0
+],
+"direction": [
+0,
+0,
+1
+],
+"thread": "M3",
+"depth": 6.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+11.04,
+22.6,
+0
+],
+"direction": [
+0,
+0,
+1
+],
+"thread": "M3",
+"depth": 6.0
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-30.200000000000003,
+0.0,
+0.0
+],
+"x_dir": [
+0,
+-1,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/BASE_lbl_P1.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.4,
+"direction": "negative",
+"profiles": [
+{
+"point": [
+8.8054,
+6.8069
+]
+},
+{
+"point": [
+11.3312,
+6.7929
+]
+},
+{
+"point": [
+14.2722,
+6.85
+]
+},
+{
+"point": [
+17.1601,
+6.85
+]
+}
+],
+"operation": "cut",
+"targets": [
+"BASE"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+30.200000000000003,
+10.0,
+0.0
+],
+"x_dir": [
+0,
+1,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/BASE_lbl_P2.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.4,
+"direction": "negative",
+"profiles": [
+{
+"point": [
+-1.1932,
+6.8069
+]
+},
+{
+"point": [
+1.5434,
+6.8443
+]
+}
+],
+"operation": "cut",
+"targets": [
+"BASE"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+30.200000000000003,
+-10.0,
+0.0
+],
+"x_dir": [
+0,
+1,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/BASE_lbl_P3.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.4,
+"direction": "negative",
+"profiles": [
+{
+"point": [
+-1.2086,
+6.8069
+]
+},
+{
+"point": [
+1.3205,
+6.7897
+]
+}
+],
+"operation": "cut",
+"targets": [
+"BASE"
+]
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"BASE"
+],
+"color": "#b9c0c7"
+}
+},
+{
+"command": "material.assign",
+"params": {
+"bodies": [
+"BASE"
+],
+"material": "Aluminum"
+}
+}
+]
+}

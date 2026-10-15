@@ -1,0 +1,938 @@
+{
+"commands": [
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 14.419999999999998
+}
+},
+{
+"command": "sketch.rectangle.rounded",
+"params": {
+"p0": [
+-35.1,
+-20.1
+],
+"p1": [
+35.1,
+20.1
+],
+"radius": 2.0
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 4.0,
+"operation": "new",
+"body_name": "LID"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 14.419999999999998
+}
+},
+{
+"command": "sketch.rectangle.rounded",
+"params": {
+"p0": [
+-30.05,
+-15.049999999999999
+],
+"p1": [
+30.05,
+15.049999999999999
+],
+"radius": 0.95
+}
+},
+{
+"command": "sketch.rectangle.rounded",
+"params": {
+"p0": [
+-28.85,
+-13.85
+],
+"p1": [
+28.85,
+13.85
+],
+"radius": 0.3
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.5,
+"direction": "negative",
+"profiles": [
+{
+"point": [
+0.0,
+14.45
+]
+}
+],
+"operation": "join",
+"targets": [
+"LID"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 14.419999999999998
+}
+},
+{
+"command": "sketch.rectangle.rounded",
+"params": {
+"p0": [
+-28.25,
+-13.25
+],
+"p1": [
+28.25,
+13.25
+],
+"radius": 0.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.0,
+"operation": "cut",
+"targets": [
+"LID"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 18.52
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-32.6,
+0.0
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+32.6,
+0.0
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-32.6,
+-17.6
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+32.6,
+-17.6
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+32.6,
+17.6
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-32.6,
+17.6
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-26.08,
+-17.6
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-19.56,
+-17.6
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-13.04,
+-17.6
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-6.52,
+-17.6
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0.0,
+-17.6
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+6.52,
+-17.6
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+13.04,
+-17.6
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+19.56,
+-17.6
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+26.08,
+-17.6
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+32.6,
+-7.367
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+32.6,
+7.367
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+26.08,
+17.6
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+19.56,
+17.6
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+13.04,
+17.6
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+6.52,
+17.6
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0.0,
+17.6
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-6.52,
+17.6
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-13.04,
+17.6
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-19.56,
+17.6
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-26.08,
+17.6
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-32.6,
+7.367
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-32.6,
+-7.367
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 4.2,
+"direction": "negative",
+"profiles": "all",
+"operation": "cut",
+"targets": [
+"LID"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+18.52
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/LID_lid_engraving.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.4,
+"direction": "negative",
+"profiles": [
+{
+"point": [
+-8.7433,
+5.8003
+]
+},
+{
+"point": [
+0.3048,
+6.2329
+]
+},
+{
+"point": [
+6.8841,
+6.9167
+]
+},
+{
+"point": [
+-24.6361,
+-1.2958
+]
+},
+{
+"point": [
+-21.2151,
+-1.5425
+]
+},
+{
+"point": [
+-19.7283,
+-1.2974
+]
+},
+{
+"point": [
+-16.4746,
+-1.7028
+]
+},
+{
+"point": [
+-15.0618,
+-1.3562
+]
+},
+{
+"point": [
+-10.9845,
+-1.5425
+]
+},
+{
+"point": [
+-9.0551,
+-1.7028
+]
+},
+{
+"point": [
+-7.1693,
+-1.5276
+]
+},
+{
+"point": [
+-5.3547,
+-1.5
+]
+},
+{
+"point": [
+-3.7722,
+-1.5359
+]
+},
+{
+"point": [
+-2.2021,
+-1.2974
+]
+},
+{
+"point": [
+-0.3843,
+-1.5
+]
+},
+{
+"point": [
+2.0185,
+-1.5
+]
+},
+{
+"point": [
+3.4931,
+-1.4554
+]
+},
+{
+"point": [
+6.4495,
+-1.7028
+]
+},
+{
+"point": [
+8.3353,
+-1.5276
+]
+},
+{
+"point": [
+10.3258,
+-1.3614
+]
+},
+{
+"point": [
+13.6992,
+-1.5
+]
+},
+{
+"point": [
+15.3133,
+-1.5425
+]
+},
+{
+"point": [
+16.8,
+-1.5
+]
+},
+{
+"point": [
+18.3041,
+-1.7028
+]
+},
+{
+"point": [
+19.8077,
+-1.5
+]
+},
+{
+"point": [
+20.7783,
+-1.3562
+]
+},
+{
+"point": [
+24.6359,
+-1.5
+]
+},
+{
+"point": [
+-20.8066,
+-5.6504
+]
+},
+{
+"point": [
+-19.4039,
+-5.78
+]
+},
+{
+"point": [
+-17.767,
+-5.64
+]
+},
+{
+"point": [
+-14.8208,
+-5.6715
+]
+},
+{
+"point": [
+-12.7014,
+-5.5643
+]
+},
+{
+"point": [
+-10.8781,
+-5.5672
+]
+},
+{
+"point": [
+-9.3955,
+-5.9135
+]
+},
+{
+"point": [
+-8.2064,
+-5.7654
+]
+},
+{
+"point": [
+-6.4268,
+-5.6715
+]
+},
+{
+"point": [
+-4.7659,
+-5.9135
+]
+},
+{
+"point": [
+-2.0581,
+-5.4226
+]
+},
+{
+"point": [
+-0.6554,
+-5.6068
+]
+},
+{
+"point": [
+0.7424,
+-5.5148
+]
+},
+{
+"point": [
+2.9416,
+-5.6068
+]
+},
+{
+"point": [
+4.3394,
+-5.5148
+]
+},
+{
+"point": [
+6.0677,
+-5.9135
+]
+},
+{
+"point": [
+6.9773,
+-5.4439
+]
+},
+{
+"point": [
+9.5395,
+-5.7034
+]
+},
+{
+"point": [
+13.228,
+-5.6715
+]
+},
+{
+"point": [
+15.4351,
+-5.5672
+]
+},
+{
+"point": [
+16.9032,
+-5.466
+]
+},
+{
+"point": [
+20.0824,
+-5.3807
+]
+},
+{
+"point": [
+-17.51,
+-9.4068
+]
+},
+{
+"point": [
+-16.0488,
+-9.58
+]
+},
+{
+"point": [
+-14.4118,
+-9.44
+]
+},
+{
+"point": [
+-10.0608,
+-11.1463
+]
+},
+{
+"point": [
+-8.552,
+-11.1463
+]
+},
+{
+"point": [
+-7.0432,
+-11.1463
+]
+},
+{
+"point": [
+-5.5344,
+-11.1463
+]
+},
+{
+"point": [
+-3.9959,
+-11.1463
+]
+},
+{
+"point": [
+-11.5993,
+-11.1463
+]
+},
+{
+"point": [
+-0.9877,
+-9.2439
+]
+},
+{
+"point": [
+1.0448,
+-10.3528
+]
+},
+{
+"point": [
+2.8977,
+-9.4579
+]
+},
+{
+"point": [
+3.9903,
+-9.7135
+]
+},
+{
+"point": [
+5.5422,
+-9.5034
+]
+},
+{
+"point": [
+7.7238,
+-9.3776
+]
+},
+{
+"point": [
+8.8523,
+-10.3528
+]
+},
+{
+"point": [
+9.6988,
+-9.2439
+]
+},
+{
+"point": [
+13.9124,
+-9.4164
+]
+},
+{
+"point": [
+15.6848,
+-9.3672
+]
+},
+{
+"point": [
+17.6117,
+-9.7149
+]
+}
+],
+"operation": "cut",
+"targets": [
+"LID"
+]
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"LID"
+],
+"color": "#a7b0b9"
+}
+},
+{
+"command": "material.assign",
+"params": {
+"bodies": [
+"LID"
+],
+"material": "Aluminum"
+}
+}
+]
+}
