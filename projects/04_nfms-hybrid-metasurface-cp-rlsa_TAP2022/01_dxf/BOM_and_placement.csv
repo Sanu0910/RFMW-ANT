@@ -1,0 +1,8 @@
+item,ref,description,qty,file / position
+RLSA,PCB,"Taconic TLY-5 1.6 mm D390, slotted top",1,A_rlsa/RLSA_TLY5_1p6_960pairs.dxf
+RLSA,plate,Al 6061 3 mm D390 ground plate,1,A_rlsa/GROUND_PLATE_Al_3mm.dxf
+RLSA,J1,"SMA 4-hole flange jack, PTFE flush with plate top, pin cut to 1.6 mm [ASSUMED part]",1,centre
+RLSA,probe head,"brass disc d2.8 x 2.0 mm, soldered/glued on the SMA pin (Fig. 9(a), Fig. 16 inset)",1,z 1.6-3.6
+HMI,PCB stack,"3 x TLY-5 1.6 mm D390 + 2 prepreg, 1670 Type I + 134 Type II cells",1,B_hm1/HM1_48x48_all_layers.dxf
+HMII,PCB stack,"3 x TLY-5 1.6 mm D390 + 2 prepreg, 1500 Type I + 304 Type II cells",1,C_hm2/HM2_48x48_all_layers.dxf
+ASSY,spacers,"nylon M2.5 screw + spacers: 3.0 mm (ground-RLSA), 15.0 mm (RLSA-HM I), 15.0 mm (HM I-HM II) on R187.5 [ASSUMED]",72,24 per level

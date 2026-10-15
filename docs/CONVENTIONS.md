@@ -18,6 +18,10 @@
 3. Subtract the cutout layers, then assign PerfE (or finite-conductivity Cu for the final run).
 4. Model lumped components as lumped RLC sheets at the positions in `BOM_and_placement.csv`.
 
+## STEP (project 04 on)
+- Built by the project's `build_step.py` with SolidCraft (`solidcraft-cli run`), from the same geometry as the DXFs, in AP242.
+- Install the CLI from the SolidCraft releases (the Linux .deb holds `solidcraft-cli`); files over 20 MB are zipped.
+
 ## Assumptions
 Every value not given in a paper is marked `[ASSUMED]` in the geometry code and listed in the guide's assumptions table, together with how to settle it in simulation.
 
