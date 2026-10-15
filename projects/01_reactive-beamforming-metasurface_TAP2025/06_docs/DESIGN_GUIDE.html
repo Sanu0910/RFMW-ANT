@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Metasurface Designer&#39;s Guide</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body{font-family:"DejaVu Sans",Arial,sans-serif;font-size:10.5pt;line-height:1.45;color:#1a1a1a;max-width:980px;margin:24px auto;padding:0 18px}
+h1{color:#0B1E33;border-bottom:3px solid #00C8FF;padding-bottom:6px;font-size:20pt}
+h2{color:#0F2942;border-left:6px solid #FF6B35;padding-left:8px;margin-top:28px;font-size:14pt}
+h3{color:#0F2942;font-size:12pt}
+table{border-collapse:collapse;width:100%;margin:10px 0;font-size:9.5pt;page-break-inside:avoid}
+th{background:#0F2942;color:#fff;padding:5px 7px;text-align:left}
+td{border:1px solid #c9d3de;padding:4px 7px;vertical-align:top}
+tr:nth-child(even) td{background:#f3f7fb}
+code{background:#eef3f8;padding:1px 4px;border-radius:3px;font-size:9pt}
+hr{border:0;border-top:1px solid #ccd}
+</style>
+</head>
+<body>
+<h1 id="reactive-beamforming-metasurface-designers-guide">Reactive
+Beamforming Metasurface — Designer’s Guide</h1>
+<p>Companion to: M. Almunif, F. Alsolamy, A. Grbic, “Network-Based
+Design of Reactive Beamforming Metasurfaces”, IEEE Trans. Antennas
+Propag., vol. 73, no. 8, Aug. 2025.</p>
+<p>This guide covers the full design loop: geometry, simulation,
+synthesis, optimisation, realisation and prototype. It is written the
+way an RF design review would walk through it, and every equation number
+refers to the paper.</p>
+<hr />
+<h2 id="the-design-in-one-paragraph">1. The design in one paragraph</h2>
+<p>An 11×11 grid of λ0/5 cells (5.7 mm at 10 GHz) is treated as a
+<strong>121-port microwave network</strong>. One full-wave run gives the
+121×121 <strong>impedance matrix Z</strong> and the <strong>element
+pattern of every port</strong>. After that, everything is circuit
+algebra:</p>
+<ol type="1">
+<li>Pick a far-field pattern.</li>
+<li>Solve for the port currents that produce it (eq. 8).</li>
+<li>Convert those currents into the load impedances that force them (eq.
+5).</li>
+<li>Throw away the real (lossy/active) part.</li>
+<li>Optimise the reactances so the surface stays <strong>passive and
+lossless</strong> while still meeting the pattern and the port match
+(eq. 11).</li>
+</ol>
+<p>Because the loads sit behind a ground plane (aperture coupling), the
+<strong>same board</strong> becomes a directly fed antenna or a
+reflector just by changing the loads. The final loads are printed as
+<strong>meandered open-circuit microstrip stubs</strong>.</p>
+<hr />
+<h2 id="terminology-a-professional-designer-uses-for-this-work">2.
+Terminology a professional designer uses for this work</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Meaning in this design</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Unit cell</strong></td>
+<td>One 5.7 × 5.7 mm tile: patch (L1), slotted ground (L2), microstrip +
+via (L3).</td>
+</tr>
+<tr class="even">
+<td><strong>Aperture coupling</strong></td>
+<td>Energy passes from the patch gaps to the microstrip through a slot
+in the ground. The ground shields the load from free space, so the load
+does not radiate.</td>
+</tr>
+<tr class="odd">
+<td><strong>Lumped port</strong></td>
+<td>A 2-D sheet port between the strip and the ground (here 0.4 × 0.203
+mm, vertical). It defines the <strong>reference plane</strong> where the
+load “sits”.</td>
+</tr>
+<tr class="even">
+<td><strong>Reference plane</strong></td>
+<td>The physical point where Z_L is defined. The meander must present X
+at <em>this</em> plane, which is why stub lengths are measured from
+it.</td>
+</tr>
+<tr class="odd">
+<td><strong>Impedance matrix Z (Z-parameters)</strong></td>
+<td>V = Z·I for all 121 ports. Off-diagonal terms = <strong>mutual
+coupling</strong>. It comes from HFSS as S-parameters and is converted
+with Z = Z0(I+S)(I−S)⁻¹.</td>
+</tr>
+<tr class="even">
+<td><strong>Block partition Z_LL, Z_LE, Z_EL, Z_EE</strong></td>
+<td>L = loaded (terminated) ports, E = excited ports (eq. 1).</td>
+</tr>
+<tr class="odd">
+<td><strong>Embedded (active) element pattern</strong></td>
+<td>Far field when one port is driven and all others are terminated.
+HFSS terminates them in 50 Ω by default.</td>
+</tr>
+<tr class="even">
+<td><strong>Current-basis / open-circuit element pattern</strong></td>
+<td>Far field for 1 A at port m with every other port
+<strong>open</strong> (I = 0). The paper uses this basis, so E_tot = Σ
+I_m E_m exactly. Convert HFSS data with
+<code>mtsf_embedded_to_open.m</code>.</td>
+</tr>
+<tr class="odd">
+<td><strong>Pattern synthesis by projection</strong></td>
+<td>Taking inner products of eq. 6 with each element pattern (eq. 7)
+gives the <strong>Gram matrix</strong> system of eq. 8.</td>
+</tr>
+<tr class="even">
+<td><strong>Gram matrix</strong></td>
+<td>G_mn = ⟨E_m, E_n⟩. For a lossless array it is proportional to Re{Z},
+i.e. radiated power. It is ill-conditioned for sub-wavelength cells, so
+we regularise it.</td>
+</tr>
+<tr class="odd">
+<td><strong>Hadamard division (⊘)</strong></td>
+<td>Element-by-element division used in eqs. 4–5.</td>
+</tr>
+<tr class="even">
+<td><strong>Passive / lossless / reactive load</strong></td>
+<td>Re{Z_L} = 0. Re &gt; 0 dissipates power; Re &lt; 0 would need gain
+(an active element).</td>
+</tr>
+<tr class="odd">
+<td><strong>Seed</strong></td>
+<td>Starting point of the optimiser: Im of the analytic complex loads
+(Sec. IV).</td>
+</tr>
+<tr class="even">
+<td><strong>Reduced impedance matrix</strong></td>
+<td>The K×K matrix seen at the feeds once all loads are attached (eq.
+13). It gives S11 and isolation (eq. 14).</td>
+</tr>
+<tr class="odd">
+<td><strong>Return loss / S11, mismatch loss</strong></td>
+<td>Feed match. Mismatch loss = −10·log10(1−|S11|²); Table I gives 0.26
+dB.</td>
+</tr>
+<tr class="even">
+<td><strong>Isolation (S21)</strong></td>
+<td>Coupling between the two MIMO feeds (Design III: −34 dB network, −30
+dB HFSS).</td>
+</tr>
+<tr class="odd">
+<td><strong>Array factor, pattern multiplication</strong></td>
+<td>Edes = AF · element pattern (eqs. 21–23), assuming y-directed
+magnetic-dipole cells (eq. 22).</td>
+</tr>
+<tr class="even">
+<td><strong>E-plane / H-plane</strong></td>
+<td>φ = 0 (E-field of the cell lies in it) / φ = 90°.</td>
+</tr>
+<tr class="odd">
+<td><strong>Visible region, evanescent spectrum</strong></td>
+<td>The DFT of the port currents (Fig. 5). Only |k| &lt; k0 radiates.
+The reactive loads use the evanescent (|k| &gt; k0) part to shuttle
+power across the aperture, which is how a passive surface reaches the
+needed amplitude taper from one feed.</td>
+</tr>
+<tr class="even">
+<td><strong>Local periodicity approximation (LPA)</strong></td>
+<td>The classical alternative: design each cell as if it sat in an
+infinite periodic array. It ignores coupling between unlike neighbours
+and cannot control amplitude, which is what this method fixes.</td>
+</tr>
+<tr class="odd">
+<td><strong>Method of moments / homogenisation</strong></td>
+<td>The other alternative (refs [12]–[20]): many basis functions per
+cell, needs fast matrix inversion, then cells are “extracted” into
+geometry. The network method uses 1 port per cell instead.</td>
+</tr>
+<tr class="even">
+<td><strong>Directly fed metasurface</strong></td>
+<td>K feeds drive the surface, and the other N cells are loaded (Designs
+I–III).</td>
+</tr>
+<tr class="odd">
+<td><strong>Reflective metasurface / reflectarray</strong></td>
+<td>All ports are loaded and a plane wave or horn illuminates the
+surface (Designs IV–V).</td>
+</tr>
+<tr class="even">
+<td><strong>Open-circuit voltage, vector effective length</strong></td>
+<td>Receive-mode drive of each port by the incident wave (eqs. 17–20).
+It is the Thevenin source of each cell.</td>
+</tr>
+<tr class="odd">
+<td><strong>Scattered field with ports open, E_s|open</strong></td>
+<td>Structural scattering of the board when no current flows in the
+ports (eq. 15). It needs one extra HFSS run.</td>
+</tr>
+<tr class="even">
+<td><strong>Orthogonal beams</strong></td>
+<td>Beams spaced so their patterns are orthogonal over the aperture (eq.
+25). This minimises feed-to-feed coupling.</td>
+</tr>
+<tr class="odd">
+<td><strong>Mask synthesis</strong></td>
+<td>A flat-top region, a transition region and a sidelobe region (Design
+II, SLL &lt; −13 dB).</td>
+</tr>
+<tr class="even">
+<td><strong>Directivity, gain, radiation efficiency</strong></td>
+<td>Table I: D = 16.1 dB, G = 14 dB, η_rad = 62.5% (Design I realised).
+Design IV gives η = 75%.</td>
+</tr>
+<tr class="odd">
+<td><strong>ε_eff, λg, Zc</strong></td>
+<td>Microstrip effective permittivity (≈ 2.75), guided wavelength (≈
+18.1 mm at 10 GHz), line impedance (≈ 54 Ω for 0.4 mm on 0.203 mm
+RO4003C).</td>
+</tr>
+<tr class="even">
+<td><strong>Open stub, open-end extension Δl</strong></td>
+<td>Zin = −jZc·cot(βl). The fringing field makes the stub look ≈ 0.08 mm
+longer, so we subtract it.</td>
+</tr>
+<tr class="odd">
+<td><strong>Meander</strong></td>
+<td>A folded stub so a λg/2-class length fits in a λ0/5 cell (Fig.
+10).</td>
+</tr>
+<tr class="even">
+<td><strong>Multistart</strong></td>
+<td>Running the optimiser from several start points, because
+reactive-load landscapes are multimodal.</td>
+</tr>
+<tr class="odd">
+<td><strong>DRC</strong></td>
+<td>Design-rule check: copper-to-copper gaps, metal over slots, cell
+overflow (<code>drc_check.py</code>).</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="geometry-rebuilt-from-fig.-3-at-600-dpi">3. Geometry (rebuilt
+from Fig. 3 at 600 dpi)</h2>
+<p>The cell is drawn exactly as Fig. 3:</p>
+<ul>
+<li><strong>L1 patch layer:</strong> the cell is centred on the 0.55 mm
+cross-shaped gap, so the four patch quarters belong to patches centred
+on the cell <strong>corners</strong>. The array therefore has a 12 × 12
+patch grid.</li>
+<li><strong>L2 slotted ground:</strong> a 4.8 mm slot straddles the
+cell’s <strong>top edge</strong>. It is 0.3 mm on each side, so 0.6 mm
+in total.</li>
+<li><strong>L3 strip layer:</strong> a 0.4 mm strip runs from the
+<strong>port</strong> (0.7 mm below the top edge) up across the slot to
+a <strong>shorting via</strong> 0.4 mm into the cell above. The via
+boosts the slot’s magnetic field and therefore the coupling (paper ref.
+[25]).</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>z (mm)</th>
+<th>Layer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1.016</td>
+<td>L1 patches (copper)</td>
+</tr>
+<tr class="even">
+<td>0.203–1.016</td>
+<td>RO4003C, εr 3.55, tanδ 0.0027, h = 0.813 mm (32 mil)</td>
+</tr>
+<tr class="odd">
+<td>0.203</td>
+<td>L2 ground with slots</td>
+</tr>
+<tr class="even">
+<td>0–0.203</td>
+<td>RO4003C, h = 0.203 mm (8 mil)</td>
+</tr>
+<tr class="odd">
+<td>0</td>
+<td>L3 strips, ports, meander loads (bottom side)</td>
+</tr>
+<tr class="even">
+<td>0–0.203</td>
+<td>vias L3 → L2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Values the paper does not state</strong> (all are parameters
+in <code>05_python_tools/msgeom.py</code>; change them in one place and
+rebuild):</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Value used</th>
+<th>How to settle it</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Slot width per side</td>
+<td>0.3 mm (0.6 mm total)</td>
+<td>Fig. 3 shows 0.3 mm at each edge. If your cell sim mismatches badly,
+try 0.3 mm total.</td>
+</tr>
+<tr class="even">
+<td>Via drill</td>
+<td>0.2 mm</td>
+<td>Fab capability on 8 mil core.</td>
+</tr>
+<tr class="odd">
+<td>Strip width</td>
+<td>0.4 mm (≈ 54 Ω)</td>
+<td>The paper says a 50 Ω line; 0.45 mm gives ≈ 50 Ω. Re-run if you
+change it.</td>
+</tr>
+<tr class="even">
+<td>Port position</td>
+<td>0.7 mm below the top edge</td>
+<td>From Fig. 3.</td>
+</tr>
+<tr class="odd">
+<td>Meander pitch / lead / tail</td>
+<td>0.8 / 0.3 / 0.5 mm</td>
+<td>Fig. 10 gives 1 mm lead from the edge, 0.4 mm width, 0.5 mm
+tail.</td>
+</tr>
+<tr class="even">
+<td>Array patch boundary</td>
+<td>12 × 12 full patches</td>
+<td>The edge cells’ slots need a patch above them.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Earlier versions of these DXFs</strong> placed the patch at
+the cell centre and the slot under it. That was wrong; every file in
+this pack uses the corrected Fig. 3 geometry.</p>
+<hr />
+<h2 id="how-the-ports-and-feeds-work">4. How the ports and feeds
+work</h2>
+<h3 id="in-simulation">In simulation</h3>
+<ul>
+<li><p><strong>Every cell has one lumped port</strong> (a vertical sheet
+strip → ground at the port plane, integration line upward, 50 Ω
+reference). Solve once with all 121 ports present to get Z and the
+patterns.</p></li>
+<li><p><strong>Directly fed designs:</strong></p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Design</th>
+<th>Feed cell(s)</th>
+<th>Feed</th>
+<th>Loads</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>I, II</td>
+<td>R6C6 (centre)</td>
+<td>50 Ω source</td>
+<td>the other 120 ports</td>
+</tr>
+<tr class="even">
+<td>III (MIMO)</td>
+<td>R6C4 and R6C8, 0.6 λ0 apart</td>
+<td>50 Ω source on each</td>
+<td>the other 119 ports</td>
+</tr>
+</tbody>
+</table>
+<p>In the verification run the load ports become <strong>lumped RLC
+boundaries</strong>: L = X/ω for X &gt; 0, C = −1/(ωX) for X &lt;
+0.</p></li>
+<li><p><strong>Reflective designs (IV, V):</strong> all 121 ports carry
+loads. The excitation is an <strong>incident plane wave</strong> from
+(θi, φi) = (30°, 0°), θ-polarised (E along x, matching the cell’s
+E-plane). Design V adds a second incidence from (30°, 90°),
+φ-polarised.</p></li>
+<li><p>The paper’s network model treats an <strong>inactive feed as
+open</strong> (I_E = 0). On a real board it is terminated in 50 Ω. With
+−30 dB isolation the difference is negligible, but check it in the final
+HFSS verification.</p></li>
+</ul>
+<h3 id="on-a-prototype">On a prototype</h3>
+<ul>
+<li><p><strong>Fed cell:</strong> the strips are on the exposed bottom
+layer, so the feed is a <strong>vertical SMA (or 2.92 mm) launch from
+the back</strong>. The centre pin lands on the strip at the port plane
+and the outer conductor goes to the ground through a back-drilled via
+fence.</p>
+<p>Model the connector footprint in the final HFSS run: it adds a pad
+capacitance that detunes S11.</p></li>
+<li><p><strong>Load cells:</strong> the meander replaces the lumped
+load. Nothing is soldered, so the surface is fully printed.</p></li>
+<li><p><strong>Reflective measurement:</strong> horn illumination in a
+bistatic setup in an anechoic chamber. The far-field distance 2D²/λ with
+D ≈ 89 mm (diagonal) is about 0.53 m at 10 GHz. Gate the direct
+horn-to-horn path in time.</p></li>
+<li><p><strong>Reconfigurable version:</strong> replace the meanders
+with <strong>varactors</strong> (for example a 0.1–1 pF varactor spans
+only about −160 to −16 Ω at 10 GHz, so add a series inductive line to
+shift the range across −150…+150 Ω). Model the ESR, because it cuts
+efficiency, and bias through the via/ground or with RF chokes.</p></li>
+</ul>
+<hr />
+<h2 id="files-in-this-pack">5. Files in this pack</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Folder</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>01_dxf_base</td>
+<td>Fig. 3 unit cell (all layers and per layer); three lumped-port 11×11
+arrays (centre-fed, 2-feed MIMO, reflective); <code>meander_lib/</code>
+single cells with stub length 1.5–8.5 mm for Zin extraction; reactance →
+stub length table; previews.</td>
+</tr>
+<tr class="even">
+<td>02_reactance_data</td>
+<td>Per-cell reactances digitised from Figs. 4a, 6a, 7a, 8b, 9b;
+side-by-side check image; source crops.</td>
+</tr>
+<tr class="odd">
+<td>03_dxf_realized</td>
+<td><strong>Fig. 11 rebuild</strong> (Design I, meanders, centre feed)
+and <strong>Fig. 12 rebuild</strong> (Design IV beam splitter), plus
+Designs II, III, V; per-cell tables (row, col, X, stub length, turns);
+previews.</td>
+</tr>
+<tr class="even">
+<td>04_matlab</td>
+<td>Full eq. 1–25 pipeline, toy-array demo (runs without HFSS),
+real-data template, self-tests, reference plots.</td>
+</tr>
+<tr class="odd">
+<td>05_python_tools</td>
+<td><code>msgeom.py</code> (single source of geometry),
+<code>build_dxf.py</code> (regenerate or realise from your X),
+<code>drc_check.py</code>, <code>digitize_reactance_maps.py</code>,
+<code>hfss_build_and_export.py</code> (PyAEDT).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>DXF layers:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Layer</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>L1_PATCH</td>
+<td>patches</td>
+</tr>
+<tr class="even">
+<td>L2_GND_BOARD</td>
+<td>full ground outline</td>
+</tr>
+<tr class="odd">
+<td>L2_GND_SLOT</td>
+<td>slots to subtract from the ground</td>
+</tr>
+<tr class="even">
+<td>L3_STRIP</td>
+<td>strips and meanders</td>
+</tr>
+<tr class="odd">
+<td>VIA</td>
+<td>circles, to extrude 0–0.203 mm</td>
+</tr>
+<tr class="even">
+<td>PORT_FEED_50ohm</td>
+<td>thin rectangles marking feed port planes</td>
+</tr>
+<tr class="odd">
+<td>PORT_LOAD_jX</td>
+<td>thin rectangles marking load port planes</td>
+</tr>
+<tr class="even">
+<td>BOARD_OUTLINE</td>
+<td>board edge</td>
+</tr>
+<tr class="odd">
+<td>TEXT</td>
+<td>R/C labels</td>
+</tr>
+</tbody>
+</table>
+<p>All coordinates are in mm and the array centre is at the origin. Row
+1 is at the top (+y) and column 1 at the left (−x). The port index used
+everywhere is m = (row−1)·11 + col.</p>
+<hr />
+<h2 id="hfss-setup-gui-route-hfss_build_and_export.py-automates-the-same">6.
+HFSS setup (GUI route; <code>hfss_build_and_export.py</code> automates
+the same)</h2>
+<ol type="1">
+<li><strong>Import.</strong> Modeler → Import → DXF. Map L1_PATCH to z =
+1.016, L2_GND_BOARD and L2_GND_SLOT to z = 0.203, L3_STRIP to z = 0.
+Skip TEXT and the port marker layers, or keep them only as guides.</li>
+<li><strong>Ground.</strong> Subtract L2_GND_SLOT from L2_GND_BOARD,
+then assign <strong>Perfect E</strong> to the ground, patches and
+strips. Use finite conductivity (copper, 17.5 µm roughness-free) only in
+the final efficiency run.</li>
+<li><strong>Substrates.</strong> Two RO4003C boxes. The real board also
+needs <strong>bonding film</strong> between them (for example RO4450F,
+εr ≈ 3.5, ≈ 0.1 mm). It changes the total thickness and εr, so include
+it before fabrication.</li>
+<li><strong>Vias.</strong> PEC cylinders, 0.2 mm diameter, z 0 → 0.203,
+at the VIA circles.</li>
+<li><strong>Ports.</strong> At each port marker draw an XZ sheet, 0.4 mm
+wide (x) × 0.203 mm tall (z), from the strip edge up to the ground.
+Assign a <strong>lumped port</strong>, 50 Ω, with the integration line
+from strip to ground, so 121 ports in total.</li>
+<li><strong>Boundary.</strong> Air box with λ0/4 (7.5 mm) clearance on
+every side and a radiation boundary, or PML / FE-BI for a tighter box.
+Add an infinite sphere with θ 0–180° step 2° and φ 0–356° step 4°. These
+must match <code>dth</code>/<code>dph</code> in MATLAB.</li>
+<li><strong>Solve.</strong> Single frequency 10 GHz, max ΔS 0.01, at
+least 12 passes. Use “Port only” Z output if memory is tight; a 121-port
+run benefits from HPC/DDM.</li>
+<li><strong>Export Z.</strong> Results → Solution Data → Export Matrix
+Data → Touchstone <code>metasurface_121port.s121p</code>, 50 Ω, design
+frequency only.</li>
+<li><strong>Export patterns.</strong> For each port, Edit Sources (that
+port 1 W, others 0 W) and export a Far-Field data table of re/im of
+rETheta and rEPhi versus θ, φ to <code>ff/port_###.csv</code>. The
+script writes the exact column format
+<code>mtsf_load_hfss_patterns.m</code> reads.</li>
+<li><strong>Reflective only.</strong> A second design with <strong>no
+port excitations and the port sheets left open</strong> (no boundary),
+plus an incident plane wave from (30°, 0°), θ-pol. Export the scattered
+far field to <code>ff/scat_open.csv</code>. This is E_s|open of eq.
+15.</li>
+</ol>
+<h3 id="meander-zin-extraction">Meander Zin extraction</h3>
+<p>This is how the paper realises the loads in Sec. VII.</p>
+<ol type="1">
+<li>Run <code>python hfss_build_and_export.py meander</code>. For each
+stub length it builds a 3×3 cell patch with the measured cell’s via-side
+strip removed, so the port sees only the stub (as in Fig. 10).</li>
+<li>It writes <code>meander_Zin_table.csv</code> with columns L, X,
+R.</li>
+<li><code>build_dxf.py realise ... --table meander_Zin_table.csv</code>
+then uses those in-situ values instead of the analytic first guess.</li>
+</ol>
+<hr />
+<h2 id="matlab-pipeline-equation-map">7. MATLAB pipeline: equation
+map</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Paper</th>
+<th>Function</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>eq. 1</td>
+<td><code>mtsf_read_touchstone</code></td>
+<td>S → Z at f0</td>
+</tr>
+<tr class="even">
+<td>eqs. 2–5</td>
+<td><code>mtsf_loads_from_currents</code></td>
+<td>Z_L = (V_exc − Z_LL I_L) ⊘ I_L</td>
+</tr>
+<tr class="odd">
+<td>eqs. 6–8</td>
+<td><code>mtsf_synth_currents</code></td>
+<td>Gram system with Tikhonov regularisation</td>
+</tr>
+<tr class="even">
+<td>eq. 9</td>
+<td><code>mtsf_currents_from_loads</code></td>
+<td>I_L = (jX + Z_LL)⁻¹ V_exc</td>
+</tr>
+<tr class="odd">
+<td>eq. 10 / eq. 15</td>
+<td>inside <code>mtsf_cost</code></td>
+<td>E = E0 + sgn·F_L I_L</td>
+</tr>
+<tr class="even">
+<td>eq. 11</td>
+<td><code>mtsf_cost</code></td>
+<td>pattern + Σ|S_ii| + Σ|S_ij|, <strong>analytic gradient</strong></td>
+</tr>
+<tr class="odd">
+<td>eqs. 12–14</td>
+<td><code>mtsf_reduced_S</code></td>
+<td>reduced Z and S at the feeds</td>
+</tr>
+<tr class="even">
+<td>eqs. 17–20</td>
+<td><code>mtsf_voc_planewave</code></td>
+<td>open-circuit voltages for a plane wave</td>
+</tr>
+<tr class="odd">
+<td>eqs. 21–24</td>
+<td><code>mtsf_array_factor</code>,
+<code>mtsf_desired_pattern</code></td>
+<td>uniform or multibeam</td>
+</tr>
+<tr class="even">
+<td>eq. 22</td>
+<td><code>mtsf_magdipole_pattern</code></td>
+<td>element model</td>
+</tr>
+<tr class="odd">
+<td>eq. 25</td>
+<td><code>mtsf_orthogonal_beams</code></td>
+<td>MIMO beam angles</td>
+</tr>
+<tr class="even">
+<td>Sec. IV</td>
+<td><code>mtsf_seed</code>, <code>mtsf_optimize</code>,
+<code>mtsf_multistart</code></td>
+<td>fmincon (MATLAB) or projected L-BFGS (Octave)</td>
+</tr>
+<tr class="odd">
+<td>Sec. VII</td>
+<td><code>mtsf_X_to_stub</code>, <code>mtsf_X_to_LC</code>,
+<code>mtsf_write_X_csv</code></td>
+<td>realisation outputs</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Run order:</strong></p>
+<ol type="1">
+<li><code>mtsf_selftest</code> checks power consistency, gradients and
+the pattern conversion.</li>
+<li><code>mtsf_demo_paper_designs</code> runs Designs I–IV on an
+analytic 11×11 array in about 2–3 minutes.</li>
+<li><code>mtsf_design_from_hfss</code> is the same flow on your HFSS
+exports. Set <code>design = &#39;I&#39;...&#39;V&#39;</code>.</li>
+</ol>
+<p>It writes <code>designX_X_optimised.csv</code>, which goes into
+<code>python build_dxf.py realise designX_X_optimised.csv out.dxf --feeds 6,6</code>,
+giving the realised DXF.</p>
+<p><strong>Verified here</strong> (GNU Octave 8.4, toy array):</p>
+<table>
+<thead>
+<tr class="header">
+<th>Check</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Re{Z} vs Gram/η</td>
+<td>5e-5</td>
+</tr>
+<tr class="even">
+<td>Analytic vs finite-difference gradient</td>
+<td>1e-9</td>
+</tr>
+<tr class="odd">
+<td>Touchstone round trip</td>
+<td>8e-13</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>Design</th>
+<th>Toy result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>I</td>
+<td>pattern mismatch 0.96 → 0.016</td>
+</tr>
+<tr class="even">
+<td>II</td>
+<td>ripple 0.5 dB, sidelobe −8.4 dB (toy cannot reach −13 dB)</td>
+</tr>
+<tr class="odd">
+<td>III</td>
+<td>beams ±28.6°, isolation −31 dB</td>
+</tr>
+<tr class="even">
+<td>IV</td>
+<td>mismatch 0.054</td>
+</tr>
+</tbody>
+</table>
+<p>The toy uses free-space dipoles, so its S11 values are
+unrealistically good. Only real HFSS data gives true numbers.</p>
+<hr />
+<h2 id="what-the-paper-glosses-over-important-for-a-real-design">8. What
+the paper glosses over (important for a real design)</h2>
+<ol type="1">
+<li><strong>Pattern basis.</strong> Eq. 8 needs open-circuit
+(current-basis) patterns. HFSS gives 50 Ω-terminated embedded patterns,
+so you must convert them with Fopen = Fhfss(Z + Z0·I)/vs. Skipping this
+silently corrupts the synthesis.</li>
+<li><strong>Gram-matrix conditioning.</strong> For λ0/5 cells, eq. 8 is
+close to singular, because evanescent current modes have no far field.
+Use the regularised solve in <code>mtsf_synth_currents</code>, otherwise
+the seed loads blow up.</li>
+<li><strong>Inner-product weight.</strong> Eq. 7 integrates dθdφ without
+sinθ, which over-weights the poles. The solid-angle weighting used here
+keeps the Gram matrix ∝ Re{Z}. You can switch to the literal form in
+<code>mtsf_angle_grid</code>.</li>
+<li><strong>Field scale in eq. 11.</strong> |Edes − Etot|² depends on
+absolute field level (source power, plane-wave amplitude). The cost here
+uses the optimal free complex scale, which gives a normalised error, so
+α, β and γ are comparable.</li>
+<li><strong>Multimodality.</strong> A lossless load limits each cell’s
+current phase to roughly 180° relative to its drive. Full control comes
+from coupling, so the landscape has many minima. Always multistart. The
+toy demo shows a spread of J = 0.05 to 0.8 between starts.</li>
+<li><strong>Realisable range.</strong> Bound X to what fits. A λ0/5 cell
+holds stubs up to about λg/2, giving roughly −150 to +150 Ω with useful
+sensitivity. Near ±∞ (stub ≈ λg/4 or λg/2) the length sensitivity
+explodes, so avoid those values.</li>
+<li><strong>Load dispersion and bandwidth.</strong> Stub reactance
+changes with frequency (dX/df is large near resonance). Sweep 9.5–10.5
+GHz in the verification run. A beam squint and pattern break-up of a few
+percent bandwidth is typical for this class of surface.</li>
+<li><strong>Finite-array edges.</strong> Patterns must come from the
+full 11×11 run, not a periodic cell. Edge cells behave differently, and
+that is exactly the coupling this method captures.</li>
+<li><strong>In-situ load extraction.</strong> The meander couples to the
+slot, to neighbours and to the via strip. Extract Zin in a 3×3
+environment (the script does this), not as an isolated line.</li>
+<li><strong>Stack-up reality.</strong> Bonding film, copper thickness,
+via plating, and etch tolerance of ±25 µm on 0.4 mm lines all matter. A
+2% εr shift at 10 GHz moves the stub phase noticeably, so re-run Z with
+the fab’s actual stack-up.</li>
+<li><strong>Losses.</strong> Table I gives 1.8 dB dielectric + ohmic
+loss, because the stubs store energy (high Q). Use RO4003C or a
+lower-loss alternative, keep the meanders short where X allows, and
+include copper roughness in the final run.</li>
+<li><strong>Inactive MIMO port.</strong> It is open in the model but 50
+Ω on the board; verify in HFSS.</li>
+<li><strong>Digitised loads are seeds.</strong> The reactance maps in
+02_reactance_data come from colour images. Accuracy is about ±3 Ω,
+values at the ends of each colourbar may be clipped (for example 99 Ω
+and −114 Ω), and they belong to the paper’s exact geometry. On your
+geometry, re-optimise with <code>mtsf_design_from_hfss</code>.</li>
+</ol>
+<hr />
+<h2 id="paper-targets-to-check-against">9. Paper targets to check
+against</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Design</th>
+<th>Network model</th>
+<th>HFSS</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>I: beam to (−30°, 0°), centre feed</td>
+<td>S11 −14.02 dB</td>
+<td>−14.37 dB</td>
+</tr>
+<tr class="even">
+<td>II: flat-top ±20°, SLL &lt; −13 dB</td>
+<td>S11 −14.65 dB</td>
+<td>−15 dB</td>
+</tr>
+<tr class="odd">
+<td>III: beams ±28.5° (H-plane)</td>
+<td>S11 −11.3 dB, S21 −34 dB</td>
+<td>S11 = S22 = −11 dB, S21 −30 dB</td>
+</tr>
+<tr class="even">
+<td>IV: (30°, 0°) → (±30°, 90°)</td>
+<td>pattern match</td>
+<td>pattern match</td>
+</tr>
+<tr class="odd">
+<td>V: two incidences to two directions</td>
+<td>pattern match</td>
+<td>pattern match</td>
+</tr>
+<tr class="even">
+<td>Realised I (meanders)</td>
+<td>S11 −13.7 dB</td>
+<td>D 16.1 dB, G 14 dB, η 62.5%, mismatch 0.26 dB</td>
+</tr>
+<tr class="odd">
+<td>Realised IV</td>
+<td>—</td>
+<td>η_rad 75%</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="prototype-checklist">10. Prototype checklist</h2>
+<ul class="task-list">
+<li><label><input type="checkbox"></input>Re-run the cell with the fab’s real
+stack-up (bondply, copper, εr at 10 GHz).</label></li>
+<li><label><input type="checkbox"></input>Full 121-port Z and patterns, then
+convert to current basis, then optimise with bounds and
+multistart.</label></li>
+<li><label><input type="checkbox"></input>Verification run with lumped RLC,
+then with meanders (realised DXF).</label></li>
+<li><label><input type="checkbox"></input>Frequency sweep 9–11 GHz: S11, gain,
+beam direction.</label></li>
+<li><label><input type="checkbox"></input>DRC: line/space ≥ 0.1 mm (this
+pack’s realised layouts have ≥ 0.65 mm), no metal over slots, via
+annular ring ≥ 0.1 mm.</label></li>
+<li><label><input type="checkbox"></input>Add the connector footprint and
+back-drill on the fed cell; add alignment marks and a board edge margin
+of ≥ 2 mm.</label></li>
+<li><label><input type="checkbox"></input>Gerbers: import the DXF layers into
+KiCad/Altium as L1 (top copper), L2 (inner copper, slots as voids), L3
+(bottom copper), plus a drill file from the VIA layer.</label></li>
+<li><label><input type="checkbox"></input>Measurement plan: chamber, far-field
+distance ≥ 0.53 m, time gating for the reflective case, and a reference
+horn for gain.</label></li>
+</ul>
+</body>
+</html>

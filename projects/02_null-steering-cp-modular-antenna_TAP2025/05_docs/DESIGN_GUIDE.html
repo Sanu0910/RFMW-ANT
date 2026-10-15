@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Null-Steering Antenna Guide</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body{font-family:"DejaVu Sans",Arial,sans-serif;font-size:10.2pt;line-height:1.45;color:#1a1a1a;max-width:1000px;margin:24px auto;padding:0 18px}
+h1{color:#0B1E33;border-bottom:3px solid #00C8FF;padding-bottom:6px;font-size:19pt}
+h2{color:#0F2942;border-left:6px solid #FF6B35;padding-left:8px;margin-top:26px;font-size:13.5pt}
+table{border-collapse:collapse;width:100%;margin:10px 0;font-size:9pt;page-break-inside:avoid}
+th{background:#0F2942;color:#fff;padding:5px 7px;text-align:left}
+td{border:1px solid #c9d3de;padding:4px 7px;vertical-align:top}
+tr:nth-child(even) td{background:#f3f7fb}
+code{background:#eef3f8;padding:1px 4px;border-radius:3px;font-size:8.6pt}
+</style>
+</head>
+<body>
+<h1 id="reconfigurable-modular-null-steering-cp-antenna-designer-verification-guide">Reconfigurable
+Modular Null-Steering / CP Antenna — Designer &amp; Verification
+Guide</h1>
+<p>Companion to: K. M. Younus, K. Sultan, C. Fumeaux, A. Abbosh,
+“Reconfigurable Modular Antenna System With Null Steering and Circular
+Polarization”, IEEE Trans. Antennas Propag., vol. 73, no. 5, May
+2025.</p>
+<p>This guide is laid out the way a design review would go: what the
+system is, what each claim rests on, what the paper leaves out, and how
+to verify every block in HFSS, MATLAB and Python before building
+hardware.</p>
+<hr />
+<h2 id="the-system-in-one-page">1. The system in one page</h2>
+<p><strong>One unit = phase shifter (PS) + printed dipole on one 25 × 60
+mm board.</strong> - <strong>Phase shifter:</strong> two elliptical
+patches on the outer layers, broadside-coupled through an elliptical
+slot in the inner ground. Each patch’s free end has a stub, a DC-block
+capacitor and a varactor to ground, and one bias voltage tunes both
+varactors. The quoted performance is 145° tuning range, ±2° imbalance
+and IL &lt; 1 dB over 5–7 GHz. - <strong>Antenna:</strong> a wideband
+printed dipole with an integrated microstrip-to-slotline balun. It fires
+endfire (off the board tip) with a broad beam of about 5 dBi. -
+<strong>Built-in 180°:</strong> a mirror-image board (type B) radiates
+in antiphase with type A for the same feed.</p>
+<p><strong>Systems:</strong> units fed by an equal-split power
+divider.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>System</th>
+<th>Layout</th>
+<th>Claimed performance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>1-D</strong></td>
+<td>2 units coplanar (A, B), spacing d = 25 mm = λ0/2 at 6 GHz</td>
+<td>The antiphase pair has a null at broadside; tuning the two PSs
+steers it to ±40° with &gt; 15 dB depth</td>
+</tr>
+<tr class="even">
+<td><strong>2-D</strong></td>
+<td>2 × 2 units (A, B / B, A); every x-pair and y-pair is antiphase</td>
+<td>Null planes at u = u0 and v = v0; ±40° per plane with &gt; 10 dB
+depth</td>
+</tr>
+<tr class="odd">
+<td><strong>CP</strong></td>
+<td>4 units as a cross (X), 90° set on one orthogonal pair</td>
+<td>RHCP or LHCP, AR &lt; 2.3 dB over 5–7 GHz</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="terminology-how-an-rf-designer-describes-this-design">2.
+Terminology (how an RF designer describes this design)</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Meaning here</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Reflection-type phase shifter (RTPS)</strong></td>
+<td>What the PS really is. A quadrature (3-dB backward) coupler whose
+through and coupled ports see identical reflective loads Γ. Then S21 =
+2ΓTK and S11 = Γ(T² + K²), which are paper eqs. 6–7. The phase of S21
+follows the phase of Γ.</td>
+</tr>
+<tr class="even">
+<td><strong>Broadside-coupled coupler</strong></td>
+<td>Two strips/patches on opposite sides of a thin dielectric, coupled
+through an aperture in the ground between them. It gives tight (3 dB),
+wideband coupling in a small area (Abbosh, ref. [30]).</td>
+</tr>
+<tr class="odd">
+<td><strong>Even/odd-mode analysis, Z0e/Z0o, coupling factor
+C</strong></td>
+<td>Standard coupled-line analysis behind eqs. 1–2. C = (Z0e − Z0o)/(Z0e
++ Z0o); 3 dB means C = 0.707.</td>
+</tr>
+<tr class="even">
+<td><strong>Reflective load / transformer stub</strong></td>
+<td>The ~λg/4 stub transforms the varactor impedance. This widens the
+reflection-phase swing (Fig. 3).</td>
+</tr>
+<tr class="odd">
+<td><strong>Varactor (hyperabrupt GaAs)</strong></td>
+<td>MAVR-000120-14110P, Ci 0.14–1.7 pF (12:1 ratio), Rp ≈ 2 Ω. It is
+reverse-biased: cathode to the bias node, anode to ground.</td>
+</tr>
+<tr class="even">
+<td><strong>Bias tee / RF choke / DC block</strong></td>
+<td>Choke (paper 100 nH) feeds DC to the varactor while blocking RF. The
+DC block (paper 39 pF) keeps bias off the RF path.</td>
+</tr>
+<tr class="odd">
+<td><strong>Self-resonant frequency (SRF)</strong></td>
+<td>Above its SRF a real inductor looks capacitive and a real capacitor
+looks inductive. A 0402 100 nH part has SRF ≈ 1–2 GHz and 39 pF ≈ 2 GHz,
+both far below 5–7 GHz (section 9).</td>
+</tr>
+<tr class="even">
+<td><strong>Phase imbalance / in-band phase error</strong></td>
+<td>Deviation of a state’s phase shift across 5–7 GHz from its
+band-average.</td>
+</tr>
+<tr class="odd">
+<td><strong>Microstrip-to-slotline balun</strong></td>
+<td>The back-side microstrip crosses the front-side slot line and ends
+in an open stub. The slot ends in a square cavity (open). Together they
+convert unbalanced feed to balanced dipole drive.</td>
+</tr>
+<tr class="even">
+<td><strong>Endfire printed dipole</strong></td>
+<td>Arms beyond the ground edge; the ground acts as a reflector, so the
+beam points off the board tip (+y board, +z world).</td>
+</tr>
+<tr class="odd">
+<td><strong>Decoupling stub</strong></td>
+<td>The ls strip on the ground edge between neighbouring antennas, which
+reduces mutual coupling (paper “stub between the two antennas”).</td>
+</tr>
+<tr class="even">
+<td><strong>Antiphase pair / difference pattern</strong></td>
+<td>Two identical elements fed 180° apart give a broad pattern with a
+null broadside to the pair axis.</td>
+</tr>
+<tr class="odd">
+<td><strong>Null steering</strong></td>
+<td>Moving that null by a differential phase Δφ = k·d·sinθ_null.</td>
+</tr>
+<tr class="even">
+<td><strong>Null depth</strong></td>
+<td>Pattern level at the null relative to the beam peak in the same
+cut.</td>
+</tr>
+<tr class="odd">
+<td><strong>Rejection at the interferer angle</strong></td>
+<td>What matters in practice: the level <em>at the jammer’s
+direction</em>, not the deepest point of the null anywhere.</td>
+</tr>
+<tr class="even">
+<td><strong>uv-space</strong></td>
+<td>u = sinθ·cosφ, v = sinθ·sinφ. The 2-D nulls are straight lines u =
+u0 and v = v0 (Fig. 12).</td>
+</tr>
+<tr class="odd">
+<td><strong>Beam / null squint</strong></td>
+<td>A phase shifter is not a true-time delay, so a fixed phase setting
+gives a null angle that changes with frequency.</td>
+</tr>
+<tr class="even">
+<td><strong>Axial ratio (AR), LHCP / RHCP</strong></td>
+<td>CP purity and sense. They come from two orthogonal linear components
+in quadrature (90°).</td>
+</tr>
+<tr class="odd">
+<td><strong>Crossed-dipole (turnstile) CP</strong></td>
+<td>Two orthogonal dipole pairs fed 90° apart. Here each “dipole” is a
+pair of opposite wings.</td>
+</tr>
+<tr class="even">
+<td><strong>Embedded element pattern</strong></td>
+<td>One unit’s pattern measured or simulated inside the array with the
+others terminated. It includes mutual coupling and is what you feed into
+the array model for verification.</td>
+</tr>
+<tr class="odd">
+<td><strong>Phase-matched cables, splitter imbalance</strong></td>
+<td>External feed errors that add to the PS errors (ZX10-2-183-S+ 2-way,
+ZN4PD-5R183-S+ 4-way in the paper).</td>
+</tr>
+<tr class="even">
+<td><strong>Bias look-up table (LUT)</strong></td>
+<td>Mapping from wanted null angle and frequency to phase, then
+capacitance, then voltage, per unit.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="verification-of-the-papers-claims-done-here">3. Verification of
+the paper’s claims (done here)</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Claim</th>
+<th>Check</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>PS 145–150° range (analytic)</td>
+<td>Eqs. 3–7 with paper values (Zcl = Zstub = 50 Ω, 3-dB coupler, Lp =
+0, ideal 100 nH / 39 pF)</td>
+<td><strong>114–116°.</strong> For any single-varactor RTPS the limit is
+4·atan(√r) − 180° = <strong>116°</strong> for r = 1.7/0.14. 145° needs ≈
+0.3–0.4 nH series inductance (package + pads), which gives 136–147°
+(<code>rtps_model.py</code>, <code>ns_demo_phase_shifter.m</code>).</td>
+</tr>
+<tr class="even">
+<td>±2° imbalance</td>
+<td>Same model, worst state deviation over 5–7 GHz</td>
+<td>±4° (ideal) to ±6–8° with the inductance that gives 145°. Each
+source defines imbalance differently, so compare like with like in
+HFSS.</td>
+</tr>
+<tr class="odd">
+<td>IL &lt; 1 dB</td>
+<td>Rp = 2 Ω alone</td>
+<td>≈ 0.65–0.70 dB worst state. Substrate and conductor loss come on
+top, so the measured 0.8 ± 0.15 dB is plausible.</td>
+</tr>
+<tr class="even">
+<td>±40° 1-D steering</td>
+<td>Δφ = k·d·sin40° = 116° at 6 GHz, split ±58° over the two PSs</td>
+<td>Feasible. Max steering ±52° at 6 GHz, ±44° at 7 GHz, ±65° at 5 GHz.
+<strong>Both</strong> PSs must be tuned; one alone gives only 0–145°,
+i.e. a one-sided null.</td>
+</tr>
+<tr class="odd">
+<td>Null over 5–7 GHz</td>
+<td>Fixed bias set for 40° at 6 GHz</td>
+<td><strong>Squint:</strong> the null sits at 50.5° at 5 GHz and 33.4°
+at 7 GHz. The bias LUT must be frequency-dependent
+(<code>LUT_1D_null_angle_to_bias.csv</code>).</td>
+</tr>
+<tr class="even">
+<td>&gt; 15 dB null depth</td>
+<td>Monte Carlo, 0.5 dB / 4° rms per channel</td>
+<td>Rejection at the interferer angle: median 26 dB, 10th percentile 20
+dB, null pointing error under 3.5° (90th pct). <strong>Amplitude error
+fills the null; phase error moves it.</strong></td>
+</tr>
+<tr class="odd">
+<td>2-D ±40° in both planes</td>
+<td>Element phases ±αx ± αy must fit in the PS range</td>
+<td>Envelope <strong>|u0| + |v0| ≤ 0.79</strong> at 6 GHz. ±40° in one
+plane is fine, but simultaneous steering is limited (e.g. about 23.6° in
+both).</td>
+</tr>
+<tr class="even">
+<td>CP with Fig. 1(c) colours (U1, U4 red; U2, U3 blue)</td>
+<td>Array model, all wings mounted the same way (board x radially
+outward)</td>
+<td><strong>Opposite wings cancel at broadside</strong>, giving a null
+instead of CP. Opposite wings must radiate co-phased, i.e. be opposite
+types (A / B), giving AR = 0 dB ideal. See <code>SYS_CP_cophased</code>
+in the placement table. Verify the sense mapping (which pair gets +90°
+for RHCP) in HFSS; it depends on numbering and mounting.</td>
+</tr>
+<tr class="odd">
+<td>AR &lt; 2.3 dB</td>
+<td>AR vs quadrature / amplitude error</td>
+<td>10° quadrature error gives 1.5 dB; plus 1 dB amplitude imbalance
+gives 1.8 dB. Consistent with the measurement.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="geometry-stack-up-and-what-had-to-be-assumed">4. Geometry,
+stack-up and what had to be assumed</h2>
+<p><strong>Stack-up (unit and PS boards):</strong></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Layer</th>
+<th>z (mm)</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>TOP (front)</td>
+<td>1.116</td>
+<td>PS input feeder, top patch, top stub chain; dipole arms and
+ground</td>
+</tr>
+<tr class="even">
+<td>RO4003C</td>
+<td>0.608–1.116</td>
+<td>εr 3.55, tanδ 0.0027, 0.508 mm</td>
+</tr>
+<tr class="odd">
+<td>MID (GND)</td>
+<td>0.608</td>
+<td>PS ground with elliptical slot</td>
+</tr>
+<tr class="even">
+<td>RO4450F prepreg</td>
+<td>0.508–0.608</td>
+<td>εr 3.52, tanδ 0.004, 0.1 mm</td>
+</tr>
+<tr class="odd">
+<td>RO4003C</td>
+<td>0–0.508</td>
+<td>0.508 mm</td>
+</tr>
+<tr class="even">
+<td>BOT (back)</td>
+<td>0</td>
+<td>PS output feeder, bottom patch, bottom stub chain; dipole feed
+loop</td>
+</tr>
+</tbody>
+</table>
+<p>The 50 Ω widths are 1.145 mm on TOP (0.508 mm to MID) and 1.37 mm on
+BOT (0.608 mm to MID).</p>
+<p><strong>Dimensions used from the paper:</strong> - <strong>Phase
+shifter (Fig. 2):</strong> L 36, W 25, Fl 13.7, Pl 8.8 (listed as “l”),
+Pw 4.9, Sl 8.8, lstub 9.4, Stl 6.1, h 0.508, prepreg 0.1. - <strong>Stub
+chain:</strong> Stl = 6.1 mm is the line from the patch to the DC block;
+the DC block plus junction pad brings the total to the varactor to lstub
+= 9.4 mm. This reading makes the top (Stl1) and bottom (Stl2) chains
+identical, as the paper’s symmetry statement requires. - <strong>Dipole
+(Fig. 6):</strong> Lant 24, W 25, w1 1.6, w2 1.07, l1 1.65, l2 3.1, l3
+14.2, l4 4.5, l5 4, l6 4.1 (printed as “li”), l7 0.43, gs 0.11.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>Problem in the paper</th>
+<th>What this pack does</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Dipole substrate</td>
+<td>Text says “RT/Duroid 4003C εr = 2.2”. RO4003C is εr 3.55; 2.2 is
+RT/duroid 5880.</td>
+<td>εr 3.55. Supporting evidence: w2 = 1.07 mm is 50 Ω on 0.508 mm εr
+3.55, but would be ≈ 64 Ω on εr 2.2.</td>
+</tr>
+<tr class="even">
+<td>Slot Sw</td>
+<td>Listed Sw = Sl = 8.8 (a circle), but Fig. 2(e) shows an ellipse with
+Sw/Sl ≈ 0.6</td>
+<td>Both variants: <code>PS_slot-paper-8p8x8p8</code> and
+<code>PS_slot-drawing-ratio-8p8x5p3</code>. Simulate both; the one
+giving 3-dB coupling at 6 GHz is the intended one.</td>
+</tr>
+<tr class="odd">
+<td>l6 / ls</td>
+<td>Both appear in Fig. 6; only one “li = 4.1” is listed. The ls strip
+width is not given.</td>
+<td>l6 = 4.1, ls = 4.1, ls width 1.2 [ASSUMED]. ls is the decoupling
+stub, so tune it for minimum S21 between neighbouring units.</td>
+</tr>
+<tr class="even">
+<td>Fig. 6 scale</td>
+<td>The drawing is not to scale (its vertical scale differs from the
+horizontal)</td>
+<td>Dimensions taken from the list, never from the drawing.</td>
+</tr>
+<tr class="odd">
+<td>Feed-loop open end</td>
+<td>Tail length not stated</td>
+<td>Right leg = l5 − l7. Tune for S11 &lt; −10 dB over 5–7 GHz.</td>
+</tr>
+<tr class="even">
+<td>MID ground under the antenna</td>
+<td>Fig. 8 shows the MID ground ending at the dash-dot line (y = 36).
+The dipole then sits on the full 1.116 mm stack with no inner ground, so
+the back feed line is referenced to the front ground 1.116 mm away (≈ 80
+Ω for 1.07 mm).</td>
+<td>Two unit variants: <code>mid-paper</code> (as drawn) and
+<code>mid-extended</code> (MID continues under the dipole ground with
+the same square slot and slot line, stitched by vias). The extended
+version keeps the 1.07 mm feed at ≈ 58 Ω. The dipole must be re-tuned on
+the 3-metal stack either way, because the 0.508 mm standalone dimensions
+do not carry over unchanged.</td>
+</tr>
+<tr class="odd">
+<td>Parts</td>
+<td>100 nH / 39 pF / varactor footprints not given</td>
+<td>0402-class footprints. Check the MACOM land pattern for
+“-14110P”.</td>
+</tr>
+<tr class="even">
+<td>Vias</td>
+<td>Count and diameter not given</td>
+<td>0.3 mm, 3 per connector side, 6 per DC pad. <strong>Through-vias are
+feasible:</strong> every through-via conflict lands on ground copper
+(checked), so no blind vias or sequential lamination are needed.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="boards-in-this-pack">5. Boards in this pack</h2>
+<p>All boards include silkscreen with refdes, port labels, varactor
+polarity bar, bias labels, unit number, type A/B, beam direction and
+polarisation arrow. The
+<code>&lt;ORG&gt; &lt;PROJECT&gt; REV YYYY-WW</code> field is a
+placeholder for your own marking.</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Folder</th>
+<th>Board</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A_without_antenna</td>
+<td>PS standalone, 3 versions (slot per text, slot per drawing, resistor
+bias)</td>
+<td>2-port VNA characterisation: S21 phase vs bias, IL, RL; builds the
+LUT.</td>
+</tr>
+<tr class="even">
+<td>B_antenna_only</td>
+<td>Dipole on 0.508 mm, 2 layers</td>
+<td>S11 and pattern of the bare antenna (paper Fig. 7).</td>
+</tr>
+<tr class="odd">
+<td>C_units_with_antenna</td>
+<td>Unit A / B × MID paper / extended</td>
+<td>The integrated element (Fig. 8).</td>
+</tr>
+<tr class="even">
+<td>D_system_1D_2units</td>
+<td>Coplanar panel U1 (A) + U2 (B), plus top-view assembly drawing</td>
+<td>1-D null steering (Fig. 8).</td>
+</tr>
+<tr class="odd">
+<td>E_system_2D_4units</td>
+<td>Two coplanar rows (front: U4 A, U3 B; back: U2 B, U1 A) 25 mm apart,
+plus assembly drawing</td>
+<td>2-D null steering (Fig. 11).</td>
+</tr>
+<tr class="even">
+<td>F_system_CP_4units</td>
+<td>Four wing boards, plus assembly drawings for both type
+assignments</td>
+<td>CP (Fig. 13).</td>
+</tr>
+<tr class="odd">
+<td>G_feed_dividers</td>
+<td>Wilkinson 1:2 and 1:4, 6 GHz, 25 mm output pitch, 100 Ω 0402</td>
+<td>Integrated, phase-equal replacement for the external splitters.</td>
+</tr>
+<tr class="even">
+<td>H_fab_panel</td>
+<td>U1–U4 + PS coupon + dipole coupon, fiducials</td>
+<td>One fabrication order covering all builds and test coupons.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Supporting files:</strong> -
+<code>assembly_3D_placement.csv</code>: world position and azimuth of
+every board for each system. - <code>BOM_and_placement.csv</code>:
+refdes, value, side, x/y, polarity. - <code>DRC_report.txt</code>:
+copper gaps, thin features, silkscreen over copper.</p>
+<p><strong>DXF layers:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Layer</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>OUTLINE</td>
+<td>board edge</td>
+</tr>
+<tr class="even">
+<td>TOP / MID / BOT</td>
+<td>merged copper</td>
+</tr>
+<tr class="odd">
+<td>*_CUTOUT</td>
+<td>holes, to subtract in HFSS</td>
+</tr>
+<tr class="even">
+<td>VIA</td>
+<td>drill circles</td>
+</tr>
+<tr class="odd">
+<td>PORT</td>
+<td>port reference</td>
+</tr>
+<tr class="even">
+<td>SILK_TOP / SILK_BOT</td>
+<td>silkscreen</td>
+</tr>
+<tr class="odd">
+<td>ASSY_TOP / ASSY_BOT</td>
+<td>component bodies</td>
+</tr>
+<tr class="even">
+<td>FAB</td>
+<td>stack-up notes</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="ports-feeds-and-bias-with-and-without-antenna">6. Ports, feeds
+and bias: with and without antenna</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test</th>
+<th>Port definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>PS alone</td>
+<td>J1 edge SMA on TOP at y = 0 (input), J2 edge SMA on BOT at y = 36
+(output). In HFSS: lumped ports, a 0.508 mm (TOP–MID) and a 0.608 mm
+(BOT–MID) sheet. Prefer wave ports with a de-embedded launch for final
+numbers.</td>
+</tr>
+<tr class="even">
+<td>Dipole alone</td>
+<td>Edge SMA at y = 0: centre pin on the BOT feeder, body on the front
+ground.</td>
+</tr>
+<tr class="odd">
+<td>Unit</td>
+<td>Only J1 (TOP, y = 0). The PS output continues directly into the
+dipole feed on BOT.</td>
+</tr>
+<tr class="even">
+<td>1-D</td>
+<td>U1 and U2 inputs from a 2-way divider through phase-matched cables
+(or the Wilkinson board). Two bias voltages, one per unit.</td>
+</tr>
+<tr class="odd">
+<td>2-D / CP</td>
+<td>4-way divider, four bias voltages.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Bias wiring:</strong> - Each unit has VB1 (TOP) and VB2 (BOT)
+at the same board edge. Tie them together: both varactors of a PS must
+see the same voltage, which is the paper’s “single bias per phase
+shifter”. - Add 100 pF + 100 nF decoupling at the connector. - Route
+bias wires along the board edge, perpendicular to the E-plane and away
+from the antennas. Long wires near a dipole re-radiate and fill nulls;
+resistive or ferrite-loaded wires are best.</p>
+<hr />
+<h2 id="hfss-workflow">7. HFSS workflow</h2>
+<ol type="1">
+<li><p><strong>Import.</strong> Import the DXF and map TOP to z = 1.116,
+MID to z = 0.608 and BOT to z = 0. Subtract each *_CUTOUT from its
+layer, assign PerfE (finite-conductivity Cu in the final run), and add
+the three dielectric boxes. Model vias as PEC cylinders.</p></li>
+<li><p><strong>Components as lumped RLC sheets</strong> across the pad
+gaps (positions in <code>BOM_and_placement.csv</code>):</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Part</th>
+<th>Model</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Varactor</td>
+<td>Series Rp = 2 Ω, Lp = 0.35 nH [assumed], C = variable
+<code>Cv</code></td>
+</tr>
+<tr class="even">
+<td>DC block</td>
+<td>Series 39 pF + 0.4 nH</td>
+</tr>
+<tr class="odd">
+<td>Choke</td>
+<td>Parallel 100 nH ‖ 0.11 pF (SRF 1.5 GHz) or the vendor S2P;
+alternatively the recommended 10 kΩ</td>
+</tr>
+</tbody>
+</table>
+<p>Better still, import the vendor S2P/SPICE models via Circuit
+co-simulation.</p></li>
+<li><p><strong>Phase shifter.</strong> Parametric sweep of
+<code>Cv</code> from 0.14 to 1.7 pF (both varactors equal) over 5–7 GHz.
+Extract ∠S21 relative to the 1.7 pF state, |S21| and |S11|. Compare with
+<code>rtps_cases.png</code> and the paper’s Fig. 5.</p></li>
+<li><p><strong>Dipole.</strong> Air box with ≥ λ/4 at 5 GHz (15 mm) of
+clearance, radiation boundary (or PML), 5–7 GHz sweep. Check S11 &lt;
+−10 dB and broad endfire beam around 5 dBi (paper Fig. 7).</p></li>
+<li><p><strong>Systems.</strong> Place the boards from
+<code>assembly_3D_placement.csv</code>, or run
+<code>04_hfss/hfss_ns_build.py 1D|2D|CP|CPcophased</code>. Drive all
+ports with 1 W at 0° (an ideal splitter). Set each unit’s
+<code>Cv</code> from the LUT.</p></li>
+<li><p><strong>Verification sequence:</strong></p>
+<ol type="1">
+<li>Both PSs at mid-range should put the null at broadside.</li>
+<li>Step to the LUT values for ±25° and ±40° at 5, 6 and 7 GHz.</li>
+<li>Read the null angle, depth and gain (paper Fig. 10).</li>
+<li>2-D: plot the uv map (paper Fig. 12).</li>
+<li>CP: first excite <strong>one opposite pair only</strong> and confirm
+co-phasing at broadside, then add the 90° pair and read AR and sense
+(paper Figs. 14–15).</li>
+</ol></li>
+<li><p><strong>Embedded patterns.</strong> Export each unit’s embedded
+pattern (others terminated) to CSV.
+<code>array_models.load_element_csv()</code> replaces the analytic
+element, so the Python and MATLAB array results become
+verification-grade, including mutual coupling.</p></li>
+</ol>
+<hr />
+<h2 id="python-and-matlab">8. Python and MATLAB</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>File</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>02_python/rtps_model.py</code></td>
+<td>Eqs. 1–7 RTPS model, varactor C(V), bias-network parasitics (cases
+A–D), phase-to-C-to-V LUT. Writes <code>rtps_cases.png</code>.</td>
+</tr>
+<tr class="even">
+<td><code>02_python/array_models.py</code></td>
+<td>1-D / 2-D / CP systems, steering limits, squint, uv maps, CP
+co-phasing check, AR sensitivity, Monte Carlo. Writes results/<em>.png
+and </em>.csv.</td>
+</tr>
+<tr class="odd">
+<td><code>02_python/nsgeom.py</code>, <code>build_boards.py</code></td>
+<td>Single geometry source; regenerates every DXF, preview, BOM, DRC and
+assembly file.</td>
+</tr>
+<tr class="even">
+<td><code>03_matlab/ns_demo_phase_shifter.m</code></td>
+<td>MATLAB copy of the RTPS study. Numbers identical to Python (checked
+in Octave 8.4).</td>
+</tr>
+<tr class="odd">
+<td><code>03_matlab/ns_demo_system.m</code></td>
+<td>MATLAB copy of the system study: null placement, squint, 2-D
+envelope, CP check, Monte Carlo.</td>
+</tr>
+<tr class="even">
+<td><code>04_hfss/hfss_ns_build.py</code></td>
+<td>PyAEDT build of PS / dipole / unit / 1-D / 2-D / CP with variables
+per varactor. Not executed here (no licence).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Equation map:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Paper</th>
+<th>Python</th>
+<th>MATLAB</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>eqs. 1–2</td>
+<td><code>coupler_TK</code></td>
+<td>inside <code>ns_rtps</code></td>
+</tr>
+<tr class="even">
+<td>eq. 3</td>
+<td><code>load_gamma</code></td>
+<td><code>ns_rtps</code> (G)</td>
+</tr>
+<tr class="odd">
+<td>eq. 4</td>
+<td><code>tline_zin</code></td>
+<td><code>ns_rtps</code> (Zin)</td>
+</tr>
+<tr class="even">
+<td>eq. 5</td>
+<td><code>Z_varactor</code></td>
+<td><code>ns_rtps</code> (Zv)</td>
+</tr>
+<tr class="odd">
+<td>eqs. 6–7</td>
+<td><code>rtps_S</code></td>
+<td><code>ns_rtps</code></td>
+</tr>
+<tr class="even">
+<td>Δφ = k·d·sinθ (1-D)</td>
+<td><code>phases_1d</code></td>
+<td><code>ns_phases_1d</code></td>
+</tr>
+<tr class="odd">
+<td>2-D</td>
+<td><code>phases_2d</code></td>
+<td><code>ns_phases_2d</code></td>
+</tr>
+<tr class="even">
+<td>AR</td>
+<td><code>axial_ratio_db</code></td>
+<td><code>ns_axial_ratio</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="important-design-steps-the-paper-does-not-cover">9. Important
+design steps the paper does not cover</h2>
+<ol type="1">
+<li><strong>Component SRF.</strong>
+<ul>
+<li><strong>Choke:</strong> a 0402 100 nH part resonates at about 1–2
+GHz, so at 5–7 GHz it is a small capacitor (≈ 0.1 pF) across the
+varactor. That reduces the effective C ratio.</li>
+<li><strong>DC block:</strong> 39 pF resonates near 2 GHz, so at 6 GHz
+it looks like +14 Ω of series inductance. Together with the pads this is
+what makes 145° possible at all (case C).</li>
+<li><strong>Recommendation:</strong> co-simulate with the vendor
+S-parameter files, or bias through a 10 kΩ resistor (the varactor draws
+only nA). A resistor has no SRF problem; it increases the range in the
+model (case D) but also the imbalance. Choose by simulation.</li>
+</ul></li>
+<li><strong>The varactor C(V) curve and its spread.</strong> Use the
+datasheet table, not the fitted model in this pack, and measure every PS
+coupon. The LUT is per unit, per frequency.</li>
+<li><strong>Temperature.</strong> Varactor capacitance drifts with
+temperature, so the null angle and depth drift too. Include a
+calibration or temperature-compensation step if the null must hold over
+temperature.</li>
+<li><strong>Linearity under interference.</strong> The interferer you
+want to null passes through each phase shifter at full power
+<em>before</em> the cancellation at the combiner. Strong signals
+self-bias the varactors, causing phase modulation and IMD that fill the
+null. Check P1dB / IIP3 of the PS at the expected interferer level;
+back-to-back varactors are the usual fix.</li>
+<li><strong>Amplitude vs state.</strong> The PS loss changes by up to ≈
+0.6 dB with state. Mismatched states in the two arms fill the null (≈
+0.5 dB rms caps rejection near 25 dB). Choose LUT pairs that also
+equalise |S21|, or add an amplitude trim.</li>
+<li><strong>Frequency-dependent LUT.</strong> The null squints by ±8°
+over 5–7 GHz for a fixed bias.</li>
+<li><strong>2-D steering envelope.</strong> |u0| + |v0| ≤ 0.79 with a
+143° PS. State this as the specification, not “±40° in both
+planes”.</li>
+<li><strong>CP co-phasing.</strong> Opposite wings must add at
+broadside; check single pairs first and confirm the sense mapping.</li>
+<li><strong>External feed errors.</strong> Splitter imbalance (typically
+±0.3 dB / ±3°) and cable phase add directly to the null error budget.
+Use phase-matched cables (or the Wilkinson boards in G_feed_dividers)
+and calibrate them out.</li>
+<li><strong>Mutual coupling and decoupling stub.</strong> Edge units
+have different embedded patterns. Verify with embedded patterns, not the
+isolated element.</li>
+<li><strong>Stack-up reality.</strong> RO4003C design Dk is 3.55, while
+the process (clamped stripline) value is 3.38; the prepreg adds about
+0.1 mm. The slot line gs = 0.11 mm is at the limit of standard etching,
+so specify ±0.02 mm or widen it and re-tune.</li>
+<li><strong>MID ground termination</strong> under the antenna and the
+feed-reference transition at y = 36 (section 4).</li>
+<li><strong>Bias-line radiation, ESD, decoupling</strong> (section
+6).</li>
+<li><strong>Measurement.</strong>
+<ul>
+<li>Null-depth measurement needs ≥ 40 dB chamber dynamic range and ≤
+0.5° angular resolution near the null.</li>
+<li>Use uv raster scans for 2-D.</li>
+<li>Measure CP with a rotating linear source or dual-pol probe.</li>
+<li>Measure realized gain with a reference horn (paper: 4.6–8.1
+dBi).</li>
+</ul></li>
+</ol>
+<hr />
+<h2 id="researchers-verification-checklist">10. Researcher’s
+verification checklist</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Step</th>
+<th>Pass criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. HFSS: PS alone, both slot variants, Cv sweep</td>
+<td>Coupler ≈ 3 dB at 6 GHz; range ≥ 140°; IL ≤ 1 dB; RL ≥ 15 dB over
+5–7 GHz</td>
+</tr>
+<tr class="even">
+<td>2. Fab + VNA: PS coupon</td>
+<td>∠S21(V) table at 5/6/7 GHz → per-unit LUT</td>
+</tr>
+<tr class="odd">
+<td>3. HFSS: dipole alone (0.508 mm), then inside the unit (both MID
+variants)</td>
+<td>S11 &lt; −10 dB over 5–7 GHz; endfire gain ≈ 5 dBi</td>
+</tr>
+<tr class="even">
+<td>4. HFSS: 1-D with LUT states</td>
+<td>Null at 0, ±25, ±40° ± 3°; depth ≥ 15 dB at 5/6/7 GHz</td>
+</tr>
+<tr class="odd">
+<td>5. HFSS: 2-D</td>
+<td>Null planes in uv; depth ≥ 10 dB; states inside the |u0| + |v0|
+envelope</td>
+</tr>
+<tr class="even">
+<td>6. HFSS: CP (co-phased)</td>
+<td>AR ≤ 2.3 dB at broadside over 5–7 GHz; both senses</td>
+</tr>
+<tr class="odd">
+<td>7. Python/MATLAB with HFSS embedded patterns</td>
+<td>Network model agrees with full-wave within 1 dB / 2°</td>
+</tr>
+<tr class="even">
+<td>8. Chamber</td>
+<td>Patterns vs simulation; null pointing ≤ 3°; realized gain 4.6–8.1
+dBi</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="paper-targets">11. Paper targets</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>Paper</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>PS</td>
+<td>145° range (sim), ±2° imbalance, IL 0.8 ± 0.15 dB, RL &gt; 20 dB
+(analytic), 5–7 GHz (33.3%)</td>
+</tr>
+<tr class="even">
+<td>Dipole</td>
+<td>S11 &lt; −10 dB 5–7 GHz, realized gain ≈ 5 dB</td>
+</tr>
+<tr class="odd">
+<td>1-D</td>
+<td>±40°, depth &gt; 15 dB, gain 4.6–7.8 dBi, sim/meas null shift &lt;
+±3°</td>
+</tr>
+<tr class="even">
+<td>2-D</td>
+<td>±40° in xz and yz, depth &gt; 10 dB, gain 6.1–8.1 dBi</td>
+</tr>
+<tr class="odd">
+<td>CP</td>
+<td>AR &lt; 2.3 dB (meas.) 5–7 GHz, LHCP and RHCP</td>
+</tr>
+<tr class="even">
+<td>Varactor biasing</td>
+<td>1-D: 4 varactors, 2 voltages; 2-D / CP: 8 varactors, 4 voltages</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

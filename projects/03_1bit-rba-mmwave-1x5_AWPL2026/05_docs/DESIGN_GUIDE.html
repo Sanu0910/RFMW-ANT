@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>1-bit RBA Guide</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">body{font-family:"DejaVu Sans",Arial,sans-serif;font-size:10.2pt;line-height:1.45;color:#1a1a1a;max-width:1000px;margin:24px auto;padding:0 18px}
+h1{color:#0B1E33;border-bottom:3px solid #00C8FF;padding-bottom:6px;font-size:19pt}
+h2{color:#0F2942;border-left:6px solid #FF6B35;padding-left:8px;margin-top:26px;font-size:13.5pt}
+table{border-collapse:collapse;width:100%;margin:10px 0;font-size:9pt;page-break-inside:avoid}
+th{background:#0F2942;color:#fff;padding:5px 7px;text-align:left}
+td{border:1px solid #c9d3de;padding:4px 7px;vertical-align:top}
+tr:nth-child(even) td{background:#f3f7fb}
+code{background:#eef3f8;padding:1px 4px;border-radius:3px;font-size:8.6pt}
+</style>
+</head>
+<body>
+<h1 id="compact-1-bit-reconfigurable-15-mm-wave-array-designer-verification-guide">Compact
+1-Bit Reconfigurable 1×5 mm-Wave Array: Designer &amp; Verification
+Guide</h1>
+<p>Companion to: J. Jiao, Y. Wang, F. Xu, “Compact Low-Cost 1-Bit
+Reconfigurable Wide Beam-Steering mm-Wave Array for Mobile Terminals”,
+IEEE Antennas Wireless Propag. Lett., vol. 25, no. 6, Jun. 2026, DOI
+10.1109/LAWP.2026.3686232.</p>
+<hr />
+<h2 id="the-design-in-one-page">1. The design in one page</h2>
+<ul>
+<li><strong>Element (RCSPA):</strong> a patch on M1 sits over a
+<em>coupled shorted patch</em> on M2, which is shorted to ground by a
+row of pins.
+<ul>
+<li>The element resonates at a quarter wavelength, so it is small (2.4 ×
+3.1 mm) and its E-plane beam is very wide.</li>
+<li>It is fed through a slot in the ground (M3) by a microstrip on
+M4.</li>
+</ul></li>
+<li><strong>1-bit phase:</strong> on M4 the feed line ends in a T
+between two PIN diodes (SW1, SW2) that drive a U-shaped loop crossing
+the slot.
+<ul>
+<li>SW1 ON: current crosses the slot in +x, which is 0°.</li>
+<li>SW2 ON: current crosses in −x, which is −180°.</li>
+<li>One bias voltage per element picks the state: +V turns SW1 on, −V
+turns SW2 on.</li>
+</ul></li>
+<li><strong>Array:</strong> 5 elements at D = 4.5 mm in x, covering
+25–29 GHz.
+<ul>
+<li>With only 0°/180° per element, a plain 1-bit array has quantisation
+grating lobes.</li>
+<li>The fix is a <strong>fixed preload phase</strong> per element
+(55.78°, −5.79°, −73.37°, 0°, −111.72°, found by PSO). It is built into
+the feed lines of a 1:5 divider.</li>
+<li>The preload breaks the periodic quantisation error, so 7 beams (0,
+±20, ±40, ±60°) reach −57° to +55° with SLL around −5 dB.</li>
+</ul></li>
+<li><strong>Claimed performance:</strong> 25–29 GHz; peak gain 9.8 dBi
+simulated, 9.23 dBi measured; XPL &lt; −13.5 dB; size 1.87λ0 ×
+0.66λ0.</li>
+</ul>
+<hr />
+<h2 id="terminology">2. Terminology</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Meaning here</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>RBA, reconfigurable bit array</strong></td>
+<td>An array where each element has only 2ⁿ discrete phase states set by
+switches instead of a continuous phase shifter</td>
+</tr>
+<tr class="even">
+<td><strong>1-bit</strong></td>
+<td>Two states per element, 0° and 180°</td>
+</tr>
+<tr class="odd">
+<td><strong>RCSPA</strong></td>
+<td>Reconfigurable coupled shorted patch antenna: the element</td>
+</tr>
+<tr class="even">
+<td><strong>Shorted (quarter-wave) patch</strong></td>
+<td>A patch shorted along one edge resonates at λg/4. It is half the
+size of a normal patch and has one radiating edge, so its E-plane
+pattern is nearly hemispherical. That width is what lets the array scan
+to ±55–60°.</td>
+</tr>
+<tr class="odd">
+<td><strong>Aperture (slot) coupling</strong></td>
+<td>The feed line on M4 couples to the patch through a slot in the M3
+ground. The ground separates the radiator from the feed and switch
+circuitry.</td>
+</tr>
+<tr class="even">
+<td><strong>Feed-direction (polarity) switching</strong></td>
+<td>Reversing which end of the loop is driven reverses current across
+the slot, giving a frequency-independent 180°. This is why the paper’s
+state difference stays at −176° to −178° over the band (Fig. 4).</td>
+</tr>
+<tr class="odd">
+<td><strong>PIN diode ON / OFF model</strong></td>
+<td>MA4AGFCP910 (AlGaAs flip-chip). ON = 5.2 Ω + 0.2 nH; OFF = 0.018 pF
++ 0.2 nH (paper).</td>
+</tr>
+<tr class="even">
+<td><strong>Bias tee</strong></td>
+<td>100 Ω resistor plus a high-impedance line with a <strong>radial
+stub</strong> (wideband RF short at the tap) feeds DC. The <strong>3.6
+pF DC block</strong> in the feed line keeps bias out of the RF
+source.</td>
+</tr>
+<tr class="odd">
+<td><strong>DC return / shorting via</strong></td>
+<td>Loop-to-ground thin line and via. It closes the diode DC
+circuit.</td>
+</tr>
+<tr class="even">
+<td><strong>Phase quantisation error</strong></td>
+<td>Difference between the ideal progressive phase and the nearest
+available 1-bit phase. If periodic, it radiates <strong>quantisation
+(grating) lobes</strong>.</td>
+</tr>
+<tr class="odd">
+<td><strong>Fixed-phase preloading</strong></td>
+<td>Constant, element-specific phase offsets (here in the divider line
+lengths) that de-correlate the quantisation error. Related to “phase
+randomisation” (ref. [27] of the paper).</td>
+</tr>
+<tr class="even">
+<td><strong>Particle swarm optimisation (PSO)</strong></td>
+<td>Global optimiser used to choose the preload values.</td>
+</tr>
+<tr class="odd">
+<td><strong>Beam code</strong></td>
+<td>The 5-bit pattern of states, e.g. 00011 for +40°. Each code and its
+complement give the <em>same</em> pattern, so every beam has two
+equivalent codes.</td>
+</tr>
+<tr class="even">
+<td><strong>Scan loss</strong></td>
+<td>Gain drop versus broadside; the paper reports &lt; 3.5 dB within
+±60°.</td>
+</tr>
+<tr class="odd">
+<td><strong>SLL / XPL</strong></td>
+<td>Side-lobe level / cross-polarisation level</td>
+</tr>
+<tr class="even">
+<td><strong>Beam squint</strong></td>
+<td>Beam angle moving with frequency. Element spacing in wavelengths
+changes with f while the 1-bit and preload phases do not.</td>
+</tr>
+<tr class="odd">
+<td><strong>Corporate 1:5 divider</strong></td>
+<td>Tree of T-junctions with quarter-wave transformers giving equal
+power to five outputs</td>
+</tr>
+<tr class="even">
+<td><strong>Unequal T-junction</strong></td>
+<td>A branch carrying power fraction p uses a λg/4 line of Zq = √(Z0 ·
+Z0/p).</td>
+</tr>
+<tr class="odd">
+<td><strong>Embedded element pattern</strong></td>
+<td>One element’s pattern inside the array with the others terminated.
+Use it in the array model for verification.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="verification-of-the-papers-claims-done-here">3. Verification of
+the paper’s claims (done here)</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Claim</th>
+<th>Check</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>D = 4.5 mm = 0.375λ0</td>
+<td>λ0 at 26.5 GHz is 11.31 mm</td>
+<td>4.5 mm is <strong>0.398λ0 at 26.5 GHz</strong>; 0.375λ0 holds at
+25.0 GHz. The design and results are unaffected; only the quoted ratio
+is off.</td>
+</tr>
+<tr class="even">
+<td>Size “1.87λ0 × 0.66λ0” and “1.87λ0 × 1.36λ0”</td>
+<td>ALg × AWg = 32 × 12 mm at 26.5 GHz = 2.83λ0 × 1.06λ0</td>
+<td>The two quoted sizes disagree, and neither matches 32 × 12 mm at
+26.5 GHz. They probably refer to different regions (patch-row span vs
+board). Confirm against your own board.</td>
+</tr>
+<tr class="odd">
+<td>7 beams with the PSO preload</td>
+<td>Array model, element E-plane fitted to Fig. 3a (−1.7 dB at 60°, −4
+dB at 90°), best of 32 codes</td>
+<td>Peaks −1.2 / +20.0 / −22.5 / +35.8 / −38.8 / +53.8 / −57.0° vs paper
+−1 / 19 / −21 / 38 / −41 / 56 / −54°. 0°/±20°/±40° SLL within about 2
+dB. <strong>±60° SLL −3.5 to −3.8 dB vs paper −4.7 to −5.0</strong>: the
+isolated-element model misses mutual coupling, so check with embedded
+patterns in HFSS.</td>
+</tr>
+<tr class="even">
+<td>Wide scanning needs the shorted patch</td>
+<td>Element-width sweep</td>
+<td>+60° beam reaches 56° only with a hemispherical element (≤ 2–4 dB
+taper at 90°); a normal patch (≈ 12 dB taper) stops at about 46°.</td>
+</tr>
+<tr class="odd">
+<td>Grating-lobe suppression</td>
+<td>No-preload case</td>
+<td>Without preload, every steered beam has an <strong>equal-level
+mirror lobe</strong> (SLL = 0 dB; e.g. +21.5° and −21.5° at once), the
+classic 1-bit quantisation lobe. With the preload the mirror lobe drops
+to −5…−9 dB (<code>scan_patterns_26p5GHz.png</code>).</td>
+</tr>
+<tr class="even">
+<td>PSO is reproducible</td>
+<td>Own PSO (24 particles, 50 iterations)</td>
+<td>Found a different preload set (−29.3, 1.1, 84.5, 0, 150.8°) with
+worst SLL −5.1 dB and pointing error ≤ 4°. The solution is <strong>not
+unique</strong>, so the paper’s numbers are one of many.</td>
+</tr>
+<tr class="odd">
+<td>Band 25–29 GHz</td>
+<td>Beam squint of fixed codes</td>
+<td>The +60° code moves from 57° (25 GHz) to 48.5° (29 GHz). Plan the
+code table per sub-band or accept ±5° pointing.</td>
+</tr>
+<tr class="even">
+<td>~180° state difference</td>
+<td>Loop reversal</td>
+<td>Frequency-independent by construction. The −2° to −4° error (Fig. 4)
+costs &lt; 0.5 dB SLL (Monte Carlo).</td>
+</tr>
+<tr class="odd">
+<td>Preload tolerance</td>
+<td>Monte Carlo</td>
+<td>SLL (90th pct, all beams) degrades from −3.6 dB at 0° rms preload
+error to −3.0 dB at 10° and −1.8 dB at 15°. <strong>10° at 26.5 GHz is
+only ≈ 0.19 mm of line</strong>, so etch and εr tolerance matter.</td>
+</tr>
+<tr class="even">
+<td>Divider widths</td>
+<td>Recomputed from first principles</td>
+<td>50 Ω = 0.458 mm (paper w1 = 0.44); 79 Ω (2/5 branch) = 0.198 mm
+(paper w2 = 0.2); 61 Ω (2/3 branch) = 0.325 mm (paper w4 = w5 = 0.33).
+This confirms the split tree 2/5–3/5, 1/2, 1/3–2/3, 1/2.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="geometry-and-assumptions">4. Geometry and assumptions</h2>
+<p><strong>Stack-up:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Layer</th>
+<th>z (mm)</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>M1</td>
+<td>0.965</td>
+<td>patch</td>
+</tr>
+<tr class="even">
+<td>Sub.1</td>
+<td>0.457–0.965</td>
+<td>RT5880, εr 2.2, 0.508 mm</td>
+</tr>
+<tr class="odd">
+<td>M2</td>
+<td>0.457</td>
+<td>coupled shorted strip</td>
+</tr>
+<tr class="even">
+<td>Sub.2</td>
+<td>0.203–0.457</td>
+<td>RT5880, 0.254 mm; pins M2 → M3</td>
+</tr>
+<tr class="odd">
+<td>M3</td>
+<td>0.203</td>
+<td>ground with slot</td>
+</tr>
+<tr class="even">
+<td>Sub.3</td>
+<td>0–0.203</td>
+<td>RO4003C, εr 3.55, 0.203 mm</td>
+</tr>
+<tr class="odd">
+<td>M4</td>
+<td>0</td>
+<td>feed, loop, diodes, bias</td>
+</tr>
+</tbody>
+</table>
+<p><strong>From the paper:</strong> - Element: Lg = Wg = 10, Lp 2.4, Wp
+3.1, Sl 2.4, Sw 0.2, Ls 0.6, Dp 0.2, Dv 0.2, l1 0.9, l2 0.5, l3 2.4, w2
+0.45, w3 2, w4 2.8. - Array: D 4.5, ALg 32, AWg 12. - Parts: R 100 Ω, C
+3.6 pF. - Divider widths: 0.44 / 0.2 / 0.1 / 0.33 / 0.33 / 0.46.</p>
+<p><strong>Assumed (all are parameters in
+<code>02_python/rbageom.py</code>):</strong></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>Problem</th>
+<th>Used</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>w1 (feed width)</td>
+<td>Printed “w1 =” with no value</td>
+<td>50 Ω on 0.203 RO4003C = 0.458 mm (the paper’s divider w1 = 0.44
+agrees)</td>
+</tr>
+<tr class="even">
+<td>Ls/Ws</td>
+<td>Text says “Ls × Ws = 2.4 × 0.6” but the figure shows Ls = 0.6 as the
+narrow side</td>
+<td>0.6 (x) × 2.4 (y)</td>
+</tr>
+<tr class="odd">
+<td>Slot and pin position</td>
+<td>Not dimensioned</td>
+<td>Pins at x = −0.75 inside the M2 strip; slot centre at x = −0.35
+(just right of the pins, under the patch). <strong>Tune the slot offset
+in HFSS for S11.</strong></td>
+</tr>
+<tr class="even">
+<td>Loop</td>
+<td>w3 = 2 and w4 = 2.8 are drawn on the loop but cannot be line widths
+in a 4.5 mm cell</td>
+<td>Read as loop height (2.0) and outer width (2.8); loop line 0.2 mm.
+<strong>Tune l2 / w3 / w4 for the two-state S11 overlap (24.8–28
+GHz).</strong></td>
+</tr>
+<tr class="odd">
+<td>l1, l2, l3</td>
+<td>Fig. 1d annotations are ambiguous</td>
+<td>l1 = 0.9 used as T-to-DC-block distance. Diode gaps 0.25 mm centred
+at ±0.45 mm (flip-chip footprint; check the MACOM land pattern).</td>
+</tr>
+<tr class="even">
+<td>Board split</td>
+<td>Pins M2 → M3 cross the antenna/feed board interface (the paper
+assembles two boards with plastic screws)</td>
+<td>Split DXFs provided as in the paper, <strong>plus</strong> a note
+recommending a single laminated build. A pressure-contact pin is
+unreliable at 26 GHz.</td>
+</tr>
+<tr class="odd">
+<td>Divider layout</td>
+<td>Fig. 6c gives widths and some lengths but not a full layout</td>
+<td>Topology reconstructed (widths agree); preload realised by
+serpentines computed with ε_eff per segment. Achieved preload equals
+target in the model; <strong>re-check in HFSS</strong>, because junction
+parasitics shift phase by a few degrees.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="boards">5. Boards</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Folder</th>
+<th>Board</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A_element_alone</td>
+<td>10 × 10 element, 1 port</td>
+<td>Element S11 in both states, E/H patterns, state phase difference
+(paper Figs. 2–4)</td>
+</tr>
+<tr class="even">
+<td>B_array_without_divider</td>
+<td>32 × 12, 5 ports</td>
+<td>Array S-parameters and coupling (Fig. 5c); apply preload and codes
+in post-processing (Fig. 5d)</td>
+</tr>
+<tr class="odd">
+<td>C_array_with_divider</td>
+<td>32 × 31, 1 port, 1:5 divider with preload</td>
+<td>Full system (Figs. 6–8)</td>
+</tr>
+<tr class="even">
+<td>D_split_boards_for_fab</td>
+<td>Antenna board (M1/M2/pins) and feed board (M3/M4/divider)</td>
+<td>Two-board build as in the paper</td>
+</tr>
+</tbody>
+</table>
+<p>Silkscreen and assembly are on M4, the component side: - C1–C5,
+R1–R5, SW1/SW2 per element, with cathode bars and V1–V5 pads - the state
+legend: STATE0: V &gt; 0 (SW1 ON, 0°); STATE1: V &lt; 0 (SW2 ON, −180°)
+- per-element preload values and the scan direction</p>
+<p>Element numbers and the title are on top. Supporting files are
+<code>BOM_and_placement.csv</code>, <code>DRC_report.txt</code> and
+<code>C_array_with_divider/divider_design_table.csv</code>.</p>
+<hr />
+<h2 id="component-values-for-the-first-simulations">6. Component values
+for the first simulations</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Part</th>
+<th>HFSS lumped RLC</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>PIN diode ON</td>
+<td>Series R + L</td>
+<td>5.2 Ω, 0.2 nH</td>
+</tr>
+<tr class="even">
+<td>PIN diode OFF</td>
+<td>Series C + L</td>
+<td>0.018 pF, 0.2 nH</td>
+</tr>
+<tr class="odd">
+<td>DC block</td>
+<td>Series C (+ ESL)</td>
+<td>3.6 pF (+ 0.15 nH for 0201)</td>
+</tr>
+<tr class="even">
+<td>Bias resistor</td>
+<td>Series R</td>
+<td>100 Ω</td>
+</tr>
+<tr class="odd">
+<td>Ports</td>
+<td>Lumped, M4 line to M3</td>
+<td>50 Ω</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Codes</strong> (bit n = element n, 0 = SW1 ON, 1 = SW2 ON;
+each code’s complement is equivalent):</p>
+<table>
+<thead>
+<tr class="header">
+<th>Beam</th>
+<th>0°</th>
+<th>+20°</th>
+<th>−20°</th>
+<th>+40°</th>
+<th>−40°</th>
+<th>+60°</th>
+<th>−60°</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Code</td>
+<td>00101</td>
+<td>00010</td>
+<td>00110</td>
+<td>00011</td>
+<td>01001</td>
+<td>01100</td>
+<td>10111</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Bias:</strong> V_n = ±(V_F + I·R). With V_F ≈ 1.4 V (check
+the datasheet) and 10 mA through 100 Ω, that is <strong>≈ ±2.4
+V</strong>.</p>
+<hr />
+<h2 id="hfss-steps-and-plots-to-check">7. HFSS steps and plots to
+check</h2>
+<ol type="1">
+<li><strong>Element.</strong> Build with
+<code>04_hfss/hfss_rba_build.py element</code> or import
+<code>A_element_alone</code>.
+<ul>
+<li>Map layers to z per section 4. Subtract M3_SLOT from M3, add the PEC
+pins, use a vertical lumped port at the feed end, radiation box ≥ 3 mm,
+24–30 GHz.</li>
+<li><strong>Plots:</strong>
+<ul>
+<li>S11 for state 0 and state 1: both below −10 dB over 24.8–28 GHz
+(Fig. 2).</li>
+<li>E- and H-plane gain: about 4.6 dBi; E-plane only about 4 dB down at
+±90° (Fig. 3).</li>
+<li>∠S21-equivalent: the phase of rE at broadside for the two states
+should differ by 180° ± 4° (Fig. 4).</li>
+</ul></li>
+</ul></li>
+<li><strong>Array, 5 ports.</strong>
+<ul>
+<li><strong>Plots:</strong> Sii below −10 dB and adjacent Sij below −15
+dB (Fig. 5c).</li>
+<li>Export each port’s embedded E-plane pattern, apply preload plus code
+with Edit Sources (magnitude 1, phase = preload + 0/−180), and read the
+7 beams (Fig. 5d).</li>
+</ul></li>
+<li><strong>Array with divider.</strong>
+<ul>
+<li>Set the code variables, run S11 for all 7 codes (Fig. 7), and plot
+E-plane realized gain (Fig. 8).</li>
+<li>Check peak gain about 9.8 dBi at 0°, scan loss &lt; 3.5 dB, SLL ≤ −5
+dB, XPL &lt; −15 dB.</li>
+</ul></li>
+<li><strong>Feed into the models.</strong> Embedded patterns go into
+<code>rba_array.load_pattern</code> (Python) or replace
+<code>rba_elem</code> (MATLAB) for verification-grade beam tables.</li>
+</ol>
+<hr />
+<h2 id="what-the-paper-leaves-out-important-for-a-real-build">8. What
+the paper leaves out (important for a real build)</h2>
+<ol type="1">
+<li><strong>Pin contact across two boards.</strong> Shorting pins must
+make a reliable connection to ground at 26 GHz. Prefer a single
+laminated stack with plated pins and back-drilled or sequential
+lamination, or at least solder bumps or conductive epoxy rather than
+pressure.</li>
+<li><strong>Alignment.</strong> The slot (0.2 mm wide) must sit under
+the loop arm and next to the pins. A ±0.1 mm misregistration between the
+two boards shifts S11 and the state phase, so add alignment pins and
+fiducials.</li>
+<li><strong>Preload accuracy.</strong> 10° of preload error is ≈ 0.19 mm
+of 50 Ω line at 26.5 GHz. Use the actual RO4003C Dk at 26 GHz (design Dk
+3.55, but process Dk is ≈ 3.38) and verify the divider phase on a coupon
+with five outputs.</li>
+<li><strong>The divider adds loss</strong> (paper: 0.35 dB) and the
+larger ground changes the patterns (paper notes a gain drop). Simulate
+the full board, not only the antenna region.</li>
+<li><strong>Diode parasitics.</strong> Use the vendor S2P files at 26
+GHz instead of the lumped values for the final run. The pad and
+solder-bump capacitance of a flip-chip is comparable to C_off.</li>
+<li><strong>Bias network.</strong> The radial-stub angle and radius set
+the RF short over 25–29 GHz; check that it stays below −20 dB isolation
+into the bias line across the band. The bias wires (Fig. 6) run past the
+antenna: route them on the feed side and shield or filter them so they
+don’t re-radiate.</li>
+<li><strong>Switching speed and power.</strong> Each element draws about
+10 mA in either state, so 5 elements is about 50 mA. Switching time is
+set by diode recovery plus the R and line capacitance (sub-µs). Check
+power handling if the array transmits.</li>
+<li><strong>Code table and squint.</strong> Generate codes per sub-band.
+The best code at 25 GHz is not always the best at 29 GHz.</li>
+<li><strong>Equivalent codes.</strong> Pick between a code and its
+complement by S11 at the feed (the structure is not symmetric, Fig. 2)
+or by diode current.</li>
+<li><strong>Mutual coupling at 0.4λ.</strong> Isolated-element models
+over-predict ±60° SLL. Use embedded patterns from HFSS.</li>
+<li><strong>Measurement.</strong> At 26 GHz, use a 2.92 mm or 2.4 mm
+end-launch connector and de-embed its launch. Keep cables and DC bias
+wires out of the measurement plane; the paper’s photo shows wires above
+the antenna.</li>
+</ol>
+<hr />
+<h2 id="paper-targets">9. Paper targets</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Item</th>
+<th>Paper</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Element S11</td>
+<td>&lt; −10 dB, 24.8–28 GHz, both states</td>
+</tr>
+<tr class="even">
+<td>Element gain</td>
+<td>4.6 dBi; XPL &lt; −14.6 dB (E-plane), &lt; −15.2 dB (H-plane)</td>
+</tr>
+<tr class="odd">
+<td>State difference</td>
+<td>−176° (24.8 GHz) to −178° (28 GHz)</td>
+</tr>
+<tr class="even">
+<td>Array (no divider)</td>
+<td>Overlapped bandwidth 25–28 GHz, adjacent coupling &lt; −15 dB, peak
+9.8 dBi at −1°, scan loss &lt; 3.5 dB within ±60°</td>
+</tr>
+<tr class="odd">
+<td>Array (with divider), simulated</td>
+<td>0°: 9.8 dBi; 23 / −18°: 8.9 / 7.8; 42 / −37°: 7.7 / 7.39; 57 / −57°:
+7.09 / 5.72 dBi; SLL &lt; −5 dB; XPL &lt; −15 dB</td>
+</tr>
+<tr class="even">
+<td>Measured</td>
+<td>9.23 dBi at −1°; ±21°: 8.2 / 7.69; 42 / −43°: 7.56 / 7.14; 55 /
+−57°: 6.52 / 5.02 dBi; SLL &lt; −4.64 dB; XPL &lt; −13.5 dB; S11 &lt;
+−10 dB 25–29 GHz</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

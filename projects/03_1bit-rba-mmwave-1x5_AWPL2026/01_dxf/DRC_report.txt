@@ -1,0 +1,15 @@
+== RCSPA_element_10x10
+   M1: 1 islands, min copper gap 99.000 mm, area of features <0.10 mm wide: 0.0021 mm2
+   M2: 1 islands, min copper gap 99.000 mm, area of features <0.10 mm wide: 0.0021 mm2
+   M4: 4 islands, min copper gap 0.175 mm, area of features <0.10 mm wide: 0.0167 mm2
+   M4 copper crossing slots (should be only the loop top arms): 0.040 mm2
+== RBA_1x5_5ports_32x12
+   M1: 5 islands, min copper gap 2.100 mm, area of features <0.10 mm wide: 0.0104 mm2
+   M2: 5 islands, min copper gap 3.900 mm, area of features <0.10 mm wide: 0.0104 mm2
+   M4: 20 islands, min copper gap 0.175 mm, area of features <0.10 mm wide: 0.0836 mm2
+   M4 copper crossing slots (should be only the loop top arms): 0.200 mm2
+== RBA_1x5_with_1to5_divider_preload
+   M1: 5 islands, min copper gap 2.100 mm, area of features <0.10 mm wide: 0.0104 mm2
+   M2: 5 islands, min copper gap 3.900 mm, area of features <0.10 mm wide: 0.0104 mm2
+   M4: 16 islands, min copper gap 0.175 mm, area of features <0.10 mm wide: 0.1064 mm2
+   M4 copper crossing slots (should be only the loop top arms): 0.200 mm2

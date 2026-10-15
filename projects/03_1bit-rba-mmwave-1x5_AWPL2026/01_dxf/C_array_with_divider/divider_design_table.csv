@@ -1,0 +1,16 @@
+junction / branch,power fraction,Z quarter-wave (ohm),width (mm),length lambda_g/4 (mm)
+"junction (0.0,-22.5) branch->x=-6.8",0.4,79.1,0.198,1.746
+"junction (0.0,-22.5) branch->x=0.0",0.6,64.5,0.295,1.723
+"junction (-6.8,-19.0) branch->x=-9.0",0.5,70.7,0.248,1.733
+"junction (-6.8,-19.0) branch->x=-4.5",0.5,70.7,0.248,1.733
+"junction (0.0,-19.0) branch->x=0.0",0.333,86.6,0.162,1.756
+"junction (0.0,-19.0) branch->x=6.8",0.667,61.2,0.325,1.717
+"junction (6.8,-16.0) branch->x=4.5",0.5,70.7,0.248,1.733
+"junction (6.8,-16.0) branch->x=9.0",0.5,70.7,0.248,1.733
+
+element,path length (mm),insertion phase (deg),target preload (deg),achieved preload (deg)
+1,28.5,1508.08,55.78,55.78
+2,29.66,1569.65,-5.79,-5.79
+3,30.933,1637.23,-73.37,-73.37
+4,29.55,1563.86,0.0,-0.0
+5,31.655,1675.58,-111.72,-111.72

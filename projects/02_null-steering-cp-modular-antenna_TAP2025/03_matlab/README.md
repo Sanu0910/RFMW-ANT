@@ -1,0 +1,12 @@
+# MATLAB models (Octave-compatible)
+- `ns_demo_phase_shifter` runs the RTPS study (paper eqs. 1–7) for four bias/parasitic cases: range, imbalance, IL and RL.
+- `ns_demo_system` runs the system study:
+  - steering limits and 1-D null placement
+  - squint with a fixed bias
+  - the 2-D envelope
+  - the CP co-phasing check
+  - Monte Carlo rejection
+- Building blocks:
+  - `ns_params`, `ns_rtps`, `ns_phase_curve`, `ns_varactor_cv`
+  - `ns_system`, `ns_array_field` (accepts HFSS embedded patterns), `ns_phases_1d`, `ns_phases_2d`
+  - `ns_axial_ratio`, `ns_cut`

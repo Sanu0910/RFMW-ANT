@@ -1,0 +1,11 @@
+# MATLAB (Octave-compatible): 1-bit 1x5 RBA
+- `rba_demo` runs everything in one go:
+  - the beam table with the paper's preload, compared against the paper
+  - element-width sensitivity
+  - beam squint over 25–29 GHz
+  - Monte Carlo of sidelobe level vs preload error
+- Building blocks:
+  - `rba_elem`: element pattern (replace it with an HFSS cut)
+  - `rba_af`: array factor
+  - `rba_metrics`: peak angle and sidelobe level
+  - `rba_best_state`: picks the best of the 32 one-bit codes for a target angle

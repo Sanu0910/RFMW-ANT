@@ -1,0 +1,13 @@
+1-D: PS range 136 deg at 5 GHz -> max null angle +-65.3 deg (both shifters used)
+1-D: PS range 143 deg at 6 GHz -> max null angle +-52.4 deg (both shifters used)
+1-D: PS range 147 deg at 7 GHz -> max null angle +-44.4 deg (both shifters used)
+Fixed bias for 40 deg @6 GHz -> null at 50.5 deg @ 5 GHz (phase shifter is not true-time-delay)
+Fixed bias for 40 deg @6 GHz -> null at 40.0 deg @ 6 GHz (phase shifter is not true-time-delay)
+Fixed bias for 40 deg @6 GHz -> null at 33.4 deg @ 7 GHz (phase shifter is not true-time-delay)
+2-D: each element phase = +-ax +-ay -> span 2(|ax|+|ay|) must fit the PS range: |u0|+|v0| <= 0.793 at 6 GHz
+CP types U1..U4=ABBA, RHCP-try (U1,U4 +90): 5GHz AR(bs)=-74.33 dB, rel. broadside level -318.1 dB, RHCP | 6GHz AR(bs)=-74.33 dB, rel. broadside level -319.4 dB, RHCP | 7GHz AR(bs)=-74.33 dB, rel. broadside level -320.5 dB, RHCP
+CP types U1..U4=ABBA, LHCP-try (U2,U3 +90): 5GHz AR(bs)=-71.90 dB, rel. broadside level -315.7 dB, LHCP | 6GHz AR(bs)=-71.90 dB, rel. broadside level -317.1 dB, LHCP | 7GHz AR(bs)=-71.90 dB, rel. broadside level -318.1 dB, LHCP
+CP types U1..U4=AABB, RHCP-try (U1,U4 +90): 5GHz AR(bs)=0.00 dB, rel. broadside level 0.0 dB, LHCP | 6GHz AR(bs)=0.00 dB, rel. broadside level 0.0 dB, LHCP | 7GHz AR(bs)=0.00 dB, rel. broadside level 0.0 dB, LHCP
+CP types U1..U4=AABB, LHCP-try (U2,U3 +90): 5GHz AR(bs)=0.00 dB, rel. broadside level 0.0 dB, RHCP | 6GHz AR(bs)=0.00 dB, rel. broadside level 0.0 dB, RHCP | 7GHz AR(bs)=0.00 dB, rel. broadside level 0.0 dB, RHCP
+CP AR (broadside) for 10 deg quadrature error: 1.52 dB; for 1 dB amplitude imbalance + 10 deg: 1.83 dB (paper: AR < 2.3 dB)
+Monte Carlo (0.5 dB / 4 deg rms per channel): rejection at 25 deg median 25.7 dB, 10th pct 19.7 dB; null pointing error 90th pct 3.5 deg

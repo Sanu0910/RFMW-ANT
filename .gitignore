@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+octave-workspace
+hfss_out/
+*.aedtresults/
+*.aedt.lock
+.DS_Store

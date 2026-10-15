@@ -1,0 +1,15 @@
+system,unit,type,x_world_mm,y_world_mm,z_bottom_mm,azimuth_deg,note
+SYS_1D,1,A,-12.5,0,0,0,"board plane = world xz, front faces -y"
+SYS_1D,2,B,12.5,0,0,0,"board plane = world xz, front faces -y"
+SYS_2D,1,A,12.5,12.5,0,0,"board plane parallel to world xz (two rows, 25 mm apart in y)"
+SYS_2D,2,B,-12.5,12.5,0,0,"board plane parallel to world xz (two rows, 25 mm apart in y)"
+SYS_2D,3,B,12.5,-12.5,0,0,"board plane parallel to world xz (two rows, 25 mm apart in y)"
+SYS_2D,4,A,-12.5,-12.5,0,0,"board plane parallel to world xz (two rows, 25 mm apart in y)"
+SYS_CP,1,A,8.838834764831844,8.838834764831843,0,45,"wing: board plane contains the radial line at azimuth 45 deg; opposite wings (1,4),(2,3)"
+SYS_CP,2,B,-8.838834764831843,8.838834764831844,0,135,"wing: board plane contains the radial line at azimuth 135 deg; opposite wings (1,4),(2,3)"
+SYS_CP,4,A,-8.838834764831846,-8.838834764831843,0,225,"wing: board plane contains the radial line at azimuth 225 deg; opposite wings (1,4),(2,3)"
+SYS_CP,3,B,8.838834764831843,-8.838834764831846,0,315,"wing: board plane contains the radial line at azimuth 315 deg; opposite wings (1,4),(2,3)"
+SYS_CP_cophased,1,A,8.838834764831844,8.838834764831843,0,45,RECOMMENDED: opposite wings opposite type so their E-vectors add at broadside (see array_models CP check)
+SYS_CP_cophased,2,A,-8.838834764831843,8.838834764831844,0,135,RECOMMENDED: opposite wings opposite type so their E-vectors add at broadside (see array_models CP check)
+SYS_CP_cophased,4,B,-8.838834764831846,-8.838834764831843,0,225,RECOMMENDED: opposite wings opposite type so their E-vectors add at broadside (see array_models CP check)
+SYS_CP_cophased,3,B,8.838834764831843,-8.838834764831846,0,315,RECOMMENDED: opposite wings opposite type so their E-vectors add at broadside (see array_models CP check)

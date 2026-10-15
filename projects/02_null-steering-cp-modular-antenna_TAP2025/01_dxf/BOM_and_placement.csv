@@ -1,0 +1,137 @@
+board_file,ref,value,side,x_mm,y_mm,polarity
+PS_slot-paper-8p8x8p8_choke-bias,C1,39pF (see guide),TOP,0,29.2,
+PS_slot-paper-8p8x8p8_choke-bias,D1,MAVR-000120-14110P,TOP,0,32.0,cathode->junction
+PS_slot-paper-8p8x8p8_choke-bias,L1,100nH,TOP,-1.7,30.85,
+PS_slot-paper-8p8x8p8_choke-bias,C2,39pF (see guide),BOT,0,6.8,
+PS_slot-paper-8p8x8p8_choke-bias,D2,MAVR-000120-14110P,BOT,0,4.0,cathode->junction
+PS_slot-paper-8p8x8p8_choke-bias,L2,100nH,BOT,-1.7,5.15,
+PS_slot-drawing-ratio-8p8x5p3_choke-bias,C1,39pF (see guide),TOP,0,29.2,
+PS_slot-drawing-ratio-8p8x5p3_choke-bias,D1,MAVR-000120-14110P,TOP,0,32.0,cathode->junction
+PS_slot-drawing-ratio-8p8x5p3_choke-bias,L1,100nH,TOP,-1.7,30.85,
+PS_slot-drawing-ratio-8p8x5p3_choke-bias,C2,39pF (see guide),BOT,0,6.8,
+PS_slot-drawing-ratio-8p8x5p3_choke-bias,D2,MAVR-000120-14110P,BOT,0,4.0,cathode->junction
+PS_slot-drawing-ratio-8p8x5p3_choke-bias,L2,100nH,BOT,-1.7,5.15,
+PS_slot-paper_resistor-bias_RECOMMENDED,C1,39pF (see guide),TOP,0,29.2,
+PS_slot-paper_resistor-bias_RECOMMENDED,D1,MAVR-000120-14110P,TOP,0,32.0,cathode->junction
+PS_slot-paper_resistor-bias_RECOMMENDED,R1,10k,TOP,-1.7,30.85,
+PS_slot-paper_resistor-bias_RECOMMENDED,C2,39pF (see guide),BOT,0,6.8,
+PS_slot-paper_resistor-bias_RECOMMENDED,D2,MAVR-000120-14110P,BOT,0,4.0,cathode->junction
+PS_slot-paper_resistor-bias_RECOMMENDED,R2,10k,BOT,-1.7,5.15,
+UNIT_A_mid-paper,C1,39pF (see guide),TOP,0,29.2,
+UNIT_A_mid-paper,D1,MAVR-000120-14110P,TOP,0,32.0,cathode->junction
+UNIT_A_mid-paper,L1,100nH,TOP,-1.7,30.85,
+UNIT_A_mid-paper,C2,39pF (see guide),BOT,0,6.8,
+UNIT_A_mid-paper,D2,MAVR-000120-14110P,BOT,0,4.0,cathode->junction
+UNIT_A_mid-paper,L2,100nH,BOT,-1.7,5.15,
+UNIT_A_mid-extended,C1,39pF (see guide),TOP,0,29.2,
+UNIT_A_mid-extended,D1,MAVR-000120-14110P,TOP,0,32.0,cathode->junction
+UNIT_A_mid-extended,L1,100nH,TOP,-1.7,30.85,
+UNIT_A_mid-extended,C2,39pF (see guide),BOT,0,6.8,
+UNIT_A_mid-extended,D2,MAVR-000120-14110P,BOT,0,4.0,cathode->junction
+UNIT_A_mid-extended,L2,100nH,BOT,-1.7,5.15,
+UNIT_B_mid-paper,C1,39pF (see guide),TOP,0,29.2,
+UNIT_B_mid-paper,D1,MAVR-000120-14110P,TOP,0,32.0,cathode->junction
+UNIT_B_mid-paper,L1,100nH,TOP,1.7,30.85,
+UNIT_B_mid-paper,C2,39pF (see guide),BOT,0,6.8,
+UNIT_B_mid-paper,D2,MAVR-000120-14110P,BOT,0,4.0,cathode->junction
+UNIT_B_mid-paper,L2,100nH,BOT,1.7,5.15,
+UNIT_B_mid-extended,C1,39pF (see guide),TOP,0,29.2,
+UNIT_B_mid-extended,D1,MAVR-000120-14110P,TOP,0,32.0,cathode->junction
+UNIT_B_mid-extended,L1,100nH,TOP,1.7,30.85,
+UNIT_B_mid-extended,C2,39pF (see guide),BOT,0,6.8,
+UNIT_B_mid-extended,D2,MAVR-000120-14110P,BOT,0,4.0,cathode->junction
+UNIT_B_mid-extended,L2,100nH,BOT,1.7,5.15,
+SYS1D_U1A_U2B_coplanar_panel,U1-C1,39pF (see guide),TOP,-12.5,29.2,
+SYS1D_U1A_U2B_coplanar_panel,U1-D1,MAVR-000120-14110P,TOP,-12.5,32.0,cathode->junction
+SYS1D_U1A_U2B_coplanar_panel,U1-L1,100nH,TOP,-14.2,30.85,
+SYS1D_U1A_U2B_coplanar_panel,U1-C2,39pF (see guide),BOT,-12.5,6.8,
+SYS1D_U1A_U2B_coplanar_panel,U1-D2,MAVR-000120-14110P,BOT,-12.5,4.0,cathode->junction
+SYS1D_U1A_U2B_coplanar_panel,U1-L2,100nH,BOT,-14.2,5.15,
+SYS1D_U1A_U2B_coplanar_panel,U2-C1,39pF (see guide),TOP,12.5,29.2,
+SYS1D_U1A_U2B_coplanar_panel,U2-D1,MAVR-000120-14110P,TOP,12.5,32.0,cathode->junction
+SYS1D_U1A_U2B_coplanar_panel,U2-L1,100nH,TOP,14.2,30.85,
+SYS1D_U1A_U2B_coplanar_panel,U2-C2,39pF (see guide),BOT,12.5,6.8,
+SYS1D_U1A_U2B_coplanar_panel,U2-D2,MAVR-000120-14110P,BOT,12.5,4.0,cathode->junction
+SYS1D_U1A_U2B_coplanar_panel,U2-L2,100nH,BOT,14.2,5.15,
+SYS2D_row_front_y-12p5,U4-C1,39pF (see guide),TOP,-12.5,29.2,
+SYS2D_row_front_y-12p5,U4-D1,MAVR-000120-14110P,TOP,-12.5,32.0,cathode->junction
+SYS2D_row_front_y-12p5,U4-L1,100nH,TOP,-14.2,30.85,
+SYS2D_row_front_y-12p5,U4-C2,39pF (see guide),BOT,-12.5,6.8,
+SYS2D_row_front_y-12p5,U4-D2,MAVR-000120-14110P,BOT,-12.5,4.0,cathode->junction
+SYS2D_row_front_y-12p5,U4-L2,100nH,BOT,-14.2,5.15,
+SYS2D_row_front_y-12p5,U3-C1,39pF (see guide),TOP,12.5,29.2,
+SYS2D_row_front_y-12p5,U3-D1,MAVR-000120-14110P,TOP,12.5,32.0,cathode->junction
+SYS2D_row_front_y-12p5,U3-L1,100nH,TOP,14.2,30.85,
+SYS2D_row_front_y-12p5,U3-C2,39pF (see guide),BOT,12.5,6.8,
+SYS2D_row_front_y-12p5,U3-D2,MAVR-000120-14110P,BOT,12.5,4.0,cathode->junction
+SYS2D_row_front_y-12p5,U3-L2,100nH,BOT,14.2,5.15,
+SYS2D_row_back_y+12p5,U2-C1,39pF (see guide),TOP,-12.5,29.2,
+SYS2D_row_back_y+12p5,U2-D1,MAVR-000120-14110P,TOP,-12.5,32.0,cathode->junction
+SYS2D_row_back_y+12p5,U2-L1,100nH,TOP,-10.8,30.85,
+SYS2D_row_back_y+12p5,U2-C2,39pF (see guide),BOT,-12.5,6.8,
+SYS2D_row_back_y+12p5,U2-D2,MAVR-000120-14110P,BOT,-12.5,4.0,cathode->junction
+SYS2D_row_back_y+12p5,U2-L2,100nH,BOT,-10.8,5.15,
+SYS2D_row_back_y+12p5,U1-C1,39pF (see guide),TOP,12.5,29.2,
+SYS2D_row_back_y+12p5,U1-D1,MAVR-000120-14110P,TOP,12.5,32.0,cathode->junction
+SYS2D_row_back_y+12p5,U1-L1,100nH,TOP,10.8,30.85,
+SYS2D_row_back_y+12p5,U1-C2,39pF (see guide),BOT,12.5,6.8,
+SYS2D_row_back_y+12p5,U1-D2,MAVR-000120-14110P,BOT,12.5,4.0,cathode->junction
+SYS2D_row_back_y+12p5,U1-L2,100nH,BOT,10.8,5.15,
+CP_wing_U1_typeA,C1,39pF (see guide),TOP,0,29.2,
+CP_wing_U1_typeA,D1,MAVR-000120-14110P,TOP,0,32.0,cathode->junction
+CP_wing_U1_typeA,L1,100nH,TOP,-1.7,30.85,
+CP_wing_U1_typeA,C2,39pF (see guide),BOT,0,6.8,
+CP_wing_U1_typeA,D2,MAVR-000120-14110P,BOT,0,4.0,cathode->junction
+CP_wing_U1_typeA,L2,100nH,BOT,-1.7,5.15,
+CP_wing_U2_typeB,C1,39pF (see guide),TOP,0,29.2,
+CP_wing_U2_typeB,D1,MAVR-000120-14110P,TOP,0,32.0,cathode->junction
+CP_wing_U2_typeB,L1,100nH,TOP,1.7,30.85,
+CP_wing_U2_typeB,C2,39pF (see guide),BOT,0,6.8,
+CP_wing_U2_typeB,D2,MAVR-000120-14110P,BOT,0,4.0,cathode->junction
+CP_wing_U2_typeB,L2,100nH,BOT,1.7,5.15,
+CP_wing_U3_typeB,C1,39pF (see guide),TOP,0,29.2,
+CP_wing_U3_typeB,D1,MAVR-000120-14110P,TOP,0,32.0,cathode->junction
+CP_wing_U3_typeB,L1,100nH,TOP,1.7,30.85,
+CP_wing_U3_typeB,C2,39pF (see guide),BOT,0,6.8,
+CP_wing_U3_typeB,D2,MAVR-000120-14110P,BOT,0,4.0,cathode->junction
+CP_wing_U3_typeB,L2,100nH,BOT,1.7,5.15,
+CP_wing_U4_typeA,C1,39pF (see guide),TOP,0,29.2,
+CP_wing_U4_typeA,D1,MAVR-000120-14110P,TOP,0,32.0,cathode->junction
+CP_wing_U4_typeA,L1,100nH,TOP,-1.7,30.85,
+CP_wing_U4_typeA,C2,39pF (see guide),BOT,0,6.8,
+CP_wing_U4_typeA,D2,MAVR-000120-14110P,BOT,0,4.0,cathode->junction
+CP_wing_U4_typeA,L2,100nH,BOT,-1.7,5.15,
+WILKINSON_1x2_6GHz_pitch25,R1,100R 0402,TOP,0,11.261,
+WILKINSON_1x4_6GHz_pitch25,R1,100R 0402,TOP,0,11.261,
+WILKINSON_1x4_6GHz_pitch25,R2,100R 0402,TOP,-25.0,28.211,
+WILKINSON_1x4_6GHz_pitch25,R3,100R 0402,TOP,25.0,28.211,
+FAB_PANEL_4units_PS_ANT_coupons,C1,39pF (see guide),TOP,12.5,29.2,
+FAB_PANEL_4units_PS_ANT_coupons,D1,MAVR-000120-14110P,TOP,12.5,32.0,cathode->junction
+FAB_PANEL_4units_PS_ANT_coupons,L1,100nH,TOP,10.8,30.85,
+FAB_PANEL_4units_PS_ANT_coupons,C2,39pF (see guide),BOT,12.5,6.8,
+FAB_PANEL_4units_PS_ANT_coupons,D2,MAVR-000120-14110P,BOT,12.5,4.0,cathode->junction
+FAB_PANEL_4units_PS_ANT_coupons,L2,100nH,BOT,10.8,5.15,
+FAB_PANEL_4units_PS_ANT_coupons,C1,39pF (see guide),TOP,40.5,29.2,
+FAB_PANEL_4units_PS_ANT_coupons,D1,MAVR-000120-14110P,TOP,40.5,32.0,cathode->junction
+FAB_PANEL_4units_PS_ANT_coupons,L1,100nH,TOP,42.2,30.85,
+FAB_PANEL_4units_PS_ANT_coupons,C2,39pF (see guide),BOT,40.5,6.8,
+FAB_PANEL_4units_PS_ANT_coupons,D2,MAVR-000120-14110P,BOT,40.5,4.0,cathode->junction
+FAB_PANEL_4units_PS_ANT_coupons,L2,100nH,BOT,42.2,5.15,
+FAB_PANEL_4units_PS_ANT_coupons,C1,39pF (see guide),TOP,68.5,29.2,
+FAB_PANEL_4units_PS_ANT_coupons,D1,MAVR-000120-14110P,TOP,68.5,32.0,cathode->junction
+FAB_PANEL_4units_PS_ANT_coupons,L1,100nH,TOP,70.2,30.85,
+FAB_PANEL_4units_PS_ANT_coupons,C2,39pF (see guide),BOT,68.5,6.8,
+FAB_PANEL_4units_PS_ANT_coupons,D2,MAVR-000120-14110P,BOT,68.5,4.0,cathode->junction
+FAB_PANEL_4units_PS_ANT_coupons,L2,100nH,BOT,70.2,5.15,
+FAB_PANEL_4units_PS_ANT_coupons,C1,39pF (see guide),TOP,96.5,29.2,
+FAB_PANEL_4units_PS_ANT_coupons,D1,MAVR-000120-14110P,TOP,96.5,32.0,cathode->junction
+FAB_PANEL_4units_PS_ANT_coupons,L1,100nH,TOP,94.8,30.85,
+FAB_PANEL_4units_PS_ANT_coupons,C2,39pF (see guide),BOT,96.5,6.8,
+FAB_PANEL_4units_PS_ANT_coupons,D2,MAVR-000120-14110P,BOT,96.5,4.0,cathode->junction
+FAB_PANEL_4units_PS_ANT_coupons,L2,100nH,BOT,94.8,5.15,
+FAB_PANEL_4units_PS_ANT_coupons,C1,39pF (see guide),TOP,124.5,53.2,
+FAB_PANEL_4units_PS_ANT_coupons,D1,MAVR-000120-14110P,TOP,124.5,56.0,cathode->junction
+FAB_PANEL_4units_PS_ANT_coupons,L1,100nH,TOP,122.8,54.85,
+FAB_PANEL_4units_PS_ANT_coupons,C2,39pF (see guide),BOT,124.5,30.8,
+FAB_PANEL_4units_PS_ANT_coupons,D2,MAVR-000120-14110P,BOT,124.5,28.0,cathode->junction
+FAB_PANEL_4units_PS_ANT_coupons,L2,100nH,BOT,122.8,29.15,

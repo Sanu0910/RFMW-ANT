@@ -1,0 +1,15 @@
+D = 4.5 mm = 0.398 lambda0 at 26.5 GHz (paper quotes 0.375 lambda0, which is exact at 25.0 GHz)
+element taper  2.0 dB at 90 deg -> +60 beam at +56.2 deg (SLL -4.4), -60 beam at -60.3 deg (SLL -4.2)
+element taper  4.0 dB at 90 deg -> +60 beam at +53.8 deg (SLL -3.8), -60 beam at -57.0 deg (SLL -3.4)
+element taper  8.0 dB at 90 deg -> +60 beam at +49.8 deg (SLL -2.6), -60 beam at -52.5 deg (SLL -2.1)
+element taper 12.0 dB at 90 deg -> +60 beam at +46.5 deg (SLL -1.6), -60 beam at -48.8 deg (SLL -1.0)
+paper preload, target  +0: code 00101 peak   -1.2 deg (paper -1), SLL  -7.46 dB (paper -8.25), rel gain -2.55 dB
+paper preload, target +20: code 00010 peak  +20.0 deg (paper +19), SLL  -5.76 dB (paper -5.23), rel gain -2.27 dB
+paper preload, target -20: code 00110 peak  -22.5 deg (paper -21), SLL  -5.70 dB (paper -5.12), rel gain -2.31 dB
+paper preload, target +40: code 00011 peak  +35.8 deg (paper +38), SLL  -8.93 dB (paper -7.43), rel gain -1.05 dB
+paper preload, target -40: code 01001 peak  -38.8 deg (paper -41), SLL  -8.86 dB (paper -6.72), rel gain -1.16 dB
+paper preload, target +60: code 01100 peak  +53.8 deg (paper +56), SLL  -3.76 dB (paper -4.69), rel gain -3.61 dB
+paper preload, target -60: code 10111 peak  -57.0 deg (paper -54), SLL  -3.45 dB (paper -4.97), rel gain -3.87 dB
+Beam squint of the +60 code over 25-29 GHz: 25.0 GHz -> 57.2 deg, 26.5 GHz -> 53.8 deg, 28.0 GHz -> 50.5 deg, 29.0 GHz -> 48.5 deg
+SLL (90th pct, all beams) vs preload error rms: 0 deg -> -3.5 dB, 5 deg -> -3.3 dB, 10 deg -> -2.7 dB, 15 deg -> -1.9 dB
+Own PSO preload (deg, e4 = 0): -29.3, 1.1, 84.5, 0.0, 150.8 | worst SLL -5.09 dB, max pointing error 4.0 deg
