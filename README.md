@@ -8,6 +8,8 @@ Engineering reproductions of recent antenna and microwave papers, built so each 
 
 The papers themselves are **not** included (IEEE copyright); see [`docs/REFERENCES.md`](docs/REFERENCES.md) for citations and DOIs.
 
+EM simulation tooling: [`docs/GDS2OPENEMS.md`](docs/GDS2OPENEMS.md) — openEMS FDTD + gds2openEMS (GDSII → openEMS), installed with `tools/install_gds2openems.sh`.
+
 ## Projects
 
 | # | Folder | Paper | Band | Content |
