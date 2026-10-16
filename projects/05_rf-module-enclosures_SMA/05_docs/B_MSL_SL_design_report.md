@@ -9,7 +9,7 @@
 | Air above PCB | 8.2 mm (lid lip 1.5 mm, absorber recess 1.0 mm) |
 | Connector axis | 6.850 mm above the base bottom (= PCB top + pin radius) |
 | Ports | P1 on W wall at +0.0 mm; P2 on E wall at +0.0 mm |
-| Lid screws | 28 x M2.5 x 8 ISO 7380 button head on d2.9 holes; max gap 10.23 mm (pitch target 7.00) |
+| Lid screws | 28 x M2.5 x 8 ISO 7380 button head on d2.9 holes; max gap 8.80 mm (pitch target 7.00) |
 | PCB screws | 8 x M2 x 4 ISO 4762 (4 corners + 2 per launch) |
 | Connector screws | 8 x M2.5 x 5 ISO 4762 |
 | Mounting | 4 x M3 tapped 6 deep in the bottom |
@@ -32,7 +32,7 @@
 | lid screw thread engagement | 4.00 | >= 1.4 d = 3.5 (light load; helicoil optional) | OK |
 | lid screw hole bottom vs tap depth | 0.60 | >= 0.5 | OK |
 | lid tap above the spigot bore | 0.84 | >= 0.8 | OK |
-| largest lid-screw gap | 10.23 | <= lambda/4 at f_max = 6.2 (else conductive gasket) | **WARN** |
+| largest lid-screw gap | 8.80 | <= lambda/4 at f_max = 6.2 (else conductive gasket) | **WARN** |
 | flange inside box outline (P1) | 13.75 | >= 0 | OK |
 | flange inside box outline (P2) | 13.75 | >= 0 | OK |
 

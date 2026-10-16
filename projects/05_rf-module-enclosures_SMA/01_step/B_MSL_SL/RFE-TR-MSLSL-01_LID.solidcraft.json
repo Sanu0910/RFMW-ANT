@@ -303,7 +303,7 @@
 "params": {
 "center": [
 32.6,
--7.367
+-8.8
 ],
 "diameter": 2.9,
 "connect": false
@@ -314,7 +314,7 @@
 "params": {
 "center": [
 32.6,
-7.367
+8.8
 ],
 "diameter": 2.9,
 "connect": false
@@ -424,7 +424,7 @@
 "params": {
 "center": [
 -32.6,
-7.367
+8.8
 ],
 "diameter": 2.9,
 "connect": false
@@ -435,7 +435,7 @@
 "params": {
 "center": [
 -32.6,
--7.367
+-8.8
 ],
 "diameter": 2.9,
 "connect": false

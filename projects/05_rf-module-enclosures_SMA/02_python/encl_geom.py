@@ -70,12 +70,13 @@ class Encl:
             L = math.dist((x0, y0), (x1, y1)); ux, uy = (x1 - x0) / L, (y1 - y0) / L
             for _ in range(3):
                 on = sorted(((q[0] - x0) * ux + (q[1] - y0) * uy, q) for q in out
-                            if abs((q[0] - x0) * uy - (q[1] - y0) * ux) < 1e-6 and -1e-6 <= (q[0] - x0) * ux + (q[1] - y0) * uy <= L + 1e-6)
+                            if abs((q[0] - x0) * uy - (q[1] - y0) * ux) < 0.01 and -0.01 <= (q[0] - x0) * ux + (q[1] - y0) * uy <= L + 0.01)
                 s = [t for t, q in on]
                 for k in range(len(s) - 1):
                     gap = s[k + 1] - s[k]
                     if gap > pmax:
                         n = math.ceil(gap / pmax)
+                        while n > 1 and gap / n < BOX["lid_cb_d"]: n -= 1      # never closer than the head clearance
                         for j in range(1, n):
                             t = s[k] + gap * j / n
                             for dt in (0, 0.5, -0.5, 1, -1, 1.5, -1.5, 2, -2, 2.5, -2.5, 3, -3):
@@ -151,9 +152,9 @@ class Encl:
         a, c = self._wall_track(); per = 4 * (a + c)
         # position of every screw along the track perimeter
         def s_of(x, y):
-            if abs(y + c) < 1e-6: return x + a
-            if abs(x - a) < 1e-6: return 2 * a + (y + c)
-            if abs(y - c) < 1e-6: return 2 * a + 2 * c + (a - x)
+            if abs(y + c) < 0.01: return x + a
+            if abs(x - a) < 0.01: return 2 * a + (y + c)
+            if abs(y - c) < 0.01: return 2 * a + 2 * c + (a - x)
             return 4 * a + 2 * c + (c - y)
         s = sorted(s_of(x, y) for x, y in self.lid_screws)
         gaps = [s[k + 1] - s[k] for k in range(len(s) - 1)] + [per - s[-1] + s[0]]

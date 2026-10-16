@@ -15,7 +15,7 @@
   - It lets a lid screw sit right above each port, with its tap 0.8 mm clear of the spigot bore.
 - **Lid screw pitch:** λ/4 at f_max, clamped to 7–15 mm. Lid screws are not placed where their tap would cut a flange thread.
   - **A (6 GHz):** 18 screws, largest gap 12.6 mm, which meets λ/4.
-  - **B (12 GHz) and C (10.6 GHz):** 28 and 27 screws, largest gaps 10.2 and 13.1 mm, which exceed λ/4. A **conductive elastomer gasket** on the lid seat is recommended. The report flags it as WARN.
+  - **B (12 GHz) and C (10.6 GHz):** 28 and 27 screws, largest gaps 8.8 and 13.1 mm, which exceed λ/4. A **conductive elastomer gasket** on the lid seat is recommended. The report flags it as WARN.
 - **RF lip** 1.2 × 1.5 mm with a 0.05 mm side clearance. It forms a labyrinth with the cavity wall.
 - **Absorber recess** 1 mm deep on the lid underside. The lowest cavity modes fall inside every band:
   - A: 4.6 GHz
