@@ -21,7 +21,15 @@ CAGE = dict(
     res_margin=1.0,        # pocket margin around each resistor group
     screw_head_r=3.6,      # pocket around the M3 board-mounting screw heads (board keep-out r = 3.0)
 )
+FEATURES = dict(
+    dowel_d=2.0, dowel_len=8.0, dowel_depth=5.0,   # ISO 8734 dowels, lid on base: one round hole + one slot in the lid
+    jack="M3",                                       # 2 x jacking holes through the lid (push on the wall top) to lift it off the gasket
+    earth="M3", earth_depth=4.0, earth_y=40.0,       # earth / ground point on the west wall (blind: wall is 5 mm)
+    chamfer_lid=0.6, chamfer_base=0.5,               # outer edge breaks
+    port_labels=True,                                # small IN / 1-8 port numbers next to the connectors
+)
 TEXT = dict(
+    only_logo=True,        # lid engraving: CRL BEL only
     logo="CRL BEL",
     lab="ANTENNA / RFM LAB",
     title="X-BAND 8-WAY POWER DIVIDER",

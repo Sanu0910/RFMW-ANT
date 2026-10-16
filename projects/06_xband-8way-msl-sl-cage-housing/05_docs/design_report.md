@@ -8,9 +8,13 @@
 | Outside | 62.47 x 142.98 x 18.42 mm (base 14.42 + lid plate 4.0) |
 | Cavity | 52.466 x 132.979 mm, floor 4.66, connector axis 6.850 above the bottom |
 | Cage | block 8.0 mm tall under the lid, face 0.20 above the PCB (0.25 mm conductive elastomer sheet recommended); ribs 2.0 mm on a 13.0 mm grid; 52 cells |
-| Lid screws | 53 x M2.5 x 8 ISO 7380; largest gap 14.50 mm |
+| Lid screws | 50 x M2.5 x 8 ISO 7380; largest gap 14.50 mm |
 | Board screws | 4 x M3 x 6 ISO 4762 through the board's own holes into the floor (pockets in the cage clear the heads) |
 | Connectors | 9 x HUBER+SUHNER 23_SMA-50-0-272/133_N, 36 x M2.5 x 5 ISO 4762 |
+| Lid location | 2 x d2 h6 dowels ISO 8734 2x8 pressed in the N/S walls at [(-18.733, 68.989), (18.733, -68.989)]; lid: d2 H7 hole + d2 H7 x 1 slot |
+| Lid removal | 2 x M3 jacking holes through the lid at [(0.0, 68.989), (0.0, -68.989)] (push on the wall top) |
+| Earth point | M3 tapped 4 deep, west wall, y = +40 mm, at the connector-axis height |
+| Edges | lid top 0.6 x 45 deg, base bottom 0.5 x 45 deg, vertical edges R2 |
 
 ## Checks
 
@@ -86,4 +90,4 @@
 | 11.1 x 10.9 | 19.3 |
 | 11.1 x 10.9 | 19.3 |
 
-Machined mass (Al): base 158 g, lid 149 g.
+Machined mass (Al): base 158 g, lid 148 g.

@@ -991,210 +991,6 @@
 "command": "solid.hole",
 "params": {
 "position": [
--28.733,
--68.989,
-14.419999999999998
-],
-"direction": [
-0,
-0,
--1
-],
-"thread": "M2.5",
-"depth": 4.6
-}
-},
-{
-"command": "solid.hole",
-"params": {
-"position": [
-28.733,
--68.989,
-14.419999999999998
-],
-"direction": [
-0,
-0,
--1
-],
-"thread": "M2.5",
-"depth": 4.6
-}
-},
-{
-"command": "solid.hole",
-"params": {
-"position": [
-28.733,
-68.989,
-14.419999999999998
-],
-"direction": [
-0,
-0,
--1
-],
-"thread": "M2.5",
-"depth": 4.6
-}
-},
-{
-"command": "solid.hole",
-"params": {
-"position": [
--28.733,
-68.989,
-14.419999999999998
-],
-"direction": [
-0,
-0,
--1
-],
-"thread": "M2.5",
-"depth": 4.6
-}
-},
-{
-"command": "solid.hole",
-"params": {
-"position": [
--22.348,
--68.989,
-14.419999999999998
-],
-"direction": [
-0,
-0,
--1
-],
-"thread": "M2.5",
-"depth": 4.6
-}
-},
-{
-"command": "solid.hole",
-"params": {
-"position": [
--15.963,
--68.989,
-14.419999999999998
-],
-"direction": [
-0,
-0,
--1
-],
-"thread": "M2.5",
-"depth": 4.6
-}
-},
-{
-"command": "solid.hole",
-"params": {
-"position": [
--9.578,
--68.989,
-14.419999999999998
-],
-"direction": [
-0,
-0,
--1
-],
-"thread": "M2.5",
-"depth": 4.6
-}
-},
-{
-"command": "solid.hole",
-"params": {
-"position": [
--3.193,
--68.989,
-14.419999999999998
-],
-"direction": [
-0,
-0,
--1
-],
-"thread": "M2.5",
-"depth": 4.6
-}
-},
-{
-"command": "solid.hole",
-"params": {
-"position": [
-3.193,
--68.989,
-14.419999999999998
-],
-"direction": [
-0,
-0,
--1
-],
-"thread": "M2.5",
-"depth": 4.6
-}
-},
-{
-"command": "solid.hole",
-"params": {
-"position": [
-9.578,
--68.989,
-14.419999999999998
-],
-"direction": [
-0,
-0,
--1
-],
-"thread": "M2.5",
-"depth": 4.6
-}
-},
-{
-"command": "solid.hole",
-"params": {
-"position": [
-15.963,
--68.989,
-14.419999999999998
-],
-"direction": [
-0,
-0,
--1
-],
-"thread": "M2.5",
-"depth": 4.6
-}
-},
-{
-"command": "solid.hole",
-"params": {
-"position": [
-22.348,
--68.989,
-14.419999999999998
-],
-"direction": [
-0,
-0,
--1
-],
-"thread": "M2.5",
-"depth": 4.6
-}
-},
-{
-"command": "solid.hole",
-"params": {
-"position": [
 28.733,
 -62.19,
 14.419999999999998
@@ -1282,142 +1078,6 @@
 "position": [
 28.733,
 62.189,
-14.419999999999998
-],
-"direction": [
-0,
-0,
--1
-],
-"thread": "M2.5",
-"depth": 4.6
-}
-},
-{
-"command": "solid.hole",
-"params": {
-"position": [
-22.348,
-68.989,
-14.419999999999998
-],
-"direction": [
-0,
-0,
--1
-],
-"thread": "M2.5",
-"depth": 4.6
-}
-},
-{
-"command": "solid.hole",
-"params": {
-"position": [
-15.963,
-68.989,
-14.419999999999998
-],
-"direction": [
-0,
-0,
--1
-],
-"thread": "M2.5",
-"depth": 4.6
-}
-},
-{
-"command": "solid.hole",
-"params": {
-"position": [
-9.578,
-68.989,
-14.419999999999998
-],
-"direction": [
-0,
-0,
--1
-],
-"thread": "M2.5",
-"depth": 4.6
-}
-},
-{
-"command": "solid.hole",
-"params": {
-"position": [
-3.193,
-68.989,
-14.419999999999998
-],
-"direction": [
-0,
-0,
--1
-],
-"thread": "M2.5",
-"depth": 4.6
-}
-},
-{
-"command": "solid.hole",
-"params": {
-"position": [
--3.193,
-68.989,
-14.419999999999998
-],
-"direction": [
-0,
-0,
--1
-],
-"thread": "M2.5",
-"depth": 4.6
-}
-},
-{
-"command": "solid.hole",
-"params": {
-"position": [
--9.578,
-68.989,
-14.419999999999998
-],
-"direction": [
-0,
-0,
--1
-],
-"thread": "M2.5",
-"depth": 4.6
-}
-},
-{
-"command": "solid.hole",
-"params": {
-"position": [
--15.963,
-68.989,
-14.419999999999998
-],
-"direction": [
-0,
-0,
--1
-],
-"thread": "M2.5",
-"depth": 4.6
-}
-},
-{
-"command": "solid.hole",
-"params": {
-"position": [
--22.348,
-68.989,
 14.419999999999998
 ],
 "direction": [
@@ -1739,6 +1399,295 @@
 "command": "solid.hole",
 "params": {
 "position": [
+28.733,
+68.989,
+14.419999999999998
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+19.867,
+68.989,
+14.419999999999998
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+10.967,
+68.989,
+14.419999999999998
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+4.0,
+68.989,
+14.419999999999998
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-4.933,
+68.989,
+14.419999999999998
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-13.833,
+68.989,
+14.419999999999998
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-22.733,
+68.989,
+14.419999999999998
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-28.733,
+68.989,
+14.419999999999998
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+28.733,
+-68.989,
+14.419999999999998
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+22.733,
+-68.989,
+14.419999999999998
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+13.767,
+-68.989,
+14.419999999999998
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+4.867,
+-68.989,
+14.419999999999998
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-4.0,
+-68.989,
+14.419999999999998
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-10.133,
+-68.989,
+14.419999999999998
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-16.333,
+-68.989,
+14.419999999999998
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-22.533,
+-68.989,
+14.419999999999998
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-28.733,
+-68.989,
+14.419999999999998
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
 -22.1327,
 62.3893,
 4.661
@@ -1874,6 +1823,68 @@
 {
 "command": "sketch.create",
 "params": {
+"plane": "XY",
+"offset": 14.519999999999998
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-18.733,
+68.989
+],
+"diameter": 1.99,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+18.733,
+-68.989
+],
+"diameter": 1.99,
+"connect": false
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 5.1,
+"direction": "negative",
+"profiles": "all",
+"operation": "cut",
+"targets": [
+"BASE"
+]
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-31.232750000000003,
+40.0,
+6.85
+],
+"direction": [
+1,
+0,
+0
+],
+"thread": "M3",
+"depth": 4.0
+}
+},
+{
+"command": "sketch.create",
+"params": {
 "plane": {
 "origin": [
 -31.332750000000004,
@@ -1938,6 +1949,97 @@
 "targets": [
 "BASE"
 ]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-31.332750000000004,
+0.0,
+0.0
+],
+"x_dir": [
+0,
+-1,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/base_lbl_gnd.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.4,
+"direction": "negative",
+"profiles": [
+{
+"point": [
+45.9742,
+6.9313
+]
+},
+{
+"point": [
+49.5799,
+6.85
+]
+},
+{
+"point": [
+53.1069,
+6.6924
+]
+}
+],
+"operation": "cut",
+"targets": [
+"BASE"
+]
+}
+},
+{
+"command": "solid.chamfer",
+"params": {
+"edges": [
+[
+0.0,
+-71.4893,
+0.0
+],
+[
+0.0,
+71.4893,
+0.0
+],
+[
+-31.232750000000003,
+60.0,
+0.0
+],
+[
+31.232750000000003,
+60.0,
+0.0
+]
+],
+"distance": 0.5
 }
 },
 {

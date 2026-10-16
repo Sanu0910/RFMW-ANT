@@ -536,138 +536,6 @@
 "command": "sketch.circle.center",
 "params": {
 "center": [
--28.733,
--68.989
-],
-"diameter": 2.9,
-"connect": false
-}
-},
-{
-"command": "sketch.circle.center",
-"params": {
-"center": [
-28.733,
--68.989
-],
-"diameter": 2.9,
-"connect": false
-}
-},
-{
-"command": "sketch.circle.center",
-"params": {
-"center": [
-28.733,
-68.989
-],
-"diameter": 2.9,
-"connect": false
-}
-},
-{
-"command": "sketch.circle.center",
-"params": {
-"center": [
--28.733,
-68.989
-],
-"diameter": 2.9,
-"connect": false
-}
-},
-{
-"command": "sketch.circle.center",
-"params": {
-"center": [
--22.348,
--68.989
-],
-"diameter": 2.9,
-"connect": false
-}
-},
-{
-"command": "sketch.circle.center",
-"params": {
-"center": [
--15.963,
--68.989
-],
-"diameter": 2.9,
-"connect": false
-}
-},
-{
-"command": "sketch.circle.center",
-"params": {
-"center": [
--9.578,
--68.989
-],
-"diameter": 2.9,
-"connect": false
-}
-},
-{
-"command": "sketch.circle.center",
-"params": {
-"center": [
--3.193,
--68.989
-],
-"diameter": 2.9,
-"connect": false
-}
-},
-{
-"command": "sketch.circle.center",
-"params": {
-"center": [
-3.193,
--68.989
-],
-"diameter": 2.9,
-"connect": false
-}
-},
-{
-"command": "sketch.circle.center",
-"params": {
-"center": [
-9.578,
--68.989
-],
-"diameter": 2.9,
-"connect": false
-}
-},
-{
-"command": "sketch.circle.center",
-"params": {
-"center": [
-15.963,
--68.989
-],
-"diameter": 2.9,
-"connect": false
-}
-},
-{
-"command": "sketch.circle.center",
-"params": {
-"center": [
-22.348,
--68.989
-],
-"diameter": 2.9,
-"connect": false
-}
-},
-{
-"command": "sketch.circle.center",
-"params": {
-"center": [
 28.733,
 -62.19
 ],
@@ -725,94 +593,6 @@
 "center": [
 28.733,
 62.189
-],
-"diameter": 2.9,
-"connect": false
-}
-},
-{
-"command": "sketch.circle.center",
-"params": {
-"center": [
-22.348,
-68.989
-],
-"diameter": 2.9,
-"connect": false
-}
-},
-{
-"command": "sketch.circle.center",
-"params": {
-"center": [
-15.963,
-68.989
-],
-"diameter": 2.9,
-"connect": false
-}
-},
-{
-"command": "sketch.circle.center",
-"params": {
-"center": [
-9.578,
-68.989
-],
-"diameter": 2.9,
-"connect": false
-}
-},
-{
-"command": "sketch.circle.center",
-"params": {
-"center": [
-3.193,
-68.989
-],
-"diameter": 2.9,
-"connect": false
-}
-},
-{
-"command": "sketch.circle.center",
-"params": {
-"center": [
--3.193,
-68.989
-],
-"diameter": 2.9,
-"connect": false
-}
-},
-{
-"command": "sketch.circle.center",
-"params": {
-"center": [
--9.578,
-68.989
-],
-"diameter": 2.9,
-"connect": false
-}
-},
-{
-"command": "sketch.circle.center",
-"params": {
-"center": [
--15.963,
-68.989
-],
-"diameter": 2.9,
-"connect": false
-}
-},
-{
-"command": "sketch.circle.center",
-"params": {
-"center": [
--22.348,
-68.989
 ],
 "diameter": 2.9,
 "connect": false
@@ -1017,6 +797,193 @@
 }
 },
 {
+"command": "sketch.circle.center",
+"params": {
+"center": [
+28.733,
+68.989
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+19.867,
+68.989
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+10.967,
+68.989
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+4.0,
+68.989
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-4.933,
+68.989
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-13.833,
+68.989
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-22.733,
+68.989
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-28.733,
+68.989
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+28.733,
+-68.989
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+22.733,
+-68.989
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+13.767,
+-68.989
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+4.867,
+-68.989
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-4.0,
+-68.989
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-10.133,
+-68.989
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-16.333,
+-68.989
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-22.533,
+-68.989
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-28.733,
+-68.989
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
 "command": "sketch.finish",
 "params": {}
 },
@@ -1072,578 +1039,38 @@
 "profiles": [
 {
 "point": [
--16.5682,
--22.9584
+-7.4026,
+-47.1979
 ]
 },
 {
 "point": [
--12.6183,
--13.5586
+0.8911,
+-28.1819
 ]
 },
 {
 "point": [
--9.5605,
--4.1379
+7.2467,
+-8.6007
 ]
 },
 {
 "point": [
--13.2691,
-6.997
+-0.4617,
+14.5435
 ]
 },
 {
 "point": [
--16.5325,
-16.443
+-7.2447,
+34.1772
 ]
 },
 {
 "point": [
--9.5605,
-24.7337
-]
-},
-{
-"point": [
--5.0771,
--25.4996
-]
-},
-{
-"point": [
--4.094,
--21.4294
-]
-},
-{
-"point": [
--4.094,
--17.8148
-]
-},
-{
-"point": [
--5.4906,
--14.1444
-]
-},
-{
-"point": [
--4.094,
--10.9481
-]
-},
-{
-"point": [
--4.094,
--6.9649
-]
-},
-{
-"point": [
--5.0771,
--3.3685
-]
-},
-{
-"point": [
--3.8721,
-1.2352
-]
-},
-{
-"point": [
--3.9222,
-5.7699
-]
-},
-{
-"point": [
--5.4906,
-9.4741
-]
-},
-{
-"point": [
--3.6663,
-13.1876
-]
-},
-{
-"point": [
--2.697,
-19.1895
-]
-},
-{
-"point": [
--5.0771,
-21.7098
-]
-},
-{
-"point": [
--4.183,
-25.6777
-]
-},
-{
-"point": [
-2.9072,
--33.2282
-]
-},
-{
-"point": [
-3.2408,
--31.423
-]
-},
-{
-"point": [
-2.8629,
--29.027
-]
-},
-{
-"point": [
-2.1182,
--26.2426
-]
-},
-{
-"point": [
-2.937,
--22.8527
-]
-},
-{
-"point": [
-1.8095,
--19.4728
-]
-},
-{
-"point": [
-2.8558,
--15.222
-]
-},
-{
-"point": [
-3.2408,
--12.9428
-]
-},
-{
-"point": [
-2.2172,
--9.9338
-]
-},
-{
-"point": [
-2.1182,
--6.767
-]
-},
-{
-"point": [
-3.3058,
--3.7937
-]
-},
-{
-"point": [
-3.1065,
-0.3961
-]
-},
-{
-"point": [
-1.7379,
-3.5767
-]
-},
-{
-"point": [
-2.2158,
-7.116
-]
-},
-{
-"point": [
-1.7738,
-11.1874
-]
-},
-{
-"point": [
-3.0801,
-13.8626
-]
-},
-{
-"point": [
-1.8095,
-18.3443
-]
-},
-{
-"point": [
-2.937,
-20.6506
-]
-},
-{
-"point": [
-3.6936,
-22.7007
-]
-},
-{
-"point": [
-2.937,
-25.193
-]
-},
-{
-"point": [
-1.8095,
-27.6523
-]
-},
-{
-"point": [
-1.7738,
-30.9263
-]
-},
-{
-"point": [
-3.0801,
-33.6014
-]
-},
-{
-"point": [
-7.992,
--22.1417
-]
-},
-{
-"point": [
-7.4796,
--19.7149
-]
-},
-{
-"point": [
-8.5809,
--17.4614
-]
-},
-{
-"point": [
-7.8126,
--16.3179
-]
-},
-{
-"point": [
-7.4796,
--14.6397
-]
-},
-{
-"point": [
-8.5809,
--12.3862
-]
-},
-{
-"point": [
-7.4796,
--9.6488
-]
-},
-{
-"point": [
-7.513,
--7.6225
-]
-},
-{
-"point": [
-7.5744,
--5.3903
-]
-},
-{
-"point": [
-7.513,
--3.8291
-]
-},
-{
-"point": [
-7.6017,
--2.18
-]
-},
-{
-"point": [
-8.5809,
--0.111
-]
-},
-{
-"point": [
-7.513,
-0.9811
-]
-},
-{
-"point": [
-7.5128,
-2.7052
-]
-},
-{
-"point": [
-6.4454,
-5.1661
-]
-},
-{
-"point": [
-7.4456,
-9.0885
-]
-},
-{
-"point": [
-7.8126,
-10.8316
-]
-},
-{
-"point": [
-7.513,
-12.5316
-]
-},
-{
-"point": [
-7.8741,
-14.5272
-]
-},
-{
-"point": [
-8.5997,
-17.8929
-]
-},
-{
-"point": [
-7.4332,
-20.4886
-]
-},
-{
-"point": [
-7.814,
-22.5996
-]
-},
-{
-"point": [
-12.461,
--20.0554
-]
-},
-{
-"point": [
-12.523,
--18.7243
-]
-},
-{
-"point": [
-12.3758,
--17.0057
-]
-},
-{
-"point": [
-13.4175,
--13.6729
-]
-},
-{
-"point": [
-12.4349,
--11.4285
-]
-},
-{
-"point": [
-13.3996,
--9.2135
-]
-},
-{
-"point": [
-12.6631,
--8.1174
-]
-},
-{
-"point": [
-12.2972,
--6.7015
-]
-},
-{
-"point": [
-12.299,
--4.4012
-]
-},
-{
-"point": [
-12.6631,
--2.788
-]
-},
-{
-"point": [
-12.461,
--1.1036
-]
-},
-{
-"point": [
-11.3783,
-0.9019
-]
-},
-{
-"point": [
-12.3114,
-3.0505
-]
-},
-{
-"point": [
-12.6631,
-4.7212
-]
-},
-{
-"point": [
-13.4255,
-6.4058
-]
-},
-{
-"point": [
-12.376,
-8.3667
-]
-},
-{
-"point": [
-12.4349,
-12.5106
-]
-},
-{
-"point": [
-11.3527,
-14.7133
-]
-},
-{
-"point": [
-13.231,
-16.5368
-]
-},
-{
-"point": [
-11.4947,
-19.7112
-]
-},
-{
-"point": [
-16.194,
--8.6479
-]
-},
-{
-"point": [
-16.373,
--7.1399
-]
-},
-{
-"point": [
-16.2258,
--5.4213
-]
-},
-{
-"point": [
-18.0177,
--0.8525
-]
-},
-{
-"point": [
-18.0177,
-0.7317
-]
-},
-{
-"point": [
-18.0177,
-2.3159
-]
-},
-{
-"point": [
-18.0177,
-3.9002
-]
-},
-{
-"point": [
-18.0177,
-5.4844
-]
-},
-{
-"point": [
-18.0177,
-7.0686
-]
-},
-{
-"point": [
-18.0177,
-8.684
-]
-},
-{
-"point": [
-18.0177,
--2.4679
+7.2467,
+51.4096
 ]
 }
 ],
@@ -1756,6 +1183,136 @@
 "targets": [
 "LID"
 ]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+18.52
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/lid_dowels.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 4.199999999999999,
+"direction": "negative",
+"profiles": [
+{
+"point": [
+-18.733,
+69.0055
+]
+},
+{
+"point": [
+18.733,
+-68.989
+]
+}
+],
+"operation": "cut",
+"targets": [
+"LID"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 18.52
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0.0,
+68.989
+],
+"diameter": 2.5,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0.0,
+-68.989
+],
+"diameter": 2.5,
+"connect": false
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 4.2,
+"direction": "negative",
+"profiles": "all",
+"operation": "cut",
+"targets": [
+"LID"
+]
+}
+},
+{
+"command": "solid.chamfer",
+"params": {
+"edges": [
+[
+0.0,
+-71.4893,
+18.419999999999998
+],
+[
+0.0,
+71.4893,
+18.419999999999998
+],
+[
+-31.232750000000003,
+60.0,
+18.419999999999998
+],
+[
+31.232750000000003,
+60.0,
+18.419999999999998
+]
+],
+"distance": 0.6
 }
 },
 {
