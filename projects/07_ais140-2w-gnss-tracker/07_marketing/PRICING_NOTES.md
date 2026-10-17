@@ -12,25 +12,49 @@ Re-render with Chromium (headless window is ~90 px shorter than `--window-size`,
 
 Fill in the phone number and web address in the CTA line before you print.
 
-## Estimated unit cost at 1 000 pcs (INR, rough, excl. GST)
+## BOM cost per unit at 1 000 pcs (estimate, ₹88 / USD, excl. GST)
+
+Line-by-line costing: `03_fab/CRL-TRK-2W-01_BOM_costed.csv`. Prices are typical LCSC / DigiKey 1k-qty prices
+from memory, not quotes. Get real quotes before committing.
+
+**A. PCB assembly (180 parts)**
+
+| Group | ₹ |
+|---|---|
+| Modules: NEO-F10N ₹1,848, SIM7080G ₹836, ESP32-S3 ₹273 | 2,957 |
+| ICs & sensors: IMU, charger, buck, ideal diode, gauge, RTC, flash, level shifter, ESD | 986 |
+| Connectors: Micro-Fit, USB-C, SIM holder, battery, 2× U.FL | 208 |
+| Passives: 112 R / C / L / fuse | 143 |
+| Discretes & misc: MOSFETs, TVS, diodes, LEDs, buttons | 99 |
+| **Board parts** | **4,392** |
+| 4-layer PCB, ENIG, impedance control | 80 |
+| SMT assembly, double-sided (JLC) | 220 |
+| **Assembled PCB** | **≈ 4,690** |
+
+**B. Box build**
 
 | Item | ₹ |
 |---|---|
-| NEO-F10N GNSS (L1/L5 + NavIC) | 1 900 |
-| SIM7080G LTE-M/NB-IoT | 850 |
-| ESP32-S3-WROOM-1-N8R2 | 260 |
-| IMU, charger, buck, ideal diode, LDO, flash, RTC, gauge, passives | 950 |
-| 4-layer PCB + double-sided SMT (JLC) | 350 |
-| IP67 enclosure + gasket + gland | 250 |
-| Active L1/L5 GNSS antenna + LTE flex antenna | 670 |
+| IP67 enclosure, gasket, cable gland | 250 |
+| Active L1/L5 GNSS antenna | 550 |
+| LTE flex antenna | 120 |
 | 18650 pack with PCM and NTC | 220 |
-| Harness, fuse, SOS button, relay | 300 |
-| **Hardware total** | **≈ 5 750** |
-| Data SIM + cloud, per vehicle per year | ≈ 500–700 |
+| Harness, inline fuse, SOS button, relay | 300 |
+| Box, label, manual | 50 |
+| **Box build** | **≈ 1,490** |
+
+**Total hardware ≈ ₹6,180 per unit.** Import freight and customs on the parts add ≈ ₹400–500, which brings
+the landed cost to ≈ ₹6,600. Data SIM and cloud cost ≈ ₹500–700 per vehicle per year.
+
+Cost-down options:
+- Buying 10k units cuts module prices by 15–20 %.
+- The ICM-42670 is a cheaper IMU than the IIM-42652.
+- Generic U.FL connectors instead of Hirose.
+- A "Lite" board with an L1-only GNSS and no NavIC would cost ≈ ₹4,000 in hardware, but it is not AIS-140.
 
 ## Poster prices and profit per unit (indicative, ex-GST)
 
-Costs per unit, beyond the ≈ ₹5,750 hardware:
+Costs per unit, on top of ₹6,180 hardware:
 - year-1 data and cloud: ₹600
 - installation: ₹300 (Rider only)
 - warranty reserve: 3 % of price
@@ -38,27 +62,24 @@ Costs per unit, beyond the ≈ ₹5,750 hardware:
 
 | Plan | Price | Total cost | Profit / unit | Margin |
 |---|---|---|---|---|
-| Rider, sold direct | ₹9,499 | ≈ ₹7,085 | ≈ ₹2,400 | ≈ 25 % |
-| Rider, via dealer (18 % dealer cut) | ₹9,499 | ≈ ₹8,795 | ≈ ₹700 | ≈ 7 % |
-| Fleet AIS-140, 25+ units | ₹7,499 | ≈ ₹6,125 | ≈ ₹1,375 | ≈ 18 % |
+| Rider, sold direct | ₹9,499 | ≈ ₹7,515 | ≈ ₹1,980 | ≈ 21 % |
+| Rider, via dealer (18 % cut) | ₹9,499 | ≈ ₹9,225 | ≈ ₹270 | ≈ 3 % |
+| Fleet AIS-140, 25+ units | ₹7,499 | ≈ ₹6,555 | ≈ ₹945 | ≈ 13 % |
 | Fleet platform fee, per year | ₹1,499 | ₹600 | ≈ ₹900 | ≈ 60 % |
 | Renewal, per year | ₹1,999 | ₹600 | ≈ ₹1,400 | ≈ 70 % |
 
-Three years of one direct Rider customer:
-- profit ≈ ₹2,400 + 2 × ₹1,400 = ₹5,200
-- revenue ≈ ₹13,500
-- margin ≈ 39 %
+Hardware margins are thin at these prices. Two suggested prices:
 
-Not included above are fixed costs:
-- AIS-140 type approval (ICAT/ARAI), BIS, WPC and TEC
+| Plan | New price | Profit / unit | Margin |
+|---|---|---|---|
+| Rider, sold direct | ₹10,999 | ≈ ₹3,435 | ≈ 31 % |
+| Rider, via dealer | ₹10,999 | ≈ ₹1,455 | ≈ 13 % |
+| Fleet AIS-140 | ₹7,999 | ≈ ₹1,430 | ≈ 18 % |
+
+The real profit comes from renewals. Fixed costs are not included:
+- AIS-140 / BIS / WPC / TEC approval
 - app and server development
-- moulds, test fixture, staff and marketing
-
-Break-even at ₹2,400 profit per unit: about 1,250 units for every ₹30 lakh of fixed cost.
-
-The NEO-F10N is the biggest cost. A "Lite" version could drop to ≈ ₹3 900 hardware cost and a ≈ ₹5,999 retail price, using:
-- an L1-only GNSS without NavIC (not AIS-140);
-- a cheaper antenna.
+- moulds, fixture, staff and marketing
 
 Market check needed: AIS-140 VLTDs in India usually sell for about ₹4,000–9,000. Basic 2W trackers sell for ₹2,000–4,000, but they are mostly 2G with no backup battery.
 

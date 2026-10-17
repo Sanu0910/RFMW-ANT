@@ -1,0 +1,85 @@
+Designators,Qty,Value,MPN,Manufacturer,Unit USD (est. @1k),Ext USD,Ext INR,Category
+C1,1,100nF/16V,"0603 MLCC X7R/X5R, AEC-Q200",Murata / Samsung,0.004,0.004,0.4,Passives
+"C2,C6",2,100nF/100V,"0603 MLCC X7R/X5R, AEC-Q200",Murata / Samsung,0.010,0.020,1.8,Passives
+C3,1,22uF/63V,EEE-FK1J220P,Panasonic,0.200,0.200,17.6,Passives
+"C4,C5",2,2.2uF/100V,"1210 MLCC X7R/X5R, AEC-Q200",Murata / Samsung,0.120,0.240,21.1,Passives
+C7,1,2.2nF/50V,"0402 MLCC X7R/X5R, AEC-Q200",Murata / Samsung,0.002,0.002,0.2,Passives
+"C8,C9",2,22uF/10V,"1206 MLCC X7R/X5R, AEC-Q200",Murata / Samsung,0.060,0.120,10.6,Passives
+C10,1,100nF,"0603 MLCC X7R/X5R, AEC-Q200",Murata / Samsung,0.004,0.004,0.4,Passives
+C11,1,1uF/25V,"0603 MLCC X7R/X5R, AEC-Q200",Murata / Samsung,0.004,0.004,0.4,Passives
+"C12,C17,C25,C34",4,10uF/10V,"0805 MLCC X7R/X5R, AEC-Q200",Murata / Samsung,0.020,0.080,7.0,Passives
+C13,1,4.7uF/10V,"0805 MLCC X7R/X5R, AEC-Q200",Murata / Samsung,0.020,0.020,1.8,Passives
+"C14,C15,C21,C23,C26,C29,C30,C31,C35,C36,C40,C41,C42,C44,C46,C48,C50",17,100nF,"0402 MLCC X7R/X5R, AEC-Q200",Murata / Samsung,0.002,0.034,3.0,Passives
+C16,1,1uF/10V,"0603 MLCC X7R/X5R, AEC-Q200",Murata / Samsung,0.004,0.004,0.4,Passives
+"C18,C19",2,1nF,"0402 MLCC X7R/X5R, AEC-Q200",Murata / Samsung,0.002,0.004,0.4,Passives
+C20,1,22uF/10V,"0805 MLCC X7R/X5R, AEC-Q200",Murata / Samsung,0.020,0.020,1.8,Passives
+C22,1,1uF,"0603 MLCC X7R/X5R, AEC-Q200",Murata / Samsung,0.004,0.004,0.4,Passives
+C24,1,100uF/6.3V,"1210 MLCC X7R/X5R, AEC-Q200",Murata / Samsung,0.250,0.250,22.0,Passives
+C27,1,33pF,0402 C0G 50V,Murata / Samsung,0.002,0.002,0.2,Passives
+C28,1,10pF,0402 C0G 50V,Murata / Samsung,0.002,0.002,0.2,Passives
+C37,1,10nF,"0402 MLCC X7R/X5R, AEC-Q200",Murata / Samsung,0.002,0.002,0.2,Passives
+"C43,C45,C47,C49",4,10nF/100V,"0603 MLCC X7R/X5R, AEC-Q200",Murata / Samsung,0.010,0.040,3.5,Passives
+D1,1,SMBJ33CA,SMBJ33CA,Littelfuse,0.070,0.070,6.2,Discretes & misc
+"D2,D4",2,B5819W,B5819W,MDD / Diodes Inc,0.020,0.040,3.5,Discretes & misc
+"D3,D9,D10,D11,D12",5,BAT54S,BAT54S,Nexperia,0.015,0.075,6.6,Discretes & misc
+D5,1,GREEN,LTST-C191KGKT,Lite-On,0.020,0.020,1.8,Discretes & misc
+D6,1,RED,LTST-C191KRKT,Lite-On,0.020,0.020,1.8,Discretes & misc
+D7,1,SMF5.0A,SMF5.0A,Littelfuse,0.040,0.040,3.5,Discretes & misc
+D8,1,YELLOW,LTST-C191KSKT,Lite-On,0.020,0.020,1.8,Discretes & misc
+D13,1,1N4148W,1N4148W-7-F,Diodes Inc,0.010,0.010,0.9,Discretes & misc
+F1,1,2A,0466002.NRHF,Littelfuse,0.200,0.200,17.6,Passives
+FB1,1,600R@100M,BLM21PG601SN1D,Murata,0.030,0.030,2.6,Passives
+J1,1,VEHICLE 2x4,43045-0812,Molex,1.100,1.100,96.8,Connectors
+J2,1,BATTERY 18650,S3B-PH-SM4-TB(LF)(SN),JST,0.150,0.150,13.2,Connectors
+J3,1,USB-C,TYPE-C-31-M-12,Korean Hroparts,0.150,0.150,13.2,Connectors
+J5,1,NANO-SIM,SIM8060-6-0-14-00-A,GCT,0.400,0.400,35.2,Connectors
+J6,1,LTE ANT,U.FL-R-SMT-1(10),Hirose,0.280,0.280,24.6,Connectors
+J7,1,GNSS ANT,U.FL-R-SMT-1(10),Hirose,0.280,0.280,24.6,Connectors
+L1,1,22uH,SRN6045TA-220M,Bourns,0.250,0.250,22.0,Passives
+L2,1,47nH,LQG15HS47NJ02D,Murata,0.020,0.020,1.8,Passives
+Q1,1,BUK7M12-60EX,BUK7M12-60EX,Nexperia,0.450,0.450,39.6,Discretes & misc
+Q2,1,2N7002,2N7002K-7,Diodes Inc,0.020,0.020,1.8,Discretes & misc
+Q3,1,MMBT3904,MMBT3904,onsemi,0.020,0.020,1.8,Discretes & misc
+Q4,1,BUK9M53-60EX,BUK9M53-60EX,Nexperia,0.300,0.300,26.4,Discretes & misc
+R1,1,1M,"0603 1% thick film, AEC-Q200",Yageo / Vishay,0.002,0.002,0.2,Passives
+R2,1,330k,"0402 1% thick film, AEC-Q200",Yageo / Vishay,0.001,0.001,0.1,Passives
+R3,1,160k,"0402 1% thick film, AEC-Q200",Yageo / Vishay,0.001,0.001,0.1,Passives
+R4,1,316k,"0603 1% thick film, AEC-Q200",Yageo / Vishay,0.002,0.002,0.2,Passives
+"R5,R14,R17,R18,R26,R50",6,100k,"0402 1% thick film, AEC-Q200",Yageo / Vishay,0.001,0.006,0.5,Passives
+R6,1,100k,"0603 1% thick film, AEC-Q200",Yageo / Vishay,0.002,0.002,0.2,Passives
+R7,1,1M,"1206 1% thick film, AEC-Q200",Yageo / Vishay,0.004,0.004,0.4,Passives
+R8,1,68k,"0402 1% thick film, AEC-Q200",Yageo / Vishay,0.001,0.001,0.1,Passives
+R9,1,1.5k,"0402 1% thick film, AEC-Q200",Yageo / Vishay,0.001,0.001,0.1,Passives
+R10,1,1.78k,"0402 1% thick film, AEC-Q200",Yageo / Vishay,0.001,0.001,0.1,Passives
+R11,1,15k,"0402 1% thick film, AEC-Q200",Yageo / Vishay,0.001,0.001,0.1,Passives
+"R15,R16",2,1M,"0402 1% thick film, AEC-Q200",Yageo / Vishay,0.001,0.002,0.2,Passives
+"R19,R20,R23,R37,R40,R48,R53,R54",8,10k,"0402 1% thick film, AEC-Q200",Yageo / Vishay,0.001,0.008,0.7,Passives
+"R21,R22",2,5.1k,"0402 1% thick film, AEC-Q200",Yageo / Vishay,0.001,0.002,0.2,Passives
+"R24,R25,R28,R33,R34",5,1k,"0402 1% thick film, AEC-Q200",Yageo / Vishay,0.001,0.005,0.4,Passives
+"R27,R38,R39",3,4.7k,"0402 1% thick film, AEC-Q200",Yageo / Vishay,0.001,0.003,0.3,Passives
+"R29,R30,R31",3,22R,"0402 1% thick film, AEC-Q200",Yageo / Vishay,0.001,0.003,0.3,Passives
+"R32,R36",2,0R,0402 0R jumper,Yageo / Vishay,0.001,0.002,0.2,Passives
+R35,1,10R,"0402 1% thick film, AEC-Q200",Yageo / Vishay,0.001,0.001,0.1,Passives
+"R41,R45,R47",3,100k,"1206 1% thick film, AEC-Q200",Yageo / Vishay,0.004,0.012,1.1,Passives
+"R42,R46",2,22k,"0402 1% thick film, AEC-Q200",Yageo / Vishay,0.001,0.002,0.2,Passives
+R43,1,4.7k,"1206 1% thick film, AEC-Q200",Yageo / Vishay,0.004,0.004,0.4,Passives
+R44,1,47k,"0402 1% thick film, AEC-Q200",Yageo / Vishay,0.001,0.001,0.1,Passives
+"R49,R51,R52",3,100R,"0402 1% thick film, AEC-Q200",Yageo / Vishay,0.001,0.003,0.3,Passives
+SW1,1,RESET,TS-1187A-B-A-B,XKB,0.020,0.020,1.8,Discretes & misc
+SW2,1,BOOT,TS-1187A-B-A-B,XKB,0.020,0.020,1.8,Discretes & misc
+U1,1,LM74700-Q1,LM74700QDBVRQ1,TI,0.750,0.750,66.0,ICs & sensors
+U2,1,LM5164-Q1,LM5164QDDARQ1,TI,1.400,1.400,123.2,ICs & sensors
+U3,1,BQ24074,BQ24074RGTR,TI,1.100,1.100,96.8,ICs & sensors
+U4,1,LC709203F,LC709203FQH-01TWG,onsemi,0.900,0.900,79.2,ICs & sensors
+U5,1,TLV75733P,TLV75733PDBVR,TI,0.120,0.120,10.6,ICs & sensors
+"U6,U7",2,TPS22917,TPS22917DBVR,TI,0.250,0.500,44.0,ICs & sensors
+U8,1,ESP32-S3-WROOM-1-N8R2,ESP32-S3-WROOM-1-N8R2,Espressif,3.100,3.100,272.8,Modules
+U9,1,USBLC6-2SC6,USBLC6-2SC6,STMicroelectronics,0.080,0.080,7.0,ICs & sensors
+U10,1,W25Q128JV,W25Q128JVSIQ,Winbond,1.000,1.000,88.0,ICs & sensors
+U11,1,SIM7080G,SIM7080G,SIMCom,9.500,9.500,836.0,Modules
+U12,1,TXS0108E,TXS0108EPWR,TI,0.450,0.450,39.6,ICs & sensors
+U13,1,ESDA6V1-5SC6,ESDA6V1-5SC6,STMicroelectronics,0.100,0.100,8.8,ICs & sensors
+U14,1,NEO-F10N,NEO-F10N-00B,u-blox,21.000,21.000,1848.0,Modules
+U15,1,IIM-42652,IIM-42652,TDK InvenSense,3.200,3.200,281.6,ICs & sensors
+U16,1,RV-3028-C7,RV-3028-C7 32.768kHz 1ppm-TA-QC,Micro Crystal,1.600,1.600,140.8,ICs & sensors
+TOTAL,,,,,,49.91,4392,
