@@ -84,3 +84,28 @@ The real profit comes from renewals. Fixed costs are not included:
 Market check needed: AIS-140 VLTDs in India usually sell for about ₹4,000–9,000. Basic 2W trackers sell for ₹2,000–4,000, but they are mostly 2G with no backup battery.
 
 Claims on the poster are kept to the design (AIS-140 *ready*, approval pending). Battery and sleep figures are calculations until they are measured on first articles.
+
+## Competitors in India (web listings, Oct 2026, prices change often)
+
+| Segment | Examples | Street price | Typical inside |
+|---|---|---|---|
+| Budget 4G bike trackers | SeTrack, Ajjas 4G Lite, Onelap Micro / LocoShield, Fleettrack 4G | ₹900–₹2,900, usually with the first year of data; then ≈ ₹999/yr or ₹99–150/month | Cat-1 4G + single-band GPS combo, small or no backup battery |
+| Mid-range | Alike GPS VT05R | from ₹3,999 | the same class, with more alerts |
+| AIS-140 VLTD (4G, eSIM, IRNSS) | Atlanta WP 30L, Gtropy, Algotrack and many others | ₹4,500–₹13,000 per device; most ₹5,000–₹8,000. Install ₹300–1,500, renewal ₹1,000–2,500/yr | bulky boxes built for buses and trucks |
+| Premium wireless | Monimoto 9 | ≈ ₹47,000 | imported, no subscription |
+| Built-in (EV makers) | Ather, Ola, TVS iQube, Bajaj Chetak apps | bundled in the scooter or its connectivity plan | not sold for petrol bikes |
+
+Sources:
+- amazon.in bike GPS listings
+- kingswayaccessories.com 2026 guide
+- alikegps.com
+- blog.fleetx.ai AIS-140 price guide
+- IndiaMART AIS-140 listings
+
+Positioning: Samay Track 2W cannot win on price against ₹1,500 consumer trackers (≈ ₹6,180 cost against their ≈ ₹800–1,200).
+
+Its ground is:
+1. AIS-140 two-wheelers and fleets: compact, dual-band NavIC, a 40 h battery, and priced at the middle to top of the ₹5k–11k band.
+2. Premium riders who want crash detection, tamper detection and the black box.
+
+A cheap consumer segment needs a separate Lite design.
