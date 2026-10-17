@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Samay Track 2W Poster</title>
+<style>
+  @page { size: 1200px 1880px; margin: 0; }
+  :root {
+    --bg0: #050b18; --bg1: #0b1a33; --ink: #eaf2ff; --mute: #93a4c3; --line: rgba(140,170,220,.18);
+    --cyan: #22d3ee; --blue: #3b82f6; --amber: #fbbf24; --orange: #f97316; --green: #34d399; --pink: #f472b6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 1880px; background: var(--bg0); }
+  body {
+    font-family: "Inter", "DejaVu Sans", sans-serif; color: var(--ink); overflow: hidden; position: relative;
+    background:
+      radial-gradient(900px 600px at 85% 18%, rgba(34,211,238,.20), transparent 60%),
+      radial-gradient(700px 500px at 5% 40%, rgba(59,130,246,.16), transparent 60%),
+      radial-gradient(800px 500px at 50% 100%, rgba(249,115,22,.14), transparent 60%),
+      linear-gradient(180deg, var(--bg1), var(--bg0) 55%);
+  }
+  .grid-bg { position: absolute; inset: 0; opacity: .35;
+    background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 60px 60px; mask-image: linear-gradient(180deg, #000 0%, transparent 45%); }
+  .wrap { position: relative; padding: 46px 64px 0; }
+  .display { font-family: "Inter Display", "Inter", sans-serif; }
+
+  /* top bar */
+  .top { display: flex; align-items: center; justify-content: space-between; }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand b { font-family: "Inter Display"; font-weight: 800; font-size: 26px; letter-spacing: .06em; }
+  .brand span { display: block; font-size: 12px; letter-spacing: .42em; color: var(--mute); margin-top: 2px; }
+  .pill { border: 1px solid var(--line); border-radius: 999px; padding: 8px 16px; font-size: 13px; color: var(--mute);
+          background: rgba(255,255,255,.03); letter-spacing: .04em; }
+  .pill i { font-style: normal; color: var(--amber); }
+
+  /* hero */
+  .hero { display: grid; grid-template-columns: 520px 1fr; gap: 10px; margin-top: 34px; align-items: center; }
+  .kicker { display: inline-flex; gap: 8px; align-items: center; font-size: 13px; font-weight: 600; letter-spacing: .22em;
+            color: var(--cyan); text-transform: uppercase; }
+  .kicker:before { content: ""; width: 34px; height: 2px; background: var(--cyan); }
+  h1 { font-family: "Inter Display"; font-weight: 900; font-size: 84px; line-height: .98; letter-spacing: -.035em; margin-top: 18px; }
+  h1 em { font-style: normal; background: linear-gradient(90deg, var(--cyan), var(--blue) 55%, var(--pink));
+          -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .sub { font-size: 20px; line-height: 1.5; color: var(--mute); margin-top: 22px; max-width: 480px; }
+  .sub b { color: var(--ink); font-weight: 600; }
+  .hindi { margin-top: 18px; font-size: 18px; color: var(--amber); font-weight: 600; letter-spacing: .01em; }
+  .product { position: relative; height: 470px; }
+  .product .glow { position: absolute; left: 60px; top: 60px; width: 520px; height: 420px; border-radius: 50%;
+                   background: radial-gradient(closest-side, rgba(34,211,238,.45), rgba(59,130,246,.18) 55%, transparent 75%);
+                   filter: blur(10px); }
+  .product .ring { position: absolute; left: 70px; top: 100px; width: 520px; height: 360px; border-radius: 50%;
+                   border: 1px dashed rgba(34,211,238,.35); transform: rotate(-12deg); }
+  .product img { position: absolute; left: 10px; top: 50px; width: 600px; filter: drop-shadow(0 40px 50px rgba(0,0,0,.6)); }
+  .chip { position: absolute; padding: 10px 14px; border-radius: 14px; font-size: 14px; font-weight: 700;
+          background: rgba(10,22,44,.82); border: 1px solid var(--line); backdrop-filter: blur(6px);
+          box-shadow: 0 10px 30px rgba(0,0,0,.35); display: flex; gap: 8px; align-items: center; }
+  .chip small { display: block; font-weight: 500; color: var(--mute); font-size: 11px; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; }
+
+  /* stats */
+  .stats { display: grid; grid-template-columns: repeat(5, 1fr); margin-top: 26px; border: 1px solid var(--line);
+           border-radius: 22px; background: rgba(255,255,255,.035); overflow: hidden; }
+  .stat { padding: 18px 14px; text-align: center; border-right: 1px solid var(--line); }
+  .stat:last-child { border-right: 0; }
+  .stat b { display: block; font-family: "Inter Display"; font-weight: 800; font-size: 38px; letter-spacing: -.02em; }
+  .stat span { font-size: 13px; color: var(--mute); }
+
+  /* sections */
+  .sec-title { display: flex; align-items: baseline; justify-content: space-between; margin: 30px 0 14px; }
+  .sec-title h2 { font-family: "Inter Display"; font-size: 30px; font-weight: 800; letter-spacing: -.01em; }
+  .sec-title span { font-size: 13px; color: var(--mute); letter-spacing: .14em; text-transform: uppercase; }
+  .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .card { display: grid; grid-template-columns: 42px 1fr; column-gap: 14px; border: 1px solid var(--line); border-radius: 18px; padding: 16px 16px 14px; background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.015)); }
+  .card .ic { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; grid-row: span 2; }
+  .card h3 { font-size: 18px; font-weight: 700; }
+  .card p { font-size: 14px; line-height: 1.45; color: var(--mute); margin-top: 5px; }
+  svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* hidden powers */
+  .hidden { margin-top: 24px; border-radius: 26px; padding: 26px 28px 24px; position: relative; overflow: hidden;
+            background: linear-gradient(135deg, rgba(251,191,36,.14), rgba(249,115,22,.06) 40%, rgba(244,114,182,.10));
+            border: 1px solid rgba(251,191,36,.35); }
+  .hidden .head { display: flex; align-items: center; gap: 14px; }
+  .hidden .head h2 { font-family: "Inter Display"; font-size: 30px; font-weight: 800; }
+  .lock { font-size: 12px; font-weight: 800; letter-spacing: .2em; color: #1a1205; background: var(--amber); border-radius: 999px; padding: 6px 12px; }
+  .hidden .head p { margin-left: auto; color: #f5d68a; font-size: 14px; }
+  .hp { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px 18px; margin-top: 18px; }
+  .hp div { border-top: 1px solid rgba(251,191,36,.30); padding-top: 10px; }
+  .hp b { display: block; font-size: 15px; color: #ffe7a8; }
+  .hp span { font-size: 13px; line-height: 1.4; color: #d9c9a8; }
+
+  /* pricing */
+  .pricing { display: grid; grid-template-columns: 1fr 1.12fr 1fr; gap: 16px; align-items: stretch; }
+  .plan { border: 1px solid var(--line); border-radius: 22px; padding: 22px 22px 20px; background: rgba(255,255,255,.035); position: relative; }
+  .plan.hot { background: linear-gradient(180deg, rgba(34,211,238,.18), rgba(59,130,246,.10)); border: 1.5px solid rgba(34,211,238,.6);
+              box-shadow: 0 20px 60px rgba(34,211,238,.15); transform: translateY(-8px); }
+  .tag { position: absolute; top: -13px; left: 22px; font-size: 11px; font-weight: 800; letter-spacing: .16em; padding: 6px 12px;
+         border-radius: 999px; background: var(--cyan); color: #04202a; }
+  .plan h4 { font-size: 14px; letter-spacing: .18em; text-transform: uppercase; color: var(--mute); }
+  .price { font-family: "Inter Display"; font-weight: 900; font-size: 52px; letter-spacing: -.03em; margin-top: 8px; }
+  .price small { font-size: 16px; font-weight: 600; color: var(--mute); letter-spacing: 0; }
+  .plan .for { font-size: 14px; color: var(--ink); margin-top: 2px; }
+  .plan ul { list-style: none; margin-top: 14px; }
+  .plan li { font-size: 13.5px; color: var(--mute); padding: 5px 0 5px 22px; position: relative; }
+  .plan li:before { content: ""; position: absolute; left: 0; top: 10px; width: 12px; height: 7px; border-left: 2px solid var(--green);
+                    border-bottom: 2px solid var(--green); transform: rotate(-45deg); }
+
+  /* footer */
+  .cta { margin: 26px 64px 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 22px 28px;
+         border-radius: 22px; background: linear-gradient(90deg, var(--blue), var(--cyan)); color: #03121f; }
+  .cta b { font-family: "Inter Display"; font-size: 30px; font-weight: 900; letter-spacing: -.01em; }
+  .cta p { font-size: 15px; font-weight: 600; opacity: .85; margin-top: 2px; }
+  .cta .btn { background: #03121f; color: #fff; padding: 16px 26px; border-radius: 14px; font-weight: 800; font-size: 17px; white-space: nowrap; }
+  .fine { padding: 14px 64px 0; font-size: 11px; line-height: 1.5; color: #6c7c99; }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<div class="wrap">
+  <div class="top">
+    <div class="brand">
+      <svg viewBox="0 0 48 48" style="width:48px;height:48px;stroke:none">
+        <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#3b82f6"/></linearGradient></defs>
+        <path d="M24 3c-8.3 0-15 6.5-15 14.6C9 29 24 45 24 45s15-16 15-27.4C39 9.5 32.3 3 24 3z" fill="url(#lg)"/>
+        <circle cx="24" cy="18" r="9" fill="#06101f"/>
+        <path d="M24 12v6.5l4 2.5" stroke="#fbbf24" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+      </svg>
+      <div><b>SAMAY ELECTRONICS</b><span>TIME · TRUST · TRACK</span></div>
+    </div>
+    <div class="pill">Designed &amp; engineered in <i>India</i> · AIS-140 ready</div>
+  </div>
+
+  <div class="hero">
+    <div>
+      <div class="kicker">Samay Track 2W</div>
+      <h1 class="display">Your bike.<br>Every <em>samay.</em><br>Everywhere.</h1>
+      <p class="sub">The <b>4G LTE-M GPS + NavIC tracker</b> built for Indian motorcycles and scooters.
+        Live location, theft alerts, crash SOS and remote engine lock in one palm-sized box.</p>
+      <p class="hindi">हर पल, आपकी गाड़ी के साथ।</p>
+    </div>
+    <div class="product">
+      <div class="glow"></div><div class="ring"></div>
+      <img src="board.png" alt="Samay Track 2W electronics">
+      <div class="chip" style="left:6px;top:30px"><span class="dot" style="background:var(--amber)"></span><div>NavIC + GPS<small>dual band L1 / L5</small></div></div>
+      <div class="chip" style="right:-6px;top:120px"><span class="dot" style="background:var(--cyan)"></span><div>4G LTE-M<small>NB-IoT · low data cost</small></div></div>
+      <div class="chip" style="left:30px;bottom:30px"><span class="dot" style="background:var(--green)"></span><div>IP67 sealed<small>rain, dust, washing</small></div></div>
+      <div class="chip" style="right:20px;bottom:56px"><span class="dot" style="background:var(--pink)"></span><div>60 × 45 mm<small>fits under any seat</small></div></div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b>10 s</b><span>live location updates</span></div>
+    <div class="stat"><b>~2 m</b><span>accuracy, open sky*</span></div>
+    <div class="stat"><b>40 h</b><span>tracking after power cut</span></div>
+    <div class="stat"><b>12 / 24 V</b><span>9–36 V, bikes to e-rickshaws</span></div>
+    <div class="stat"><b>∞ km</b><span>range: anywhere on 4G-IoT</span></div>
+  </div>
+
+  <div class="sec-title"><h2>Everything a rider needs</h2><span>Core features</span></div>
+  <div class="features">
+    <div class="card"><div class="ic" style="background:rgba(34,211,238,.15);color:var(--cyan)"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+      <h3>Live tracking</h3><p>See the bike move on your phone, plus trip history, speed and distance.</p></div>
+    <div class="card"><div class="ic" style="background:rgba(244,114,182,.15);color:var(--pink)"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V7z"/><path d="M12 8v4M12 16h.01"/></svg></div>
+      <h3>Theft alert</h3><p>Someone pushes, lifts or tows your parked bike? You know in seconds.</p></div>
+    <div class="card"><div class="ic" style="background:rgba(249,115,22,.15);color:var(--orange)"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+      <h3>Remote engine lock</h3><p>Stop a thief from starting the bike with one tap in the app.</p></div>
+    <div class="card"><div class="ic" style="background:rgba(239,68,68,.16);color:#f87171"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9h6v6H9z"/></svg></div>
+      <h3>SOS panic button</h3><p>One press sends position and alarm to family or the control room.</p></div>
+    <div class="card"><div class="ic" style="background:rgba(52,211,153,.15);color:var(--green)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" stroke-dasharray="3 3"/><circle cx="12" cy="12" r="2"/></svg></div>
+      <h3>Geofence</h3><p>Draw safe zones. Get an alert when the bike enters or leaves them.</p></div>
+    <div class="card"><div class="ic" style="background:rgba(59,130,246,.18);color:#93c5fd"><svg viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div>
+      <h3>Crash detection</h3><p>Detects a fall or impact and alerts automatically with location.</p></div>
+  </div>
+
+  <div class="hidden">
+    <div class="head"><span class="lock">HIDDEN POWERS</span><h2>What others don't tell you</h2><p>Built in. No extra cost.</p></div>
+    <div class="hp">
+      <div><b>Black-box memory</b><span>Stores 4 lakh points with no network, then fills the gaps when signal returns.</span></div>
+      <div><b>Secret backup battery</b><span>Cut the wire? It keeps tracking for about 40 hours and tells you who cut it, and when.</span></div>
+      <div><b>Tamper timestamp</b><span>Opening the box is logged by its own clock, even when it is asleep.</span></div>
+      <div><b>Battery guardian</b><span>Sleeps at 0.11 mA and warns you before the bike battery gets too weak to start.</span></div>
+      <div><b>Indestructible input</b><span>Survives reversed wiring, jump-starts and 36 V spikes.</span></div>
+      <div><b>City-canyon accuracy</b><span>The L5 band and India's NavIC cut the drift near tall buildings and trees.</span></div>
+      <div><b>Gets smarter over the air</b><span>New features arrive via secure OTA updates, with automatic rollback.</span></div>
+      <div><b>Safe-stop logic</b><span>Engine lock only engages at standstill or low speed, never at speed.</span></div>
+    </div>
+  </div>
+
+  <div class="sec-title"><h2>Simple pricing</h2><span>Indicative launch prices</span></div>
+  <div class="pricing">
+    <div class="plan">
+      <h4>Fleet · AIS-140</h4>
+      <div class="price">₹7,499<small> /unit</small></div>
+      <div class="for">25+ vehicles · rentals, delivery, taxi-bikes</div>
+      <ul><li>NavIC + SOS + tamper for AIS-140</li><li>Fleet dashboard &amp; reports</li><li>₹1,499 / vehicle / year platform</li></ul>
+    </div>
+    <div class="plan hot">
+      <span class="tag">MOST POPULAR</span>
+      <h4>Rider</h4>
+      <div class="price">₹9,499<small> one-time</small></div>
+      <div class="for">Device + 1 year app &amp; 4G data included</div>
+      <ul><li>All core features + hidden powers</li><li>Professional installation*</li><li>1-year replacement warranty</li></ul>
+    </div>
+    <div class="plan">
+      <h4>Renew</h4>
+      <div class="price">₹1,999<small> /year</small></div>
+      <div class="for">From year 2: app, alerts and 4G data</div>
+      <ul><li>Unlimited live tracking</li><li>OTA feature updates</li><li>Or ₹199 / month</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="cta">
+  <div><b>Protect your ride today.</b><p>Dealers &amp; fleet partners wanted · Call / WhatsApp: +91 _____ _____ · samay________.in</p></div>
+  <div class="btn">Book a demo →</div>
+</div>
+<p class="fine">* Indicative prices in INR, excluding GST, and subject to change. Installation is included in select cities. Accuracy is typical in open sky.
+  Range depends on LTE-M / NB-IoT network coverage. Battery and sleep figures are design calculations. AIS-140 type approval is pending.
+  Samay Track 2W, model CRL-TRK-2W-01.</p>
+</body>
+</html>
