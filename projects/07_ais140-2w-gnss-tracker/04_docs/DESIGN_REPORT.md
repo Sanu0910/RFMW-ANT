@@ -198,7 +198,7 @@ Modem firmware: TP1–TP4 (SIM7080G USB + USB_BOOT) — SIMCom QDL tool.
 2. Bed-of-nails, no battery: apply 13.5 V / 1 A limit on J1 → check TP10, TP11 (5.0 ± 0.1 V), TP12 (4.4 V),
    TP14 (3.30 ± 0.05 V); input current < 30 mA with modules held in reset.
 3. Reverse 13.5 V on J1 for 1 s → < 1 mA, no damage. 30 V on J1 → rails unchanged.
-4. Flash production firmware over USB / Tag-Connect; write serial number, IMEI ↔ device ID, keys to NVS
+4. Flash production firmware over USB / pogo header TP21–TP28; write serial number, IMEI ↔ device ID, keys to NVS
    (flash encryption + secure boot v2 enabled in production builds).
 5. Self-test firmware: I²C scan (0x0B, 0x52, 0x68), flash JEDEC ID, IMU WHO_AM_I, GNSS UBX-MON-VER,
    modem `ATI`/`AT+CCID`, LED walk, ADC of VIN/VBAT/AIN1 against fixture references, DOUT1 load test.

@@ -1,0 +1,2 @@
+python3 make_lib.py && python3 make_schematic.py && python3 make_bom.py && python3 make_pins.py && python3 make_models.py
+python3 make_workflow_pdf.py                  

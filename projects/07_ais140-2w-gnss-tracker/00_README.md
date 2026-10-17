@@ -13,7 +13,7 @@ BQ24074 + 18650 backup · LM74700-Q1 reverse protection · LM5164-Q1 100 V buck 
 | `01_kicad/` | KiCad 9 project `tracker.kicad_pro` (hierarchical schematic, 6 sheets, 4-layer PCB, project library) |
 | `02_python/` | **source of truth**: `design.py` (circuit), `make_schematic.py`, `make_pcb.py` (placement, rules, RF routes, fan-out, stitching), `make_bom.py`, `make_pins.py`, `rf_calc.py`, `make_lib.py` |
 | `03_fab/` | Gerbers + drill (zip), pick-and-place (CPL) for JLC, assembly BOM (JLC format) and engineering BOM |
-| `04_docs/` | `DESIGN_REPORT.md` (power tree, budget, SI, EMC, DFM, automotive, AIS-140, test, production checklist), `BOM.md`, `VERIFY_LIST.md`, schematic PDF, assembly drawings |
+| `04_docs/` | **`CRL-TRK-2W-01_Workflow_UseCases.pdf` (plain-language guide: use cases, operating modes, alert flows, installation, design & production workflow)**, `DESIGN_REPORT.md` (power tree, budget, SI, EMC, DFM, automotive, AIS-140, test, production checklist), `BOM.md`, `VERIFY_LIST.md`, schematic PDF, assembly drawings |
 | `05_renders/` | 3D STEP of the assembled board and rendered views (modules/connectors without a KiCad model use envelope STEPs from `make_models.py`, SolidCraft) |
 | `06_firmware/` | `board_pins.h` generated from the netlist |
 
@@ -22,6 +22,7 @@ BQ24074 + 18650 backup · LM74700-Q1 reverse protection · LM5164-Q1 100 V buck 
 ```bash
 cd 02_python
 python3 make_lib.py && python3 make_schematic.py && python3 make_bom.py && python3 make_pins.py && python3 make_models.py
+python3 make_workflow_pdf.py                  
 # PCB (KiCad 9 pcbnew python + Freerouting 1.9):
 python3 make_pcb.py dsn                       # placement, RF routes, GND/+3V3 fan-out, rules -> tracker.dsn
 java -jar freerouting-1.9.0.jar -de ../01_kicad/tracker.dsn -do ../01_kicad/tracker.ses -mp 40
