@@ -11,7 +11,7 @@ knowledge rather than the exact datasheet page. Each must be checked and signed 
 | 4 | C7, L1 | BST cap 2.2 nF, L = 22 µH ripple and Isat | — | LM5164 application section |
 | 5 | R9 | BQ24074 K_ILIM | 1550 AΩ → 1.03 A | BQ24074 datasheet |
 | 6 | R10 | BQ24074 K_ISET | 890 AΩ → 500 mA | BQ24074 datasheet |
-| 7 | R11, R12 | ITERM and TMR programming | 15 k / 46.4 k | BQ24074 datasheet (TMR open = default timer?) |
+| 7 | R11, U3.TMR | ITERM resistor; TMR left open = default safety timers (R12 removed) | 15 k / open | BQ24074 datasheet, TMR pin description |
 | 8 | U3 | BQ24074 VO(REG) = 4.4 V (variant table) | assumed | bq2407x selection table; if 5.5 V, SIM7080G VBAT max 4.8 V is exceeded → choose BQ24079/BQ24074 accordingly |
 | 9 | U4 | LC709203F TSW/TSENSE unused, TEST to VSS | NC / GND | LC709203F datasheet |
 | 10 | U16 | RV-3028 VBACKUP to VBAT (≤ 5.5 V), EVI input levels | VBAT | RV-3028-C7 application manual |

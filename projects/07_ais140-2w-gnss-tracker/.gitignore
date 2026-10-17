@@ -6,3 +6,4 @@
 01_kicad/_autosave*
 01_kicad/*.lck
 02_python/__pycache__/
+01_kicad/logs/

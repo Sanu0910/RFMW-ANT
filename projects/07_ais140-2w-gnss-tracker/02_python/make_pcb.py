@@ -51,7 +51,7 @@ PLACE = {
     "H1": (2.6, 42.4, 0, "F"), "H2": (2.6, 26.6, 0, "F"), "H3": (39.95, 2.6, 0, "F"), "H4": (33.2, 42.4, 0, "F"),
     # bottom side anchors
     "J3": (4.6, 34.5, 90, "B"), "J2": (19.5, 39.6, 0, "B"), "J5": (48.4, 37.0, 0, "B"),
-    "J4": (14.0, 9.0, 90, "B"), "SW1": (4.4, 5.4, 90, "B"), "SW2": (4.4, 14.2, 90, "B"),
+"SW1": (4.4, 5.4, 90, "B"), "SW2": (4.4, 14.2, 90, "B"),
     "U10": (23.0, 29.4, 0, "B"), "C3": (41.0, 15.2, 90, "B"),
     "TP1": (57.6, 26.8, 0, "B"), "TP2": (57.6, 29.2, 0, "B"), "TP3": (57.6, 31.6, 0, "B"),
 }
@@ -303,9 +303,42 @@ def _keepouts(board):
 
 def _clr(it):
     try:
-        return max(CLR, pcbnew.ToMM(it.GetOwnClearance(pcbnew.F_Cu)))
+        lay = it.GetLayer() if not isinstance(it, pcbnew.PAD) else (pcbnew.F_Cu if it.IsOnLayer(pcbnew.F_Cu) else pcbnew.B_Cu)
+        return max(CLR, pcbnew.ToMM(it.GetOwnClearance(lay)))
     except Exception:
         return CLR
+
+
+def purge_violating_vias(board):
+    """drop GND/+3V3 fan-out vias (and their stubs) that break another net's clearance"""
+    pads = list(board.GetPads())
+    tracks = list(board.GetTracks())
+    bad = []
+    for v in tracks:
+        if not isinstance(v, pcbnew.PCB_VIA) or v.GetNetname() not in FANOUT:
+            continue
+        r = pcbnew.ToMM(v.GetWidth(pcbnew.F_Cu)) / 2
+        for p in pads:
+            if p.GetNetCode() == v.GetNetCode():
+                continue
+            lay = pcbnew.F_Cu if p.IsOnLayer(pcbnew.F_Cu) else pcbnew.B_Cu
+            if p.GetEffectiveShape(lay).Collide(v.GetPosition(), mm(r + _clr(p) - 0.001)):
+                bad.append(v); break
+        else:
+            for t in tracks:
+                if t is v or t.GetNetCode() == v.GetNetCode():
+                    continue
+                if t.GetEffectiveShape().Collide(v.GetPosition(), mm(r + _clr(t) - 0.001)):
+                    bad.append(v); break
+    gone = set()
+    for v in bad:
+        for t in tracks:
+            if id(t) in gone or isinstance(t, pcbnew.PCB_VIA) or t.GetNetCode() != v.GetNetCode():
+                continue
+            if t.GetStart() == v.GetPosition() or t.GetEnd() == v.GetPosition():
+                board.Remove(t); gone.add(id(t))
+        board.Remove(v); gone.add(id(v))
+    return len(bad)
 
 
 def in_outline(x, y, m):
@@ -333,7 +366,7 @@ def via_ok(board, pos, kos, items, netcode, src_pad=None):
             if it.HitTest(pos, r + gap):
                 return False
         elif isinstance(it, pcbnew.PCB_VIA):
-            if it.HitTest(pos, r + mm(0.2)):
+            if it.HitTest(pos, r + mm(max(0.2, _clr(it) + 0.05) if it.GetNetCode() != netcode else 0.2)):
                 return False
         else:   # track
             if it.GetNetCode() != netcode and it.HitTest(pos, r + mm(_clr(it) + 0.03)):
@@ -482,6 +515,27 @@ def stitch(board):
     return n
 
 
+def silk_to_fab(board):
+    """Dense double-sided board: designators live on the fab layers (assembly drawings), silk keeps outlines,
+    pin-1 marks and a few labels."""
+    for fp in board.GetFootprints():
+        bottom = fp.GetLayer() == pcbnew.B_Cu
+        for f in (fp.Reference(), fp.Value()):
+            f.SetLayer(pcbnew.B_Fab if bottom else pcbnew.F_Fab)
+            f.SetVisible(True)
+            f.SetTextSize(pcbnew.VECTOR2I(mm(0.5), mm(0.5))); f.SetTextThickness(mm(0.08))
+        fp.Value().SetVisible(False)
+        fp.Reference().SetPosition(fp.GetPosition())
+    def text(s, x, y, layer, size=0.8, mirror=False):
+        t = pcbnew.PCB_TEXT(board); t.SetText(s); t.SetPosition(pt(x, y)); t.SetLayer(layer)
+        t.SetTextSize(pcbnew.VECTOR2I(mm(size), mm(size))); t.SetTextThickness(mm(size * 0.15))
+        if mirror:
+            t.SetMirrored(True)
+        board.Add(t)
+    if not any(isinstance(d, pcbnew.PCB_TEXT) and d.GetText().startswith("CRL-TRK") for d in board.GetDrawings()):
+        text("CRL-TRK-2W-01 A0", 30.0, 44.2, pcbnew.B_SilkS, 0.8, True)
+
+
 def finish():
     board = pcbnew.LoadBoard(PCB)
     ses = os.path.join(KDIR, "tracker.ses")
@@ -492,12 +546,82 @@ def finish():
         v = vals.get(fp.GetReference())
         if v and fp.GetValue() != v:
             fp.SetValue(v)
+    print("purged vias", purge_violating_vias(board))
+    nfix = 0
+    for v in board.GetTracks():
+        if isinstance(v, pcbnew.PCB_VIA):
+            w, d = v.GetWidth(pcbnew.F_Cu), v.GetDrillValue()
+            if w - d < mm(0.2):
+                v.SetDrill(max(mm(0.2), w - mm(0.25))); nfix += 1
+    print("via drills normalised", nfix)
+    board.Save(PCB)
+
+
+def stitch_islands(board):
+    """put a GND via into every outer-layer pour fragment that has no via / THT pad in it"""
+    gnd = board.FindNet("GND")
+    kos = _keepouts(board)
+    items = all_items(board)
+    vias = [t.GetPosition() for t in board.GetTracks() if isinstance(t, pcbnew.PCB_VIA) and t.GetNetname() == "GND"]
+    vias += [p.GetPosition() for p in board.GetPads() if p.GetNetname() == "GND" and p.GetAttribute() == pcbnew.PAD_ATTRIB_PTH]
+    added = 0
+    for z in board.Zones():
+        if z.GetIsRuleArea() or z.GetNetname() != "GND" or z.GetZoneName() not in ("L1_GND", "L4_GND"):
+            continue
+        lay = pcbnew.F_Cu if z.GetZoneName() == "L1_GND" else pcbnew.B_Cu
+        polys = z.GetFilledPolysList(lay)
+        for k in range(polys.OutlineCount()):
+            sub = pcbnew.SHAPE_POLY_SET(); sub.AddOutline(polys.Outline(k))
+            if any(sub.Contains(v) for v in vias):
+                continue
+            bb = polys.Outline(k).BBox()
+            done = False
+            step = mm(0.2)
+            y = bb.GetTop() + step
+            while y < bb.GetBottom() and not done:
+                x = bb.GetLeft() + step
+                while x < bb.GetRight() and not done:
+                    p = pcbnew.VECTOR2I(int(x), int(y))
+                    if sub.Contains(p, -1, mm(0.35)) and via_ok(board, p, kos, items, gnd.GetNetCode()):
+                        v = add_via(board, p, gnd); items.append(v); vias.append(p); added += 1; done = True
+                    x += step
+                y += step
+    return added
+
+
+def merge_close_vias(board):
+    """two same-net vias closer than the hole-to-hole rule: move the track ends of one onto the other"""
+    vias = [v for v in board.GetTracks() if isinstance(v, pcbnew.PCB_VIA)]
+    gone, n = set(), 0
+    for i, a in enumerate(vias):
+        for b in vias[i + 1:]:
+            if id(a) in gone or id(b) in gone or a.GetNetCode() != b.GetNetCode():
+                continue
+            if (a.GetPosition() - b.GetPosition()).EuclideanNorm() < mm(0.7):
+                pa, pb = a.GetPosition(), b.GetPosition()
+                for t in board.GetTracks():
+                    if isinstance(t, pcbnew.PCB_VIA) or t.GetNetCode() != a.GetNetCode():
+                        continue
+                    if t.GetStart() == pb:
+                        t.SetStart(pa)
+                    if t.GetEnd() == pb:
+                        t.SetEnd(pa)
+                board.Remove(b); gone.add(id(b)); n += 1
+    return n
+
+
+def finish2():
+    board = pcbnew.LoadBoard(PCB)
     print("EP vias", ep_vias(board))
-    add_outer_pours(board)
+    silk_to_fab(board)
+    if not any(z.GetZoneName() == "L1_GND" for z in board.Zones()):
+        add_outer_pours(board)
     for z in board.Zones():
         if z.GetNetname() == "GND" and not z.GetIsRuleArea():
             z.SetPadConnection(pcbnew.ZONE_CONNECTION_THERMAL)
     print("stitching vias", stitch(board))
+    pcbnew.ZONE_FILLER(board).Fill(board.Zones())
+    print("island vias", stitch_islands(board))
     pcbnew.ZONE_FILLER(board).Fill(board.Zones())
     board.Save(PCB)
     print("saved")
@@ -614,13 +738,13 @@ def edge_keepout(board, w=0.5):
 
 def add_l3_pours(board):
     full = [(0.3, 0.3), (BW - 0.3, 0.3), (BW - 0.3, BH - 0.3), (0.3, BH - 0.3)]
-    zone(board, "+3V3", pcbnew.In2_Cu, full, 0, "L3_3V3", clearance=0.2)
+    zone(board, "+3V3", pcbnew.In2_Cu, full, 0, "L3_3V3", clearance=0.15, minw=0.15)
 
 
 def add_outer_pours(board):
     full = [(0.3, 0.3), (BW - 0.3, 0.3), (BW - 0.3, BH - 0.3), (0.3, BH - 0.3)]
-    zone(board, "GND", pcbnew.F_Cu, full, 0, "L1_GND", clearance=0.2)
-    zone(board, "GND", pcbnew.B_Cu, full, 0, "L4_GND", clearance=0.2)
+    zone(board, "GND", pcbnew.F_Cu, full, 0, "L1_GND", clearance=0.18, minw=0.18)
+    zone(board, "GND", pcbnew.B_Cu, full, 0, "L4_GND", clearance=0.18, minw=0.18)
 
 
 def courtyard_check(board):
@@ -701,6 +825,227 @@ if __name__ == "__main__":
     mode = sys.argv[1] if len(sys.argv) > 1 else "place"
     if mode == "ses":
         finish()
+    if mode == "ses3":
+        b = pcbnew.LoadBoard(PCB)
+        print("SES import", pcbnew.ImportSpecctraSES(b, os.path.join(KDIR, "tracker.ses")))
+        for v in b.GetTracks():
+            if isinstance(v, pcbnew.PCB_VIA) and v.GetWidth(pcbnew.F_Cu) - v.GetDrillValue() < mm(0.2):
+                v.SetDrill(max(mm(0.2), v.GetWidth(pcbnew.F_Cu) - mm(0.25)))
+        b.Save(PCB)
+    if mode == "finish":
+        finish2()
+    if mode == "tune":
+        b = pcbnew.LoadBoard(PCB)
+        for z in b.Zones():
+            if z.GetZoneName() == "L3_3V3":
+                z.SetLocalClearance(mm(0.15)); z.SetMinThickness(mm(0.15))
+            if z.GetZoneName() in ("L1_GND", "L4_GND"):
+                z.SetLocalClearance(mm(0.18)); z.SetMinThickness(mm(0.18))
+        for fp in b.GetFootprints():
+            if fp.GetReference() == "J4":
+                for z in fp.Zones():
+                    z.SetDoNotAllowVias(False); z.SetDoNotAllowCopperPour(False)
+        pcbnew.ZONE_FILLER(b).Fill(b.Zones())
+        b.Save(PCB)
+        print("tuned")
+    if mode == "swapj4":
+        b = pcbnew.LoadBoard(PCB)
+        drop = {"JTAG_TMS", "JTAG_TCK", "JTAG_TDO", "JTAG_TDI", "U0TXD", "U0RXD"}
+        dead = [t for t in b.GetTracks() if t.GetNetname() in drop]
+        for t in dead:
+            b.Remove(t)
+        b.Save(PCB)
+        print("J4 tracks removed", len(dead))
+    if mode == "dropj4":
+        b = pcbnew.LoadBoard(PCB)
+        j4 = b.FindFootprintByReference("J4")
+        if j4:
+            b.Remove(j4)
+        b.Save(PCB)
+        print("J4 removed")
+    if mode == "addtp":
+        b = pcbnew.LoadBoard(PCB)
+        kos = _keepouts(b)
+        items = all_items(b)
+        esp = {p.GetNetname(): p.GetPosition() for p in b.FindFootprintByReference("U8").Pads()}
+        bott = []
+        for fp in b.GetFootprints():
+            if fp.GetLayer() == pcbnew.B_Cu:
+                bott.append(fp.GetCourtyard(pcbnew.B_CrtYd).BBox())
+            for z in fp.Zones():
+                if z.GetIsRuleArea() and (z.GetDoNotAllowFootprints() or z.GetDoNotAllowPads()):
+                    bott.append(z.GetBoundingBox())
+        for p in D.PARTS:
+            if not p["ref"].startswith("TP") or b.FindFootprintByReference(p["ref"]):
+                continue
+            net = p["nets"]["1"]
+            fp = load_fp(p["fp"]); fp.SetReference(p["ref"]); fp.SetValue(p["value"])
+            fp.SetPath(pcbnew.KIID_PATH(f"/{SHEET_UUID[p['sheet']]}/{U(p['sheet'], p['ref'])}"))
+            b.Add(fp)
+            fp.Flip(fp.GetPosition(), pcbnew.FLIP_DIRECTION_LEFT_RIGHT)
+            ni = b.FindNet(net)
+            for pad in fp.Pads():
+                pad.SetNet(ni)
+            tx, ty = pcbnew.ToMM(esp[net].x) - OX, pcbnew.ToMM(esp[net].y) - OY
+            placed = False
+            for ring in range(0, 160):
+                rad = ring * 0.2
+                n = max(1, int(2 * math.pi * rad / 0.2))
+                for k in range(n):
+                    x = tx + rad * math.cos(2 * math.pi * k / n); y = ty + rad * math.sin(2 * math.pi * k / n)
+                    fp.SetPosition(pt(x, y))
+                    cy = fp.GetCourtyard(pcbnew.B_CrtYd).BBox()
+                    if any(cy.Intersects(o) for o in bott):
+                        continue
+                    pad = list(fp.Pads())[0]
+                    if not in_outline(x, y, 1.6):
+                        continue
+                    ok = True
+                    for it in items:
+                        if it.GetNetCode() == ni.GetNetCode():
+                            continue
+                        if isinstance(it, pcbnew.PAD):
+                            if (it.IsOnLayer(pcbnew.B_Cu) or it.GetAttribute() in (pcbnew.PAD_ATTRIB_PTH, pcbnew.PAD_ATTRIB_NPTH)) and \
+                                    it.GetEffectiveShape(pcbnew.B_Cu).Collide(pad.GetEffectiveShape(pcbnew.B_Cu), mm(_clr(it) + 0.05)):
+                                ok = False; break
+                        elif isinstance(it, pcbnew.PCB_VIA) or it.GetLayer() == pcbnew.B_Cu:
+                            if it.GetEffectiveShape(pcbnew.B_Cu).Collide(pad.GetEffectiveShape(pcbnew.B_Cu), mm(_clr(it) + 0.05)):
+                                ok = False; break
+                    if ok:
+                        placed = True; break
+                if placed:
+                    break
+            bott.append(fp.GetCourtyard(pcbnew.B_CrtYd).BBox()); items += list(fp.Pads())
+            print(p["ref"], net, "placed" if placed else "NO ROOM", round(pcbnew.ToMM(fp.GetPosition().x) - OX, 2), round(pcbnew.ToMM(fp.GetPosition().y) - OY, 2))
+        pcbnew.ZONE_FILLER(b).Fill(b.Zones())
+        b.Save(PCB)
+    if mode == "clr47":
+        b = pcbnew.LoadBoard(PCB)
+        c47 = b.FindFootprintByReference("C47")
+        gp = [p for p in c47.Pads() if p.GetNetname() == "GND"][0].GetPosition()
+        dead = [t for t in b.GetTracks() if t.GetNetname() == "DIN1_RAW"]
+        stub = [t for t in b.GetTracks() if t.GetNetname() == "GND" and not isinstance(t, pcbnew.PCB_VIA)
+                and (t.GetStart() == gp or t.GetEnd() == gp)]
+        ends = {t.GetEnd() if t.GetStart() == gp else t.GetStart() for t in stub}
+        vias = [v for v in b.GetTracks() if isinstance(v, pcbnew.PCB_VIA) and v.GetNetname() == "GND" and v.GetPosition() in ends]
+        for t in dead + stub + vias:
+            b.Remove(t)
+        b.Save(PCB)
+        print("cleared", len(dead), len(stub), len(vias))
+    if mode == "mv47":
+        b = pcbnew.LoadBoard(PCB)
+        c47 = b.FindFootprintByReference("C47")
+        r45 = b.FindFootprintByReference("R45")
+        tgt = [p for p in r45.Pads() if p.GetNetname() == "DIN1_RAW"][0].GetPosition()
+        tx, ty = pcbnew.ToMM(tgt.x) - OX, pcbnew.ToMM(tgt.y) - OY
+        others = [fp.GetCourtyard(pcbnew.B_CrtYd).BBox() for fp in b.GetFootprints()
+                  if fp.GetLayer() == pcbnew.B_Cu and fp.GetReference() != "C47"]
+        items = [it for it in all_items(b)]
+        best = None
+        for ring in range(2, 60):
+            rad = ring * 0.2
+            for k in range(max(8, int(2 * math.pi * rad / 0.2))):
+                a = 2 * math.pi * k / max(8, int(2 * math.pi * rad / 0.2))
+                for rot in (0, 90):
+                    c47.SetOrientationDegrees(rot); c47.SetPosition(pt(tx + rad * math.cos(a), ty + rad * math.sin(a)))
+                    cy = c47.GetCourtyard(pcbnew.B_CrtYd).BBox()
+                    if any(cy.Intersects(o) for o in others):
+                        continue
+                    bad = False
+                    for pad in c47.Pads():
+                        for it in items:
+                            if it.GetNetCode() == pad.GetNetCode():
+                                continue
+                            if isinstance(it, pcbnew.PAD) and not (it.IsOnLayer(pcbnew.B_Cu) or it.GetAttribute() == pcbnew.PAD_ATTRIB_PTH):
+                                continue
+                            if not isinstance(it, (pcbnew.PAD, pcbnew.PCB_VIA)) and it.GetLayer() != pcbnew.B_Cu:
+                                continue
+                            if it.GetEffectiveShape(pcbnew.B_Cu).Collide(pad.GetEffectiveShape(pcbnew.B_Cu), mm(_clr(it) + 0.1)):
+                                bad = True; break
+                        if bad:
+                            break
+                    if not bad:
+                        best = (rad, rot); break
+                if best:
+                    break
+            if best:
+                break
+        pcbnew.ZONE_FILLER(b).Fill(b.Zones())
+        b.Save(PCB)
+        print("C47 moved", best, round(pcbnew.ToMM(c47.GetPosition().x) - OX, 2), round(pcbnew.ToMM(c47.GetPosition().y) - OY, 2))
+    if mode == "dangle":
+        import json as _j
+        b = pcbnew.LoadBoard(PCB)
+        d = _j.load(open("/work/.drc.json"))
+        kill = []
+        for v in d["violations"]:
+            if v["type"] not in ("track_dangling", "via_dangling"):
+                continue
+            it = v["items"][0]; p = pt(it["pos"]["x"] - OX, it["pos"]["y"] - OY)
+            net = it["description"][it["description"].find("[") + 1:it["description"].find("]")]
+            best = None
+            for t in b.GetTracks():
+                if t.GetNetname() != net:
+                    continue
+                if (isinstance(t, pcbnew.PCB_VIA)) != (v["type"] == "via_dangling"):
+                    continue
+                dd = min((t.GetStart() - p).EuclideanNorm(), (t.GetEnd() - p).EuclideanNorm(),
+                         (t.GetPosition() - p).EuclideanNorm())
+                if best is None or dd < best[0]:
+                    best = (dd, t)
+            if best and best[0] < mm(1.5):
+                kill.append(best[1])
+        for t in kill:
+            b.Remove(t)
+        b.Save(PCB)
+        print("removed dangling", len(kill))
+    if mode == "models":
+        b = pcbnew.LoadBoard(PCB)
+        MAP = {"SIMCom_SIM7080G_LCC-77": "SIMCom_SIM7080G", "ublox_NEO": "ublox_NEO-F10N",
+               "SW_Push_1P1T_XKB_TS-1187A": "SW_TS-1187A", "nanoSIM_GCT_SIM8060-6-0-14-00": "nanoSIM_GCT_SIM8060",
+               "JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal": "JST_PH_S3B-PH-SM4-TB",
+               "Molex_Micro-Fit_3.0_43045-0812_2x04_P3.00mm_Vertical": "Molex_43045-0812",
+               "USB_C_Receptacle_HRO_TYPE-C-31-M-12": "USB_C_HRO_TYPE-C-31-M-12",
+               "VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm": "VQFN-16_3x3", "MicroCrystal_C7_SON-8_1.5x3.2mm_P0.9mm": "MicroCrystal_C7"}
+        n = 0
+        for fp in b.GetFootprints():
+            name = fp.GetFPID().GetUniStringLibItemName()
+            if name in MAP:
+                ms = fp.Models()
+                while len(ms):
+                    ms.pop()
+                m = pcbnew.FP_3DMODEL(); m.m_Filename = "${KIPRJMOD}/3d/" + MAP[name] + ".step"
+                ms.append(m); n += 1
+        b.Save(PCB)
+        print("models assigned", n)
+    if mode == "merge":
+        b = pcbnew.LoadBoard(PCB)
+        print("merged vias", merge_close_vias(b))
+        b.Save(PCB)
+    if mode == "patch":
+        import patch_route
+        patch_route.run(PCB)
+    if mode == "dsn3":          # continue routing with In2 opened to signals
+        b = pcbnew.LoadBoard(PCB)
+        for z in b.Zones():
+            if not z.GetIsRuleArea() and z.GetNetname() in ("GND", "+3V3") and z.GetZoneName() in ("L1_GND", "L4_GND", "L3_3V3"):
+                z.SetLayer(pcbnew.User_9)        # park the pours outside the copper stack while routing
+        for fp in b.GetFootprints():
+            if fp.GetReference() == "J4":
+                for z in fp.Zones():
+                    z.SetDoNotAllowVias(False); z.SetDoNotAllowCopperPour(False)
+        b.SetLayerType(pcbnew.In2_Cu, pcbnew.LT_SIGNAL)
+        b.Save(PCB)
+        print("dsn", pcbnew.ExportSpecctraDSN(b, os.path.join(KDIR, "tracker.dsn")))
+    if mode == "unpark":        # after SES import: pours back, In2 power plane again
+        b = pcbnew.LoadBoard(PCB)
+        for z in b.Zones():
+            if z.GetLayer() == pcbnew.User_9:
+                z.SetLayer({"L1_GND": pcbnew.F_Cu, "L4_GND": pcbnew.B_Cu, "L3_3V3": pcbnew.In2_Cu}[z.GetZoneName()])
+        b.SetLayerType(pcbnew.In2_Cu, pcbnew.LT_POWER)
+        pcbnew.ZONE_FILLER(b).Fill(b.Zones())
+        b.Save(PCB)
+        print("unparked")
     if mode == "dsn2":          # continue routing from the current board
         b = pcbnew.LoadBoard(PCB)
         for z in list(b.Zones()):

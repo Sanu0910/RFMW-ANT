@@ -29,7 +29,7 @@ Everything in `01_kicad/` and `03_fab/` is regenerated from them.
 | DS3231 (optional) | **RV-3028-C7** | 45 nA instead of ~100 µA, 1.5 × 3.2 mm; EVI pin time-stamps lid tamper. |
 | "No copper under ceramic GPS antenna" | external **active L1/L5 patch on U.FL** | A dual-band ceramic patch does not fit beside three modules on 60 × 45 mm, and a 25 mm patch needs its own ground plane. A lid-mounted, sky-facing active patch gives better sensitivity than any on-board antenna under a seat cowl. |
 | LTE antenna on board | external **flex antenna on U.FL** | 700–900 MHz needs ≥ 100 mm ground length for usable efficiency. |
-| SWD header | **Tag-Connect TC2050 (JTAG + UART0 + EN)** + native USB-JTAG | ESP32-S3 has JTAG, not SWD; Tag-Connect costs no BOM part. |
+| SWD header | **pogo test-pad header TP21–TP28** (TMS, TCK, TDO, TDI, U0TXD, U0RXD, EN, BOOT) + native USB-JTAG on USB-C | ESP32-S3 has JTAG, not SWD. A Tag-Connect footprint was tried but its pad keep-out could not be escaped on this density; pads cost no BOM part and suit the production fixture. |
 | Single-sided | **double-sided assembly** | Courtyard area of all parts = 2936 mm² > board area 2700 mm². Heavy parts top; bottom only small SMDs, SIM holder, USB-C, battery connector, test pads. |
 
 ## 1. Block diagram and power tree (deliverable 11)
@@ -88,7 +88,7 @@ Measure on the first articles at the TP pads (TP12 VSYS, TP13 VBAT, TP14 +3V3) w
 |---|---|---|
 | L1 F.Cu | components, RF (50 Ω CPWG), short signals, GND pour | 1 oz |
 | L2 In1.Cu | **solid GND** reference plane (no splits) | 0.5 oz |
-| L3 In2.Cu | **+3V3 power plane** | 0.5 oz |
+| L3 In2.Cu | **+3V3 power plane** (plus 123 mm of short signal links where L1/L4 were full; plane stays in 2 connected pieces) | 0.5 oz |
 | L4 B.Cu | components (light), signals, GND pour | 1 oz |
 
 JLC04161H-7628: L1–L2 prepreg 0.2104 mm (εr 4.4), core 1.065 mm, L3–L4 prepreg 0.2104 mm.
@@ -169,8 +169,9 @@ the 177 fan-out vias + stitching), so no high-speed signal crosses a split.
 
 ## 8. Test points, programming and production test (deliverables 16, 17, 18)
 
-**Programming / debug**: native USB-C (ESP32-S3 USB-Serial-JTAG: flashing, logs, JTAG) and the Tag-Connect
-TC2050 on the bottom (pin 1 +3V3, 2 TMS, 3 GND, 4 TCK, 5 GND, 6 TDO, 7 U0TXD, 8 TDI, 9 U0RXD, 10 EN).
+**Programming / debug**: native USB-C (ESP32-S3 USB-Serial-JTAG: flashing, logs, JTAG) and the bottom-side
+pogo header TP21 TMS, TP22 TCK, TP23 TDO, TP24 TDI, TP25 U0TXD, TP26 U0RXD, TP27 EN, TP28 BOOT (+ TP14 3V3,
+TP17/18 GND) for the production fixture.
 Flash with `esptool.py --chip esp32s3 write_flash` (USB) or OpenOCD (`board/esp32s3-builtin.cfg`).
 Modem firmware: TP1–TP4 (SIM7080G USB + USB_BOOT) — SIMCom QDL tool.
 
@@ -190,6 +191,7 @@ Modem firmware: TP1–TP4 (SIM7080G USB + USB_BOOT) — SIMCom QDL tool.
 | TP1–TP5 | MDM USB VBUS/D+/D−, USB_BOOT, UART2 debug TX | modem upgrade / logs |
 | TP6–TP8 | GNSS RESET_N, SAFEBOOT_N, TIMEPULSE | GNSS recovery / timing |
 | TP9 | TAMPER_N | lid switch / RTC EVI |
+| TP21–TP28 | JTAG TMS/TCK/TDO/TDI, U0TXD/RXD, EN, BOOT | programming / JTAG pogo header |
 
 **Production checklist**
 1. AOI + X-ray on SIM7080G (LCC), NEO-F10N, ESP32-S3 GND pad, VQFN/LGA parts (sample per lot).
@@ -240,7 +242,23 @@ Modem firmware: TP1–TP4 (SIM7080G USB + USB_BOOT) — SIMCom QDL tool.
 
 `06_firmware/board_pins.h` is generated from the netlist and is the only pin map firmware should use.
 
-## 11. Open items / to verify before release
+## 11. Layout summary (as built)
+
+| Item | Value |
+|---|---|
+| Parts placed | 180 footprints: 69 top, 111 bottom (incl. 28 test pads, 4 mounting holes) |
+| Routing | 4121 track segments (F 1038 mm, B 1286 mm, In2 123 mm), 399 vias (371 × 0.2 mm, 28 × 0.3 mm drill) |
+| RF | GNSS + LTE 50 Ω CPWG, 20 mm total on L1, GND via fences at 1.2 mm pitch |
+| Planes | L2 GND one piece (2352 mm²); L3 +3V3 2 pieces (2148 mm²); L1/L4 GND pours stitched to L2 |
+| Flow | anchors by hand → greedy placer → GND/+3V3 fan-out → Freerouting 1.9 (2 rounds) → grid A* finisher with rip-up → stitching / island vias |
+| DRC | 0 errors, 0 unconnected, 0 schematic-parity issues (warnings only, see `DRC_ERC_REPORT.md`) |
+| ERC | 0 errors, 0 warnings |
+
+Before ordering, open the board in KiCad 9 and review the auto-routed L3 links and the A*-finished tracks
+(they follow a 0.05 mm grid, so some show small zig-zags — electrically fine, cosmetically worth a manual
+clean-up with *Interactive Router → Optimise*).
+
+## 12. Open items / to verify before release
 
 See `VERIFY_LIST.md`. In short: every value marked VERIFY in the schematic (LM5164 RON, UVLO, BQ24074 ITERM/TMR,
 fuse and ferrite MPN suffixes, LC709203F unused pins), the SIM7080G outer-pad toe length against SIMCom

@@ -2,7 +2,7 @@
 
 Generated from `02_python/design.py` by `make_bom.py`. Assembly BOM for JLCPCB: `03_fab/CRL-TRK-2W-01_BOM_JLCPCB.csv` (fill the LCSC column at quotation).
 
-**85 line items, 145 placed parts**, plus 5 DNP and 20 test pads.
+**83 line items, 143 placed parts**, plus 5 DNP and 28 test pads.
 
 | Designators | Qty | Value | Package | MPN | Manufacturer | Description |
 |---|---|---|---|---|---|---|
@@ -39,7 +39,6 @@ Generated from `02_python/design.py` by `make_bom.py`. Assembly BOM for JLCPCB: 
 | J1 | 1 | VEHICLE 2x4 | Molex_Micro-Fit_3.0_43045-0812_2x04_P3.00mm_Vertical | 43045-0812 | Molex | Micro-Fit 3.0 2x4 vertical header, harness via IP67 gland |
 | J2 | 1 | BATTERY 18650 | JST_PH_S3B-PH-SM4-TB_1x03-1MP_P2.00mm_Horizontal | S3B-PH-SM4-TB(LF)(SN) | JST | Battery pack: 1S 18650 with PCM + 10k NTC (103AT) - 1 BAT+ 2 NTC 3 BAT- |
 | J3 | 1 | USB-C | USB_C_Receptacle_HRO_TYPE-C-31-M-12 | TYPE-C-31-M-12 | Korean Hroparts | USB-C 2.0 receptacle (service: flash, JTAG, logs, charge) |
-| J4 | 1 | DEBUG TC2050 | Tag-Connect_TC2050-IDC-NL_2x05_P1.27mm_Vertical | Tag-Connect TC2050-IDC-NL (footprint only) | Tag-Connect | JTAG + UART0 + EN production header |
 | J5 | 1 | NANO-SIM | nanoSIM_GCT_SIM8060-6-0-14-00 | SIM8060-6-0-14-00-A | GCT | Nano-SIM push-pull holder (dev / non-eSIM builds) |
 | J6 | 1 | LTE ANT | U.FL_Hirose_U.FL-R-SMT-1_Vertical | U.FL-R-SMT-1(10) | Hirose | LTE antenna: 698-2700 MHz flex PCB antenna on enclosure wall (e.g. Taoglas FXUB63) |
 | J7 | 1 | GNSS ANT | U.FL_Hirose_U.FL-R-SMT-1_Vertical | U.FL-R-SMT-1(10) | Hirose | GNSS antenna: active L1/L5 patch (gain <= 25 dB) under the lid, sky-facing |
@@ -60,7 +59,6 @@ Generated from `02_python/design.py` by `make_bom.py`. Assembly BOM for JLCPCB: 
 | R9 | 1 | 1.5k | R_0402_1005Metric | 0402 1% thick film, AEC-Q200 | Yageo / Vishay |  |
 | R10 | 1 | 1.78k | R_0402_1005Metric | 0402 1% thick film, AEC-Q200 | Yageo / Vishay |  |
 | R11 | 1 | 15k | R_0402_1005Metric | 0402 1% thick film, AEC-Q200 | Yageo / Vishay |  |
-| R12 | 1 | 46.4k | R_0402_1005Metric | 0402 1% thick film, AEC-Q200 | Yageo / Vishay |  |
 | R15,R16 | 2 | 1M | R_0402_1005Metric | 0402 1% thick film, AEC-Q200 | Yageo / Vishay |  |
 | R19,R20,R23,R37,R40,R48,R53,R54 | 8 | 10k | R_0402_1005Metric | 0402 1% thick film, AEC-Q200 | Yageo / Vishay |  |
 | R21,R22 | 2 | 5.1k | R_0402_1005Metric | 0402 1% thick film, AEC-Q200 | Yageo / Vishay |  |

@@ -124,16 +124,15 @@ part(S, "D4", "Device:D_Schottky", "B5819W", "Diode_SMD:D_SOD-123", {"1": "V5_IN
 part(S, "U3", "Battery_Management:BQ24074RGT", "BQ24074", "Package_DFN_QFN:VQFN-16-1EP_3x3mm_P0.5mm_EP1.6x1.6mm",
      {"1": "BAT_TS", "2": "VBAT", "3": "VBAT", "4": "GND", "5": "VSYS", "6": "GND", "7": "PGOOD_N",
       "8": "GND", "9": "CHG_N", "10": "VSYS", "11": "VSYS", "12": "CHG_ILIM", "13": "V5_IN",
-      "14": "CHG_TMR", "15": "CHG_ITERM", "16": "CHG_ISET", "17": "GND"},
+      "14": "", "15": "CHG_ITERM", "16": "CHG_ISET", "17": "GND"},
      mpn="BQ24074RGTR", mfr="TI", desc="1-cell Li-ion charger with power path, 10.5 V OVP, OUT reg 4.4 V",
-     note="EN2=1/EN1=0 -> ILIM resistor mode; CE low = charge enabled", group="chg")
+     note="EN2=1/EN1=0 -> ILIM resistor mode; CE low = charge enabled; TMR open = default safety timers (VERIFY)", group="chg")
 C(S, "C11", "1uF/25V", "V5_IN", "GND", group="chg", fp=C0603)
 C(S, "C12", "10uF/10V", "VSYS", "GND", fp=C0805, group="chg")
 C(S, "C13", "4.7uF/10V", "VBAT", "GND", fp=C0805, group="chg")
 R(S, "R9", "1.5k", "CHG_ILIM", "GND", group="chg", note="IIN_MAX = 1550/R = 1.03 A  VERIFY K_ILIM")
 R(S, "R10", "1.78k", "CHG_ISET", "GND", group="chg", note="ICHG = 890/R = 500 mA  VERIFY K_ISET")
 R(S, "R11", "15k", "CHG_ITERM", "GND", group="chg", note="termination ~10 % ICHG VERIFY")
-R(S, "R12", "46.4k", "CHG_TMR", "GND", group="chg", note="safety timer VERIFY (open = default timer)")
 R(S, "R13", "10k", "BAT_TS", "GND", dnp=True, group="chg", note="fit only when the pack has no NTC")
 R(S, "R14", "100k", "PGOOD_N", "+3V3", group="chg")
 part(S, "J2", "Connector_Generic_MountingPin:Conn_01x03_MountingPin", "BATTERY 18650",
@@ -209,10 +208,10 @@ C(S, "C23", "100nF", "+3V3", "GND", group="flash")
 R(S, "R23", "10k", "+3V3", "FLASH_CS", group="flash")
 R(S, "R53", "10k", "+3V3", "FLASH_WP", group="flash")
 R(S, "R54", "10k", "+3V3", "FLASH_HOLD", group="flash")
-part(S, "J4", "Connector_Generic:Conn_02x05_Odd_Even", "DEBUG TC2050", "Connector:Tag-Connect_TC2050-IDC-NL_2x05_P1.27mm_Vertical",
-     {"1": "+3V3", "2": "JTAG_TMS", "3": "GND", "4": "JTAG_TCK", "5": "GND", "6": "JTAG_TDO", "7": "U0TXD",
-      "8": "JTAG_TDI", "9": "U0RXD", "10": "ESP_EN"},
-     mpn="Tag-Connect TC2050-IDC-NL (footprint only)", mfr="Tag-Connect", desc="JTAG + UART0 + EN production header", group="dbg")
+# Production programming / JTAG header: pogo test pads (fixture) - native USB-C covers bench use
+for ref, net in (("TP21", "JTAG_TMS"), ("TP22", "JTAG_TCK"), ("TP23", "JTAG_TDO"), ("TP24", "JTAG_TDI"),
+                 ("TP25", "U0TXD"), ("TP26", "U0RXD"), ("TP27", "ESP_EN"), ("TP28", "BOOT")):
+    TP(S, ref, net, group="dbg")
 R(S, "R24", "1k", "LED_STAT", "LED_STAT_A", group="led")
 part(S, "D5", "Device:LED", "GREEN", "LED_SMD:LED_0603_1608Metric", {"1": "GND", "2": "LED_STAT_A"},
      mpn="LTST-C191KGKT", mfr="Lite-On", desc="LED green 0603 - system status", group="led")
