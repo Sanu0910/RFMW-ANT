@@ -1,0 +1,8 @@
+01_kicad/*.dsn
+01_kicad/*.ses
+01_kicad/*-backups/
+01_kicad/*.kicad_prl
+01_kicad/fp-info-cache
+01_kicad/_autosave*
+01_kicad/*.lck
+02_python/__pycache__/

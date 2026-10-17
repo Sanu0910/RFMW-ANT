@@ -1,0 +1,39 @@
+2026-10-17 08:22:39.941 [main] INFO  Freerouting v1.9.0 (build-date: 2023-10-30)
+2026-10-17 08:22:40.014 [main] ERROR null
+java.awt.HeadlessException: null
+	at sun.awt.HeadlessToolkit.getScreenSize(HeadlessToolkit.java:186) ~[?:?]
+	at app.freerouting.gui.MainApplication.main(MainApplication.java:269) ~[freerouting-1.9.0.jar:unspecified]
+2026-10-17 08:22:40.029 [main] ERROR Exception in FRAnalytics.trackAnonymousAction: Cannot invoke "app.freerouting.management.SegmentClient.track(String, String, String, app.freerouting.management.segment.Properties)" because "app.freerouting.management.FRAnalytics.analytics" is null
+java.lang.NullPointerException: Cannot invoke "app.freerouting.management.SegmentClient.track(String, String, String, app.freerouting.management.segment.Properties)" because "app.freerouting.management.FRAnalytics.analytics" is null
+	at app.freerouting.management.FRAnalytics.trackAnonymousAction(FRAnalytics.java:139) [freerouting-1.9.0.jar:unspecified]
+	at app.freerouting.management.FRAnalytics.exceptionThrown(FRAnalytics.java:323) [freerouting-1.9.0.jar:unspecified]
+	at app.freerouting.gui.DefaultExceptionHandler.handleException(DefaultExceptionHandler.java:15) [freerouting-1.9.0.jar:unspecified]
+	at app.freerouting.gui.DefaultExceptionHandler.uncaughtException(DefaultExceptionHandler.java:29) [freerouting-1.9.0.jar:unspecified]
+	at java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:695) [?:?]
+	at java.lang.ThreadGroup.uncaughtException(ThreadGroup.java:690) [?:?]
+	at java.lang.Thread.dispatchUncaughtException(Thread.java:2902) [?:?]
+2026-10-17 08:23:38.525 [main] INFO  Freerouting v1.9.0 (build-date: 2023-10-30)
+2026-10-17 08:23:38.576 [main] INFO  Settings were loaded from freerouting.json
+2026-10-17 08:23:39.604 [main] INFO  Opening 'tracker.dsn'...
+2026-10-17 08:24:01.800 [main] WARN  Multi-threaded route optimization is broken and it is known to generate clearance violations. It is highly recommended to use the single-threaded route optimization instead by setting the number of threads to 1 with the '-mt 1' command line argument.
+2026-10-17 08:24:01.804 [Thread-28] INFO  Starting auto-routing...
+2026-10-17 08:37:43.027 [Thread-28] WARN  border_intersections: intersection_count (2) is too big!
+2026-10-17 08:37:43.029 [Thread-28] WARN  border_intersections: intersection_count (2) is too big!
+2026-10-17 08:40:52.112 [Thread-28] INFO  Auto-routing was completed in 16 minute(s) 50.31 seconds.
+2026-10-17 08:40:52.215 [Thread-28] INFO  Starting route optimization on 4 threads...
+2026-10-17 08:41:07.708 [Thread-28] INFO  Route optimization was completed in 15.49 seconds.
+2026-10-17 08:41:07.738 [Thread-28] INFO  Saving 'tracker.ses'...
+2026-10-17 08:44:01.938 [main] INFO  Freerouting v1.9.0 (build-date: 2023-10-30)
+2026-10-17 08:44:02.000 [main] INFO  Settings were loaded from freerouting.json
+2026-10-17 08:44:03.021 [main] INFO  Opening 'tracker.dsn'...
+2026-10-17 08:44:24.899 [Thread-28] INFO  Starting auto-routing...
+2026-10-17 08:58:58.451 [Thread-28] WARN  CalcFromSide: start corner was not found
+2026-10-17 08:59:03.810 [Thread-28] WARN  CalcFromSide: start corner was not found
+2026-10-17 08:59:12.529 [Thread-28] WARN  CalcFromSide: start corner was not found
+2026-10-17 09:04:33.501 [Thread-28] INFO  Auto-routing was completed in 20 minute(s) 8.60 seconds.
+2026-10-17 09:04:33.603 [Thread-28] INFO  Starting route optimization on 1 thread...
+2026-10-17 09:05:20.399 [Thread-28] INFO  Route optimization was completed in 46.80 seconds.
+2026-10-17 09:05:20.450 [Thread-28] INFO  Saving 'tracker.ses'...
+2026-10-17 09:07:03.874 [main] INFO  Freerouting v1.9.0 (build-date: 2023-10-30)
+2026-10-17 09:07:03.923 [main] INFO  Settings were loaded from freerouting.json
+2026-10-17 09:07:04.952 [main] INFO  Opening 'tracker.dsn'...

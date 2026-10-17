@@ -1,0 +1,4 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "tracker")(type "KiCad")(uri "${KIPRJMOD}/tracker.kicad_sym")(options "")(descr "CRL-TRK-2W-01 project symbols"))
+)

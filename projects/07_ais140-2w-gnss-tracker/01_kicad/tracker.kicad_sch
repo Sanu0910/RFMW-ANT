@@ -1,0 +1,323 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "ac23977a-1cb6-52db-bf4b-8792a47a10ec")
+	(paper "A3")
+	(title_block
+		(title "CRL-TRK-2W-01 - Top level")
+		(date "2026-10-17")
+		(rev "A0")
+		(company "CRL / BEL - RFM Lab")
+		(comment 1 "Generated from 02_python/design.py - edit the source, then regenerate")
+		(comment 2 "Top level: block diagram")
+	)
+	(lib_symbols)
+	(sheet
+		(at 25.4 40.64)
+		(size 101.6 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "65e8caa3-3ca8-5653-8c91-cddcc60d9990")
+		(property
+			"Sheetname"
+			"Power Input & Protection"
+			(at 25.4 39.94 0)
+			(effects
+				(font
+					(size 1.8 1.8)
+				)
+				(justify left bottom)
+			)
+		)
+		(property
+			"Sheetfile"
+			"power_in.kicad_sch"
+			(at 25.4 71.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project
+				"tracker"
+				(path
+					"/ac23977a-1cb6-52db-bf4b-8792a47a10ec"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 146.05 40.64)
+		(size 101.6 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "405a1d39-95c3-5f95-9ccf-f930e76b616f")
+		(property
+			"Sheetname"
+			"Charger, Battery & Rails"
+			(at 146.05 39.94 0)
+			(effects
+				(font
+					(size 1.8 1.8)
+				)
+				(justify left bottom)
+			)
+		)
+		(property
+			"Sheetfile"
+			"power_rails.kicad_sch"
+			(at 146.05 71.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project
+				"tracker"
+				(path
+					"/ac23977a-1cb6-52db-bf4b-8792a47a10ec"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 266.7 40.64)
+		(size 101.6 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "ce911e06-accb-5551-804f-e7ab457bd3ca")
+		(property
+			"Sheetname"
+			"MCU, USB, Flash & Debug"
+			(at 266.7 39.94 0)
+			(effects
+				(font
+					(size 1.8 1.8)
+				)
+				(justify left bottom)
+			)
+		)
+		(property
+			"Sheetfile"
+			"mcu.kicad_sch"
+			(at 266.7 71.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project
+				"tracker"
+				(path
+					"/ac23977a-1cb6-52db-bf4b-8792a47a10ec"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 25.4 91.44)
+		(size 101.6 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "239b3a6d-0504-5578-a6ae-9e4d97f63d20")
+		(property
+			"Sheetname"
+			"LTE-M / NB-IoT Modem"
+			(at 25.4 90.74 0)
+			(effects
+				(font
+					(size 1.8 1.8)
+				)
+				(justify left bottom)
+			)
+		)
+		(property
+			"Sheetfile"
+			"cellular.kicad_sch"
+			(at 25.4 122.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project
+				"tracker"
+				(path
+					"/ac23977a-1cb6-52db-bf4b-8792a47a10ec"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 146.05 91.44)
+		(size 101.6 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "d647af3e-6e1b-5262-b8df-1b4c82a273e5")
+		(property
+			"Sheetname"
+			"GNSS L1/L5 + NavIC"
+			(at 146.05 90.74 0)
+			(effects
+				(font
+					(size 1.8 1.8)
+				)
+				(justify left bottom)
+			)
+		)
+		(property
+			"Sheetfile"
+			"gnss.kicad_sch"
+			(at 146.05 122.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project
+				"tracker"
+				(path
+					"/ac23977a-1cb6-52db-bf4b-8792a47a10ec"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 266.7 91.44)
+		(size 101.6 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "ea51290e-4dc4-562c-938c-a3170ae2e564")
+		(property
+			"Sheetname"
+			"Sensors & Vehicle I/O"
+			(at 266.7 90.74 0)
+			(effects
+				(font
+					(size 1.8 1.8)
+				)
+				(justify left bottom)
+			)
+		)
+		(property
+			"Sheetfile"
+			"io.kicad_sch"
+			(at 266.7 122.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project
+				"tracker"
+				(path
+					"/ac23977a-1cb6-52db-bf4b-8792a47a10ec"
+					(page "7")
+				)
+			)
+		)
+	)
+	(text
+		"CRL-TRK-2W-01  AIS-140 two-wheeler tracker  -  60 x 45 mm, 4-layer 1.6 mm (JLC04161H-7628)\n\nVEHICLE 9-36 V -> F1/D1 -> LM74700 ideal diode -> pi filter -> LM5164 buck 5.0 V -+-> BQ24074 power path -> VSYS 3.0-4.4 V\nUSB-C VBUS 5 V ---------------------------------------------------------------+     |-> TPS22917 -> SIM7080G VBAT\n18650 1S pack (PCM + NTC) <-> BQ24074 BAT  (LC709203F fuel gauge, VBAT/2 ADC)        |-> TLV75733 -> +3V3 (always on)\n                                                                                       -> TPS22917 -> +3V3_GNSS\n\nESP32-S3-WROOM-1 <-UART(1.8 V via TXS0108E)-> SIM7080G LTE-M/NB-IoT  -> U.FL -> flex LTE antenna\n                 <-UART---------------------> NEO-F10N L1/L5 + NavIC  -> U.FL -> active L1/L5 patch\n                 <-I2C--> IIM-42652 IMU, LC709203F gauge, RV-3028 RTC     <-SPI-> W25Q128 log flash\n                 <-GPIO-> IGN, PANIC, DIN1, AIN1, DOUT1 (relay), LEDs, Tag-Connect JTAG, USB-C\n\nSleep budget (ignition off, modem PSM, GNSS backup): ~110 uA from the pack - see 04_docs/POWER_TREE.md"
+		(exclude_from_sim no)
+		(at 25.4 160 0)
+		(effects
+			(font
+				(size 1.6 1.6)
+			)
+			(justify left top)
+		)
+		(uuid "c8c95ed2-ab9e-5838-8601-03362fec4d4b")
+	)
+	(sheet_instances
+		(path
+			"/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
