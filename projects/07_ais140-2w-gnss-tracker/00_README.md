@@ -22,7 +22,7 @@ BQ24074 + 18650 backup · LM74700-Q1 reverse protection · LM5164-Q1 100 V buck 
 ```bash
 cd 02_python
 python3 make_lib.py && python3 make_schematic.py && python3 make_bom.py && python3 make_pins.py && python3 make_models.py
-python3 make_workflow_pdf.py                  
+python3 make_workflow_pdf.py                  # workflow & use-case guide PDF
 # PCB (KiCad 9 pcbnew python + Freerouting 1.9):
 python3 make_pcb.py dsn                       # placement, RF routes, GND/+3V3 fan-out, rules -> tracker.dsn
 java -jar freerouting-1.9.0.jar -de ../01_kicad/tracker.dsn -do ../01_kicad/tracker.ses -mp 40
