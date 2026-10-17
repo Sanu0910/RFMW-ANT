@@ -28,13 +28,33 @@ Fill in the phone number and web address in the CTA line before you print.
 | **Hardware total** | **≈ 5 750** |
 | Data SIM + cloud, per vehicle per year | ≈ 500–700 |
 
-## Poster prices (indicative)
+## Poster prices and profit per unit (indicative, ex-GST)
 
-| Plan | Price | Gross margin on hardware |
-|---|---|---|
-| Rider: device + 1 yr app and data | ₹9,499 | ≈ 30 % before dealer margin |
-| Fleet AIS-140, 25+ units | ₹7,499 / unit + ₹1,499 / vehicle / yr | ≈ 23 % + recurring |
-| Renewal | ₹1,999 / yr or ₹199 / month | ≈ 65–70 % |
+Costs per unit, beyond the ≈ ₹5,750 hardware:
+- year-1 data and cloud: ₹600
+- installation: ₹300 (Rider only)
+- warranty reserve: 3 % of price
+- packaging and shipping: ₹150
+
+| Plan | Price | Total cost | Profit / unit | Margin |
+|---|---|---|---|---|
+| Rider, sold direct | ₹9,499 | ≈ ₹7,085 | ≈ ₹2,400 | ≈ 25 % |
+| Rider, via dealer (18 % dealer cut) | ₹9,499 | ≈ ₹8,795 | ≈ ₹700 | ≈ 7 % |
+| Fleet AIS-140, 25+ units | ₹7,499 | ≈ ₹6,125 | ≈ ₹1,375 | ≈ 18 % |
+| Fleet platform fee, per year | ₹1,499 | ₹600 | ≈ ₹900 | ≈ 60 % |
+| Renewal, per year | ₹1,999 | ₹600 | ≈ ₹1,400 | ≈ 70 % |
+
+Three years of one direct Rider customer:
+- profit ≈ ₹2,400 + 2 × ₹1,400 = ₹5,200
+- revenue ≈ ₹13,500
+- margin ≈ 39 %
+
+Not included above are fixed costs:
+- AIS-140 type approval (ICAT/ARAI), BIS, WPC and TEC
+- app and server development
+- moulds, test fixture, staff and marketing
+
+Break-even at ₹2,400 profit per unit: about 1,250 units for every ₹30 lakh of fixed cost.
 
 The NEO-F10N is the biggest cost. A "Lite" version could drop to ≈ ₹3 900 hardware cost and a ≈ ₹5,999 retail price, using:
 - an L1-only GNSS without NavIC (not AIS-140);
