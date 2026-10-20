@@ -16,7 +16,7 @@ BQ24074 + 18650 backup · LM74700-Q1 reverse protection · LM5164-Q1 100 V buck 
 | `04_docs/` | **`CRL-TRK-2W-01_Workflow_UseCases.pdf` (plain-language guide: use cases, operating modes, alert flows, installation, design & production workflow)**, `DESIGN_REPORT.md` (power tree, budget, SI, EMC, DFM, automotive, AIS-140, test, production checklist), `BOM.md`, `VERIFY_LIST.md`, schematic PDF, assembly drawings |
 | `05_renders/` | 3D STEP of the assembled board and rendered views (modules/connectors without a KiCad model use envelope STEPs from `make_models.py`, SolidCraft) |
 | `06_firmware/` | `board_pins.h` generated from the netlist |
-| `07_marketing/` | launch poster (PNG/PDF/HTML), `PRICING_NOTES.md` (BOM cost, margins, competitors), `BUSINESS_PLAN_NOTES.md` (range, USP, Lite version, Amazon, AIS-140 cost, go-to-market, app plan) |
+| `07_marketing/` | launch poster (PNG/PDF/HTML), `PRICING_NOTES.md` (BOM cost, margins, competitors), `BUSINESS_PLAN_NOTES.md` (range, USP, Lite version, Amazon, AIS-140 cost, go-to-market, app plan), **`SamayTrack2W_Business_Plan.pdf`** (16-page product, design, cost, investment and timeline plan; source `02_python/make_business_pdf.py`) |
 
 ## Regenerate
 
