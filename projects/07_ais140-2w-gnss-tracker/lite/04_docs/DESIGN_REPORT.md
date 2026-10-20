@@ -18,7 +18,7 @@ cost of Rs 1,200-1,500. It is sold on Amazon / Flipkart / direct, **not** for AI
 | SIM | nano-SIM holder | **soldered MFF2 M2M eSIM** (year-1 data bundled) |
 | I/O | IGN, SOS, DIN, AIN, DOUT | IGN, relay output |
 | PCB | 60 x 45, 4-layer, double-sided | **60 x 45, 2-layer, single-sided SMT**, same holes and enclosure |
-| Hardware cost @1k | ~Rs 6,180 | **~Rs 1,480** (`BOM.md`) |
+| Hardware cost @1k | ~Rs 6,180 | **~Rs 1,440** (`BOM.md`) |
 
 ## 2. Block diagram
 

@@ -520,11 +520,110 @@ def stitch_islands(board):
     return added
 
 
+def tie_fragments(board):
+    """join all GND pour fragments (both layers) into one net: union-find over the fragments, existing vias and
+    THT pads are the edges, then a via goes into the overlap of any top/bottom pair still in different groups"""
+    gnd = board.FindNet("GND")
+    kos = _keepouts(board)
+    items = all_items(board)
+    frags = []                                   # (layer, SHAPE_POLY_SET)
+    for z in board.Zones():
+        if z.GetIsRuleArea() or z.GetZoneName() not in ("F_GND", "B_GND"):
+            continue
+        ps = z.GetFilledPolysList(z.GetLayer())
+        for k in range(ps.OutlineCount()):
+            s = pcbnew.SHAPE_POLY_SET(); s.AddOutline(ps.Outline(k))
+            frags.append((z.GetLayer(), s))
+    par = list(range(len(frags)))
+
+    def find(i):
+        while par[i] != i:
+            par[i] = par[par[i]]; i = par[i]
+        return i
+
+    def union(i, j):
+        par[find(i)] = find(j)
+    links = [t.GetPosition() for t in board.GetTracks() if isinstance(t, pcbnew.PCB_VIA) and t.GetNetname() == "GND"]
+    links += [q.GetPosition() for q in board.GetPads() if q.GetNetname() == "GND" and q.GetAttribute() == pcbnew.PAD_ATTRIB_PTH]
+    for pos in links:
+        hit = [i for i, (_, s) in enumerate(frags) if s.Contains(pos)]
+        for i in hit[1:]:
+            union(hit[0], i)
+    added = 0
+    tops = [i for i, f in enumerate(frags) if f[0] == pcbnew.F_Cu]
+    bots = [i for i, f in enumerate(frags) if f[0] == pcbnew.B_Cu]
+    for i in sorted(tops, key=lambda i: frags[i][1].Area()):
+        for j in sorted(bots, key=lambda j: -frags[j][1].Area()):
+            if find(i) == find(j):
+                continue
+            inter = pcbnew.SHAPE_POLY_SET(frags[i][1]); inter.BooleanIntersection(frags[j][1])
+            if inter.OutlineCount() == 0:
+                continue
+            bb = inter.BBox(); step = mm(0.15); done = False
+            y = bb.GetTop() + step
+            while y < bb.GetBottom() and not done:
+                x = bb.GetLeft() + step
+                while x < bb.GetRight() and not done:
+                    q = pcbnew.VECTOR2I(int(x), int(y))
+                    if inter.Contains(q, -1, mm(0.35)) and via_ok(board, q, kos, items, gnd.GetNetCode()):
+                        items.append(add_via(board, q, gnd)); added += 1; done = True
+                        union(i, j)
+                    x += step
+                y += step
+    groups = len({find(i) for i in range(len(frags))})
+    print("GND pour groups after tie:", groups)
+    return added
+
+
+def merge_close_vias(board):
+    """two same-net vias closer than the hole-to-hole rule: move the track ends of one onto the other"""
+    vias = [v for v in board.GetTracks() if isinstance(v, pcbnew.PCB_VIA)]
+    gone, n = set(), 0
+    for i, a in enumerate(vias):
+        for b in vias[i + 1:]:
+            if id(a) in gone or id(b) in gone or a.GetNetCode() != b.GetNetCode():
+                continue
+            if (a.GetPosition() - b.GetPosition()).EuclideanNorm() < mm(0.9):
+                pa, pb = a.GetPosition(), b.GetPosition()
+                for t in board.GetTracks():
+                    if isinstance(t, pcbnew.PCB_VIA) or t.GetNetCode() != a.GetNetCode():
+                        continue
+                    if t.GetStart() == pb:
+                        t.SetStart(pa)
+                    if t.GetEnd() == pb:
+                        t.SetEnd(pa)
+                board.Remove(b); gone.add(id(b)); n += 1
+    return n
+
+
+def drop_dangling(board, drc_json="/tmp/drc.json"):
+    """remove GND stubs / vias that DRC reports as dangling"""
+    d = json.load(open(drc_json))
+    kill = []
+    for v in d["violations"]:
+        if v["type"] not in ("track_dangling", "via_dangling"):
+            continue
+        it = v["items"][0]
+        if "[GND]" not in it["description"]:
+            continue
+        p = pt(it["pos"]["x"] - OX, it["pos"]["y"] - OY)
+        for t in board.GetTracks():
+            if t.GetNetname() != "GND" or isinstance(t, pcbnew.PCB_VIA) != (v["type"] == "via_dangling"):
+                continue
+            hit = t.GetPosition() if isinstance(t, pcbnew.PCB_VIA) else None
+            if (hit is not None and (hit - p).EuclideanNorm() < mm(0.05)) or \
+                    (hit is None and min((t.GetStart() - p).EuclideanNorm(), (t.GetEnd() - p).EuclideanNorm()) < mm(0.05)):
+                kill.append(t); break
+    for t in kill:
+        board.Remove(t)
+    return len(kill)
+
+
 def silk(board):
     """designators live on F.Fab (assembly drawing), silk keeps outlines, pin-1 marks and a few labels"""
     for fp in board.GetFootprints():
         for f in (fp.Reference(), fp.Value()):
-            f.SetLayer(pcbnew.F_Fab); f.SetVisible(True)
+            f.SetLayer(pcbnew.B_Fab if fp.GetLayer() == pcbnew.B_Cu else pcbnew.F_Fab); f.SetVisible(True)
             f.SetTextSize(pcbnew.VECTOR2I(mm(0.5), mm(0.5))); f.SetTextThickness(mm(0.08))
         fp.Value().SetVisible(False)
         fp.Reference().SetPosition(fp.GetPosition())
@@ -766,6 +865,18 @@ if __name__ == "__main__":
         b = pcbnew.LoadBoard(PCB)
         print("SES import", pcbnew.ImportSpecctraSES(b, os.path.join(KDIR, "tracker_lite.ses")))
         add_pours(b, top=False)
+        b.Save(PCB)
+    # after DRC (json in /tmp/drc.json), one step per process - SWIG lists go stale after Remove():
+    if mode == "dangle":        # drop dangling GND stubs / vias
+        b = pcbnew.LoadBoard(PCB); print("dangling removed", drop_dangling(b)); b.Save(PCB)
+    if mode == "merge":         # merge same-net vias closer than the hole-to-hole rule
+        b = pcbnew.LoadBoard(PCB); print("merged vias", merge_close_vias(b)); b.Save(PCB)
+    if mode == "tie":           # tie GND pour fragments, refresh silk / fab text, refill
+        b = pcbnew.LoadBoard(PCB)
+        silk(b)
+        pcbnew.ZONE_FILLER(b).Fill(b.Zones())
+        print("fragment vias", tie_fragments(b))
+        pcbnew.ZONE_FILLER(b).Fill(b.Zones())
         b.Save(PCB)
     if mode == "islands":
         b = pcbnew.LoadBoard(PCB)
