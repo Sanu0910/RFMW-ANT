@@ -39,7 +39,7 @@ BW, BH, BR = 60.0, 45.0, 2.0   # board size and corner radius
 PLACE = {
     # modem on the right; LTE RF leaves pad 49 eastwards and runs down the right edge to J4
     "U3": (42.5, 22.5, 0),
-    "J4": (56.8, 41.9, 270), "R14": (58.45, 33.0, 270),
+    "J4": (57.6, 41.9, 0), "R14": (58.45, 33.0, 270),
     # GNSS corner (top-left): module turned so RF_IN (pad 11) faces the top edge, U.FL straight above it
     "U5": (9.0, 11.3, 90), "J5": (13.5, 2.6, 0),
     # eSIM next to the modem's USIM pads
@@ -94,8 +94,8 @@ SMALL = [
 NETCLASS = {
     # name: (clearance, track, via_dia, via_drill)  - JLC standard 2-layer: 0.127 / 0.3 mm drill
     "Default": (0.15, 0.2, 0.6, 0.3),
-    "Power": (0.2, 0.6, 0.8, 0.4),
-    "HV": (0.3, 0.5, 0.8, 0.4),
+    "Power": (0.2, 0.4, 0.8, 0.4),
+    "HV": (0.25, 0.35, 0.8, 0.4),
     "RF50": (0.2, 1.2, 0.6, 0.3),
 }
 NET_PATTERNS = {
@@ -234,7 +234,8 @@ def build(top_pour=False):
 RF_ROUTES = [
     ("LTE_RF_M", [("U3", "49"), (57.3, "U3.49")], 0.5),            # neck between the module's GND pads 48/50
     ("LTE_RF_M", [(57.3, "U3.49"), (58.45, "U3.49"), ("R14", "1")], RF_W),
-    ("LTE_RF", [("R14", "2"), (58.45, 39.5), (56.8, 39.5), ("J4", "1")], RF_W),
+    ("LTE_RF", [("R14", "2"), (58.45, 39.0), (55.3, 39.0), (55.3, "J4.1"), (55.9, "J4.1")], RF_W),
+    ("LTE_RF", [(55.9, "J4.1"), ("J4", "1")], 0.5),     # U.FL keep-out right of pin 1: enter from the side
     ("GNSS_RF", [("U5", "11"), (12.3, 2.6), ("J5", "1")], 0.5),     # 4 mm long (0.035 lambda): 0.5 mm fits the LCC pitch
 ]
 
