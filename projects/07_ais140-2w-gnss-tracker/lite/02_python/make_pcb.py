@@ -39,7 +39,7 @@ BW, BH, BR = 60.0, 45.0, 2.0   # board size and corner radius
 PLACE = {
     # modem on the right; LTE RF leaves pad 49 eastwards and runs down the right edge to J4
     "U3": (42.5, 22.5, 0),
-    "J4": (57.6, 41.9, 0), "R14": (58.45, 33.0, 270),
+    "J4": (57.6, 41.9, 0), "R14": (58.45, 33.0, 270), "C19": (53.825, 40.6, 180),   # C19 pad 1 sits on the line
     # GNSS corner (top-left): module turned so RF_IN (pad 11) faces the top edge, U.FL straight above it
     "U5": (9.0, 11.3, 90), "J5": (13.5, 2.6, 0),
     # eSIM next to the modem's USIM pads
@@ -63,23 +63,23 @@ SMALL = [
     ("R5", (21.0, 40.0)), ("R6", (21.0, 40.0)), ("C13", (21.0, 40.0)),
     # modem supply + RF
     ("C9", ("U3", "58")), ("C8", ("U3", "60")), ("D5", ("U3", "57")), ("C10", ("U3", "59")), ("C11", ("U3", "59")),
-    ("C12", ("U3", "57")), ("C15", ("U3", "7")), ("C18", ("R14", "1")), ("C19", ("R14", "2")),
+    ("C12", ("U3", "57")), ("C15", ("U3", "7")),
     # eSIM
     ("R11", ("U8", "3")), ("R12", ("U8", "6")), ("R13", ("U8", "7")), ("C17", ("U8", "8")),
     # GNSS support
-    ("L2", ("J5", "1")), ("R16", ("U5", "14")), ("C23", ("U5", "14")), ("C22", ("U5", "8")),
+    ("C22", ("U5", "8")),
     ("U6", (18.0, 9.0)), ("C21", ("U6", "5")), ("C20", ("U6", "1")), ("R15", ("U6", "3")),
     ("Q3", (22.0, 13.0)), ("Q4", (25.5, 13.0)), ("R18", (22.0, 16.0)), ("R19", (22.0, 10.0)),
     ("R20", (25.5, 16.0)), ("R21", (25.5, 10.0)),
     # PWRKEY
     ("Q2", ("U3", "21")), ("C16", ("U3", "21")), ("R9", ("U3", "21")), ("R10", ("U3", "21")),
     # accelerometer next to I2C (pins 41/42, right side bottom) and ACC_INT (pin 26, bottom side)
-    ("U7", (52.5, 41.6)), ("C26", ("U7", "14")), ("C27", ("U7", "1")), ("R22", ("U7", "6")), ("R23", ("U7", "4")),
+    ("U7", (48.0, 41.6)), ("C26", ("U7", "14")), ("C27", ("U7", "1")), ("R22", ("U7", "6")), ("R23", ("U7", "4")),
     ("R34", ("U7", "7")),
     # ignition + relay (strip under the modem)
     ("Q5", (37.5, 41.5)), ("R24", (40.5, 41.5)), ("R25", (37.5, 41.5)), ("R26", (37.5, 41.5)), ("C28", (40.5, 41.5)),
     ("C29", (37.5, 41.5)),
-    ("Q6", (45.5, 41.5)), ("R27", (45.5, 41.5)), ("R28", (45.5, 41.5)), ("D6", ("J1", "4")),
+    ("Q6", (34.5, 4.5)), ("R27", ("Q6", "1")), ("R28", ("Q6", "1")), ("D6", ("J1", "4")),
     # LEDs on the top edge (light pipes in the lid)
     ("D8", (45.0, 1.4)), ("D7", (48.0, 1.4)), ("D9", (51.0, 1.4)),
     ("R32", (45.0, 3.6)), ("R30", (48.0, 3.6)), ("R33", (51.0, 3.6)),
@@ -220,8 +220,8 @@ def build(top_pour=False):
         for (x0, y0), (x1, y1) in zip(xy, xy[1:]):
             m = w / 2 + 0.35
             placer.obs["F"].append(("rf:" + net, min(x0, x1) - m, min(y0, y1) - m, max(x0, x1) + m, max(y0, y1) + m))
-    for ref, tgt in SMALL:
-        placer.auto(ref, "F", tgt)
+    for ref, tgt in SMALL:                        # test pads go on the bottom (pogo fixture, no assembly cost)
+        placer.auto(ref, "B" if ref.startswith("TP") else "F", tgt)
     missing = [r for r in fps if r not in placer.done]
     if missing:
         print("NOT PLACED:", " ".join(missing))
@@ -234,7 +234,7 @@ def build(top_pour=False):
 RF_ROUTES = [
     ("LTE_RF_M", [("U3", "49"), (57.3, "U3.49")], 0.5),            # neck between the module's GND pads 48/50
     ("LTE_RF_M", [(57.3, "U3.49"), (58.45, "U3.49"), ("R14", "1")], RF_W),
-    ("LTE_RF", [("R14", "2"), (58.45, 39.0), (55.3, 39.0), (55.3, "J4.1"), (55.9, "J4.1")], RF_W),
+    ("LTE_RF", [("R14", "2"), (58.45, 39.0), (54.6, 39.0), (54.6, "J4.1"), (55.9, "J4.1")], RF_W),
     ("LTE_RF", [(55.9, "J4.1"), ("J4", "1")], 0.5),     # U.FL keep-out right of pin 1: enter from the side
     ("GNSS_RF", [("U5", "11"), (12.3, 2.6), ("J5", "1")], 0.5),     # 4 mm long (0.035 lambda): 0.5 mm fits the LCC pitch
 ]
@@ -607,6 +607,10 @@ class Placer:
         x0, y0, x1, y1 = r
         if x0 < 0.25 or y0 < 0.25 or x1 > BW - 0.25 or y1 > BH - 0.25:
             return False
+        if side == "B":                           # bottom test pads: keep clear of top THT pads and the holes
+            for o in self.obs["F"]:
+                if o[0].startswith(("H", "J1")) and x0 < o[3] and o[1] < x1 and y0 < o[4] and o[2] < y1:
+                    return False
         for o in self.obs[side]:
             if x0 < o[3] and o[1] < x1 and y0 < o[4] and o[2] < y1:
                 return False
@@ -662,17 +666,19 @@ def edge_keepout(board, w=0.5):
 def courtyard_check(board):
     items = []
     for fp in board.GetFootprints():
-        cy = fp.GetCourtyard(pcbnew.F_CrtYd)
+        cy = fp.GetCourtyard(pcbnew.F_CrtYd if fp.GetLayer() == pcbnew.F_Cu else pcbnew.B_CrtYd)
         if cy.OutlineCount() == 0:
             continue
         bb = cy.BBox()
         items.append((fp.GetReference(), pcbnew.ToMM(bb.GetLeft()) - OX, pcbnew.ToMM(bb.GetTop()) - OY,
-                      pcbnew.ToMM(bb.GetRight()) - OX, pcbnew.ToMM(bb.GetBottom()) - OY, cy))
+                      pcbnew.ToMM(bb.GetRight()) - OX, pcbnew.ToMM(bb.GetBottom()) - OY, cy, fp.GetLayer()))
     bad = []
     for i, a in enumerate(items):
         if a[1] < 0 or a[2] < 0 or a[3] > BW or a[4] > BH:
             bad.append(f"EDGE {a[0]} ({a[1]:.2f},{a[2]:.2f})-({a[3]:.2f},{a[4]:.2f})")
         for b in items[i + 1:]:
+            if a[6] != b[6] and not (a[0].startswith("H") or b[0].startswith("H")):
+                continue
             if a[1] < b[3] and b[1] < a[3] and a[2] < b[4] and b[2] < a[4] and a[5].Collide(b[5]):
                 bad.append(f"OVERLAP {a[0]} / {b[0]}")
     return bad

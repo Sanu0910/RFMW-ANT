@@ -26,10 +26,11 @@ or from memory, and must be checked against the PDF before any board is ordered.
 | C16/R9 | 10 uF / 220k | PWRKEY low for about 1.5 s after VSYS rises (EC200U needs >= 500 ms). Check that the module does not toggle back off if PWRKEY is held low too long. If it does, use R10 (DNP 0R, permanent auto power-on) instead. |
 | Q6 | AO3400A on a 1.8 V gate | Rds(on) is only specified from 2.5 V. At 1.8 V expect ~0.1 ohm, fine for a relay coil of up to 300 mA. Check it on the bench. |
 | D1 | SMBJ24CA | 38.9 V clamp at Ipp. The XL1509 is rated 40 V absolute maximum, so there is little margin on a 24 V vehicle. The Lite is specified for 12 V two-wheelers only. |
+| GNSS antenna | passive patch, no bias-T | The L76K's internal LNA should be enough for a short (< 100 mm) lead under a plastic lid. Check C/N0 >= 40 dB-Hz in the enclosure. |
 | L76K V_BCKP | tied to VCC | GNSS loses its almanac while GNSS_EN is low. Firmware uses AGNSS on cold start. If time-to-first-fix after parking is too long, keep GNSS_EN high in sleep (+~10 mA). |
 
 ## Layout points
 
 - Bottom layer: Freerouting put signal jumpers on the bottom GND plane, so the plane is slotted in places (see `05_renders/CRL-TRK-2W-L1_copper.png`). The RF lines run on the right edge and the top-left corner, over unbroken ground. Rev A1: re-route the long bottom jumpers on top by hand.
-- LTE line: 1.2 mm / 0.2 mm CPWG (51 ohm, `rf_calc.py`) with a 0.5 mm neck between the module's GND pads 48/50, via fence every 1.5 mm. The pi pad C18/R14/C19 is for antenna matching on the bench.
+- LTE line: 1.2 mm / 0.2 mm CPWG (51 ohm, `rf_calc.py`) with a 0.5 mm neck between the module's GND pads 48/50, via fence every 1.5 mm. It enters the U.FL pin from the side, because the KiCad U.FL footprint has a keep-out between its GND pads. R14/C19 form an L-match for bench tuning.
 - GNSS line: 4 mm, 0.5 mm wide (72 ohm, 0.035 lambda at 1575 MHz, mismatch loss < 0.1 dB).

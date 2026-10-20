@@ -10,7 +10,6 @@ C11,1,33pF,0402 C0G 50V,Samsung / Murata,0.0008,0.001,0.1,Passives
 C12,1,10pF,0402 C0G 50V,Samsung / Murata,0.0008,0.001,0.1,Passives
 "C15,C20,C27",3,1uF,0402 MLCC X5R/X7R,Samsung / Murata,0.0020,0.006,0.5,Passives
 "C16,C21",2,10uF/10V,0603 MLCC X5R/X7R,Samsung / Murata,0.0100,0.020,1.8,Passives
-C23,1,10nF,0402 MLCC X5R/X7R,Samsung / Murata,0.0008,0.001,0.1,Passives
 C28,1,10nF/100V,0603 MLCC X5R/X7R,Samsung / Murata,0.0040,0.004,0.4,Passives
 C29,1,1nF,0402 MLCC X5R/X7R,Samsung / Murata,0.0008,0.001,0.1,Passives
 D1,1,SMBJ24CA,SMBJ24CA,Littelfuse / MDD,0.0500,0.050,4.4,Discretes
@@ -26,7 +25,6 @@ J2,1,LiPo 300mAh,S2B-PH-SM4-TB(LF)(SN),JST,0.0600,0.060,5.3,Connectors
 J4,1,LTE ANT,U.FL-R-SMT-1(10),Hirose,0.2800,0.280,24.6,Connectors
 J5,1,GNSS ANT,U.FL-R-SMT-1(10),Hirose,0.2800,0.280,24.6,Connectors
 L1,1,22uH,SRN6045TA-220M,Bourns,0.2500,0.250,22.0,Passives
-L2,1,47nH,LQG15HS47NJ02D,Murata,0.0200,0.020,1.8,Passives
 Q1,1,AO3401A,AO3401A,AOS,0.0250,0.025,2.2,Discretes
 Q2,1,2N7002,2N7002K-7,Diodes Inc,0.0120,0.012,1.1,Discretes
 "Q3,Q4",2,BSS138,BSS138,onsemi,0.0150,0.030,2.6,Discretes
@@ -42,7 +40,6 @@ R7,1,300k,0402 1% thick film,Uniroyal / Yageo,0.0008,0.001,0.1,Passives
 R9,1,220k,0402 1% thick film,Uniroyal / Yageo,0.0008,0.001,0.1,Passives
 "R11,R12,R13",3,22R,0402 1% thick film,Uniroyal / Yageo,0.0008,0.002,0.2,Passives
 R14,1,0R,0603 0R jumper,Uniroyal / Yageo,0.0015,0.002,0.1,Passives
-R16,1,10R,0402 1% thick film,Uniroyal / Yageo,0.0008,0.001,0.1,Passives
 "R18,R19,R20,R21,R25,R34",6,10k,0402 1% thick film,Uniroyal / Yageo,0.0008,0.005,0.4,Passives
 "R22,R23,R29,R31",4,4.7k,0402 1% thick film,Uniroyal / Yageo,0.0008,0.003,0.3,Passives
 R24,1,47k,1206 1% thick film,Uniroyal / Yageo,0.0030,0.003,0.3,Passives
@@ -58,7 +55,7 @@ U8,1,MFF2 eSIM,"M2M MFF2 eUICC (operator-supplied, e.g. Jio / Airtel / Vi IoT)",
 ,1,SMT assembly,"single-sided, ~95 placements, stencil amortised",,0.625,0.625,55.0,Off-board
 ,1,Battery,"1S LiPo 300 mAh 402535 with PCM, JST PH 2-pin lead, BIS IS 16046",,0.625,0.625,55.0,Off-board
 ,1,LTE/GSM antenna,"FPC 698-2700 MHz, 100 mm IPEX/U.FL lead, adhesive",,0.398,0.398,35.0,Off-board
-,1,GNSS antenna,"active 25 x 25 mm L1 patch, 28 dB LNA, 80 mm U.FL lead",,0.966,0.966,85.0,Off-board
+,1,GNSS antenna,"passive 25 x 25 x 4 mm ceramic L1 patch, 80 mm U.FL lead",,0.511,0.511,45.0,Off-board
 ,1,Enclosure,"ABS/PC 70 x 55 x 22 mm, IP65 gasket, cable gland (or the 2W-01 IP67 box)",,0.795,0.795,70.0,Off-board
 ,1,Harness,"4-core 0.5 mm2, JST XH 4P housing, inline 2 A ATO fuse holder, 1 m",,0.511,0.511,45.0,Off-board
 ,1,Relay (optional),12 V 30 A automotive relay + socket for the immobiliser kit,,0.000,0.000,0.0,Off-board

@@ -33,7 +33,7 @@ OFFBOARD = [
     ("SMT assembly", "single-sided, ~95 placements, stencil amortised", 55),
     ("Battery", "1S LiPo 300 mAh 402535 with PCM, JST PH 2-pin lead, BIS IS 16046", 55),
     ("LTE/GSM antenna", "FPC 698-2700 MHz, 100 mm IPEX/U.FL lead, adhesive", 35),
-    ("GNSS antenna", "active 25 x 25 mm L1 patch, 28 dB LNA, 80 mm U.FL lead", 85),
+    ("GNSS antenna", "passive 25 x 25 x 4 mm ceramic L1 patch, 80 mm U.FL lead", 45),
     ("Enclosure", "ABS/PC 70 x 55 x 22 mm, IP65 gasket, cable gland (or the 2W-01 IP67 box)", 70),
     ("Harness", "4-core 0.5 mm2, JST XH 4P housing, inline 2 A ATO fuse holder, 1 m", 45),
     ("Relay (optional)", "12 V 30 A automotive relay + socket for the immobiliser kit", 0),
@@ -112,7 +112,7 @@ def main():
         f.write(f"| **Total hardware per unit** | **{parts_inr + off_inr:,.0f}** |\n\n")
         f.write("Business-plan target for the Lite (07_marketing/BUSINESS_PLAN_NOTES.md section 5): Rs 1,200-1,500. "
                 "Cost-down options: SC7A20 for the LIS3DH (-Rs 30), TP4054 for the MCP73831 (-Rs 28), generic IPEX "
-                "connectors (-Rs 40), passive GNSS patch on the lid (-Rs 45).\n\n")
+                "connectors (-Rs 40).\n\n")
         f.write("## Placed parts\n\n| Designators | Qty | Value | Package | MPN | Manufacturer | Unit Rs | Description |\n"
                 "|---|---|---|---|---|---|---|---|\n")
         for r in rows:

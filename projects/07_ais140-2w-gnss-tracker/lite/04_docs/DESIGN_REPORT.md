@@ -28,10 +28,10 @@ VEHICLE 9-30 V -> F1 2 A -> D1 SMBJ24CA -> D2 SS34 -> VIN_PROT -> U1 XL1509 buck
                                                                           |-> U2 MCP73831 -> VBAT (300 mAh LiPo)
                                                                                          VBAT -> Q1 AO3401A -> VSYS
 VSYS -> U3 EC200U-CN VBAT_BB/RF (220 uF ceramic + 100n/33p/10p + SMF5.0A)
-VSYS -> U6 AP2112K-3.3 (EN = GPIO3) -> +3V3_GNSS -> U5 L76K -> U.FL J5 -> active L1 patch
+VSYS -> U6 AP2112K-3.3 (EN = GPIO3) -> +3V3_GNSS -> U5 L76K -> U.FL J5 -> passive 25 mm L1 patch
 U3 MAIN UART 1.8 V <-> Q3/Q4 BSS138 <-> L76K UART 3.3 V (NMEA)
 U3 VDD_EXT 1.8 V -> U7 LIS3DH (I2C 0x18, INT1 -> GPIO2), I2C pull-ups, IGN pull-up
-U3 ANT_MAIN -> 51 ohm CPWG -> pi pad C18/R14/C19 -> U.FL J4 -> FPC LTE/GSM antenna
+U3 ANT_MAIN -> 51 ohm CPWG -> L-match R14 (series) / C19 (shunt, DNP) -> U.FL J4 -> FPC LTE/GSM antenna
 U3 USIM -> 22 R -> U8 MFF2 eSIM
 IGN 12 V -> R24/R25 -> Q5 -> IGN_DET_N (GPIO1)        GPIO4 -> Q6 AO3400A -> RELAY_OUT (coil to +12 V, flyback D6)
 NET_STATUS -> Q7 -> yellow LED   STATUS -> Q8 -> green LED   MCP73831 STAT -> red LED
@@ -81,16 +81,16 @@ file system for store-and-forward, and the ADC reads the battery.
 | Line | Geometry | Z0 (rf_calc.py) | Length |
 |---|---|---|---|
 | LTE / GSM (U3 pad 49 -> J4) | 0.5 mm neck between the module's GND pads, then 1.2 mm / 0.2 mm CPWG on L1 over the L2 plane, via fence every 1.5 mm | 51 ohm | ~20 mm |
-| GNSS (U5 pad 11 -> J5) | 0.5 mm | 72 ohm | 4 mm (0.035 lambda) |
+| GNSS (U5 pad 11 -> J5) | 0.5 mm, no stubs | 72 ohm | 4 mm (0.035 lambda, < 0.1 dB) |
 
-- **LTE:** the pi pad C18/R14/C19 (0603 0R, two 0402 DNP shunts) matches the chosen FPC antenna on the bench, with a VNA through the U.FL.
-- **GNSS:** an active 25 x 25 mm patch is biased from L76K VCC_RF via R16 (10 R) and L2 (47 nH). For a passive patch, leave R16 and L2 unfitted.
+- **LTE:** R14 (0603 0R, series) and C19 (0603 DNP shunt, its pad sits on the line) form an L-match for the chosen FPC antenna. Tune it on the bench with a VNA through the U.FL.
+- **GNSS:** the L76K has an internal LNA. The Lite uses a passive 25 x 25 x 4 mm ceramic patch on a short U.FL lead, so there is no bias-T. An active antenna would need a bias-T added in rev A1.
 - **Separation:** the GNSS corner (top-left) is about 45 mm from the LTE feed (bottom-right) and away from the buck (left-middle).
 
 ## 6. PCB
 
 - 60 x 45 mm, R2 corners, 2-layer FR-4 1.6 mm, 1 oz, HASL, green / white. JLC standard rules: 0.127 mm track and space, 0.3 mm vias.
-- All parts on the top side (single-sided SMT). The bottom layer is the GND plane with short signal jumpers.
+- All parts on the top side (single-sided SMT). The bottom layer carries the GND plane, the signal jumpers and the 18 test pads.
 - Net classes: Default 0.2 / 0.15. Power (VSYS, VBAT, V4_BUCK, BUCK_SW, +3V3_GNSS) 0.6 mm. HV (VIN_*, IGN_RAW, RELAY_OUT) 0.5 mm with 0.3 mm clearance. RF50 1.2 mm with 0.2 mm gap.
 - GND: top and bottom pours, fan-out vias at every GND pad, 49 vias in the EC200U LGA field, an edge ring and a 4 mm stitching grid.
 - Same 60 x 45 mm outline and M2 mounting holes (H1-H4) as CRL-TRK-2W-01, so the Lite fits the full version's IP67 enclosure. A cheaper 70 x 55 x 22 mm ABS box is in the BOM.
@@ -110,7 +110,7 @@ file system for store-and-forward, and the ADC reads the battery.
 
 ## 8. Test and production
 
-- **Bed of nails** on TP1-TP18 (1 mm pads, top side): rails (VIN_PROT, V4_BUCK, VSYS, VBAT, MDM_1V8, +3V3_GNSS), modem USB for flashing and IMEI read-out, debug UART, PWRKEY / RESET, GNSS reset / 1PPS, IGN.
+- **Bed of nails** on TP1-TP18 (1 mm pads, all on the bottom side, so they cost nothing in assembly): rails (VIN_PROT, V4_BUCK, VSYS, VBAT, MDM_1V8, +3V3_GNSS), modem USB for flashing and IMEI read-out, debug UART, PWRKEY / RESET, GNSS reset / 1PPS, IGN.
 - **Flow:**
   1. Power up at 12 V and check the rails.
   2. Flash QuecOpen firmware over USB.

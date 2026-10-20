@@ -9914,239 +9914,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:C")
-		(at 22.86 132.08 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp yes)
-		(uuid "e424e543-79dd-5b47-9e5a-c4887373c63c")
-		(property
-			"Reference"
-			"C18"
-			(at 25.4 130.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property
-			"Value"
-			"DNP"
-			(at 25.4 133.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property
-			"Footprint"
-			"Capacitor_SMD:C_0402_1005Metric"
-			(at 22.86 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"Datasheet"
-			"~"
-			(at 22.86 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"Description"
-			"Unpolarized capacitor"
-			(at 22.86 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"MPN"
-			"0402 C0G (tune)"
-			(at 22.86 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"Manufacturer"
-			"Samsung / Murata"
-			(at 22.86 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin
-			"1"
-			(uuid "77eb1739-680a-59a6-9624-43a76164dd49")
-		)
-		(pin
-			"2"
-			(uuid "a3a0aaac-fbb6-5367-8dce-a6a6da9c2531")
-		)
-		(instances
-			(project
-				"tracker_lite"
-				(path
-					"/0ed4319f-d730-513f-9ab4-5578a9ccc7d0/b64969d3-ff75-5806-8f3e-c422dda5b496"
-					(reference "C18")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 22.86 128.27)
-			(xy 22.86 125.73)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "57f1fa56-4b01-5e50-8678-c5bba9ccde78")
-	)
-	(global_label
-		"LTE_RF_M"
-		(shape bidirectional)
-		(at 22.86 125.73 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "61837522-2978-5998-9536-81c07002be4b")
-		(property
-			"Intersheetrefs"
-			"${INTERSHEET_REFS}"
-			(at 22.86 125.73 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 22.86 135.89)
-			(xy 22.86 138.43)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f8843762-645e-5ad6-84b8-eca7f239bc64")
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 22.86 138.43 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "757cf24f-c88e-5f1e-bf65-6ff7b8c91703")
-		(property
-			"Reference"
-			"#PWR038"
-			(at 22.86 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"Value"
-			"GND"
-			(at 22.86 142.24 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"Footprint"
-			""
-			(at 22.86 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"Datasheet"
-			""
-			(at 22.86 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"Description"
-			""
-			(at 22.86 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin
-			"1"
-			(uuid "a910e6a8-7295-541e-81bf-58dc994c8347")
-		)
-		(instances
-			(project
-				"tracker_lite"
-				(path
-					"/0ed4319f-d730-513f-9ab4-5578a9ccc7d0/b64969d3-ff75-5806-8f3e-c422dda5b496"
-					(reference "#PWR038")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
-		(at 36.83 132.08 0)
+		(at 350.52 41.91 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10156,7 +9925,7 @@
 		(property
 			"Reference"
 			"R14"
-			(at 39.37 130.81 0)
+			(at 353.06 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10167,7 +9936,7 @@
 		(property
 			"Value"
 			"0R"
-			(at 39.37 133.35 0)
+			(at 353.06 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10178,7 +9947,7 @@
 		(property
 			"Footprint"
 			"Resistor_SMD:R_0603_1608Metric"
-			(at 36.83 132.08 0)
+			(at 350.52 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10189,7 +9958,7 @@
 		(property
 			"Datasheet"
 			"~"
-			(at 36.83 132.08 0)
+			(at 350.52 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10200,7 +9969,7 @@
 		(property
 			"Description"
 			"Resistor"
-			(at 36.83 132.08 0)
+			(at 350.52 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10211,7 +9980,7 @@
 		(property
 			"MPN"
 			"0603 0R jumper"
-			(at 36.83 132.08 0)
+			(at 350.52 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10222,7 +9991,7 @@
 		(property
 			"Manufacturer"
 			"Uniroyal / Yageo"
-			(at 36.83 132.08 0)
+			(at 350.52 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10251,8 +10020,8 @@
 	)
 	(wire
 		(pts
-			(xy 36.83 128.27)
-			(xy 36.83 125.73)
+			(xy 350.52 38.1)
+			(xy 350.52 35.56)
 		)
 		(stroke
 			(width 0)
@@ -10263,7 +10032,7 @@
 	(global_label
 		"LTE_RF_M"
 		(shape bidirectional)
-		(at 36.83 125.73 90)
+		(at 350.52 35.56 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10275,7 +10044,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 36.83 125.73 0)
+			(at 350.52 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10287,8 +10056,8 @@
 	)
 	(wire
 		(pts
-			(xy 36.83 135.89)
-			(xy 36.83 138.43)
+			(xy 350.52 45.72)
+			(xy 350.52 48.26)
 		)
 		(stroke
 			(width 0)
@@ -10299,7 +10068,7 @@
 	(global_label
 		"LTE_RF"
 		(shape bidirectional)
-		(at 36.83 138.43 270)
+		(at 350.52 48.26 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10311,7 +10080,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 36.83 138.43 0)
+			(at 350.52 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10323,7 +10092,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 50.8 129.54 0)
+		(at 364.49 40.64 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10333,7 +10102,7 @@
 		(property
 			"Reference"
 			"C19"
-			(at 53.34 128.27 0)
+			(at 367.03 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10344,7 +10113,7 @@
 		(property
 			"Value"
 			"DNP"
-			(at 53.34 130.81 0)
+			(at 367.03 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10354,8 +10123,8 @@
 		)
 		(property
 			"Footprint"
-			"Capacitor_SMD:C_0402_1005Metric"
-			(at 50.8 129.54 0)
+			"Capacitor_SMD:C_0603_1608Metric"
+			(at 364.49 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10366,7 +10135,7 @@
 		(property
 			"Datasheet"
 			"~"
-			(at 50.8 129.54 0)
+			(at 364.49 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10377,7 +10146,7 @@
 		(property
 			"Description"
 			"Unpolarized capacitor"
-			(at 50.8 129.54 0)
+			(at 364.49 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10387,8 +10156,8 @@
 		)
 		(property
 			"MPN"
-			"0402 C0G (tune)"
-			(at 50.8 129.54 0)
+			"0603 C0G (tune)"
+			(at 364.49 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10399,7 +10168,18 @@
 		(property
 			"Manufacturer"
 			"Samsung / Murata"
-			(at 50.8 129.54 0)
+			(at 364.49 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Note"
+			"L-match with R14: shunt C or L on the bench"
+			(at 364.49 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10428,8 +10208,8 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 125.73)
-			(xy 50.8 123.19)
+			(xy 364.49 36.83)
+			(xy 364.49 34.29)
 		)
 		(stroke
 			(width 0)
@@ -10440,7 +10220,7 @@
 	(global_label
 		"LTE_RF"
 		(shape bidirectional)
-		(at 50.8 123.19 90)
+		(at 364.49 34.29 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10452,7 +10232,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 50.8 123.19 0)
+			(at 364.49 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10464,8 +10244,8 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 133.35)
-			(xy 50.8 135.89)
+			(xy 364.49 44.45)
+			(xy 364.49 46.99)
 		)
 		(stroke
 			(width 0)
@@ -10475,17 +10255,17 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 50.8 135.89 0)
+		(at 364.49 46.99 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "aaefdf46-65dc-511f-bc04-4f6c0caaaac0")
+		(uuid "757cf24f-c88e-5f1e-bf65-6ff7b8c91703")
 		(property
 			"Reference"
-			"#PWR039"
-			(at 50.8 142.24 0)
+			"#PWR038"
+			(at 364.49 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10496,7 +10276,7 @@
 		(property
 			"Value"
 			"GND"
-			(at 50.8 139.7 0)
+			(at 364.49 50.8 0)
 			(effects
 				(font
 					(size 1 1)
@@ -10507,7 +10287,7 @@
 		(property
 			"Footprint"
 			""
-			(at 50.8 135.89 0)
+			(at 364.49 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10518,7 +10298,7 @@
 		(property
 			"Datasheet"
 			""
-			(at 50.8 135.89 0)
+			(at 364.49 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10529,7 +10309,7 @@
 		(property
 			"Description"
 			""
-			(at 50.8 135.89 0)
+			(at 364.49 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10539,14 +10319,14 @@
 		)
 		(pin
 			"1"
-			(uuid "87856e64-4041-52b3-8f84-a6295384ef8f")
+			(uuid "a910e6a8-7295-541e-81bf-58dc994c8347")
 		)
 		(instances
 			(project
 				"tracker_lite"
 				(path
 					"/0ed4319f-d730-513f-9ab4-5578a9ccc7d0/b64969d3-ff75-5806-8f3e-c422dda5b496"
-					(reference "#PWR039")
+					(reference "#PWR038")
 					(unit 1)
 				)
 			)
@@ -10554,7 +10334,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_Coaxial")
-		(at 78.74 118.11 0)
+		(at 392.43 27.94 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10564,7 +10344,7 @@
 		(property
 			"Reference"
 			"J4"
-			(at 78.74 114.3 0)
+			(at 392.43 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10574,7 +10354,7 @@
 		(property
 			"Value"
 			"LTE ANT"
-			(at 78.74 124.46 0)
+			(at 392.43 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10584,7 +10364,7 @@
 		(property
 			"Footprint"
 			"Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical"
-			(at 78.74 118.11 0)
+			(at 392.43 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10595,7 +10375,7 @@
 		(property
 			"Datasheet"
 			"~"
-			(at 78.74 118.11 0)
+			(at 392.43 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10606,7 +10386,7 @@
 		(property
 			"Description"
 			"LTE/GSM antenna: 698-2700 MHz FPC antenna with U.FL lead on the enclosure wall"
-			(at 78.74 118.11 0)
+			(at 392.43 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10617,7 +10397,7 @@
 		(property
 			"MPN"
 			"U.FL-R-SMT-1(10)"
-			(at 78.74 118.11 0)
+			(at 392.43 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10628,7 +10408,7 @@
 		(property
 			"Manufacturer"
 			"Hirose"
-			(at 78.74 118.11 0)
+			(at 392.43 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10657,8 +10437,8 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 118.11)
-			(xy 71.12 118.11)
+			(xy 387.35 27.94)
+			(xy 384.81 27.94)
 		)
 		(stroke
 			(width 0)
@@ -10669,7 +10449,7 @@
 	(global_label
 		"LTE_RF"
 		(shape bidirectional)
-		(at 71.12 118.11 180)
+		(at 384.81 27.94 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10681,7 +10461,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 71.12 118.11 0)
+			(at 384.81 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10693,8 +10473,8 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 123.19)
-			(xy 78.74 125.73)
+			(xy 392.43 33.02)
+			(xy 392.43 35.56)
 		)
 		(stroke
 			(width 0)
@@ -10704,17 +10484,17 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 78.74 125.73 0)
+		(at 392.43 35.56 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "79f68b19-9f01-5140-80e0-b9598fba5ea9")
+		(uuid "aaefdf46-65dc-511f-bc04-4f6c0caaaac0")
 		(property
 			"Reference"
-			"#PWR040"
-			(at 78.74 132.08 0)
+			"#PWR039"
+			(at 392.43 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10725,7 +10505,7 @@
 		(property
 			"Value"
 			"GND"
-			(at 78.74 129.54 0)
+			(at 392.43 39.37 0)
 			(effects
 				(font
 					(size 1 1)
@@ -10736,7 +10516,7 @@
 		(property
 			"Footprint"
 			""
-			(at 78.74 125.73 0)
+			(at 392.43 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10747,7 +10527,7 @@
 		(property
 			"Datasheet"
 			""
-			(at 78.74 125.73 0)
+			(at 392.43 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10758,7 +10538,7 @@
 		(property
 			"Description"
 			""
-			(at 78.74 125.73 0)
+			(at 392.43 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10768,14 +10548,14 @@
 		)
 		(pin
 			"1"
-			(uuid "d5f09db8-e3e1-5df8-9c23-ef5eb44d631b")
+			(uuid "87856e64-4041-52b3-8f84-a6295384ef8f")
 		)
 		(instances
 			(project
 				"tracker_lite"
 				(path
 					"/0ed4319f-d730-513f-9ab4-5578a9ccc7d0/b64969d3-ff75-5806-8f3e-c422dda5b496"
-					(reference "#PWR040")
+					(reference "#PWR039")
 					(unit 1)
 				)
 			)
@@ -10784,25 +10564,25 @@
 	(text
 		"DESIGN NOTES\nEC200U-CN runs the tracker firmware (QuecOpen / QuecPython): no separate MCU.\nAuto power-on: VSYS step charges C16 -> Q2 pulls PWRKEY low ~1.5 s. R10 (DNP) = permanent auto-on option.\nFirmware download and logs through the modem USB (TP3-TP5) and debug UART (TP6/TP7) on a pogo fixture.\nSIM: soldered MFF2 M2M eSIM (U8), 22 R series. LTE RF: 50 R CPWG -> pi pad (C18/R14/C19) -> U.FL.\nLAND PATTERN U3 = parametric reconstruction - replace with the Quectel recommended footprint (VERIFY_LIST)."
 		(exclude_from_sim no)
-		(at 20 154.94 0)
+		(at 20 113.03 0)
 		(effects
 			(font
 				(size 1.5 1.5)
 			)
 			(justify left top)
 		)
-		(uuid "90478cf3-a013-5376-b816-536119550f6f")
+		(uuid "f02fc2f4-59e5-5b5d-af2f-3f95c76cd27e")
 	)
 	(text
-		"PART NOTES (VERIFY = check against vendor datasheet before release)\nU3: Runs the tracker firmware (QuecOpen / QuecPython). Land pattern is a reconstruction - VERIFY\nC16: power-on pulse: tau = C16 x R9 = 2.2 s, PWRKEY low >= 500 ms\nR10: fit for permanent auto power-on (no PWRKEY shutdown)\nU8: Pin-out per ETSI TS 102 671 MFF2 (1 GND 2 VPP 3 I/O 6 CLK 7 RST 8 VCC) - VERIFY with the SIM vendor"
+		"PART NOTES (VERIFY = check against vendor datasheet before release)\nU3: Runs the tracker firmware (QuecOpen / QuecPython). Land pattern is a reconstruction - VERIFY\nC16: power-on pulse: tau = C16 x R9 = 2.2 s, PWRKEY low >= 500 ms\nR10: fit for permanent auto power-on (no PWRKEY shutdown)\nU8: Pin-out per ETSI TS 102 671 MFF2 (1 GND 2 VPP 3 I/O 6 CLK 7 RST 8 VCC) - VERIFY with the SIM vendor\nC19: L-match with R14: shunt C or L on the bench"
 		(exclude_from_sim no)
-		(at 219.71 154.94 0)
+		(at 219.71 113.03 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left top)
 		)
-		(uuid "d46d37b6-7b8f-5497-9a3c-b8ac9947566f")
+		(uuid "3a73a2fe-11d3-5d98-9c6a-09bf06a25c5a")
 	)
 )

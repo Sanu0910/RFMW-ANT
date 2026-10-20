@@ -10,7 +10,6 @@ C11,1,33pF,C_0402_1005Metric,0402 C0G 50V,Samsung / Murata,,
 C12,1,10pF,C_0402_1005Metric,0402 C0G 50V,Samsung / Murata,,
 "C15,C20,C27",3,1uF,C_0402_1005Metric,0402 MLCC X5R/X7R,Samsung / Murata,,
 "C16,C21",2,10uF/10V,C_0603_1608Metric,0603 MLCC X5R/X7R,Samsung / Murata,,"power-on pulse: tau = C16 x R9 = 2.2 s, PWRKEY low >= 500 ms"
-C23,1,10nF,C_0402_1005Metric,0402 MLCC X5R/X7R,Samsung / Murata,,
 C28,1,10nF/100V,C_0603_1608Metric,0603 MLCC X5R/X7R,Samsung / Murata,,
 C29,1,1nF,C_0402_1005Metric,0402 MLCC X5R/X7R,Samsung / Murata,,
 D1,1,SMBJ24CA,D_SMB,SMBJ24CA,Littelfuse / MDD,"TVS 600 W bidirectional 24 V stand-off, 38.9 V clamp (load dump)",clamp 38.9 V < XL1509 40 V abs max; reverse battery blows F1 via D1
@@ -24,9 +23,8 @@ F1,1,2A,Fuse_1206_3216Metric,0466002.NRHF,Littelfuse,Fuse 2 A fast 63 V 1206 (pl
 J1,1,VEHICLE 4P,JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical,B4B-XH-A(LF)(SN),JST,"XH 2.5 mm 4-pin header; harness: red +12V, black GND, yellow IGN, blue relay","1 +12V(BAT) 2 GND 3 IGN 4 RELAY (low side, coil to +12V)"
 J2,1,LiPo 300mAh,JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal,S2B-PH-SM4-TB(LF)(SN),JST,"Battery: 1S LiPo 300 mAh (402535 class) with PCM, JST PH 2-pin - 1 BAT+ 2 BAT-",
 J4,1,LTE ANT,U.FL_Hirose_U.FL-R-SMT-1_Vertical,U.FL-R-SMT-1(10),Hirose,LTE/GSM antenna: 698-2700 MHz FPC antenna with U.FL lead on the enclosure wall,
-J5,1,GNSS ANT,U.FL_Hirose_U.FL-R-SMT-1_Vertical,U.FL-R-SMT-1(10),Hirose,"GNSS antenna: active 25x25 mm L1 patch with U.FL lead, under the lid, sky-facing",
+J5,1,GNSS ANT,U.FL_Hirose_U.FL-R-SMT-1_Vertical,U.FL-R-SMT-1(10),Hirose,"GNSS antenna: passive 25x25x4 mm ceramic L1 patch with U.FL lead, under the lid, sky-facing (L76K has an internal LNA)",
 L1,1,22uH,L_Bourns_SRN6045TA,SRN6045TA-220M,Bourns,"22 uH semi-shielded power inductor 6x6 mm, Isat ~2 A",VERIFY Isat >= 2.2 A (GSM burst); alt. CYNTEC / Sunlord 6045 22 uH
-L2,1,47nH,L_0402_1005Metric,LQG15HS47NJ02D,Murata,"Bias-T choke, high impedance at L1",
 Q1,1,AO3401A,SOT-23,AO3401A,AOS,"P-MOSFET 30 V 4 A, 50 mOhm: battery -> VSYS when external power is gone","Gate = buck rail: off while the buck runs (Vgs = +0.35 V), on (Vgs = -VBAT) when it stops"
 Q2,1,2N7002,SOT-23,2N7002K-7,Diodes Inc,Open-drain PWRKEY driver (PWRKEY has an internal pull-up),
 "Q3,Q4",2,BSS138,SOT-23,BSS138,onsemi,Level shifter: modem TXD (1.8 V) -> L76K RXD (3.3 V),
@@ -42,7 +40,6 @@ R7,1,300k,R_0402_1005Metric,0402 1% thick film,Uniroyal / Yageo,,
 R9,1,220k,R_0402_1005Metric,0402 1% thick film,Uniroyal / Yageo,,
 "R11,R12,R13",3,22R,R_0402_1005Metric,0402 1% thick film,Uniroyal / Yageo,,
 R14,1,0R,R_0603_1608Metric,0603 0R jumper,Uniroyal / Yageo,,
-R16,1,10R,R_0402_1005Metric,0402 1% thick film,Uniroyal / Yageo,,DNP R16 + L2 for a passive patch
 "R18,R19,R20,R21,R25,R34",6,10k,R_0402_1005Metric,0402 1% thick film,Uniroyal / Yageo,,SDO/SA0 low -> I2C address 0x18
 "R22,R23,R29,R31",4,4.7k,R_0402_1005Metric,0402 1% thick film,Uniroyal / Yageo,,
 R24,1,47k,R_1206_3216Metric,1206 1% thick film,Uniroyal / Yageo,,IGN > ~3.5 V reads as ON

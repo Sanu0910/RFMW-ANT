@@ -175,10 +175,9 @@ R(S, "R11", "22R", "SIM_DATA_M", "SIM_DATA", group="sim")
 R(S, "R12", "22R", "SIM_CLK_M", "SIM_CLK", group="sim")
 R(S, "R13", "22R", "SIM_RST_M", "SIM_RST", group="sim")
 C(S, "C17", "100nF", "SIM_VDD", "GND", group="sim")
-# LTE RF: 50 R CPWG -> pi pad -> U.FL
-C(S, "C18", "DNP", "LTE_RF_M", "GND", dnp=True, mpn="0402 C0G (tune)", group="lte")
+# LTE RF: 50 R CPWG -> L-match (R14 series, C19 shunt) -> U.FL
 R(S, "R14", "0R", "LTE_RF_M", "LTE_RF", fp=R0603, mpn="0603 0R jumper", group="lte")
-C(S, "C19", "DNP", "LTE_RF", "GND", dnp=True, mpn="0402 C0G (tune)", group="lte")
+C(S, "C19", "DNP", "LTE_RF", "GND", fp=C0603, dnp=True, mpn="0603 C0G (tune)", group="lte", note="L-match with R14: shunt C or L on the bench")
 part(S, "J4", "Connector:Conn_Coaxial", "LTE ANT", "Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical",
      {"1": "LTE_RF", "2": "GND"}, mpn="U.FL-R-SMT-1(10)", mfr="Hirose",
      desc="LTE/GSM antenna: 698-2700 MHz FPC antenna with U.FL lead on the enclosure wall", group="lte")
@@ -188,7 +187,7 @@ S = "gnss"
 part(S, "U5", f"{LIB}:L76K", "L76K", f"{LIB}:Quectel_L76K",
      {"1": "GND", "2": "GNSS_TXD", "3": "GNSS_RXD", "4": "GNSS_1PPS", "5": "", "6": "+3V3_GNSS", "7": "",
       "8": "+3V3_GNSS", "9": "GNSS_RST_N", "10": "GND", "11": "GNSS_RF", "12": "GND", "13": "",
-      "14": "GNSS_VCC_RF", "15": "", "16": "", "17": "", "18": ""},
+      "14": "", "15": "", "16": "", "17": "", "18": ""},
      mpn="L76KB-A58", mfr="Quectel", desc="GPS + BeiDou + GLONASS + QZSS receiver, L1, 10.1 x 9.7 mm LCC-18",
      note="V_BCKP tied to VCC: hot start only while GNSS_EN is high (AGNSS on cold start) - VERIFY pins vs L76K HD", group="gnss")
 part(S, "U6", "Regulator_Linear:AP2112K-3.3", "AP2112K-3.3", "Package_TO_SOT_SMD:SOT-23-5",
@@ -198,14 +197,9 @@ C(S, "C20", "1uF", "VSYS", "GND", fp=C0402, group="gldo")
 C(S, "C21", "10uF/10V", "+3V3_GNSS", "GND", fp=C0603, group="gldo")
 C(S, "C22", "100nF", "+3V3_GNSS", "GND", group="gnss")
 R(S, "R15", "100k", "GNSS_EN", "GND", group="gldo")
-# bias-T for an active patch (u-blox / Quectel style): VCC_RF -> 10 R -> 47 nH -> RF line
-R(S, "R16", "10R", "GNSS_VCC_RF", "GNSS_BIAS", group="bias", note="DNP R16 + L2 for a passive patch")
-C(S, "C23", "10nF", "GNSS_BIAS", "GND", group="bias")
-part(S, "L2", "Device:L", "47nH", L0402, {"1": "GNSS_BIAS", "2": "GNSS_RF"}, mpn="LQG15HS47NJ02D", mfr="Murata",
-     desc="Bias-T choke, high impedance at L1", group="bias")
 part(S, "J5", "Connector:Conn_Coaxial", "GNSS ANT", "Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical",
      {"1": "GNSS_RF", "2": "GND"}, mpn="U.FL-R-SMT-1(10)", mfr="Hirose",
-     desc="GNSS antenna: active 25x25 mm L1 patch with U.FL lead, under the lid, sky-facing", group="grf")
+     desc="GNSS antenna: passive 25x25x4 mm ceramic L1 patch with U.FL lead, under the lid, sky-facing (L76K has an internal LNA)", group="grf")
 # 1.8 V (modem) <-> 3.3 V (L76K) UART, BSS138 bidirectional shifters
 part(S, "Q3", "Transistor_FET:BSS138", "BSS138", SOT23, {"1": "MDM_1V8", "2": "MDM_TX_1V8", "3": "GNSS_RXD"},
      mpn="BSS138", mfr="onsemi", desc="Level shifter: modem TXD (1.8 V) -> L76K RXD (3.3 V)", group="lvl")

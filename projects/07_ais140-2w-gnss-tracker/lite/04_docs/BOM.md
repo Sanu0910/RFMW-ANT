@@ -2,30 +2,30 @@
 
 Generated from `02_python/design.py` by `make_bom.py`. Assembly BOM for JLCPCB: `03_fab/CRL-TRK-2W-L1_BOM_JLCPCB.csv` (fill the LCSC column at quotation); costed BOM: `03_fab/CRL-TRK-2W-L1_BOM_costed.csv`.
 
-**55 line items, 88 placed parts (all top side)**, plus 3 DNP and 18 test pads.
+**52 line items, 85 placed parts (all top side)**, plus 2 DNP and 18 test pads.
 
 ## Cost summary (estimate, 1 000 pcs, Rs 88 / USD, excl. GST)
 
 | Group | Rs |
 |---|---|
-| Passives | 90 |
+| Passives | 88 |
 | Discretes | 26 |
 | Connectors | 58 |
 | ICs | 86 |
 | Modules | 827 |
-| **Board parts** | **1,088** |
+| **Board parts** | **1,086** |
 | Bare PCB - 60 x 45 mm 2-layer FR-4 1.6 mm, HASL lead-free, green | 25 |
 | SMT assembly - single-sided, ~95 placements, stencil amortised | 55 |
 | Battery - 1S LiPo 300 mAh 402535 with PCM, JST PH 2-pin lead, BIS IS 16046 | 55 |
 | LTE/GSM antenna - FPC 698-2700 MHz, 100 mm IPEX/U.FL lead, adhesive | 35 |
-| GNSS antenna - active 25 x 25 mm L1 patch, 28 dB LNA, 80 mm U.FL lead | 85 |
+| GNSS antenna - passive 25 x 25 x 4 mm ceramic L1 patch, 80 mm U.FL lead | 45 |
 | Enclosure - ABS/PC 70 x 55 x 22 mm, IP65 gasket, cable gland (or the 2W-01 IP67 box) | 70 |
 | Harness - 4-core 0.5 mm2, JST XH 4P housing, inline 2 A ATO fuse holder, 1 m | 45 |
 | Relay (optional) - 12 V 30 A automotive relay + socket for the immobiliser kit | 0 |
 | Packaging + manual - box, foam, Quick-start card, IMEI label | 25 |
-| **Total hardware per unit** | **1,483** |
+| **Total hardware per unit** | **1,441** |
 
-Business-plan target for the Lite (07_marketing/BUSINESS_PLAN_NOTES.md section 5): Rs 1,200-1,500. Cost-down options: SC7A20 for the LIS3DH (-Rs 30), TP4054 for the MCP73831 (-Rs 28), generic IPEX connectors (-Rs 40), passive GNSS patch on the lid (-Rs 45).
+Business-plan target for the Lite (07_marketing/BUSINESS_PLAN_NOTES.md section 5): Rs 1,200-1,500. Cost-down options: SC7A20 for the LIS3DH (-Rs 30), TP4054 for the MCP73831 (-Rs 28), generic IPEX connectors (-Rs 40).
 
 ## Placed parts
 
@@ -42,7 +42,6 @@ Business-plan target for the Lite (07_marketing/BUSINESS_PLAN_NOTES.md section 5
 | C12 | 1 | 10pF | C_0402_1005Metric | 0402 C0G 50V | Samsung / Murata | 0.07 |  |
 | C15,C20,C27 | 3 | 1uF | C_0402_1005Metric | 0402 MLCC X5R/X7R | Samsung / Murata | 0.18 |  |
 | C16,C21 | 2 | 10uF/10V | C_0603_1608Metric | 0603 MLCC X5R/X7R | Samsung / Murata | 0.88 |  |
-| C23 | 1 | 10nF | C_0402_1005Metric | 0402 MLCC X5R/X7R | Samsung / Murata | 0.07 |  |
 | C28 | 1 | 10nF/100V | C_0603_1608Metric | 0603 MLCC X5R/X7R | Samsung / Murata | 0.35 |  |
 | C29 | 1 | 1nF | C_0402_1005Metric | 0402 MLCC X5R/X7R | Samsung / Murata | 0.07 |  |
 | D1 | 1 | SMBJ24CA | D_SMB | SMBJ24CA | Littelfuse / MDD | 4.40 | TVS 600 W bidirectional 24 V stand-off, 38.9 V clamp (load dump) |
@@ -56,9 +55,8 @@ Business-plan target for the Lite (07_marketing/BUSINESS_PLAN_NOTES.md section 5
 | J1 | 1 | VEHICLE 4P | JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical | B4B-XH-A(LF)(SN) | JST | 3.52 | XH 2.5 mm 4-pin header; harness: red +12V, black GND, yellow IGN, blue relay |
 | J2 | 1 | LiPo 300mAh | JST_PH_S2B-PH-SM4-TB_1x02-1MP_P2.00mm_Horizontal | S2B-PH-SM4-TB(LF)(SN) | JST | 5.28 | Battery: 1S LiPo 300 mAh (402535 class) with PCM, JST PH 2-pin - 1 BAT+ 2 BAT- |
 | J4 | 1 | LTE ANT | U.FL_Hirose_U.FL-R-SMT-1_Vertical | U.FL-R-SMT-1(10) | Hirose | 24.64 | LTE/GSM antenna: 698-2700 MHz FPC antenna with U.FL lead on the enclosure wall |
-| J5 | 1 | GNSS ANT | U.FL_Hirose_U.FL-R-SMT-1_Vertical | U.FL-R-SMT-1(10) | Hirose | 24.64 | GNSS antenna: active 25x25 mm L1 patch with U.FL lead, under the lid, sky-facing |
+| J5 | 1 | GNSS ANT | U.FL_Hirose_U.FL-R-SMT-1_Vertical | U.FL-R-SMT-1(10) | Hirose | 24.64 | GNSS antenna: passive 25x25x4 mm ceramic L1 patch with U.FL lead, under the lid, sky-facing (L76K has an internal LNA) |
 | L1 | 1 | 22uH | L_Bourns_SRN6045TA | SRN6045TA-220M | Bourns | 22.00 | 22 uH semi-shielded power inductor 6x6 mm, Isat ~2 A |
-| L2 | 1 | 47nH | L_0402_1005Metric | LQG15HS47NJ02D | Murata | 1.76 | Bias-T choke, high impedance at L1 |
 | Q1 | 1 | AO3401A | SOT-23 | AO3401A | AOS | 2.20 | P-MOSFET 30 V 4 A, 50 mOhm: battery -> VSYS when external power is gone |
 | Q2 | 1 | 2N7002 | SOT-23 | 2N7002K-7 | Diodes Inc | 1.06 | Open-drain PWRKEY driver (PWRKEY has an internal pull-up) |
 | Q3,Q4 | 2 | BSS138 | SOT-23 | BSS138 | onsemi | 1.32 | Level shifter: modem TXD (1.8 V) -> L76K RXD (3.3 V) |
@@ -74,7 +72,6 @@ Business-plan target for the Lite (07_marketing/BUSINESS_PLAN_NOTES.md section 5
 | R9 | 1 | 220k | R_0402_1005Metric | 0402 1% thick film | Uniroyal / Yageo | 0.07 |  |
 | R11,R12,R13 | 3 | 22R | R_0402_1005Metric | 0402 1% thick film | Uniroyal / Yageo | 0.07 |  |
 | R14 | 1 | 0R | R_0603_1608Metric | 0603 0R jumper | Uniroyal / Yageo | 0.13 |  |
-| R16 | 1 | 10R | R_0402_1005Metric | 0402 1% thick film | Uniroyal / Yageo | 0.07 |  |
 | R18,R19,R20,R21,R25,R34 | 6 | 10k | R_0402_1005Metric | 0402 1% thick film | Uniroyal / Yageo | 0.07 |  |
 | R22,R23,R29,R31 | 4 | 4.7k | R_0402_1005Metric | 0402 1% thick film | Uniroyal / Yageo | 0.07 |  |
 | R24 | 1 | 47k | R_1206_3216Metric | 1206 1% thick film | Uniroyal / Yageo | 0.26 |  |
@@ -91,5 +88,5 @@ Business-plan target for the Lite (07_marketing/BUSINESS_PLAN_NOTES.md section 5
 
 | Designators | Value | Package | Purpose |
 |---|---|---|---|
-| C18,C19 | DNP | C_0402_1005Metric | 0402 C0G (tune) |
+| C19 | DNP | C_0603_1608Metric | L-match with R14: shunt C or L on the bench |
 | R10 | 0R | R_0402_1005Metric | fit for permanent auto power-on (no PWRKEY shutdown) |

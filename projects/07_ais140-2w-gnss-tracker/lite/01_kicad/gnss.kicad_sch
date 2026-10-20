@@ -1149,193 +1149,6 @@
 			(embedded_fonts no)
 		)
 		(symbol
-			"Device:L"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property
-				"Reference"
-				"L"
-				(at -1.27 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property
-				"Value"
-				"L"
-				(at 1.905 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property
-				"Footprint"
-				""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property
-				"Datasheet"
-				"~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property
-				"Description"
-				"Inductor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property
-				"ki_keywords"
-				"inductor choke coil reactor magnetic"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property
-				"ki_fp_filters"
-				"Choke_* *Coil* Inductor_* L_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol
-				"L_0_1"
-				(arc
-					(start 0 2.54)
-					(mid 0.6323 1.905)
-					(end 0 1.27)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 1.27)
-					(mid 0.6323 0.635)
-					(end 0 0)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 0)
-					(mid 0.6323 -0.635)
-					(end 0 -1.27)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 -1.27)
-					(mid 0.6323 -1.905)
-					(end 0 -2.54)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol
-				"L_1_1"
-				(pin
-					passive
-					line
-					(at 0 3.81 270)
-					(length 1.27)
-					(name
-						"1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number
-						"1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin
-					passive
-					line
-					(at 0 -3.81 90)
-					(length 1.27)
-					(name
-						"2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number
-						"2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol
 			"Connector:Conn_Coaxial"
 			(pin_names
 				(offset 1.016)
@@ -2009,7 +1822,7 @@
 	)
 	(symbol
 		(lib_id "lite:L76K")
-		(at 49.53 35.56 0)
+		(at 48.26 35.56 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2019,7 +1832,7 @@
 		(property
 			"Reference"
 			"U5"
-			(at 49.53 29.21 0)
+			(at 48.26 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2029,7 +1842,7 @@
 		(property
 			"Value"
 			"L76K"
-			(at 49.53 46.99 0)
+			(at 48.26 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2039,7 +1852,7 @@
 		(property
 			"Footprint"
 			"lite:Quectel_L76K"
-			(at 49.53 35.56 0)
+			(at 48.26 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2050,7 +1863,7 @@
 		(property
 			"Datasheet"
 			"https://www.quectel.com/product/gnss-l76k/"
-			(at 49.53 35.56 0)
+			(at 48.26 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2061,7 +1874,7 @@
 		(property
 			"Description"
 			"GPS + BeiDou + GLONASS + QZSS receiver, L1, 10.1 x 9.7 mm LCC-18"
-			(at 49.53 35.56 0)
+			(at 48.26 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2072,7 +1885,7 @@
 		(property
 			"MPN"
 			"L76KB-A58"
-			(at 49.53 35.56 0)
+			(at 48.26 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2083,7 +1896,7 @@
 		(property
 			"Manufacturer"
 			"Quectel"
-			(at 49.53 35.56 0)
+			(at 48.26 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2094,7 +1907,7 @@
 		(property
 			"Note"
 			"V_BCKP tied to VCC: hot start only while GNSS_EN is high (AGNSS on cold start) - VERIFY pins vs L76K HD"
-			(at 49.53 35.56 0)
+			(at 48.26 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2187,8 +2000,8 @@
 	)
 	(wire
 		(pts
-			(xy 36.83 30.48)
-			(xy 34.29 30.48)
+			(xy 35.56 30.48)
+			(xy 33.02 30.48)
 		)
 		(stroke
 			(width 0)
@@ -2199,7 +2012,7 @@
 	(global_label
 		"+3V3_GNSS"
 		(shape bidirectional)
-		(at 34.29 30.48 180)
+		(at 33.02 30.48 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2211,7 +2024,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 34.29 30.48 0)
+			(at 33.02 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2223,8 +2036,8 @@
 	)
 	(wire
 		(pts
-			(xy 36.83 33.02)
-			(xy 34.29 33.02)
+			(xy 35.56 33.02)
+			(xy 33.02 33.02)
 		)
 		(stroke
 			(width 0)
@@ -2235,7 +2048,7 @@
 	(global_label
 		"+3V3_GNSS"
 		(shape bidirectional)
-		(at 34.29 33.02 180)
+		(at 33.02 33.02 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2247,7 +2060,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 34.29 33.02 0)
+			(at 33.02 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2257,46 +2070,14 @@
 			)
 		)
 	)
-	(wire
-		(pts
-			(xy 36.83 35.56)
-			(xy 34.29 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e59d8bdc-d912-5e0a-bf3d-68fb9f584963")
-	)
-	(global_label
-		"GNSS_VCC_RF"
-		(shape bidirectional)
-		(at 34.29 35.56 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "520b9a6e-7bff-534b-a1e0-3a02db706d02")
-		(property
-			"Intersheetrefs"
-			"${INTERSHEET_REFS}"
-			(at 34.29 35.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
+	(no_connect
+		(at 35.56 35.56)
+		(uuid "04f8e9d6-d9ae-5efc-a55c-a2d1191c37ae")
 	)
 	(wire
 		(pts
-			(xy 36.83 40.64)
-			(xy 34.29 40.64)
+			(xy 35.56 40.64)
+			(xy 33.02 40.64)
 		)
 		(stroke
 			(width 0)
@@ -2307,7 +2088,7 @@
 	(global_label
 		"GNSS_RST_N"
 		(shape bidirectional)
-		(at 34.29 40.64 180)
+		(at 33.02 40.64 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2319,7 +2100,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 34.29 40.64 0)
+			(at 33.02 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2331,8 +2112,8 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 30.48)
-			(xy 64.77 30.48)
+			(xy 60.96 30.48)
+			(xy 63.5 30.48)
 		)
 		(stroke
 			(width 0)
@@ -2343,7 +2124,7 @@
 	(global_label
 		"GNSS_RF"
 		(shape bidirectional)
-		(at 64.77 30.48 0)
+		(at 63.5 30.48 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2355,7 +2136,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 64.77 30.48 0)
+			(at 63.5 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2367,8 +2148,8 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 35.56)
-			(xy 64.77 35.56)
+			(xy 60.96 35.56)
+			(xy 63.5 35.56)
 		)
 		(stroke
 			(width 0)
@@ -2379,7 +2160,7 @@
 	(global_label
 		"GNSS_TXD"
 		(shape bidirectional)
-		(at 64.77 35.56 0)
+		(at 63.5 35.56 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2391,7 +2172,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 64.77 35.56 0)
+			(at 63.5 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2403,8 +2184,8 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 38.1)
-			(xy 64.77 38.1)
+			(xy 60.96 38.1)
+			(xy 63.5 38.1)
 		)
 		(stroke
 			(width 0)
@@ -2415,7 +2196,7 @@
 	(global_label
 		"GNSS_RXD"
 		(shape bidirectional)
-		(at 64.77 38.1 0)
+		(at 63.5 38.1 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2427,7 +2208,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 64.77 38.1 0)
+			(at 63.5 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2439,8 +2220,8 @@
 	)
 	(wire
 		(pts
-			(xy 62.23 40.64)
-			(xy 64.77 40.64)
+			(xy 60.96 40.64)
+			(xy 63.5 40.64)
 		)
 		(stroke
 			(width 0)
@@ -2451,7 +2232,7 @@
 	(global_label
 		"GNSS_1PPS"
 		(shape bidirectional)
-		(at 64.77 40.64 0)
+		(at 63.5 40.64 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2463,7 +2244,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 64.77 40.64 0)
+			(at 63.5 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2475,8 +2256,8 @@
 	)
 	(wire
 		(pts
-			(xy 49.53 45.72)
-			(xy 49.53 48.26)
+			(xy 48.26 45.72)
+			(xy 48.26 48.26)
 		)
 		(stroke
 			(width 0)
@@ -2486,17 +2267,17 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 49.53 48.26 0)
+		(at 48.26 48.26 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "c6b199d8-f0ef-5cda-89cd-c96b22d288e1")
+		(uuid "a5d83379-60c0-5792-ab03-a378fdfce834")
 		(property
 			"Reference"
-			"#PWR041"
-			(at 49.53 54.61 0)
+			"#PWR040"
+			(at 48.26 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2507,7 +2288,7 @@
 		(property
 			"Value"
 			"GND"
-			(at 49.53 52.07 0)
+			(at 48.26 52.07 0)
 			(effects
 				(font
 					(size 1 1)
@@ -2518,7 +2299,7 @@
 		(property
 			"Footprint"
 			""
-			(at 49.53 48.26 0)
+			(at 48.26 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2529,7 +2310,7 @@
 		(property
 			"Datasheet"
 			""
-			(at 49.53 48.26 0)
+			(at 48.26 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2540,7 +2321,7 @@
 		(property
 			"Description"
 			""
-			(at 49.53 48.26 0)
+			(at 48.26 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2550,26 +2331,26 @@
 		)
 		(pin
 			"1"
-			(uuid "89a23846-d5f4-5b37-a0d5-610f92e6f0ca")
+			(uuid "0a071c02-9805-5114-a484-bb4f856bbaa0")
 		)
 		(instances
 			(project
 				"tracker_lite"
 				(path
 					"/0ed4319f-d730-513f-9ab4-5578a9ccc7d0/739fe076-0d41-59b3-b271-97d6d0e472d7"
-					(reference "#PWR041")
+					(reference "#PWR040")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(no_connect
-		(at 41.91 45.72)
+		(at 40.64 45.72)
 		(uuid "999eec3a-b2aa-54ee-af4d-a78bc946fb83")
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 83.82 43.18 0)
+		(at 82.55 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2579,7 +2360,7 @@
 		(property
 			"Reference"
 			"C22"
-			(at 86.36 41.91 0)
+			(at 85.09 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2590,7 +2371,7 @@
 		(property
 			"Value"
 			"100nF"
-			(at 86.36 44.45 0)
+			(at 85.09 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2601,7 +2382,7 @@
 		(property
 			"Footprint"
 			"Capacitor_SMD:C_0402_1005Metric"
-			(at 83.82 43.18 0)
+			(at 82.55 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2612,7 +2393,7 @@
 		(property
 			"Datasheet"
 			"~"
-			(at 83.82 43.18 0)
+			(at 82.55 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2623,7 +2404,7 @@
 		(property
 			"Description"
 			"Unpolarized capacitor"
-			(at 83.82 43.18 0)
+			(at 82.55 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2634,7 +2415,7 @@
 		(property
 			"MPN"
 			"0402 MLCC X5R/X7R"
-			(at 83.82 43.18 0)
+			(at 82.55 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2645,7 +2426,7 @@
 		(property
 			"Manufacturer"
 			"Samsung / Murata"
-			(at 83.82 43.18 0)
+			(at 82.55 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2674,8 +2455,8 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 39.37)
-			(xy 83.82 36.83)
+			(xy 82.55 39.37)
+			(xy 82.55 36.83)
 		)
 		(stroke
 			(width 0)
@@ -2686,7 +2467,7 @@
 	(global_label
 		"+3V3_GNSS"
 		(shape bidirectional)
-		(at 83.82 36.83 90)
+		(at 82.55 36.83 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2698,7 +2479,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 83.82 36.83 0)
+			(at 82.55 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2710,8 +2491,8 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 46.99)
-			(xy 83.82 49.53)
+			(xy 82.55 46.99)
+			(xy 82.55 49.53)
 		)
 		(stroke
 			(width 0)
@@ -2721,17 +2502,17 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 83.82 49.53 0)
+		(at 82.55 49.53 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "5c830dfa-0f19-5d11-bd96-e06837401036")
+		(uuid "c6b199d8-f0ef-5cda-89cd-c96b22d288e1")
 		(property
 			"Reference"
-			"#PWR042"
-			(at 83.82 55.88 0)
+			"#PWR041"
+			(at 82.55 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2742,7 +2523,7 @@
 		(property
 			"Value"
 			"GND"
-			(at 83.82 53.34 0)
+			(at 82.55 53.34 0)
 			(effects
 				(font
 					(size 1 1)
@@ -2753,7 +2534,7 @@
 		(property
 			"Footprint"
 			""
-			(at 83.82 49.53 0)
+			(at 82.55 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2764,7 +2545,7 @@
 		(property
 			"Datasheet"
 			""
-			(at 83.82 49.53 0)
+			(at 82.55 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2775,7 +2556,7 @@
 		(property
 			"Description"
 			""
-			(at 83.82 49.53 0)
+			(at 82.55 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2785,14 +2566,14 @@
 		)
 		(pin
 			"1"
-			(uuid "5c11b98c-d621-51bf-9454-f4325f782ec9")
+			(uuid "89a23846-d5f4-5b37-a0d5-610f92e6f0ca")
 		)
 		(instances
 			(project
 				"tracker_lite"
 				(path
 					"/0ed4319f-d730-513f-9ab4-5578a9ccc7d0/739fe076-0d41-59b3-b271-97d6d0e472d7"
-					(reference "#PWR042")
+					(reference "#PWR041")
 					(unit 1)
 				)
 			)
@@ -2800,7 +2581,7 @@
 	)
 	(symbol
 		(lib_id "Regulator_Linear:AP2112K-3.3")
-		(at 123.19 33.02 0)
+		(at 121.92 33.02 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2810,7 +2591,7 @@
 		(property
 			"Reference"
 			"U6"
-			(at 123.19 29.21 0)
+			(at 121.92 29.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2820,7 +2601,7 @@
 		(property
 			"Value"
 			"AP2112K-3.3"
-			(at 123.19 41.91 0)
+			(at 121.92 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2830,7 +2611,7 @@
 		(property
 			"Footprint"
 			"Package_TO_SOT_SMD:SOT-23-5"
-			(at 123.19 33.02 0)
+			(at 121.92 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2841,7 +2622,7 @@
 		(property
 			"Datasheet"
 			"https://www.diodes.com/assets/Datasheets/AP2112.pdf"
-			(at 123.19 33.02 0)
+			(at 121.92 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2852,7 +2633,7 @@
 		(property
 			"Description"
 			"LDO 3.3 V 600 mA, EN from modem GPIO (GNSS power gate)"
-			(at 123.19 33.02 0)
+			(at 121.92 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2863,7 +2644,7 @@
 		(property
 			"MPN"
 			"AP2112K-3.3TRG1"
-			(at 123.19 33.02 0)
+			(at 121.92 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2874,7 +2655,7 @@
 		(property
 			"Manufacturer"
 			"Diodes Inc"
-			(at 123.19 33.02 0)
+			(at 121.92 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2915,8 +2696,8 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 30.48)
-			(xy 113.03 30.48)
+			(xy 114.3 30.48)
+			(xy 111.76 30.48)
 		)
 		(stroke
 			(width 0)
@@ -2927,7 +2708,7 @@
 	(global_label
 		"VSYS"
 		(shape bidirectional)
-		(at 113.03 30.48 180)
+		(at 111.76 30.48 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2939,7 +2720,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 113.03 30.48 0)
+			(at 111.76 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2951,8 +2732,8 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 33.02)
-			(xy 113.03 33.02)
+			(xy 114.3 33.02)
+			(xy 111.76 33.02)
 		)
 		(stroke
 			(width 0)
@@ -2963,7 +2744,7 @@
 	(global_label
 		"GNSS_EN"
 		(shape bidirectional)
-		(at 113.03 33.02 180)
+		(at 111.76 33.02 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2975,7 +2756,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 113.03 33.02 0)
+			(at 111.76 33.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2987,8 +2768,8 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 40.64)
-			(xy 123.19 43.18)
+			(xy 121.92 40.64)
+			(xy 121.92 43.18)
 		)
 		(stroke
 			(width 0)
@@ -2998,17 +2779,17 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 123.19 43.18 0)
+		(at 121.92 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "c31e3522-0fca-5358-80a8-e558f05f357d")
+		(uuid "5c830dfa-0f19-5d11-bd96-e06837401036")
 		(property
 			"Reference"
-			"#PWR043"
-			(at 123.19 49.53 0)
+			"#PWR042"
+			(at 121.92 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3019,7 +2800,7 @@
 		(property
 			"Value"
 			"GND"
-			(at 123.19 46.99 0)
+			(at 121.92 46.99 0)
 			(effects
 				(font
 					(size 1 1)
@@ -3030,7 +2811,7 @@
 		(property
 			"Footprint"
 			""
-			(at 123.19 43.18 0)
+			(at 121.92 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3041,7 +2822,7 @@
 		(property
 			"Datasheet"
 			""
-			(at 123.19 43.18 0)
+			(at 121.92 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3052,7 +2833,7 @@
 		(property
 			"Description"
 			""
-			(at 123.19 43.18 0)
+			(at 121.92 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3062,27 +2843,27 @@
 		)
 		(pin
 			"1"
-			(uuid "a80f6287-1066-59b8-87b5-aff10ab197ab")
+			(uuid "5c11b98c-d621-51bf-9454-f4325f782ec9")
 		)
 		(instances
 			(project
 				"tracker_lite"
 				(path
 					"/0ed4319f-d730-513f-9ab4-5578a9ccc7d0/739fe076-0d41-59b3-b271-97d6d0e472d7"
-					(reference "#PWR043")
+					(reference "#PWR042")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(no_connect
-		(at 128.27 33.02)
+		(at 127 33.02)
 		(uuid "2eb3aa80-a2fe-5dfa-b8f5-9e21bbcfbf96")
 	)
 	(wire
 		(pts
-			(xy 130.81 30.48)
-			(xy 133.35 30.48)
+			(xy 129.54 30.48)
+			(xy 132.08 30.48)
 		)
 		(stroke
 			(width 0)
@@ -3093,7 +2874,7 @@
 	(global_label
 		"+3V3_GNSS"
 		(shape bidirectional)
-		(at 133.35 30.48 0)
+		(at 132.08 30.48 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3105,7 +2886,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 133.35 30.48 0)
+			(at 132.08 30.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3117,7 +2898,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 152.4 38.1 0)
+		(at 151.13 38.1 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3127,7 +2908,7 @@
 		(property
 			"Reference"
 			"C20"
-			(at 154.94 36.83 0)
+			(at 153.67 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3138,7 +2919,7 @@
 		(property
 			"Value"
 			"1uF"
-			(at 154.94 39.37 0)
+			(at 153.67 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3149,7 +2930,7 @@
 		(property
 			"Footprint"
 			"Capacitor_SMD:C_0402_1005Metric"
-			(at 152.4 38.1 0)
+			(at 151.13 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3160,7 +2941,7 @@
 		(property
 			"Datasheet"
 			"~"
-			(at 152.4 38.1 0)
+			(at 151.13 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3171,7 +2952,7 @@
 		(property
 			"Description"
 			"Unpolarized capacitor"
-			(at 152.4 38.1 0)
+			(at 151.13 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3182,7 +2963,7 @@
 		(property
 			"MPN"
 			"0402 MLCC X5R/X7R"
-			(at 152.4 38.1 0)
+			(at 151.13 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3193,7 +2974,7 @@
 		(property
 			"Manufacturer"
 			"Samsung / Murata"
-			(at 152.4 38.1 0)
+			(at 151.13 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3222,8 +3003,8 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 34.29)
-			(xy 152.4 31.75)
+			(xy 151.13 34.29)
+			(xy 151.13 31.75)
 		)
 		(stroke
 			(width 0)
@@ -3234,7 +3015,7 @@
 	(global_label
 		"VSYS"
 		(shape bidirectional)
-		(at 152.4 31.75 90)
+		(at 151.13 31.75 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3246,7 +3027,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 152.4 31.75 0)
+			(at 151.13 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3258,8 +3039,8 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 41.91)
-			(xy 152.4 44.45)
+			(xy 151.13 41.91)
+			(xy 151.13 44.45)
 		)
 		(stroke
 			(width 0)
@@ -3269,17 +3050,17 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 152.4 44.45 0)
+		(at 151.13 44.45 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "2a974422-575c-59b4-a29a-d806b7cb9255")
+		(uuid "c31e3522-0fca-5358-80a8-e558f05f357d")
 		(property
 			"Reference"
-			"#PWR044"
-			(at 152.4 50.8 0)
+			"#PWR043"
+			(at 151.13 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3290,7 +3071,7 @@
 		(property
 			"Value"
 			"GND"
-			(at 152.4 48.26 0)
+			(at 151.13 48.26 0)
 			(effects
 				(font
 					(size 1 1)
@@ -3301,7 +3082,7 @@
 		(property
 			"Footprint"
 			""
-			(at 152.4 44.45 0)
+			(at 151.13 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3312,7 +3093,7 @@
 		(property
 			"Datasheet"
 			""
-			(at 152.4 44.45 0)
+			(at 151.13 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3323,7 +3104,7 @@
 		(property
 			"Description"
 			""
-			(at 152.4 44.45 0)
+			(at 151.13 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3333,14 +3114,14 @@
 		)
 		(pin
 			"1"
-			(uuid "b5d296e7-81f8-53e4-a360-281506f30f56")
+			(uuid "a80f6287-1066-59b8-87b5-aff10ab197ab")
 		)
 		(instances
 			(project
 				"tracker_lite"
 				(path
 					"/0ed4319f-d730-513f-9ab4-5578a9ccc7d0/739fe076-0d41-59b3-b271-97d6d0e472d7"
-					(reference "#PWR044")
+					(reference "#PWR043")
 					(unit 1)
 				)
 			)
@@ -3348,7 +3129,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 166.37 43.18 0)
+		(at 165.1 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3358,7 +3139,7 @@
 		(property
 			"Reference"
 			"C21"
-			(at 168.91 41.91 0)
+			(at 167.64 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3369,7 +3150,7 @@
 		(property
 			"Value"
 			"10uF/10V"
-			(at 168.91 44.45 0)
+			(at 167.64 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3380,7 +3161,7 @@
 		(property
 			"Footprint"
 			"Capacitor_SMD:C_0603_1608Metric"
-			(at 166.37 43.18 0)
+			(at 165.1 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3391,7 +3172,7 @@
 		(property
 			"Datasheet"
 			"~"
-			(at 166.37 43.18 0)
+			(at 165.1 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3402,7 +3183,7 @@
 		(property
 			"Description"
 			"Unpolarized capacitor"
-			(at 166.37 43.18 0)
+			(at 165.1 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3413,7 +3194,7 @@
 		(property
 			"MPN"
 			"0603 MLCC X5R/X7R"
-			(at 166.37 43.18 0)
+			(at 165.1 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3424,7 +3205,7 @@
 		(property
 			"Manufacturer"
 			"Samsung / Murata"
-			(at 166.37 43.18 0)
+			(at 165.1 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3453,8 +3234,8 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 39.37)
-			(xy 166.37 36.83)
+			(xy 165.1 39.37)
+			(xy 165.1 36.83)
 		)
 		(stroke
 			(width 0)
@@ -3465,7 +3246,7 @@
 	(global_label
 		"+3V3_GNSS"
 		(shape bidirectional)
-		(at 166.37 36.83 90)
+		(at 165.1 36.83 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3477,7 +3258,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 166.37 36.83 0)
+			(at 165.1 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3489,8 +3270,8 @@
 	)
 	(wire
 		(pts
-			(xy 166.37 46.99)
-			(xy 166.37 49.53)
+			(xy 165.1 46.99)
+			(xy 165.1 49.53)
 		)
 		(stroke
 			(width 0)
@@ -3500,17 +3281,17 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 166.37 49.53 0)
+		(at 165.1 49.53 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "e122e86f-7f81-5548-ae50-4765764bf5de")
+		(uuid "2a974422-575c-59b4-a29a-d806b7cb9255")
 		(property
 			"Reference"
-			"#PWR045"
-			(at 166.37 55.88 0)
+			"#PWR044"
+			(at 165.1 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3521,7 +3302,7 @@
 		(property
 			"Value"
 			"GND"
-			(at 166.37 53.34 0)
+			(at 165.1 53.34 0)
 			(effects
 				(font
 					(size 1 1)
@@ -3532,7 +3313,7 @@
 		(property
 			"Footprint"
 			""
-			(at 166.37 49.53 0)
+			(at 165.1 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3543,7 +3324,7 @@
 		(property
 			"Datasheet"
 			""
-			(at 166.37 49.53 0)
+			(at 165.1 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3554,7 +3335,7 @@
 		(property
 			"Description"
 			""
-			(at 166.37 49.53 0)
+			(at 165.1 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3564,14 +3345,14 @@
 		)
 		(pin
 			"1"
-			(uuid "6f992a3f-f45c-5cb5-83ce-44024f8d148d")
+			(uuid "b5d296e7-81f8-53e4-a360-281506f30f56")
 		)
 		(instances
 			(project
 				"tracker_lite"
 				(path
 					"/0ed4319f-d730-513f-9ab4-5578a9ccc7d0/739fe076-0d41-59b3-b271-97d6d0e472d7"
-					(reference "#PWR045")
+					(reference "#PWR044")
 					(unit 1)
 				)
 			)
@@ -3579,7 +3360,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 185.42 40.64 0)
+		(at 184.15 40.64 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3589,7 +3370,7 @@
 		(property
 			"Reference"
 			"R15"
-			(at 187.96 39.37 0)
+			(at 186.69 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3600,7 +3381,7 @@
 		(property
 			"Value"
 			"100k"
-			(at 187.96 41.91 0)
+			(at 186.69 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3611,7 +3392,7 @@
 		(property
 			"Footprint"
 			"Resistor_SMD:R_0402_1005Metric"
-			(at 185.42 40.64 0)
+			(at 184.15 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3622,7 +3403,7 @@
 		(property
 			"Datasheet"
 			"~"
-			(at 185.42 40.64 0)
+			(at 184.15 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3633,7 +3414,7 @@
 		(property
 			"Description"
 			"Resistor"
-			(at 185.42 40.64 0)
+			(at 184.15 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3644,7 +3425,7 @@
 		(property
 			"MPN"
 			"0402 1% thick film"
-			(at 185.42 40.64 0)
+			(at 184.15 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3655,7 +3436,7 @@
 		(property
 			"Manufacturer"
 			"Uniroyal / Yageo"
-			(at 185.42 40.64 0)
+			(at 184.15 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3684,8 +3465,8 @@
 	)
 	(wire
 		(pts
-			(xy 185.42 36.83)
-			(xy 185.42 34.29)
+			(xy 184.15 36.83)
+			(xy 184.15 34.29)
 		)
 		(stroke
 			(width 0)
@@ -3696,7 +3477,7 @@
 	(global_label
 		"GNSS_EN"
 		(shape bidirectional)
-		(at 185.42 34.29 90)
+		(at 184.15 34.29 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3708,7 +3489,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 185.42 34.29 0)
+			(at 184.15 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3720,8 +3501,8 @@
 	)
 	(wire
 		(pts
-			(xy 185.42 44.45)
-			(xy 185.42 46.99)
+			(xy 184.15 44.45)
+			(xy 184.15 46.99)
 		)
 		(stroke
 			(width 0)
@@ -3731,17 +3512,17 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 185.42 46.99 0)
+		(at 184.15 46.99 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "df645b9e-3a7c-5bda-8ad6-6020ea503091")
+		(uuid "e122e86f-7f81-5548-ae50-4765764bf5de")
 		(property
 			"Reference"
-			"#PWR046"
-			(at 185.42 53.34 0)
+			"#PWR045"
+			(at 184.15 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3752,7 +3533,7 @@
 		(property
 			"Value"
 			"GND"
-			(at 185.42 50.8 0)
+			(at 184.15 50.8 0)
 			(effects
 				(font
 					(size 1 1)
@@ -3763,7 +3544,7 @@
 		(property
 			"Footprint"
 			""
-			(at 185.42 46.99 0)
+			(at 184.15 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3774,7 +3555,7 @@
 		(property
 			"Datasheet"
 			""
-			(at 185.42 46.99 0)
+			(at 184.15 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3785,7 +3566,7 @@
 		(property
 			"Description"
 			""
-			(at 185.42 46.99 0)
+			(at 184.15 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3795,618 +3576,22 @@
 		)
 		(pin
 			"1"
-			(uuid "bb5340ca-cdd0-57d4-9d40-3b886e355425")
+			(uuid "6f992a3f-f45c-5cb5-83ce-44024f8d148d")
 		)
 		(instances
 			(project
 				"tracker_lite"
 				(path
 					"/0ed4319f-d730-513f-9ab4-5578a9ccc7d0/739fe076-0d41-59b3-b271-97d6d0e472d7"
-					(reference "#PWR046")
+					(reference "#PWR045")
 					(unit 1)
 				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 205.74 45.72 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "a25f32f2-b687-5026-9cef-7c6d4aac13da")
-		(property
-			"Reference"
-			"R16"
-			(at 208.28 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property
-			"Value"
-			"10R"
-			(at 208.28 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property
-			"Footprint"
-			"Resistor_SMD:R_0402_1005Metric"
-			(at 205.74 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"Datasheet"
-			"~"
-			(at 205.74 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"Description"
-			"Resistor"
-			(at 205.74 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"MPN"
-			"0402 1% thick film"
-			(at 205.74 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"Manufacturer"
-			"Uniroyal / Yageo"
-			(at 205.74 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"Note"
-			"DNP R16 + L2 for a passive patch"
-			(at 205.74 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin
-			"1"
-			(uuid "63066c20-daef-5c18-9f87-2a50fad8f60f")
-		)
-		(pin
-			"2"
-			(uuid "dc0be917-3b1f-5df6-bed1-6533cddad2ff")
-		)
-		(instances
-			(project
-				"tracker_lite"
-				(path
-					"/0ed4319f-d730-513f-9ab4-5578a9ccc7d0/739fe076-0d41-59b3-b271-97d6d0e472d7"
-					(reference "R16")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 205.74 41.91)
-			(xy 205.74 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4132d946-03ba-5633-8052-fb96c2f59948")
-	)
-	(global_label
-		"GNSS_VCC_RF"
-		(shape bidirectional)
-		(at 205.74 39.37 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "84da9f5d-53a6-571f-a8bb-653963452e15")
-		(property
-			"Intersheetrefs"
-			"${INTERSHEET_REFS}"
-			(at 205.74 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 205.74 49.53)
-			(xy 205.74 52.07)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "dfa6fbb7-39ff-5118-8721-d5ab7c17bb23")
-	)
-	(global_label
-		"GNSS_BIAS"
-		(shape bidirectional)
-		(at 205.74 52.07 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "053dfbd9-1ab4-5bdd-8795-5d07b5bf0849")
-		(property
-			"Intersheetrefs"
-			"${INTERSHEET_REFS}"
-			(at 205.74 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C")
-		(at 219.71 43.18 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "493a5fa0-da44-5a4e-8f73-eb7402ce1849")
-		(property
-			"Reference"
-			"C23"
-			(at 222.25 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property
-			"Value"
-			"10nF"
-			(at 222.25 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property
-			"Footprint"
-			"Capacitor_SMD:C_0402_1005Metric"
-			(at 219.71 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"Datasheet"
-			"~"
-			(at 219.71 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"Description"
-			"Unpolarized capacitor"
-			(at 219.71 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"MPN"
-			"0402 MLCC X5R/X7R"
-			(at 219.71 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"Manufacturer"
-			"Samsung / Murata"
-			(at 219.71 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin
-			"1"
-			(uuid "e36e42f3-e657-5ca3-b59d-92672fb6d1d9")
-		)
-		(pin
-			"2"
-			(uuid "ef68497a-8334-51a4-b013-9f22a421486c")
-		)
-		(instances
-			(project
-				"tracker_lite"
-				(path
-					"/0ed4319f-d730-513f-9ab4-5578a9ccc7d0/739fe076-0d41-59b3-b271-97d6d0e472d7"
-					(reference "C23")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 219.71 39.37)
-			(xy 219.71 36.83)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2603974e-6f67-5db8-9168-3c71919a1580")
-	)
-	(global_label
-		"GNSS_BIAS"
-		(shape bidirectional)
-		(at 219.71 36.83 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "ca11dfdf-501a-5544-9e15-11db0e11db84")
-		(property
-			"Intersheetrefs"
-			"${INTERSHEET_REFS}"
-			(at 219.71 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 219.71 46.99)
-			(xy 219.71 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e8d37717-e0d1-5c95-8bc4-f8abd7f93f93")
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 219.71 49.53 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "01564d35-6354-5de8-a7f8-3a045476a703")
-		(property
-			"Reference"
-			"#PWR047"
-			(at 219.71 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"Value"
-			"GND"
-			(at 219.71 53.34 0)
-			(effects
-				(font
-					(size 1 1)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"Footprint"
-			""
-			(at 219.71 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"Datasheet"
-			""
-			(at 219.71 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"Description"
-			""
-			(at 219.71 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin
-			"1"
-			(uuid "eea86d6c-e47a-534d-91bc-53f857bc437d")
-		)
-		(instances
-			(project
-				"tracker_lite"
-				(path
-					"/0ed4319f-d730-513f-9ab4-5578a9ccc7d0/739fe076-0d41-59b3-b271-97d6d0e472d7"
-					(reference "#PWR047")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:L")
-		(at 233.68 43.18 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "7de04a94-bd6e-54ac-b5d6-c1432b30920e")
-		(property
-			"Reference"
-			"L2"
-			(at 236.22 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property
-			"Value"
-			"47nH"
-			(at 236.22 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property
-			"Footprint"
-			"Inductor_SMD:L_0402_1005Metric"
-			(at 233.68 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"Datasheet"
-			"~"
-			(at 233.68 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"Description"
-			"Bias-T choke, high impedance at L1"
-			(at 233.68 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"MPN"
-			"LQG15HS47NJ02D"
-			(at 233.68 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"Manufacturer"
-			"Murata"
-			(at 233.68 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin
-			"1"
-			(uuid "f5d21840-92e5-5dd3-bbfe-f7f6ce5f50e5")
-		)
-		(pin
-			"2"
-			(uuid "c2ec7c8e-705a-5b66-a46d-71d3df3308ef")
-		)
-		(instances
-			(project
-				"tracker_lite"
-				(path
-					"/0ed4319f-d730-513f-9ab4-5578a9ccc7d0/739fe076-0d41-59b3-b271-97d6d0e472d7"
-					(reference "L2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 233.68 39.37)
-			(xy 233.68 36.83)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "35e3a46c-3db1-587d-a52d-382afdd6df74")
-	)
-	(global_label
-		"GNSS_BIAS"
-		(shape bidirectional)
-		(at 233.68 36.83 90)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "26430035-75b4-53cf-9b8b-af8464cfc67f")
-		(property
-			"Intersheetrefs"
-			"${INTERSHEET_REFS}"
-			(at 233.68 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 233.68 46.99)
-			(xy 233.68 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7666049a-17e4-5c07-a56b-aa6da6387626")
-	)
-	(global_label
-		"GNSS_RF"
-		(shape bidirectional)
-		(at 233.68 49.53 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "d2c289d1-db85-56c4-b818-239de63bc0fd")
-		(property
-			"Intersheetrefs"
-			"${INTERSHEET_REFS}"
-			(at 233.68 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
 			)
 		)
 	)
 	(symbol
 		(lib_id "Connector:Conn_Coaxial")
-		(at 270.51 27.94 0)
+		(at 219.71 27.94 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4416,7 +3601,7 @@
 		(property
 			"Reference"
 			"J5"
-			(at 270.51 24.13 0)
+			(at 219.71 24.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4426,7 +3611,7 @@
 		(property
 			"Value"
 			"GNSS ANT"
-			(at 270.51 34.29 0)
+			(at 219.71 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4436,7 +3621,7 @@
 		(property
 			"Footprint"
 			"Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical"
-			(at 270.51 27.94 0)
+			(at 219.71 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4447,7 +3632,7 @@
 		(property
 			"Datasheet"
 			"~"
-			(at 270.51 27.94 0)
+			(at 219.71 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4457,8 +3642,8 @@
 		)
 		(property
 			"Description"
-			"GNSS antenna: active 25x25 mm L1 patch with U.FL lead, under the lid, sky-facing"
-			(at 270.51 27.94 0)
+			"GNSS antenna: passive 25x25x4 mm ceramic L1 patch with U.FL lead, under the lid, sky-facing (L76K has an internal LNA)"
+			(at 219.71 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4469,7 +3654,7 @@
 		(property
 			"MPN"
 			"U.FL-R-SMT-1(10)"
-			(at 270.51 27.94 0)
+			(at 219.71 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4480,7 +3665,7 @@
 		(property
 			"Manufacturer"
 			"Hirose"
-			(at 270.51 27.94 0)
+			(at 219.71 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4509,8 +3694,8 @@
 	)
 	(wire
 		(pts
-			(xy 265.43 27.94)
-			(xy 262.89 27.94)
+			(xy 214.63 27.94)
+			(xy 212.09 27.94)
 		)
 		(stroke
 			(width 0)
@@ -4521,7 +3706,7 @@
 	(global_label
 		"GNSS_RF"
 		(shape bidirectional)
-		(at 262.89 27.94 180)
+		(at 212.09 27.94 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4533,7 +3718,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 262.89 27.94 0)
+			(at 212.09 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4545,8 +3730,8 @@
 	)
 	(wire
 		(pts
-			(xy 270.51 33.02)
-			(xy 270.51 35.56)
+			(xy 219.71 33.02)
+			(xy 219.71 35.56)
 		)
 		(stroke
 			(width 0)
@@ -4556,17 +3741,17 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 270.51 35.56 0)
+		(at 219.71 35.56 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "dc8bef4b-259e-5626-a0ed-eae98607f1d9")
+		(uuid "df645b9e-3a7c-5bda-8ad6-6020ea503091")
 		(property
 			"Reference"
-			"#PWR048"
-			(at 270.51 41.91 0)
+			"#PWR046"
+			(at 219.71 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4577,7 +3762,7 @@
 		(property
 			"Value"
 			"GND"
-			(at 270.51 39.37 0)
+			(at 219.71 39.37 0)
 			(effects
 				(font
 					(size 1 1)
@@ -4588,7 +3773,7 @@
 		(property
 			"Footprint"
 			""
-			(at 270.51 35.56 0)
+			(at 219.71 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4599,7 +3784,7 @@
 		(property
 			"Datasheet"
 			""
-			(at 270.51 35.56 0)
+			(at 219.71 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4610,7 +3795,7 @@
 		(property
 			"Description"
 			""
-			(at 270.51 35.56 0)
+			(at 219.71 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4620,14 +3805,14 @@
 		)
 		(pin
 			"1"
-			(uuid "6b1edf0e-2be7-57e0-a46f-5c2fb7a3eeae")
+			(uuid "bb5340ca-cdd0-57d4-9d40-3b886e355425")
 		)
 		(instances
 			(project
 				"tracker_lite"
 				(path
 					"/0ed4319f-d730-513f-9ab4-5578a9ccc7d0/739fe076-0d41-59b3-b271-97d6d0e472d7"
-					(reference "#PWR048")
+					(reference "#PWR046")
 					(unit 1)
 				)
 			)
@@ -4635,7 +3820,7 @@
 	)
 	(symbol
 		(lib_id "Transistor_FET:BSS138")
-		(at 300.99 43.18 0)
+		(at 250.19 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4645,7 +3830,7 @@
 		(property
 			"Reference"
 			"Q3"
-			(at 300.99 36.83 0)
+			(at 250.19 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4655,7 +3840,7 @@
 		(property
 			"Value"
 			"BSS138"
-			(at 300.99 49.53 0)
+			(at 250.19 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4665,7 +3850,7 @@
 		(property
 			"Footprint"
 			"Package_TO_SOT_SMD:SOT-23"
-			(at 300.99 43.18 0)
+			(at 250.19 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4676,7 +3861,7 @@
 		(property
 			"Datasheet"
 			"https://www.onsemi.com/pub/Collateral/BSS138-D.PDF"
-			(at 300.99 43.18 0)
+			(at 250.19 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4687,7 +3872,7 @@
 		(property
 			"Description"
 			"Level shifter: modem TXD (1.8 V) -> L76K RXD (3.3 V)"
-			(at 300.99 43.18 0)
+			(at 250.19 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4698,7 +3883,7 @@
 		(property
 			"MPN"
 			"BSS138"
-			(at 300.99 43.18 0)
+			(at 250.19 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4709,7 +3894,7 @@
 		(property
 			"Manufacturer"
 			"onsemi"
-			(at 300.99 43.18 0)
+			(at 250.19 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4742,8 +3927,8 @@
 	)
 	(wire
 		(pts
-			(xy 295.91 43.18)
-			(xy 293.37 43.18)
+			(xy 245.11 43.18)
+			(xy 242.57 43.18)
 		)
 		(stroke
 			(width 0)
@@ -4754,7 +3939,7 @@
 	(global_label
 		"MDM_1V8"
 		(shape bidirectional)
-		(at 293.37 43.18 180)
+		(at 242.57 43.18 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4766,7 +3951,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 293.37 43.18 0)
+			(at 242.57 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4778,8 +3963,8 @@
 	)
 	(wire
 		(pts
-			(xy 303.53 38.1)
-			(xy 303.53 35.56)
+			(xy 252.73 38.1)
+			(xy 252.73 35.56)
 		)
 		(stroke
 			(width 0)
@@ -4790,7 +3975,7 @@
 	(global_label
 		"GNSS_RXD"
 		(shape bidirectional)
-		(at 303.53 35.56 90)
+		(at 252.73 35.56 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4802,7 +3987,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 303.53 35.56 0)
+			(at 252.73 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4814,8 +3999,8 @@
 	)
 	(wire
 		(pts
-			(xy 303.53 48.26)
-			(xy 303.53 50.8)
+			(xy 252.73 48.26)
+			(xy 252.73 50.8)
 		)
 		(stroke
 			(width 0)
@@ -4826,7 +4011,7 @@
 	(global_label
 		"MDM_TX_1V8"
 		(shape bidirectional)
-		(at 303.53 50.8 270)
+		(at 252.73 50.8 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4838,7 +4023,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 303.53 50.8 0)
+			(at 252.73 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4850,7 +4035,7 @@
 	)
 	(symbol
 		(lib_id "Transistor_FET:BSS138")
-		(at 326.39 43.18 0)
+		(at 276.86 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4860,7 +4045,7 @@
 		(property
 			"Reference"
 			"Q4"
-			(at 326.39 36.83 0)
+			(at 276.86 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4870,7 +4055,7 @@
 		(property
 			"Value"
 			"BSS138"
-			(at 326.39 49.53 0)
+			(at 276.86 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4880,7 +4065,7 @@
 		(property
 			"Footprint"
 			"Package_TO_SOT_SMD:SOT-23"
-			(at 326.39 43.18 0)
+			(at 276.86 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4891,7 +4076,7 @@
 		(property
 			"Datasheet"
 			"https://www.onsemi.com/pub/Collateral/BSS138-D.PDF"
-			(at 326.39 43.18 0)
+			(at 276.86 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4902,7 +4087,7 @@
 		(property
 			"Description"
 			"Level shifter: L76K TXD (3.3 V) -> modem RXD (1.8 V)"
-			(at 326.39 43.18 0)
+			(at 276.86 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4913,7 +4098,7 @@
 		(property
 			"MPN"
 			"BSS138"
-			(at 326.39 43.18 0)
+			(at 276.86 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4924,7 +4109,7 @@
 		(property
 			"Manufacturer"
 			"onsemi"
-			(at 326.39 43.18 0)
+			(at 276.86 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4957,8 +4142,8 @@
 	)
 	(wire
 		(pts
-			(xy 321.31 43.18)
-			(xy 318.77 43.18)
+			(xy 271.78 43.18)
+			(xy 269.24 43.18)
 		)
 		(stroke
 			(width 0)
@@ -4969,7 +4154,7 @@
 	(global_label
 		"MDM_1V8"
 		(shape bidirectional)
-		(at 318.77 43.18 180)
+		(at 269.24 43.18 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4981,7 +4166,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 318.77 43.18 0)
+			(at 269.24 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4993,8 +4178,8 @@
 	)
 	(wire
 		(pts
-			(xy 328.93 38.1)
-			(xy 328.93 35.56)
+			(xy 279.4 38.1)
+			(xy 279.4 35.56)
 		)
 		(stroke
 			(width 0)
@@ -5005,7 +4190,7 @@
 	(global_label
 		"GNSS_TXD"
 		(shape bidirectional)
-		(at 328.93 35.56 90)
+		(at 279.4 35.56 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5017,7 +4202,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 328.93 35.56 0)
+			(at 279.4 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5029,8 +4214,8 @@
 	)
 	(wire
 		(pts
-			(xy 328.93 48.26)
-			(xy 328.93 50.8)
+			(xy 279.4 48.26)
+			(xy 279.4 50.8)
 		)
 		(stroke
 			(width 0)
@@ -5041,7 +4226,7 @@
 	(global_label
 		"MDM_RX_1V8"
 		(shape bidirectional)
-		(at 328.93 50.8 270)
+		(at 279.4 50.8 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5053,7 +4238,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 328.93 50.8 0)
+			(at 279.4 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5065,7 +4250,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 337.82 40.64 0)
+		(at 287.02 40.64 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5075,7 +4260,7 @@
 		(property
 			"Reference"
 			"R18"
-			(at 340.36 39.37 0)
+			(at 289.56 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5086,7 +4271,7 @@
 		(property
 			"Value"
 			"10k"
-			(at 340.36 41.91 0)
+			(at 289.56 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5097,7 +4282,7 @@
 		(property
 			"Footprint"
 			"Resistor_SMD:R_0402_1005Metric"
-			(at 337.82 40.64 0)
+			(at 287.02 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5108,7 +4293,7 @@
 		(property
 			"Datasheet"
 			"~"
-			(at 337.82 40.64 0)
+			(at 287.02 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5119,7 +4304,7 @@
 		(property
 			"Description"
 			"Resistor"
-			(at 337.82 40.64 0)
+			(at 287.02 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5130,7 +4315,7 @@
 		(property
 			"MPN"
 			"0402 1% thick film"
-			(at 337.82 40.64 0)
+			(at 287.02 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5141,7 +4326,7 @@
 		(property
 			"Manufacturer"
 			"Uniroyal / Yageo"
-			(at 337.82 40.64 0)
+			(at 287.02 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5170,8 +4355,8 @@
 	)
 	(wire
 		(pts
-			(xy 337.82 36.83)
-			(xy 337.82 34.29)
+			(xy 287.02 36.83)
+			(xy 287.02 34.29)
 		)
 		(stroke
 			(width 0)
@@ -5182,7 +4367,7 @@
 	(global_label
 		"MDM_1V8"
 		(shape bidirectional)
-		(at 337.82 34.29 90)
+		(at 287.02 34.29 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5194,7 +4379,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 337.82 34.29 0)
+			(at 287.02 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5206,8 +4391,8 @@
 	)
 	(wire
 		(pts
-			(xy 337.82 44.45)
-			(xy 337.82 46.99)
+			(xy 287.02 44.45)
+			(xy 287.02 46.99)
 		)
 		(stroke
 			(width 0)
@@ -5218,7 +4403,7 @@
 	(global_label
 		"MDM_TX_1V8"
 		(shape bidirectional)
-		(at 337.82 46.99 270)
+		(at 287.02 46.99 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5230,7 +4415,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 337.82 46.99 0)
+			(at 287.02 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5242,7 +4427,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 350.52 43.18 0)
+		(at 300.99 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5252,7 +4437,7 @@
 		(property
 			"Reference"
 			"R19"
-			(at 353.06 41.91 0)
+			(at 303.53 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5263,7 +4448,7 @@
 		(property
 			"Value"
 			"10k"
-			(at 353.06 44.45 0)
+			(at 303.53 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5274,7 +4459,7 @@
 		(property
 			"Footprint"
 			"Resistor_SMD:R_0402_1005Metric"
-			(at 350.52 43.18 0)
+			(at 300.99 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5285,7 +4470,7 @@
 		(property
 			"Datasheet"
 			"~"
-			(at 350.52 43.18 0)
+			(at 300.99 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5296,7 +4481,7 @@
 		(property
 			"Description"
 			"Resistor"
-			(at 350.52 43.18 0)
+			(at 300.99 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5307,7 +4492,7 @@
 		(property
 			"MPN"
 			"0402 1% thick film"
-			(at 350.52 43.18 0)
+			(at 300.99 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5318,7 +4503,7 @@
 		(property
 			"Manufacturer"
 			"Uniroyal / Yageo"
-			(at 350.52 43.18 0)
+			(at 300.99 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5347,8 +4532,8 @@
 	)
 	(wire
 		(pts
-			(xy 350.52 39.37)
-			(xy 350.52 36.83)
+			(xy 300.99 39.37)
+			(xy 300.99 36.83)
 		)
 		(stroke
 			(width 0)
@@ -5359,7 +4544,7 @@
 	(global_label
 		"+3V3_GNSS"
 		(shape bidirectional)
-		(at 350.52 36.83 90)
+		(at 300.99 36.83 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5371,7 +4556,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 350.52 36.83 0)
+			(at 300.99 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5383,8 +4568,8 @@
 	)
 	(wire
 		(pts
-			(xy 350.52 46.99)
-			(xy 350.52 49.53)
+			(xy 300.99 46.99)
+			(xy 300.99 49.53)
 		)
 		(stroke
 			(width 0)
@@ -5395,7 +4580,7 @@
 	(global_label
 		"GNSS_RXD"
 		(shape bidirectional)
-		(at 350.52 49.53 270)
+		(at 300.99 49.53 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5407,7 +4592,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 350.52 49.53 0)
+			(at 300.99 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5419,7 +4604,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 364.49 40.64 0)
+		(at 313.69 40.64 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5429,7 +4614,7 @@
 		(property
 			"Reference"
 			"R20"
-			(at 367.03 39.37 0)
+			(at 316.23 39.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5440,7 +4625,7 @@
 		(property
 			"Value"
 			"10k"
-			(at 367.03 41.91 0)
+			(at 316.23 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5451,7 +4636,7 @@
 		(property
 			"Footprint"
 			"Resistor_SMD:R_0402_1005Metric"
-			(at 364.49 40.64 0)
+			(at 313.69 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5462,7 +4647,7 @@
 		(property
 			"Datasheet"
 			"~"
-			(at 364.49 40.64 0)
+			(at 313.69 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5473,7 +4658,7 @@
 		(property
 			"Description"
 			"Resistor"
-			(at 364.49 40.64 0)
+			(at 313.69 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5484,7 +4669,7 @@
 		(property
 			"MPN"
 			"0402 1% thick film"
-			(at 364.49 40.64 0)
+			(at 313.69 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5495,7 +4680,7 @@
 		(property
 			"Manufacturer"
 			"Uniroyal / Yageo"
-			(at 364.49 40.64 0)
+			(at 313.69 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5524,8 +4709,8 @@
 	)
 	(wire
 		(pts
-			(xy 364.49 36.83)
-			(xy 364.49 34.29)
+			(xy 313.69 36.83)
+			(xy 313.69 34.29)
 		)
 		(stroke
 			(width 0)
@@ -5536,7 +4721,7 @@
 	(global_label
 		"MDM_1V8"
 		(shape bidirectional)
-		(at 364.49 34.29 90)
+		(at 313.69 34.29 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5548,7 +4733,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 364.49 34.29 0)
+			(at 313.69 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5560,8 +4745,8 @@
 	)
 	(wire
 		(pts
-			(xy 364.49 44.45)
-			(xy 364.49 46.99)
+			(xy 313.69 44.45)
+			(xy 313.69 46.99)
 		)
 		(stroke
 			(width 0)
@@ -5572,7 +4757,7 @@
 	(global_label
 		"MDM_RX_1V8"
 		(shape bidirectional)
-		(at 364.49 46.99 270)
+		(at 313.69 46.99 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5584,7 +4769,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 364.49 46.99 0)
+			(at 313.69 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5596,7 +4781,7 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 377.19 43.18 0)
+		(at 327.66 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5606,7 +4791,7 @@
 		(property
 			"Reference"
 			"R21"
-			(at 379.73 41.91 0)
+			(at 330.2 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5617,7 +4802,7 @@
 		(property
 			"Value"
 			"10k"
-			(at 379.73 44.45 0)
+			(at 330.2 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5628,7 +4813,7 @@
 		(property
 			"Footprint"
 			"Resistor_SMD:R_0402_1005Metric"
-			(at 377.19 43.18 0)
+			(at 327.66 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5639,7 +4824,7 @@
 		(property
 			"Datasheet"
 			"~"
-			(at 377.19 43.18 0)
+			(at 327.66 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5650,7 +4835,7 @@
 		(property
 			"Description"
 			"Resistor"
-			(at 377.19 43.18 0)
+			(at 327.66 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5661,7 +4846,7 @@
 		(property
 			"MPN"
 			"0402 1% thick film"
-			(at 377.19 43.18 0)
+			(at 327.66 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5672,7 +4857,7 @@
 		(property
 			"Manufacturer"
 			"Uniroyal / Yageo"
-			(at 377.19 43.18 0)
+			(at 327.66 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5701,8 +4886,8 @@
 	)
 	(wire
 		(pts
-			(xy 377.19 39.37)
-			(xy 377.19 36.83)
+			(xy 327.66 39.37)
+			(xy 327.66 36.83)
 		)
 		(stroke
 			(width 0)
@@ -5713,7 +4898,7 @@
 	(global_label
 		"+3V3_GNSS"
 		(shape bidirectional)
-		(at 377.19 36.83 90)
+		(at 327.66 36.83 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5725,7 +4910,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 377.19 36.83 0)
+			(at 327.66 36.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5737,8 +4922,8 @@
 	)
 	(wire
 		(pts
-			(xy 377.19 46.99)
-			(xy 377.19 49.53)
+			(xy 327.66 46.99)
+			(xy 327.66 49.53)
 		)
 		(stroke
 			(width 0)
@@ -5749,7 +4934,7 @@
 	(global_label
 		"GNSS_TXD"
 		(shape bidirectional)
-		(at 377.19 49.53 270)
+		(at 327.66 49.53 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5761,7 +4946,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 377.19 49.53 0)
+			(at 327.66 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5773,7 +4958,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 21.59 80.01 0)
+		(at 346.71 31.75 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -5783,7 +4968,7 @@
 		(property
 			"Reference"
 			"TP8"
-			(at 21.59 76.2 0)
+			(at 346.71 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5793,7 +4978,7 @@
 		(property
 			"Value"
 			"GNSS_RST_N"
-			(at 21.59 83.82 0)
+			(at 346.71 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5803,7 +4988,7 @@
 		(property
 			"Footprint"
 			"TestPoint:TestPoint_Pad_D1.0mm"
-			(at 21.59 80.01 0)
+			(at 346.71 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5814,7 +4999,7 @@
 		(property
 			"Datasheet"
 			"~"
-			(at 21.59 80.01 0)
+			(at 346.71 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5825,7 +5010,7 @@
 		(property
 			"Description"
 			"test point"
-			(at 21.59 80.01 0)
+			(at 346.71 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5836,7 +5021,7 @@
 		(property
 			"MPN"
 			"Test pad 1.0 mm (no part)"
-			(at 21.59 80.01 0)
+			(at 346.71 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5847,7 +5032,7 @@
 		(property
 			"Manufacturer"
 			""
-			(at 21.59 80.01 0)
+			(at 346.71 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5872,8 +5057,8 @@
 	)
 	(wire
 		(pts
-			(xy 21.59 80.01)
-			(xy 21.59 82.55)
+			(xy 346.71 31.75)
+			(xy 346.71 34.29)
 		)
 		(stroke
 			(width 0)
@@ -5884,7 +5069,7 @@
 	(global_label
 		"GNSS_RST_N"
 		(shape bidirectional)
-		(at 21.59 82.55 270)
+		(at 346.71 34.29 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5896,7 +5081,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 21.59 82.55 0)
+			(at 346.71 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5908,7 +5093,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 27.94 80.01 0)
+		(at 353.06 31.75 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -5918,7 +5103,7 @@
 		(property
 			"Reference"
 			"TP9"
-			(at 27.94 76.2 0)
+			(at 353.06 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5928,7 +5113,7 @@
 		(property
 			"Value"
 			"GNSS_1PPS"
-			(at 27.94 83.82 0)
+			(at 353.06 35.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5938,7 +5123,7 @@
 		(property
 			"Footprint"
 			"TestPoint:TestPoint_Pad_D1.0mm"
-			(at 27.94 80.01 0)
+			(at 353.06 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5949,7 +5134,7 @@
 		(property
 			"Datasheet"
 			"~"
-			(at 27.94 80.01 0)
+			(at 353.06 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5960,7 +5145,7 @@
 		(property
 			"Description"
 			"test point"
-			(at 27.94 80.01 0)
+			(at 353.06 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5971,7 +5156,7 @@
 		(property
 			"MPN"
 			"Test pad 1.0 mm (no part)"
-			(at 27.94 80.01 0)
+			(at 353.06 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5982,7 +5167,7 @@
 		(property
 			"Manufacturer"
 			""
-			(at 27.94 80.01 0)
+			(at 353.06 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6007,8 +5192,8 @@
 	)
 	(wire
 		(pts
-			(xy 27.94 80.01)
-			(xy 27.94 82.55)
+			(xy 353.06 31.75)
+			(xy 353.06 34.29)
 		)
 		(stroke
 			(width 0)
@@ -6019,7 +5204,7 @@
 	(global_label
 		"GNSS_1PPS"
 		(shape bidirectional)
-		(at 27.94 82.55 270)
+		(at 353.06 34.29 270)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -6031,7 +5216,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 27.94 82.55 0)
+			(at 353.06 34.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6044,25 +5229,25 @@
 	(text
 		"DESIGN NOTES\nL76K: GPS + BeiDou + GLONASS + QZSS, L1 only (no NavIC: Lite is not for AIS-140).\nU6 LDO switched by modem GPIO3 (GNSS_EN): GNSS fully off when parked. V_BCKP = VCC.\nUART 1.8 V <-> 3.3 V through Q3/Q4 BSS138 shifters (modem MAIN UART = NMEA port).\nActive patch bias from VCC_RF via R16/L2; DNP R16 + L2 for a passive patch. RF_IN direct to the U.FL."
 		(exclude_from_sim no)
-		(at 20 104.14 0)
+		(at 20 72.39 0)
 		(effects
 			(font
 				(size 1.5 1.5)
 			)
 			(justify left top)
 		)
-		(uuid "55bef2bf-c25a-5b51-908f-c5fbb918fc5c")
+		(uuid "39899eb7-c624-5eee-b519-ee1e6a090438")
 	)
 	(text
-		"PART NOTES (VERIFY = check against vendor datasheet before release)\nU5: V_BCKP tied to VCC: hot start only while GNSS_EN is high (AGNSS on cold start) - VERIFY pins vs L76K HD\nR16: DNP R16 + L2 for a passive patch"
+		"PART NOTES (VERIFY = check against vendor datasheet before release)\nU5: V_BCKP tied to VCC: hot start only while GNSS_EN is high (AGNSS on cold start) - VERIFY pins vs L76K HD"
 		(exclude_from_sim no)
-		(at 219.71 104.14 0)
+		(at 219.71 72.39 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left top)
 		)
-		(uuid "b1230e9d-f00b-5b9c-9ff6-e62defe678ee")
+		(uuid "1b7dbe57-90e4-5e72-be6f-d08c9a143d60")
 	)
 )
