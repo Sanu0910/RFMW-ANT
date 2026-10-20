@@ -89,7 +89,11 @@ Verify that claim against competitors' spec sheets before you use it.
 
 Most of the profit comes from renewals.
 
-## 5. Lite version (would need a new design)
+## 5. Lite version (designed: `lite/`, CRL-TRK-2W-L1)
+
+The design is in `../lite/` (EC200U-CN + L76K + LIS3DH, 2-layer, single-sided). Its costed BOM comes to about Rs 1,480 per unit
+including PCB, assembly, battery, antennas, enclosure, harness and packaging (`../lite/04_docs/BOM.md`). The table below is the original estimate.
+
 
 | Part | Choice | ₹ |
 |---|---|---|

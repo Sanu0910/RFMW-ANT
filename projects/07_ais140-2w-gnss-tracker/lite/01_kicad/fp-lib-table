@@ -1,0 +1,4 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "lite")(type "KiCad")(uri "${KIPRJMOD}/lite.pretty")(options "")(descr "CRL-TRK-2W-L1 project footprints"))
+)
