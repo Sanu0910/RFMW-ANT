@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Samay Track Lite Poster</title>
+<style>
+  @page { size: 1200px 1640px; margin: 0; }
+  :root { --bg0:#06120f; --bg1:#0c2420; --ink:#effcf6; --mute:#9db8ae; --line:rgba(160,230,200,.18);
+          --lime:#a3e635; --mint:#34d399; --cyan:#22d3ee; --amber:#fbbf24; --red:#f87171; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html, body { width:1200px; height:1640px; background:var(--bg0); }
+  body { font-family:"Inter","DejaVu Sans",sans-serif; color:var(--ink); overflow:hidden; position:relative;
+    background:
+      radial-gradient(800px 560px at 80% 22%, rgba(163,230,53,.18), transparent 60%),
+      radial-gradient(700px 500px at 0% 50%, rgba(52,211,153,.14), transparent 60%),
+      radial-gradient(800px 420px at 50% 100%, rgba(34,211,238,.12), transparent 60%),
+      linear-gradient(180deg, var(--bg1), var(--bg0) 55%); }
+  .dots { position:absolute; inset:0; opacity:.35; background-image:radial-gradient(var(--line) 1.4px, transparent 1.4px);
+          background-size:28px 28px; mask-image:linear-gradient(180deg,#000,transparent 50%); }
+  .wrap { position:relative; padding:46px 64px 0; }
+  .top { display:flex; justify-content:space-between; align-items:center; }
+  .brand { display:flex; gap:14px; align-items:center; }
+  .brand b { font-family:"Inter Display"; font-weight:800; font-size:26px; letter-spacing:.06em; }
+  .brand span { display:block; font-size:12px; letter-spacing:.42em; color:var(--mute); margin-top:2px; }
+  .pill { border:1px solid var(--line); border-radius:999px; padding:8px 16px; font-size:13px; color:var(--mute); }
+  .pill i { font-style:normal; color:var(--lime); }
+
+  .hero { display:grid; grid-template-columns:560px 1fr; margin-top:40px; align-items:center; }
+  .kicker { display:inline-flex; gap:10px; align-items:center; font-size:13px; font-weight:700; letter-spacing:.22em; color:var(--lime); }
+  .kicker em { font-style:normal; background:var(--lime); color:#0a1a05; padding:4px 10px; border-radius:999px; letter-spacing:.12em; }
+  h1 { font-family:"Inter Display"; font-weight:900; font-size:88px; line-height:.96; letter-spacing:-.035em; margin-top:18px; }
+  h1 span { background:linear-gradient(90deg,var(--lime),var(--mint) 60%,var(--cyan)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .sub { font-size:20px; line-height:1.5; color:var(--mute); margin-top:20px; max-width:500px; }
+  .sub b { color:var(--ink); }
+  .hindi { margin-top:16px; font-size:18px; color:var(--amber); font-weight:600; }
+  .price-tag { margin-top:24px; display:inline-flex; align-items:baseline; gap:12px; padding:14px 22px; border-radius:18px;
+               background:rgba(163,230,53,.12); border:1px solid rgba(163,230,53,.45); }
+  .price-tag b { font-family:"Inter Display"; font-size:46px; font-weight:900; letter-spacing:-.02em; }
+  .price-tag span { color:var(--mute); font-size:15px; }
+  .device { position:relative; height:470px; }
+  .device svg { position:absolute; left:0; top:0; width:100%; height:100%; }
+  .chip { position:absolute; padding:10px 14px; border-radius:14px; font-size:14px; font-weight:700; display:flex; gap:8px; align-items:center;
+          background:rgba(8,26,22,.85); border:1px solid var(--line); box-shadow:0 10px 30px rgba(0,0,0,.35); }
+  .chip small { display:block; font-weight:500; color:var(--mute); font-size:11px; }
+  .dot { width:9px; height:9px; border-radius:50%; }
+
+  .stats { display:grid; grid-template-columns:repeat(5,1fr); margin-top:18px; border:1px solid var(--line); border-radius:22px;
+           background:rgba(255,255,255,.035); overflow:hidden; }
+  .stat { padding:18px 12px; text-align:center; border-right:1px solid var(--line); }
+  .stat:last-child { border-right:0; }
+  .stat b { display:block; font-family:"Inter Display"; font-weight:800; font-size:34px; letter-spacing:-.02em; }
+  .stat span { font-size:13px; color:var(--mute); }
+
+  .sec { display:flex; justify-content:space-between; align-items:baseline; margin:30px 0 14px; }
+  .sec h2 { font-family:"Inter Display"; font-size:30px; font-weight:800; }
+  .sec span { font-size:13px; color:var(--mute); letter-spacing:.14em; text-transform:uppercase; }
+  .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+  .card { display:grid; grid-template-columns:40px 1fr; column-gap:14px; padding:15px 16px; border-radius:16px;
+          border:1px solid var(--line); background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015)); }
+  .ic { width:40px; height:40px; border-radius:12px; display:grid; place-items:center; grid-row:span 2; }
+  .card h3 { font-size:17px; font-weight:700; }
+  .card p { font-size:13.5px; line-height:1.4; color:var(--mute); margin-top:3px; }
+  svg.i { width:21px; height:21px; fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
+
+  .plans { display:grid; grid-template-columns:1.25fr 1fr 1fr; gap:14px; }
+  .plan { border-radius:20px; padding:20px 22px; border:1px solid var(--line); background:rgba(255,255,255,.035); position:relative; }
+  .plan.hot { background:linear-gradient(180deg,rgba(163,230,53,.18),rgba(52,211,153,.08)); border:1.5px solid rgba(163,230,53,.65); }
+  .tag { position:absolute; top:-12px; left:22px; font-size:11px; font-weight:800; letter-spacing:.16em; padding:5px 12px;
+         border-radius:999px; background:var(--lime); color:#0a1a05; }
+  .plan h4 { font-size:13px; letter-spacing:.18em; color:var(--mute); text-transform:uppercase; }
+  .plan .p { font-family:"Inter Display"; font-weight:900; font-size:46px; letter-spacing:-.03em; margin-top:6px; }
+  .plan .p small { font-size:15px; color:var(--mute); font-weight:600; letter-spacing:0; }
+  .plan ul { list-style:none; margin-top:10px; }
+  .plan li { font-size:13.5px; color:var(--mute); padding:4px 0 4px 22px; position:relative; }
+  .plan li:before { content:""; position:absolute; left:0; top:9px; width:12px; height:7px; border-left:2px solid var(--mint);
+                    border-bottom:2px solid var(--mint); transform:rotate(-45deg); }
+
+  .cta { margin:26px 64px 0; display:flex; justify-content:space-between; align-items:center; padding:20px 28px; border-radius:22px;
+         background:linear-gradient(90deg,var(--lime),var(--mint)); color:#04140c; }
+  .cta b { font-family:"Inter Display"; font-size:30px; font-weight:900; }
+  .cta p { font-size:15px; font-weight:600; opacity:.85; margin-top:2px; }
+  .btn { background:#04140c; color:#fff; padding:15px 24px; border-radius:14px; font-weight:800; font-size:17px; white-space:nowrap; }
+  .fine { padding:12px 64px 0; font-size:11px; line-height:1.5; color:#6f8a80; }
+</style>
+</head>
+<body>
+<div class="dots"></div>
+<div class="wrap">
+  <div class="top">
+    <div class="brand">
+      <svg viewBox="0 0 48 48" style="width:48px;height:48px">
+        <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a3e635"/><stop offset="1" stop-color="#34d399"/></linearGradient></defs>
+        <path d="M24 3c-8.3 0-15 6.5-15 14.6C9 29 24 45 24 45s15-16 15-27.4C39 9.5 32.3 3 24 3z" fill="url(#lg)"/>
+        <circle cx="24" cy="18" r="9" fill="#06120f"/>
+        <path d="M24 12v6.5l4 2.5" stroke="#fbbf24" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+      </svg>
+      <div><b>SAMAY ELECTRONICS</b><span>TIME · TRUST · TRACK</span></div>
+    </div>
+    <div class="pill">Designed in <i>India</i> · 4G + 2G</div>
+  </div>
+
+  <div class="hero">
+    <div>
+      <div class="kicker">SAMAY TRACK <em>LITE</em></div>
+      <h1>Smart security.<br><span>Smart price.</span></h1>
+      <p class="sub">A <b>4G GPS tracker</b> for every bike and scooter. Live location, theft alerts and remote engine
+        lock on your phone, with <b>2G backup</b> where 4G is weak.</p>
+      <p class="hindi">हर पल, आपकी गाड़ी के साथ।</p>
+      <div class="price-tag"><b>₹3,499</b><span>with 1 year app + data included*</span></div>
+    </div>
+    <div class="device">
+      <svg viewBox="0 0 560 470">
+        <defs>
+          <linearGradient id="body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b3a36"/><stop offset="1" stop-color="#0e1715"/></linearGradient>
+          <linearGradient id="face" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#36504a"/><stop offset="1" stop-color="#16231f"/></linearGradient>
+          <radialGradient id="glow"><stop offset="0" stop-color="#a3e635" stop-opacity=".45"/><stop offset="1" stop-color="#a3e635" stop-opacity="0"/></radialGradient>
+        </defs>
+        <ellipse cx="290" cy="240" rx="250" ry="190" fill="url(#glow)"/>
+        <g fill="none" stroke="#a3e635" stroke-opacity=".35">
+          <circle cx="290" cy="235" r="150" stroke-dasharray="4 8"/>
+          <circle cx="290" cy="235" r="205" stroke-opacity=".18"/>
+        </g>
+        <!-- cable -->
+        <path d="M200 330 C160 380, 110 380, 70 440" stroke="#0b0f0e" stroke-width="16" fill="none" stroke-linecap="round"/>
+        <path d="M200 330 C160 380, 110 380, 70 440" stroke="#26302d" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <!-- device -->
+        <g transform="rotate(-10 290 235)">
+          <rect x="170" y="150" width="240" height="170" rx="30" fill="#060a09" opacity=".55" transform="translate(10 18)"/>
+          <rect x="170" y="150" width="240" height="170" rx="30" fill="url(#body)" stroke="#4b6a62" stroke-width="2"/>
+          <rect x="186" y="164" width="208" height="142" rx="22" fill="url(#face)"/>
+          <circle cx="250" cy="225" r="26" fill="none" stroke="#a3e635" stroke-width="5"/>
+          <path d="M250 207c-8 0-14 6-14 13.5 0 10 14 24 14 24s14-14 14-24c0-7.5-6-13.5-14-13.5z" fill="#a3e635"/>
+          <circle cx="250" cy="221" r="5" fill="#16231f"/>
+          <text x="290" y="222" font-family="Inter Display" font-weight="800" font-size="22" fill="#effcf6">SAMAY</text>
+          <text x="290" y="246" font-family="Inter" font-weight="600" font-size="14" letter-spacing="4" fill="#a3e635">LITE</text>
+          <circle cx="366" cy="285" r="5" fill="#34d399"/><circle cx="350" cy="285" r="5" fill="#fbbf24"/>
+          <rect x="196" y="282" width="60" height="6" rx="3" fill="#0e1715"/>
+        </g>
+      </svg>
+      <div class="chip" style="left:10px;top:40px"><span class="dot" style="background:var(--lime)"></span><div>4G + 2G<small>works where 4G is weak</small></div></div>
+      <div class="chip" style="right:0;top:110px"><span class="dot" style="background:var(--cyan)"></span><div>Live GPS<small>update every 10 s</small></div></div>
+      <div class="chip" style="right:20px;bottom:40px"><span class="dot" style="background:var(--amber)"></span><div>IP65<small>rain &amp; dust proof</small></div></div>
+      <div class="chip" style="left:110px;bottom:4px"><span class="dot" style="background:var(--red)"></span><div>Engine lock<small>one tap in the app</small></div></div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b>4G+2G</b><span>dual network</span></div>
+    <div class="stat"><b>10 s</b><span>live updates</span></div>
+    <div class="stat"><b>2–4 h</b><span>backup after a wire cut</span></div>
+    <div class="stat"><b>12/24 V</b><span>bikes, scooters, autos</span></div>
+    <div class="stat"><b>₹999</b><span>per year after year 1</span></div>
+  </div>
+
+  <div class="sec"><h2>Everything you need</h2><span>Lite features</span></div>
+  <div class="grid">
+    <div class="card"><div class="ic" style="background:rgba(34,211,238,.15);color:var(--cyan)"><svg class="i" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+      <h3>Live tracking</h3><p>Moving map, trip history, speed and distance.</p></div>
+    <div class="card"><div class="ic" style="background:rgba(248,113,113,.16);color:var(--red)"><svg class="i" viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V7z"/><path d="M12 8v4M12 16h.01"/></svg></div>
+      <h3>Theft &amp; tow alert</h3><p>Bike moved while parked? Instant alarm on your phone.</p></div>
+    <div class="card"><div class="ic" style="background:rgba(251,191,36,.16);color:var(--amber)"><svg class="i" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+      <h3>Remote engine lock</h3><p>Stop it from starting. Locks only at standstill or low speed.</p></div>
+    <div class="card"><div class="ic" style="background:rgba(163,230,53,.16);color:var(--lime)"><svg class="i" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div>
+      <h3>Power-cut alert</h3><p>Wire cut? It alerts you and keeps tracking for hours.</p></div>
+    <div class="card"><div class="ic" style="background:rgba(52,211,153,.16);color:var(--mint)"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" stroke-dasharray="3 3"/><circle cx="12" cy="12" r="2"/></svg></div>
+      <h3>Geofence</h3><p>Alert when the bike leaves or enters your zones.</p></div>
+    <div class="card"><div class="ic" style="background:rgba(34,211,238,.15);color:var(--cyan)"><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+      <h3>Ignition &amp; overspeed</h3><p>Know when it starts, stops, or goes too fast.</p></div>
+    <div class="card"><div class="ic" style="background:rgba(248,113,113,.16);color:var(--red)"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9h6v6H9z"/></svg></div>
+      <h3>SOS button*</h3><p>One press sends your location to family.</p></div>
+    <div class="card"><div class="ic" style="background:rgba(251,191,36,.16);color:var(--amber)"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="7" width="16" height="10" rx="2"/><path d="M21 11v2"/><path d="M7 10v4M11 10v4"/></svg></div>
+      <h3>Battery saver</h3><p>Tiny sleep current, plus a warning when the bike battery is low.</p></div>
+    <div class="card"><div class="ic" style="background:rgba(52,211,153,.16);color:var(--mint)"><svg class="i" viewBox="0 0 24 24"><path d="M4 4h16v12H4z"/><path d="M8 20h8M12 16v4"/></svg></div>
+      <h3>Offline memory + OTA</h3><p>Stores your route without network; new features over the air.</p></div>
+  </div>
+
+  <div class="sec"><h2>Simple pricing</h2><span>Indicative launch prices</span></div>
+  <div class="plans">
+    <div class="plan hot"><span class="tag">BEST VALUE</span>
+      <h4>Samay Track Lite</h4><div class="p">₹3,499<small> one-time</small></div>
+      <ul><li>Device + Android / iPhone app</li><li>1 year 4G/2G data included</li><li>Self-install kit + video guide</li></ul></div>
+    <div class="plan"><h4>Renew</h4><div class="p">₹999<small> /year</small></div>
+      <ul><li>App, alerts and data</li><li>Free OTA updates</li><li>Or ₹99 / month</li></ul></div>
+    <div class="plan"><h4>Dealers &amp; fleets</h4><div class="p" style="font-size:34px;margin-top:12px">Bulk price</div>
+      <ul><li>10+ units: special rates</li><li>Fleet dashboard</li><li>Dealer margin program</li></ul></div>
+  </div>
+</div>
+
+<div class="cta">
+  <div><b>Secure your ride for less.</b><p>Available soon on Amazon &amp; at dealers · Call / WhatsApp: +91 _____ _____</p></div>
+  <div class="btn">Pre-book now →</div>
+</div>
+<p class="fine">* Indicative prices in INR, excluding GST, and subject to change. Year-1 data is included; renewal is ₹999 per year. The SOS button is an optional accessory.
+  Coverage depends on the mobile network. The device illustration is a concept render, and the final product may differ.
+  Samay Track Lite is a preliminary specification.</p>
+</body>
+</html>

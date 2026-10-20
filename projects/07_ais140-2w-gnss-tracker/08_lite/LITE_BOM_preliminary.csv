@@ -1,0 +1,31 @@
+Group,Ref,Qty,Part,Candidate MPN,Maker,Unit INR (est. @1k),Ext INR,Notes
+Modules,U1,1,LTE Cat-1 + GSM module (India bands),A7672S-FASE,SIMCom,560,560,"alt Quectel EC200U-EU; runs firmware (OpenSDK / QuecOpen)"
+Modules,U2,1,GNSS module GPS + BeiDou + GLONASS,L76K,Quectel,220,220,"NavIC option: L89HA / similar +300-400"
+ICs,U3,1,3-axis accelerometer (wake-on-motion),LIS2DH12TR,ST,25,25,"alt SC7A20 ~10"
+ICs,U4,1,60 V 1 A buck converter,LMR16010PDDAR,TI,66,66,"9-32 V in, 4.2 V out"
+ICs,U5,1,Li-ion charger,BQ21040DBVR,TI,30,30,"alt TP4054 ~5"
+ICs,U6,1,3.3 V LDO for GNSS,TLV75533PDBVR,TI,10,10,
+ICs,U7,1,SPI NOR flash 32 Mbit (offline log),W25Q32JVSSIQ,Winbond,20,20,"≈ 1 lakh points"
+Protection,D1,1,TVS 600 W 33 V bidirectional,SMBJ33CA,Littelfuse,6,6,
+Protection,Q1,1,P-MOSFET reverse polarity,AO3401A,AOS,4,4,
+Protection,F1,1,PTC resettable fuse 1 A,1206L100,Littelfuse,8,8,
+Protection,U8,1,SIM ESD array,ESDA6V1-5SC6,ST,8,8,
+Protection,D2-D3,2,Input clamp diodes (IGN / SOS),BAT54S,Nexperia,1.5,3,
+I/O,Q2,1,N-MOSFET relay driver (engine lock),AO3400A,AOS,3,3,
+I/O,D4,1,Flyback diode,1N4148W,Diodes Inc,1,1,
+I/O,D5-D6,2,Status LEDs,0603 green / red,Everlight,1,2,
+Connectors,J1,1,Nano-SIM holder,SIM8060-6-0-14-00-A,GCT,12,12,"MFF2 eSIM option later"
+Connectors,J2,1,Battery connector 2-pin,S2B-PH-SM4-TB,JST,4,4,
+Connectors,J3,1,Harness connector 4-pin (or solder pads),B4B-XH-A,JST,5,5,
+Connectors,J4,1,IPEX / U.FL for LTE antenna,U.FL-R-SMT-1(10) or generic,Hirose / generic,5,5,
+Antennas,ANT1,1,Passive GNSS ceramic patch 25 x 25 mm,generic,—,45,45,
+Antennas,ANT2,1,LTE FPC antenna with IPEX cable,generic,—,25,25,
+Battery,BT1,1,300 mAh Li-po with PCM (BIS registered),302535 class,—,55,55,"buy a BIS-certified cell"
+Passives,C/R/L,~60,Resistors / capacitors / inductor,0402-0805,Yageo / Samsung,0.4,25,
+Passives,C1-C2,2,Bulk caps for 2G TX bursts (2 A),220 uF polymer,Panasonic / generic,10,20,
+PCB,PCB,1,2-layer FR4 1.6 mm ~50 x 35 mm,—,JLCPCB,15,15,
+Assembly,SMT,1,Single-sided SMT assembly,—,JLCPCB,50,50,
+Box build,ENC,1,IP65 ABS enclosure + gasket,—,—,70,70,
+Box build,HAR,1,4-wire harness + inline fuse holder,—,—,45,45,
+Box build,PKG,1,Box + manual + label,—,—,20,20,
+TOTAL,,,,,,,1362,"Optional SOS push-button + NavIC GNSS not included"
