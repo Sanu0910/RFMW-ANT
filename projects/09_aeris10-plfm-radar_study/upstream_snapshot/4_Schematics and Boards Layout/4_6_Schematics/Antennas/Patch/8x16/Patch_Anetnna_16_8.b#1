@@ -1,0 +1,884 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eagle SYSTEM "eagle.dtd">
+<eagle version="7.4.0">
+<drawing>
+<settings>
+<setting alwaysvectorfont="no"/>
+<setting verticaltext="up"/>
+</settings>
+<grid distance="2" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<layers>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="2" name="Route2" color="1" fill="3" visible="yes" active="yes"/>
+<layer number="3" name="Route3" color="4" fill="3" visible="yes" active="yes"/>
+<layer number="4" name="Route4" color="1" fill="4" visible="no" active="no"/>
+<layer number="5" name="Route5" color="4" fill="4" visible="no" active="no"/>
+<layer number="6" name="Route6" color="1" fill="8" visible="no" active="no"/>
+<layer number="7" name="Route7" color="4" fill="8" visible="no" active="no"/>
+<layer number="8" name="Route8" color="1" fill="2" visible="no" active="no"/>
+<layer number="9" name="Route9" color="4" fill="2" visible="no" active="no"/>
+<layer number="10" name="Route10" color="1" fill="7" visible="no" active="no"/>
+<layer number="11" name="Route11" color="4" fill="7" visible="no" active="no"/>
+<layer number="12" name="Route12" color="1" fill="5" visible="no" active="no"/>
+<layer number="13" name="Route13" color="4" fill="5" visible="no" active="no"/>
+<layer number="14" name="Route14" color="1" fill="6" visible="no" active="no"/>
+<layer number="15" name="Route15" color="4" fill="6" visible="no" active="no"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
+<layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
+<layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
+<layer number="34" name="bFinish" color="6" fill="6" visible="no" active="yes"/>
+<layer number="35" name="tGlue" color="7" fill="4" visible="no" active="yes"/>
+<layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
+<layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
+<layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="88" name="SimResults" color="9" fill="1" visible="yes" active="yes"/>
+<layer number="89" name="SimProbes" color="9" fill="1" visible="yes" active="yes"/>
+<layer number="90" name="Modules" color="5" fill="1" visible="no" active="no"/>
+<layer number="91" name="Nets" color="2" fill="1" visible="no" active="no"/>
+<layer number="92" name="Busses" color="1" fill="1" visible="no" active="no"/>
+<layer number="93" name="Pins" color="2" fill="1" visible="no" active="no"/>
+<layer number="94" name="Symbols" color="4" fill="1" visible="no" active="no"/>
+<layer number="95" name="Names" color="7" fill="1" visible="no" active="no"/>
+<layer number="96" name="Values" color="7" fill="1" visible="no" active="no"/>
+<layer number="97" name="Info" color="7" fill="1" visible="no" active="no"/>
+<layer number="98" name="Guide" color="6" fill="1" visible="no" active="no"/>
+</layers>
+<board>
+<plain>
+<wire x1="245" y1="0" x2="245" y2="155" width="0" layer="20"/>
+<wire x1="245" y1="155" x2="0" y2="155" width="0" layer="20"/>
+<rectangle x1="11.07" y1="29.79" x2="18.93" y2="37.15" layer="1"/>
+<rectangle x1="11.07" y1="44.78" x2="18.93" y2="52.14" layer="1"/>
+<rectangle x1="11.07" y1="59.77" x2="18.93" y2="67.13" layer="1"/>
+<rectangle x1="11.07" y1="74.76" x2="18.93" y2="82.12" layer="1"/>
+<rectangle x1="11.07" y1="89.75" x2="18.93" y2="97.11" layer="1"/>
+<rectangle x1="11.07" y1="104.74" x2="18.93" y2="112.1" layer="1"/>
+<rectangle x1="11.07" y1="119.73" x2="18.93" y2="127.09" layer="1"/>
+<rectangle x1="11.07" y1="134.72" x2="18.93" y2="142.08" layer="1"/>
+<rectangle x1="25.41" y1="29.79" x2="33.27" y2="37.15" layer="1"/>
+<rectangle x1="25.41" y1="44.78" x2="33.27" y2="52.14" layer="1"/>
+<rectangle x1="25.41" y1="59.77" x2="33.27" y2="67.13" layer="1"/>
+<rectangle x1="25.41" y1="74.76" x2="33.27" y2="82.12" layer="1"/>
+<rectangle x1="25.41" y1="89.75" x2="33.27" y2="97.11" layer="1"/>
+<rectangle x1="25.41" y1="104.74" x2="33.27" y2="112.1" layer="1"/>
+<rectangle x1="25.41" y1="119.73" x2="33.27" y2="127.09" layer="1"/>
+<rectangle x1="25.41" y1="134.72" x2="33.27" y2="142.08" layer="1"/>
+<rectangle x1="39.75" y1="29.79" x2="47.61" y2="37.15" layer="1"/>
+<rectangle x1="39.75" y1="44.78" x2="47.61" y2="52.14" layer="1"/>
+<rectangle x1="39.75" y1="59.77" x2="47.61" y2="67.13" layer="1"/>
+<rectangle x1="39.75" y1="74.76" x2="47.61" y2="82.12" layer="1"/>
+<rectangle x1="39.75" y1="89.75" x2="47.61" y2="97.11" layer="1"/>
+<rectangle x1="39.75" y1="104.74" x2="47.61" y2="112.1" layer="1"/>
+<rectangle x1="39.75" y1="119.73" x2="47.61" y2="127.09" layer="1"/>
+<rectangle x1="39.75" y1="134.72" x2="47.61" y2="142.08" layer="1"/>
+<rectangle x1="54.09" y1="29.79" x2="61.95" y2="37.15" layer="1"/>
+<rectangle x1="54.09" y1="44.78" x2="61.95" y2="52.14" layer="1"/>
+<rectangle x1="54.09" y1="59.77" x2="61.95" y2="67.13" layer="1"/>
+<rectangle x1="54.09" y1="74.76" x2="61.95" y2="82.12" layer="1"/>
+<rectangle x1="54.09" y1="89.75" x2="61.95" y2="97.11" layer="1"/>
+<rectangle x1="54.09" y1="104.74" x2="61.95" y2="112.1" layer="1"/>
+<rectangle x1="54.09" y1="119.73" x2="61.95" y2="127.09" layer="1"/>
+<rectangle x1="54.09" y1="134.72" x2="61.95" y2="142.08" layer="1"/>
+<rectangle x1="68.43" y1="29.79" x2="76.29" y2="37.15" layer="1"/>
+<rectangle x1="68.43" y1="44.78" x2="76.29" y2="52.14" layer="1"/>
+<rectangle x1="68.43" y1="59.77" x2="76.29" y2="67.13" layer="1"/>
+<rectangle x1="68.43" y1="74.76" x2="76.29" y2="82.12" layer="1"/>
+<rectangle x1="68.43" y1="89.75" x2="76.29" y2="97.11" layer="1"/>
+<rectangle x1="68.43" y1="104.74" x2="76.29" y2="112.1" layer="1"/>
+<rectangle x1="68.43" y1="119.73" x2="76.29" y2="127.09" layer="1"/>
+<rectangle x1="68.43" y1="134.72" x2="76.29" y2="142.08" layer="1"/>
+<rectangle x1="82.77" y1="29.79" x2="90.63" y2="37.15" layer="1"/>
+<rectangle x1="82.77" y1="44.78" x2="90.63" y2="52.14" layer="1"/>
+<rectangle x1="82.77" y1="59.77" x2="90.63" y2="67.13" layer="1"/>
+<rectangle x1="82.77" y1="74.76" x2="90.63" y2="82.12" layer="1"/>
+<rectangle x1="82.77" y1="89.75" x2="90.63" y2="97.11" layer="1"/>
+<rectangle x1="82.77" y1="104.74" x2="90.63" y2="112.1" layer="1"/>
+<rectangle x1="82.77" y1="119.73" x2="90.63" y2="127.09" layer="1"/>
+<rectangle x1="82.77" y1="134.72" x2="90.63" y2="142.08" layer="1"/>
+<rectangle x1="97.11" y1="29.79" x2="104.97" y2="37.15" layer="1"/>
+<rectangle x1="97.11" y1="44.78" x2="104.97" y2="52.14" layer="1"/>
+<rectangle x1="97.11" y1="59.77" x2="104.97" y2="67.13" layer="1"/>
+<rectangle x1="97.11" y1="74.76" x2="104.97" y2="82.12" layer="1"/>
+<rectangle x1="97.11" y1="89.75" x2="104.97" y2="97.11" layer="1"/>
+<rectangle x1="97.11" y1="104.74" x2="104.97" y2="112.1" layer="1"/>
+<rectangle x1="97.11" y1="119.73" x2="104.97" y2="127.09" layer="1"/>
+<rectangle x1="97.11" y1="134.72" x2="104.97" y2="142.08" layer="1"/>
+<rectangle x1="111.45" y1="29.79" x2="119.31" y2="37.15" layer="1"/>
+<rectangle x1="111.45" y1="44.78" x2="119.31" y2="52.14" layer="1"/>
+<rectangle x1="111.45" y1="59.77" x2="119.31" y2="67.13" layer="1"/>
+<rectangle x1="111.45" y1="74.76" x2="119.31" y2="82.12" layer="1"/>
+<rectangle x1="111.45" y1="89.75" x2="119.31" y2="97.11" layer="1"/>
+<rectangle x1="111.45" y1="104.74" x2="119.31" y2="112.1" layer="1"/>
+<rectangle x1="111.45" y1="119.73" x2="119.31" y2="127.09" layer="1"/>
+<rectangle x1="111.45" y1="134.72" x2="119.31" y2="142.08" layer="1"/>
+<rectangle x1="125.79" y1="29.79" x2="133.65" y2="37.15" layer="1"/>
+<rectangle x1="125.79" y1="44.78" x2="133.65" y2="52.14" layer="1"/>
+<rectangle x1="125.79" y1="59.77" x2="133.65" y2="67.13" layer="1"/>
+<rectangle x1="125.79" y1="74.76" x2="133.65" y2="82.12" layer="1"/>
+<rectangle x1="125.79" y1="89.75" x2="133.65" y2="97.11" layer="1"/>
+<rectangle x1="125.79" y1="104.74" x2="133.65" y2="112.1" layer="1"/>
+<rectangle x1="125.79" y1="119.73" x2="133.65" y2="127.09" layer="1"/>
+<rectangle x1="125.79" y1="134.72" x2="133.65" y2="142.08" layer="1"/>
+<rectangle x1="140.13" y1="29.79" x2="147.99" y2="37.15" layer="1"/>
+<rectangle x1="140.13" y1="44.78" x2="147.99" y2="52.14" layer="1"/>
+<rectangle x1="140.13" y1="59.77" x2="147.99" y2="67.13" layer="1"/>
+<rectangle x1="140.13" y1="74.76" x2="147.99" y2="82.12" layer="1"/>
+<rectangle x1="140.13" y1="89.75" x2="147.99" y2="97.11" layer="1"/>
+<rectangle x1="140.13" y1="104.74" x2="147.99" y2="112.1" layer="1"/>
+<rectangle x1="140.13" y1="119.73" x2="147.99" y2="127.09" layer="1"/>
+<rectangle x1="140.13" y1="134.72" x2="147.99" y2="142.08" layer="1"/>
+<rectangle x1="154.47" y1="29.79" x2="162.33" y2="37.15" layer="1"/>
+<rectangle x1="154.47" y1="44.78" x2="162.33" y2="52.14" layer="1"/>
+<rectangle x1="154.47" y1="59.77" x2="162.33" y2="67.13" layer="1"/>
+<rectangle x1="154.47" y1="74.76" x2="162.33" y2="82.12" layer="1"/>
+<rectangle x1="154.47" y1="89.75" x2="162.33" y2="97.11" layer="1"/>
+<rectangle x1="154.47" y1="104.74" x2="162.33" y2="112.1" layer="1"/>
+<rectangle x1="154.47" y1="119.73" x2="162.33" y2="127.09" layer="1"/>
+<rectangle x1="154.47" y1="134.72" x2="162.33" y2="142.08" layer="1"/>
+<rectangle x1="168.81" y1="29.79" x2="176.67" y2="37.15" layer="1"/>
+<rectangle x1="168.81" y1="44.78" x2="176.67" y2="52.14" layer="1"/>
+<rectangle x1="168.81" y1="59.77" x2="176.67" y2="67.13" layer="1"/>
+<rectangle x1="168.81" y1="74.76" x2="176.67" y2="82.12" layer="1"/>
+<rectangle x1="168.81" y1="89.75" x2="176.67" y2="97.11" layer="1"/>
+<rectangle x1="168.81" y1="104.74" x2="176.67" y2="112.1" layer="1"/>
+<rectangle x1="168.81" y1="119.73" x2="176.67" y2="127.09" layer="1"/>
+<rectangle x1="168.81" y1="134.72" x2="176.67" y2="142.08" layer="1"/>
+<rectangle x1="183.15" y1="29.79" x2="191.01" y2="37.15" layer="1"/>
+<rectangle x1="183.15" y1="44.78" x2="191.01" y2="52.14" layer="1"/>
+<rectangle x1="183.15" y1="59.77" x2="191.01" y2="67.13" layer="1"/>
+<rectangle x1="183.15" y1="74.76" x2="191.01" y2="82.12" layer="1"/>
+<rectangle x1="183.15" y1="89.75" x2="191.01" y2="97.11" layer="1"/>
+<rectangle x1="183.15" y1="104.74" x2="191.01" y2="112.1" layer="1"/>
+<rectangle x1="183.15" y1="119.73" x2="191.01" y2="127.09" layer="1"/>
+<rectangle x1="183.15" y1="134.72" x2="191.01" y2="142.08" layer="1"/>
+<rectangle x1="197.49" y1="29.79" x2="205.35" y2="37.15" layer="1"/>
+<rectangle x1="197.49" y1="44.78" x2="205.35" y2="52.14" layer="1"/>
+<rectangle x1="197.49" y1="59.77" x2="205.35" y2="67.13" layer="1"/>
+<rectangle x1="197.49" y1="74.76" x2="205.35" y2="82.12" layer="1"/>
+<rectangle x1="197.49" y1="89.75" x2="205.35" y2="97.11" layer="1"/>
+<rectangle x1="197.49" y1="104.74" x2="205.35" y2="112.1" layer="1"/>
+<rectangle x1="197.49" y1="119.73" x2="205.35" y2="127.09" layer="1"/>
+<rectangle x1="197.49" y1="134.72" x2="205.35" y2="142.08" layer="1"/>
+<rectangle x1="211.83" y1="29.79" x2="219.69" y2="37.15" layer="1"/>
+<rectangle x1="211.83" y1="44.78" x2="219.69" y2="52.14" layer="1"/>
+<rectangle x1="211.83" y1="59.77" x2="219.69" y2="67.13" layer="1"/>
+<rectangle x1="211.83" y1="74.76" x2="219.69" y2="82.12" layer="1"/>
+<rectangle x1="211.83" y1="89.75" x2="219.69" y2="97.11" layer="1"/>
+<rectangle x1="211.83" y1="104.74" x2="219.69" y2="112.1" layer="1"/>
+<rectangle x1="211.83" y1="119.73" x2="219.69" y2="127.09" layer="1"/>
+<rectangle x1="211.83" y1="134.72" x2="219.69" y2="142.08" layer="1"/>
+<rectangle x1="226.17" y1="29.79" x2="234.03" y2="37.15" layer="1"/>
+<rectangle x1="226.17" y1="44.78" x2="234.03" y2="52.14" layer="1"/>
+<rectangle x1="226.17" y1="59.77" x2="234.03" y2="67.13" layer="1"/>
+<rectangle x1="226.17" y1="74.76" x2="234.03" y2="82.12" layer="1"/>
+<rectangle x1="226.17" y1="89.75" x2="234.03" y2="97.11" layer="1"/>
+<rectangle x1="226.17" y1="104.74" x2="234.03" y2="112.1" layer="1"/>
+<rectangle x1="226.17" y1="119.73" x2="234.03" y2="127.09" layer="1"/>
+<rectangle x1="226.17" y1="134.72" x2="234.03" y2="142.08" layer="1"/>
+<wire x1="0" y1="0" x2="0" y2="155" width="0" layer="20"/>
+<wire x1="245" y1="0" x2="0" y2="0" width="0" layer="20"/>
+<polygon width="1.08" layer="29">
+<vertex x="0" y="155"/>
+<vertex x="0" y="0"/>
+<vertex x="245" y="0"/>
+<vertex x="245" y="155"/>
+</polygon>
+<hole x="4" y="4" drill="3.2"/>
+<hole x="241" y="4" drill="3.2"/>
+<hole x="241" y="151" drill="3.2"/>
+<hole x="4" y="151" drill="3.2"/>
+<text x="12" y="10" size="1.4" layer="51">ANT_1_1</text>
+<text x="26.34" y="10" size="1.4" layer="51">ANT_2_1</text>
+<text x="40.68" y="10" size="1.4" layer="51">ANT_3_1</text>
+<text x="55.02" y="10" size="1.4" layer="51">ANT_4_1</text>
+<text x="227.1" y="10" size="1.4" layer="51">ANT_4_4</text>
+<text x="69.36" y="10" size="1.4" layer="51">ANT_1_2</text>
+<text x="83.7" y="10" size="1.4" layer="51">ANT_2_2</text>
+<text x="98.04" y="10" size="1.4" layer="51">ANT_3_2</text>
+<text x="112.38" y="10" size="1.4" layer="51">ANT_4_2</text>
+<text x="126.72" y="10" size="1.4" layer="51">ANT_1_3</text>
+<text x="141.06" y="10" size="1.4" layer="51">ANT_2_3</text>
+<text x="155.4" y="10" size="1.4" layer="51">ANT_3_3</text>
+<text x="169.74" y="10" size="1.4" layer="51">ANT_4_3</text>
+<text x="184.08" y="10" size="1.4" layer="51">ANT_1_4</text>
+<text x="198.42" y="10" size="1.4" layer="51">ANT_2_4</text>
+<text x="212.76" y="10" size="1.4" layer="51">ANT_3_4</text>
+</plain>
+<libraries>
+<library name="142-0731-211">
+<description>&lt;SMA Connector Jack, Female Socket 50 Ohms Through Hole Solder&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
+<packages>
+<package name="1420731211">
+<description>&lt;b&gt;142-0731-211-1&lt;/b&gt;&lt;br&gt;
+</description>
+<smd name="1" x="0" y="0" dx="0.559" dy="0.559" layer="1" roundness="100"/>
+<pad name="2" x="-2.54" y="2.54" drill="1.1938" diameter="1.791"/>
+<pad name="3" x="-2.54" y="-2.54" drill="1.1938" diameter="1.791"/>
+<pad name="4" x="2.54" y="-2.54" drill="1.1938" diameter="1.791"/>
+<pad name="5" x="2.54" y="2.54" drill="1.1938" diameter="1.791"/>
+<text x="0" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
+<text x="0" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
+<wire x1="-2.997" y1="2.997" x2="2.997" y2="2.997" width="0.1" layer="51"/>
+<wire x1="2.997" y1="2.997" x2="2.997" y2="-2.997" width="0.1" layer="51"/>
+<wire x1="2.997" y1="-2.997" x2="-2.997" y2="-2.997" width="0.1" layer="51"/>
+<wire x1="-2.997" y1="-2.997" x2="-2.997" y2="2.997" width="0.1" layer="51"/>
+<wire x1="-4.435" y1="4.435" x2="4.435" y2="4.435" width="0.1" layer="51"/>
+<wire x1="4.435" y1="4.435" x2="4.435" y2="-4.435" width="0.1" layer="51"/>
+<wire x1="4.435" y1="-4.435" x2="-4.435" y2="-4.435" width="0.1" layer="51"/>
+<wire x1="-4.435" y1="-4.435" x2="-4.435" y2="4.435" width="0.1" layer="51"/>
+<wire x1="-1.5" y1="2.997" x2="1.5" y2="2.997" width="0.2" layer="21"/>
+<wire x1="-2.997" y1="1.5" x2="-3" y2="-1.5" width="0.2" layer="21"/>
+<wire x1="2.997" y1="1.5" x2="2.997" y2="-1.5" width="0.2" layer="21"/>
+<wire x1="-1.5" y1="-3" x2="1.5" y2="-2.997" width="0.2" layer="21"/>
+<wire x1="0" y1="3.8" x2="0" y2="3.8" width="0.1" layer="21"/>
+<wire x1="0" y1="3.8" x2="0" y2="3.7" width="0.1" layer="21" curve="180"/>
+<wire x1="0" y1="3.7" x2="0" y2="3.7" width="0.1" layer="21"/>
+<wire x1="0" y1="3.7" x2="0" y2="3.8" width="0.1" layer="21" curve="180"/>
+</package>
+</packages>
+</library>
+</libraries>
+<attributes>
+</attributes>
+<variantdefs>
+</variantdefs>
+<classes>
+<class number="0" name="default" width="0" drill="0">
+</class>
+</classes>
+<designrules name="eC_4Layer_PClass4_BaseCopperO35-I70 *">
+<description language="de">
+&lt;p&gt;
+&lt;b&gt;Eurocircuits-EAGLE design rules&lt;/b&gt;&lt;br&gt;
+&lt;br&gt;
+Setup for &lt;b&gt;4-layer PatternClass4 BaseCopperO35-I70&lt;/b&gt;
+&lt;p&gt;
+ The option &lt;b&gt;Sizes-Minimum Drill&lt;/b&gt; is set to 0.35mm. This minimum drill endsize can be set lower if needed. Values below 0.25mm will result in a higher DrillClassification. For details see the Eurocircuits Classification overview.
+&lt;p&gt;
+&lt;u&gt;Extra Notes:&lt;/u&gt;&lt;br&gt;
+- The option &lt;b&gt;Distance-Copper/Dimension&lt;/b&gt; is set to 0.25mm, the default for boards with a routed boardoutline. If you require Vcut on your board this parameter should be set to 0.45mm.&lt;br&gt;
+- The option &lt;b&gt;Supply-Generate thermals for vias&lt;/b&gt; is on by default but may be changed if required.&lt;br&gt;
+- The option &lt;b&gt;Mask-Stop&lt;/b&gt; is set to 0mm oversize which is the preffered value.&lt;br&gt;
+- The option &lt;b&gt;Mask-Cream&lt;/b&gt; is set to 0mm oversize by default, but may be changed if required&lt;br&gt;
+- The option &lt;b&gt;Mask-Limit&lt;/b&gt; is set to 0.45mm, resulting in covered or tented via holes for vias of 0.45mm and smaller. The option may be changed if required.&lt;br&gt;
+- The options &lt;b&gt;Shapes&lt;/b&gt; and &lt;b&gt;Misc&lt;/b&gt; are not relevant. Values for &lt;b&gt;Shapes-Smds-Roundness&lt;/b&gt; are not critical and can be set as you require.
+&lt;p&gt;
+&lt;p&gt;
+You can set higher minimum values if you wish, setting lower minimum values is &lt;u&gt;not advisable&lt;/u&gt;.&lt;br&gt;
+If you need lower minimum values, please use a different Eurocircuits-EAGLE design rule file. For details see the Eurocircuits-EAGLE dru overview table.
+&lt;p&gt;
+Your Eurocircuits Team
+</description>
+<description language="en">
+&lt;p&gt;
+&lt;b&gt;Eurocircuits-EAGLE design rules&lt;/b&gt;&lt;br&gt;
+&lt;br&gt;
+Setup for &lt;b&gt;4-layer PatternClass4 BaseCopperO35-I70&lt;/b&gt;
+&lt;p&gt;
+ The option &lt;b&gt;Sizes-Minimum Drill&lt;/b&gt; is set to 0.35mm. This minimum drill endsize can be set lower if needed. Values below 0.25mm will result in a higher DrillClassification. For details see the Eurocircuits Classification overview.
+&lt;p&gt;
+&lt;u&gt;Extra Notes:&lt;/u&gt;&lt;br&gt;
+- The option &lt;b&gt;Distance-Copper/Dimension&lt;/b&gt; is set to 0.25mm, the default for boards with a routed boardoutline. If you require Vcut on your board this parameter should be set to 0.45mm.&lt;br&gt;
+- The option &lt;b&gt;Supply-Generate thermals for vias&lt;/b&gt; is on by default but may be changed if required.&lt;br&gt;
+- The option &lt;b&gt;Mask-Stop&lt;/b&gt; is set to 0mm oversize which is the preffered value.&lt;br&gt;
+- The option &lt;b&gt;Mask-Cream&lt;/b&gt; is set to 0mm oversize by default, but may be changed if required&lt;br&gt;
+- The option &lt;b&gt;Mask-Limit&lt;/b&gt; is set to 0.45mm, resulting in covered or tented via holes for vias of 0.45mm and smaller. The option may be changed if required.&lt;br&gt;
+- The options &lt;b&gt;Shapes&lt;/b&gt; and &lt;b&gt;Misc&lt;/b&gt; are not relevant. Values for &lt;b&gt;Shapes-Smds-Roundness&lt;/b&gt; are not critical and can be set as you require.
+&lt;p&gt;
+&lt;p&gt;
+You can set higher minimum values if you wish, setting lower minimum values is &lt;u&gt;not advisable&lt;/u&gt;.&lt;br&gt;
+If you need lower minimum values, please use a different Eurocircuits-EAGLE design rule file. For details see the Eurocircuits-EAGLE dru overview table.
+&lt;p&gt;
+Your Eurocircuits Team
+</description>
+<param name="layerSetup" value="(1+2*3+16)"/>
+<param name="mtCopper" value="0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm 0.035mm"/>
+<param name="mtIsolate" value="20mil 0.102mm 0.8mm 0.2mm 0.2mm 0.2mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm 0.15mm 0.2mm"/>
+<param name="mdWireWire" value="0.25mm"/>
+<param name="mdWirePad" value="0.25mm"/>
+<param name="mdWireVia" value="0.25mm"/>
+<param name="mdPadPad" value="0.25mm"/>
+<param name="mdPadVia" value="0.25mm"/>
+<param name="mdViaVia" value="0.25mm"/>
+<param name="mdSmdPad" value="0mil"/>
+<param name="mdSmdVia" value="0mil"/>
+<param name="mdSmdSmd" value="0mil"/>
+<param name="mdViaViaSameLayer" value="0.2mm"/>
+<param name="mnLayersViaInSmd" value="2"/>
+<param name="mdCopperDimension" value="0.25mm"/>
+<param name="mdDrill" value="0.35mm"/>
+<param name="mdSmdStop" value="0mil"/>
+<param name="msWidth" value="0.2mm"/>
+<param name="msDrill" value="0.35mm"/>
+<param name="msMicroVia" value="25mm"/>
+<param name="msBlindViaRatio" value="0.5"/>
+<param name="rvPadTop" value="0.25"/>
+<param name="rvPadInner" value="0.25"/>
+<param name="rvPadBottom" value="0.25"/>
+<param name="rvViaOuter" value="0.25"/>
+<param name="rvViaInner" value="0.25"/>
+<param name="rvMicroViaOuter" value="0"/>
+<param name="rvMicroViaInner" value="0"/>
+<param name="rlMinPadTop" value="0.2mm"/>
+<param name="rlMaxPadTop" value="2.5mm"/>
+<param name="rlMinPadInner" value="0.2mm"/>
+<param name="rlMaxPadInner" value="2.5mm"/>
+<param name="rlMinPadBottom" value="0.2mm"/>
+<param name="rlMaxPadBottom" value="2.5mm"/>
+<param name="rlMinViaOuter" value="0.15mm"/>
+<param name="rlMaxViaOuter" value="2.5mm"/>
+<param name="rlMinViaInner" value="0.15mm"/>
+<param name="rlMaxViaInner" value="2.5mm"/>
+<param name="rlMinMicroViaOuter" value="2.5mm"/>
+<param name="rlMaxMicroViaOuter" value="25mm"/>
+<param name="rlMinMicroViaInner" value="2.5mm"/>
+<param name="rlMaxMicroViaInner" value="25mm"/>
+<param name="psTop" value="-1"/>
+<param name="psBottom" value="-1"/>
+<param name="psFirst" value="-1"/>
+<param name="psElongationLong" value="100"/>
+<param name="psElongationOffset" value="100"/>
+<param name="mvStopFrame" value="0"/>
+<param name="mvCreamFrame" value="0"/>
+<param name="mlMinStopFrame" value="0mil"/>
+<param name="mlMaxStopFrame" value="0mil"/>
+<param name="mlMinCreamFrame" value="0mil"/>
+<param name="mlMaxCreamFrame" value="0mil"/>
+<param name="mlViaStopLimit" value="0.45mm"/>
+<param name="srRoundness" value="0"/>
+<param name="srMinRoundness" value="0mil"/>
+<param name="srMaxRoundness" value="0mil"/>
+<param name="slThermalIsolate" value="0.2mm"/>
+<param name="slThermalsForVias" value="1"/>
+<param name="dpMaxLengthDifference" value="10mm"/>
+<param name="dpGapFactor" value="2.5"/>
+<param name="checkGrid" value="0"/>
+<param name="checkAngle" value="0"/>
+<param name="checkFont" value="1"/>
+<param name="checkRestrict" value="1"/>
+<param name="useDiameter" value="13"/>
+<param name="maxErrors" value="50"/>
+</designrules>
+<autorouter>
+<pass name="Default">
+<param name="RoutingGrid" value="50mil"/>
+<param name="AutoGrid" value="1"/>
+<param name="Efforts" value="0"/>
+<param name="TopRouterVariant" value="1"/>
+<param name="tpViaShape" value="round"/>
+<param name="PrefDir.1" value="a"/>
+<param name="PrefDir.2" value="0"/>
+<param name="PrefDir.3" value="0"/>
+<param name="PrefDir.4" value="0"/>
+<param name="PrefDir.5" value="0"/>
+<param name="PrefDir.6" value="0"/>
+<param name="PrefDir.7" value="0"/>
+<param name="PrefDir.8" value="0"/>
+<param name="PrefDir.9" value="0"/>
+<param name="PrefDir.10" value="0"/>
+<param name="PrefDir.11" value="0"/>
+<param name="PrefDir.12" value="0"/>
+<param name="PrefDir.13" value="0"/>
+<param name="PrefDir.14" value="0"/>
+<param name="PrefDir.15" value="0"/>
+<param name="PrefDir.16" value="a"/>
+<param name="cfVia" value="8"/>
+<param name="cfNonPref" value="5"/>
+<param name="cfChangeDir" value="2"/>
+<param name="cfOrthStep" value="2"/>
+<param name="cfDiagStep" value="3"/>
+<param name="cfExtdStep" value="0"/>
+<param name="cfBonusStep" value="1"/>
+<param name="cfMalusStep" value="1"/>
+<param name="cfPadImpact" value="4"/>
+<param name="cfSmdImpact" value="4"/>
+<param name="cfBusImpact" value="0"/>
+<param name="cfHugging" value="3"/>
+<param name="cfAvoid" value="4"/>
+<param name="cfPolygon" value="10"/>
+<param name="cfBase.1" value="0"/>
+<param name="cfBase.2" value="1"/>
+<param name="cfBase.3" value="1"/>
+<param name="cfBase.4" value="1"/>
+<param name="cfBase.5" value="1"/>
+<param name="cfBase.6" value="1"/>
+<param name="cfBase.7" value="1"/>
+<param name="cfBase.8" value="1"/>
+<param name="cfBase.9" value="1"/>
+<param name="cfBase.10" value="1"/>
+<param name="cfBase.11" value="1"/>
+<param name="cfBase.12" value="1"/>
+<param name="cfBase.13" value="1"/>
+<param name="cfBase.14" value="1"/>
+<param name="cfBase.15" value="1"/>
+<param name="cfBase.16" value="0"/>
+<param name="mnVias" value="20"/>
+<param name="mnSegments" value="9999"/>
+<param name="mnExtdSteps" value="9999"/>
+<param name="mnRipupLevel" value="10"/>
+<param name="mnRipupSteps" value="100"/>
+<param name="mnRipupTotal" value="100"/>
+</pass>
+<pass name="Follow-me" refer="Default" active="yes">
+</pass>
+<pass name="Busses" refer="Default" active="yes">
+<param name="cfNonPref" value="4"/>
+<param name="cfBusImpact" value="4"/>
+<param name="cfHugging" value="0"/>
+<param name="mnVias" value="0"/>
+</pass>
+<pass name="Route" refer="Default" active="yes">
+</pass>
+<pass name="Optimize1" refer="Default" active="yes">
+<param name="cfVia" value="99"/>
+<param name="cfExtdStep" value="10"/>
+<param name="cfHugging" value="1"/>
+<param name="mnExtdSteps" value="1"/>
+<param name="mnRipupLevel" value="0"/>
+</pass>
+<pass name="Optimize2" refer="Optimize1" active="yes">
+<param name="cfNonPref" value="0"/>
+<param name="cfChangeDir" value="6"/>
+<param name="cfExtdStep" value="0"/>
+<param name="cfBonusStep" value="2"/>
+<param name="cfMalusStep" value="2"/>
+<param name="cfPadImpact" value="2"/>
+<param name="cfSmdImpact" value="2"/>
+<param name="cfHugging" value="0"/>
+</pass>
+<pass name="Optimize3" refer="Optimize2" active="yes">
+<param name="cfChangeDir" value="8"/>
+<param name="cfPadImpact" value="0"/>
+<param name="cfSmdImpact" value="0"/>
+</pass>
+<pass name="Optimize4" refer="Optimize3" active="yes">
+<param name="cfChangeDir" value="25"/>
+</pass>
+</autorouter>
+<elements>
+<element name="J17" library="142-0731-211" package="1420731211" value="142-0731-211" x="15" y="18">
+<attribute name="MANUFACTURER_NAME" value="Cinch Connectivity Solutions" x="15" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="142-0731-211" x="15" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="DESCRIPTION" value="SMA Connector Jack, Female Socket 50 Ohms Through Hole Solder" x="15" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="HEIGHT" value="9.8852mm" x="15" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="530-142-0731-211" x="15" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Johnson-Cinch-Connectivity-Solutions/142-0731-211?qs=HFfMDpzxxd0OVzI3hm9tuA%3D%3D" x="15" y="18" size="1.778" layer="27" display="off"/>
+</element>
+<element name="J1" library="142-0731-211" package="1420731211" value="142-0731-211" x="29.34" y="18">
+<attribute name="MANUFACTURER_NAME" value="Cinch Connectivity Solutions" x="29.34" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="142-0731-211" x="29.34" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="DESCRIPTION" value="SMA Connector Jack, Female Socket 50 Ohms Through Hole Solder" x="29.34" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="HEIGHT" value="9.8852mm" x="29.34" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="530-142-0731-211" x="29.34" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Johnson-Cinch-Connectivity-Solutions/142-0731-211?qs=HFfMDpzxxd0OVzI3hm9tuA%3D%3D" x="29.34" y="18" size="1.778" layer="27" display="off"/>
+</element>
+<element name="J2" library="142-0731-211" package="1420731211" value="142-0731-211" x="43.68" y="18">
+<attribute name="MANUFACTURER_NAME" value="Cinch Connectivity Solutions" x="43.68" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="142-0731-211" x="43.68" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="DESCRIPTION" value="SMA Connector Jack, Female Socket 50 Ohms Through Hole Solder" x="43.68" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="HEIGHT" value="9.8852mm" x="43.68" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="530-142-0731-211" x="43.68" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Johnson-Cinch-Connectivity-Solutions/142-0731-211?qs=HFfMDpzxxd0OVzI3hm9tuA%3D%3D" x="43.68" y="18" size="1.778" layer="27" display="off"/>
+</element>
+<element name="J3" library="142-0731-211" package="1420731211" value="142-0731-211" x="58.02" y="18">
+<attribute name="MANUFACTURER_NAME" value="Cinch Connectivity Solutions" x="58.02" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="142-0731-211" x="58.02" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="DESCRIPTION" value="SMA Connector Jack, Female Socket 50 Ohms Through Hole Solder" x="58.02" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="HEIGHT" value="9.8852mm" x="58.02" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="530-142-0731-211" x="58.02" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Johnson-Cinch-Connectivity-Solutions/142-0731-211?qs=HFfMDpzxxd0OVzI3hm9tuA%3D%3D" x="58.02" y="18" size="1.778" layer="27" display="off"/>
+</element>
+<element name="J4" library="142-0731-211" package="1420731211" value="142-0731-211" x="230.1" y="18">
+<attribute name="MANUFACTURER_NAME" value="Cinch Connectivity Solutions" x="230.1" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="142-0731-211" x="230.1" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="DESCRIPTION" value="SMA Connector Jack, Female Socket 50 Ohms Through Hole Solder" x="230.1" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="HEIGHT" value="9.8852mm" x="230.1" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="530-142-0731-211" x="230.1" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Johnson-Cinch-Connectivity-Solutions/142-0731-211?qs=HFfMDpzxxd0OVzI3hm9tuA%3D%3D" x="230.1" y="18" size="1.778" layer="27" display="off"/>
+</element>
+<element name="J5" library="142-0731-211" package="1420731211" value="142-0731-211" x="72.36" y="18">
+<attribute name="MANUFACTURER_NAME" value="Cinch Connectivity Solutions" x="72.36" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="142-0731-211" x="72.36" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="DESCRIPTION" value="SMA Connector Jack, Female Socket 50 Ohms Through Hole Solder" x="72.36" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="HEIGHT" value="9.8852mm" x="72.36" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="530-142-0731-211" x="72.36" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Johnson-Cinch-Connectivity-Solutions/142-0731-211?qs=HFfMDpzxxd0OVzI3hm9tuA%3D%3D" x="72.36" y="18" size="1.778" layer="27" display="off"/>
+</element>
+<element name="J6" library="142-0731-211" package="1420731211" value="142-0731-211" x="86.7" y="18">
+<attribute name="MANUFACTURER_NAME" value="Cinch Connectivity Solutions" x="86.7" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="142-0731-211" x="86.7" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="DESCRIPTION" value="SMA Connector Jack, Female Socket 50 Ohms Through Hole Solder" x="86.7" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="HEIGHT" value="9.8852mm" x="86.7" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="530-142-0731-211" x="86.7" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Johnson-Cinch-Connectivity-Solutions/142-0731-211?qs=HFfMDpzxxd0OVzI3hm9tuA%3D%3D" x="86.7" y="18" size="1.778" layer="27" display="off"/>
+</element>
+<element name="J7" library="142-0731-211" package="1420731211" value="142-0731-211" x="101.04" y="18">
+<attribute name="MANUFACTURER_NAME" value="Cinch Connectivity Solutions" x="101.04" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="142-0731-211" x="101.04" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="DESCRIPTION" value="SMA Connector Jack, Female Socket 50 Ohms Through Hole Solder" x="101.04" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="HEIGHT" value="9.8852mm" x="101.04" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="530-142-0731-211" x="101.04" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Johnson-Cinch-Connectivity-Solutions/142-0731-211?qs=HFfMDpzxxd0OVzI3hm9tuA%3D%3D" x="101.04" y="18" size="1.778" layer="27" display="off"/>
+</element>
+<element name="J8" library="142-0731-211" package="1420731211" value="142-0731-211" x="115.38" y="18">
+<attribute name="MANUFACTURER_NAME" value="Cinch Connectivity Solutions" x="115.38" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="142-0731-211" x="115.38" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="DESCRIPTION" value="SMA Connector Jack, Female Socket 50 Ohms Through Hole Solder" x="115.38" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="HEIGHT" value="9.8852mm" x="115.38" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="530-142-0731-211" x="115.38" y="18" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Johnson-Cinch-Connectivity-Solutions/142-0731-211?qs=HFfMDpzxxd0OVzI3hm9tuA%3D%3D" x="115.38" y="18" size="1.778" layer="27" display="off"/>
+</element>
+<element name="J9" library="142-0731-211" package="1420731211" value="142-0731-211" x="172.82" y="18">
+<attribute name="MANUFACTURER_NAME" value="Cinch Connectivity Solutions" x="157.82" y="8" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="142-0731-211" x="157.82" y="8" size="1.778" layer="27" display="off"/>
+<attribute name="DESCRIPTION" value="SMA Connector Jack, Female Socket 50 Ohms Through Hole Solder" x="157.82" y="8" size="1.778" layer="27" display="off"/>
+<attribute name="HEIGHT" value="9.8852mm" x="157.82" y="8" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="530-142-0731-211" x="157.82" y="8" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Johnson-Cinch-Connectivity-Solutions/142-0731-211?qs=HFfMDpzxxd0OVzI3hm9tuA%3D%3D" x="157.82" y="8" size="1.778" layer="27" display="off"/>
+</element>
+<element name="J10" library="142-0731-211" package="1420731211" value="142-0731-211" x="129.72" y="18">
+<attribute name="MANUFACTURER_NAME" value="Cinch Connectivity Solutions" x="129.72" y="8" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="142-0731-211" x="129.72" y="8" size="1.778" layer="27" display="off"/>
+<attribute name="DESCRIPTION" value="SMA Connector Jack, Female Socket 50 Ohms Through Hole Solder" x="129.72" y="8" size="1.778" layer="27" display="off"/>
+<attribute name="HEIGHT" value="9.8852mm" x="129.72" y="8" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="530-142-0731-211" x="129.72" y="8" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Johnson-Cinch-Connectivity-Solutions/142-0731-211?qs=HFfMDpzxxd0OVzI3hm9tuA%3D%3D" x="129.72" y="8" size="1.778" layer="27" display="off"/>
+</element>
+<element name="J11" library="142-0731-211" package="1420731211" value="142-0731-211" x="187.16" y="18">
+<attribute name="MANUFACTURER_NAME" value="Cinch Connectivity Solutions" x="172.16" y="-2" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="142-0731-211" x="172.16" y="-2" size="1.778" layer="27" display="off"/>
+<attribute name="DESCRIPTION" value="SMA Connector Jack, Female Socket 50 Ohms Through Hole Solder" x="172.16" y="-2" size="1.778" layer="27" display="off"/>
+<attribute name="HEIGHT" value="9.8852mm" x="172.16" y="-2" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="530-142-0731-211" x="172.16" y="-2" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Johnson-Cinch-Connectivity-Solutions/142-0731-211?qs=HFfMDpzxxd0OVzI3hm9tuA%3D%3D" x="172.16" y="-2" size="1.778" layer="27" display="off"/>
+</element>
+<element name="J12" library="142-0731-211" package="1420731211" value="142-0731-211" x="144.06" y="18">
+<attribute name="MANUFACTURER_NAME" value="Cinch Connectivity Solutions" x="144.06" y="-2" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="142-0731-211" x="144.06" y="-2" size="1.778" layer="27" display="off"/>
+<attribute name="DESCRIPTION" value="SMA Connector Jack, Female Socket 50 Ohms Through Hole Solder" x="144.06" y="-2" size="1.778" layer="27" display="off"/>
+<attribute name="HEIGHT" value="9.8852mm" x="144.06" y="-2" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="530-142-0731-211" x="144.06" y="-2" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Johnson-Cinch-Connectivity-Solutions/142-0731-211?qs=HFfMDpzxxd0OVzI3hm9tuA%3D%3D" x="144.06" y="-2" size="1.778" layer="27" display="off"/>
+</element>
+<element name="J13" library="142-0731-211" package="1420731211" value="142-0731-211" x="201.5" y="18">
+<attribute name="MANUFACTURER_NAME" value="Cinch Connectivity Solutions" x="186.5" y="-12" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="142-0731-211" x="186.5" y="-12" size="1.778" layer="27" display="off"/>
+<attribute name="DESCRIPTION" value="SMA Connector Jack, Female Socket 50 Ohms Through Hole Solder" x="186.5" y="-12" size="1.778" layer="27" display="off"/>
+<attribute name="HEIGHT" value="9.8852mm" x="186.5" y="-12" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="530-142-0731-211" x="186.5" y="-12" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Johnson-Cinch-Connectivity-Solutions/142-0731-211?qs=HFfMDpzxxd0OVzI3hm9tuA%3D%3D" x="186.5" y="-12" size="1.778" layer="27" display="off"/>
+</element>
+<element name="J14" library="142-0731-211" package="1420731211" value="142-0731-211" x="158.4" y="18">
+<attribute name="MANUFACTURER_NAME" value="Cinch Connectivity Solutions" x="158.4" y="-12" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="142-0731-211" x="158.4" y="-12" size="1.778" layer="27" display="off"/>
+<attribute name="DESCRIPTION" value="SMA Connector Jack, Female Socket 50 Ohms Through Hole Solder" x="158.4" y="-12" size="1.778" layer="27" display="off"/>
+<attribute name="HEIGHT" value="9.8852mm" x="158.4" y="-12" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="530-142-0731-211" x="158.4" y="-12" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Johnson-Cinch-Connectivity-Solutions/142-0731-211?qs=HFfMDpzxxd0OVzI3hm9tuA%3D%3D" x="158.4" y="-12" size="1.778" layer="27" display="off"/>
+</element>
+<element name="J15" library="142-0731-211" package="1420731211" value="142-0731-211" x="215.84" y="18">
+<attribute name="MANUFACTURER_NAME" value="Cinch Connectivity Solutions" x="200.84" y="-22" size="1.778" layer="27" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="142-0731-211" x="200.84" y="-22" size="1.778" layer="27" display="off"/>
+<attribute name="DESCRIPTION" value="SMA Connector Jack, Female Socket 50 Ohms Through Hole Solder" x="200.84" y="-22" size="1.778" layer="27" display="off"/>
+<attribute name="HEIGHT" value="9.8852mm" x="200.84" y="-22" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="530-142-0731-211" x="200.84" y="-22" size="1.778" layer="27" display="off"/>
+<attribute name="MOUSER_PRICE-STOCK" value="https://www.mouser.co.uk/ProductDetail/Johnson-Cinch-Connectivity-Solutions/142-0731-211?qs=HFfMDpzxxd0OVzI3hm9tuA%3D%3D" x="200.84" y="-22" size="1.778" layer="27" display="off"/>
+</element>
+</elements>
+<signals>
+<signal name="GND">
+<polygon width="1.08" layer="2">
+<vertex x="0" y="154"/>
+<vertex x="0" y="0"/>
+<vertex x="244" y="0"/>
+<vertex x="244" y="154"/>
+</polygon>
+<via x="15" y="9" extent="1-16" drill="0.6"/>
+<via x="20" y="9" extent="1-16" drill="0.6"/>
+<via x="18" y="6" extent="1-16" drill="0.6"/>
+<via x="24" y="15" extent="1-16" drill="0.6"/>
+<via x="24" y="10" extent="1-16" drill="0.6"/>
+<via x="22" y="19" extent="1-16" drill="0.6"/>
+<via x="29" y="9" extent="1-16" drill="0.6"/>
+<via x="34" y="9" extent="1-16" drill="0.6"/>
+<via x="30" y="6" extent="1-16" drill="0.6"/>
+<via x="35" y="14" extent="1-16" drill="0.6"/>
+<via x="39" y="9" extent="1-16" drill="0.6"/>
+<via x="43" y="9" extent="1-16" drill="0.6"/>
+<via x="43" y="9" extent="1-16" drill="0.6"/>
+<via x="49" y="9" extent="1-16" drill="0.6"/>
+<via x="37" y="18" extent="1-16" drill="0.6"/>
+<via x="49" y="15" extent="1-16" drill="0.6"/>
+<via x="53" y="18" extent="1-16" drill="0.6"/>
+<via x="53" y="9" extent="1-16" drill="0.6"/>
+<via x="53" y="9" extent="1-16" drill="0.6"/>
+<via x="58" y="9" extent="1-16" drill="0.6"/>
+<via x="64" y="9" extent="1-16" drill="0.6"/>
+<via x="66" y="18" extent="1-16" drill="0.6"/>
+<via x="64" y="15" extent="1-16" drill="0.6"/>
+<via x="67" y="14" extent="1-16" drill="0.6"/>
+<via x="67" y="9" extent="1-16" drill="0.6"/>
+<via x="72" y="9" extent="1-16" drill="0.6"/>
+<via x="78" y="9" extent="1-16" drill="0.6"/>
+<via x="78" y="13" extent="1-16" drill="0.6"/>
+<via x="78" y="15" extent="1-16" drill="0.6"/>
+<via x="66.66" y="10" extent="1-16" drill="0.6"/>
+<via x="81" y="9" extent="1-16" drill="0.6"/>
+<via x="77.66" y="16" extent="1-16" drill="0.6"/>
+<via x="81.66" y="16" extent="1-16" drill="0.6"/>
+<via x="77.66" y="13" extent="1-16" drill="0.6"/>
+<via x="81.66" y="13" extent="1-16" drill="0.6"/>
+<via x="92" y="9" extent="1-16" drill="0.6"/>
+<via x="96" y="9" extent="1-16" drill="0.6"/>
+<via x="87" y="9" extent="1-16" drill="0.6"/>
+<via x="201" y="9" extent="1-16" drill="0.6"/>
+<via x="207" y="9" extent="1-16" drill="0.6"/>
+<via x="192.66" y="13" extent="1-16" drill="0.6"/>
+<via x="192.66" y="16" extent="1-16" drill="0.6"/>
+<via x="192.66" y="16" extent="1-16" drill="0.6"/>
+<via x="195.66" y="13" extent="1-16" drill="0.6"/>
+<via x="210" y="9" extent="1-16" drill="0.6"/>
+<via x="216" y="9" extent="1-16" drill="0.6"/>
+<via x="221" y="9" extent="1-16" drill="0.6"/>
+<via x="225" y="9" extent="1-16" drill="0.6"/>
+<via x="206.66" y="13" extent="1-16" drill="0.6"/>
+<via x="210.66" y="13" extent="1-16" drill="0.6"/>
+<via x="206.66" y="16" extent="1-16" drill="0.6"/>
+<via x="230" y="9" extent="1-16" drill="0.6"/>
+<via x="236" y="9" extent="1-16" drill="0.6"/>
+<via x="221.66" y="13" extent="1-16" drill="0.6"/>
+<via x="221.66" y="16" extent="1-16" drill="0.6"/>
+<via x="95.66" y="16" extent="1-16" drill="0.6"/>
+<via x="91.66" y="13" extent="1-16" drill="0.6"/>
+<via x="95.66" y="13" extent="1-16" drill="0.6"/>
+<via x="106" y="9" extent="1-16" drill="0.6"/>
+<via x="110" y="9" extent="1-16" drill="0.6"/>
+<via x="101" y="9" extent="1-16" drill="0.6"/>
+<via x="105.66" y="13" extent="1-16" drill="0.6"/>
+<via x="109.66" y="13" extent="1-16" drill="0.6"/>
+<via x="120" y="9" extent="1-16" drill="0.6"/>
+<via x="124" y="9" extent="1-16" drill="0.6"/>
+<via x="115" y="9" extent="1-16" drill="0.6"/>
+<via x="119.66" y="13" extent="1-16" drill="0.6"/>
+<via x="123.66" y="13" extent="1-16" drill="0.6"/>
+<via x="134" y="9" extent="1-16" drill="0.6"/>
+<via x="138" y="9" extent="1-16" drill="0.6"/>
+<via x="129" y="9" extent="1-16" drill="0.6"/>
+<via x="135.66" y="16" extent="1-16" drill="0.6"/>
+<via x="135.66" y="13" extent="1-16" drill="0.6"/>
+<via x="139.66" y="13" extent="1-16" drill="0.6"/>
+<via x="150" y="9" extent="1-16" drill="0.6"/>
+<via x="154" y="9" extent="1-16" drill="0.6"/>
+<via x="145" y="9" extent="1-16" drill="0.6"/>
+<via x="149.66" y="16" extent="1-16" drill="0.6"/>
+<via x="149.66" y="13" extent="1-16" drill="0.6"/>
+<via x="153.66" y="13" extent="1-16" drill="0.6"/>
+<via x="164" y="9" extent="1-16" drill="0.6"/>
+<via x="168" y="9" extent="1-16" drill="0.6"/>
+<via x="159" y="9" extent="1-16" drill="0.6"/>
+<via x="163.66" y="16" extent="1-16" drill="0.6"/>
+<via x="163.66" y="13" extent="1-16" drill="0.6"/>
+<via x="167.66" y="13" extent="1-16" drill="0.6"/>
+<via x="178" y="9" extent="1-16" drill="0.6"/>
+<via x="182" y="9" extent="1-16" drill="0.6"/>
+<via x="173" y="9" extent="1-16" drill="0.6"/>
+<via x="177.66" y="16" extent="1-16" drill="0.6"/>
+<via x="177.66" y="13" extent="1-16" drill="0.6"/>
+<via x="181.66" y="13" extent="1-16" drill="0.6"/>
+<via x="192" y="9" extent="1-16" drill="0.6"/>
+<via x="196" y="9" extent="1-16" drill="0.6"/>
+<via x="187" y="9" extent="1-16" drill="0.6"/>
+<contactref element="J17" pad="2"/>
+<contactref element="J17" pad="3"/>
+<contactref element="J17" pad="4"/>
+<contactref element="J17" pad="5"/>
+<contactref element="J1" pad="2"/>
+<contactref element="J1" pad="3"/>
+<contactref element="J1" pad="4"/>
+<contactref element="J1" pad="5"/>
+<contactref element="J2" pad="2"/>
+<contactref element="J2" pad="3"/>
+<contactref element="J2" pad="4"/>
+<contactref element="J2" pad="5"/>
+<contactref element="J3" pad="2"/>
+<contactref element="J3" pad="3"/>
+<contactref element="J3" pad="4"/>
+<contactref element="J3" pad="5"/>
+<contactref element="J4" pad="2"/>
+<contactref element="J4" pad="3"/>
+<contactref element="J4" pad="4"/>
+<contactref element="J4" pad="5"/>
+<contactref element="J5" pad="2"/>
+<contactref element="J5" pad="3"/>
+<contactref element="J5" pad="4"/>
+<contactref element="J5" pad="5"/>
+<contactref element="J6" pad="2"/>
+<contactref element="J6" pad="3"/>
+<contactref element="J6" pad="4"/>
+<contactref element="J6" pad="5"/>
+<contactref element="J7" pad="2"/>
+<contactref element="J7" pad="3"/>
+<contactref element="J7" pad="4"/>
+<contactref element="J7" pad="5"/>
+<contactref element="J8" pad="2"/>
+<contactref element="J8" pad="3"/>
+<contactref element="J8" pad="4"/>
+<contactref element="J8" pad="5"/>
+<contactref element="J9" pad="2"/>
+<contactref element="J9" pad="3"/>
+<contactref element="J9" pad="4"/>
+<contactref element="J9" pad="5"/>
+<contactref element="J10" pad="2"/>
+<contactref element="J10" pad="3"/>
+<contactref element="J10" pad="4"/>
+<contactref element="J10" pad="5"/>
+<contactref element="J11" pad="2"/>
+<contactref element="J11" pad="3"/>
+<contactref element="J11" pad="4"/>
+<contactref element="J11" pad="5"/>
+<contactref element="J12" pad="2"/>
+<contactref element="J12" pad="3"/>
+<contactref element="J12" pad="4"/>
+<contactref element="J12" pad="5"/>
+<contactref element="J13" pad="2"/>
+<contactref element="J13" pad="3"/>
+<contactref element="J13" pad="4"/>
+<contactref element="J13" pad="5"/>
+<contactref element="J14" pad="2"/>
+<contactref element="J14" pad="3"/>
+<contactref element="J14" pad="4"/>
+<contactref element="J14" pad="5"/>
+<contactref element="J15" pad="2"/>
+<contactref element="J15" pad="3"/>
+<contactref element="J15" pad="4"/>
+<contactref element="J15" pad="5"/>
+</signal>
+<signal name="N$17">
+<wire x1="15" y1="29.79" x2="15" y2="135.9" width="1.08" layer="1"/>
+</signal>
+<signal name="N$18">
+<wire x1="15" y1="18" x2="15" y2="29.7" width="1.08" layer="1"/>
+</signal>
+<signal name="N$19">
+<wire x1="29.34" y1="29.79" x2="29.34" y2="135.9" width="1.08" layer="1"/>
+</signal>
+<signal name="N$20">
+<wire x1="29.34" y1="18" x2="29.34" y2="29.7" width="1.08" layer="1"/>
+</signal>
+<signal name="N$21">
+<wire x1="43.68" y1="29.79" x2="43.68" y2="135.9" width="1.08" layer="1"/>
+</signal>
+<signal name="N$22">
+<wire x1="43.68" y1="18" x2="43.68" y2="29.7" width="1.08" layer="1"/>
+</signal>
+<signal name="N$23">
+<wire x1="58.02" y1="29.79" x2="58.02" y2="135.9" width="1.08" layer="1"/>
+</signal>
+<signal name="N$24">
+<wire x1="58.02" y1="18" x2="58.02" y2="29.7" width="1.08" layer="1"/>
+</signal>
+<signal name="N$25">
+<wire x1="72.36" y1="29.79" x2="72.36" y2="135.9" width="1.08" layer="1"/>
+</signal>
+<signal name="N$26">
+<wire x1="72.36" y1="18" x2="72.36" y2="29.7" width="1.08" layer="1"/>
+</signal>
+<signal name="N$27">
+<wire x1="86.7" y1="29.79" x2="86.7" y2="135.9" width="1.08" layer="1"/>
+</signal>
+<signal name="N$28">
+<wire x1="86.7" y1="18" x2="86.7" y2="29.7" width="1.08" layer="1"/>
+</signal>
+<signal name="N$29">
+<wire x1="101.04" y1="29.79" x2="101.04" y2="135.9" width="1.08" layer="1"/>
+</signal>
+<signal name="N$30">
+<wire x1="101.04" y1="18" x2="101.04" y2="29.7" width="1.08" layer="1"/>
+</signal>
+<signal name="N$31">
+<wire x1="115.38" y1="29.79" x2="115.38" y2="135.9" width="1.08" layer="1"/>
+</signal>
+<signal name="N$32">
+<wire x1="115.38" y1="18" x2="115.38" y2="29.7" width="1.08" layer="1"/>
+</signal>
+<signal name="N$33">
+<wire x1="129.72" y1="29.79" x2="129.72" y2="135.9" width="1.08" layer="1"/>
+</signal>
+<signal name="N$34">
+<wire x1="129.72" y1="18" x2="129.72" y2="29.7" width="1.08" layer="1"/>
+</signal>
+<signal name="N$35">
+<wire x1="144.06" y1="29.79" x2="144.06" y2="135.9" width="1.08" layer="1"/>
+</signal>
+<signal name="N$36">
+<wire x1="144.06" y1="18" x2="144.06" y2="29.7" width="1.08" layer="1"/>
+</signal>
+<signal name="N$37">
+<wire x1="158.4" y1="29.79" x2="158.4" y2="135.9" width="1.08" layer="1"/>
+</signal>
+<signal name="N$38">
+<wire x1="158.4" y1="18" x2="158.4" y2="29.7" width="1.08" layer="1"/>
+</signal>
+<signal name="N$39">
+<wire x1="172.74" y1="29.79" x2="172.74" y2="135.9" width="1.08" layer="1"/>
+</signal>
+<signal name="N$40">
+<wire x1="172.74" y1="18" x2="172.74" y2="29.7" width="1.08" layer="1"/>
+</signal>
+<signal name="N$41">
+<wire x1="187.08" y1="29.79" x2="187.08" y2="135.9" width="1.08" layer="1"/>
+</signal>
+<signal name="N$42">
+<wire x1="187.08" y1="18" x2="187.08" y2="29.7" width="1.08" layer="1"/>
+</signal>
+<signal name="N$43">
+<wire x1="201.42" y1="29.79" x2="201.42" y2="135.9" width="1.08" layer="1"/>
+</signal>
+<signal name="N$44">
+<wire x1="201.42" y1="18" x2="201.42" y2="29.7" width="1.08" layer="1"/>
+</signal>
+<signal name="N$45">
+<wire x1="215.76" y1="29.79" x2="215.76" y2="135.9" width="1.08" layer="1"/>
+</signal>
+<signal name="N$46">
+<wire x1="215.76" y1="18" x2="215.76" y2="29.7" width="1.08" layer="1"/>
+</signal>
+<signal name="N$47">
+<wire x1="230.1" y1="29.79" x2="230.1" y2="135.9" width="1.08" layer="1"/>
+</signal>
+<signal name="N$48">
+<wire x1="230.1" y1="18" x2="230.1" y2="29.7" width="1.08" layer="1"/>
+</signal>
+</signals>
+</board>
+</drawing>
+</eagle>

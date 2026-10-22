@@ -1,0 +1,8 @@
+angle_deg,elem0,elem1,elem2,elem3,elem4,elem5,elem6,elem7,elem8,elem9,elem10,elem11,elem12,elem13,elem14,elem15,note
+-45,0,82,37,120,74,29,112,67,21,104,59,14,96,51,6,89,16-element progression; upstream writes only i = 0..3 per ADAR1000
+-30,0,96,64,32,0,96,64,32,0,96,64,32,0,96,64,32,16-element progression; upstream writes only i = 0..3 per ADAR1000
+-15,0,111,94,78,61,45,28,12,123,106,90,73,57,40,24,7,16-element progression; upstream writes only i = 0..3 per ADAR1000
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,16-element progression; upstream writes only i = 0..3 per ADAR1000
+15,0,16,33,49,66,82,99,115,4,21,37,54,70,87,103,120,16-element progression; upstream writes only i = 0..3 per ADAR1000
+30,0,31,63,95,127,31,63,95,127,31,63,95,127,31,63,95,16-element progression; upstream writes only i = 0..3 per ADAR1000
+45,0,45,90,7,53,98,15,60,106,23,68,113,31,76,121,38,16-element progression; upstream writes only i = 0..3 per ADAR1000
