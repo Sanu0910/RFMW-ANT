@@ -1,0 +1,108 @@
+{
+ "tilt": 10.0,
+ "depth": 0.38,
+ "validate": {
+  "ok": true,
+  "checks": [
+   {
+    "category": "Design Settings",
+    "level": "ok",
+    "message": "Solution type Modal, units mm"
+   },
+   {
+    "category": "3D Model",
+    "level": "ok",
+    "message": "1 objects"
+   },
+   {
+    "category": "Boundaries and Excitations",
+    "level": "ok",
+    "message": "1 boundaries, 2 excitations"
+   },
+   {
+    "category": "Mesh Operations",
+    "level": "ok",
+    "message": "1 mesh operations"
+   },
+   {
+    "category": "Analysis Setup",
+    "level": "ok",
+    "message": "1 setup(s)"
+   }
+  ]
+ },
+ "status": {
+  "setup": "Setup1",
+  "state": "done",
+  "elapsed_s": 57.5,
+  "passes": [
+   {
+    "pass": 1,
+    "tets": 19029
+   },
+   {
+    "pass": 2,
+    "tets": 25526,
+    "delta_s": 0.00186,
+    "delta_mag": 0.00172,
+    "delta_phase": 18.56743,
+    "passed": true
+   },
+   {
+    "pass": 3,
+    "tets": 33146,
+    "delta_s": 0.00064,
+    "delta_mag": 0.00035,
+    "delta_phase": 6.92124,
+    "passed": true
+   }
+  ],
+  "converged": true,
+  "final_tets": 33146,
+  "solutions": [
+   "LastAdaptive",
+   "Sweep"
+  ],
+  "log": [
+   "[info] Pass 2: hzmesh: 219 elements marked -> +29.9% (1411 nodes, 0 failed, 80 ms)",
+   "[info] Pass 2: local Delaunay refinement -> 33146 tetrahedra (+29.9%), min. quality 0.342, 0.99 s (EMerge import 0.37 s)",
+   "[info] Pass 3: mesh refined to 33146 tetrahedra (+29.9%) in 0.99 s",
+   "[info] Pass 3: 211868 unknowns, complex symmetric (LDLT), factorization 1.38 GB, peak memory 3.65 GB",
+   "[info] Pass 3: converged (Delta S = 0.0006396)",
+   "[info] Adaptive meshing converged: 33146 tetrahedra after 3 passes",
+   "[info] Mesh statistics: 33146 tetrahedra, 6976 nodes",
+   "[info] Solution saved (field data is computed at the end of the analysis)",
+   "[info] Matrix solve: 211868 unknowns, complex symmetric (LDLT), factorization 1.38 GB",
+   "[info] Sweep 'Sweep' finished in 22.9 s",
+   "[info] Sweep 'Sweep': matrix assembly 0.7 s, PARDISO 18.4 s (summed over the parallel frequencies)",
+   "[info] Field data 'LastAdaptive' computed in 1.5 s"
+  ]
+ },
+ "sparams": {
+  "solution": "Sweep",
+  "ports": 2,
+  "rows": [
+   {
+    "freq_GHz": 58.0,
+    "S11_dB": -45.22,
+    "S11_deg": -74.4,
+    "S21_dB": -0.04726,
+    "S21_deg": 113.0
+   },
+   {
+    "freq_GHz": 60.75,
+    "S11_dB": -49.33,
+    "S11_deg": -132.3,
+    "S21_dB": -0.02906,
+    "S21_deg": 59.5
+   },
+   {
+    "freq_GHz": 63.5,
+    "S11_dB": -53.25,
+    "S11_deg": 178.6,
+    "S21_dB": -0.01871,
+    "S21_deg": 7.799
+   }
+  ]
+ }
+}

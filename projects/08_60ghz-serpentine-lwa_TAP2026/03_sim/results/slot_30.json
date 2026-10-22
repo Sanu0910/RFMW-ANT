@@ -1,0 +1,124 @@
+{
+ "tilt": 30.0,
+ "depth": 0.2,
+ "validate": {
+  "ok": true,
+  "checks": [
+   {
+    "category": "Design Settings",
+    "level": "ok",
+    "message": "Solution type Modal, units mm"
+   },
+   {
+    "category": "3D Model",
+    "level": "ok",
+    "message": "1 objects"
+   },
+   {
+    "category": "Boundaries and Excitations",
+    "level": "ok",
+    "message": "1 boundaries, 2 excitations"
+   },
+   {
+    "category": "Mesh Operations",
+    "level": "ok",
+    "message": "1 mesh operations"
+   },
+   {
+    "category": "Analysis Setup",
+    "level": "ok",
+    "message": "1 setup(s)"
+   }
+  ]
+ },
+ "status": {
+  "setup": "Setup1",
+  "state": "done",
+  "elapsed_s": 134.5,
+  "passes": [
+   {
+    "pass": 1,
+    "tets": 18967
+   },
+   {
+    "pass": 2,
+    "tets": 24974,
+    "delta_s": 0.01264,
+    "delta_mag": 0.01232,
+    "delta_phase": 10.74766,
+    "passed": false
+   },
+   {
+    "pass": 3,
+    "tets": 33916,
+    "delta_s": 0.00491,
+    "delta_mag": 0.00487,
+    "delta_phase": 4.22517,
+    "passed": false
+   },
+   {
+    "pass": 4,
+    "tets": 43400,
+    "delta_s": 0.00116,
+    "delta_mag": 0.00113,
+    "delta_phase": 0.99455,
+    "passed": true
+   },
+   {
+    "pass": 5,
+    "tets": 55441,
+    "delta_s": 0.00076,
+    "delta_mag": 0.00074,
+    "delta_phase": 0.60748,
+    "passed": true
+   }
+  ],
+  "converged": true,
+  "final_tets": 55441,
+  "solutions": [
+   "LastAdaptive",
+   "Sweep"
+  ],
+  "log": [
+   "[info] Pass 4: hzmesh: 500 elements marked -> +27.7% (2149 nodes, 0 failed, 99 ms)",
+   "[info] Pass 4: local Delaunay refinement -> 55441 tetrahedra (+27.7%), min. quality 0.320, 0.97 s (EMerge import 0.55 s)",
+   "[info] Pass 5: mesh refined to 55441 tetrahedra (+27.7%) in 0.98 s",
+   "[info] Pass 5: 349296 unknowns, complex symmetric (LDLT), factorization 2.77 GB, peak memory 6.30 GB",
+   "[info] Pass 5: converged (Delta S = 0.0007644)",
+   "[info] Adaptive meshing converged: 55441 tetrahedra after 5 passes",
+   "[info] Mesh statistics: 55441 tetrahedra, 10847 nodes",
+   "[info] Solution saved (field data is computed at the end of the analysis)",
+   "[info] Matrix solve: 349296 unknowns, complex symmetric (LDLT), factorization 2.77 GB",
+   "[info] Sweep 'Sweep' finished in 52.1 s",
+   "[info] Sweep 'Sweep': matrix assembly 1.0 s, PARDISO 45.1 s (summed over the parallel frequencies)",
+   "[info] Field data 'LastAdaptive' computed in 0.7 s"
+  ]
+ },
+ "sparams": {
+  "solution": "Sweep",
+  "ports": 2,
+  "rows": [
+   {
+    "freq_GHz": 58.0,
+    "S11_dB": -22.64,
+    "S11_deg": -85.16,
+    "S21_dB": -0.6293,
+    "S21_deg": 114.3
+   },
+   {
+    "freq_GHz": 60.75,
+    "S11_dB": -25.93,
+    "S11_deg": -156.8,
+    "S21_dB": -0.3575,
+    "S21_deg": 61.14
+   },
+   {
+    "freq_GHz": 63.5,
+    "S11_dB": -29.17,
+    "S11_deg": 140.6,
+    "S21_dB": -0.2056,
+    "S21_deg": 9.168
+   }
+  ]
+ }
+}

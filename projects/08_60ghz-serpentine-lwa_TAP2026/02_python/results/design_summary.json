@@ -1,0 +1,30 @@
+{
+ "d_mm": 2.3800000000000003,
+ "grating_limit_mm": 2.360570535433071,
+ "l_mm_exact": 10.90312012832657,
+ "l_mm_paper": 10.9,
+ "theta_58_deg": 86.05468868322042,
+ "theta_63p5_deg": 53.89446565282171,
+ "scan_per_port_deg": 32.16022303039871,
+ "straight_theta_58_deg": 111.07310624427897,
+ "straight_theta_63p5_deg": 102.32582751554574,
+ "slot_width_eq19_mm": 0.2611111111111111,
+ "fc_TE10_GHz": 39.86601835106383,
+ "af_port1_range_deg": [
+  86.05000000000001,
+  53.900000000000006
+ ],
+ "af_port2_range_deg": [
+  93.95,
+  126.10000000000001
+ ],
+ "total_coverage_deg": 72.2,
+ "hpbw_mean_deg": 7.658695652173912,
+ "scan_rate_deg_per_GHz": 5.847313278254311,
+ "range_res_full_bw_cm": 2.725385981818182,
+ "range_res_500MHz_cm": 29.979245799999998,
+ "eff_bw_per_beam_MHz": 1309.7802850167077,
+ "range_res_effective_cm": 11.44437969594938,
+ "uncertainty_product_m_deg": 0.876490210191949,
+ "virtual_bw_with_switch_GHz": 11.0
+}

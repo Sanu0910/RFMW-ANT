@@ -1,0 +1,116 @@
+{
+ "tilt": 20.0,
+ "depth": 0.29,
+ "validate": {
+  "ok": true,
+  "checks": [
+   {
+    "category": "Design Settings",
+    "level": "ok",
+    "message": "Solution type Modal, units mm"
+   },
+   {
+    "category": "3D Model",
+    "level": "ok",
+    "message": "1 objects"
+   },
+   {
+    "category": "Boundaries and Excitations",
+    "level": "ok",
+    "message": "1 boundaries, 2 excitations"
+   },
+   {
+    "category": "Mesh Operations",
+    "level": "ok",
+    "message": "1 mesh operations"
+   },
+   {
+    "category": "Analysis Setup",
+    "level": "ok",
+    "message": "1 setup(s)"
+   }
+  ]
+ },
+ "status": {
+  "setup": "Setup1",
+  "state": "done",
+  "elapsed_s": 82.7,
+  "passes": [
+   {
+    "pass": 1,
+    "tets": 19122
+   },
+   {
+    "pass": 2,
+    "tets": 24793,
+    "delta_s": 0.00937,
+    "delta_mag": 0.00748,
+    "delta_phase": 24.45192,
+    "passed": false
+   },
+   {
+    "pass": 3,
+    "tets": 32438,
+    "delta_s": 0.00142,
+    "delta_mag": 0.00126,
+    "delta_phase": 3.2499,
+    "passed": true
+   },
+   {
+    "pass": 4,
+    "tets": 41145,
+    "delta_s": 0.00078,
+    "delta_mag": 0.00075,
+    "delta_phase": 1.55267,
+    "passed": true
+   }
+  ],
+  "converged": true,
+  "final_tets": 41145,
+  "solutions": [
+   "LastAdaptive",
+   "Sweep"
+  ],
+  "log": [
+   "[info] Pass 3: hzmesh: 345 elements marked -> +26.8% (1544 nodes, 0 failed, 67 ms)",
+   "[info] Pass 3: local Delaunay refinement -> 41145 tetrahedra (+26.8%), min. quality 0.323, 0.56 s (EMerge import 0.41 s)",
+   "[info] Pass 4: mesh refined to 41145 tetrahedra (+26.8%) in 0.56 s",
+   "[info] Pass 4: 261286 unknowns, complex symmetric (LDLT), factorization 1.86 GB, peak memory 4.59 GB",
+   "[info] Pass 4: converged (Delta S = 0.0007762)",
+   "[info] Adaptive meshing converged: 41145 tetrahedra after 4 passes",
+   "[info] Mesh statistics: 41145 tetrahedra, 8341 nodes",
+   "[info] Solution saved (field data is computed at the end of the analysis)",
+   "[info] Matrix solve: 261286 unknowns, complex symmetric (LDLT), factorization 1.86 GB",
+   "[info] Sweep 'Sweep' finished in 29.9 s",
+   "[info] Sweep 'Sweep': matrix assembly 0.8 s, PARDISO 25.3 s (summed over the parallel frequencies)",
+   "[info] Field data 'LastAdaptive' computed in 0.5 s"
+  ]
+ },
+ "sparams": {
+  "solution": "Sweep",
+  "ports": 2,
+  "rows": [
+   {
+    "freq_GHz": 58.0,
+    "S11_dB": -30.47,
+    "S11_deg": -82.43,
+    "S21_dB": -0.2543,
+    "S21_deg": 113.4
+   },
+   {
+    "freq_GHz": 60.75,
+    "S11_dB": -33.76,
+    "S11_deg": -151.7,
+    "S21_dB": -0.1532,
+    "S21_deg": 60.06
+   },
+   {
+    "freq_GHz": 63.5,
+    "S11_dB": -37.01,
+    "S11_deg": 147.2,
+    "S21_dB": -0.09301,
+    "S21_deg": 8.295
+   }
+  ]
+ }
+}

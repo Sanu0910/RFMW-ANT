@@ -1,0 +1,326 @@
+{
+ "name": "slot_30",
+ "designs": [
+  {
+   "name": "slot",
+   "units": "mm",
+   "settings": {
+    "SolutionType": "Modal",
+    "AutoOpen": "Off",
+    "AutoOpenBoundary": "Auto",
+    "AutoOpenPadding": "",
+    "FilterAirMargin": "12mm"
+   },
+   "variables": {},
+   "objects": [
+    {
+     "name": "Guide",
+     "history": [
+      {
+       "kind": "CreateBox",
+       "props": {
+        "Position": "-0.94,-1.88,-6.0",
+        "XSize": "1.88",
+        "YSize": "3.76",
+        "ZSize": "12.0"
+       },
+       "suppressed": false
+      },
+      {
+       "kind": "Unite",
+       "props": {
+        "Tools": "Slot,Outer",
+        "KeepOriginals": "False"
+       },
+       "suppressed": false
+      }
+     ],
+     "material": "vacuum",
+     "solve_inside": true,
+     "model": true,
+     "color": "#e6f2ff",
+     "transparency": 0.0,
+     "wireframe": false,
+     "visible": true,
+     "consumed_by": null,
+     "group": "",
+     "orientation": "Global"
+    },
+    {
+     "name": "Slot",
+     "history": [
+      {
+       "kind": "CreateBox",
+       "props": {
+        "Position": "-1.662768775266122,1.68,-0.1305",
+        "XSize": "3.325537550532244",
+        "YSize": "0.8",
+        "ZSize": "0.261"
+       },
+       "suppressed": false
+      },
+      {
+       "kind": "Rotate",
+       "props": {
+        "Axis": "Y",
+        "Angle": "30.0deg",
+        "Center": "0,0,0"
+       },
+       "suppressed": false
+      }
+     ],
+     "material": "vacuum",
+     "solve_inside": true,
+     "model": true,
+     "color": "#e6f2ff",
+     "transparency": 0.0,
+     "wireframe": false,
+     "visible": true,
+     "consumed_by": "Guide",
+     "group": "",
+     "orientation": "Global"
+    },
+    {
+     "name": "Outer",
+     "history": [
+      {
+       "kind": "CreateBox",
+       "props": {
+        "Position": "-6,-6,-6.0",
+        "XSize": "12",
+        "YSize": "13.5",
+        "ZSize": "12.0"
+       },
+       "suppressed": false
+      },
+      {
+       "kind": "Subtract",
+       "props": {
+        "Tools": "Metal",
+        "KeepOriginals": "False"
+       },
+       "suppressed": false
+      }
+     ],
+     "material": "vacuum",
+     "solve_inside": true,
+     "model": true,
+     "color": "#e6f2ff",
+     "transparency": 0.0,
+     "wireframe": false,
+     "visible": true,
+     "consumed_by": "Guide",
+     "group": "",
+     "orientation": "Global"
+    },
+    {
+     "name": "Metal",
+     "history": [
+      {
+       "kind": "CreateBox",
+       "props": {
+        "Position": "-1.14,-2.08,-6.0",
+        "XSize": "2.28",
+        "YSize": "4.16",
+        "ZSize": "12.0"
+       },
+       "suppressed": false
+      }
+     ],
+     "material": "vacuum",
+     "solve_inside": true,
+     "model": true,
+     "color": "#e6f2ff",
+     "transparency": 0.0,
+     "wireframe": false,
+     "visible": true,
+     "consumed_by": "Outer",
+     "group": "",
+     "orientation": "Global"
+    }
+   ],
+   "boundaries": [
+    {
+     "name": "Rad",
+     "kind": "Radiation",
+     "props": {
+      "Order": "First order",
+      "FarFieldReference": "True"
+     },
+     "faces": [
+      {
+       "obj": "Guide",
+       "face": 15,
+       "sig": []
+      },
+      {
+       "obj": "Guide",
+       "face": 16,
+       "sig": []
+      },
+      {
+       "obj": "Guide",
+       "face": 18,
+       "sig": []
+      },
+      {
+       "obj": "Guide",
+       "face": 19,
+       "sig": []
+      },
+      {
+       "obj": "Guide",
+       "face": 20,
+       "sig": []
+      },
+      {
+       "obj": "Guide",
+       "face": 21,
+       "sig": []
+      }
+     ],
+     "objects": [],
+     "edges": [],
+     "enabled": true
+    }
+   ],
+   "excitations": [
+    {
+     "name": "P1",
+     "kind": "Wave Port",
+     "props": {
+      "PortNumber": "1",
+      "NumberOfModes": "1",
+      "ModeType": "Auto",
+      "ImpedanceDefinition": "Zpv",
+      "Renormalize": "False",
+      "RenormImpedance": "50ohm",
+      "Deembed": "False",
+      "DeembedDistance": "0"
+     },
+     "faces": [
+      {
+       "obj": "Guide",
+       "face": 7,
+       "sig": []
+      }
+     ],
+     "objects": [],
+     "edges": [],
+     "enabled": true
+    },
+    {
+     "name": "P2",
+     "kind": "Wave Port",
+     "props": {
+      "PortNumber": "2",
+      "NumberOfModes": "1",
+      "ModeType": "Auto",
+      "ImpedanceDefinition": "Zpv",
+      "Renormalize": "False",
+      "RenormImpedance": "50ohm",
+      "Deembed": "False",
+      "DeembedDistance": "0"
+     },
+     "faces": [
+      {
+       "obj": "Guide",
+       "face": 1,
+       "sig": []
+      }
+     ],
+     "objects": [],
+     "edges": [],
+     "enabled": true
+    }
+   ],
+   "mesh_ops": [
+    {
+     "name": "Fine",
+     "kind": "Length Based Inside Selection",
+     "props": {
+      "MaxLength": "0.8",
+      "RestrictElements": "False",
+      "MaxElements": "1000"
+     },
+     "faces": [],
+     "objects": [
+      "Guide"
+     ],
+     "edges": [],
+     "enabled": true
+    }
+   ],
+   "setups": [
+    {
+     "name": "Setup1",
+     "props": {
+      "Enabled": "True",
+      "SolutionFrequencyMode": "Single",
+      "Frequency": "60.75GHz",
+      "MultiFrequencies": "1GHz,2GHz",
+      "LowFrequency": "1GHz",
+      "HighFrequency": "10GHz",
+      "MaximumPasses": "6",
+      "MaximumDeltaS": "0.002",
+      "MaximumDeltaEnergy": "0.1",
+      "UseMatrixConvergence": "False",
+      "MaxDeltaMag": "0.02",
+      "MaxDeltaPhase": "2",
+      "LambdaRefinement": "True",
+      "LambdaTarget": "0.3333",
+      "UseFreeSpaceLambda": "False",
+      "PercentRefinement": "30",
+      "MaximumRefinement": "1000000",
+      "MinimumPasses": "2",
+      "MinimumConvergedPasses": "2",
+      "BasisOrder": "First Order",
+      "CurvedElements": "True",
+      "Solver": "Auto",
+      "ErrorInclusion": "50",
+      "RefinementRatio": "0.6",
+      "GrowthRate": "1.6",
+      "EnforceRefinementPercent": "True",
+      "RefinementMethod": "Local (Delaunay)",
+      "SaveFields": "True",
+      "Threads": "0",
+      "_BasisNames": "v2"
+     },
+     "sweeps": [
+      {
+       "name": "Sweep",
+       "props": {
+        "Enabled": "True",
+        "SweepType": "Discrete",
+        "Distribution": "Linear Count",
+        "Start": "58GHz",
+        "Stop": "63.5GHz",
+        "Step": "0.1GHz",
+        "Count": "3",
+        "SamplesPerDecade": "20",
+        "Points": "1GHz,2GHz",
+        "SaveFields": "False",
+        "ErrorTolerance": "0.5",
+        "MaxSolutions": "250",
+        "Parallel": "False"
+       }
+      }
+     ],
+     "eigen": false
+    }
+   ],
+   "spheres": [],
+   "reports": [],
+   "field_plots": [],
+   "coord_systems": [],
+   "optimetrics": [],
+   "parametrics": [],
+   "working_cs": "Global",
+   "notes": ""
+  }
+ ],
+ "variables": {},
+ "materials": [],
+ "format": "hertzon-project",
+ "version": 1
+}
