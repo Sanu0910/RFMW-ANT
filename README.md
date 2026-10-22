@@ -9,6 +9,7 @@ Engineering reproductions of recent antenna and microwave papers, built so each 
 The papers themselves are **not** included (IEEE copyright); see [`docs/REFERENCES.md`](docs/REFERENCES.md) for citations and DOIs.
 
 EM simulation tooling: [`docs/GDS2OPENEMS.md`](docs/GDS2OPENEMS.md) — openEMS FDTD + gds2openEMS (GDSII → openEMS), installed with `tools/install_gds2openems.sh`.
+EM simulation tooling: [`docs/HERTZON.md`](docs/HERTZON.md) — Hertzon 3D full-wave FEM simulator (EMerge solver, HFSS-style GUI, MCP server), installed with `tools/install_hertzon.sh`.
 PCB tooling: [`docs/KICAD_MCP.md`](docs/KICAD_MCP.md) — KiCad 9 + KiCAD-MCP-Server headless, installed with `tools/install_kicad_mcp.sh`.
 
 ## Projects
