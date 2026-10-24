@@ -1,0 +1,149 @@
+{
+  "schema": 1,
+  "board": "/home/user/RFMW-main/projects/12_multitool-rf-board/01_kicad/crl-mt1.kicad_pcb",
+  "groups": [
+    {
+      "name": "mcu",
+      "role": "core",
+      "refs": [
+        "ANT1",
+        "C_SMPS",
+        "FLT1",
+        "L_SMPS",
+        "U1",
+        "Y1",
+        "Y2"
+      ],
+      "why": "STM32WB55 MCU + BLE, its HSE/LSE crystals, SMPS inductor, BLE filter/antenna and decaps"
+    },
+    {
+      "name": "subghz",
+      "role": "rf",
+      "refs": [
+        "C_CCd",
+        "FLT2",
+        "J_SUBG",
+        "R13",
+        "SW1",
+        "SW2",
+        "U2",
+        "ZQ3"
+      ],
+      "why": "CC1101 sub-GHz radio, balun, RF switches, 26 MHz xtal, RBIAS, U.FL"
+    },
+    {
+      "name": "io",
+      "role": "io",
+      "refs": [
+        "DA7",
+        "D_IR",
+        "J_GPIO",
+        "J_IBTN",
+        "J_SD",
+        "J_SWD",
+        "Q_IBTN",
+        "Q_IR",
+        "RN1",
+        "U5",
+        "U_IR",
+        "VD4",
+        "VD_IBTN",
+        "VD_USB",
+        "X6"
+      ],
+      "why": "display, microSD, IR, iButton, FFC, GPIO header, RGB LED driver, Tag-Connect, ESD"
+    },
+    {
+      "name": "nfc",
+      "role": "rf",
+      "refs": [
+        "ANT_NFC",
+        "C_AGDC",
+        "U3",
+        "X_NFC1",
+        "ZQ1"
+      ],
+      "why": "ST25R3916 NFC reader, 27.12 MHz xtal, EMC/matching network and loop antenna"
+    },
+    {
+      "name": "rfid125",
+      "role": "analog",
+      "refs": [
+        "ANT_LF",
+        "DA3",
+        "DA4",
+        "DA5",
+        "R_MID1",
+        "R_MID2",
+        "VT4",
+        "VT6"
+      ],
+      "why": "125 kHz RFID discrete AFE: coil drivers, op-amps, comparator, mid-rail divider"
+    },
+    {
+      "name": "ui",
+      "role": "io",
+      "refs": [
+        "LS1",
+        "M1",
+        "Q_SPK",
+        "Q_VIB",
+        "SW_B",
+        "SW_D",
+        "SW_L",
+        "SW_O",
+        "SW_R",
+        "SW_U"
+      ],
+      "why": "buttons, vibro motor, speaker and their driver FETs"
+    },
+    {
+      "name": "power",
+      "role": "power",
+      "refs": [
+        "BT1",
+        "C_BTST",
+        "C_FGV",
+        "C_REGN",
+        "DA8",
+        "J_USB",
+        "L13",
+        "L14",
+        "L_CHG",
+        "R37",
+        "R_CC1",
+        "R_CC2",
+        "R_FGB",
+        "R_FGO",
+        "R_ILIM",
+        "R_TS1",
+        "R_TS2",
+        "U10",
+        "U6",
+        "U7",
+        "U8",
+        "U8B",
+        "U9",
+        "X10"
+      ],
+      "why": "USB-C, BQ25896 charger + buck, BQ27220 gauge, LM3281 bucks, RS3221 LDO, battery conn"
+    },
+    {
+      "name": "passive",
+      "role": "decoupling",
+      "refs": [
+        "C1",
+        "C10",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9"
+      ],
+      "why": "bulk + decoupling capacitors across the supply rails"
+    }
+  ]
+}

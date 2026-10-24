@@ -1,0 +1,49 @@
+Copper-to-hole 0.25mm for NPTH holes (from the board's own min_hole_clearance, above the 0.2mm fab floor); plated holes and vias: copper clearance
+  NOTE: crystal X10 at BT1 pads +, NTC; load caps C6, C9
+  NOTE: crystal Y1 at U1 pads 34, 35; no load cap (a cap from a load net to ground)
+  NOTE: crystal Y2 at U1 pads 3, 4; no load cap (a cap from a load net to ground)
+  NOTE: crystal ZQ1 at U3 pads 4, 5; no load cap (a cap from a load net to ground)
+  NOTE: crystal ZQ3 at U2 pads 8, 10; no load cap (a cap from a load net to ground)
+  NOTE: in their IC's group: C6 (passive -> power), C9 (passive -> power)
+  NOTE: decap C_FGV on FG_VDD serves U7
+  NOTE: decap C_REGN on CHG_REGN serves U6
+place_simple: 87 movable part(s), fixed: none
+  group mcu: ANT1, C_SMPS, FLT1, L_SMPS, U1, Y1, Y2
+  group subghz: C_CCd, FLT2, J_SUBG, R13, SW1, SW2, U2, ZQ3
+  group io: DA7, D_IR, J_GPIO, J_IBTN, J_SD, J_SWD, Q_IBTN, Q_IR, RN1, U5, U_IR, VD4, VD_IBTN, VD_USB, X6
+  group nfc: ANT_NFC, C_AGDC, U3, X_NFC1, ZQ1
+  group rfid125: ANT_LF, DA3, DA4, DA5, R_MID1, R_MID2, VT4, VT6
+  group ui: LS1, M1, Q_SPK, Q_VIB, SW_B, SW_D, SW_L, SW_O, SW_R, SW_U
+  group power: BT1, C_BTST, C_FGV, C_REGN, DA8, J_USB, L13, L14, L_CHG, R37, R_CC1, R_CC2, R_FGB, R_FGO, R_ILIM, R_TS1, R_TS2, U10, U6, U7, U8, U8B, U9, X10, C6, C9
+  group passive: C1, C10, C2, C3, C4, C5, C7, C8
+  move   4350: T  17.385 lam     2.5 reach 14.72 cost  8128.5 overlap 5151.10 mm2 best     inf accepted 0.32
+  move   8700: T   8.196 lam     6.3 reach 11.63 cost  7274.1 overlap 4385.96 mm2 best     inf accepted 0.19
+  move  13050: T   3.864 lam    15.8 reach  8.90 cost  7847.7 overlap 3967.15 mm2 best     inf accepted 0.11
+  move  21750: T   0.859 lam   100.0 reach  4.54 cost  9166.3 overlap 3757.19 mm2 best     inf accepted 0.07
+  move  26100: T   0.405 lam   251.1 reach  2.91 cost  9755.9 overlap 3702.04 mm2 best     inf accepted 0.07
+  move  30450: T   0.191 lam   630.8 reach  1.64 cost 14847.5 overlap 3588.31 mm2 best     inf accepted 0.07
+  move  34800: T   0.090 lam  1584.6 reach  0.73 cost 15222.4 overlap 3568.11 mm2 best     inf accepted 0.06
+  move  39150: T   0.042 lam  3980.2 reach  0.18 cost 15947.7 overlap 3558.39 mm2 best     inf accepted 0.07
+  move  43500: T   0.020 lam  9997.9 reach  0.10 cost 15906.0 overlap 3555.03 mm2 best     inf accepted 0.07
+  NOTE: run 1 left no legal pose for ANT1, ANT_LF, ANT_NFC, BT1, C1, C10, C2, C3, C4, C5, C6, C7, C8, C9, C_AGDC, C_BTST, C_CCd, C_FGV, C_REGN, C_SMPS, DA3, DA4, DA5, DA7, DA8, D_IR, FLT1, FLT2, J_GPIO, J_IBTN, J_SD, J_SUBG, J_SWD, J_USB, L13, L14, LS1, L_CHG, L_SMPS, M1, Q_IBTN, Q_IR, Q_SPK, Q_VIB, R13, R37, RN1, R_CC1, R_CC2, R_FGB, R_FGO, R_ILIM, R_MID1, R_MID2, R_TS1, R_TS2, SW1, SW2, SW_B, SW_D, SW_L, SW_O, SW_R, SW_U, U1, U10, U2, U3, U5, U6, U7, U8, U8B, U9, U_IR, VD4, VD_IBTN, VD_USB, VT4, VT6, X10, X6, X_NFC1, Y1, Y2, ZQ1, ZQ3; annealing again from a fresh start
+  move   4350: T  17.972 lam     2.5 reach 14.72 cost  6947.1 overlap 5046.41 mm2 best     inf accepted 0.33
+  move   8700: T   8.442 lam     6.3 reach 11.63 cost  7158.0 overlap 4379.95 mm2 best     inf accepted 0.17
+  move  13050: T   3.965 lam    15.8 reach  8.90 cost  7433.6 overlap 4165.14 mm2 best     inf accepted 0.10
+  move  17400: T   1.863 lam    39.8 reach  6.54 cost  7983.1 overlap 4075.83 mm2 best     inf accepted 0.07
+  move  21750: T   0.875 lam   100.0 reach  4.54 cost  8793.1 overlap 3894.50 mm2 best     inf accepted 0.06
+  move  26100: T   0.411 lam   251.1 reach  2.91 cost  9342.3 overlap 3774.12 mm2 best     inf accepted 0.06
+  move  30450: T   0.193 lam   630.8 reach  1.64 cost 15034.5 overlap 3674.16 mm2 best     inf accepted 0.06
+  move  34800: T   0.091 lam  1584.6 reach  0.73 cost 17713.0 overlap 3587.17 mm2 best     inf accepted 0.06
+  move  39150: T   0.043 lam  3980.2 reach  0.18 cost 18532.2 overlap 3562.72 mm2 best     inf accepted 0.07
+  move  43500: T   0.020 lam  9997.9 reach  0.10 cost 18789.8 overlap 3549.62 mm2 best     inf accepted 0.08
+  NOTE: run 2 left no legal pose for ANT1, ANT_LF, ANT_NFC, BT1, C1, C10, C2, C3, C4, C5, C6, C7, C8, C9, C_AGDC, C_BTST, C_CCd, C_FGV, C_REGN, C_SMPS, DA3, DA4, DA5, DA7, DA8, D_IR, FLT1, FLT2, J_GPIO, J_IBTN, J_SD, J_SUBG, J_SWD, J_USB, L13, L14, LS1, L_CHG, L_SMPS, M1, Q_IBTN, Q_IR, Q_SPK, Q_VIB, R13, R37, RN1, R_CC1, R_CC2, R_FGB, R_FGO, R_ILIM, R_MID1, R_MID2, R_TS1, R_TS2, SW1, SW2, SW_B, SW_D, SW_L, SW_O, SW_R, SW_U, U1, U10, U2, U3, U5, U6, U7, U8, U8B, U9, U_IR, VD4, VD_IBTN, VD_USB, VT4, VT6, X10, X6, X_NFC1, Y1, Y2, ZQ1, ZQ3; annealing again from a fresh start
+  move   4350: T  15.410 lam     2.5 reach 14.72 cost  7639.7 overlap 4722.74 mm2 best     inf accepted 0.30
+  move   8700: T   7.363 lam     6.3 reach 11.63 cost  6863.7 overlap 4302.84 mm2 best     inf accepted 0.17
+  move  13050: T   3.518 lam    15.8 reach  8.90 cost  7088.0 overlap 3981.41 mm2 best     inf accepted 0.09
+  move  17400: T   1.681 lam    39.8 reach  6.54 cost  7476.0 overlap 3843.71 mm2 best     inf accepted 0.07
+  move  21750: T   0.803 lam   100.0 reach  4.54 cost  8163.7 overlap 3781.10 mm2 best     inf accepted 0.06
+  move  26100: T   0.384 lam   251.1 reach  2.91 cost  8551.8 overlap 3733.75 mm2 best     inf accepted 0.05
+  move  30450: T   0.183 lam   630.8 reach  1.64 cost 18160.4 overlap 3648.59 mm2 best     inf accepted 0.05
+  move  34800: T   0.088 lam  1584.6 reach  0.73 cost 17043.2 overlap 3592.15 mm2 best     inf accepted 0.08
+  move  39150: T   0.042 lam  3980.2 reach  0.18 cost 17502.9 overlap 3557.69 mm2 best     inf accepted 0.08
+  move  43500: T   0.020 lam  9997.9 reach  0.10 cost 18200.2 overlap 3545.52 mm2 best     inf accepted 0.08

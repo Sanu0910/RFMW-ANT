@@ -1,0 +1,323 @@
+{
+ "assembly": {
+  "sides": "F",
+  "why": "observed: 87 pad-bearing part(s) on F and 0 on B, 1 reflow pass(es). every footprint BLOCK (#726): blocks sharing one reference are keyed with an ordinal suffix and counted separately. `pad_bearing` restricts that to blocks carrying at least one pad that is not a paste/mask aperture (#1143), and it is the count the populated-side verdict is taken from -- a zero-pad graphic on the back does not make a board double-sided."
+ },
+ "blocks": [],
+ "board": "crl-mt1.kicad_pcb",
+ "context": {
+  "basis": {
+   "assembly.sides": "observed_baseline",
+   "defaults.zone_tolerance_mm": "derived_default",
+   "envelope.tolerance_mm": "derived_default"
+  },
+  "budget_withheld": {
+   "oob_count": "the board is a pile: its off-board count is staging, not a baseline (#1103)",
+   "overlap_area": "the board is a pile: its overlap is staging, not a baseline (#1103)"
+  },
+  "cutouts": [],
+  "decap_census": {
+   "beyond_radius": 12,
+   "beyond_radius_refs": [
+    "C1",
+    "C10",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6",
+    "C7",
+    "C8",
+    "C9",
+    "C_FGV",
+    "C_REGN"
+   ],
+   "ics": 0,
+   "metric": "cap footprint centroid to IC bounding box, clamped to 0 inside (placement.groups.decap_tethers)",
+   "no_rail_chip": 0,
+   "no_rail_chip_refs": [],
+   "population": 12,
+   "search_radius_mm": 5.0,
+   "source": "auto-tethers",
+   "tethers": 0,
+   "unaccounted": 0,
+   "worst_beyond_mm": 183.2882
+  },
+  "edge_contours": 0,
+  "file_locked": [],
+  "keepouts_note": "empty because a keep-out is a mechanical fact -- an enclosure rib, a standoff, a battery, a display window, an antenna clearance -- and none of those can be read off a board. \"[]\" here means NONE DECLARED, never \"not considered\". Declare them by hand; since #701 the seat search honours them, not only the grade.",
+  "note": "read-only, describing the board as it is. The outline is not editable by this toolchain: size, cutouts and slots are mechanical decisions the user owns",
+  "pose_claims_withheld": {
+   "kept": "KiCad-locked parts; a brief / mechanical.json merged after this",
+   "reason": "the board is a pile (100% of footprints lie outside the board outline): staging poses are not claims",
+   "refs_off_board": [
+    "ANT1",
+    "ANT_LF",
+    "ANT_NFC",
+    "BT1",
+    "C1",
+    "C10",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C6",
+    "C7",
+    "C8",
+    "C9",
+    "C_AGDC",
+    "C_BTST",
+    "C_CCd",
+    "C_FGV",
+    "C_REGN",
+    "C_SMPS",
+    "DA3",
+    "DA4",
+    "DA5",
+    "DA7",
+    "DA8",
+    "D_IR",
+    "FLT1",
+    "FLT2",
+    "J_GPIO",
+    "J_IBTN",
+    "J_SD",
+    "J_SUBG",
+    "J_SWD",
+    "J_USB",
+    "L13",
+    "L14",
+    "LS1",
+    "L_CHG",
+    "L_SMPS",
+    "M1",
+    "Q_IBTN",
+    "Q_IR",
+    "Q_SPK",
+    "Q_VIB",
+    "R13",
+    "R37",
+    "RN1",
+    "R_CC1",
+    "R_CC2",
+    "R_FGB",
+    "R_FGO",
+    "R_ILIM",
+    "R_MID1",
+    "R_MID2",
+    "R_TS1",
+    "R_TS2",
+    "SW1",
+    "SW2",
+    "SW_B",
+    "SW_D",
+    "SW_L",
+    "SW_O",
+    "SW_R",
+    "SW_U",
+    "U1",
+    "U10",
+    "U2",
+    "U3",
+    "U5",
+    "U6",
+    "U7",
+    "U8",
+    "U8B",
+    "U9",
+    "U_IR",
+    "VD4",
+    "VD_IBTN",
+    "VD_USB",
+    "VT4",
+    "VT6",
+    "X10",
+    "X6",
+    "X_NFC1",
+    "Y1",
+    "Y2",
+    "ZQ1",
+    "ZQ3"
+   ],
+   "withheld": [
+    "edge_connectors[].edge read off a pose",
+    "blocks[].zone",
+    "legality_budget.oob_count"
+   ]
+  },
+  "reconciliation": []
+ },
+ "decaps": {},
+ "defaults": {
+  "zone_tolerance_mm": 0.5
+ },
+ "edge_connectors": [],
+ "envelope": {
+  "rect": [
+   30.0,
+   30.0,
+   140.0,
+   76.0
+  ],
+  "tolerance_mm": 0.5
+ },
+ "keepouts": [],
+ "kind": "floorplan-intent",
+ "legality_budget": {},
+ "min_reader": 12,
+ "must_lock": [],
+ "proximity": [
+  {
+   "basis": "pad_edge",
+   "context": {
+    "basis": "the farthest crystal leg on the human corpus, 75th percentile (placement_survey.py)",
+    "limit": "derived_default",
+    "role": "crystal",
+    "source": "placement.crystals"
+   },
+   "max_mm": 8.1,
+   "near": "BT1",
+   "pads": {
+    "BT1": [
+     "+",
+     "NTC"
+    ],
+    "X10": [
+     "1",
+     "2"
+    ]
+   },
+   "ref": "X10"
+  },
+  {
+   "basis": "pad_edge",
+   "context": {
+    "basis": "the farthest load cap on the human corpus, 75th percentile (placement_survey.py)",
+    "limit": "derived_default",
+    "role": "crystal load cap",
+    "source": "placement.crystals"
+   },
+   "max_mm": 2.2,
+   "near": "X10",
+   "pads": {
+    "C6": [
+     "1"
+    ],
+    "X10": [
+     "1"
+    ]
+   },
+   "ref": "C6"
+  },
+  {
+   "basis": "pad_edge",
+   "context": {
+    "basis": "the farthest load cap on the human corpus, 75th percentile (placement_survey.py)",
+    "limit": "derived_default",
+    "role": "crystal load cap",
+    "source": "placement.crystals"
+   },
+   "max_mm": 2.2,
+   "near": "X10",
+   "pads": {
+    "C9": [
+     "1"
+    ],
+    "X10": [
+     "1"
+    ]
+   },
+   "ref": "C9"
+  },
+  {
+   "basis": "pad_edge",
+   "context": {
+    "basis": "the farthest crystal leg on the human corpus, 75th percentile (placement_survey.py)",
+    "limit": "derived_default",
+    "role": "crystal",
+    "source": "placement.crystals"
+   },
+   "max_mm": 8.1,
+   "near": "U1",
+   "pads": {
+    "U1": [
+     "34",
+     "35"
+    ],
+    "Y1": [
+     "1",
+     "2"
+    ]
+   },
+   "ref": "Y1"
+  },
+  {
+   "basis": "pad_edge",
+   "context": {
+    "basis": "the farthest crystal leg on the human corpus, 75th percentile (placement_survey.py)",
+    "limit": "derived_default",
+    "role": "crystal",
+    "source": "placement.crystals"
+   },
+   "max_mm": 8.1,
+   "near": "U1",
+   "pads": {
+    "U1": [
+     "3",
+     "4"
+    ],
+    "Y2": [
+     "1",
+     "2"
+    ]
+   },
+   "ref": "Y2"
+  },
+  {
+   "basis": "pad_edge",
+   "context": {
+    "basis": "the farthest crystal leg on the human corpus, 75th percentile (placement_survey.py)",
+    "limit": "derived_default",
+    "role": "crystal",
+    "source": "placement.crystals"
+   },
+   "max_mm": 8.1,
+   "near": "U3",
+   "pads": {
+    "U3": [
+     "4",
+     "5"
+    ],
+    "ZQ1": [
+     "1",
+     "2"
+    ]
+   },
+   "ref": "ZQ1"
+  },
+  {
+   "basis": "pad_edge",
+   "context": {
+    "basis": "the farthest crystal leg on the human corpus, 75th percentile (placement_survey.py)",
+    "limit": "derived_default",
+    "role": "crystal",
+    "source": "placement.crystals"
+   },
+   "max_mm": 8.1,
+   "near": "U2",
+   "pads": {
+    "U2": [
+     "8",
+     "10"
+    ],
+    "ZQ3": [
+     "1",
+     "2"
+    ]
+   },
+   "ref": "ZQ3"
+  }
+ ],
+ "schema": 1,
+ "units": "mm"
+}

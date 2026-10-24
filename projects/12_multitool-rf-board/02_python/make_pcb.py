@@ -21,11 +21,32 @@ PCB = os.path.join(KDIR, "crl-mt1.kicad_pcb")
 FPROOT = "/usr/share/kicad/footprints"
 CUSTOM = os.path.join(KDIR, "crl-mt1.pretty")
 OX, OY = 30.0, 30.0            # board origin on the KiCad page
-BW, BH = 100.0, 40.0          # rough main-board envelope (mm); refined later
+BW, BH = 110.0, 46.0          # single-board envelope (mm) holding all 87 parts; refined later
 
 
 def mm(v):
     return pcbnew.FromMM(v)
+
+
+def add_outline(board):
+    """Rounded-rectangle board edge on Edge.Cuts."""
+    r = 3.0
+    x0, y0, x1, y1 = OX, OY, OX + BW, OY + BH
+    segs = [((x0 + r, y0), (x1 - r, y0)), ((x1, y0 + r), (x1, y1 - r)),
+            ((x1 - r, y1), (x0 + r, y1)), ((x0, y1 - r), (x0, y0 + r))]
+    for a, b in segs:
+        s = pcbnew.PCB_SHAPE(board, pcbnew.SHAPE_T_SEGMENT)
+        s.SetStart(pcbnew.VECTOR2I(mm(a[0]), mm(a[1])))
+        s.SetEnd(pcbnew.VECTOR2I(mm(b[0]), mm(b[1])))
+        s.SetLayer(pcbnew.Edge_Cuts); s.SetWidth(mm(0.1)); board.Add(s)
+    corners = [((x0 + r, y0 + r), (x0 + r, y0), 90), ((x1 - r, y0 + r), (x1, y0 + r), 90),
+               ((x1 - r, y1 - r), (x1 - r, y1), 90), ((x0 + r, y1 - r), (x0, y1 - r), 90)]
+    for c, start, ang in corners:
+        s = pcbnew.PCB_SHAPE(board, pcbnew.SHAPE_T_ARC)
+        s.SetCenter(pcbnew.VECTOR2I(mm(c[0]), mm(c[1])))
+        s.SetStart(pcbnew.VECTOR2I(mm(start[0]), mm(start[1])))
+        s.SetArcAngleAndEnd(pcbnew.EDA_ANGLE(ang, pcbnew.DEGREES_T), True)
+        s.SetLayer(pcbnew.Edge_Cuts); s.SetWidth(mm(0.1)); board.Add(s)
 
 
 def load_fp(board, libid):
@@ -106,6 +127,7 @@ def build():
         y += shelf + 5.0
         shelf = 0.0
 
+    add_outline(board)
     board.BuildListOfNets()
     pcbnew.SaveBoard(PCB, board)
     print(f"placed {len(placed_refs)} parts, {board.GetNetCount()} nets, "
