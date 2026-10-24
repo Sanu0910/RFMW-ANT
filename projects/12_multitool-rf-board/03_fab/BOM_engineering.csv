@@ -1,0 +1,54 @@
+Ref,Value,MPN,Manufacturer,Footprint,Group,Description
+ANT1,2.4GHz,2450AT18A100,Johanson,Antenna_Chip,mcu,BLE chip antenna + pi match
+ANT_LF,125kHz coil,wound coil + C,discrete,Coil,rfid125,125 kHz LC antenna
+ANT_NFC,13.56MHz loop,PCB spiral,PCB,Antenna_Loop,nfc,13.56 MHz PCB loop antenna
+BT1,Li-Po 1S,2000mAh 503450,generic,JST_PH_2,power,single-cell battery
+C1,100nF,100nF,Murata,C_0402,passive,decoupling
+C10,10uF,10uF,Murata,C_0805,passive,bulk
+C2,100nF,100nF,Murata,C_0402,passive,decoupling
+C3,100nF,100nF,Murata,C_0402,passive,decoupling
+C4,100nF,100nF,Murata,C_0402,passive,decoupling
+C5,100nF,100nF,Murata,C_0402,passive,decoupling
+C6,100nF,100nF,Murata,C_0402,passive,decoupling
+C7,10uF,10uF,Murata,C_0805,passive,bulk
+C8,10uF,10uF,Murata,C_0805,passive,bulk
+C9,10uF,10uF,Murata,C_0805,passive,bulk
+D_IR,IR LED,SFH4550,Osram,LED_IR,io,IR transmit LED
+FL1,balun+LC,JTI matching,Johanson/discrete,RF_match,subghz,CC1101 differential-to-SE balun and LC band filter
+J_GPIO,header 2x9,Conn_2x09,generic,Header_2x09,io,external GPIO / module header
+J_IBTN,iButton,1-Wire pads,PCB,Pads,io,iButton / 1-Wire contacts
+J_SD,microSD,DM3D-SF,Hirose,microSD,io,microSD card holder
+J_SUBG,ANT,U.FL-R-SMT-1,Hirose,U.FL,subghz,sub-GHz antenna connector
+J_SWD,SWD,Tag-Connect TC2030,TagConnect,TC2030,io,SWD programming
+J_USB,USB-C,TYPE-C-31-M-12,GCT,USB_C,power,USB-C receptacle
+L1,1.5uH,DFE252012,Murata,Inductor_1008,power,buck-boost inductor
+LS1,speaker,magnetic 8ohm,generic,Speaker,ui,speaker
+L_NFC,EMIfilter,NFC EMC LC,discrete,EMC_net,nfc,NFC EMC + matching network
+M1,vibro,coin ERM,generic,Vibro,ui,haptic motor
+Q_IBTN,1W driver,DMN2075U,Diodes,SOT-23,io,iButton open-drain driver + protection
+Q_IR,drive,2N7002,Nexperia,SOT-23,io,IR LED driver FET
+Q_LF,coildriver,2x 2N7002 H-bridge,discrete,SOT-23,rfid125,125 kHz coil driver from the timer carrier
+Q_SPK,drive,2N7002,Nexperia,SOT-23,ui,speaker driver FET
+Q_VIB,drive,2N7002,Nexperia,SOT-23,ui,vibro driver FET
+R_CC1,5.1k,5.1k,Yageo,R_0402,power,USB-C CC pulldown
+R_CC2,5.1k,5.1k,Yageo,R_0402,power,USB-C CC pulldown
+SW1,RFswitch,BGS12PN10,Infineon,TSNP-10,subghz,antenna RF switch
+SW_B,tact,EVQ-P7,Panasonic,SW_SMD_4p,ui,tact switch
+SW_D,tact,EVQ-P7,Panasonic,SW_SMD_4p,ui,tact switch
+SW_L,tact,EVQ-P7,Panasonic,SW_SMD_4p,ui,tact switch
+SW_O,tact,EVQ-P7,Panasonic,SW_SMD_4p,ui,tact switch
+SW_R,tact,EVQ-P7,Panasonic,SW_SMD_4p,ui,tact switch
+SW_U,tact,EVQ-P7,Panasonic,SW_SMD_4p,ui,tact switch
+U1,STM32WB55RG,STM32WB55RGV6,STMicroelectronics,QFN-68,mcu,"Cortex-M4 + M0 BLE 5, 1MB flash, USB, 2.4GHz radio"
+U10,ESD,USBLC6-2SC6,STMicroelectronics,SOT-23-6,power,USB + CC ESD protection
+U2,CC1101,CC1101RGPR,Texas Instruments,QFN-20,subghz,sub-GHz transceiver 300-928 MHz
+U3,ST25R3916,ST25R3916-AQWT,STMicroelectronics,QFN-32,nfc,13.56 MHz NFC reader/card/peer front-end
+U4,comparator,TLV7011,Texas Instruments,SOT-23-5,rfid125,125 kHz envelope comparator to the MCU
+U5,ST7565R,ST7565R,Sitronix,COG_128x64,io,128x64 monochrome LCD (COG)
+U6,BQ25896,BQ25896,Texas Instruments,QFN-24,power,"1-cell Li-ion charger with 5V boost, I2C"
+U7,BQ27220,BQ27220,Texas Instruments,WCSP,power,"battery fuel gauge, I2C"
+U8,TPS63802,TPS63802,Texas Instruments,QFN-10,power,buck-boost 3.3V/2A (holds 3V3 across Li-Po range)
+U9,loadsw,TPS22917,Texas Instruments,SOT-23-6,power,peripheral-rail load switch (SD/display/radios)
+U_IR,IR RX,TSOP75238,Vishay,IR_receiver,io,38 kHz IR demodulator
+Y1,32MHz,ABM8-32.000MHZ,Abracon,Xtal_3225,mcu,HSE 32 MHz for the radio
+Y2,32.768kHz,ABS07-32.768KHZ,Abracon,Xtal_ABS07,mcu,LSE RTC crystal

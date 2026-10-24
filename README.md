@@ -29,6 +29,7 @@ Reverse engineering: [`docs/REA.md`](docs/REA.md) — REA (Reverse Engineer Anyt
 | 09 | [`projects/09_aeris10-plfm-radar_study`](projects/09_aeris10-plfm-radar_study) | Study + saved copy of AERIS-10 (PLFM_RADAR): open-source 10.5 GHz pulse-LFM phased-array radar, Artix-7 DSP chain, STM32, ADAR1000 ×4 | 10.5 GHz | learning notes, derived performance numbers, 2 findings (alumina-guide λg, beam phases), upstream snapshot (CERN-OHL-P / MIT) |
 | 10 | [`projects/10_minev-quantum-notebook`](projects/10_minev-quantum-notebook) | Saved copy of Zlatko Minev's Quantum Notebook: 76 talks, lectures and notes on superconducting qubits, cQED, quantum hardware design and error mitigation (CC BY-NC-ND 4.0) | — | verbatim PDF archive + website source, index by shelf/year |
 | 11 | [`projects/11_customcst-fdtd`](projects/11_customcst-fdtd) | Saved copy of customcst: CST-style STEP → non-uniform grid → 3D FDTD → S11 solver in Python (public domain) | RF/microwave | source, numerical checks, notes |
+| 12 | [`projects/12_multitool-rf-board`](projects/12_multitool-rf-board) | CRL-MT1: original firmware-compatible multi-tool RF board (STM32WB55, CC1101 sub-GHz, ST25R3916 NFC, 125 kHz RFID, IR, iButton); runs the open Flipper Zero firmware; not a Flipper clone, no trademark/trade dress | sub-GHz · 13.56 MHz · 125 kHz | architecture from firmware pin map, schematic netlist, BOM, firmware GPIO header (schematic stage) |
 
 **Each project folder contains:**
 - `00_README.md`: what is where
