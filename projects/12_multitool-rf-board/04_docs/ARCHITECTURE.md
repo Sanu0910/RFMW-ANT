@@ -85,7 +85,8 @@ USB-C VBUS 5V ─┬─ battery charger (BQ25896 / MCP73831-class) ── 1S Li-
 - Load switch on PA3 cuts the peripheral rail in deep sleep for long standby.
 - Fuel gauge and charger sit on the I²C "power" bus (PA9/PA10), matching the firmware's `i2c_power` bus.
 
-## 2b. Two-board split (as on the reference design)
+## 2b. Board set (as on the reference design)
+The reference product is **four FFC-joined PCBs** (sizes in `REFERENCE_PARTS.md`): the main board, an NFC/RFID board (74.0 × 31.92 mm), a small iButton/speaker/IR board (15.83 × 24.27 mm), and a PCB-spiral antenna board (125 kHz coil + 13.56 MHz loop). Summary of the split:
 The reference product is **two PCBs joined by an 18-pin 0.5 mm FFC** (see `04_docs/REFERENCE_PARTS.md`):
 - **Main board:** MCU, display, CC1101 sub-GHz, microSD, power (BQ25896 charger, BQ27220 gauge, LM3281 bucks,
   RS3221 LDO), buttons, LP5562 RGB-LED driver, two GPIO headers.

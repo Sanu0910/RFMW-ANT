@@ -83,3 +83,20 @@ Not a single chip — a discrete read/write channel:
 
 > All RF values above are the reference device's. For an original board, treat them as a starting point, then
 > re-match to your own antennas and stack-up in a simulator (openEMS / Hertzon, see `docs/`).
+
+## Physical board set (from the official assembly drawings / docs images)
+The reference product is **four stacked PCBs**, joined by FFCs. Sizes and roles (facts from the assembly drawings):
+
+| Board | Size | Holds | Key labels |
+|---|---|---|---|
+| Main PCB | 95.43 × 36.15 mm | MCU, display, CC1101 sub-GHz, microSD, power, buttons, LED driver, GPIO headers | — |
+| NFC/RFID PCB | 74.00 × 31.92 mm | ST25R3916 NFC + 125 kHz RFID AFE (two QFNs) | ANT1/ANT2 (NFC), ANT3/ANT4 (125 kHz), SYS2, 3V_1, 5V_1, GND_2, BAT +/− |
+| iButton PCB | 15.83 × 24.27 mm | iButton contacts, speaker, IR TX/RX | SPEAKER, BTN, R_TX, R_RX, SYS |
+| Antenna PCB | (long spiral) | 125 kHz read coil (large PCB spiral) + 13.56 MHz NFC loop | — |
+
+So the "sub-board" in the earlier notes is really these three boards (NFC/RFID + iButton + antenna coil), each on its
+own flex. An original design can keep this 4-board stack **or** fold it onto fewer boards; the netlist here is drawn
+as one logical design and can be partitioned at layout time.
+
+> Dimensions and labels only — the assembly artwork, outlines, silkscreen and mascot are not reproduced here. Give
+> your own board its own outline and name.
