@@ -79,11 +79,18 @@ USB-C VBUS 5V ─┬─ battery charger (BQ25896 / MCP73831-class) ── 1S Li-
                │                                                   │
                └─ 5V to GPIO header (switched)          fuel gauge (BQ27220 / MAX17048) on I²C power bus
                                                                    │
-                      VBAT ── buck/LDO 3.3V (TPS63xxx buck-boost) ── +3V3 (MCU, display, SD, radios via load switch PA3)
+                      VBAT ── LM3281 buck 3.3V (+ RS3221 LDO for clean analog) ── +3V3 (MCU, display, SD, radios via load switch PA3)
 ```
 - Buck-boost so 3.3 V holds across the whole Li-Po range (3.0–4.2 V).
 - Load switch on PA3 cuts the peripheral rail in deep sleep for long standby.
 - Fuel gauge and charger sit on the I²C "power" bus (PA9/PA10), matching the firmware's `i2c_power` bus.
+
+## 2b. Two-board split (as on the reference design)
+The reference product is **two PCBs joined by an 18-pin 0.5 mm FFC** (see `04_docs/REFERENCE_PARTS.md`):
+- **Main board:** MCU, display, CC1101 sub-GHz, microSD, power (BQ25896 charger, BQ27220 gauge, LM3281 bucks,
+  RS3221 LDO), buttons, LP5562 RGB-LED driver, two GPIO headers.
+- **Sub board:** ST25R3916 NFC, 125 kHz RFID coil + AFE, IR TX/RX, speaker, vibro, iButton, over the FFC.
+An original board may keep this split or integrate everything on one 4-layer board (the netlist here is one board).
 
 ## 3. Board plan (original)
 | Item | Plan |

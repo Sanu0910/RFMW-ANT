@@ -71,7 +71,21 @@ part("SW1", "RFswitch", "BGS12PN10", "Infineon", "TSNP-10", "subghz", "antenna R
 part("J_SUBG", "ANT", "U.FL-R-SMT-1", "Hirose", "U.FL", "subghz", "sub-GHz antenna connector",
      {"1": "SUBG_ANT", "2": "GND"})
 
-# ============================================================ 3. NFC (ST25R3916)
+# ============================================================ 2b. FFC link to NFC/RFID/IR sub-board
+# As on the reference design, the NFC, 125k RFID, IR, speaker, vibro and iButton live on a separate board
+# reached over an 18-pin 0.5mm FFC. Below, those blocks hang off these FFC nets.
+part("X6", "FFC 18p", "FH34SRJ-18S-0.5SH", "Hirose", "FFC_18_0.5mm", "io",
+     "flex link to the NFC/RFID/IR sub-board",
+     {"1": "VSYS", "2": "VSYS", "3": "+3V3_EXT", "4": "NFC_CS", "5": "RFID_RF_IN", "6": "GND",
+      "7": "SPI_R_SCK", "8": "GND", "9": "SPI_R_MISO", "10": "VIBRO", "11": "RFID_CARRIER_OUT",
+      "12": "RFID_CARRIER", "13": "SPI_R_MOSI", "14": "IBTN", "15": "SPEAKER", "16": "IR_TX",
+      "17": "IR_RX", "18": "RFID_CARRIER"})
+part("VD_USB", "ESD", "ESD241B1W0201", "Nexperia", "0201", "io", "USB line ESD array", {"1": "USB_DM", "2": "GND"})
+part("RN1", "51x4", "51ohm array", "Yageo", "R_array_4x0402", "io",
+     "series resistors on exposed GPIO/FFC signals (one of several)",
+     {"1": "SPI_R_SCK", "2": "SPI_R_MISO", "3": "SPI_R_MOSI", "4": "NFC_CS"})
+
+# ============================================================ 3. NFC (ST25R3916) [on the sub-board]
 part("U3", "ST25R3916", "ST25R3916-AQWT", "STMicroelectronics", "QFN-32", "nfc",
      "13.56 MHz NFC reader/card/peer front-end",
      {"SCLK": "SPI_R_SCK", "MISO": "SPI_R_MISO", "MOSI": "SPI_R_MOSI", "SS": "NFC_CS",
@@ -134,16 +148,33 @@ part("U6", "BQ25896", "BQ25896", "Texas Instruments", "QFN-24", "power",
      "1-cell Li-ion charger with 5V boost, I2C",
      {"VBUS": "VBUS", "SYS": "VSYS", "BAT": "VBAT", "SDA": "I2C_PWR_SDA", "SCL": "I2C_PWR_SCL",
       "PGND": "GND", "GND": "GND"})
-part("BT1", "Li-Po 1S", "2000mAh 503450", "generic", "JST_PH_2", "power", "single-cell battery",
-     {"+": "VBAT", "-": "GND"})
+part("X10", "BAT+NTC", "1.25-3P", "generic", "Conn_1x03_1.25mm", "power",
+     "battery + NTC thermistor (BAT / TEMP / GND)", {"1": "VBAT", "2": "BAT_NTC", "3": "GND"})
+part("BT1", "Li-Po 1S", "2000mAh 503450", "generic", "pack", "power", "single-cell battery pack w/ NTC",
+     {"+": "VBAT", "NTC": "BAT_NTC", "-": "GND"})
 part("U7", "BQ27220", "BQ27220", "Texas Instruments", "WCSP", "power", "battery fuel gauge, I2C",
      {"BAT": "VBAT", "SDA": "I2C_PWR_SDA", "SCL": "I2C_PWR_SCL", "SRP": "VBAT_SNS", "SRN": "GND",
       "VSS": "GND"})
-part("U8", "TPS63802", "TPS63802", "Texas Instruments", "QFN-10", "power",
-     "buck-boost 3.3V/2A (holds 3V3 across Li-Po range)",
-     {"VIN": "VSYS", "VOUT": "+3V3", "EN": "VBAT", "GND": "GND", "L1": "SW_L1", "L2": "SW_L2"})
-part("L1", "1.5uH", "DFE252012", "Murata", "Inductor_1008", "power", "buck-boost inductor",
-     {"1": "SW_L1", "2": "SW_L2"})
+# regulators as on the reference design: two LM3281 bucks (3V3 core + ext-3V3) and an RS3221 LDO
+part("U8", "LM3281", "LM3281YFQR", "Texas Instruments", "DSBGA-5", "power",
+     "buck DC-DC -> +3V3 core rail", {"VIN": "VSYS", "SW": "SW_L13", "FB": "+3V3", "EN": "+3V3", "GND": "GND"})
+part("L13", "470nH", "470nH", "Murata", "Inductor_0806", "power", "buck inductor (core)",
+     {"1": "SW_L13", "2": "+3V3"})
+part("U8B", "LM3281", "LM3281YFQR", "Texas Instruments", "DSBGA-5", "power",
+     "buck DC-DC -> ext-3V3 (header/peripherals)",
+     {"VIN": "VSYS", "SW": "SW_L14", "FB": "+3V3_EXT", "EN": "PERIPH_EN", "GND": "GND"})
+part("L14", "470nH", "470nH", "Murata", "Inductor_0806", "power", "buck inductor (ext)",
+     {"1": "SW_L14", "2": "+3V3_EXT"})
+part("DA5", "RS3221-3.3", "RS3221-3.3YF3", "Runic", "DFN-6", "power", "3.3V LDO (clean analog/LDO rail)",
+     {"VIN": "VSYS", "VOUT": "+3V3_LDO", "GND": "GND"})
+part("R37", "10m", "10mOhm", "Yageo", "R_1206", "power", "battery current-sense (fuel gauge)",
+     {"1": "VBAT", "2": "VBAT_SNS"})
+part("DA4", "LP5562", "LP5562TMX", "Texas Instruments", "DSBGA-12", "io",
+     "RGB LED driver (notification LED + backlight), I2C",
+     {"SDA": "I2C_PWR_SDA", "SCL": "I2C_PWR_SCL", "EN": "+3V3", "R": "LED_R", "G": "LED_G", "B": "LED_B",
+      "W": "LCD_LED", "VDD": "+3V3", "GND": "GND"})
+part("VD4", "RGB LED", "LTST-C19HE1WT", "Lite-On", "LED_RGB_0606", "io", "notification RGB LED",
+     {"R": "LED_R", "G": "LED_G", "B": "LED_B", "A": "+3V3"})
 part("U9", "loadsw", "TPS22917", "Texas Instruments", "SOT-23-6", "power",
      "peripheral-rail load switch (SD/display/radios)",
      {"VIN": "+3V3", "VOUT": "+3V3_PERIPH", "ON": "PERIPH_EN", "GND": "GND"})

@@ -23,12 +23,13 @@ licensed).
 | `02_python/design.py` | parts + nets (source of truth) → `03_fab/BOM_engineering.csv`, `netlist.txt` |
 | `03_fab/` | engineering BOM and flat netlist |
 | `04_docs/ARCHITECTURE.md` | chip list, GPIO→peripheral map, power tree, board plan, legal notes |
+| `04_docs/REFERENCE_PARTS.md` | exact parts + two-board topology extracted from the official published schematics |
 | `04_docs/DIY_BUILD.md` | two build routes: simple off-the-shelf-module build, and the full custom PCB; module wiring table; official-docs facts |
 | `06_firmware/board_pins.h` | GPIO map for porting firmware |
 
 ## Key parts
 STM32WB55RG (MCU + BLE) · CC1101 (sub-GHz) · ST25R3916 (13.56 MHz NFC) · 125 kHz RFID AFE · ST7565R display ·
-microSD · IR TX/RX · iButton · BQ25896 charger + BQ27220 gauge + TPS63802 buck-boost · USB-C · GPIO/module header.
+microSD · IR TX/RX · iButton · BQ25896 charger + BQ27220 gauge + LM3281 bucks + RS3221 LDO + LP5562 RGB-LED driver · USB-C · GPIO/module header.
 
 ## Regenerate
 ```bash
