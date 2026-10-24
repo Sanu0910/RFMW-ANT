@@ -1,0 +1,471 @@
+ERC report (2026-10-24T05:56:52+0000, Encoding UTF8)
+Report includes: Errors, Warnings
+
+***** Sheet /
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(60.96 mm, 73.66 mm): Symbol U1 [U1_mcu]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(60.96 mm, 73.66 mm): Symbol U1 [U1_mcu]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(149.86 mm, 40.64 mm): Symbol Y1 [Y1_mcu]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(149.86 mm, 40.64 mm): Symbol Y1 [Y1_mcu]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(58.42 mm, 151.13 mm): Symbol U2 [U2_subghz]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(58.42 mm, 151.13 mm): Symbol U2 [U2_subghz]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(144.78 mm, 144.78 mm): Symbol FLT2 [FLT2_subghz]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(144.78 mm, 144.78 mm): Symbol FLT2 [FLT2_subghz]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(58.42 mm, 205.74 mm): Symbol X6 [X6_io]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(58.42 mm, 205.74 mm): Symbol X6 [X6_io]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(238.76 mm, 40.64 mm): Symbol Y2 [Y2_mcu]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(238.76 mm, 40.64 mm): Symbol Y2 [Y2_mcu]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(144.78 mm, 195.58 mm): Symbol VD_USB [VD_USB_io]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(144.78 mm, 195.58 mm): Symbol VD_USB [VD_USB_io]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(57.15 mm, 264.16 mm): Symbol DA4 [DA4_io]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(57.15 mm, 264.16 mm): Symbol DA4 [DA4_io]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(232.41 mm, 147.32 mm): Symbol SW1 [SW1_subghz]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(232.41 mm, 147.32 mm): Symbol SW1 [SW1_subghz]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(143.51 mm, 255.27 mm): Symbol VD4 [VD4_io]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(143.51 mm, 255.27 mm): Symbol VD4 [VD4_io]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(229.87 mm, 196.85 mm): Symbol RN1 [RN1_io]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(229.87 mm, 196.85 mm): Symbol RN1 [RN1_io]
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(313.69 mm, 43.18 mm): Global Label 'BLE_RF'
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(59.69 mm, 318.77 mm): Symbol U3 [U3_nfc]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(59.69 mm, 318.77 mm): Symbol U3 [U3_nfc]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(330.20 mm, 41.91 mm): Symbol FLT1 [FLT1_mcu]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(330.20 mm, 41.91 mm): Symbol FLT1 [FLT1_mcu]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(148.59 mm, 311.15 mm): Symbol ZQ1 [ZQ1_nfc]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(148.59 mm, 311.15 mm): Symbol ZQ1 [ZQ1_nfc]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(231.14 mm, 256.54 mm): Symbol J_SWD [J_SWD_io]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(231.14 mm, 256.54 mm): Symbol J_SWD [J_SWD_io]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(320.04 mm, 147.32 mm): Symbol SW2 [SW2_subghz]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(320.04 mm, 147.32 mm): Symbol SW2 [SW2_subghz]
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(44.45 mm, 365.76 mm): Global Label '+5V'
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(59.69 mm, 364.49 mm): Symbol VT4 [VT4_rfid125]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(59.69 mm, 364.49 mm): Symbol VT4 [VT4_rfid125]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(314.96 mm, 199.39 mm): Symbol U5 [U5_io]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(314.96 mm, 199.39 mm): Symbol U5 [U5_io]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(149.86 mm, 364.49 mm): Symbol VT6 [VT6_rfid125]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(149.86 mm, 364.49 mm): Symbol VT6 [VT6_rfid125]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(238.76 mm, 313.69 mm): Symbol L_NFC [L_NFC_nfc]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(238.76 mm, 313.69 mm): Symbol L_NFC [L_NFC_nfc]
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(165.10 mm, 363.22 mm): Global Label 'RFID_PULL'
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(320.04 mm, 264.16 mm): Symbol J_GPIO [J_GPIO_io]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(320.04 mm, 264.16 mm): Symbol J_GPIO [J_GPIO_io]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(419.10 mm, 40.64 mm): Symbol ANT1 [ANT1_mcu]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(419.10 mm, 40.64 mm): Symbol ANT1 [ANT1_mcu]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(55.88 mm, 420.37 mm): Symbol SW_U [SW_U_ui]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(55.88 mm, 420.37 mm): Symbol SW_U [SW_U_ui]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(406.40 mm, 143.51 mm): Symbol ZQ3 [ZQ3_subghz]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(406.40 mm, 143.51 mm): Symbol ZQ3 [ZQ3_subghz]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(242.57 mm, 363.22 mm): Symbol ANT_LF [ANT_LF_rfid125]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(242.57 mm, 363.22 mm): Symbol ANT_LF [ANT_LF_rfid125]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(138.43 mm, 420.37 mm): Symbol SW_D [SW_D_ui]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(138.43 mm, 420.37 mm): Symbol SW_D [SW_D_ui]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(402.59 mm, 199.39 mm): Symbol J_SD [J_SD_io]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(402.59 mm, 199.39 mm): Symbol J_SD [J_SD_io]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(327.66 mm, 311.15 mm): Symbol X_NFC1 [X_NFC1_nfc]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(327.66 mm, 311.15 mm): Symbol X_NFC1 [X_NFC1_nfc]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(57.15 mm, 463.55 mm): Symbol J_USB [J_USB_power]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(57.15 mm, 463.55 mm): Symbol J_USB [J_USB_power]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(222.25 mm, 420.37 mm): Symbol SW_L [SW_L_ui]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(222.25 mm, 420.37 mm): Symbol SW_L [SW_L_ui]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(143.51 mm, 463.55 mm): Symbol U6 [U6_power]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(143.51 mm, 463.55 mm): Symbol U6 [U6_power]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(331.47 mm, 367.03 mm): Symbol DA3 [DA3_rfid125]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(331.47 mm, 367.03 mm): Symbol DA3 [DA3_rfid125]
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(344.17 mm, 368.30 mm): Global Label 'LF_FB2'
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(55.88 mm, 505.46 mm): Symbol U10 [U10_power]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(55.88 mm, 505.46 mm): Symbol U10 [U10_power]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(490.22 mm, 143.51 mm): Symbol R13 [R13_subghz]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(490.22 mm, 143.51 mm): Symbol R13 [R13_subghz]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(232.41 mm, 461.01 mm): Symbol X10 [X10_power]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(232.41 mm, 461.01 mm): Symbol X10 [X10_power]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(304.80 mm, 420.37 mm): Symbol SW_R [SW_R_ui]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(304.80 mm, 420.37 mm): Symbol SW_R [SW_R_ui]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(419.10 mm, 311.15 mm): Symbol ANT_NFC [ANT_NFC_nfc]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(419.10 mm, 311.15 mm): Symbol ANT_NFC [ANT_NFC_nfc]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(139.70 mm, 504.19 mm): Symbol R_CC1 [R_CC1_power]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(139.70 mm, 504.19 mm): Symbol R_CC1 [R_CC1_power]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(491.49 mm, 195.58 mm): Symbol D_IR [D_IR_io]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(491.49 mm, 195.58 mm): Symbol D_IR [D_IR_io]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(57.15 mm, 544.83 mm): Symbol C1 [C1_passive]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(57.15 mm, 544.83 mm): Symbol C1 [C1_passive]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(226.06 mm, 504.19 mm): Symbol R_CC2 [R_CC2_power]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(226.06 mm, 504.19 mm): Symbol R_CC2 [R_CC2_power]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(416.56 mm, 373.38 mm): Symbol DA4 [DA4_rfid125]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(416.56 mm, 373.38 mm): Symbol DA4 [DA4_rfid125]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(320.04 mm, 461.01 mm): Symbol BT1 [BT1_power]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(320.04 mm, 461.01 mm): Symbol BT1 [BT1_power]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(142.24 mm, 544.83 mm): Symbol C2 [C2_passive]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(142.24 mm, 544.83 mm): Symbol C2 [C2_passive]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(387.35 mm, 420.37 mm): Symbol SW_O [SW_O_ui]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(387.35 mm, 420.37 mm): Symbol SW_O [SW_O_ui]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(228.60 mm, 544.83 mm): Symbol C3 [C3_passive]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(228.60 mm, 544.83 mm): Symbol C3 [C3_passive]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(574.04 mm, 143.51 mm): Symbol J_SUBG [J_SUBG_subghz]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(574.04 mm, 143.51 mm): Symbol J_SUBG [J_SUBG_subghz]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(579.12 mm, 196.85 mm): Symbol Q_IR [Q_IR_io]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(579.12 mm, 196.85 mm): Symbol Q_IR [Q_IR_io]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(407.67 mm, 462.28 mm): Symbol U7 [U7_power]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(407.67 mm, 462.28 mm): Symbol U7 [U7_power]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(501.65 mm, 367.03 mm): Symbol DA5 [DA5_rfid125]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(501.65 mm, 367.03 mm): Symbol DA5 [DA5_rfid125]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(313.69 mm, 544.83 mm): Symbol C4 [C4_passive]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(313.69 mm, 544.83 mm): Symbol C4 [C4_passive]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(469.90 mm, 420.37 mm): Symbol SW_B [SW_B_ui]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(469.90 mm, 420.37 mm): Symbol SW_B [SW_B_ui]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(398.78 mm, 544.83 mm): Symbol C5 [C5_passive]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(398.78 mm, 544.83 mm): Symbol C5 [C5_passive]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(494.03 mm, 462.28 mm): Symbol U8 [U8_power]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(494.03 mm, 462.28 mm): Symbol U8 [U8_power]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(586.74 mm, 363.22 mm): Symbol R_MID1 [R_MID1_rfid125]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(586.74 mm, 363.22 mm): Symbol R_MID1 [R_MID1_rfid125]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(664.21 mm, 196.85 mm): Symbol U_IR [U_IR_io]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(664.21 mm, 196.85 mm): Symbol U_IR [U_IR_io]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(553.72 mm, 420.37 mm): Symbol M1 [M1_ui]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(553.72 mm, 420.37 mm): Symbol M1 [M1_ui]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(483.87 mm, 544.83 mm): Symbol C6 [C6_passive]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(483.87 mm, 544.83 mm): Symbol C6 [C6_passive]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(579.12 mm, 459.74 mm): Symbol L13 [L13_power]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(579.12 mm, 459.74 mm): Symbol L13 [L13_power]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(671.83 mm, 363.22 mm): Symbol R_MID2 [R_MID2_rfid125]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(671.83 mm, 363.22 mm): Symbol R_MID2 [R_MID2_rfid125]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(638.81 mm, 421.64 mm): Symbol Q_VIB [Q_VIB_ui]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(638.81 mm, 421.64 mm): Symbol Q_VIB [Q_VIB_ui]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(750.57 mm, 195.58 mm): Symbol J_IBTN [J_IBTN_io]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(750.57 mm, 195.58 mm): Symbol J_IBTN [J_IBTN_io]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(567.69 mm, 544.83 mm): Symbol C7 [C7_passive]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(567.69 mm, 544.83 mm): Symbol C7 [C7_passive]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(664.21 mm, 462.28 mm): Symbol U8B [U8B_power]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(664.21 mm, 462.28 mm): Symbol U8B [U8B_power]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(725.17 mm, 420.37 mm): Symbol LS1 [LS1_ui]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(725.17 mm, 420.37 mm): Symbol LS1 [LS1_ui]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(650.24 mm, 544.83 mm): Symbol C8 [C8_passive]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(650.24 mm, 544.83 mm): Symbol C8 [C8_passive]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(838.20 mm, 195.58 mm): Symbol VD_IBTN [VD_IBTN_io]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(838.20 mm, 195.58 mm): Symbol VD_IBTN [VD_IBTN_io]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(749.30 mm, 459.74 mm): Symbol L14 [L14_power]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(749.30 mm, 459.74 mm): Symbol L14 [L14_power]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(732.79 mm, 544.83 mm): Symbol C9 [C9_passive]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(732.79 mm, 544.83 mm): Symbol C9 [C9_passive]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(811.53 mm, 421.64 mm): Symbol Q_SPK [Q_SPK_ui]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(811.53 mm, 421.64 mm): Symbol Q_SPK [Q_SPK_ui]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(928.37 mm, 196.85 mm): Symbol Q_IBTN [Q_IBTN_io]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(928.37 mm, 196.85 mm): Symbol Q_IBTN [Q_IBTN_io]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(838.20 mm, 463.55 mm): Symbol DA5 [DA5_power]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(838.20 mm, 463.55 mm): Symbol DA5 [DA5_power]
+[global_label_dangling]: Global label not connected anywhere else in the schematic
+    ; warning
+    @(943.61 mm, 195.58 mm): Global Label 'IBTN_EXT'
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(815.34 mm, 544.83 mm): Symbol C10 [C10_passive]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(815.34 mm, 544.83 mm): Symbol C10 [C10_passive]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(927.10 mm, 459.74 mm): Symbol R37 [R37_power]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(927.10 mm, 459.74 mm): Symbol R37 [R37_power]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(1010.92 mm, 461.01 mm): Symbol U9 [U9_power]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'crl-mt1'
+    ; warning
+    @(1010.92 mm, 461.01 mm): Symbol U9 [U9_power]
+
+ ** ERC messages: 155  Errors 0  Warnings 155
