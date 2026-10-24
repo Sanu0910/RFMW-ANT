@@ -36,8 +36,10 @@ Once uploaded, each pinout is transcribed into `pinmap.AUTHORED` and the part le
 - [x] Netlist (`design.py`), verified vs the official STM32WB55 symbol (power/SMPS/osc complete)
 - [x] KiCad schematic + ERC (0 errors), netlist export = 108 nets
 - [x] Footprint library map + pad->net resolution engine (`pinmap.py`), 69/77 resolved
-- [ ] Custom footprints for the mechanical/RF parts (coil, loop/chip antennas, iButton pads,
-      speaker, vibro, battery, display FFC, TSOP, Tag-Connect, balun, RF filter, RF switch)
+- [x] Custom footprints (`01_kicad/crl-mt1.pretty`, `make_footprints.py`) for the mechanical/RF
+      parts (coil, loop/chip antennas, iButton pads, speaker, vibro, battery, display FFC, TSOP,
+      Tag-Connect, balun, RF filter, RF switch, RGB LED, microSD). All 69 resolved parts now
+      pass a pad-name cross-check: every net lands on a real footprint pad (0 mismatches).
 - [ ] Datasheet pinouts for the 8 pending chips
 - [ ] `make_pcb.py`: load footprints, assign nets, place, board outline
 - [ ] RF matching (CC1101 50 ohm + LC, NFC 13.56 MHz, 125 kHz LC) and controlled-impedance stackup

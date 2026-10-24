@@ -38,37 +38,37 @@ FOOTPRINT = {
     "QFN-24": "Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.65x2.65mm",
     "QFN-20": "Package_DFN_QFN:QFN-20-1EP_4x4mm_P0.5mm_EP2.5x2.5mm",
     "DFN-6": "Package_DFN_QFN:DFN-6-1EP_1.2x1.2mm_P0.4mm_EP0.3x0.94mm_PullBack",
-    "DSBGA-5": "Package_BGA:Texas_DSBGA-5_0.822x1.21mm_Layout2x3_P0.4mm",
-    "DSBGA-12": "Package_BGA:Texas_DSBGA-12_1.36x1.96mm_Layout3x4_P0.4mm",
-    "WCSP": "Package_BGA:Texas_DSBGA-9_1.33x1.33mm_Layout3x3_P0.4mm",
-    "TSNP-9": "Package_DFN_QFN:QFN-16-1EP_3x3mm_P0.5mm_EP1.45x1.45mm",  # BGS13S4N9 placeholder pkg
+    "DSBGA-5": "Package_BGA:Texas_DSBGA-5_0.822x1.116mm_Layout2x1x2_P0.4mm",
+    "DSBGA-12": "Package_BGA:Texas_DSBGA-12_1.36x1.86mm_Layout3x4_P0.5mm",
+    "WCSP": "Package_BGA:BGA-9_1.6x1.6mm_Layout3x3_P0.5mm",
+    "TSNP-9": "crl-mt1:RF_Switch_TSNP9",
     "Xtal_3225": "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm",
     "Xtal_2520": "Crystal:Crystal_SMD_2520-4Pin_2.5x2.0mm",
     "XTAL_2520": "Crystal:Crystal_SMD_2520-4Pin_2.5x2.0mm",
     "Xtal_ABS07": "Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm",
     "Inductor_0806": "Inductor_SMD:L_0805_2012Metric",
     "USB_C": "Connector_USB:USB_C_Receptacle_Amphenol_12401610E4-2A",
-    "microSD": "Connector_Card:microSD_HC_Hirose_DM3D-SF",
     "FFC_18_0.5mm": "Connector_FFC-FPC:Hirose_FH12-18S-0.5SH_1x18-1MP_P0.50mm_Horizontal",
     "FFC_2p": "Connector_PinHeader_1.00mm:PinHeader_1x02_P1.00mm_Vertical",
     "Header_2x09": "Connector_PinHeader_2.54mm:PinHeader_2x09_P2.54mm_Vertical",
     "Conn_1x03_1.25mm": "Connector_JST:JST_GH_SM03B-GHS-TB_1x03-1MP_P1.25mm_Horizontal",
     "SW_SMD_4p": "Button_Switch_SMD:SW_SPST_B3U-1000P",
-    "LED_RGB_0606": "LED_SMD:LED_RGB_1210",
+    "LED_RGB_0606": "crl-mt1:LED_RGB_4p",                       # custom named-pad (A/R/G/B)
     "LED_IR": "LED_SMD:LED_0805_2012Metric",
-    "U.FL": "Connector_Coaxial:U.FL_Molex_73412-0110_Vertical",
-    "Balun_0310": "RF_Converter:Johanson_0310_2.0x1.25mm",     # may need a custom fp
-    "RF_filter": "RF_Module:Murata_LFB182G45xxxxxx",           # may need a custom fp
-    "Antenna_Chip": "RF_Antenna:Johanson_2450AT43B100E",       # may need a custom fp
+    "U.FL": "Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical",
+    "Balun_0310": "crl-mt1:Johanson_0310_Balun",               # custom named-pad
+    "RF_filter": "crl-mt1:RF_filter",                          # custom named-pad
+    "Antenna_Chip": "crl-mt1:Antenna_Chip",                    # custom 1-pad feed
     "Antenna_Loop": "crl-mt1:NFC_Loop_Antenna",                # custom (PCB loop)
     "Coil": "crl-mt1:RFID_125k_Coil",                          # custom (wound/PCB coil)
     "Pads": "crl-mt1:iButton_Contacts",                        # custom (spring pads)
     "Speaker": "crl-mt1:Speaker_2p",                           # custom 2-pad
     "Vibro": "crl-mt1:Vibro_2p",                               # custom 2-pad
     "pack": "crl-mt1:Battery_3p",                              # custom 3-pad (BAT/NTC/GND)
+    "microSD": "crl-mt1:microSD_7p",                           # custom named-pad (SPI mode)
     "COG_128x64": "crl-mt1:Display_ST7565_FFC",                # custom display FFC
     "IR_receiver": "crl-mt1:TSOP_IR_3p",                       # custom 3-pad
-    "TC2030": "crl-mt1:TagConnect_TC2030",                     # custom 6-pad Tag-Connect
+    "TC2030": "crl-mt1:TagConnect_TC2030",                     # custom named-pad Tag-Connect
     "EMC_net": None,  # the NFC EMC net is discrete L/C; represented by the ANT loop + caps
 }
 
@@ -96,6 +96,8 @@ AUTHORED = {
     # USB-C receptacle (Amphenol 12401610E4-2A): only the pads we use
     "J_USB": {"VBUS": "A4", "GND": "A1", "DP": "A6", "DM": "A7", "CC1": "A5", "CC2": "B5",
               "SHIELD": "S1"},
+    # IR LED on a stock LED_0805 (KiCad pad 1 = cathode K, pad 2 = anode A)
+    "D_IR": {"K": "1", "A": "2"},
 }
 
 # chips still waiting on datasheet uploads for exact pads (see 04_docs/PCB_STATUS.md)
