@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""CRL-MT1 multi-tool RF board: schematic netlist (original firmware-compatible design).
+"""NOVA-RF1 multi-tool RF board: schematic netlist (original firmware-compatible design).
 
 Parts and connections reflect the public chip datasheets and the GPIO/peripheral map the open Flipper Zero
 firmware expects (see ../04_docs/ARCHITECTURE.md). This is an original board, not a Flipper Zero, and uses none

@@ -1,4 +1,4 @@
-# CRL-MT1 — fabrication notes
+# NOVA-RF1 — fabrication notes
 
 Original firmware-compatible multi-tool RF board. **Not a Flipper Zero** — own outline,
 silkscreen and name; no trademark, logo or mascot. Read `ARCHITECTURE.md` for the legal /
@@ -37,9 +37,9 @@ Controlled impedance: 50 Ω single-ended on L1 over L2 for the RF nets
 ## Fab files (`../03_fab/`)
 | File | Purpose |
 |---|---|
-| `CRL-MT1_gerbers.zip` | Gerber X2 set (all copper, mask, paste, silk, Edge.Cuts) + Excellon drill + map |
-| `CRL-MT1_CPL.csv` | pick-and-place (centroid), both sides |
-| `CRL-MT1_BOM_JLCPCB.csv` | grouped assembly BOM (fill the LCSC column) |
+| `NOVA-RF1_gerbers.zip` | Gerber X2 set (all copper, mask, paste, silk, Edge.Cuts) + Excellon drill + map |
+| `NOVA-RF1_CPL.csv` | pick-and-place (centroid), both sides |
+| `NOVA-RF1_BOM_JLCPCB.csv` | grouped assembly BOM (fill the LCSC column) |
 | `BOM_engineering.csv` | full engineering BOM (per-ref) |
 
 ## Assembly notes

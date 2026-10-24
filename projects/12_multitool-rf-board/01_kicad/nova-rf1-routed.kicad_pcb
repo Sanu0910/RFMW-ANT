@@ -257,7 +257,7 @@
 	(net 175 "unconnected-(X10-MP)")
 	(net 176 "unconnected-(U9-4)")
 	(net 177 "unconnected-(U9-5)")
-	(footprint "crl-mt1:TSOP_IR_3p"
+	(footprint "nova-rf1:TSOP_IR_3p"
 		(layer "F.Cu")
 		(uuid "006d4011-873a-45cb-9958-ed6d8c77d6ea")
 		(at 66.065001 61.7751)
@@ -346,7 +346,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "crl-mt1:RF_Switch_TSNP9"
+	(footprint "nova-rf1:RF_Switch_TSNP9"
 		(layer "F.Cu")
 		(uuid "035845bb-4f48-4be4-b330-1bda46ff8c11")
 		(at 69.247619 71.9316)
@@ -467,7 +467,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "crl-mt1:Speaker_2p"
+	(footprint "nova-rf1:Speaker_2p"
 		(layer "F.Cu")
 		(uuid "05f40310-f63c-4d62-8928-765e90d782f4")
 		(at 99.617858 47.6786)
@@ -548,7 +548,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "crl-mt1:microSD_7p"
+	(footprint "nova-rf1:microSD_7p"
 		(layer "F.Cu")
 		(uuid "0771de38-3df2-467a-b32d-0c122816ed9d")
 		(at 81.117858 47.2786)
@@ -2377,7 +2377,7 @@
 			)
 		)
 	)
-	(footprint "crl-mt1:LP5562_DSBGA12"
+	(footprint "nova-rf1:LP5562_DSBGA12"
 		(layer "F.Cu")
 		(uuid "3572a3cc-5e30-498b-89d6-edf2f76153f9")
 		(at 101.113334 71.088)
@@ -2731,7 +2731,7 @@
 			)
 		)
 	)
-	(footprint "crl-mt1:LED_RGB_4p"
+	(footprint "nova-rf1:LED_RGB_4p"
 		(layer "F.Cu")
 		(uuid "3d541297-e605-4a39-830c-53013d8d2116")
 		(at 82.466666 72.0316)
@@ -3345,7 +3345,7 @@
 			)
 		)
 	)
-	(footprint "crl-mt1:Johanson_0310_Balun"
+	(footprint "nova-rf1:Johanson_0310_Balun"
 		(layer "F.Cu")
 		(uuid "614e6071-9176-4237-b44d-1cc7652b8bd4")
 		(at 106.117145 71.5316)
@@ -3442,7 +3442,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "crl-mt1:RF_filter"
+	(footprint "nova-rf1:RF_filter"
 		(layer "F.Cu")
 		(uuid "619c11d0-06b0-41c1-ac81-b94815ab19d8")
 		(at 55.75 71.6316)
@@ -3531,7 +3531,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "crl-mt1:NFC_Loop_Antenna"
+	(footprint "nova-rf1:NFC_Loop_Antenna"
 		(locked yes)
 		(layer "F.Cu")
 		(uuid "63294ecd-1c43-4b6b-a2e5-b78c93759f1c")
@@ -3613,7 +3613,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "crl-mt1:TagConnect_TC2030"
+	(footprint "nova-rf1:TagConnect_TC2030"
 		(locked yes)
 		(layer "F.Cu")
 		(uuid "64778def-592b-434b-b49b-3d1e9348c103")
@@ -3958,7 +3958,7 @@
 			)
 		)
 	)
-	(footprint "crl-mt1:iButton_Contacts"
+	(footprint "nova-rf1:iButton_Contacts"
 		(layer "F.Cu")
 		(uuid "74427edc-6310-40ca-8fe8-b6d1a8e0afd3")
 		(at 90.367858 48.1786)
@@ -4692,7 +4692,7 @@
 			)
 		)
 	)
-	(footprint "crl-mt1:Antenna_Chip"
+	(footprint "nova-rf1:Antenna_Chip"
 		(locked yes)
 		(layer "F.Cu")
 		(uuid "821ace05-e396-4e2d-8cf3-3903c85b7d53")
@@ -4766,7 +4766,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "crl-mt1:Display_ST7565_FFC"
+	(footprint "nova-rf1:Display_ST7565_FFC"
 		(layer "F.Cu")
 		(uuid "82f8b568-710e-4f83-953e-d48340c5147e")
 		(at 57.675001 61.8751)
@@ -7170,7 +7170,7 @@
 			)
 		)
 	)
-	(footprint "crl-mt1:RF_Switch_TSNP9"
+	(footprint "nova-rf1:RF_Switch_TSNP9"
 		(layer "F.Cu")
 		(uuid "a94b261e-3344-4be1-9792-eba2a41ff82b")
 		(at 75.866666 71.9316)
@@ -9356,7 +9356,7 @@
 			)
 		)
 	)
-	(footprint "crl-mt1:RFID_125k_Coil"
+	(footprint "nova-rf1:RFID_125k_Coil"
 		(locked yes)
 		(layer "F.Cu")
 		(uuid "c1f55d29-c7a1-4c97-84d1-2bff1709a073")
@@ -10452,7 +10452,7 @@
 			)
 		)
 	)
-	(footprint "crl-mt1:Vibro_2p"
+	(footprint "nova-rf1:Vibro_2p"
 		(layer "F.Cu")
 		(uuid "e0e7c90a-ad8e-4507-a096-d8ff897bc45f")
 		(at 62.613096 72.6316)
@@ -10533,7 +10533,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "crl-mt1:Battery_3p"
+	(footprint "nova-rf1:Battery_3p"
 		(layer "F.Cu")
 		(uuid "ea6467cd-683e-44ec-a78f-74a07683338b")
 		(at 90.574049 61.9751)

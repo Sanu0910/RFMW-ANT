@@ -5,7 +5,7 @@
 	(uuid "3dc548d3-7187-5a73-8409-bf5a8cf4fbef")
 	(paper "A0")
 	(title_block
-		(title "CRL-MT1 multi-tool RF board")
+		(title "NOVA-RF1 multi-tool RF board")
 		(date "2026-10-24")
 		(rev "A")
 		(company "Carl RF Microwave")
@@ -14,7 +14,7 @@
 	)
 	(lib_symbols
 		(symbol
-			"crl-mt1:U1_mcu"
+			"nova-rf1:U1_mcu"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1476,7 +1476,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:Y1_mcu"
+			"nova-rf1:Y1_mcu"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1596,7 +1596,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:L_SMPS_mcu"
+			"nova-rf1:L_SMPS_mcu"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1716,7 +1716,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:C_SMPS_mcu"
+			"nova-rf1:C_SMPS_mcu"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1836,7 +1836,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:Y2_mcu"
+			"nova-rf1:Y2_mcu"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1956,7 +1956,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:FLT1_mcu"
+			"nova-rf1:FLT1_mcu"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -2098,7 +2098,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:ANT1_mcu"
+			"nova-rf1:ANT1_mcu"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -2196,7 +2196,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:U2_subghz"
+			"nova-rf1:U2_subghz"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -2602,7 +2602,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:C_CCd_subghz"
+			"nova-rf1:C_CCd_subghz"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -2722,7 +2722,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:FLT2_subghz"
+			"nova-rf1:FLT2_subghz"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -2886,7 +2886,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:SW1_subghz"
+			"nova-rf1:SW1_subghz"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -3116,7 +3116,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:SW2_subghz"
+			"nova-rf1:SW2_subghz"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -3346,7 +3346,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:ZQ3_subghz"
+			"nova-rf1:ZQ3_subghz"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -3466,7 +3466,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:R13_subghz"
+			"nova-rf1:R13_subghz"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -3586,7 +3586,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:J_SUBG_subghz"
+			"nova-rf1:J_SUBG_subghz"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -3706,7 +3706,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:X6_io"
+			"nova-rf1:X6_io"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -4178,7 +4178,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:VD_USB_io"
+			"nova-rf1:VD_USB_io"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -4298,7 +4298,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:RN1_io"
+			"nova-rf1:RN1_io"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -4462,7 +4462,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:U5_io"
+			"nova-rf1:U5_io"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -4692,7 +4692,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:J_SD_io"
+			"nova-rf1:J_SD_io"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -4922,7 +4922,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:D_IR_io"
+			"nova-rf1:D_IR_io"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -5042,7 +5042,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:Q_IR_io"
+			"nova-rf1:Q_IR_io"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -5184,7 +5184,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:U_IR_io"
+			"nova-rf1:U_IR_io"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -5326,7 +5326,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:J_IBTN_io"
+			"nova-rf1:J_IBTN_io"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -5446,7 +5446,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:VD_IBTN_io"
+			"nova-rf1:VD_IBTN_io"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -5566,7 +5566,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:Q_IBTN_io"
+			"nova-rf1:Q_IBTN_io"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -5708,7 +5708,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:DA7_io"
+			"nova-rf1:DA7_io"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -6026,7 +6026,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:VD4_io"
+			"nova-rf1:VD4_io"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -6190,7 +6190,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:J_SWD_io"
+			"nova-rf1:J_SWD_io"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -6376,7 +6376,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:J_GPIO_io"
+			"nova-rf1:J_GPIO_io"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -6848,7 +6848,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:U3_nfc"
+			"nova-rf1:U3_nfc"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -7254,7 +7254,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:C_AGDC_nfc"
+			"nova-rf1:C_AGDC_nfc"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -7374,7 +7374,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:ZQ1_nfc"
+			"nova-rf1:ZQ1_nfc"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -7494,7 +7494,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:L_NFC_nfc"
+			"nova-rf1:L_NFC_nfc"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -7702,7 +7702,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:X_NFC1_nfc"
+			"nova-rf1:X_NFC1_nfc"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -7822,7 +7822,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:ANT_NFC_nfc"
+			"nova-rf1:ANT_NFC_nfc"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -7942,7 +7942,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:VT4_rfid125"
+			"nova-rf1:VT4_rfid125"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -8084,7 +8084,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:VT6_rfid125"
+			"nova-rf1:VT6_rfid125"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -8226,7 +8226,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:ANT_LF_rfid125"
+			"nova-rf1:ANT_LF_rfid125"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -8346,7 +8346,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:DA3_rfid125"
+			"nova-rf1:DA3_rfid125"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -8598,7 +8598,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:DA4_rfid125"
+			"nova-rf1:DA4_rfid125"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -8850,7 +8850,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:DA5_rfid125"
+			"nova-rf1:DA5_rfid125"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -9036,7 +9036,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:R_MID1_rfid125"
+			"nova-rf1:R_MID1_rfid125"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -9156,7 +9156,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:R_MID2_rfid125"
+			"nova-rf1:R_MID2_rfid125"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -9276,7 +9276,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:SW_U_ui"
+			"nova-rf1:SW_U_ui"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -9396,7 +9396,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:SW_D_ui"
+			"nova-rf1:SW_D_ui"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -9516,7 +9516,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:SW_L_ui"
+			"nova-rf1:SW_L_ui"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -9636,7 +9636,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:SW_R_ui"
+			"nova-rf1:SW_R_ui"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -9756,7 +9756,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:SW_O_ui"
+			"nova-rf1:SW_O_ui"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -9876,7 +9876,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:SW_B_ui"
+			"nova-rf1:SW_B_ui"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -9996,7 +9996,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:M1_ui"
+			"nova-rf1:M1_ui"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -10116,7 +10116,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:Q_VIB_ui"
+			"nova-rf1:Q_VIB_ui"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -10258,7 +10258,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:LS1_ui"
+			"nova-rf1:LS1_ui"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -10378,7 +10378,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:Q_SPK_ui"
+			"nova-rf1:Q_SPK_ui"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -10520,7 +10520,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:J_USB_power"
+			"nova-rf1:J_USB_power"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -10750,7 +10750,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:U6_power"
+			"nova-rf1:U6_power"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -11112,7 +11112,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:L_CHG_power"
+			"nova-rf1:L_CHG_power"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -11232,7 +11232,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:C_BTST_power"
+			"nova-rf1:C_BTST_power"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -11352,7 +11352,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:C_REGN_power"
+			"nova-rf1:C_REGN_power"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -11472,7 +11472,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:R_ILIM_power"
+			"nova-rf1:R_ILIM_power"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -11592,7 +11592,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:R_TS1_power"
+			"nova-rf1:R_TS1_power"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -11712,7 +11712,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:R_TS2_power"
+			"nova-rf1:R_TS2_power"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -11832,7 +11832,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:X10_power"
+			"nova-rf1:X10_power"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -11974,7 +11974,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:BT1_power"
+			"nova-rf1:BT1_power"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -12116,7 +12116,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:U7_power"
+			"nova-rf1:U7_power"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -12390,7 +12390,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:C_FGV_power"
+			"nova-rf1:C_FGV_power"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -12510,7 +12510,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:R_FGO_power"
+			"nova-rf1:R_FGO_power"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -12630,7 +12630,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:R_FGB_power"
+			"nova-rf1:R_FGB_power"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -12750,7 +12750,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:U8_power"
+			"nova-rf1:U8_power"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -12958,7 +12958,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:L13_power"
+			"nova-rf1:L13_power"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -13078,7 +13078,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:U8B_power"
+			"nova-rf1:U8B_power"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -13286,7 +13286,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:L14_power"
+			"nova-rf1:L14_power"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -13406,7 +13406,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:DA8_power"
+			"nova-rf1:DA8_power"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -13548,7 +13548,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:R37_power"
+			"nova-rf1:R37_power"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -13668,7 +13668,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:U9_power"
+			"nova-rf1:U9_power"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -13832,7 +13832,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:U10_power"
+			"nova-rf1:U10_power"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -13996,7 +13996,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:R_CC1_power"
+			"nova-rf1:R_CC1_power"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -14116,7 +14116,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:R_CC2_power"
+			"nova-rf1:R_CC2_power"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -14236,7 +14236,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:C1_passive"
+			"nova-rf1:C1_passive"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -14356,7 +14356,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:C2_passive"
+			"nova-rf1:C2_passive"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -14476,7 +14476,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:C3_passive"
+			"nova-rf1:C3_passive"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -14596,7 +14596,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:C4_passive"
+			"nova-rf1:C4_passive"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -14716,7 +14716,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:C5_passive"
+			"nova-rf1:C5_passive"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -14836,7 +14836,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:C6_passive"
+			"nova-rf1:C6_passive"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -14956,7 +14956,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:C7_passive"
+			"nova-rf1:C7_passive"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -15076,7 +15076,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:C8_passive"
+			"nova-rf1:C8_passive"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -15196,7 +15196,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:C9_passive"
+			"nova-rf1:C9_passive"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -15316,7 +15316,7 @@
 			)
 		)
 		(symbol
-			"crl-mt1:C10_passive"
+			"nova-rf1:C10_passive"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -15437,7 +15437,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:U1_mcu")
+		(lib_id "nova-rf1:U1_mcu")
 		(at 60.96 80.01 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -15774,7 +15774,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "U1")
@@ -18052,7 +18052,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:Y1_mcu")
+		(lib_id "nova-rf1:Y1_mcu")
 		(at 149.86 40.64 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -18145,7 +18145,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "Y1")
@@ -18227,7 +18227,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:L_SMPS_mcu")
+		(lib_id "nova-rf1:L_SMPS_mcu")
 		(at 236.22 40.64 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -18320,7 +18320,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "L_SMPS")
@@ -18402,7 +18402,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:C_SMPS_mcu")
+		(lib_id "nova-rf1:C_SMPS_mcu")
 		(at 321.31 40.64 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -18495,7 +18495,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "C_SMPS")
@@ -18577,7 +18577,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:Y2_mcu")
+		(lib_id "nova-rf1:Y2_mcu")
 		(at 408.94 40.64 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -18670,7 +18670,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "Y2")
@@ -18752,7 +18752,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:FLT1_mcu")
+		(lib_id "nova-rf1:FLT1_mcu")
 		(at 500.38 41.91 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -18849,7 +18849,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "FLT1")
@@ -18967,7 +18967,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:ANT1_mcu")
+		(lib_id "nova-rf1:ANT1_mcu")
 		(at 589.28 40.64 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -19056,7 +19056,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "ANT1")
@@ -19102,7 +19102,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:U2_subghz")
+		(lib_id "nova-rf1:U2_subghz")
 		(at 58.42 165.1 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -19247,7 +19247,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "U2")
@@ -19797,7 +19797,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:C_CCd_subghz")
+		(lib_id "nova-rf1:C_CCd_subghz")
 		(at 144.78 156.21 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -19890,7 +19890,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "C_CCd")
@@ -19972,7 +19972,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:FLT2_subghz")
+		(lib_id "nova-rf1:FLT2_subghz")
 		(at 231.14 157.48 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -20073,7 +20073,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "FLT2")
@@ -20227,7 +20227,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:SW1_subghz")
+		(lib_id "nova-rf1:SW1_subghz")
 		(at 317.5 160.02 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -20340,7 +20340,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "SW1")
@@ -20602,7 +20602,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:SW2_subghz")
+		(lib_id "nova-rf1:SW2_subghz")
 		(at 405.13 160.02 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -20715,7 +20715,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "SW2")
@@ -20977,7 +20977,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:ZQ3_subghz")
+		(lib_id "nova-rf1:ZQ3_subghz")
 		(at 491.49 156.21 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -21070,7 +21070,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "ZQ3")
@@ -21152,7 +21152,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:R13_subghz")
+		(lib_id "nova-rf1:R13_subghz")
 		(at 575.31 156.21 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -21245,7 +21245,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "R13")
@@ -21327,7 +21327,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:J_SUBG_subghz")
+		(lib_id "nova-rf1:J_SUBG_subghz")
 		(at 659.13 156.21 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -21420,7 +21420,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "J_SUBG")
@@ -21502,7 +21502,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:X6_io")
+		(lib_id "nova-rf1:X6_io")
 		(at 58.42 220.98 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -21659,7 +21659,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "X6")
@@ -22317,7 +22317,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:VD_USB_io")
+		(lib_id "nova-rf1:VD_USB_io")
 		(at 144.78 210.82 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -22410,7 +22410,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "VD_USB")
@@ -22492,7 +22492,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:RN1_io")
+		(lib_id "nova-rf1:RN1_io")
 		(at 229.87 212.09 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -22593,7 +22593,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "RN1")
@@ -22747,7 +22747,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:U5_io")
+		(lib_id "nova-rf1:U5_io")
 		(at 314.96 214.63 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -22860,7 +22860,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "U5")
@@ -23122,7 +23122,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:J_SD_io")
+		(lib_id "nova-rf1:J_SD_io")
 		(at 402.59 214.63 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -23235,7 +23235,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "J_SD")
@@ -23497,7 +23497,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:D_IR_io")
+		(lib_id "nova-rf1:D_IR_io")
 		(at 491.49 210.82 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -23590,7 +23590,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "D_IR")
@@ -23672,7 +23672,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:Q_IR_io")
+		(lib_id "nova-rf1:Q_IR_io")
 		(at 579.12 212.09 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -23769,7 +23769,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "Q_IR")
@@ -23887,7 +23887,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:U_IR_io")
+		(lib_id "nova-rf1:U_IR_io")
 		(at 664.21 212.09 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -23984,7 +23984,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "U_IR")
@@ -24102,7 +24102,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:J_IBTN_io")
+		(lib_id "nova-rf1:J_IBTN_io")
 		(at 750.57 210.82 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -24195,7 +24195,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "J_IBTN")
@@ -24277,7 +24277,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:VD_IBTN_io")
+		(lib_id "nova-rf1:VD_IBTN_io")
 		(at 838.2 210.82 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -24370,7 +24370,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "VD_IBTN")
@@ -24452,7 +24452,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:Q_IBTN_io")
+		(lib_id "nova-rf1:Q_IBTN_io")
 		(at 928.37 212.09 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -24549,7 +24549,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "Q_IBTN")
@@ -24667,7 +24667,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:DA7_io")
+		(lib_id "nova-rf1:DA7_io")
 		(at 59.69 275.59 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -24796,7 +24796,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "DA7")
@@ -25202,7 +25202,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:VD4_io")
+		(lib_id "nova-rf1:VD4_io")
 		(at 148.59 270.51 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -25303,7 +25303,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "VD4")
@@ -25457,7 +25457,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:J_SWD_io")
+		(lib_id "nova-rf1:J_SWD_io")
 		(at 236.22 271.78 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -25562,7 +25562,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "J_SWD")
@@ -25752,7 +25752,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:J_GPIO_io")
+		(lib_id "nova-rf1:J_GPIO_io")
 		(at 325.12 279.4 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -25909,7 +25909,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "J_GPIO")
@@ -26567,7 +26567,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:U3_nfc")
+		(lib_id "nova-rf1:U3_nfc")
 		(at 59.69 335.28 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -26712,7 +26712,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "U3")
@@ -27262,7 +27262,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:C_AGDC_nfc")
+		(lib_id "nova-rf1:C_AGDC_nfc")
 		(at 147.32 326.39 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -27355,7 +27355,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "C_AGDC")
@@ -27437,7 +27437,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:ZQ1_nfc")
+		(lib_id "nova-rf1:ZQ1_nfc")
 		(at 234.95 326.39 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -27530,7 +27530,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "ZQ1")
@@ -27612,7 +27612,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:L_NFC_nfc")
+		(lib_id "nova-rf1:L_NFC_nfc")
 		(at 323.85 328.93 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -27721,7 +27721,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "L_NFC")
@@ -27947,7 +27947,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:X_NFC1_nfc")
+		(lib_id "nova-rf1:X_NFC1_nfc")
 		(at 412.75 326.39 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -28040,7 +28040,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "X_NFC1")
@@ -28122,7 +28122,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:ANT_NFC_nfc")
+		(lib_id "nova-rf1:ANT_NFC_nfc")
 		(at 504.19 326.39 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -28215,7 +28215,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "ANT_NFC")
@@ -28297,7 +28297,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:VT4_rfid125")
+		(lib_id "nova-rf1:VT4_rfid125")
 		(at 59.69 382.27 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -28394,7 +28394,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "VT4")
@@ -28512,7 +28512,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:VT6_rfid125")
+		(lib_id "nova-rf1:VT6_rfid125")
 		(at 149.86 382.27 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -28609,7 +28609,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "VT6")
@@ -28727,7 +28727,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:ANT_LF_rfid125")
+		(lib_id "nova-rf1:ANT_LF_rfid125")
 		(at 242.57 381 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -28820,7 +28820,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "ANT_LF")
@@ -28902,7 +28902,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:DA3_rfid125")
+		(lib_id "nova-rf1:DA3_rfid125")
 		(at 331.47 384.81 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -29019,7 +29019,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "DA3")
@@ -29317,7 +29317,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:DA4_rfid125")
+		(lib_id "nova-rf1:DA4_rfid125")
 		(at 416.56 384.81 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -29434,7 +29434,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "DA4")
@@ -29732,7 +29732,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:DA5_rfid125")
+		(lib_id "nova-rf1:DA5_rfid125")
 		(at 501.65 383.54 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -29837,7 +29837,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "DA5")
@@ -30027,7 +30027,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:R_MID1_rfid125")
+		(lib_id "nova-rf1:R_MID1_rfid125")
 		(at 586.74 381 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -30120,7 +30120,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "R_MID1")
@@ -30202,7 +30202,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:R_MID2_rfid125")
+		(lib_id "nova-rf1:R_MID2_rfid125")
 		(at 671.83 381 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -30295,7 +30295,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "R_MID2")
@@ -30377,7 +30377,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:SW_U_ui")
+		(lib_id "nova-rf1:SW_U_ui")
 		(at 55.88 425.45 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -30470,7 +30470,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "SW_U")
@@ -30552,7 +30552,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:SW_D_ui")
+		(lib_id "nova-rf1:SW_D_ui")
 		(at 138.43 425.45 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -30645,7 +30645,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "SW_D")
@@ -30727,7 +30727,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:SW_L_ui")
+		(lib_id "nova-rf1:SW_L_ui")
 		(at 222.25 425.45 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -30820,7 +30820,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "SW_L")
@@ -30902,7 +30902,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:SW_R_ui")
+		(lib_id "nova-rf1:SW_R_ui")
 		(at 304.8 425.45 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -30995,7 +30995,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "SW_R")
@@ -31077,7 +31077,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:SW_O_ui")
+		(lib_id "nova-rf1:SW_O_ui")
 		(at 387.35 425.45 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -31170,7 +31170,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "SW_O")
@@ -31252,7 +31252,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:SW_B_ui")
+		(lib_id "nova-rf1:SW_B_ui")
 		(at 469.9 425.45 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -31345,7 +31345,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "SW_B")
@@ -31427,7 +31427,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:M1_ui")
+		(lib_id "nova-rf1:M1_ui")
 		(at 553.72 425.45 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -31520,7 +31520,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "M1")
@@ -31602,7 +31602,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:Q_VIB_ui")
+		(lib_id "nova-rf1:Q_VIB_ui")
 		(at 638.81 426.72 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -31699,7 +31699,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "Q_VIB")
@@ -31817,7 +31817,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:LS1_ui")
+		(lib_id "nova-rf1:LS1_ui")
 		(at 725.17 425.45 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -31910,7 +31910,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "LS1")
@@ -31992,7 +31992,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:Q_SPK_ui")
+		(lib_id "nova-rf1:Q_SPK_ui")
 		(at 811.53 426.72 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -32089,7 +32089,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "Q_SPK")
@@ -32207,7 +32207,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:J_USB_power")
+		(lib_id "nova-rf1:J_USB_power")
 		(at 57.15 468.63 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -32320,7 +32320,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "J_USB")
@@ -32582,7 +32582,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:U6_power")
+		(lib_id "nova-rf1:U6_power")
 		(at 143.51 472.44 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -32719,7 +32719,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "U6")
@@ -33197,7 +33197,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:L_CHG_power")
+		(lib_id "nova-rf1:L_CHG_power")
 		(at 231.14 464.82 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -33290,7 +33290,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "L_CHG")
@@ -33372,7 +33372,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:C_BTST_power")
+		(lib_id "nova-rf1:C_BTST_power")
 		(at 316.23 464.82 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -33465,7 +33465,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "C_BTST")
@@ -33547,7 +33547,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:C_REGN_power")
+		(lib_id "nova-rf1:C_REGN_power")
 		(at 401.32 464.82 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -33640,7 +33640,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "C_REGN")
@@ -33722,7 +33722,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:R_ILIM_power")
+		(lib_id "nova-rf1:R_ILIM_power")
 		(at 486.41 464.82 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -33815,7 +33815,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "R_ILIM")
@@ -33897,7 +33897,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:R_TS1_power")
+		(lib_id "nova-rf1:R_TS1_power")
 		(at 571.5 464.82 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -33990,7 +33990,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "R_TS1")
@@ -34072,7 +34072,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:R_TS2_power")
+		(lib_id "nova-rf1:R_TS2_power")
 		(at 656.59 464.82 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -34165,7 +34165,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "R_TS2")
@@ -34247,7 +34247,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:X10_power")
+		(lib_id "nova-rf1:X10_power")
 		(at 742.95 466.09 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -34344,7 +34344,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "X10")
@@ -34462,7 +34462,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:BT1_power")
+		(lib_id "nova-rf1:BT1_power")
 		(at 830.58 466.09 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -34559,7 +34559,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "BT1")
@@ -34677,7 +34677,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:U7_power")
+		(lib_id "nova-rf1:U7_power")
 		(at 919.48 469.9 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -34798,7 +34798,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "U7")
@@ -35132,7 +35132,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:C_FGV_power")
+		(lib_id "nova-rf1:C_FGV_power")
 		(at 1005.84 464.82 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -35225,7 +35225,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "C_FGV")
@@ -35307,7 +35307,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:R_FGO_power")
+		(lib_id "nova-rf1:R_FGO_power")
 		(at 57.15 516.89 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -35400,7 +35400,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "R_FGO")
@@ -35482,7 +35482,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:R_FGB_power")
+		(lib_id "nova-rf1:R_FGB_power")
 		(at 142.24 516.89 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -35575,7 +35575,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "R_FGB")
@@ -35657,7 +35657,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:U8_power")
+		(lib_id "nova-rf1:U8_power")
 		(at 228.6 519.43 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -35766,7 +35766,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "U8")
@@ -35992,7 +35992,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:L13_power")
+		(lib_id "nova-rf1:L13_power")
 		(at 313.69 516.89 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -36085,7 +36085,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "L13")
@@ -36167,7 +36167,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:U8B_power")
+		(lib_id "nova-rf1:U8B_power")
 		(at 398.78 519.43 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -36276,7 +36276,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "U8B")
@@ -36502,7 +36502,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:L14_power")
+		(lib_id "nova-rf1:L14_power")
 		(at 483.87 516.89 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -36595,7 +36595,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "L14")
@@ -36677,7 +36677,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:DA8_power")
+		(lib_id "nova-rf1:DA8_power")
 		(at 572.77 518.16 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -36774,7 +36774,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "DA8")
@@ -36892,7 +36892,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:R37_power")
+		(lib_id "nova-rf1:R37_power")
 		(at 660.4 516.89 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -36985,7 +36985,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "R37")
@@ -37067,7 +37067,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:U9_power")
+		(lib_id "nova-rf1:U9_power")
 		(at 744.22 518.16 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -37168,7 +37168,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "U9")
@@ -37322,7 +37322,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:U10_power")
+		(lib_id "nova-rf1:U10_power")
 		(at 828.04 518.16 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -37423,7 +37423,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "U10")
@@ -37577,7 +37577,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:R_CC1_power")
+		(lib_id "nova-rf1:R_CC1_power")
 		(at 913.13 516.89 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -37670,7 +37670,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "R_CC1")
@@ -37752,7 +37752,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:R_CC2_power")
+		(lib_id "nova-rf1:R_CC2_power")
 		(at 998.22 516.89 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -37845,7 +37845,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "R_CC2")
@@ -37927,7 +37927,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:C1_passive")
+		(lib_id "nova-rf1:C1_passive")
 		(at 57.15 560.07 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -38020,7 +38020,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "C1")
@@ -38102,7 +38102,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:C2_passive")
+		(lib_id "nova-rf1:C2_passive")
 		(at 142.24 560.07 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -38195,7 +38195,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "C2")
@@ -38277,7 +38277,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:C3_passive")
+		(lib_id "nova-rf1:C3_passive")
 		(at 228.6 560.07 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -38370,7 +38370,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "C3")
@@ -38452,7 +38452,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:C4_passive")
+		(lib_id "nova-rf1:C4_passive")
 		(at 313.69 560.07 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -38545,7 +38545,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "C4")
@@ -38627,7 +38627,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:C5_passive")
+		(lib_id "nova-rf1:C5_passive")
 		(at 398.78 560.07 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -38720,7 +38720,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "C5")
@@ -38802,7 +38802,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:C6_passive")
+		(lib_id "nova-rf1:C6_passive")
 		(at 483.87 560.07 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -38895,7 +38895,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "C6")
@@ -38977,7 +38977,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:C7_passive")
+		(lib_id "nova-rf1:C7_passive")
 		(at 567.69 560.07 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -39070,7 +39070,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "C7")
@@ -39152,7 +39152,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:C8_passive")
+		(lib_id "nova-rf1:C8_passive")
 		(at 650.24 560.07 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -39245,7 +39245,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "C8")
@@ -39327,7 +39327,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:C9_passive")
+		(lib_id "nova-rf1:C9_passive")
 		(at 732.79 560.07 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -39420,7 +39420,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "C9")
@@ -39502,7 +39502,7 @@
 		)
 	)
 	(symbol
-		(lib_id "crl-mt1:C10_passive")
+		(lib_id "nova-rf1:C10_passive")
 		(at 815.34 560.07 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -39595,7 +39595,7 @@
 		)
 		(instances
 			(project
-				"crl-mt1"
+				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
 					(reference "C10")

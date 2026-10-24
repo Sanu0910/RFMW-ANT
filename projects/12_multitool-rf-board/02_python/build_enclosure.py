@@ -1,4 +1,4 @@
-"""Parametric two-part handheld enclosure for the CRL-MT1 board (gmsh / OpenCASCADE).
+"""Parametric two-part handheld enclosure for the NOVA-RF1 board (gmsh / OpenCASCADE).
 
 Bottom tray holds the PCB on four standoffs; top lid snaps over it with a display window,
 six button holes and side cut-outs for USB-C and the GPIO header. Exports STEP + STL and a
@@ -35,7 +35,7 @@ def box(x, y, z, dx, dy, dz):
 
 def build():
     gmsh.initialize()
-    gmsh.model.add("crl-mt1-case")
+    gmsh.model.add("nova-rf1-case")
     occ = gmsh.model.occ
 
     # ============ BOTTOM TRAY ============
@@ -68,7 +68,7 @@ def build():
     occ.synchronize()
     gmsh.model.occ.synchronize()
     # save bottom alone
-    _export("crl-mt1-case-bottom")
+    _export("nova-rf1-case-bottom")
 
     # ============ TOP LID ============
     gmsh.model.add("lid")
@@ -93,7 +93,7 @@ def build():
     occ.synchronize()
     _fillet_vertical(lid_parts)
     occ.synchronize()
-    _export("crl-mt1-case-top")
+    _export("nova-rf1-case-top")
 
     gmsh.finalize()
     print(f"enclosure: outer {OL:.0f} x {OW:.0f} mm, tray {bt_h:.1f} mm + lid {lid_h:.1f} mm")

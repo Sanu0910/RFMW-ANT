@@ -1,4 +1,4 @@
-// CRL-MT1 board pin map (original firmware-compatible multi-tool board).
+// NOVA-RF1 board pin map (original firmware-compatible multi-tool board).
 // Derived from the GPIO/peripheral assignments the open-source Flipper Zero firmware expects
 // (flipperdevices/flipperzero-firmware, GPLv3, targets/f7/furi_hal/furi_hal_resources.{c,h}).
 // These are the STM32WB55 pins a firmware-compatible board must wire; use this when porting firmware.

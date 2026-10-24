@@ -27,7 +27,7 @@ def build():
     rows = []
     for (value, mpn, mfr, kfp), refs in sorted(groups.items(), key=lambda kv: kv[0][3]):
         rows.append([value, ",".join(sorted(refs)), kfp, mpn, mfr, ""])
-    path = os.path.join(FAB, "CRL-MT1_BOM_JLCPCB.csv")
+    path = os.path.join(FAB, "NOVA-RF1_BOM_JLCPCB.csv")
     with open(path, "w", newline="") as f:
         w = csv.writer(f)
         w.writerow(["Comment", "Designator", "Footprint", "MPN", "Manufacturer", "LCSC"])

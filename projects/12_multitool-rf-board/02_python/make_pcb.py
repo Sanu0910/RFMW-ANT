@@ -1,10 +1,10 @@
-"""Build the CRL-MT1 PCB from design.py + pinmap.py (run inside KiCad 9 Python / pcbnew).
+"""Build the NOVA-RF1 PCB from design.py + pinmap.py (run inside KiCad 9 Python / pcbnew).
 
 Stage 1 (this file): load every resolved part onto its real footprint, create all nets, assign
 pad nets, and place parts grouped by functional block with a board outline. Pending-datasheet
 chips are skipped. Routing, zones and RF matching come after the remaining pinouts arrive.
 
-  python3 make_pcb.py        -> ../01_kicad/crl-mt1.kicad_pcb (placement + ratsnest, unrouted)
+  python3 make_pcb.py        -> ../01_kicad/nova-rf1.kicad_pcb (placement + ratsnest, unrouted)
 """
 import os
 import sys
@@ -17,9 +17,9 @@ import design as D
 import pinmap
 
 KDIR = os.path.normpath(os.path.join(HERE, "..", "01_kicad"))
-PCB = os.path.join(KDIR, "crl-mt1.kicad_pcb")
+PCB = os.path.join(KDIR, "nova-rf1.kicad_pcb")
 FPROOT = "/usr/share/kicad/footprints"
-CUSTOM = os.path.join(KDIR, "crl-mt1.pretty")
+CUSTOM = os.path.join(KDIR, "nova-rf1.pretty")
 OX, OY = 30.0, 30.0            # board origin on the KiCad page
 BW, BH = 100.0, 60.0           # compact envelope (mm), reference-device proportions; 2-sided
 INSET = 5.0                   # interior margin: edge band for the locked connectors
@@ -42,7 +42,7 @@ def add_outline(board):
 
 def load_fp(board, libid):
     lib, name = libid.split(":")
-    path = CUSTOM if lib == "crl-mt1" else os.path.join(FPROOT, lib + ".pretty")
+    path = CUSTOM if lib == "nova-rf1" else os.path.join(FPROOT, lib + ".pretty")
     fp = pcbnew.FootprintLoad(path, name)
     if fp is None:
         raise RuntimeError(f"footprint not found: {libid}")

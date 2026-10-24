@@ -4,7 +4,7 @@
   "why": "observed: 87 pad-bearing part(s) on F and 0 on B, 1 reflow pass(es). every footprint BLOCK (#726): blocks sharing one reference are keyed with an ordinal suffix and counted separately. `pad_bearing` restricts that to blocks carrying at least one pad that is not a paste/mask aperture (#1143), and it is the count the populated-side verdict is taken from -- a zero-pad graphic on the back does not make a board double-sided."
  },
  "blocks": [],
- "board": "crl-mt1.kicad_pcb",
+ "board": "nova-rf1.kicad_pcb",
  "context": {
   "basis": {
    "assembly.sides": "observed_baseline",

@@ -1,4 +1,4 @@
-"""Footprint assignment and pad->net resolution for the CRL-MT1 PCB.
+"""Footprint assignment and pad->net resolution for the NOVA-RF1 PCB.
 
 Three mechanisms give every part's pad-number -> net mapping:
   1. KiCad official symbol  (U1/U9/U10): pin NAME -> pad NUMBER read straight from the
@@ -39,9 +39,9 @@ FOOTPRINT = {
     "QFN-20": "Package_DFN_QFN:QFN-20-1EP_4x4mm_P0.5mm_EP2.5x2.5mm",
     "DFN-6": "Package_DFN_QFN:DFN-6-1EP_1.2x1.2mm_P0.4mm_EP0.3x0.94mm_PullBack",
     "DSBGA-6": "Package_BGA:Texas_DSBGA-6_0.76x1.16mm_Layout2x3_P0.4mm",
-    "DSBGA-12": "crl-mt1:LP5562_DSBGA12",   # 3 rows x 4 cols (A1-C4), KiCad stock is 4x3
+    "DSBGA-12": "nova-rf1:LP5562_DSBGA12",   # 3 rows x 4 cols (A1-C4), KiCad stock is 4x3
     "WCSP": "Package_BGA:BGA-9_1.6x1.6mm_Layout3x3_P0.5mm",
-    "TSNP-9": "crl-mt1:RF_Switch_TSNP9",
+    "TSNP-9": "nova-rf1:RF_Switch_TSNP9",
     "Xtal_3225": "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm",
     "Xtal_2520": "Crystal:Crystal_SMD_2520-4Pin_2.5x2.0mm",
     "XTAL_2520": "Crystal:Crystal_SMD_2520-4Pin_2.5x2.0mm",
@@ -53,22 +53,22 @@ FOOTPRINT = {
     "Header_2x09": "Connector_PinHeader_2.54mm:PinHeader_2x09_P2.54mm_Vertical",
     "Conn_1x03_1.25mm": "Connector_JST:JST_GH_SM03B-GHS-TB_1x03-1MP_P1.25mm_Horizontal",
     "SW_SMD_4p": "Button_Switch_SMD:SW_SPST_B3U-1000P",
-    "LED_RGB_0606": "crl-mt1:LED_RGB_4p",                       # custom named-pad (A/R/G/B)
+    "LED_RGB_0606": "nova-rf1:LED_RGB_4p",                       # custom named-pad (A/R/G/B)
     "LED_IR": "LED_SMD:LED_0805_2012Metric",
     "U.FL": "Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical",
-    "Balun_0310": "crl-mt1:Johanson_0310_Balun",               # custom named-pad
-    "RF_filter": "crl-mt1:RF_filter",                          # custom named-pad
-    "Antenna_Chip": "crl-mt1:Antenna_Chip",                    # custom 1-pad feed
-    "Antenna_Loop": "crl-mt1:NFC_Loop_Antenna",                # custom (PCB loop)
-    "Coil": "crl-mt1:RFID_125k_Coil",                          # custom (wound/PCB coil)
-    "Pads": "crl-mt1:iButton_Contacts",                        # custom (spring pads)
-    "Speaker": "crl-mt1:Speaker_2p",                           # custom 2-pad
-    "Vibro": "crl-mt1:Vibro_2p",                               # custom 2-pad
-    "pack": "crl-mt1:Battery_3p",                              # custom 3-pad (BAT/NTC/GND)
-    "microSD": "crl-mt1:microSD_7p",                           # custom named-pad (SPI mode)
-    "COG_128x64": "crl-mt1:Display_ST7565_FFC",                # custom display FFC
-    "IR_receiver": "crl-mt1:TSOP_IR_3p",                       # custom 3-pad
-    "TC2030": "crl-mt1:TagConnect_TC2030",                     # custom named-pad Tag-Connect
+    "Balun_0310": "nova-rf1:Johanson_0310_Balun",               # custom named-pad
+    "RF_filter": "nova-rf1:RF_filter",                          # custom named-pad
+    "Antenna_Chip": "nova-rf1:Antenna_Chip",                    # custom 1-pad feed
+    "Antenna_Loop": "nova-rf1:NFC_Loop_Antenna",                # custom (PCB loop)
+    "Coil": "nova-rf1:RFID_125k_Coil",                          # custom (wound/PCB coil)
+    "Pads": "nova-rf1:iButton_Contacts",                        # custom (spring pads)
+    "Speaker": "nova-rf1:Speaker_2p",                           # custom 2-pad
+    "Vibro": "nova-rf1:Vibro_2p",                               # custom 2-pad
+    "pack": "nova-rf1:Battery_3p",                              # custom 3-pad (BAT/NTC/GND)
+    "microSD": "nova-rf1:microSD_7p",                           # custom named-pad (SPI mode)
+    "COG_128x64": "nova-rf1:Display_ST7565_FFC",                # custom display FFC
+    "IR_receiver": "nova-rf1:TSOP_IR_3p",                       # custom 3-pad
+    "TC2030": "nova-rf1:TagConnect_TC2030",                     # custom named-pad Tag-Connect
     "EMC_net": None,  # the NFC EMC net is discrete L/C; represented by the ANT loop + caps
 }
 

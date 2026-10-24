@@ -10,7 +10,7 @@ import sys
 
 import pcbnew
 
-NAME = "CRL-MT1"
+NAME = "NOVA-RF1"
 REV = "v0.1"
 DATE = "2026-10-24"
 NOTE = "Original firmware-compatible multi-tool - not a Flipper Zero"

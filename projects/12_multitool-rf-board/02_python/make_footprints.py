@@ -1,4 +1,4 @@
-"""Generate simplified custom footprints (crl-mt1.pretty) with pads named to match design.py pins.
+"""Generate simplified custom footprints (nova-rf1.pretty) with pads named to match design.py pins.
 
 These cover the mechanical / RF / connector parts KiCad has no stock footprint for. Pad COUNT,
 NAMES, pitch and rough size are representative so the board places, nets and routes correctly;
@@ -7,7 +7,7 @@ refine the exact courtyard/pad geometry against each part's datasheet drawing be
 import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-PRETTY = os.path.normpath(os.path.join(HERE, "..", "01_kicad", "crl-mt1.pretty"))
+PRETTY = os.path.normpath(os.path.join(HERE, "..", "01_kicad", "nova-rf1.pretty"))
 os.makedirs(PRETTY, exist_ok=True)
 
 

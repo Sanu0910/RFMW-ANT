@@ -1,4 +1,4 @@
-# CRL-MT1 PCB build status
+# NOVA-RF1 PCB build status
 
 Target: a full datasheet-accurate, routable, fab-ready 4-layer board. Built in stages from
 `02_python/design.py` (netlist) via `02_python/pinmap.py` (footprint + pad->net engine) and
@@ -37,7 +37,7 @@ Multi-pad supply/ground nets (e.g. CC1101 AVDD x4, ST25R3916 VDD x8 / VSS x6) ar
 - [x] Netlist (`design.py`), verified vs the official STM32WB55 symbol (power/SMPS/osc complete)
 - [x] KiCad schematic + ERC (0 errors), netlist export = 108 nets
 - [x] Footprint library map + pad->net resolution engine (`pinmap.py`), 69/77 resolved
-- [x] Custom footprints (`01_kicad/crl-mt1.pretty`, `make_footprints.py`) for the mechanical/RF
+- [x] Custom footprints (`01_kicad/nova-rf1.pretty`, `make_footprints.py`) for the mechanical/RF
       parts (coil, loop/chip antennas, iButton pads, speaker, vibro, battery, display FFC, TSOP,
       Tag-Connect, balun, RF filter, RF switch, RGB LED, microSD). All 69 resolved parts now
       pass a pad-name cross-check: every net lands on a real footprint pad (0 mismatches).
@@ -51,7 +51,7 @@ Multi-pad supply/ground nets (e.g. CC1101 AVDD x4, ST25R3916 VDD x8 / VSS x6) ar
 ## Routing (KiCadRoutingTools, 2026-10-24)
 Compact 110x66mm 4-layer, two-sided. GND plane poured on In1.Cu; autorouted with
 rip-up/reroute. Result: **104 of 105 nets routed** (2935 segments, 520 vias) ->
-`01_kicad/crl-mt1-routed.kicad_pcb`.
+`01_kicad/nova-rf1-routed.kicad_pcb`.
 
 Remaining to DRC-clean / fab-ready (the last mile):
 - **LSE_OUT open (1 net):** the 32.768kHz LSE crystal Y2 is not adjacent to the MCU, so

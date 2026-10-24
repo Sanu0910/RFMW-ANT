@@ -9,7 +9,7 @@ import design as D
 import pinmap
 
 KDIR = os.path.normpath(os.path.join(HERE, "..", "01_kicad"))
-PCB = os.path.join(KDIR, "crl-mt1.kicad_pcb")
+PCB = os.path.join(KDIR, "nova-rf1.kicad_pcb")
 
 ROLE = {"mcu": "core", "subghz": "rf", "nfc": "rf", "rfid125": "analog",
         "io": "io", "power": "power", "passive": "decoupling", "ui": "io"}
@@ -36,7 +36,7 @@ def build():
         groups.append({"name": g, "role": ROLE.get(g, "other"),
                        "refs": sorted(refs), "why": WHY.get(g, g)})
     out = {"schema": 1, "board": PCB, "groups": groups}
-    path = os.path.join(KDIR, "crl-mt1.groups.json")
+    path = os.path.join(KDIR, "nova-rf1.groups.json")
     with open(path, "w") as f:
         json.dump(out, f, indent=2)
     print(f"wrote {path}: {len(groups)} groups, {sum(len(g['refs']) for g in groups)} parts")

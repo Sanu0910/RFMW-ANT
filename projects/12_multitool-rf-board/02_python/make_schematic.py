@@ -1,4 +1,4 @@
-"""Generate a KiCad 9 schematic for CRL-MT1 directly from design.py.
+"""Generate a KiCad 9 schematic for NOVA-RF1 directly from design.py.
 
 Self-contained: each part becomes a procedurally-drawn rectangular symbol with one pin per
 entry in its pin map; every pin gets a short wire stub and a global label carrying its net name,
@@ -7,7 +7,7 @@ clustered by functional group and shelf-packed on one large sheet. No external s
 needed (the chip symbols are drawn as generic boxes, which is enough for netlist/ERC purposes;
 replace with datasheet symbols before a production schematic review if desired).
 
-  python3 make_schematic.py      -> writes ../01_kicad/crl-mt1.kicad_sch (+ .kicad_pro)
+  python3 make_schematic.py      -> writes ../01_kicad/nova-rf1.kicad_sch (+ .kicad_pro)
 """
 import os
 import uuid
@@ -18,7 +18,7 @@ import design as D
 HERE = os.path.dirname(os.path.abspath(__file__))
 KDIR = os.path.normpath(os.path.join(HERE, "..", "01_kicad"))
 os.makedirs(KDIR, exist_ok=True)
-PROJECT = "crl-mt1"
+PROJECT = "nova-rf1"
 REV = "A"
 COMPANY = "Carl RF Microwave"
 
@@ -201,7 +201,7 @@ def build():
 
     root = [Sym("kicad_sch"), [Sym("version"), 20250114], [Sym("generator"), "eeschema"],
             [Sym("generator_version"), "9.0"], [Sym("uuid"), ROOT_UUID], [Sym("paper"), "A0"],
-            [Sym("title_block"), [Sym("title"), "CRL-MT1 multi-tool RF board"], [Sym("date"), "2026-10-24"],
+            [Sym("title_block"), [Sym("title"), "NOVA-RF1 multi-tool RF board"], [Sym("date"), "2026-10-24"],
              [Sym("rev"), REV], [Sym("company"), COMPANY],
              [Sym("comment"), 1, "Generated from 02_python/design.py - edit the source, then regenerate"],
              [Sym("comment"), 2, "Original firmware-compatible design; not a Flipper Zero"]],

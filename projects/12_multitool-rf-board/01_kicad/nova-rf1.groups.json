@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "board": "/home/user/RFMW-main/projects/12_multitool-rf-board/01_kicad/crl-mt1.kicad_pcb",
+  "board": "/home/user/RFMW-main/projects/12_multitool-rf-board/01_kicad/nova-rf1.kicad_pcb",
   "groups": [
     {
       "name": "mcu",

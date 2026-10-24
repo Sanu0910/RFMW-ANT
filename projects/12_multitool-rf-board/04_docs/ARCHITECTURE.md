@@ -1,4 +1,4 @@
-# CRL-MT1: an original firmware-compatible multi-tool RF board
+# NOVA-RF1: an original firmware-compatible multi-tool RF board
 
 This project is an **original open-hardware design** for a hand-held multi-tool used in RFID/NFC development,
 infrared remote work, sub-GHz radio experiments, 1-Wire/iButton work and general embedded hacking and education.
@@ -9,7 +9,7 @@ It is designed to be **firmware-compatible with the open-source Flipper Zero fir
 It is **not** a Flipper Zero and must not be presented as one:
 
 - **No trademark, no trade dress.** The name "Flipper Zero", the Flipper Devices logo and the dolphin mascot are
-  trademarks of Flipper Devices. This board uses none of them. It has its own name (CRL-MT1), its own case and its
+  trademarks of Flipper Devices. This board uses none of them. It has its own name (NOVA-RF1), its own case and its
   own silkscreen.
 - **Original schematic and layout.** Flipper Devices has not published the Flipper Zero schematic, PCB or Gerbers.
   Nothing here is copied from their hardware files. The interconnect below is derived only from **public chip
