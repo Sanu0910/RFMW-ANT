@@ -12,6 +12,7 @@ EM simulation tooling: [`docs/GDS2OPENEMS.md`](docs/GDS2OPENEMS.md) — openEMS 
 EM simulation tooling: [`docs/HERTZON.md`](docs/HERTZON.md) — Hertzon 3D full-wave FEM simulator (EMerge solver, HFSS-style GUI, MCP server), installed with `tools/install_hertzon.sh`.
 PCB tooling: [`docs/KICAD_MCP.md`](docs/KICAD_MCP.md) — KiCad 9 + KiCAD-MCP-Server headless, installed with `tools/install_kicad_mcp.sh`.
 Agentic CAD workspace: [`docs/BACKPLANE.md`](docs/BACKPLANE.md) — Backplane (KiCad + FreeCAD viewers, KiCad fork with IPC schematic API, multi-agent orchestration), installed with `tools/install_backplane.sh`.
+Reverse engineering: [`docs/REA.md`](docs/REA.md) — REA (Reverse Engineer Anything) CLI/MCP for binaries, Electron/JS apps, firmware and more, installed with `tools/install_rea.sh`.
 
 ## Projects
 
