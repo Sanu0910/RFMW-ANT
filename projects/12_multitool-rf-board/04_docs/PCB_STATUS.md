@@ -74,3 +74,10 @@ Remaining for a 100%-clean sign-off:
 - **GND via stitching:** ~44 GND pads to tap to the pour.
 - 4 clearance DRC violations at the 0.1mm floor.
 Component cost ~$34.75/board; ~$55-60 built at low volume (see NOVA-RF1_product.pdf).
+
+## Elegant-outline corrected board (2026-10-24)
+Rounded handheld outline (R9 top / R18 bottom grip), netlist corrected (3 bugs fixed per
+VERIFICATION.md). GND + +3V3 planes poured. **101/104 nets routed** (3051 segments, 554 vias) ->
+`01_kicad/nova-rf1-routed.kicad_pcb`, fab package re-exported. 3 signals (I2C_PWR_SCL, USB_DP,
+VIBRO) remain for manual trace - normal final hand-finish on a dense 2-plane 4-layer board
+(only top+bottom free for signals). Plus GND via-stitching and a few 0.1mm clearance nits.
