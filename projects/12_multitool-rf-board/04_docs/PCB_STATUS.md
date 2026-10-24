@@ -14,23 +14,24 @@ guessed:
 3. **Direct numeric / custom named pads**: passives, crystals, headers, FFCs, and custom
    footprints whose pads are named to match the design pins.
 
-Current coverage: **69 parts fully resolved, 0 unresolved, 8 pending** datasheet uploads.
+Current coverage: **88 parts, 0 unresolved, 0 pending** — all pinouts resolved.
 
-## Pending — datasheets needed for exact pads
-These eight chips have **no KiCad symbol** and this container cannot reach ti.com / st.com, so
-their exact pad numbers must come from the datasheets (upload the PDFs):
+## Datasheet pinouts transcribed (2026-10-24)
+All eight chips' exact pads were read from the uploaded datasheets and added to `pinmap.AUTHORED`,
+with the mandatory support components added to `design.py`:
 
-| Ref | Part | Package | Why |
-|---|---|---|---|
-| U2 | CC1101RGPR | QFN-20 | sub-GHz radio — pads must be exact |
-| U3 | ST25R3916-AQWT | QFN-32 | 13.56 MHz NFC reader |
-| U6 | BQ25896 | WQFN-24 | charger |
-| U7 | BQ27220 | DSBGA-9 | fuel gauge |
-| U8, U8B | LM3281 | DSBGA-5 | 3V3 bucks |
-| DA7 | LP5562 | DSBGA-12 | RGB LED driver |
-| DA8 | RS3221-3.3 | DFN-6 | LDO |
+| Ref | Part | Package | Source | Support added |
+|---|---|---|---|---|
+| U2 | CC1101RGPR | QFN-20 (EP=21) | SWRS061I Table 19 | DCOUPL cap |
+| U3 | ST25R3916-AQWT | UFQFPN-32 (EP=33) | DS12484 Fig.4 | I2C_EN=GND, AGDC cap |
+| U6 | BQ25896 | WQFN-24 (EP=25) | SLUSC76C | buck inductor, bootstrap, REGN cap, ILIM R, TS divider, CE=GND |
+| U7 | BQ27220 | DSBGA-9 YZF | SLUSCB7A | VDD cap, GPOUT pull-up, BIN pull-down |
+| U8, U8B | LM3281 | DSBGA-6 YFQ | SNVSA38 | MODE=VIN |
+| DA7 | LP5562 | DSBGA-12 YQE | SNVS820B | ADDR_SEL0/1=GND (custom 3x4 ball footprint) |
+| DA8 | RS3221-3.3 | SOT-23-3 | RS3221 RevA.3 | — |
 
-Once uploaded, each pinout is transcribed into `pinmap.AUTHORED` and the part leaves `PENDING`.
+Validation: all 88 parts cross-check clean (every pad->net lands on a real footprint pad).
+Multi-pad supply/ground nets (e.g. CC1101 AVDD x4, ST25R3916 VDD x8 / VSS x6) are mapped.
 
 ## Done, in this order (project-07 flow)
 - [x] Netlist (`design.py`), verified vs the official STM32WB55 symbol (power/SMPS/osc complete)
@@ -40,8 +41,9 @@ Once uploaded, each pinout is transcribed into `pinmap.AUTHORED` and the part le
       parts (coil, loop/chip antennas, iButton pads, speaker, vibro, battery, display FFC, TSOP,
       Tag-Connect, balun, RF filter, RF switch, RGB LED, microSD). All 69 resolved parts now
       pass a pad-name cross-check: every net lands on a real footprint pad (0 mismatches).
-- [ ] Datasheet pinouts for the 8 pending chips
-- [ ] `make_pcb.py`: load footprints, assign nets, place, board outline
+- [x] Datasheet pinouts for all 8 chips (transcribed from uploaded PDFs, + support parts)
+- [x] `make_pcb.py`: load all 87 footprints, assign nets (178 nets), initial grouped placement
+- [ ] Board outline + real floor-plan (RF blocks by antennas, power cluster, MCU central)
 - [ ] RF matching (CC1101 50 ohm + LC, NFC 13.56 MHz, 125 kHz LC) and controlled-impedance stackup
 - [ ] Route (4-layer), zones, DRC clean
 - [ ] Gerbers, drill, CPL, costed BOM, 3D render

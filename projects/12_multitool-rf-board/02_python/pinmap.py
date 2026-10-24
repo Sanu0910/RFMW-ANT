@@ -38,8 +38,8 @@ FOOTPRINT = {
     "QFN-24": "Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.65x2.65mm",
     "QFN-20": "Package_DFN_QFN:QFN-20-1EP_4x4mm_P0.5mm_EP2.5x2.5mm",
     "DFN-6": "Package_DFN_QFN:DFN-6-1EP_1.2x1.2mm_P0.4mm_EP0.3x0.94mm_PullBack",
-    "DSBGA-5": "Package_BGA:Texas_DSBGA-5_0.822x1.116mm_Layout2x1x2_P0.4mm",
-    "DSBGA-12": "Package_BGA:Texas_DSBGA-12_1.36x1.86mm_Layout3x4_P0.5mm",
+    "DSBGA-6": "Package_BGA:Texas_DSBGA-6_0.76x1.16mm_Layout2x3_P0.4mm",
+    "DSBGA-12": "crl-mt1:LP5562_DSBGA12",   # 3 rows x 4 cols (A1-C4), KiCad stock is 4x3
     "WCSP": "Package_BGA:BGA-9_1.6x1.6mm_Layout3x3_P0.5mm",
     "TSNP-9": "crl-mt1:RF_Switch_TSNP9",
     "Xtal_3225": "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm",
@@ -98,11 +98,37 @@ AUTHORED = {
               "SHIELD": "S1"},
     # IR LED on a stock LED_0805 (KiCad pad 1 = cathode K, pad 2 = anode A)
     "D_IR": {"K": "1", "A": "2"},
+
+    # ---- transcribed from the uploaded datasheets (exact pads) ----
+    # CC1101RGPR QFN-20 (SWRS061I Table 19); EP pad 21 = GND
+    "U2": {"SCLK": "1", "SO": "2", "DVDD": "4", "DCOUPL": "5", "GDO0": "6", "CSn": "7",
+           "XOSC_Q1": "8", "AVDD": ["9", "11", "14", "15"], "XOSC_Q2": "10", "RF_P": "12",
+           "RF_N": "13", "GND": ["16", "19", "21"], "RBIAS": "17", "DGUARD": "18", "SI": "20"},
+    # ST25R3916 UFQFPN-32 (DS12484 Fig.4); EP pad 33 = VSS
+    "U3": {"SCLK": "30", "MISO": "32", "MOSI": "31", "SS": "29", "IRQ": "27", "TX1": "13",
+           "TX2": "15", "RFI1": "22", "RFI2": "23", "OSCI": "5", "OSCO": "4",
+           "VDD": ["1", "3", "7", "8", "9", "10", "11", "14"],
+           "VSS": ["6", "12", "16", "21", "26", "33"], "I2C_EN": "20", "AGDC": "24"},
+    # BQ25896 WQFN-24 (SLUSC76C); EP pad 25 = GND
+    "U6": {"VBUS": "1", "SCL": "5", "SDA": "6", "CE": "9", "ILIM": "10", "TS": "11",
+           "BAT": ["13", "14"], "SYS": ["15", "16"], "PGND": ["17", "18"], "SW": ["19", "20"],
+           "BTST": "21", "REGN": "22", "PMID": "23", "GND": "25"},
+    # BQ27220 DSBGA-9 YZF (SLUSCB7A)
+    "U7": {"GPOUT": "A1", "SDA": "A2", "SCL": "A3", "BIN": "B1", "VSS": "B2", "VDD": "B3",
+           "SRP": "C1", "SRN": "C2", "BAT": "C3"},
+    # LM3281 DSBGA-6 YFQ (SNVSA38)
+    "U8": {"FB": "A1", "VIN": "A2", "MODE": "B1", "SW": "B2", "EN": "C1", "GND": "C2"},
+    "U8B": {"FB": "A1", "VIN": "A2", "MODE": "B1", "SW": "B2", "EN": "C1", "GND": "C2"},
+    # LP5562 DSBGA-12 YQE (SNVS820B)
+    "DA7": {"W": "A1", "VDD": "A2", "CLK_32K": "A3", "B": "A4", "ADDR_SEL1": "B1",
+            "ADDR_SEL0": "B2", "GND": "B3", "G": "B4", "SDA": "C1", "SCL": "C2",
+            "EN": "C3", "R": "C4"},
+    # RS3221-3.3 SOT-23-3 fixed 3.3V (RS3221 RevA.3)
+    "DA8": {"GND": "1", "VOUT": "2", "VIN": "3"},
 }
 
-# chips still waiting on datasheet uploads for exact pads (see 04_docs/PCB_STATUS.md)
-PENDING = {"U2", "U3", "U6", "U7", "U8", "U8B", "DA7", "DA8"}
-#          CC1101, ST25R3916, BQ25896, BQ27220, LM3281 x2, LP5562, RS3221
+# all datasheets received and transcribed (2026-10-24); none pending
+PENDING = set()
 
 _symcache = {}
 
@@ -142,7 +168,14 @@ def pad_nets(ref):
         return out
     if ref in AUTHORED:
         amap = AUTHORED[ref]
-        return {amap[s]: net for s, net in sig.items() if s in amap}
+        out = {}
+        for s, net in sig.items():
+            if s not in amap:
+                continue
+            pads = amap[s]
+            for pad in ([pads] if isinstance(pads, str) else pads):
+                out[pad] = net
+        return out
     # direct numeric: pin keys already are pad numbers
     return {s: net for s, net in sig.items()}
 

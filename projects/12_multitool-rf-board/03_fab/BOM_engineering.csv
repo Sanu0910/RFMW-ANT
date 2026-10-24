@@ -13,12 +13,17 @@ C6,100nF,100nF,Murata,C_0402,passive,decoupling
 C7,10uF,10uF,Murata,C_0805,passive,bulk
 C8,10uF,10uF,Murata,C_0805,passive,bulk
 C9,10uF,10uF,Murata,C_0805,passive,bulk
+C_AGDC,1uF,1uF,Murata,C_0402,nfc,ST25R3916 AGDC analog-gnd reference
+C_BTST,47nF,47nF,Murata,C_0402,power,BQ25896 bootstrap cap (SW-BTST)
+C_CCd,100nF,100nF,Murata,C_0402,subghz,CC1101 DCOUPL decoupling
+C_FGV,2.2uF,2.2uF,Murata,C_0402,power,BQ27220 VDD LDO decoupling
+C_REGN,4.7uF,4.7uF,Murata,C_0805,power,BQ25896 REGN LDO decoupling
 C_SMPS,2.2uF,2.2uF,Murata,C_0402,mcu,SMPS output decoupling (VFB)
 DA3,LMV358,LMV358AIDGKR,Texas Instruments,VSSOP-8,rfid125,RFID RX band-pass/amplifier stage 1 (dual op-amp)
 DA4,LMV358,LMV358AIDGKR,Texas Instruments,VSSOP-8,rfid125,RFID RX amplifier stage 2 (dual op-amp)
 DA5,LMV331,LMV331IDCKR,Texas Instruments,SC-70-5,rfid125,RFID envelope comparator -> digital
 DA7,LP5562,LP5562TMX,Texas Instruments,DSBGA-12,io,"RGB LED driver (notification LED + backlight), I2C"
-DA8,RS3221-3.3,RS3221-3.3YF3,Runic,DFN-6,power,3.3V LDO (clean analog/LDO rail)
+DA8,RS3221-3.3,RS3221-3.3YF3,Runic,SOT-23,power,3.3V LDO (clean analog/LDO rail)
 D_IR,IR LED x3,VSMY14940,Vishay,LED_IR,io,"IR transmit LEDs (3x, 39R series each)"
 FLT1,BLE filter,LFL182G45TC1A108,Murata,RF_filter,mcu,2.4GHz BLE band-pass filter
 FLT2,balun,B0310J50100AHF,Johanson,Balun_0310,subghz,"CC1101 differential-to-SE balun + LC match (L4 3.3nH, L5 6.8nH, C32 1.2pF)"
@@ -31,6 +36,7 @@ J_USB,USB-C,TYPE-C-31-M-12,GCT,USB_C,power,USB-C receptacle
 L13,470nH,470nH,Murata,Inductor_0806,power,buck inductor (core)
 L14,470nH,470nH,Murata,Inductor_0806,power,buck inductor (ext)
 LS1,speaker,BCE-MX8530A-03627,BeStar,Speaker,ui,magnetic speaker
+L_CHG,2.2uH,2.2uH,TDK,Inductor_0806,power,BQ25896 buck inductor (SW->SYS)
 L_NFC,EMIfilter,NFC EMC+match L1/L2 270nH,discrete,EMC_net,nfc,NFC EMC + matching network
 L_SMPS,10uH,10uH,Murata,Inductor_0806,mcu,STM32WB55 internal SMPS inductor (VLX-VFB)
 M1,vibro,coin ERM,generic,Vibro,ui,haptic motor
@@ -43,8 +49,13 @@ R37,10m,10mOhm,Yageo,R_1206,power,battery current-sense (fuel gauge)
 RN1,51x4,51ohm array,Yageo,R_array_4x0402,io,series resistors on exposed GPIO/FFC signals (one of several)
 R_CC1,5.1k,5.1k,Yageo,R_0402,power,USB-C CC pulldown
 R_CC2,5.1k,5.1k,Yageo,R_0402,power,USB-C CC pulldown
+R_FGB,10k,10k,Yageo,R_0402,power,BQ27220 BIN pull-down
+R_FGO,10k,10k,Yageo,R_0402,power,BQ27220 GPOUT pull-up
+R_ILIM,1.1k,1.1k,Yageo,R_0402,power,BQ25896 input current limit set
 R_MID1,33k,33k,Yageo,R_0402,rfid125,1.65V mid-rail divider
 R_MID2,33k,33k,Yageo,R_0402,rfid125,1.65V mid-rail divider
+R_TS1,5.23k,5.23k,Yageo,R_0402,power,BQ25896 TS divider top (REGN)
+R_TS2,30.31k,30.31k,Yageo,R_0402,power,BQ25896 TS divider bottom (to NTC/GND)
 SW1,RFswitch,BGS13S4N9,Infineon,TSNP-9,subghz,SPDT RF switch (band/antenna select)
 SW2,RFswitch,BGS13S4N9,Infineon,TSNP-9,subghz,SPDT RF switch (antenna side)
 SW_B,tact,EVQ-P7,Panasonic,SW_SMD_4p,ui,tact switch
@@ -60,8 +71,8 @@ U3,ST25R3916,ST25R3916-AQWT,STMicroelectronics,QFN-32,nfc,13.56 MHz NFC reader/c
 U5,ST7565R,ST7565R,Sitronix,COG_128x64,io,128x64 monochrome LCD (COG)
 U6,BQ25896,BQ25896,Texas Instruments,QFN-24,power,"1-cell Li-ion charger with 5V boost, I2C"
 U7,BQ27220,BQ27220,Texas Instruments,WCSP,power,"battery fuel gauge, I2C"
-U8,LM3281,LM3281YFQR,Texas Instruments,DSBGA-5,power,buck DC-DC -> +3V3 core rail
-U8B,LM3281,LM3281YFQR,Texas Instruments,DSBGA-5,power,buck DC-DC -> ext-3V3 (header/peripherals)
+U8,LM3281,LM3281YFQR,Texas Instruments,DSBGA-6,power,buck DC-DC -> +3V3 core rail
+U8B,LM3281,LM3281YFQR,Texas Instruments,DSBGA-6,power,buck DC-DC -> ext-3V3 (header/peripherals)
 U9,loadsw,TPS22917,Texas Instruments,SOT-23-6,power,peripheral-rail load switch (SD/display/radios)
 U_IR,IR RX,TSOP75338TR,Vishay,IR_receiver,io,38 kHz IR demodulator (100nF decouple)
 VD4,RGB LED,LTST-C19HE1WT,Lite-On,LED_RGB_0606,io,notification RGB LED

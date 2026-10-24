@@ -75,7 +75,9 @@ part("U2", "CC1101", "CC1101RGPR", "Texas Instruments", "QFN-20", "subghz",
      {"SI": "SPI_R_MOSI", "SO": "SPI_R_MISO", "SCLK": "SPI_R_SCK", "CSn": "CC1101_CS",
       "GDO0": "CC1101_GDO0", "RF_P": "SUBG_RF_P", "RF_N": "SUBG_RF_N",
       "XOSC_Q1": "CC_XO1", "XOSC_Q2": "CC_XO2", "RBIAS": "CC_RBIAS",
-      "AVDD": "+3V3", "DVDD": "+3V3", "GND": "GND", "DGUARD": "+3V3"})
+      "AVDD": "+3V3", "DVDD": "+3V3", "GND": "GND", "DGUARD": "+3V3", "DCOUPL": "CC_DCOUPL"})
+part("C_CCd", "100nF", "100nF", "Murata", "C_0402", "subghz", "CC1101 DCOUPL decoupling",
+     {"1": "CC_DCOUPL", "2": "GND"})
 part("FLT2", "balun", "B0310J50100AHF", "Johanson", "Balun_0310", "subghz",
      "CC1101 differential-to-SE balun + LC match (L4 3.3nH, L5 6.8nH, C32 1.2pF)",
      {"BAL1": "SUBG_RF_P", "BAL2": "SUBG_RF_N", "UNBAL": "SUBG_SE", "GND": "GND"})
@@ -111,7 +113,9 @@ part("U3", "ST25R3916", "ST25R3916-AQWT", "STMicroelectronics", "QFN-32", "nfc",
      {"SCLK": "SPI_R_SCK", "MISO": "SPI_R_MISO", "MOSI": "SPI_R_MOSI", "SS": "NFC_CS",
       "IRQ": "RFID_CARRIER", "TX1": "NFC_TX1", "TX2": "NFC_TX2",
       "RFI1": "NFC_RFI1", "RFI2": "NFC_RFI2", "OSCI": "NFC_XTAL1", "OSCO": "NFC_XTAL2",
-      "VDD": "+3V3", "VSP": "+3V3", "VSS": "GND"})
+      "VDD": "+3V3", "VSS": "GND", "I2C_EN": "GND", "AGDC": "NFC_AGDC"})
+part("C_AGDC", "1uF", "1uF", "Murata", "C_0402", "nfc", "ST25R3916 AGDC analog-gnd reference",
+     {"1": "NFC_AGDC", "2": "GND"})
 part("ZQ1", "27.12MHz", "XRCGB27M120F3M00R0", "Murata", "XTAL_2520", "nfc", "ST25R3916 27.12 MHz crystal",
      {"1": "NFC_XTAL1", "2": "NFC_XTAL2"})
 # EMC (L1/L2 270nH) + matching net (C5/C7 62p, C3/C8 100p, C1/C10 100p, C2/C9 10p, C4/C6 680p, C11/C15 6p, R1/R2 0R)
@@ -187,32 +191,50 @@ part("J_USB", "USB-C", "TYPE-C-31-M-12", "GCT", "USB_C", "power", "USB-C recepta
 part("U6", "BQ25896", "BQ25896", "Texas Instruments", "QFN-24", "power",
      "1-cell Li-ion charger with 5V boost, I2C",
      {"VBUS": "VBUS", "SYS": "VSYS", "BAT": "VBAT", "SDA": "I2C_PWR_SDA", "SCL": "I2C_PWR_SCL",
-      "PGND": "GND", "GND": "GND"})
+      "PGND": "GND", "GND": "GND", "SW": "CHG_SW", "BTST": "CHG_BTST", "REGN": "CHG_REGN",
+      "ILIM": "CHG_ILIM", "TS": "CHG_TS", "CE": "GND"})
+part("L_CHG", "2.2uH", "2.2uH", "TDK", "Inductor_0806", "power", "BQ25896 buck inductor (SW->SYS)",
+     {"1": "CHG_SW", "2": "VSYS"})
+part("C_BTST", "47nF", "47nF", "Murata", "C_0402", "power", "BQ25896 bootstrap cap (SW-BTST)",
+     {"1": "CHG_SW", "2": "CHG_BTST"})
+part("C_REGN", "4.7uF", "4.7uF", "Murata", "C_0805", "power", "BQ25896 REGN LDO decoupling",
+     {"1": "CHG_REGN", "2": "GND"})
+part("R_ILIM", "1.1k", "1.1k", "Yageo", "R_0402", "power", "BQ25896 input current limit set",
+     {"1": "CHG_ILIM", "2": "GND"})
+part("R_TS1", "5.23k", "5.23k", "Yageo", "R_0402", "power", "BQ25896 TS divider top (REGN)",
+     {"1": "CHG_REGN", "2": "CHG_TS"})
+part("R_TS2", "30.31k", "30.31k", "Yageo", "R_0402", "power", "BQ25896 TS divider bottom (to NTC/GND)",
+     {"1": "CHG_TS", "2": "GND"})
 part("X10", "BAT+NTC", "1.25-3P", "generic", "Conn_1x03_1.25mm", "power",
      "battery + NTC thermistor (BAT / TEMP / GND)", {"1": "VBAT", "2": "BAT_NTC", "3": "GND"})
 part("BT1", "Li-Po 1S", "2000mAh 503450", "generic", "pack", "power", "single-cell battery pack w/ NTC",
      {"+": "VBAT", "NTC": "BAT_NTC", "-": "GND"})
 part("U7", "BQ27220", "BQ27220", "Texas Instruments", "WCSP", "power", "battery fuel gauge, I2C",
      {"BAT": "VBAT", "SDA": "I2C_PWR_SDA", "SCL": "I2C_PWR_SCL", "SRP": "VBAT_SNS", "SRN": "GND",
-      "VSS": "GND"})
+      "VSS": "GND", "VDD": "FG_VDD", "GPOUT": "FG_GPOUT", "BIN": "FG_BIN"})
+part("C_FGV", "2.2uF", "2.2uF", "Murata", "C_0402", "power", "BQ27220 VDD LDO decoupling",
+     {"1": "FG_VDD", "2": "GND"})
+part("R_FGO", "10k", "10k", "Yageo", "R_0402", "power", "BQ27220 GPOUT pull-up", {"1": "FG_GPOUT", "2": "FG_VDD"})
+part("R_FGB", "10k", "10k", "Yageo", "R_0402", "power", "BQ27220 BIN pull-down", {"1": "FG_BIN", "2": "GND"})
 # regulators as on the reference design: two LM3281 bucks (3V3 core + ext-3V3) and an RS3221 LDO
-part("U8", "LM3281", "LM3281YFQR", "Texas Instruments", "DSBGA-5", "power",
-     "buck DC-DC -> +3V3 core rail", {"VIN": "VSYS", "SW": "SW_L13", "FB": "+3V3", "EN": "+3V3", "GND": "GND"})
+part("U8", "LM3281", "LM3281YFQR", "Texas Instruments", "DSBGA-6", "power",
+     "buck DC-DC -> +3V3 core rail",
+     {"VIN": "VSYS", "SW": "SW_L13", "FB": "+3V3", "EN": "+3V3", "GND": "GND", "MODE": "VSYS"})
 part("L13", "470nH", "470nH", "Murata", "Inductor_0806", "power", "buck inductor (core)",
      {"1": "SW_L13", "2": "+3V3"})
-part("U8B", "LM3281", "LM3281YFQR", "Texas Instruments", "DSBGA-5", "power",
+part("U8B", "LM3281", "LM3281YFQR", "Texas Instruments", "DSBGA-6", "power",
      "buck DC-DC -> ext-3V3 (header/peripherals)",
-     {"VIN": "VSYS", "SW": "SW_L14", "FB": "+3V3_EXT", "EN": "PERIPH_EN", "GND": "GND"})
+     {"VIN": "VSYS", "SW": "SW_L14", "FB": "+3V3_EXT", "EN": "PERIPH_EN", "GND": "GND", "MODE": "VSYS"})
 part("L14", "470nH", "470nH", "Murata", "Inductor_0806", "power", "buck inductor (ext)",
      {"1": "SW_L14", "2": "+3V3_EXT"})
-part("DA8", "RS3221-3.3", "RS3221-3.3YF3", "Runic", "DFN-6", "power", "3.3V LDO (clean analog/LDO rail)",
+part("DA8", "RS3221-3.3", "RS3221-3.3YF3", "Runic", "SOT-23", "power", "3.3V LDO (clean analog/LDO rail)",
      {"VIN": "VSYS", "VOUT": "+3V3_LDO", "GND": "GND"})
 part("R37", "10m", "10mOhm", "Yageo", "R_1206", "power", "battery current-sense (fuel gauge)",
      {"1": "VBAT", "2": "VBAT_SNS"})
 part("DA7", "LP5562", "LP5562TMX", "Texas Instruments", "DSBGA-12", "io",
      "RGB LED driver (notification LED + backlight), I2C",
      {"SDA": "I2C_PWR_SDA", "SCL": "I2C_PWR_SCL", "EN": "+3V3", "R": "LED_R", "G": "LED_G", "B": "LED_B",
-      "W": "LCD_LED", "VDD": "+3V3", "GND": "GND"})
+      "W": "LCD_LED", "VDD": "+3V3", "GND": "GND", "ADDR_SEL0": "GND", "ADDR_SEL1": "GND"})
 part("VD4", "RGB LED", "LTST-C19HE1WT", "Lite-On", "LED_RGB_0606", "io", "notification RGB LED",
      {"R": "LED_R", "G": "LED_G", "B": "LED_B", "A": "+3V3"})
 part("U9", "loadsw", "TPS22917", "Texas Instruments", "SOT-23-6", "power",

@@ -45,6 +45,26 @@ def fp(name, pads, pitch=1.0, padsize=(0.7, 0.7), rows=1, desc=""):
         f.write("\n".join(lines) + "\n")
 
 
+def bga(name, rows, cols, pitch=0.4, ball=0.25, desc=""):
+    """Ball grid: rows like ['A','B','C'], cols like [1,2,3,4]; pads named A1.. ."""
+    lines = [f'(footprint "{name}" (version 20240108) (generator "make_footprints")',
+             '  (layer "F.Cu")', f'  (descr "{desc}")', '  (attr smd)']
+    w = (len(cols) - 1) * pitch
+    h = (len(rows) - 1) * pitch
+    for ri, r in enumerate(rows):
+        for ci, c in enumerate(cols):
+            x = -w / 2 + ci * pitch
+            y = -h / 2 + ri * pitch
+            lines.append(_pad(f"{r}{c}", x, y, (ball, ball)))
+    bx, by = w / 2 + ball, h / 2 + ball
+    lines.append(f'  (fp_text reference "REF**" (at 0 {-by-0.8:.2f}) (layer "F.SilkS") (effects (font (size 0.7 0.7) (thickness 0.1))))')
+    lines.append(f'  (fp_text value "{name}" (at 0 {by+0.8:.2f}) (layer "F.Fab") (effects (font (size 0.7 0.7) (thickness 0.1))))')
+    lines.append(f'  (fp_rect (start {-bx:.2f} {-by:.2f}) (end {bx:.2f} {by:.2f}) (stroke (width 0.05) (type default)) (fill none) (layer "F.CrtYd"))')
+    lines.append(")")
+    with open(os.path.join(PRETTY, name + ".kicad_mod"), "w") as f:
+        f.write("\n".join(lines) + "\n")
+
+
 def _pad(pn, x, y, size):
     return (f'  (pad "{pn}" smd roundrect (at {x:.3f} {y:.3f}) (size {size[0]} {size[1]}) '
             f'(layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.25))')
@@ -73,6 +93,9 @@ fp("TagConnect_TC2030", ["SWDIO", "SWCLK", "NRST", "VCC", "GND"], pitch=1.27, pa
 fp("LED_RGB_4p", ["A", "R", "G", "B"], pitch=1.0, padsize=(0.5, 0.7), rows=2, desc="common-anode RGB LED")
 fp("microSD_7p", ["VSS", "VDD", "CLK", "CD", "CS", "DI", "DO"], pitch=1.1, padsize=(0.7, 1.6),
    desc="microSD push-pull (SPI mode)")
+
+# LP5562 DSBGA-12: 3 rows (A,B,C) x 4 cols (1-4), 0.4 mm pitch
+bga("LP5562_DSBGA12", ["A", "B", "C"], [1, 2, 3, 4], pitch=0.4, ball=0.25, desc="LP5562 12-ball DSBGA YQE")
 
 if __name__ == "__main__":
     print("wrote", len(os.listdir(PRETTY)), "footprints to", PRETTY)
