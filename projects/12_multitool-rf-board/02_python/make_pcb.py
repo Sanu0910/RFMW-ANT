@@ -29,10 +29,33 @@ def mm(v):
     return pcbnew.FromMM(v)
 
 
+import math
+
+# elegant handheld silhouette: tight top corners (display/buttons end),
+# generous palm-grip bottom corners. Closed polygon -> always watertight.
+R_TOP = 9.0
+R_BOT = 18.0
+
+
+def _rounded_pts(x0, y0, x1, y1, rt, rb, seg=22):
+    """Perimeter points of a rounded rectangle (KiCad Y-down), clockwise, closed."""
+    pts = []
+
+    def arc(cx, cy, r, a0, a1):
+        for i in range(seg + 1):
+            a = a0 + (a1 - a0) * i / seg
+            pts.append((cx + r * math.cos(a), cy + r * math.sin(a)))
+    arc(x0 + rt, y0 + rt, rt, math.pi, 1.5 * math.pi)        # top-left
+    arc(x1 - rt, y0 + rt, rt, 1.5 * math.pi, 2.0 * math.pi)  # top-right
+    arc(x1 - rb, y1 - rb, rb, 0.0, 0.5 * math.pi)            # bottom-right
+    arc(x0 + rb, y1 - rb, rb, 0.5 * math.pi, math.pi)        # bottom-left
+    pts.append(pts[0])
+    return pts
+
+
 def add_outline(board):
-    """Closed rectangular board edge on Edge.Cuts (4 connected segments)."""
-    x0, y0, x1, y1 = OX, OY, OX + BW, OY + BH
-    pts = [(x0, y0), (x1, y0), (x1, y1), (x0, y1), (x0, y0)]
+    """Elegant rounded handheld edge on Edge.Cuts (closed segment polygon)."""
+    pts = _rounded_pts(OX, OY, OX + BW, OY + BH, R_TOP, R_BOT)
     for a, b in zip(pts, pts[1:]):
         s = pcbnew.PCB_SHAPE(board, pcbnew.SHAPE_T_SEGMENT)
         s.SetStart(pcbnew.VECTOR2I(mm(a[0]), mm(a[1])))
@@ -79,7 +102,7 @@ def build():
         "J_USB":  (BW / 2, BH - 6.0, 0),      # USB-C centered on bottom edge
         "J_SWD":  (BW - 16.0, BH - 6.0, 0),   # Tag-Connect SWD near bottom-right
         "X10":    (6.0, BH / 2, 90),          # battery connector on left edge
-        "J_GPIO": (BW - 5.0, BH / 2, 0),      # 2x9 GPIO header on right edge (native tall axis)
+        "J_GPIO": (BW - 6.0, BH / 2 - 4.0, 0),  # 2x9 GPIO header on right edge (clear of bottom curve)
         "J_SUBG": (9.0, 5.5, 0),              # sub-GHz U.FL top-left
         "X6":     (23.0, 5.5, 0),             # 18-pin FFC on top edge (sub-board link)
     }
