@@ -13,6 +13,7 @@ C6,100nF,100nF,Murata,C_0402,passive,decoupling
 C7,10uF,10uF,Murata,C_0805,passive,bulk
 C8,10uF,10uF,Murata,C_0805,passive,bulk
 C9,10uF,10uF,Murata,C_0805,passive,bulk
+C_SMPS,2.2uF,2.2uF,Murata,C_0402,mcu,SMPS output decoupling (VFB)
 DA3,LMV358,LMV358AIDGKR,Texas Instruments,VSSOP-8,rfid125,RFID RX band-pass/amplifier stage 1 (dual op-amp)
 DA4,LMV358,LMV358AIDGKR,Texas Instruments,VSSOP-8,rfid125,RFID RX amplifier stage 2 (dual op-amp)
 DA4,LP5562,LP5562TMX,Texas Instruments,DSBGA-12,io,"RGB LED driver (notification LED + backlight), I2C"
@@ -31,6 +32,7 @@ L13,470nH,470nH,Murata,Inductor_0806,power,buck inductor (core)
 L14,470nH,470nH,Murata,Inductor_0806,power,buck inductor (ext)
 LS1,speaker,BCE-MX8530A-03627,BeStar,Speaker,ui,magnetic speaker
 L_NFC,EMIfilter,NFC EMC+match L1/L2 270nH,discrete,EMC_net,nfc,NFC EMC + matching network
+L_SMPS,10uH,10uH,Murata,Inductor_0806,mcu,STM32WB55 internal SMPS inductor (VLX-VFB)
 M1,vibro,coin ERM,generic,Vibro,ui,haptic motor
 Q_IBTN,1W driver,DMN2075U,Diodes,SOT-23,io,iButton open-drain driver + protection
 Q_IR,drive,2N7002,Nexperia,SOT-23,io,IR LED driver FET
@@ -70,7 +72,7 @@ VT6,coildrv N,DMN2004TK,Diodes,SOT-23,rfid125,"125 kHz coil driver, low side"
 X10,BAT+NTC,1.25-3P,generic,Conn_1x03_1.25mm,power,battery + NTC thermistor (BAT / TEMP / GND)
 X6,FFC 18p,FH34SRJ-18S-0.5SH,Hirose,FFC_18_0.5mm,io,flex link to the NFC/RFID/IR sub-board
 X_NFC1,ANT conn,FDX0022A1,connector,FFC_2p,nfc,NFC antenna connector (ANT1)
-Y1,32MHz,ABM8-32.000MHZ,Abracon,Xtal_3225,mcu,HSE 32 MHz for the radio
+Y1,32MHz,ABM8-32.000MHZ,Abracon,Xtal_3225,mcu,HSE 32 MHz for the radio (across OSC_IN/OSC_OUT)
 Y2,32.768kHz,ABS07-32.768KHZ,Abracon,Xtal_ABS07,mcu,LSE RTC crystal
 ZQ1,27.12MHz,XRCGB27M120F3M00R0,Murata,XTAL_2520,nfc,ST25R3916 27.12 MHz crystal
 ZQ3,26MHz,CXD2-026000000,generic,Xtal_2520,subghz,CC1101 26 MHz crystal

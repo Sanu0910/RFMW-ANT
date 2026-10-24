@@ -26,6 +26,12 @@ def part(ref, value, mpn, mfr, fp, group, desc, pins):
 part("U1", "STM32WB55RG", "STM32WB55RGV6", "STMicroelectronics", "QFN-68", "mcu",
      "Cortex-M4 + M0 BLE 5, 1MB flash, USB, 2.4GHz radio",
      {"VDD": "+3V3", "VSS": "GND", "VBAT": "+3V3", "NRST": "NRST",
+      # analog + RF + USB supplies (STM32WB55 datasheet power scheme)
+      "VDDA": "+3V3", "VREF+": "+3V3", "VDDRF": "+3V3", "VSSRF": "GND", "VDDUSB": "+3V3",
+      # internal SMPS (step-down for the radio): L_SMPS between VLX and VFB, VFB decoupled
+      "VDDSMPS": "+3V3", "VLXSMPS": "SMPS_LX", "VFBSMPS": "SMPS_FB", "VSSSMPS": "GND",
+      # 32 MHz radio HSE across the dedicated oscillator pins
+      "OSC_IN": "HSE_IN", "OSC_OUT": "HSE_OUT",
       # SPI-R radio bus
       "PA5": "SPI_R_SCK", "PB4": "SPI_R_MISO", "PB5": "SPI_R_MOSI",
       "PD0": "CC1101_CS", "PA1": "CC1101_GDO0", "PC4": "RF_SW_0", "PE4": "NFC_CS",
@@ -48,10 +54,14 @@ part("U1", "STM32WB55RG", "STM32WB55RGV6", "STMicroelectronics", "QFN-68", "mcu"
       # external header user pins
       "PA7": "EXT_PA7", "PA6": "EXT_PA6", "PA4": "EXT_PA4", "PB3": "EXT_PB3",
       "PB2": "EXT_PB2", "PC3": "EXT_PC3", "PC1": "EXT_PC1", "PC0": "EXT_PC0",
-      # 32MHz radio xtal + 32.768k LSE
-      "PC14": "LSE_IN", "PC15": "LSE_OUT", "PB13_OSC": "HSE_IN"})
-part("Y1", "32MHz", "ABM8-32.000MHZ", "Abracon", "Xtal_3225", "mcu", "HSE 32 MHz for the radio",
-     {"1": "HSE_IN", "2": "GND"})
+      # 32.768k LSE RTC crystal
+      "PC14": "LSE_IN", "PC15": "LSE_OUT"})
+part("Y1", "32MHz", "ABM8-32.000MHZ", "Abracon", "Xtal_3225", "mcu", "HSE 32 MHz for the radio (across OSC_IN/OSC_OUT)",
+     {"1": "HSE_IN", "2": "HSE_OUT"})
+part("L_SMPS", "10uH", "10uH", "Murata", "Inductor_0806", "mcu", "STM32WB55 internal SMPS inductor (VLX-VFB)",
+     {"1": "SMPS_LX", "2": "SMPS_FB"})
+part("C_SMPS", "2.2uF", "2.2uF", "Murata", "C_0402", "mcu", "SMPS output decoupling (VFB)",
+     {"1": "SMPS_FB", "2": "GND"})
 part("Y2", "32.768kHz", "ABS07-32.768KHZ", "Abracon", "Xtal_ABS07", "mcu", "LSE RTC crystal",
      {"1": "LSE_IN", "2": "LSE_OUT"})
 part("FLT1", "BLE filter", "LFL182G45TC1A108", "Murata", "RF_filter", "mcu", "2.4GHz BLE band-pass filter",
@@ -195,11 +205,11 @@ part("U8B", "LM3281", "LM3281YFQR", "Texas Instruments", "DSBGA-5", "power",
      {"VIN": "VSYS", "SW": "SW_L14", "FB": "+3V3_EXT", "EN": "PERIPH_EN", "GND": "GND"})
 part("L14", "470nH", "470nH", "Murata", "Inductor_0806", "power", "buck inductor (ext)",
      {"1": "SW_L14", "2": "+3V3_EXT"})
-part("DA5", "RS3221-3.3", "RS3221-3.3YF3", "Runic", "DFN-6", "power", "3.3V LDO (clean analog/LDO rail)",
+part("DA8", "RS3221-3.3", "RS3221-3.3YF3", "Runic", "DFN-6", "power", "3.3V LDO (clean analog/LDO rail)",
      {"VIN": "VSYS", "VOUT": "+3V3_LDO", "GND": "GND"})
 part("R37", "10m", "10mOhm", "Yageo", "R_1206", "power", "battery current-sense (fuel gauge)",
      {"1": "VBAT", "2": "VBAT_SNS"})
-part("DA4", "LP5562", "LP5562TMX", "Texas Instruments", "DSBGA-12", "io",
+part("DA7", "LP5562", "LP5562TMX", "Texas Instruments", "DSBGA-12", "io",
      "RGB LED driver (notification LED + backlight), I2C",
      {"SDA": "I2C_PWR_SDA", "SCL": "I2C_PWR_SCL", "EN": "+3V3", "R": "LED_R", "G": "LED_G", "B": "LED_B",
       "W": "LCD_LED", "VDD": "+3V3", "GND": "GND"})
