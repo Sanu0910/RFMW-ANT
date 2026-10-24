@@ -13548,6 +13548,126 @@
 			)
 		)
 		(symbol
+			"nova-rf1:C_A3V3_power"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property
+				"Reference"
+				"U"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property
+				"Value"
+				"C_A3V3_power"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property
+				"Footprint"
+				""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property
+				"Datasheet"
+				""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property
+				"Description"
+				""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol
+				"C_A3V3_power_0_1"
+				(rectangle
+					(start -7.62 2.54)
+					(end 7.62 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol
+				"C_A3V3_power_1_1"
+				(pin
+					passive
+					line
+					(at -10.16 0 0)
+					(length 2.54)
+					(name
+						"2"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number
+						"2"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin
+					passive
+					line
+					(at 10.16 0 180)
+					(length 2.54)
+					(name
+						"1"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number
+						"1"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol
 			"nova-rf1:R37_power"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -28451,7 +28571,7 @@
 		(uuid "07637810-3803-55e2-8950-0e47d5664ea7")
 	)
 	(global_label
-		"+5V"
+		"VSYS"
 		(shape bidirectional)
 		(at 44.45 383.54 180)
 		(fields_autoplaced yes)
@@ -36867,7 +36987,7 @@
 		(uuid "10f42490-4084-567d-8202-c13d88070593")
 	)
 	(global_label
-		"+3V3_LDO"
+		"A3V3"
 		(shape bidirectional)
 		(at 589.28 516.89 0)
 		(fields_autoplaced yes)
@@ -36892,18 +37012,18 @@
 		)
 	)
 	(symbol
-		(lib_id "nova-rf1:R37_power")
-		(at 660.4 516.89 0)
+		(lib_id "nova-rf1:C_A3V3_power")
+		(at 661.67 516.89 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "fcad6d34-3782-5641-a3e1-500267cb9d2d")
+		(uuid "9a58075c-ba95-5d1c-a85c-186d4e395ecf")
 		(property
 			"Reference"
-			"R37"
-			(at 660.4 511.81 0)
+			"C_A3V3"
+			(at 661.67 511.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36912,8 +37032,8 @@
 		)
 		(property
 			"Value"
-			"10m"
-			(at 660.4 521.97 0)
+			"1uF"
+			(at 661.67 521.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36922,8 +37042,8 @@
 		)
 		(property
 			"Footprint"
-			"R_1206"
-			(at 660.4 516.89 0)
+			"C_0402"
+			(at 661.67 516.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36934,7 +37054,182 @@
 		(property
 			"Datasheet"
 			""
-			(at 660.4 516.89 0)
+			(at 661.67 516.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Description"
+			"analog 3.3V (A3V3) decoupling"
+			(at 661.67 516.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"MPN"
+			"1uF"
+			(at 661.67 516.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Manufacturer"
+			"Murata"
+			(at 661.67 516.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin
+			"2"
+			(uuid "14d535f5-4644-58f0-ab72-31390153845e")
+		)
+		(pin
+			"1"
+			(uuid "ddabe22e-0a56-53ef-a12a-da44e1c292d3")
+		)
+		(instances
+			(project
+				"nova-rf1"
+				(path
+					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
+					(reference "C_A3V3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 651.51 516.89)
+			(xy 648.97 516.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cfc7ab05-794c-5545-88bd-84dfd23e280b")
+	)
+	(global_label
+		"GND"
+		(shape bidirectional)
+		(at 648.97 516.89 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "44ca7e9e-4bab-5a5f-a9e0-a22ebaea078e")
+		(property
+			"Intersheetrefs"
+			"${INTERSHEET_REFS}"
+			(at 648.97 516.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 671.83 516.89)
+			(xy 674.37 516.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2320cad-82e6-57f4-a16d-6bab168f80a5")
+	)
+	(global_label
+		"A3V3"
+		(shape bidirectional)
+		(at 674.37 516.89 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2f4bba75-731b-5269-8e44-3dd60aa23048")
+		(property
+			"Intersheetrefs"
+			"${INTERSHEET_REFS}"
+			(at 674.37 516.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "nova-rf1:R37_power")
+		(at 745.49 516.89 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fcad6d34-3782-5641-a3e1-500267cb9d2d")
+		(property
+			"Reference"
+			"R37"
+			(at 745.49 511.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"Value"
+			"10m"
+			(at 745.49 521.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"Footprint"
+			"R_1206"
+			(at 745.49 516.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Datasheet"
+			""
+			(at 745.49 516.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36945,7 +37240,7 @@
 		(property
 			"Description"
 			"battery current-sense (fuel gauge)"
-			(at 660.4 516.89 0)
+			(at 745.49 516.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36956,7 +37251,7 @@
 		(property
 			"MPN"
 			"10mOhm"
-			(at 660.4 516.89 0)
+			(at 745.49 516.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36967,7 +37262,7 @@
 		(property
 			"Manufacturer"
 			"Yageo"
-			(at 660.4 516.89 0)
+			(at 745.49 516.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -36996,8 +37291,8 @@
 	)
 	(wire
 		(pts
-			(xy 651.51 516.89)
-			(xy 648.97 516.89)
+			(xy 736.6 516.89)
+			(xy 734.06 516.89)
 		)
 		(stroke
 			(width 0)
@@ -37008,7 +37303,7 @@
 	(global_label
 		"VBAT"
 		(shape bidirectional)
-		(at 648.97 516.89 180)
+		(at 734.06 516.89 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -37020,7 +37315,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 648.97 516.89 0)
+			(at 734.06 516.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37032,8 +37327,8 @@
 	)
 	(wire
 		(pts
-			(xy 669.29 516.89)
-			(xy 671.83 516.89)
+			(xy 754.38 516.89)
+			(xy 756.92 516.89)
 		)
 		(stroke
 			(width 0)
@@ -37044,7 +37339,7 @@
 	(global_label
 		"VBAT_SNS"
 		(shape bidirectional)
-		(at 671.83 516.89 0)
+		(at 756.92 516.89 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -37056,7 +37351,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 671.83 516.89 0)
+			(at 756.92 516.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37068,7 +37363,7 @@
 	)
 	(symbol
 		(lib_id "nova-rf1:U9_power")
-		(at 744.22 518.16 0)
+		(at 829.31 518.16 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -37078,7 +37373,7 @@
 		(property
 			"Reference"
 			"U9"
-			(at 744.22 511.81 0)
+			(at 829.31 511.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37088,7 +37383,7 @@
 		(property
 			"Value"
 			"loadsw"
-			(at 744.22 524.51 0)
+			(at 829.31 524.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37098,7 +37393,7 @@
 		(property
 			"Footprint"
 			"SOT-23-6"
-			(at 744.22 518.16 0)
+			(at 829.31 518.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37109,7 +37404,7 @@
 		(property
 			"Datasheet"
 			""
-			(at 744.22 518.16 0)
+			(at 829.31 518.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37120,7 +37415,7 @@
 		(property
 			"Description"
 			"peripheral-rail load switch (SD/display/radios)"
-			(at 744.22 518.16 0)
+			(at 829.31 518.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37131,7 +37426,7 @@
 		(property
 			"MPN"
 			"TPS22917"
-			(at 744.22 518.16 0)
+			(at 829.31 518.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37142,7 +37437,7 @@
 		(property
 			"Manufacturer"
 			"Texas Instruments"
-			(at 744.22 518.16 0)
+			(at 829.31 518.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37179,8 +37474,8 @@
 	)
 	(wire
 		(pts
-			(xy 734.06 516.89)
-			(xy 731.52 516.89)
+			(xy 819.15 516.89)
+			(xy 816.61 516.89)
 		)
 		(stroke
 			(width 0)
@@ -37191,7 +37486,7 @@
 	(global_label
 		"+3V3"
 		(shape bidirectional)
-		(at 731.52 516.89 180)
+		(at 816.61 516.89 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -37203,7 +37498,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 731.52 516.89 0)
+			(at 816.61 516.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37215,8 +37510,8 @@
 	)
 	(wire
 		(pts
-			(xy 734.06 519.43)
-			(xy 731.52 519.43)
+			(xy 819.15 519.43)
+			(xy 816.61 519.43)
 		)
 		(stroke
 			(width 0)
@@ -37227,7 +37522,7 @@
 	(global_label
 		"GND"
 		(shape bidirectional)
-		(at 731.52 519.43 180)
+		(at 816.61 519.43 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -37239,7 +37534,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 731.52 519.43 0)
+			(at 816.61 519.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37251,8 +37546,8 @@
 	)
 	(wire
 		(pts
-			(xy 754.38 516.89)
-			(xy 756.92 516.89)
+			(xy 839.47 516.89)
+			(xy 842.01 516.89)
 		)
 		(stroke
 			(width 0)
@@ -37263,7 +37558,7 @@
 	(global_label
 		"PERIPH_EN"
 		(shape bidirectional)
-		(at 756.92 516.89 0)
+		(at 842.01 516.89 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -37275,7 +37570,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 756.92 516.89 0)
+			(at 842.01 516.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37287,8 +37582,8 @@
 	)
 	(wire
 		(pts
-			(xy 754.38 519.43)
-			(xy 756.92 519.43)
+			(xy 839.47 519.43)
+			(xy 842.01 519.43)
 		)
 		(stroke
 			(width 0)
@@ -37299,7 +37594,7 @@
 	(global_label
 		"+3V3_PERIPH"
 		(shape bidirectional)
-		(at 756.92 519.43 0)
+		(at 842.01 519.43 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -37311,7 +37606,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 756.92 519.43 0)
+			(at 842.01 519.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37323,7 +37618,7 @@
 	)
 	(symbol
 		(lib_id "nova-rf1:U10_power")
-		(at 828.04 518.16 0)
+		(at 914.4 518.16 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -37333,7 +37628,7 @@
 		(property
 			"Reference"
 			"U10"
-			(at 828.04 511.81 0)
+			(at 914.4 511.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37343,7 +37638,7 @@
 		(property
 			"Value"
 			"ESD"
-			(at 828.04 524.51 0)
+			(at 914.4 524.51 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37353,7 +37648,7 @@
 		(property
 			"Footprint"
 			"SOT-23-6"
-			(at 828.04 518.16 0)
+			(at 914.4 518.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37364,7 +37659,7 @@
 		(property
 			"Datasheet"
 			""
-			(at 828.04 518.16 0)
+			(at 914.4 518.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37375,7 +37670,7 @@
 		(property
 			"Description"
 			"USB + CC ESD protection"
-			(at 828.04 518.16 0)
+			(at 914.4 518.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37386,7 +37681,7 @@
 		(property
 			"MPN"
 			"USBLC6-2SC6"
-			(at 828.04 518.16 0)
+			(at 914.4 518.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37397,7 +37692,7 @@
 		(property
 			"Manufacturer"
 			"STMicroelectronics"
-			(at 828.04 518.16 0)
+			(at 914.4 518.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37434,8 +37729,8 @@
 	)
 	(wire
 		(pts
-			(xy 819.15 516.89)
-			(xy 816.61 516.89)
+			(xy 905.51 516.89)
+			(xy 902.97 516.89)
 		)
 		(stroke
 			(width 0)
@@ -37446,7 +37741,7 @@
 	(global_label
 		"GND"
 		(shape bidirectional)
-		(at 816.61 516.89 180)
+		(at 902.97 516.89 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -37458,7 +37753,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 816.61 516.89 0)
+			(at 902.97 516.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37470,8 +37765,8 @@
 	)
 	(wire
 		(pts
-			(xy 819.15 519.43)
-			(xy 816.61 519.43)
+			(xy 905.51 519.43)
+			(xy 902.97 519.43)
 		)
 		(stroke
 			(width 0)
@@ -37482,7 +37777,7 @@
 	(global_label
 		"USB_DM"
 		(shape bidirectional)
-		(at 816.61 519.43 180)
+		(at 902.97 519.43 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -37494,218 +37789,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 816.61 519.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 836.93 516.89)
-			(xy 839.47 516.89)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c02df778-6755-5e2a-8763-f52849fad1b8")
-	)
-	(global_label
-		"USB_DP"
-		(shape bidirectional)
-		(at 839.47 516.89 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "fb46022e-390a-5c44-9b52-0d6bf2091141")
-		(property
-			"Intersheetrefs"
-			"${INTERSHEET_REFS}"
-			(at 839.47 516.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 836.93 519.43)
-			(xy 839.47 519.43)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "674fd1e2-daa1-5d3f-ba8c-ad38d27cad32")
-	)
-	(global_label
-		"VBUS"
-		(shape bidirectional)
-		(at 839.47 519.43 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "2f0cd328-d806-5956-a260-242cc8d09c77")
-		(property
-			"Intersheetrefs"
-			"${INTERSHEET_REFS}"
-			(at 839.47 519.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(symbol
-		(lib_id "nova-rf1:R_CC1_power")
-		(at 913.13 516.89 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "662d2ae3-b472-5f16-b9de-87edc477e4f1")
-		(property
-			"Reference"
-			"R_CC1"
-			(at 913.13 511.81 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property
-			"Value"
-			"5.1k"
-			(at 913.13 521.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property
-			"Footprint"
-			"R_0402"
-			(at 913.13 516.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"Datasheet"
-			""
-			(at 913.13 516.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"Description"
-			"USB-C CC pulldown"
-			(at 913.13 516.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"MPN"
-			"5.1k"
-			(at 913.13 516.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property
-			"Manufacturer"
-			"Yageo"
-			(at 913.13 516.89 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin
-			"2"
-			(uuid "ae1e4d1f-80e8-5a8c-bec5-3ee325080921")
-		)
-		(pin
-			"1"
-			(uuid "5912a9d1-3878-5b13-8001-570a4d29e8dd")
-		)
-		(instances
-			(project
-				"nova-rf1"
-				(path
-					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
-					(reference "R_CC1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(wire
-		(pts
-			(xy 902.97 516.89)
-			(xy 900.43 516.89)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e98baa5e-ee9d-564a-beaa-5ffcc80543fb")
-	)
-	(global_label
-		"GND"
-		(shape bidirectional)
-		(at 900.43 516.89 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "9919236f-7281-5e31-be89-b3037d4262ab")
-		(property
-			"Intersheetrefs"
-			"${INTERSHEET_REFS}"
-			(at 900.43 516.89 0)
+			(at 902.97 519.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37724,10 +37808,10 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f55f8d63-d40a-5da6-974c-738edf6f74a9")
+		(uuid "c02df778-6755-5e2a-8763-f52849fad1b8")
 	)
 	(global_label
-		"USB_CC1"
+		"USB_DP"
 		(shape bidirectional)
 		(at 925.83 516.89 0)
 		(fields_autoplaced yes)
@@ -37737,7 +37821,7 @@
 			)
 			(justify left)
 		)
-		(uuid "8922a01e-ae41-5911-9ef9-2bfb84573963")
+		(uuid "fb46022e-390a-5c44-9b52-0d6bf2091141")
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
@@ -37751,18 +37835,54 @@
 			)
 		)
 	)
+	(wire
+		(pts
+			(xy 923.29 519.43)
+			(xy 925.83 519.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "674fd1e2-daa1-5d3f-ba8c-ad38d27cad32")
+	)
+	(global_label
+		"VBUS"
+		(shape bidirectional)
+		(at 925.83 519.43 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2f0cd328-d806-5956-a260-242cc8d09c77")
+		(property
+			"Intersheetrefs"
+			"${INTERSHEET_REFS}"
+			(at 925.83 519.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(symbol
-		(lib_id "nova-rf1:R_CC2_power")
+		(lib_id "nova-rf1:R_CC1_power")
 		(at 998.22 516.89 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "5251576c-7ad5-5e8c-8d83-d322404dc274")
+		(uuid "662d2ae3-b472-5f16-b9de-87edc477e4f1")
 		(property
 			"Reference"
-			"R_CC2"
+			"R_CC1"
 			(at 998.22 511.81 0)
 			(effects
 				(font
@@ -37837,18 +37957,18 @@
 		)
 		(pin
 			"2"
-			(uuid "bca8be7e-0fe8-56f3-96a2-fda18fa5a918")
+			(uuid "ae1e4d1f-80e8-5a8c-bec5-3ee325080921")
 		)
 		(pin
 			"1"
-			(uuid "5b07ccfd-9cad-56c7-96bf-caac0ea3d085")
+			(uuid "5912a9d1-3878-5b13-8001-570a4d29e8dd")
 		)
 		(instances
 			(project
 				"nova-rf1"
 				(path
 					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
-					(reference "R_CC2")
+					(reference "R_CC1")
 					(unit 1)
 				)
 			)
@@ -37863,7 +37983,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "27acc637-fca2-52b2-98e1-c25cf053b360")
+		(uuid "e98baa5e-ee9d-564a-beaa-5ffcc80543fb")
 	)
 	(global_label
 		"GND"
@@ -37876,7 +37996,7 @@
 			)
 			(justify right)
 		)
-		(uuid "10cea44b-01f8-53e9-97b8-765d338531bf")
+		(uuid "9919236f-7281-5e31-be89-b3037d4262ab")
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
@@ -37899,10 +38019,10 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "8bc3da93-bbbf-5263-9241-2dce458e992b")
+		(uuid "f55f8d63-d40a-5da6-974c-738edf6f74a9")
 	)
 	(global_label
-		"USB_CC2"
+		"USB_CC1"
 		(shape bidirectional)
 		(at 1010.92 516.89 0)
 		(fields_autoplaced yes)
@@ -37912,7 +38032,7 @@
 			)
 			(justify left)
 		)
-		(uuid "bbd61679-ea43-57e6-9ceb-974fab30669d")
+		(uuid "8922a01e-ae41-5911-9ef9-2bfb84573963")
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
@@ -37927,17 +38047,17 @@
 		)
 	)
 	(symbol
-		(lib_id "nova-rf1:C1_passive")
+		(lib_id "nova-rf1:R_CC2_power")
 		(at 57.15 560.07 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "e5a9c458-bff6-51b8-81c0-36fe9bebe009")
+		(uuid "5251576c-7ad5-5e8c-8d83-d322404dc274")
 		(property
 			"Reference"
-			"C1"
+			"R_CC2"
 			(at 57.15 554.99 0)
 			(effects
 				(font
@@ -37947,7 +38067,7 @@
 		)
 		(property
 			"Value"
-			"100nF"
+			"5.1k"
 			(at 57.15 565.15 0)
 			(effects
 				(font
@@ -37957,7 +38077,7 @@
 		)
 		(property
 			"Footprint"
-			"C_0402"
+			"R_0402"
 			(at 57.15 560.07 0)
 			(effects
 				(font
@@ -37979,7 +38099,7 @@
 		)
 		(property
 			"Description"
-			"decoupling"
+			"USB-C CC pulldown"
 			(at 57.15 560.07 0)
 			(effects
 				(font
@@ -37990,7 +38110,7 @@
 		)
 		(property
 			"MPN"
-			"100nF"
+			"5.1k"
 			(at 57.15 560.07 0)
 			(effects
 				(font
@@ -38001,8 +38121,183 @@
 		)
 		(property
 			"Manufacturer"
-			"Murata"
+			"Yageo"
 			(at 57.15 560.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin
+			"2"
+			(uuid "bca8be7e-0fe8-56f3-96a2-fda18fa5a918")
+		)
+		(pin
+			"1"
+			(uuid "5b07ccfd-9cad-56c7-96bf-caac0ea3d085")
+		)
+		(instances
+			(project
+				"nova-rf1"
+				(path
+					"/3dc548d3-7187-5a73-8409-bf5a8cf4fbef"
+					(reference "R_CC2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 46.99 560.07)
+			(xy 44.45 560.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "27acc637-fca2-52b2-98e1-c25cf053b360")
+	)
+	(global_label
+		"GND"
+		(shape bidirectional)
+		(at 44.45 560.07 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "10cea44b-01f8-53e9-97b8-765d338531bf")
+		(property
+			"Intersheetrefs"
+			"${INTERSHEET_REFS}"
+			(at 44.45 560.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 67.31 560.07)
+			(xy 69.85 560.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8bc3da93-bbbf-5263-9241-2dce458e992b")
+	)
+	(global_label
+		"USB_CC2"
+		(shape bidirectional)
+		(at 69.85 560.07 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "bbd61679-ea43-57e6-9ceb-974fab30669d")
+		(property
+			"Intersheetrefs"
+			"${INTERSHEET_REFS}"
+			(at 69.85 560.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "nova-rf1:C1_passive")
+		(at 57.15 596.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e5a9c458-bff6-51b8-81c0-36fe9bebe009")
+		(property
+			"Reference"
+			"C1"
+			(at 57.15 591.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"Value"
+			"100nF"
+			(at 57.15 601.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"Footprint"
+			"C_0402"
+			(at 57.15 596.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Datasheet"
+			""
+			(at 57.15 596.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Description"
+			"decoupling"
+			(at 57.15 596.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"MPN"
+			"100nF"
+			(at 57.15 596.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Manufacturer"
+			"Murata"
+			(at 57.15 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38031,8 +38326,8 @@
 	)
 	(wire
 		(pts
-			(xy 46.99 560.07)
-			(xy 44.45 560.07)
+			(xy 46.99 596.9)
+			(xy 44.45 596.9)
 		)
 		(stroke
 			(width 0)
@@ -38043,7 +38338,7 @@
 	(global_label
 		"+3V3"
 		(shape bidirectional)
-		(at 44.45 560.07 180)
+		(at 44.45 596.9 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -38055,7 +38350,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 44.45 560.07 0)
+			(at 44.45 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38067,8 +38362,8 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 560.07)
-			(xy 69.85 560.07)
+			(xy 67.31 596.9)
+			(xy 69.85 596.9)
 		)
 		(stroke
 			(width 0)
@@ -38079,7 +38374,7 @@
 	(global_label
 		"GND"
 		(shape bidirectional)
-		(at 69.85 560.07 0)
+		(at 69.85 596.9 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -38091,7 +38386,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 69.85 560.07 0)
+			(at 69.85 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38103,7 +38398,7 @@
 	)
 	(symbol
 		(lib_id "nova-rf1:C2_passive")
-		(at 142.24 560.07 0)
+		(at 142.24 596.9 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -38113,7 +38408,7 @@
 		(property
 			"Reference"
 			"C2"
-			(at 142.24 554.99 0)
+			(at 142.24 591.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38123,7 +38418,7 @@
 		(property
 			"Value"
 			"100nF"
-			(at 142.24 565.15 0)
+			(at 142.24 601.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38133,7 +38428,7 @@
 		(property
 			"Footprint"
 			"C_0402"
-			(at 142.24 560.07 0)
+			(at 142.24 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38144,7 +38439,7 @@
 		(property
 			"Datasheet"
 			""
-			(at 142.24 560.07 0)
+			(at 142.24 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38155,7 +38450,7 @@
 		(property
 			"Description"
 			"decoupling"
-			(at 142.24 560.07 0)
+			(at 142.24 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38166,7 +38461,7 @@
 		(property
 			"MPN"
 			"100nF"
-			(at 142.24 560.07 0)
+			(at 142.24 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38177,7 +38472,7 @@
 		(property
 			"Manufacturer"
 			"Murata"
-			(at 142.24 560.07 0)
+			(at 142.24 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38206,8 +38501,8 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 560.07)
-			(xy 129.54 560.07)
+			(xy 132.08 596.9)
+			(xy 129.54 596.9)
 		)
 		(stroke
 			(width 0)
@@ -38218,7 +38513,7 @@
 	(global_label
 		"+3V3"
 		(shape bidirectional)
-		(at 129.54 560.07 180)
+		(at 129.54 596.9 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -38230,7 +38525,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 129.54 560.07 0)
+			(at 129.54 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38242,8 +38537,8 @@
 	)
 	(wire
 		(pts
-			(xy 152.4 560.07)
-			(xy 154.94 560.07)
+			(xy 152.4 596.9)
+			(xy 154.94 596.9)
 		)
 		(stroke
 			(width 0)
@@ -38254,7 +38549,7 @@
 	(global_label
 		"GND"
 		(shape bidirectional)
-		(at 154.94 560.07 0)
+		(at 154.94 596.9 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -38266,7 +38561,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 154.94 560.07 0)
+			(at 154.94 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38278,7 +38573,7 @@
 	)
 	(symbol
 		(lib_id "nova-rf1:C3_passive")
-		(at 228.6 560.07 0)
+		(at 228.6 596.9 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -38288,7 +38583,7 @@
 		(property
 			"Reference"
 			"C3"
-			(at 228.6 554.99 0)
+			(at 228.6 591.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38298,7 +38593,7 @@
 		(property
 			"Value"
 			"100nF"
-			(at 228.6 565.15 0)
+			(at 228.6 601.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38308,7 +38603,7 @@
 		(property
 			"Footprint"
 			"C_0402"
-			(at 228.6 560.07 0)
+			(at 228.6 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38319,7 +38614,7 @@
 		(property
 			"Datasheet"
 			""
-			(at 228.6 560.07 0)
+			(at 228.6 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38330,7 +38625,7 @@
 		(property
 			"Description"
 			"decoupling"
-			(at 228.6 560.07 0)
+			(at 228.6 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38341,7 +38636,7 @@
 		(property
 			"MPN"
 			"100nF"
-			(at 228.6 560.07 0)
+			(at 228.6 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38352,7 +38647,7 @@
 		(property
 			"Manufacturer"
 			"Murata"
-			(at 228.6 560.07 0)
+			(at 228.6 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38381,8 +38676,8 @@
 	)
 	(wire
 		(pts
-			(xy 218.44 560.07)
-			(xy 215.9 560.07)
+			(xy 218.44 596.9)
+			(xy 215.9 596.9)
 		)
 		(stroke
 			(width 0)
@@ -38393,7 +38688,7 @@
 	(global_label
 		"+3V3"
 		(shape bidirectional)
-		(at 215.9 560.07 180)
+		(at 215.9 596.9 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -38405,7 +38700,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 215.9 560.07 0)
+			(at 215.9 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38417,8 +38712,8 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 560.07)
-			(xy 241.3 560.07)
+			(xy 238.76 596.9)
+			(xy 241.3 596.9)
 		)
 		(stroke
 			(width 0)
@@ -38429,7 +38724,7 @@
 	(global_label
 		"GND"
 		(shape bidirectional)
-		(at 241.3 560.07 0)
+		(at 241.3 596.9 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -38441,7 +38736,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 241.3 560.07 0)
+			(at 241.3 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38453,7 +38748,7 @@
 	)
 	(symbol
 		(lib_id "nova-rf1:C4_passive")
-		(at 313.69 560.07 0)
+		(at 313.69 596.9 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -38463,7 +38758,7 @@
 		(property
 			"Reference"
 			"C4"
-			(at 313.69 554.99 0)
+			(at 313.69 591.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38473,7 +38768,7 @@
 		(property
 			"Value"
 			"100nF"
-			(at 313.69 565.15 0)
+			(at 313.69 601.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38483,7 +38778,7 @@
 		(property
 			"Footprint"
 			"C_0402"
-			(at 313.69 560.07 0)
+			(at 313.69 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38494,7 +38789,7 @@
 		(property
 			"Datasheet"
 			""
-			(at 313.69 560.07 0)
+			(at 313.69 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38505,7 +38800,7 @@
 		(property
 			"Description"
 			"decoupling"
-			(at 313.69 560.07 0)
+			(at 313.69 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38516,7 +38811,7 @@
 		(property
 			"MPN"
 			"100nF"
-			(at 313.69 560.07 0)
+			(at 313.69 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38527,7 +38822,7 @@
 		(property
 			"Manufacturer"
 			"Murata"
-			(at 313.69 560.07 0)
+			(at 313.69 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38556,8 +38851,8 @@
 	)
 	(wire
 		(pts
-			(xy 303.53 560.07)
-			(xy 300.99 560.07)
+			(xy 303.53 596.9)
+			(xy 300.99 596.9)
 		)
 		(stroke
 			(width 0)
@@ -38568,7 +38863,7 @@
 	(global_label
 		"GND"
 		(shape bidirectional)
-		(at 300.99 560.07 180)
+		(at 300.99 596.9 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -38580,7 +38875,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 300.99 560.07 0)
+			(at 300.99 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38592,8 +38887,8 @@
 	)
 	(wire
 		(pts
-			(xy 323.85 560.07)
-			(xy 326.39 560.07)
+			(xy 323.85 596.9)
+			(xy 326.39 596.9)
 		)
 		(stroke
 			(width 0)
@@ -38604,7 +38899,7 @@
 	(global_label
 		"+3V3_PERIPH"
 		(shape bidirectional)
-		(at 326.39 560.07 0)
+		(at 326.39 596.9 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -38616,7 +38911,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 326.39 560.07 0)
+			(at 326.39 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38628,7 +38923,7 @@
 	)
 	(symbol
 		(lib_id "nova-rf1:C5_passive")
-		(at 398.78 560.07 0)
+		(at 398.78 596.9 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -38638,7 +38933,7 @@
 		(property
 			"Reference"
 			"C5"
-			(at 398.78 554.99 0)
+			(at 398.78 591.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38648,7 +38943,7 @@
 		(property
 			"Value"
 			"100nF"
-			(at 398.78 565.15 0)
+			(at 398.78 601.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38658,7 +38953,7 @@
 		(property
 			"Footprint"
 			"C_0402"
-			(at 398.78 560.07 0)
+			(at 398.78 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38669,7 +38964,7 @@
 		(property
 			"Datasheet"
 			""
-			(at 398.78 560.07 0)
+			(at 398.78 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38680,7 +38975,7 @@
 		(property
 			"Description"
 			"decoupling"
-			(at 398.78 560.07 0)
+			(at 398.78 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38691,7 +38986,7 @@
 		(property
 			"MPN"
 			"100nF"
-			(at 398.78 560.07 0)
+			(at 398.78 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38702,7 +38997,7 @@
 		(property
 			"Manufacturer"
 			"Murata"
-			(at 398.78 560.07 0)
+			(at 398.78 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38731,8 +39026,8 @@
 	)
 	(wire
 		(pts
-			(xy 388.62 560.07)
-			(xy 386.08 560.07)
+			(xy 388.62 596.9)
+			(xy 386.08 596.9)
 		)
 		(stroke
 			(width 0)
@@ -38743,7 +39038,7 @@
 	(global_label
 		"GND"
 		(shape bidirectional)
-		(at 386.08 560.07 180)
+		(at 386.08 596.9 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -38755,7 +39050,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 386.08 560.07 0)
+			(at 386.08 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38767,8 +39062,8 @@
 	)
 	(wire
 		(pts
-			(xy 408.94 560.07)
-			(xy 411.48 560.07)
+			(xy 408.94 596.9)
+			(xy 411.48 596.9)
 		)
 		(stroke
 			(width 0)
@@ -38779,7 +39074,7 @@
 	(global_label
 		"VSYS"
 		(shape bidirectional)
-		(at 411.48 560.07 0)
+		(at 411.48 596.9 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -38791,7 +39086,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 411.48 560.07 0)
+			(at 411.48 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38803,7 +39098,7 @@
 	)
 	(symbol
 		(lib_id "nova-rf1:C6_passive")
-		(at 483.87 560.07 0)
+		(at 483.87 596.9 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -38813,7 +39108,7 @@
 		(property
 			"Reference"
 			"C6"
-			(at 483.87 554.99 0)
+			(at 483.87 591.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38823,7 +39118,7 @@
 		(property
 			"Value"
 			"100nF"
-			(at 483.87 565.15 0)
+			(at 483.87 601.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38833,7 +39128,7 @@
 		(property
 			"Footprint"
 			"C_0402"
-			(at 483.87 560.07 0)
+			(at 483.87 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38844,7 +39139,7 @@
 		(property
 			"Datasheet"
 			""
-			(at 483.87 560.07 0)
+			(at 483.87 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38855,7 +39150,7 @@
 		(property
 			"Description"
 			"decoupling"
-			(at 483.87 560.07 0)
+			(at 483.87 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38866,7 +39161,7 @@
 		(property
 			"MPN"
 			"100nF"
-			(at 483.87 560.07 0)
+			(at 483.87 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38877,7 +39172,7 @@
 		(property
 			"Manufacturer"
 			"Murata"
-			(at 483.87 560.07 0)
+			(at 483.87 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38906,8 +39201,8 @@
 	)
 	(wire
 		(pts
-			(xy 473.71 560.07)
-			(xy 471.17 560.07)
+			(xy 473.71 596.9)
+			(xy 471.17 596.9)
 		)
 		(stroke
 			(width 0)
@@ -38918,7 +39213,7 @@
 	(global_label
 		"GND"
 		(shape bidirectional)
-		(at 471.17 560.07 180)
+		(at 471.17 596.9 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -38930,7 +39225,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 471.17 560.07 0)
+			(at 471.17 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38942,8 +39237,8 @@
 	)
 	(wire
 		(pts
-			(xy 494.03 560.07)
-			(xy 496.57 560.07)
+			(xy 494.03 596.9)
+			(xy 496.57 596.9)
 		)
 		(stroke
 			(width 0)
@@ -38954,7 +39249,7 @@
 	(global_label
 		"VBAT"
 		(shape bidirectional)
-		(at 496.57 560.07 0)
+		(at 496.57 596.9 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -38966,7 +39261,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 496.57 560.07 0)
+			(at 496.57 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38978,7 +39273,7 @@
 	)
 	(symbol
 		(lib_id "nova-rf1:C7_passive")
-		(at 567.69 560.07 0)
+		(at 567.69 596.9 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -38988,7 +39283,7 @@
 		(property
 			"Reference"
 			"C7"
-			(at 567.69 554.99 0)
+			(at 567.69 591.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -38998,7 +39293,7 @@
 		(property
 			"Value"
 			"10uF"
-			(at 567.69 565.15 0)
+			(at 567.69 601.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39008,7 +39303,7 @@
 		(property
 			"Footprint"
 			"C_0805"
-			(at 567.69 560.07 0)
+			(at 567.69 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39019,7 +39314,7 @@
 		(property
 			"Datasheet"
 			""
-			(at 567.69 560.07 0)
+			(at 567.69 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39030,7 +39325,7 @@
 		(property
 			"Description"
 			"bulk"
-			(at 567.69 560.07 0)
+			(at 567.69 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39041,7 +39336,7 @@
 		(property
 			"MPN"
 			"10uF"
-			(at 567.69 560.07 0)
+			(at 567.69 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39052,7 +39347,7 @@
 		(property
 			"Manufacturer"
 			"Murata"
-			(at 567.69 560.07 0)
+			(at 567.69 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39081,8 +39376,8 @@
 	)
 	(wire
 		(pts
-			(xy 558.8 560.07)
-			(xy 556.26 560.07)
+			(xy 558.8 596.9)
+			(xy 556.26 596.9)
 		)
 		(stroke
 			(width 0)
@@ -39093,7 +39388,7 @@
 	(global_label
 		"+3V3"
 		(shape bidirectional)
-		(at 556.26 560.07 180)
+		(at 556.26 596.9 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -39105,7 +39400,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 556.26 560.07 0)
+			(at 556.26 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39117,8 +39412,8 @@
 	)
 	(wire
 		(pts
-			(xy 576.58 560.07)
-			(xy 579.12 560.07)
+			(xy 576.58 596.9)
+			(xy 579.12 596.9)
 		)
 		(stroke
 			(width 0)
@@ -39129,7 +39424,7 @@
 	(global_label
 		"GND"
 		(shape bidirectional)
-		(at 579.12 560.07 0)
+		(at 579.12 596.9 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -39141,7 +39436,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 579.12 560.07 0)
+			(at 579.12 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39153,7 +39448,7 @@
 	)
 	(symbol
 		(lib_id "nova-rf1:C8_passive")
-		(at 650.24 560.07 0)
+		(at 650.24 596.9 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -39163,7 +39458,7 @@
 		(property
 			"Reference"
 			"C8"
-			(at 650.24 554.99 0)
+			(at 650.24 591.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39173,7 +39468,7 @@
 		(property
 			"Value"
 			"10uF"
-			(at 650.24 565.15 0)
+			(at 650.24 601.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39183,7 +39478,7 @@
 		(property
 			"Footprint"
 			"C_0805"
-			(at 650.24 560.07 0)
+			(at 650.24 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39194,7 +39489,7 @@
 		(property
 			"Datasheet"
 			""
-			(at 650.24 560.07 0)
+			(at 650.24 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39205,7 +39500,7 @@
 		(property
 			"Description"
 			"bulk"
-			(at 650.24 560.07 0)
+			(at 650.24 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39216,7 +39511,7 @@
 		(property
 			"MPN"
 			"10uF"
-			(at 650.24 560.07 0)
+			(at 650.24 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39227,7 +39522,7 @@
 		(property
 			"Manufacturer"
 			"Murata"
-			(at 650.24 560.07 0)
+			(at 650.24 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39256,8 +39551,8 @@
 	)
 	(wire
 		(pts
-			(xy 641.35 560.07)
-			(xy 638.81 560.07)
+			(xy 641.35 596.9)
+			(xy 638.81 596.9)
 		)
 		(stroke
 			(width 0)
@@ -39268,7 +39563,7 @@
 	(global_label
 		"GND"
 		(shape bidirectional)
-		(at 638.81 560.07 180)
+		(at 638.81 596.9 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -39280,7 +39575,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 638.81 560.07 0)
+			(at 638.81 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39292,8 +39587,8 @@
 	)
 	(wire
 		(pts
-			(xy 659.13 560.07)
-			(xy 661.67 560.07)
+			(xy 659.13 596.9)
+			(xy 661.67 596.9)
 		)
 		(stroke
 			(width 0)
@@ -39304,7 +39599,7 @@
 	(global_label
 		"VSYS"
 		(shape bidirectional)
-		(at 661.67 560.07 0)
+		(at 661.67 596.9 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -39316,7 +39611,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 661.67 560.07 0)
+			(at 661.67 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39328,7 +39623,7 @@
 	)
 	(symbol
 		(lib_id "nova-rf1:C9_passive")
-		(at 732.79 560.07 0)
+		(at 732.79 596.9 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -39338,7 +39633,7 @@
 		(property
 			"Reference"
 			"C9"
-			(at 732.79 554.99 0)
+			(at 732.79 591.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39348,7 +39643,7 @@
 		(property
 			"Value"
 			"10uF"
-			(at 732.79 565.15 0)
+			(at 732.79 601.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39358,7 +39653,7 @@
 		(property
 			"Footprint"
 			"C_0805"
-			(at 732.79 560.07 0)
+			(at 732.79 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39369,7 +39664,7 @@
 		(property
 			"Datasheet"
 			""
-			(at 732.79 560.07 0)
+			(at 732.79 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39380,7 +39675,7 @@
 		(property
 			"Description"
 			"bulk"
-			(at 732.79 560.07 0)
+			(at 732.79 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39391,7 +39686,7 @@
 		(property
 			"MPN"
 			"10uF"
-			(at 732.79 560.07 0)
+			(at 732.79 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39402,7 +39697,7 @@
 		(property
 			"Manufacturer"
 			"Murata"
-			(at 732.79 560.07 0)
+			(at 732.79 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39431,8 +39726,8 @@
 	)
 	(wire
 		(pts
-			(xy 723.9 560.07)
-			(xy 721.36 560.07)
+			(xy 723.9 596.9)
+			(xy 721.36 596.9)
 		)
 		(stroke
 			(width 0)
@@ -39443,7 +39738,7 @@
 	(global_label
 		"GND"
 		(shape bidirectional)
-		(at 721.36 560.07 180)
+		(at 721.36 596.9 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -39455,7 +39750,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 721.36 560.07 0)
+			(at 721.36 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39467,8 +39762,8 @@
 	)
 	(wire
 		(pts
-			(xy 741.68 560.07)
-			(xy 744.22 560.07)
+			(xy 741.68 596.9)
+			(xy 744.22 596.9)
 		)
 		(stroke
 			(width 0)
@@ -39479,7 +39774,7 @@
 	(global_label
 		"VBAT"
 		(shape bidirectional)
-		(at 744.22 560.07 0)
+		(at 744.22 596.9 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -39491,7 +39786,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 744.22 560.07 0)
+			(at 744.22 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39503,7 +39798,7 @@
 	)
 	(symbol
 		(lib_id "nova-rf1:C10_passive")
-		(at 815.34 560.07 0)
+		(at 815.34 596.9 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -39513,7 +39808,7 @@
 		(property
 			"Reference"
 			"C10"
-			(at 815.34 554.99 0)
+			(at 815.34 591.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39523,7 +39818,7 @@
 		(property
 			"Value"
 			"10uF"
-			(at 815.34 565.15 0)
+			(at 815.34 601.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39533,7 +39828,7 @@
 		(property
 			"Footprint"
 			"C_0805"
-			(at 815.34 560.07 0)
+			(at 815.34 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39544,7 +39839,7 @@
 		(property
 			"Datasheet"
 			""
-			(at 815.34 560.07 0)
+			(at 815.34 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39555,7 +39850,7 @@
 		(property
 			"Description"
 			"bulk"
-			(at 815.34 560.07 0)
+			(at 815.34 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39566,7 +39861,7 @@
 		(property
 			"MPN"
 			"10uF"
-			(at 815.34 560.07 0)
+			(at 815.34 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39577,7 +39872,7 @@
 		(property
 			"Manufacturer"
 			"Murata"
-			(at 815.34 560.07 0)
+			(at 815.34 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39606,8 +39901,8 @@
 	)
 	(wire
 		(pts
-			(xy 806.45 560.07)
-			(xy 803.91 560.07)
+			(xy 806.45 596.9)
+			(xy 803.91 596.9)
 		)
 		(stroke
 			(width 0)
@@ -39618,7 +39913,7 @@
 	(global_label
 		"GND"
 		(shape bidirectional)
-		(at 803.91 560.07 180)
+		(at 803.91 596.9 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -39630,7 +39925,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 803.91 560.07 0)
+			(at 803.91 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -39642,8 +39937,8 @@
 	)
 	(wire
 		(pts
-			(xy 824.23 560.07)
-			(xy 826.77 560.07)
+			(xy 824.23 596.9)
+			(xy 826.77 596.9)
 		)
 		(stroke
 			(width 0)
@@ -39654,7 +39949,7 @@
 	(global_label
 		"+3V3_PERIPH"
 		(shape bidirectional)
-		(at 826.77 560.07 0)
+		(at 826.77 596.9 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -39666,7 +39961,7 @@
 		(property
 			"Intersheetrefs"
 			"${INTERSHEET_REFS}"
-			(at 826.77 560.07 0)
+			(at 826.77 596.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)

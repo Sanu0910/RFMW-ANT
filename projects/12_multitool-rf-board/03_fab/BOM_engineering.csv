@@ -13,6 +13,7 @@ C6,100nF,100nF,Murata,C_0402,passive,decoupling
 C7,10uF,10uF,Murata,C_0805,passive,bulk
 C8,10uF,10uF,Murata,C_0805,passive,bulk
 C9,10uF,10uF,Murata,C_0805,passive,bulk
+C_A3V3,1uF,1uF,Murata,C_0402,power,analog 3.3V (A3V3) decoupling
 C_AGDC,1uF,1uF,Murata,C_0402,nfc,ST25R3916 AGDC analog-gnd reference
 C_BTST,47nF,47nF,Murata,C_0402,power,BQ25896 bootstrap cap (SW-BTST)
 C_CCd,100nF,100nF,Murata,C_0402,subghz,CC1101 DCOUPL decoupling

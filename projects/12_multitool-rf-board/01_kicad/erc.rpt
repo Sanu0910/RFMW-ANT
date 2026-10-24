@@ -1,4 +1,4 @@
-ERC report (2026-10-24T10:20:19+0000, Encoding UTF8)
+ERC report (2026-10-24T16:06:17+0000, Encoding UTF8)
 Report includes: Errors, Warnings
 
 ***** Sheet /
@@ -107,9 +107,6 @@ Report includes: Errors, Warnings
 [lib_symbol_issues]: The current configuration does not include the symbol library 'nova-rf1'
     ; warning
     @(314.96 mm, 214.63 mm): Symbol U5 [U5_io]
-[global_label_dangling]: Global label not connected anywhere else in the schematic
-    ; warning
-    @(44.45 mm, 383.54 mm): Global Label '+5V'
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
     @(59.69 mm, 382.27 mm): Symbol VT4 [VT4_rfid125]
@@ -268,10 +265,10 @@ Report includes: Errors, Warnings
     @(316.23 mm, 464.82 mm): Symbol C_BTST [C_BTST_power]
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
-    @(57.15 mm, 560.07 mm): Symbol C1 [C1_passive]
+    @(57.15 mm, 560.07 mm): Symbol R_CC2 [R_CC2_power]
 [lib_symbol_issues]: The current configuration does not include the symbol library 'nova-rf1'
     ; warning
-    @(57.15 mm, 560.07 mm): Symbol C1 [C1_passive]
+    @(57.15 mm, 560.07 mm): Symbol R_CC2 [R_CC2_power]
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
     @(416.56 mm, 384.81 mm): Symbol DA4 [DA4_rfid125]
@@ -295,12 +292,6 @@ Report includes: Errors, Warnings
     @(429.26 mm, 386.08 mm): Global Label 'LF_FB4'
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
-    @(142.24 mm, 560.07 mm): Symbol C2 [C2_passive]
-[lib_symbol_issues]: The current configuration does not include the symbol library 'nova-rf1'
-    ; warning
-    @(142.24 mm, 560.07 mm): Symbol C2 [C2_passive]
-[footprint_link_issues]: The current configuration does not include the footprint library ''.
-    ; warning
     @(589.28 mm, 40.64 mm): Symbol ANT1 [ANT1_mcu]
 [lib_symbol_issues]: The current configuration does not include the symbol library 'nova-rf1'
     ; warning
@@ -311,6 +302,12 @@ Report includes: Errors, Warnings
 [lib_symbol_issues]: The current configuration does not include the symbol library 'nova-rf1'
     ; warning
     @(575.31 mm, 156.21 mm): Symbol R13 [R13_subghz]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(57.15 mm, 596.90 mm): Symbol C1 [C1_passive]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'nova-rf1'
+    ; warning
+    @(57.15 mm, 596.90 mm): Symbol C1 [C1_passive]
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
     @(504.19 mm, 326.39 mm): Symbol ANT_NFC [ANT_NFC_nfc]
@@ -325,10 +322,10 @@ Report includes: Errors, Warnings
     @(313.69 mm, 516.89 mm): Symbol L13 [L13_power]
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
-    @(228.60 mm, 560.07 mm): Symbol C3 [C3_passive]
+    @(142.24 mm, 596.90 mm): Symbol C2 [C2_passive]
 [lib_symbol_issues]: The current configuration does not include the symbol library 'nova-rf1'
     ; warning
-    @(228.60 mm, 560.07 mm): Symbol C3 [C3_passive]
+    @(142.24 mm, 596.90 mm): Symbol C2 [C2_passive]
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
     @(401.32 mm, 464.82 mm): Symbol C_REGN [C_REGN_power]
@@ -355,10 +352,10 @@ Report includes: Errors, Warnings
     @(469.90 mm, 425.45 mm): Symbol SW_B [SW_B_ui]
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
-    @(313.69 mm, 560.07 mm): Symbol C4 [C4_passive]
+    @(228.60 mm, 596.90 mm): Symbol C3 [C3_passive]
 [lib_symbol_issues]: The current configuration does not include the symbol library 'nova-rf1'
     ; warning
-    @(313.69 mm, 560.07 mm): Symbol C4 [C4_passive]
+    @(228.60 mm, 596.90 mm): Symbol C3 [C3_passive]
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
     @(398.78 mm, 519.43 mm): Symbol U8B [U8B_power]
@@ -373,16 +370,16 @@ Report includes: Errors, Warnings
     @(486.41 mm, 464.82 mm): Symbol R_ILIM [R_ILIM_power]
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
-    @(659.13 mm, 156.21 mm): Symbol J_SUBG [J_SUBG_subghz]
+    @(313.69 mm, 596.90 mm): Symbol C4 [C4_passive]
 [lib_symbol_issues]: The current configuration does not include the symbol library 'nova-rf1'
     ; warning
-    @(659.13 mm, 156.21 mm): Symbol J_SUBG [J_SUBG_subghz]
+    @(313.69 mm, 596.90 mm): Symbol C4 [C4_passive]
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
-    @(398.78 mm, 560.07 mm): Symbol C5 [C5_passive]
+    @(659.13 mm, 156.21 mm): Symbol J_SUBG [J_SUBG_subghz]
 [lib_symbol_issues]: The current configuration does not include the symbol library 'nova-rf1'
     ; warning
-    @(398.78 mm, 560.07 mm): Symbol C5 [C5_passive]
+    @(659.13 mm, 156.21 mm): Symbol J_SUBG [J_SUBG_subghz]
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
     @(664.21 mm, 212.09 mm): Symbol U_IR [U_IR_io]
@@ -409,22 +406,28 @@ Report includes: Errors, Warnings
     @(483.87 mm, 516.89 mm): Symbol L14 [L14_power]
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
+    @(398.78 mm, 596.90 mm): Symbol C5 [C5_passive]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'nova-rf1'
+    ; warning
+    @(398.78 mm, 596.90 mm): Symbol C5 [C5_passive]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
     @(571.50 mm, 464.82 mm): Symbol R_TS1 [R_TS1_power]
 [lib_symbol_issues]: The current configuration does not include the symbol library 'nova-rf1'
     ; warning
     @(571.50 mm, 464.82 mm): Symbol R_TS1 [R_TS1_power]
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
-    @(483.87 mm, 560.07 mm): Symbol C6 [C6_passive]
+    @(638.81 mm, 426.72 mm): Symbol Q_VIB [Q_VIB_ui]
 [lib_symbol_issues]: The current configuration does not include the symbol library 'nova-rf1'
     ; warning
-    @(483.87 mm, 560.07 mm): Symbol C6 [C6_passive]
+    @(638.81 mm, 426.72 mm): Symbol Q_VIB [Q_VIB_ui]
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
-    @(638.81 mm, 426.72 mm): Symbol Q_VIB [Q_VIB_ui]
+    @(483.87 mm, 596.90 mm): Symbol C6 [C6_passive]
 [lib_symbol_issues]: The current configuration does not include the symbol library 'nova-rf1'
     ; warning
-    @(638.81 mm, 426.72 mm): Symbol Q_VIB [Q_VIB_ui]
+    @(483.87 mm, 596.90 mm): Symbol C6 [C6_passive]
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
     @(671.83 mm, 381.00 mm): Symbol R_MID2 [R_MID2_rfid125]
@@ -443,15 +446,6 @@ Report includes: Errors, Warnings
 [lib_symbol_issues]: The current configuration does not include the symbol library 'nova-rf1'
     ; warning
     @(750.57 mm, 210.82 mm): Symbol J_IBTN [J_IBTN_io]
-[global_label_dangling]: Global label not connected anywhere else in the schematic
-    ; warning
-    @(589.28 mm, 516.89 mm): Global Label '+3V3_LDO'
-[footprint_link_issues]: The current configuration does not include the footprint library ''.
-    ; warning
-    @(567.69 mm, 560.07 mm): Symbol C7 [C7_passive]
-[lib_symbol_issues]: The current configuration does not include the symbol library 'nova-rf1'
-    ; warning
-    @(567.69 mm, 560.07 mm): Symbol C7 [C7_passive]
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
     @(656.59 mm, 464.82 mm): Symbol R_TS2 [R_TS2_power]
@@ -460,22 +454,22 @@ Report includes: Errors, Warnings
     @(656.59 mm, 464.82 mm): Symbol R_TS2 [R_TS2_power]
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
-    @(660.40 mm, 516.89 mm): Symbol R37 [R37_power]
+    @(567.69 mm, 596.90 mm): Symbol C7 [C7_passive]
 [lib_symbol_issues]: The current configuration does not include the symbol library 'nova-rf1'
     ; warning
-    @(660.40 mm, 516.89 mm): Symbol R37 [R37_power]
+    @(567.69 mm, 596.90 mm): Symbol C7 [C7_passive]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(661.67 mm, 516.89 mm): Symbol C_A3V3 [C_A3V3_power]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'nova-rf1'
+    ; warning
+    @(661.67 mm, 516.89 mm): Symbol C_A3V3 [C_A3V3_power]
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
     @(725.17 mm, 425.45 mm): Symbol LS1 [LS1_ui]
 [lib_symbol_issues]: The current configuration does not include the symbol library 'nova-rf1'
     ; warning
     @(725.17 mm, 425.45 mm): Symbol LS1 [LS1_ui]
-[footprint_link_issues]: The current configuration does not include the footprint library ''.
-    ; warning
-    @(650.24 mm, 560.07 mm): Symbol C8 [C8_passive]
-[lib_symbol_issues]: The current configuration does not include the symbol library 'nova-rf1'
-    ; warning
-    @(650.24 mm, 560.07 mm): Symbol C8 [C8_passive]
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
     @(838.20 mm, 210.82 mm): Symbol VD_IBTN [VD_IBTN_io]
@@ -490,10 +484,16 @@ Report includes: Errors, Warnings
     @(742.95 mm, 466.09 mm): Symbol X10 [X10_power]
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
-    @(744.22 mm, 518.16 mm): Symbol U9 [U9_power]
+    @(650.24 mm, 596.90 mm): Symbol C8 [C8_passive]
 [lib_symbol_issues]: The current configuration does not include the symbol library 'nova-rf1'
     ; warning
-    @(744.22 mm, 518.16 mm): Symbol U9 [U9_power]
+    @(650.24 mm, 596.90 mm): Symbol C8 [C8_passive]
+[footprint_link_issues]: The current configuration does not include the footprint library ''.
+    ; warning
+    @(745.49 mm, 516.89 mm): Symbol R37 [R37_power]
+[lib_symbol_issues]: The current configuration does not include the symbol library 'nova-rf1'
+    ; warning
+    @(745.49 mm, 516.89 mm): Symbol R37 [R37_power]
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
     @(811.53 mm, 426.72 mm): Symbol Q_SPK [Q_SPK_ui]
@@ -502,10 +502,10 @@ Report includes: Errors, Warnings
     @(811.53 mm, 426.72 mm): Symbol Q_SPK [Q_SPK_ui]
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
-    @(732.79 mm, 560.07 mm): Symbol C9 [C9_passive]
+    @(732.79 mm, 596.90 mm): Symbol C9 [C9_passive]
 [lib_symbol_issues]: The current configuration does not include the symbol library 'nova-rf1'
     ; warning
-    @(732.79 mm, 560.07 mm): Symbol C9 [C9_passive]
+    @(732.79 mm, 596.90 mm): Symbol C9 [C9_passive]
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
     @(928.37 mm, 212.09 mm): Symbol Q_IBTN [Q_IBTN_io]
@@ -523,16 +523,16 @@ Report includes: Errors, Warnings
     @(943.61 mm, 210.82 mm): Global Label 'IBTN_EXT'
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
-    @(828.04 mm, 518.16 mm): Symbol U10 [U10_power]
+    @(829.31 mm, 518.16 mm): Symbol U9 [U9_power]
 [lib_symbol_issues]: The current configuration does not include the symbol library 'nova-rf1'
     ; warning
-    @(828.04 mm, 518.16 mm): Symbol U10 [U10_power]
+    @(829.31 mm, 518.16 mm): Symbol U9 [U9_power]
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
-    @(815.34 mm, 560.07 mm): Symbol C10 [C10_passive]
+    @(815.34 mm, 596.90 mm): Symbol C10 [C10_passive]
 [lib_symbol_issues]: The current configuration does not include the symbol library 'nova-rf1'
     ; warning
-    @(815.34 mm, 560.07 mm): Symbol C10 [C10_passive]
+    @(815.34 mm, 596.90 mm): Symbol C10 [C10_passive]
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
     @(919.48 mm, 469.90 mm): Symbol U7 [U7_power]
@@ -541,10 +541,10 @@ Report includes: Errors, Warnings
     @(919.48 mm, 469.90 mm): Symbol U7 [U7_power]
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
-    @(913.13 mm, 516.89 mm): Symbol R_CC1 [R_CC1_power]
+    @(914.40 mm, 518.16 mm): Symbol U10 [U10_power]
 [lib_symbol_issues]: The current configuration does not include the symbol library 'nova-rf1'
     ; warning
-    @(913.13 mm, 516.89 mm): Symbol R_CC1 [R_CC1_power]
+    @(914.40 mm, 518.16 mm): Symbol U10 [U10_power]
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
     @(1005.84 mm, 464.82 mm): Symbol C_FGV [C_FGV_power]
@@ -553,9 +553,9 @@ Report includes: Errors, Warnings
     @(1005.84 mm, 464.82 mm): Symbol C_FGV [C_FGV_power]
 [footprint_link_issues]: The current configuration does not include the footprint library ''.
     ; warning
-    @(998.22 mm, 516.89 mm): Symbol R_CC2 [R_CC2_power]
+    @(998.22 mm, 516.89 mm): Symbol R_CC1 [R_CC1_power]
 [lib_symbol_issues]: The current configuration does not include the symbol library 'nova-rf1'
     ; warning
-    @(998.22 mm, 516.89 mm): Symbol R_CC2 [R_CC2_power]
+    @(998.22 mm, 516.89 mm): Symbol R_CC1 [R_CC1_power]
 
  ** ERC messages: 185  Errors 0  Warnings 185

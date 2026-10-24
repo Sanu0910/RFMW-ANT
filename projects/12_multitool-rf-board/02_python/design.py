@@ -129,7 +129,7 @@ part("ANT_NFC", "13.56MHz loop", "PCB spiral 1.37uH", "PCB", "Antenna_Loop", "nf
 
 # ============================================================ 4. 125 kHz RFID AFE (discrete, as on the sub-board)
 part("VT4", "coildrv P", "DMP2004TK", "Diodes", "SOT-23", "rfid125", "125 kHz coil driver, high side",
-     {"G": "RFID_CARRIER_OUT", "S": "+5V", "D": "LF_COIL_P"})
+     {"G": "RFID_CARRIER_OUT", "S": "VSYS", "D": "LF_COIL_P"})
 part("VT6", "coildrv N", "DMN2004TK", "Diodes", "SOT-23", "rfid125", "125 kHz coil driver, low side",
      {"G": "RFID_PULL", "D": "LF_COIL_P", "S": "GND"})
 part("ANT_LF", "125kHz coil", "wound coil + C", "discrete", "Coil", "rfid125", "125 kHz read coil (ANT3/ANT4) + C",
@@ -228,7 +228,8 @@ part("U8B", "LM3281", "LM3281YFQR", "Texas Instruments", "DSBGA-6", "power",
 part("L14", "470nH", "470nH", "Murata", "Inductor_0806", "power", "buck inductor (ext)",
      {"1": "SW_L14", "2": "+3V3_EXT"})
 part("DA8", "RS3221-3.3", "RS3221-3.3YF3", "Runic", "SOT-23", "power", "3.3V LDO (clean analog/LDO rail)",
-     {"VIN": "VSYS", "VOUT": "+3V3_LDO", "GND": "GND"})
+     {"VIN": "VSYS", "VOUT": "A3V3", "GND": "GND"})
+part("C_A3V3", "1uF", "1uF", "Murata", "C_0402", "power", "analog 3.3V (A3V3) decoupling", {"1": "A3V3", "2": "GND"})
 part("R37", "10m", "10mOhm", "Yageo", "R_1206", "power", "battery current-sense (fuel gauge)",
      {"1": "VBAT", "2": "VBAT_SNS"})
 part("DA7", "LP5562", "LP5562TMX", "Texas Instruments", "DSBGA-12", "io",
