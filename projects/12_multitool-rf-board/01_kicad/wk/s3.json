@@ -1,0 +1,300 @@
+{
+ "final": {
+  "wire": 5096.37159334,
+  "crossings": 1032,
+  "claims": 127.46567779788539,
+  "decaps": 37.505145240939974,
+  "groups": 649.260659302809,
+  "hints": 0,
+  "halo": 1038.1600069012277,
+  "congestion": 8.454134114939698,
+  "pad_hits": 596.0,
+  "decap_limits": 0.0,
+  "decap_broken": 0,
+  "claim_limits": 57.38675256164002,
+  "claim_broken": 5,
+  "template": 0,
+  "cost": 13455.449061226136
+ },
+ "moves": 36000,
+ "seed": 3,
+ "start": "scattered",
+ "runs": 3,
+ "declared": [],
+ "reseated": [],
+ "repaired": false,
+ "illegal": [
+  "BT1",
+  "C1",
+  "C10",
+  "C2",
+  "C3",
+  "C4",
+  "C5",
+  "C6",
+  "C7",
+  "C8",
+  "C9",
+  "C_AGDC",
+  "C_BTST",
+  "C_CCd",
+  "C_FGV",
+  "C_REGN",
+  "C_SMPS",
+  "DA3",
+  "DA4",
+  "DA5",
+  "DA7",
+  "DA8",
+  "D_IR",
+  "FLT1",
+  "FLT2",
+  "J_IBTN",
+  "J_SD",
+  "L13",
+  "L14",
+  "LS1",
+  "L_CHG",
+  "L_SMPS",
+  "M1",
+  "Q_IBTN",
+  "Q_IR",
+  "Q_SPK",
+  "Q_VIB",
+  "R13",
+  "R37",
+  "RN1",
+  "R_CC1",
+  "R_CC2",
+  "R_FGB",
+  "R_FGO",
+  "R_ILIM",
+  "R_MID1",
+  "R_MID2",
+  "R_TS1",
+  "R_TS2",
+  "SW1",
+  "SW2",
+  "U1",
+  "U10",
+  "U2",
+  "U3",
+  "U5",
+  "U6",
+  "U7",
+  "U8",
+  "U8B",
+  "U9",
+  "U_IR",
+  "VD4",
+  "VD_IBTN",
+  "VD_USB",
+  "VT4",
+  "VT6",
+  "X_NFC1",
+  "Y1",
+  "Y2",
+  "ZQ1",
+  "ZQ3"
+ ],
+ "refused": {},
+ "estimate_fallback": [],
+ "oversubscribed": [],
+ "floorplan": {
+  "errors": 9,
+  "rules": [
+   "edge_connector"
+  ]
+ },
+ "assembly": {
+  "blocking": 47,
+  "buildable": false,
+  "fired": [
+   "blocking",
+   "containment_blocking",
+   "courtyard_blocking_gating",
+   "locked_contacts",
+   "oob_pad_copper_gating_count"
+  ]
+ },
+ "unseated": {},
+ "notes": [
+  "crystal X10 at BT1 pads +, NTC; load caps C6, C9",
+  "crystal Y1 at U1 pads 34, 35; no load cap (a cap from a load net to ground)",
+  "crystal Y2 at U1 pads 3, 4; no load cap (a cap from a load net to ground)",
+  "crystal ZQ1 at U3 pads 4, 5; no load cap (a cap from a load net to ground)",
+  "crystal ZQ3 at U2 pads 8, 10; no load cap (a cap from a load net to ground)",
+  "in their IC's group: C6 (passive -> power), C9 (passive -> power)",
+  "decap C_FGV on FG_VDD serves U7",
+  "decap C_REGN on CHG_REGN serves U6"
+ ],
+ "groups": [
+  [
+   "mcu",
+   [
+    "ANT1",
+    "C_SMPS",
+    "FLT1",
+    "L_SMPS",
+    "U1",
+    "Y1",
+    "Y2"
+   ]
+  ],
+  [
+   "subghz",
+   [
+    "C_CCd",
+    "FLT2",
+    "J_SUBG",
+    "R13",
+    "SW1",
+    "SW2",
+    "U2",
+    "ZQ3"
+   ]
+  ],
+  [
+   "io",
+   [
+    "DA7",
+    "D_IR",
+    "J_GPIO",
+    "J_IBTN",
+    "J_SD",
+    "J_SWD",
+    "Q_IBTN",
+    "Q_IR",
+    "RN1",
+    "U5",
+    "U_IR",
+    "VD4",
+    "VD_IBTN",
+    "VD_USB",
+    "X6"
+   ]
+  ],
+  [
+   "nfc",
+   [
+    "ANT_NFC",
+    "C_AGDC",
+    "U3",
+    "X_NFC1",
+    "ZQ1"
+   ]
+  ],
+  [
+   "rfid125",
+   [
+    "ANT_LF",
+    "DA3",
+    "DA4",
+    "DA5",
+    "R_MID1",
+    "R_MID2",
+    "VT4",
+    "VT6"
+   ]
+  ],
+  [
+   "ui",
+   [
+    "LS1",
+    "M1",
+    "Q_SPK",
+    "Q_VIB",
+    "SW_B",
+    "SW_D",
+    "SW_L",
+    "SW_O",
+    "SW_R",
+    "SW_U"
+   ]
+  ],
+  [
+   "power",
+   [
+    "BT1",
+    "C_BTST",
+    "C_FGV",
+    "C_REGN",
+    "DA8",
+    "J_USB",
+    "L13",
+    "L14",
+    "L_CHG",
+    "R37",
+    "R_CC1",
+    "R_CC2",
+    "R_FGB",
+    "R_FGO",
+    "R_ILIM",
+    "R_TS1",
+    "R_TS2",
+    "U10",
+    "U6",
+    "U7",
+    "U8",
+    "U8B",
+    "U9",
+    "X10",
+    "C6",
+    "C9"
+   ]
+  ],
+  [
+   "passive",
+   [
+    "C1",
+    "C10",
+    "C2",
+    "C3",
+    "C4",
+    "C5",
+    "C7",
+    "C8"
+   ]
+  ]
+ ],
+ "stats": {
+  "shift": [
+   13817,
+   1131
+  ],
+  "turn": [
+   5231,
+   907
+  ],
+  "swap": [
+   3539,
+   173
+  ],
+  "jump": [
+   3387,
+   204
+  ],
+  "dock": [
+   3348,
+   249
+  ],
+  "gshift": [
+   4271,
+   903
+  ],
+  "gturn": [
+   649,
+   4
+  ],
+  "escape": [
+   1758,
+   45
+  ]
+ },
+ "templates": [],
+ "hints_saturated": [],
+ "seconds": {
+  "setup": 1.0,
+  "anneal": 543.5
+ }
+}

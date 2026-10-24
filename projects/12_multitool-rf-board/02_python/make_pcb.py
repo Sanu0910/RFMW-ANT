@@ -21,7 +21,8 @@ PCB = os.path.join(KDIR, "crl-mt1.kicad_pcb")
 FPROOT = "/usr/share/kicad/footprints"
 CUSTOM = os.path.join(KDIR, "crl-mt1.pretty")
 OX, OY = 30.0, 30.0            # board origin on the KiCad page
-BW, BH = 110.0, 46.0          # single-board envelope (mm) holding all 87 parts; refined later
+BW, BH = 150.0, 150.0         # envelope (mm) sized to hold all 87 parts + routing room
+INSET = 11.0                  # interior margin: edge band for the locked connectors
 
 
 def mm(v):
@@ -29,23 +30,13 @@ def mm(v):
 
 
 def add_outline(board):
-    """Rounded-rectangle board edge on Edge.Cuts."""
-    r = 3.0
+    """Closed rectangular board edge on Edge.Cuts (4 connected segments)."""
     x0, y0, x1, y1 = OX, OY, OX + BW, OY + BH
-    segs = [((x0 + r, y0), (x1 - r, y0)), ((x1, y0 + r), (x1, y1 - r)),
-            ((x1 - r, y1), (x0 + r, y1)), ((x0, y1 - r), (x0, y0 + r))]
-    for a, b in segs:
+    pts = [(x0, y0), (x1, y0), (x1, y1), (x0, y1), (x0, y0)]
+    for a, b in zip(pts, pts[1:]):
         s = pcbnew.PCB_SHAPE(board, pcbnew.SHAPE_T_SEGMENT)
         s.SetStart(pcbnew.VECTOR2I(mm(a[0]), mm(a[1])))
         s.SetEnd(pcbnew.VECTOR2I(mm(b[0]), mm(b[1])))
-        s.SetLayer(pcbnew.Edge_Cuts); s.SetWidth(mm(0.1)); board.Add(s)
-    corners = [((x0 + r, y0 + r), (x0 + r, y0), 90), ((x1 - r, y0 + r), (x1, y0 + r), 90),
-               ((x1 - r, y1 - r), (x1 - r, y1), 90), ((x0 + r, y1 - r), (x0, y1 - r), 90)]
-    for c, start, ang in corners:
-        s = pcbnew.PCB_SHAPE(board, pcbnew.SHAPE_T_ARC)
-        s.SetCenter(pcbnew.VECTOR2I(mm(c[0]), mm(c[1])))
-        s.SetStart(pcbnew.VECTOR2I(mm(start[0]), mm(start[1])))
-        s.SetArcAngleAndEnd(pcbnew.EDA_ANGLE(ang, pcbnew.DEGREES_T), True)
         s.SetLayer(pcbnew.Edge_Cuts); s.SetWidth(mm(0.1)); board.Add(s)
 
 
@@ -85,17 +76,17 @@ def build():
     # functional-group placer organizes the interior around real anchors.
     # (x, y, rot) local to the outline; x in [0,BW], y in [0,BH].
     FIXED = {
-        "J_USB":  (BW / 2, BH - 2.0, 0),      # USB-C centered on bottom edge
-        "X6":     (20.0, 2.0, 0),             # 18-pin FFC on top edge (sub-board link)
-        "J_GPIO": (BW - 2.5, BH / 2, 90),     # 2x9 GPIO header on right edge
-        "J_SWD":  (BW - 10.0, BH - 2.5, 0),   # Tag-Connect SWD near bottom-right
-        "X10":    (2.0, BH / 2, 90),          # battery connector on left edge
-        "J_SUBG": (10.0, 2.0, 0),             # sub-GHz U.FL top-left
-        "ANT1":   (BW / 2 - 10, 2.0, 0),      # BLE chip antenna top
-        "ANT_NFC":(BW / 2 + 6, 2.0, 0),       # NFC loop top
-        "ANT_LF": (BW / 2 + 16, 2.0, 0),      # 125k coil top
-        "SW_U": (BW - 30, 2.0, 0), "SW_D": (BW - 24, 2.0, 0), "SW_L": (BW - 18, 2.0, 0),
-        "SW_R": (BW - 12, 2.0, 0), "SW_O": (BW - 36, 2.0, 0), "SW_B": (BW - 42, 2.0, 0),
+        "J_USB":  (BW / 2, BH - 7.0, 0),      # USB-C centered on bottom edge
+        "X6":     (26.0, 7.0, 0),             # 18-pin FFC on top edge (sub-board link)
+        "J_GPIO": (BW - 6.0, BH / 2, 0),      # 2x9 GPIO header on right edge (native tall axis)
+        "J_SWD":  (BW - 18.0, BH - 7.0, 0),   # Tag-Connect SWD near bottom-right
+        "X10":    (7.0, BH / 2, 90),          # battery connector on left edge
+        "J_SUBG": (12.0, 7.0, 0),             # sub-GHz U.FL top-left
+        "ANT1":   (BW / 2 - 12, 6.0, 0),      # BLE chip antenna top
+        "ANT_NFC":(BW / 2 + 4, 6.0, 0),       # NFC loop top
+        "ANT_LF": (BW / 2 + 16, 6.0, 0),      # 125k coil top
+        "SW_U": (BW - 34, 7.0, 0), "SW_D": (BW - 27, 7.0, 0), "SW_L": (BW - 20, 7.0, 0),
+        "SW_R": (BW - 13, 7.0, 0), "SW_O": (BW - 41, 7.0, 0), "SW_B": (BW - 48, 7.0, 0),
     }
 
     parts = {p[0]: p for p in D.PARTS}
@@ -107,11 +98,19 @@ def build():
             continue
         groups.setdefault(p[5], []).append((ref, p))
 
-    # pile the unlocked (placer-movable) parts BELOW the board outline
-    x, y, shelf = OX, OY + BH + 8.0, 0.0
-    PAGE_W = 260.0
+    # Deterministic, legal-by-construction placement: unlocked parts flow in
+    # grouped rows inside the interior rectangle (inset from the edge band that
+    # holds the locked connectors), each part's slot = its bounding box + GAP so
+    # courtyards never overlap. Legal by construction -> no stochastic anneal.
+    GAP = 2.8
+    x0 = OX + INSET
+    x1 = OX + BW - INSET
+    x, y, shelf = x0, OY + INSET, 0.0
     unconn = 0
     for gname, members in groups.items():
+        # new band per functional group
+        if x > x0:
+            x = x0; y += shelf + GAP; shelf = 0.0
         for ref, p in members:
             libid = pinmap.FOOTPRINT.get(p[4])
             if libid is None:
@@ -129,10 +128,6 @@ def build():
                 else:
                     unconn += 1
                     pad.SetNet(net(f"unconnected-({ref}-{num})"))
-            # place
-            bb = fp.GetBoundingBox()
-            w = pcbnew.ToMM(bb.GetWidth()) + 2.5
-            h = pcbnew.ToMM(bb.GetHeight()) + 2.5
             if ref in FIXED:
                 fx, fy, frot = FIXED[ref]
                 fp.SetPosition(pcbnew.VECTOR2I(mm(OX + fx), mm(OY + fy)))
@@ -141,17 +136,22 @@ def build():
                 fp.SetLocked(True)
                 placed_refs.append(ref)
                 continue
-            if x + w > OX + PAGE_W and x > OX:
-                x = OX
-                y += shelf + 3.0
+            bb = fp.GetBoundingBox()
+            w = pcbnew.ToMM(bb.GetWidth()) + GAP
+            h = pcbnew.ToMM(bb.GetHeight()) + GAP
+            if x + w > x1 and x > x0:
+                x = x0
+                y += shelf + GAP
                 shelf = 0.0
             fp.SetPosition(pcbnew.VECTOR2I(mm(x + w / 2), mm(y + h / 2)))
-            x += w + 2.0
+            x += w
             shelf = max(shelf, h)
             placed_refs.append(ref)
-        x = OX
-        y += shelf + 5.0
+        x = x0
+        y += shelf + GAP
         shelf = 0.0
+    interior_bottom = y
+    print(f"  interior packed to y={interior_bottom - OY:.1f}mm (board BH={BH})")
 
     add_outline(board)
     board.BuildListOfNets()

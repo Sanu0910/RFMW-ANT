@@ -1,0 +1,32 @@
+{
+ "judge": [],
+ "scattered": [
+  0,
+  1,
+  2,
+  3
+ ],
+ "clustered": [],
+ "anchored": [],
+ "illegal": [
+  0,
+  1,
+  2,
+  3
+ ],
+ "refused": {},
+ "oversubscribed": [],
+ "floorplan": {
+  "0": 9,
+  "1": 9,
+  "2": 9,
+  "3": 9
+ },
+ "assembly": {
+  "0": 55,
+  "1": 48,
+  "2": 51,
+  "3": 47
+ },
+ "baseline": "/home/user/RFMW-main/projects/12_multitool-rf-board/01_kicad/crl-mt1.kicad_pcb"
+}
