@@ -31,6 +31,11 @@ licensed).
 STM32WB55RG (MCU + BLE) · CC1101 (sub-GHz) · ST25R3916 (13.56 MHz NFC) · 125 kHz RFID AFE · ST7565R display ·
 microSD · IR TX/RX · iButton · BQ25896 charger + BQ27220 gauge + LM3281 bucks + RS3221 LDO + LP5562 RGB-LED driver · USB-C · GPIO/module header.
 
+## Mechanical reference
+`flipperdevices/flipperzero-3d-models` (the official case/enclosure STEP/3MF models, GPLv3 / CC) is useful **only**
+as a mechanical reference for button pitch, screen window and board-stack height when you draw your **own** original
+enclosure. Do not reuse its outline art or the dolphin mascot — give the CRL-MT1 its own case and silkscreen.
+
 ## Regenerate
 ```bash
 cd 02_python && python3 design.py

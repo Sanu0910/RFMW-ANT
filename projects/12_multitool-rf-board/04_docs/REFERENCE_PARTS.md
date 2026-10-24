@@ -77,9 +77,22 @@ Not a single chip — a discrete read/write channel:
 - IR: **TSOP** 38 kHz receiver + IR LED with a driver FET; **iButton** via a 1 kΩ + 1N4148 protected line; speaker.
 - Reached from the main board over a 6-pin FFC **FH34SRJ-6S** (older sub-board rev) / the 18-pin X6 on the current one.
 
-### 13.56 MHz NFC
-- **ST25R3916** reader on SPI-R with its EMC filter + matching network to a PCB loop antenna (standard ST app-note
-  topology; tune Q and the series/parallel caps to the loop).
+### 13.56 MHz NFC (NFC sheet 3/4, 2022-08-03)
+- Reader **ST25R3916-AQWT** (DD1), 27.12 MHz crystal **XRCGB27M120F3M00R0** (ZQ1), VDD decoupling 2.2 µF + 10 nF.
+- Two antenna connectors **X6/X7** (FDX0022A1) feed the PCB loop antenna (ANT1/ANT2, ≈ 1.37 µH).
+- Differential drive RFO1/RFO2 → EMC + matching network → RFI_P/RFI_N differential receive. Reference values:
+  L1/L2 **270 nH** (EMC), series/parallel caps C5/C7 **62 pF**, C3/C8 **100 pF**, C1/C10 **100 pF**, C2/C9 **10 pF**,
+  C4/C6 **680 pF**, C11/C15 **6 pF**, R1/R2 **0 Ω**.
+- Standard ST app-note topology; tune Q and the series/parallel caps to **your own** loop and stack-up.
+
+### iButton + speaker + IR sub-board (iButton sheet)
+- **Speaker** BA1b = **BCE-MX8530A-03627** magnetic buzzer, driven by N-FET **DMN2058UW-7** (VT1b), gate 10 kΩ (R3b),
+  series 150 Ω (R2b), SYS series 22 Ω (R1b).
+- **iButton** three spring contacts X1b/X2b/X3b (mechanical pads PG-2.5-9.5-SM / PG-2.5-8.0-SM / PG-3.0-10.0-SM),
+  ESD **ESD230B1W0201** (VD1b) on the 1-Wire line.
+- **IR TX**: three IR LEDs **VSMY14940** (VD2b/VD3b/VD4b) each with a 39 Ω series resistor (R5b/R9b/R10b).
+- **IR RX**: **TSOP75338TR** 38 kHz demodulator, 100 nF decoupling (C1b), 10 kΩ pull-up.
+- Joined to the main board by a **6-pin FFC** X4b (SYS, SPEAKER, iButton, IR_TX, IR_RX, GND).
 
 > All RF values above are the reference device's. For an original board, treat them as a starting point, then
 > re-match to your own antennas and stack-up in a simulator (openEMS / Hertzon, see `docs/`).

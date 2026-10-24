@@ -100,11 +100,17 @@ part("U3", "ST25R3916", "ST25R3916-AQWT", "STMicroelectronics", "QFN-32", "nfc",
      "13.56 MHz NFC reader/card/peer front-end",
      {"SCLK": "SPI_R_SCK", "MISO": "SPI_R_MISO", "MOSI": "SPI_R_MOSI", "SS": "NFC_CS",
       "IRQ": "RFID_CARRIER", "TX1": "NFC_TX1", "TX2": "NFC_TX2",
-      "RFI1": "NFC_RFI1", "RFI2": "NFC_RFI2", "VDD": "+3V3", "VSP": "+3V3", "VSS": "GND"})
-part("L_NFC", "EMIfilter", "NFC EMC LC", "discrete", "EMC_net", "nfc", "NFC EMC + matching network",
+      "RFI1": "NFC_RFI1", "RFI2": "NFC_RFI2", "OSCI": "NFC_XTAL1", "OSCO": "NFC_XTAL2",
+      "VDD": "+3V3", "VSP": "+3V3", "VSS": "GND"})
+part("ZQ1", "27.12MHz", "XRCGB27M120F3M00R0", "Murata", "XTAL_2520", "nfc", "ST25R3916 27.12 MHz crystal",
+     {"1": "NFC_XTAL1", "2": "NFC_XTAL2"})
+# EMC (L1/L2 270nH) + matching net (C5/C7 62p, C3/C8 100p, C1/C10 100p, C2/C9 10p, C4/C6 680p, C11/C15 6p, R1/R2 0R)
+part("L_NFC", "EMIfilter", "NFC EMC+match L1/L2 270nH", "discrete", "EMC_net", "nfc", "NFC EMC + matching network",
      {"TX1": "NFC_TX1", "TX2": "NFC_TX2", "ANT_P": "NFC_ANT_P", "ANT_N": "NFC_ANT_N",
       "RFI1": "NFC_RFI1", "RFI2": "NFC_RFI2"})
-part("ANT_NFC", "13.56MHz loop", "PCB spiral", "PCB", "Antenna_Loop", "nfc", "13.56 MHz PCB loop antenna",
+part("X_NFC1", "ANT conn", "FDX0022A1", "connector", "FFC_2p", "nfc", "NFC antenna connector (ANT1)",
+     {"1": "NFC_ANT_P", "2": "NFC_ANT_N"})
+part("ANT_NFC", "13.56MHz loop", "PCB spiral 1.37uH", "PCB", "Antenna_Loop", "nfc", "13.56 MHz PCB loop antenna",
      {"1": "NFC_ANT_P", "2": "NFC_ANT_N"})
 
 # ============================================================ 4. 125 kHz RFID AFE (discrete, as on the sub-board)
@@ -137,14 +143,17 @@ part("J_SD", "microSD", "DM3D-SF", "Hirose", "microSD", "io", "microSD card hold
       "CD": "SD_CD", "VDD": "+3V3", "VSS": "GND"})
 
 # ============================================================ 6. IR, iButton
-part("D_IR", "IR LED", "SFH4550", "Osram", "LED_IR", "io", "IR transmit LED",
+# IR TX: three VSMY14940 LEDs each with a 39R series resistor, driven by one FET
+part("D_IR", "IR LED x3", "VSMY14940", "Vishay", "LED_IR", "io", "IR transmit LEDs (3x, 39R series each)",
      {"A": "IR_LED_A", "K": "GND"})
 part("Q_IR", "drive", "2N7002", "Nexperia", "SOT-23", "io", "IR LED driver FET",
      {"G": "IR_TX", "D": "IR_LED_A", "S": "GND"})
-part("U_IR", "IR RX", "TSOP75238", "Vishay", "IR_receiver", "io", "38 kHz IR demodulator",
+part("U_IR", "IR RX", "TSOP75338TR", "Vishay", "IR_receiver", "io", "38 kHz IR demodulator (100nF decouple)",
      {"OUT": "IR_RX", "VS": "+3V3", "GND": "GND"})
-part("J_IBTN", "iButton", "1-Wire pads", "PCB", "Pads", "io", "iButton / 1-Wire contacts",
+part("J_IBTN", "iButton", "1-Wire pads PG-2.5/3.0-SM", "PCB", "Pads", "io", "iButton / 1-Wire spring contacts",
      {"DATA": "IBTN", "GND": "GND"})
+part("VD_IBTN", "ESD", "ESD230B1W0201", "Nexperia", "ESD_0201", "io", "iButton line ESD protection",
+     {"1": "IBTN", "2": "GND"})
 part("Q_IBTN", "1W driver", "DMN2075U", "Diodes", "SOT-23", "io", "iButton open-drain driver + protection",
      {"G": "IBTN", "D": "IBTN_EXT", "S": "GND"})
 
@@ -156,9 +165,9 @@ part("M1", "vibro", "coin ERM", "generic", "Vibro", "ui", "haptic motor",
      {"+": "VIBRO_DRV", "-": "GND"})
 part("Q_VIB", "drive", "2N7002", "Nexperia", "SOT-23", "ui", "vibro driver FET",
      {"G": "VIBRO", "D": "VIBRO_DRV", "S": "GND"})
-part("LS1", "speaker", "magnetic 8ohm", "generic", "Speaker", "ui", "speaker",
+part("LS1", "speaker", "BCE-MX8530A-03627", "BeStar", "Speaker", "ui", "magnetic speaker",
      {"+": "SPK_DRV", "-": "GND"})
-part("Q_SPK", "drive", "2N7002", "Nexperia", "SOT-23", "ui", "speaker driver FET",
+part("Q_SPK", "drive", "DMN2058UW-7", "Diodes", "SOT-23", "ui", "speaker driver FET (gate 10k, series 150R)",
      {"G": "SPEAKER", "D": "SPK_DRV", "S": "GND"})
 
 # ============================================================ 8. Power

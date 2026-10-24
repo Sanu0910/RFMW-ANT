@@ -1,7 +1,7 @@
 Ref,Value,MPN,Manufacturer,Footprint,Group,Description
 ANT1,2.4GHz,1001312,Johanson,Antenna_Chip,mcu,BLE chip antenna + pi-match (L1/C5/C6)
 ANT_LF,125kHz coil,wound coil + C,discrete,Coil,rfid125,125 kHz read coil (ANT3/ANT4) + C
-ANT_NFC,13.56MHz loop,PCB spiral,PCB,Antenna_Loop,nfc,13.56 MHz PCB loop antenna
+ANT_NFC,13.56MHz loop,PCB spiral 1.37uH,PCB,Antenna_Loop,nfc,13.56 MHz PCB loop antenna
 BT1,Li-Po 1S,2000mAh 503450,generic,pack,power,single-cell battery pack w/ NTC
 C1,100nF,100nF,Murata,C_0402,passive,decoupling
 C10,10uF,10uF,Murata,C_0805,passive,bulk
@@ -18,23 +18,23 @@ DA4,LMV358,LMV358AIDGKR,Texas Instruments,VSSOP-8,rfid125,RFID RX amplifier stag
 DA4,LP5562,LP5562TMX,Texas Instruments,DSBGA-12,io,"RGB LED driver (notification LED + backlight), I2C"
 DA5,LMV331,LMV331IDCKR,Texas Instruments,SC-70-5,rfid125,RFID envelope comparator -> digital
 DA5,RS3221-3.3,RS3221-3.3YF3,Runic,DFN-6,power,3.3V LDO (clean analog/LDO rail)
-D_IR,IR LED,SFH4550,Osram,LED_IR,io,IR transmit LED
+D_IR,IR LED x3,VSMY14940,Vishay,LED_IR,io,"IR transmit LEDs (3x, 39R series each)"
 FLT1,BLE filter,LFL182G45TC1A108,Murata,RF_filter,mcu,2.4GHz BLE band-pass filter
 FLT2,balun,B0310J50100AHF,Johanson,Balun_0310,subghz,"CC1101 differential-to-SE balun + LC match (L4 3.3nH, L5 6.8nH, C32 1.2pF)"
 J_GPIO,header 2x9,Conn_2x09,generic,Header_2x09,io,external GPIO / module header
-J_IBTN,iButton,1-Wire pads,PCB,Pads,io,iButton / 1-Wire contacts
+J_IBTN,iButton,1-Wire pads PG-2.5/3.0-SM,PCB,Pads,io,iButton / 1-Wire spring contacts
 J_SD,microSD,DM3D-SF,Hirose,microSD,io,microSD card holder
 J_SUBG,ANT,U.FL-R-SMT-1,Hirose,U.FL,subghz,sub-GHz antenna connector
 J_SWD,SWD,Tag-Connect TC2030,TagConnect,TC2030,io,SWD programming
 J_USB,USB-C,TYPE-C-31-M-12,GCT,USB_C,power,USB-C receptacle
 L13,470nH,470nH,Murata,Inductor_0806,power,buck inductor (core)
 L14,470nH,470nH,Murata,Inductor_0806,power,buck inductor (ext)
-LS1,speaker,magnetic 8ohm,generic,Speaker,ui,speaker
-L_NFC,EMIfilter,NFC EMC LC,discrete,EMC_net,nfc,NFC EMC + matching network
+LS1,speaker,BCE-MX8530A-03627,BeStar,Speaker,ui,magnetic speaker
+L_NFC,EMIfilter,NFC EMC+match L1/L2 270nH,discrete,EMC_net,nfc,NFC EMC + matching network
 M1,vibro,coin ERM,generic,Vibro,ui,haptic motor
 Q_IBTN,1W driver,DMN2075U,Diodes,SOT-23,io,iButton open-drain driver + protection
 Q_IR,drive,2N7002,Nexperia,SOT-23,io,IR LED driver FET
-Q_SPK,drive,2N7002,Nexperia,SOT-23,ui,speaker driver FET
+Q_SPK,drive,DMN2058UW-7,Diodes,SOT-23,ui,"speaker driver FET (gate 10k, series 150R)"
 Q_VIB,drive,2N7002,Nexperia,SOT-23,ui,vibro driver FET
 R13,56k,56k,Yageo,R_0402,subghz,CC1101 RBIAS
 R37,10m,10mOhm,Yageo,R_1206,power,battery current-sense (fuel gauge)
@@ -61,13 +61,16 @@ U7,BQ27220,BQ27220,Texas Instruments,WCSP,power,"battery fuel gauge, I2C"
 U8,LM3281,LM3281YFQR,Texas Instruments,DSBGA-5,power,buck DC-DC -> +3V3 core rail
 U8B,LM3281,LM3281YFQR,Texas Instruments,DSBGA-5,power,buck DC-DC -> ext-3V3 (header/peripherals)
 U9,loadsw,TPS22917,Texas Instruments,SOT-23-6,power,peripheral-rail load switch (SD/display/radios)
-U_IR,IR RX,TSOP75238,Vishay,IR_receiver,io,38 kHz IR demodulator
+U_IR,IR RX,TSOP75338TR,Vishay,IR_receiver,io,38 kHz IR demodulator (100nF decouple)
 VD4,RGB LED,LTST-C19HE1WT,Lite-On,LED_RGB_0606,io,notification RGB LED
+VD_IBTN,ESD,ESD230B1W0201,Nexperia,ESD_0201,io,iButton line ESD protection
 VD_USB,ESD,ESD241B1W0201,Nexperia,0201,io,USB line ESD array
 VT4,coildrv P,DMP2004TK,Diodes,SOT-23,rfid125,"125 kHz coil driver, high side"
 VT6,coildrv N,DMN2004TK,Diodes,SOT-23,rfid125,"125 kHz coil driver, low side"
 X10,BAT+NTC,1.25-3P,generic,Conn_1x03_1.25mm,power,battery + NTC thermistor (BAT / TEMP / GND)
 X6,FFC 18p,FH34SRJ-18S-0.5SH,Hirose,FFC_18_0.5mm,io,flex link to the NFC/RFID/IR sub-board
+X_NFC1,ANT conn,FDX0022A1,connector,FFC_2p,nfc,NFC antenna connector (ANT1)
 Y1,32MHz,ABM8-32.000MHZ,Abracon,Xtal_3225,mcu,HSE 32 MHz for the radio
 Y2,32.768kHz,ABS07-32.768KHZ,Abracon,Xtal_ABS07,mcu,LSE RTC crystal
+ZQ1,27.12MHz,XRCGB27M120F3M00R0,Murata,XTAL_2520,nfc,ST25R3916 27.12 MHz crystal
 ZQ3,26MHz,CXD2-026000000,generic,Xtal_2520,subghz,CC1101 26 MHz crystal
