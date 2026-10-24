@@ -47,3 +47,17 @@ Multi-pad supply/ground nets (e.g. CC1101 AVDD x4, ST25R3916 VDD x8 / VSS x6) ar
 - [ ] RF matching (CC1101 50 ohm + LC, NFC 13.56 MHz, 125 kHz LC) and controlled-impedance stackup
 - [ ] Route (4-layer), zones, DRC clean
 - [ ] Gerbers, drill, CPL, costed BOM, 3D render
+
+## Routing (KiCadRoutingTools, 2026-10-24)
+Compact 110x66mm 4-layer, two-sided. GND plane poured on In1.Cu; autorouted with
+rip-up/reroute. Result: **104 of 105 nets routed** (2935 segments, 520 vias) ->
+`01_kicad/crl-mt1-routed.kicad_pcb`.
+
+Remaining to DRC-clean / fab-ready (the last mile):
+- **LSE_OUT open (1 net):** the 32.768kHz LSE crystal Y2 is not adjacent to the MCU, so
+  the net is walled in. Fix = place crystals (Y1/Y2) touching U1's OSC pins, then re-route.
+- **GND plane stitching:** ~60 GND pads not yet tapped to the pour; needs a GND return-via
+  stitch pass.
+- **Fab rules relaxed** to fit the compact board: vias 0.25mm, drills 0.15mm, clearance 0.1mm
+  (HDI-class). For standard low-cost fab, grow the board (~130x75mm) and re-route at 0.2mm.
+- 4 clearance DRC violations at the relaxed floor.
