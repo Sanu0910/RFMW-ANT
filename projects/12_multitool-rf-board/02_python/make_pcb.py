@@ -21,8 +21,8 @@ PCB = os.path.join(KDIR, "crl-mt1.kicad_pcb")
 FPROOT = "/usr/share/kicad/footprints"
 CUSTOM = os.path.join(KDIR, "crl-mt1.pretty")
 OX, OY = 30.0, 30.0            # board origin on the KiCad page
-BW, BH = 150.0, 150.0         # envelope (mm) sized to hold all 87 parts + routing room
-INSET = 11.0                  # interior margin: edge band for the locked connectors
+BW, BH = 110.0, 66.0           # compact envelope (mm), reference-device proportions; 2-sided
+INSET = 6.0                   # interior margin: edge band for the locked connectors
 
 
 def mm(v):
@@ -77,16 +77,14 @@ def build():
     # (x, y, rot) local to the outline; x in [0,BW], y in [0,BH].
     FIXED = {
         "J_USB":  (BW / 2, BH - 7.0, 0),      # USB-C centered on bottom edge
-        "X6":     (26.0, 7.0, 0),             # 18-pin FFC on top edge (sub-board link)
-        "J_GPIO": (BW - 6.0, BH / 2, 0),      # 2x9 GPIO header on right edge (native tall axis)
-        "J_SWD":  (BW - 18.0, BH - 7.0, 0),   # Tag-Connect SWD near bottom-right
+        "J_SWD":  (BW - 20.0, BH - 7.0, 0),   # Tag-Connect SWD near bottom-right
         "X10":    (7.0, BH / 2, 90),          # battery connector on left edge
-        "J_SUBG": (12.0, 7.0, 0),             # sub-GHz U.FL top-left
-        "ANT1":   (BW / 2 - 12, 6.0, 0),      # BLE chip antenna top
-        "ANT_NFC":(BW / 2 + 4, 6.0, 0),       # NFC loop top
-        "ANT_LF": (BW / 2 + 16, 6.0, 0),      # 125k coil top
-        "SW_U": (BW - 34, 7.0, 0), "SW_D": (BW - 27, 7.0, 0), "SW_L": (BW - 20, 7.0, 0),
-        "SW_R": (BW - 13, 7.0, 0), "SW_O": (BW - 41, 7.0, 0), "SW_B": (BW - 48, 7.0, 0),
+        "J_GPIO": (BW - 6.0, BH / 2, 0),      # 2x9 GPIO header on right edge (native tall axis)
+        "J_SUBG": (10.0, 6.5, 0),             # sub-GHz U.FL top-left
+        "X6":     (27.0, 6.5, 0),             # 18-pin FFC on top edge (sub-board link)
+        "ANT1":   (44.0, 6.5, 0), "ANT_NFC": (52.0, 6.5, 0), "ANT_LF": (60.0, 6.5, 0),  # antennas top
+        "SW_O": (69.0, 6.5, 0), "SW_B": (76.0, 6.5, 0), "SW_U": (83.0, 6.5, 0),
+        "SW_D": (90.0, 6.5, 0), "SW_L": (97.0, 6.5, 0), "SW_R": (104.0, 6.5, 0),
     }
 
     parts = {p[0]: p for p in D.PARTS}
@@ -98,19 +96,21 @@ def build():
             continue
         groups.setdefault(p[5], []).append((ref, p))
 
-    # Deterministic, legal-by-construction placement: unlocked parts flow in
-    # grouped rows inside the interior rectangle (inset from the edge band that
-    # holds the locked connectors), each part's slot = its bounding box + GAP so
-    # courtyards never overlap. Legal by construction -> no stochastic anneal.
-    GAP = 2.8
+    # Compact two-sided placement, legal by construction: ICs/connectors/larger
+    # parts on the TOP side, small passives on the BOTTOM side. Each pass shelf-
+    # packs the interior with slot = bbox + GAP, so courtyards never overlap on
+    # a side; top and bottom share XY (different layers). No stochastic anneal.
+    GAP = 1.2
     x0 = OX + INSET
     x1 = OX + BW - INSET
-    x, y, shelf = x0, OY + INSET, 0.0
     unconn = 0
+    # footprint strings whose parts go on the bottom (small 2-pin passives)
+    BOTTOM_FP = {"R_0402", "C_0402", "C_0805", "R_1206", "0201", "ESD_0201",
+                 "R_array_4x0402", "Inductor_0806", "SOT-23", "SOT-23-6", "SC-70-5"}
+
+    # 1. create every footprint, assign nets, split into fixed / top / bottom
+    fixed_fps, top_fps, bot_fps = [], [], []
     for gname, members in groups.items():
-        # new band per functional group
-        if x > x0:
-            x = x0; y += shelf + GAP; shelf = 0.0
         for ref, p in members:
             libid = pinmap.FOOTPRINT.get(p[4])
             if libid is None:
@@ -119,7 +119,6 @@ def build():
             fp.SetReference(ref)
             fp.SetValue(p[1])
             board.Add(fp)
-            # assign pad nets
             padmap = pinmap.pad_nets(ref) or {}
             for pad in fp.Pads():
                 num = pad.GetNumber()
@@ -129,29 +128,43 @@ def build():
                     unconn += 1
                     pad.SetNet(net(f"unconnected-({ref}-{num})"))
             if ref in FIXED:
-                fx, fy, frot = FIXED[ref]
-                fp.SetPosition(pcbnew.VECTOR2I(mm(OX + fx), mm(OY + fy)))
-                if frot:
-                    fp.SetOrientationDegrees(frot)
-                fp.SetLocked(True)
-                placed_refs.append(ref)
-                continue
+                fixed_fps.append((ref, fp))
+            elif p[4] in BOTTOM_FP:
+                bot_fps.append((ref, fp))
+            else:
+                top_fps.append((ref, fp))
+
+    # 2. fixed edge connectors
+    for ref, fp in fixed_fps:
+        fx, fy, frot = FIXED[ref]
+        fp.SetPosition(pcbnew.VECTOR2I(mm(OX + fx), mm(OY + fy)))
+        if frot:
+            fp.SetOrientationDegrees(frot)
+        fp.SetLocked(True)
+        placed_refs.append(ref)
+
+    def shelf_pack(fps, xa, xb, y_start, flip):
+        x, y, shelf = xa, y_start, 0.0
+        # largest-first for tighter rows
+        for ref, fp in sorted(fps, key=lambda rf: -pcbnew.ToMM(rf[1].GetBoundingBox().GetWidth())):
+            if flip:
+                fp.Flip(fp.GetPosition(), False)
             bb = fp.GetBoundingBox()
             w = pcbnew.ToMM(bb.GetWidth()) + GAP
             h = pcbnew.ToMM(bb.GetHeight()) + GAP
-            if x + w > x1 and x > x0:
-                x = x0
-                y += shelf + GAP
-                shelf = 0.0
+            if x + w > xb and x > xa:
+                x = xa; y += shelf + GAP; shelf = 0.0
             fp.SetPosition(pcbnew.VECTOR2I(mm(x + w / 2), mm(y + h / 2)))
             x += w
             shelf = max(shelf, h)
             placed_refs.append(ref)
-        x = x0
-        y += shelf + GAP
-        shelf = 0.0
-    interior_bottom = y
-    print(f"  interior packed to y={interior_bottom - OY:.1f}mm (board BH={BH})")
+        return y + shelf
+
+    # TOP: inset clear of the left (X10) and right (J_GPIO) edge connectors, below the top band
+    top_bottom = shelf_pack(top_fps, OX + 15.0, OX + BW - 15.0, OY + 13.0, flip=False)
+    # BOTTOM: full interior width
+    bot_bottom = shelf_pack(bot_fps, x0, x1, OY + INSET, flip=True)
+    print(f"  top packed to y={top_bottom - OY:.1f}mm, bottom to y={bot_bottom - OY:.1f}mm (BH={BH})")
 
     add_outline(board)
     board.BuildListOfNets()
