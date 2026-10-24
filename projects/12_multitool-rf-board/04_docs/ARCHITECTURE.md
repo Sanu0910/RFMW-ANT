@@ -88,7 +88,7 @@ USB-C VBUS 5V ─┬─ battery charger (BQ25896 / MCP73831-class) ── 1S Li-
 ## 3. Board plan (original)
 | Item | Plan |
 |---|---|
-| Size | ≈ 100 × 25 mm hand-held, 4-layer, 1.6 mm, ENIG |
+| Size | hand-held, 4-layer, 1.6 mm, ENIG (the reference product's main board is ≈ 95.43 × 36.15 mm; use your own outline) |
 | Stack-up | L1 signal, L2 GND, L3 power, L4 signal |
 | RF | CC1101 50 Ω match + LC filter to the sub-GHz antenna via the RF switch; ST25R3916 to a 13.56 MHz PCB loop antenna with its tuning network; 125 kHz coil driver + LC |
 | Antennas | sub-GHz helical / PCB whip; 13.56 MHz PCB spiral; 125 kHz wound coil |

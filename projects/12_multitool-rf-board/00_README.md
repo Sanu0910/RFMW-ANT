@@ -9,6 +9,9 @@ and the GPIO/peripheral map the open firmware declares. See `04_docs/ARCHITECTUR
 legal / RF-certification boundaries (sub-GHz and BLE radios need type approval before sale; transmit only where
 licensed).
 
+## Two routes
+**Route A (buildable today):** wire off-the-shelf modules (WeAct STM32WB55 core board, CC1101, SD, SPI display) and flash the firmware — see `04_docs/DIY_BUILD.md`. **Route B:** the full custom 4-layer PCB (this project's netlist).
+
 ## Status
 - **Done:** architecture from the firmware pin map, schematic netlist (`02_python/design.py`), engineering BOM,
   firmware GPIO header (`06_firmware/board_pins.h`).
@@ -20,6 +23,7 @@ licensed).
 | `02_python/design.py` | parts + nets (source of truth) → `03_fab/BOM_engineering.csv`, `netlist.txt` |
 | `03_fab/` | engineering BOM and flat netlist |
 | `04_docs/ARCHITECTURE.md` | chip list, GPIO→peripheral map, power tree, board plan, legal notes |
+| `04_docs/DIY_BUILD.md` | two build routes: simple off-the-shelf-module build, and the full custom PCB; module wiring table; official-docs facts |
 | `06_firmware/board_pins.h` | GPIO map for porting firmware |
 
 ## Key parts
