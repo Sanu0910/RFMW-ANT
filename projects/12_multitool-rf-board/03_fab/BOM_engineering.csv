@@ -1,6 +1,6 @@
 Ref,Value,MPN,Manufacturer,Footprint,Group,Description
-ANT1,2.4GHz,2450AT18A100,Johanson,Antenna_Chip,mcu,BLE chip antenna + pi match
-ANT_LF,125kHz coil,wound coil + C,discrete,Coil,rfid125,125 kHz LC antenna
+ANT1,2.4GHz,1001312,Johanson,Antenna_Chip,mcu,BLE chip antenna + pi-match (L1/C5/C6)
+ANT_LF,125kHz coil,wound coil + C,discrete,Coil,rfid125,125 kHz read coil (ANT3/ANT4) + C
 ANT_NFC,13.56MHz loop,PCB spiral,PCB,Antenna_Loop,nfc,13.56 MHz PCB loop antenna
 BT1,Li-Po 1S,2000mAh 503450,generic,pack,power,single-cell battery pack w/ NTC
 C1,100nF,100nF,Murata,C_0402,passive,decoupling
@@ -13,10 +13,14 @@ C6,100nF,100nF,Murata,C_0402,passive,decoupling
 C7,10uF,10uF,Murata,C_0805,passive,bulk
 C8,10uF,10uF,Murata,C_0805,passive,bulk
 C9,10uF,10uF,Murata,C_0805,passive,bulk
+DA3,LMV358,LMV358AIDGKR,Texas Instruments,VSSOP-8,rfid125,RFID RX band-pass/amplifier stage 1 (dual op-amp)
+DA4,LMV358,LMV358AIDGKR,Texas Instruments,VSSOP-8,rfid125,RFID RX amplifier stage 2 (dual op-amp)
 DA4,LP5562,LP5562TMX,Texas Instruments,DSBGA-12,io,"RGB LED driver (notification LED + backlight), I2C"
+DA5,LMV331,LMV331IDCKR,Texas Instruments,SC-70-5,rfid125,RFID envelope comparator -> digital
 DA5,RS3221-3.3,RS3221-3.3YF3,Runic,DFN-6,power,3.3V LDO (clean analog/LDO rail)
 D_IR,IR LED,SFH4550,Osram,LED_IR,io,IR transmit LED
-FL1,balun+LC,JTI matching,Johanson/discrete,RF_match,subghz,CC1101 differential-to-SE balun and LC band filter
+FLT1,BLE filter,LFL182G45TC1A108,Murata,RF_filter,mcu,2.4GHz BLE band-pass filter
+FLT2,balun,B0310J50100AHF,Johanson,Balun_0310,subghz,"CC1101 differential-to-SE balun + LC match (L4 3.3nH, L5 6.8nH, C32 1.2pF)"
 J_GPIO,header 2x9,Conn_2x09,generic,Header_2x09,io,external GPIO / module header
 J_IBTN,iButton,1-Wire pads,PCB,Pads,io,iButton / 1-Wire contacts
 J_SD,microSD,DM3D-SF,Hirose,microSD,io,microSD card holder
@@ -30,14 +34,17 @@ L_NFC,EMIfilter,NFC EMC LC,discrete,EMC_net,nfc,NFC EMC + matching network
 M1,vibro,coin ERM,generic,Vibro,ui,haptic motor
 Q_IBTN,1W driver,DMN2075U,Diodes,SOT-23,io,iButton open-drain driver + protection
 Q_IR,drive,2N7002,Nexperia,SOT-23,io,IR LED driver FET
-Q_LF,coildriver,2x 2N7002 H-bridge,discrete,SOT-23,rfid125,125 kHz coil driver from the timer carrier
 Q_SPK,drive,2N7002,Nexperia,SOT-23,ui,speaker driver FET
 Q_VIB,drive,2N7002,Nexperia,SOT-23,ui,vibro driver FET
+R13,56k,56k,Yageo,R_0402,subghz,CC1101 RBIAS
 R37,10m,10mOhm,Yageo,R_1206,power,battery current-sense (fuel gauge)
 RN1,51x4,51ohm array,Yageo,R_array_4x0402,io,series resistors on exposed GPIO/FFC signals (one of several)
 R_CC1,5.1k,5.1k,Yageo,R_0402,power,USB-C CC pulldown
 R_CC2,5.1k,5.1k,Yageo,R_0402,power,USB-C CC pulldown
-SW1,RFswitch,BGS12PN10,Infineon,TSNP-10,subghz,antenna RF switch
+R_MID1,33k,33k,Yageo,R_0402,rfid125,1.65V mid-rail divider
+R_MID2,33k,33k,Yageo,R_0402,rfid125,1.65V mid-rail divider
+SW1,RFswitch,BGS13S4N9,Infineon,TSNP-9,subghz,SPDT RF switch (band/antenna select)
+SW2,RFswitch,BGS13S4N9,Infineon,TSNP-9,subghz,SPDT RF switch (antenna side)
 SW_B,tact,EVQ-P7,Panasonic,SW_SMD_4p,ui,tact switch
 SW_D,tact,EVQ-P7,Panasonic,SW_SMD_4p,ui,tact switch
 SW_L,tact,EVQ-P7,Panasonic,SW_SMD_4p,ui,tact switch
@@ -48,7 +55,6 @@ U1,STM32WB55RG,STM32WB55RGV6,STMicroelectronics,QFN-68,mcu,"Cortex-M4 + M0 BLE 5
 U10,ESD,USBLC6-2SC6,STMicroelectronics,SOT-23-6,power,USB + CC ESD protection
 U2,CC1101,CC1101RGPR,Texas Instruments,QFN-20,subghz,sub-GHz transceiver 300-928 MHz
 U3,ST25R3916,ST25R3916-AQWT,STMicroelectronics,QFN-32,nfc,13.56 MHz NFC reader/card/peer front-end
-U4,comparator,TLV7011,Texas Instruments,SOT-23-5,rfid125,125 kHz envelope comparator to the MCU
 U5,ST7565R,ST7565R,Sitronix,COG_128x64,io,128x64 monochrome LCD (COG)
 U6,BQ25896,BQ25896,Texas Instruments,QFN-24,power,"1-cell Li-ion charger with 5V boost, I2C"
 U7,BQ27220,BQ27220,Texas Instruments,WCSP,power,"battery fuel gauge, I2C"
@@ -58,7 +64,10 @@ U9,loadsw,TPS22917,Texas Instruments,SOT-23-6,power,peripheral-rail load switch 
 U_IR,IR RX,TSOP75238,Vishay,IR_receiver,io,38 kHz IR demodulator
 VD4,RGB LED,LTST-C19HE1WT,Lite-On,LED_RGB_0606,io,notification RGB LED
 VD_USB,ESD,ESD241B1W0201,Nexperia,0201,io,USB line ESD array
+VT4,coildrv P,DMP2004TK,Diodes,SOT-23,rfid125,"125 kHz coil driver, high side"
+VT6,coildrv N,DMN2004TK,Diodes,SOT-23,rfid125,"125 kHz coil driver, low side"
 X10,BAT+NTC,1.25-3P,generic,Conn_1x03_1.25mm,power,battery + NTC thermistor (BAT / TEMP / GND)
 X6,FFC 18p,FH34SRJ-18S-0.5SH,Hirose,FFC_18_0.5mm,io,flex link to the NFC/RFID/IR sub-board
 Y1,32MHz,ABM8-32.000MHZ,Abracon,Xtal_3225,mcu,HSE 32 MHz for the radio
 Y2,32.768kHz,ABS07-32.768KHZ,Abracon,Xtal_ABS07,mcu,LSE RTC crystal
+ZQ3,26MHz,CXD2-026000000,generic,Xtal_2520,subghz,CC1101 26 MHz crystal

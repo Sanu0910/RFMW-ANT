@@ -54,20 +54,30 @@ part("Y1", "32MHz", "ABM8-32.000MHZ", "Abracon", "Xtal_3225", "mcu", "HSE 32 MHz
      {"1": "HSE_IN", "2": "GND"})
 part("Y2", "32.768kHz", "ABS07-32.768KHZ", "Abracon", "Xtal_ABS07", "mcu", "LSE RTC crystal",
      {"1": "LSE_IN", "2": "LSE_OUT"})
-part("ANT1", "2.4GHz", "2450AT18A100", "Johanson", "Antenna_Chip", "mcu", "BLE chip antenna + pi match",
-     {"1": "BLE_RF"})
+part("FLT1", "BLE filter", "LFL182G45TC1A108", "Murata", "RF_filter", "mcu", "2.4GHz BLE band-pass filter",
+     {"IN": "BLE_RF", "OUT": "BLE_ANT", "GND": "GND"})
+part("ANT1", "2.4GHz", "1001312", "Johanson", "Antenna_Chip", "mcu", "BLE chip antenna + pi-match (L1/C5/C6)",
+     {"1": "BLE_ANT"})
 
 # ============================================================ 2. Sub-GHz (CC1101)
 part("U2", "CC1101", "CC1101RGPR", "Texas Instruments", "QFN-20", "subghz",
      "sub-GHz transceiver 300-928 MHz",
      {"SI": "SPI_R_MOSI", "SO": "SPI_R_MISO", "SCLK": "SPI_R_SCK", "CSn": "CC1101_CS",
       "GDO0": "CC1101_GDO0", "RF_P": "SUBG_RF_P", "RF_N": "SUBG_RF_N",
+      "XOSC_Q1": "CC_XO1", "XOSC_Q2": "CC_XO2", "RBIAS": "CC_RBIAS",
       "AVDD": "+3V3", "DVDD": "+3V3", "GND": "GND", "DGUARD": "+3V3"})
-part("FL1", "balun+LC", "JTI matching", "Johanson/discrete", "RF_match", "subghz",
-     "CC1101 differential-to-SE balun and LC band filter",
-     {"IN_P": "SUBG_RF_P", "IN_N": "SUBG_RF_N", "OUT": "SUBG_SE"})
-part("SW1", "RFswitch", "BGS12PN10", "Infineon", "TSNP-10", "subghz", "antenna RF switch",
-     {"RFC": "SUBG_ANT", "RF1": "SUBG_SE", "CTRL": "RF_SW_0", "VDD": "+3V3", "GND": "GND"})
+part("FLT2", "balun", "B0310J50100AHF", "Johanson", "Balun_0310", "subghz",
+     "CC1101 differential-to-SE balun + LC match (L4 3.3nH, L5 6.8nH, C32 1.2pF)",
+     {"BAL1": "SUBG_RF_P", "BAL2": "SUBG_RF_N", "UNBAL": "SUBG_SE", "GND": "GND"})
+part("SW1", "RFswitch", "BGS13S4N9", "Infineon", "TSNP-9", "subghz", "SPDT RF switch (band/antenna select)",
+     {"RFin": "SUBG_SE", "RF1": "SUBG_F1", "RF2": "SUBG_F2", "V1": "RF_SW_0", "V2": "RF_SW_1",
+      "VDD": "+3V3", "GND": "GND"})
+part("SW2", "RFswitch", "BGS13S4N9", "Infineon", "TSNP-9", "subghz", "SPDT RF switch (antenna side)",
+     {"RF1": "SUBG_F1", "RF2": "SUBG_F2", "RFin": "SUBG_ANT", "V1": "RF_SW_0", "V2": "RF_SW_1",
+      "VDD": "+3V3", "GND": "GND"})
+part("ZQ3", "26MHz", "CXD2-026000000", "generic", "Xtal_2520", "subghz", "CC1101 26 MHz crystal",
+     {"1": "CC_XO1", "2": "CC_XO2"})
+part("R13", "56k", "56k", "Yageo", "R_0402", "subghz", "CC1101 RBIAS", {"1": "CC_RBIAS", "2": "GND"})
 part("J_SUBG", "ANT", "U.FL-R-SMT-1", "Hirose", "U.FL", "subghz", "sub-GHz antenna connector",
      {"1": "SUBG_ANT", "2": "GND"})
 
@@ -97,15 +107,26 @@ part("L_NFC", "EMIfilter", "NFC EMC LC", "discrete", "EMC_net", "nfc", "NFC EMC 
 part("ANT_NFC", "13.56MHz loop", "PCB spiral", "PCB", "Antenna_Loop", "nfc", "13.56 MHz PCB loop antenna",
      {"1": "NFC_ANT_P", "2": "NFC_ANT_N"})
 
-# ============================================================ 4. 125 kHz RFID AFE
-part("Q_LF", "coildriver", "2x 2N7002 H-bridge", "discrete", "SOT-23", "rfid125",
-     "125 kHz coil driver from the timer carrier",
-     {"IN": "RFID_CARRIER_OUT", "COIL_P": "LF_COIL_P", "COIL_N": "GND", "VDD": "+3V3"})
-part("ANT_LF", "125kHz coil", "wound coil + C", "discrete", "Coil", "rfid125", "125 kHz LC antenna",
+# ============================================================ 4. 125 kHz RFID AFE (discrete, as on the sub-board)
+part("VT4", "coildrv P", "DMP2004TK", "Diodes", "SOT-23", "rfid125", "125 kHz coil driver, high side",
+     {"G": "RFID_CARRIER_OUT", "S": "+5V", "D": "LF_COIL_P"})
+part("VT6", "coildrv N", "DMN2004TK", "Diodes", "SOT-23", "rfid125", "125 kHz coil driver, low side",
+     {"G": "RFID_PULL", "D": "LF_COIL_P", "S": "GND"})
+part("ANT_LF", "125kHz coil", "wound coil + C", "discrete", "Coil", "rfid125", "125 kHz read coil (ANT3/ANT4) + C",
      {"1": "LF_COIL_P", "2": "LF_RX"})
-part("U4", "comparator", "TLV7011", "Texas Instruments", "SOT-23-5", "rfid125",
-     "125 kHz envelope comparator to the MCU",
-     {"IN+": "LF_RX", "IN-": "LF_REF", "OUT": "RFID_RF_IN", "VDD": "+3V3", "GND": "GND"})
+part("DA3", "LMV358", "LMV358AIDGKR", "Texas Instruments", "VSSOP-8", "rfid125",
+     "RFID RX band-pass/amplifier stage 1 (dual op-amp)",
+     {"V+": "A3V3", "V-": "GND", "IN1+": "LF_RX", "IN1-": "LF_MID", "OUT1": "LF_A1",
+      "IN2+": "LF_A1", "IN2-": "LF_FB2", "OUT2": "LF_A2"})
+part("DA4", "LMV358", "LMV358AIDGKR", "Texas Instruments", "VSSOP-8", "rfid125",
+     "RFID RX amplifier stage 2 (dual op-amp)",
+     {"V+": "A3V3", "V-": "GND", "IN1+": "LF_A2", "IN1-": "LF_FB3", "OUT1": "LF_A3",
+      "IN2+": "LF_A3", "IN2-": "LF_FB4", "OUT2": "LF_ENV"})
+part("DA5", "LMV331", "LMV331IDCKR", "Texas Instruments", "SC-70-5", "rfid125",
+     "RFID envelope comparator -> digital",
+     {"IN+": "LF_ENV", "IN-": "LF_MID", "OUT": "RFID_RF_IN", "V+": "A3V3", "V-": "GND"})
+part("R_MID1", "33k", "33k", "Yageo", "R_0402", "rfid125", "1.65V mid-rail divider", {"1": "A3V3", "2": "LF_MID"})
+part("R_MID2", "33k", "33k", "Yageo", "R_0402", "rfid125", "1.65V mid-rail divider", {"1": "LF_MID", "2": "GND"})
 
 # ============================================================ 5. Display + SD
 part("U5", "ST7565R", "ST7565R", "Sitronix", "COG_128x64", "io", "128x64 monochrome LCD (COG)",
