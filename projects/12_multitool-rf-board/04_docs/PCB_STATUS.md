@@ -61,3 +61,16 @@ Remaining to DRC-clean / fab-ready (the last mile):
 - **Fab rules relaxed** to fit the compact board: vias 0.25mm, drills 0.15mm, clearance 0.1mm
   (HDI-class). For standard low-cost fab, grow the board (~130x75mm) and re-route at 0.2mm.
 - 4 clearance DRC violations at the relaxed floor.
+
+## Final compact route (NOVA-RF1, 100x60mm, 2026-10-24)
+Two-sided 4-layer. GND plane on In1.Cu + **+3V3 plane on In2.Cu**. Crystals clustered under
+their ICs. **103 of 104 nets routed** (2965 segments, 530 vias), silkscreen added, fab package
+exported (`03_fab/NOVA-RF1_gerbers.zip`, `NOVA-RF1_CPL.csv`, `NOVA-RF1_BOM_*.csv`).
+
+Remaining for a 100%-clean sign-off:
+- **NFC_CS (1 net):** walled in on the dense board - with both inner layers used as planes,
+  signals have only top+bottom; this last chip-select needs a short manual trace in KiCad (or
+  ~5mm more board width). Normal final-1% hand-finish.
+- **GND via stitching:** ~44 GND pads to tap to the pour.
+- 4 clearance DRC violations at the 0.1mm floor.
+Component cost ~$34.75/board; ~$55-60 built at low volume (see NOVA-RF1_product.pdf).

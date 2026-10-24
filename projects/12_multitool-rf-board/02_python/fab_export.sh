@@ -9,6 +9,6 @@ kicad-cli pcb export gerbers --output "$OUT/gerbers/" \
   --no-protel-ext "$BRD"
 kicad-cli pcb export drill --output "$OUT/gerbers/" --format excellon \
   --drill-origin absolute --excellon-units mm --generate-map --map-format gerberx2 "$BRD"
-kicad-cli pcb export pos --output "$OUT/CRL-MT1_CPL.csv" --format csv --units mm --side both "$BRD"
-( cd "$OUT/gerbers" && zip -q -r ../CRL-MT1_gerbers.zip . )
+kicad-cli pcb export pos --output "$OUT/NOVA-RF1_CPL.csv" --format csv --units mm --side both "$BRD"
+( cd "$OUT/gerbers" && zip -q -r ../NOVA-RF1_gerbers.zip . )
 echo "fab package written to $OUT"
