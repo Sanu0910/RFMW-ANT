@@ -9,6 +9,24 @@
   "basis": {
    "assembly.sides": "observed_baseline",
    "defaults.zone_tolerance_mm": "derived_default",
+   "edge_connectors[ANT1].overhang_mm": "derived_default",
+   "edge_connectors[ANT_LF].overhang_mm": "observed_baseline",
+   "edge_connectors[ANT_NFC].overhang_mm": "observed_baseline",
+   "edge_connectors[J_GPIO].overhang_mm": "derived_default",
+   "edge_connectors[J_SUBG].edge": "observed_baseline",
+   "edge_connectors[J_SUBG].overhang_mm": "observed_baseline",
+   "edge_connectors[J_SWD].edge": "observed_baseline",
+   "edge_connectors[J_SWD].overhang_mm": "observed_baseline",
+   "edge_connectors[J_USB].overhang_mm": "derived_default",
+   "edge_connectors[SW_B].overhang_mm": "observed_baseline",
+   "edge_connectors[SW_D].overhang_mm": "derived_default",
+   "edge_connectors[SW_L].overhang_mm": "derived_default",
+   "edge_connectors[SW_O].overhang_mm": "derived_default",
+   "edge_connectors[SW_R].overhang_mm": "derived_default",
+   "edge_connectors[SW_U].overhang_mm": "derived_default",
+   "edge_connectors[X10].overhang_mm": "derived_default",
+   "edge_connectors[X6].edge": "observed_baseline",
+   "edge_connectors[X6].overhang_mm": "observed_baseline",
    "envelope.tolerance_mm": "derived_default"
   },
   "budget_withheld": {
@@ -41,19 +59,32 @@
    "source": "auto-tethers",
    "tethers": 0,
    "unaccounted": 0,
-   "worst_beyond_mm": 183.2882
+   "worst_beyond_mm": 154.7811
   },
   "edge_contours": 0,
-  "file_locked": [],
+  "file_locked": [
+   "ANT1",
+   "ANT_LF",
+   "ANT_NFC",
+   "J_GPIO",
+   "J_SUBG",
+   "J_SWD",
+   "J_USB",
+   "SW_B",
+   "SW_D",
+   "SW_L",
+   "SW_O",
+   "SW_R",
+   "SW_U",
+   "X10",
+   "X6"
+  ],
   "keepouts_note": "empty because a keep-out is a mechanical fact -- an enclosure rib, a standoff, a battery, a display window, an antenna clearance -- and none of those can be read off a board. \"[]\" here means NONE DECLARED, never \"not considered\". Declare them by hand; since #701 the seat search honours them, not only the grade.",
   "note": "read-only, describing the board as it is. The outline is not editable by this toolchain: size, cutouts and slots are mechanical decisions the user owns",
   "pose_claims_withheld": {
    "kept": "KiCad-locked parts; a brief / mechanical.json merged after this",
    "reason": "the board is a pile (100% of footprints lie outside the board outline): staging poses are not claims",
    "refs_off_board": [
-    "ANT1",
-    "ANT_LF",
-    "ANT_NFC",
     "BT1",
     "C1",
     "C10",
@@ -79,12 +110,8 @@
     "D_IR",
     "FLT1",
     "FLT2",
-    "J_GPIO",
     "J_IBTN",
     "J_SD",
-    "J_SUBG",
-    "J_SWD",
-    "J_USB",
     "L13",
     "L14",
     "LS1",
@@ -109,12 +136,6 @@
     "R_TS2",
     "SW1",
     "SW2",
-    "SW_B",
-    "SW_D",
-    "SW_L",
-    "SW_O",
-    "SW_R",
-    "SW_U",
     "U1",
     "U10",
     "U2",
@@ -131,8 +152,6 @@
     "VD_USB",
     "VT4",
     "VT6",
-    "X10",
-    "X6",
     "X_NFC1",
     "Y1",
     "Y2",
@@ -151,7 +170,154 @@
  "defaults": {
   "zone_tolerance_mm": 0.5
  },
- "edge_connectors": [],
+ "edge_connectors": [
+  {
+   "note": "overhang observed at 5.315mm, which exceeds any plausible band (5.000mm) -- treated as DAMAGE, not an allowance: no edge is declared and the excess is charged. An observation entry that blesses this is how a 160mm displacement became a 160mm spec allowance (run 10)",
+   "observed_overhang_mm": 5.315,
+   "overhang_capped": true,
+   "overhang_mm": {
+    "max": 5.0,
+    "min": 0.0
+   },
+   "ref": "ANT1"
+  },
+  {
+   "note": "overhang observed but SUSPECT (participates in a pad-legality conflict): edge withheld -- the derivation/exchange rungs decide (run-5 suspect-and-derive)",
+   "overhang_mm": {
+    "max": 6.859,
+    "min": 0.0
+   },
+   "ref": "ANT_LF",
+   "suspect": true,
+   "suspect_reason": "participates in a pad-legality conflict"
+  },
+  {
+   "note": "overhang observed at 5.765mm; not an edge part (no part class), so no edge is claimed",
+   "overhang_mm": {
+    "max": 6.265,
+    "min": 0.0
+   },
+   "ref": "ANT_NFC"
+  },
+  {
+   "note": "overhang observed at 63.843mm, which exceeds any plausible band (23.860mm) -- treated as DAMAGE, not an allowance: no edge is declared and the excess is charged. An observation entry that blesses this is how a 160mm displacement became a 160mm spec allowance (run 10)",
+   "observed_overhang_mm": 63.843,
+   "overhang_capped": true,
+   "overhang_mm": {
+    "max": 23.86,
+    "min": 0.0
+   },
+   "ref": "J_GPIO"
+  },
+  {
+   "edge": "north",
+   "overhang_mm": {
+    "max": 5.244,
+    "min": 0.0
+   },
+   "ref": "J_SUBG"
+  },
+  {
+   "edge": "south",
+   "overhang_mm": {
+    "max": 3.536,
+    "min": 0.0
+   },
+   "ref": "J_SWD"
+  },
+  {
+   "note": "overhang observed at 23.835mm, which exceeds any plausible band (11.600mm) -- treated as DAMAGE, not an allowance: no edge is declared and the excess is charged. An observation entry that blesses this is how a 160mm displacement became a 160mm spec allowance (run 10)",
+   "observed_overhang_mm": 23.835,
+   "overhang_capped": true,
+   "overhang_mm": {
+    "max": 11.6,
+    "min": 0.0
+   },
+   "ref": "J_USB"
+  },
+  {
+   "class": "edge_actuator",
+   "note": "overhang observed but SUSPECT (participates in a pad-legality conflict): edge withheld -- the derivation/exchange rungs decide (run-5 suspect-and-derive)",
+   "overhang_mm": {
+    "max": 5.481,
+    "min": 0.0
+   },
+   "ref": "SW_B",
+   "source": "auto-class",
+   "suspect": true,
+   "suspect_reason": "participates in a pad-legality conflict"
+  },
+  {
+   "note": "overhang observed at 6.050mm, which exceeds any plausible band (5.000mm) -- treated as DAMAGE, not an allowance: no edge is declared and the excess is charged. An observation entry that blesses this is how a 160mm displacement became a 160mm spec allowance (run 10)",
+   "observed_overhang_mm": 6.05,
+   "overhang_capped": true,
+   "overhang_mm": {
+    "max": 5.0,
+    "min": 0.0
+   },
+   "ref": "SW_D"
+  },
+  {
+   "note": "overhang observed at 6.406mm, which exceeds any plausible band (5.000mm) -- treated as DAMAGE, not an allowance: no edge is declared and the excess is charged. An observation entry that blesses this is how a 160mm displacement became a 160mm spec allowance (run 10)",
+   "observed_overhang_mm": 6.406,
+   "overhang_capped": true,
+   "overhang_mm": {
+    "max": 5.0,
+    "min": 0.0
+   },
+   "ref": "SW_L"
+  },
+  {
+   "class": "edge_actuator",
+   "note": "overhang observed but SUSPECT (participates in a pad-legality conflict): edge withheld -- the derivation/exchange rungs decide (run-5 suspect-and-derive)",
+   "overhang_mm": {
+    "max": 3.0,
+    "min": 0.0
+   },
+   "ref": "SW_O",
+   "source": "auto-class",
+   "suspect": true,
+   "suspect_reason": "participates in a pad-legality conflict"
+  },
+  {
+   "note": "overhang observed at 6.928mm, which exceeds any plausible band (5.000mm) -- treated as DAMAGE, not an allowance: no edge is declared and the excess is charged. An observation entry that blesses this is how a 160mm displacement became a 160mm spec allowance (run 10)",
+   "observed_overhang_mm": 6.928,
+   "overhang_capped": true,
+   "overhang_mm": {
+    "max": 5.0,
+    "min": 0.0
+   },
+   "ref": "SW_R"
+  },
+  {
+   "note": "overhang observed at 5.694mm, which exceeds any plausible band (5.000mm) -- treated as DAMAGE, not an allowance: no edge is declared and the excess is charged. An observation entry that blesses this is how a 160mm displacement became a 160mm spec allowance (run 10)",
+   "observed_overhang_mm": 5.694,
+   "overhang_capped": true,
+   "overhang_mm": {
+    "max": 5.0,
+    "min": 0.0
+   },
+   "ref": "SW_U"
+  },
+  {
+   "note": "overhang observed at 10.733mm, which exceeds any plausible band (8.200mm) -- treated as DAMAGE, not an allowance: no edge is declared and the excess is charged. An observation entry that blesses this is how a 160mm displacement became a 160mm spec allowance (run 10)",
+   "observed_overhang_mm": 10.733,
+   "overhang_capped": true,
+   "overhang_mm": {
+    "max": 8.2,
+    "min": 0.0
+   },
+   "ref": "X10"
+  },
+  {
+   "edge": "north",
+   "overhang_mm": {
+    "max": 12.128,
+    "min": 0.0
+   },
+   "ref": "X6"
+  }
+ ],
  "envelope": {
   "rect": [
    30.0,

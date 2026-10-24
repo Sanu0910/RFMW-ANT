@@ -1,34 +1,39 @@
 {
  "final": {
-  "wire": 5119.1675796399995,
-  "crossings": 1082,
-  "claims": 240.59774626804412,
-  "decaps": 8.58672737495463,
-  "groups": 603.0516235392912,
+  "wire": 5412.98952858,
+  "crossings": 1383,
+  "claims": 235.05056179345752,
+  "decaps": 120.20419709146125,
+  "groups": 948.7534672280444,
   "hints": 0,
-  "halo": 1159.1126166493725,
-  "congestion": 73.37063968168657,
-  "pad_hits": 724.0,
+  "halo": 1105.2228472578488,
+  "congestion": 29.422593850428157,
+  "pad_hits": 610.0,
   "decap_limits": 0.0,
   "decap_broken": 0,
-  "claim_limits": 161.63777811330496,
-  "claim_broken": 4,
+  "claim_limits": 151.6184854411292,
+  "claim_broken": 5,
   "template": 0,
-  "cost": 15146.540494545263
+  "cost": 17386.73649161788
  },
- "moves": 43500,
- "seed": 4,
+ "moves": 600,
+ "seed": 5,
  "start": "scattered",
  "runs": 3,
  "declared": [],
- "reseated": [],
+ "reseated": [
+  "C1",
+  "C_SMPS",
+  "R_FGB",
+  "R_MID2",
+  "R_TS1"
+ ],
  "repaired": false,
  "illegal": [
   "ANT1",
   "ANT_LF",
   "ANT_NFC",
   "BT1",
-  "C1",
   "C10",
   "C2",
   "C3",
@@ -43,7 +48,6 @@
   "C_CCd",
   "C_FGV",
   "C_REGN",
-  "C_SMPS",
   "DA3",
   "DA4",
   "DA5",
@@ -73,12 +77,8 @@
   "RN1",
   "R_CC1",
   "R_CC2",
-  "R_FGB",
-  "R_FGO",
   "R_ILIM",
   "R_MID1",
-  "R_MID2",
-  "R_TS1",
   "R_TS2",
   "SW1",
   "SW2",
@@ -120,7 +120,7 @@
   "rules": []
  },
  "assembly": {
-  "blocking": 61,
+  "blocking": 34,
   "buildable": false,
   "fired": [
    "blocking",
@@ -271,46 +271,46 @@
  ],
  "stats": {
   "shift": [
-   16670,
-   1489
+   234,
+   104
   ],
   "turn": [
-   6263,
-   1007
+   97,
+   43
   ],
   "swap": [
-   4175,
-   157
+   48,
+   8
   ],
   "jump": [
-   4181,
-   214
+   63,
+   24
   ],
   "dock": [
-   3990,
-   260
+   49,
+   16
   ],
   "gshift": [
-   4801,
-   1159
+   73,
+   29
   ],
   "gturn": [
-   805,
-   2
+   10,
+   0
   ],
   "gswap": [
-   467,
-   5
+   4,
+   0
   ],
   "escape": [
-   2148,
-   66
+   22,
+   17
   ]
  },
  "templates": [],
  "hints_saturated": [],
  "seconds": {
-  "setup": 0.8,
-  "anneal": 646.9
+  "setup": 0.9,
+  "anneal": 416.3
  }
 }

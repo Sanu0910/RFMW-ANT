@@ -7,7 +7,7 @@ Copper-to-hole 0.25mm for NPTH holes (from the board's own min_hole_clearance, a
   NOTE: in their IC's group: C6 (passive -> power), C9 (passive -> power)
   NOTE: decap C_FGV on FG_VDD serves U7
   NOTE: decap C_REGN on CHG_REGN serves U6
-place_simple: 87 movable part(s), fixed: none
+place_simple: 72 movable part(s), fixed: ANT1, ANT_LF, ANT_NFC, J_GPIO, J_SUBG, J_SWD, J_USB, SW_B, SW_D, SW_L, SW_O, SW_R, SW_U, X10, X6
   group mcu: ANT1, C_SMPS, FLT1, L_SMPS, U1, Y1, Y2
   group subghz: C_CCd, FLT2, J_SUBG, R13, SW1, SW2, U2, ZQ3
   group io: DA7, D_IR, J_GPIO, J_IBTN, J_SD, J_SWD, Q_IBTN, Q_IR, RN1, U5, U_IR, VD4, VD_IBTN, VD_USB, X6
@@ -16,42 +16,4 @@ place_simple: 87 movable part(s), fixed: none
   group ui: LS1, M1, Q_SPK, Q_VIB, SW_B, SW_D, SW_L, SW_O, SW_R, SW_U
   group power: BT1, C_BTST, C_FGV, C_REGN, DA8, J_USB, L13, L14, L_CHG, R37, R_CC1, R_CC2, R_FGB, R_FGO, R_ILIM, R_TS1, R_TS2, U10, U6, U7, U8, U8B, U9, X10, C6, C9
   group passive: C1, C10, C2, C3, C4, C5, C7, C8
-  move   4350: T  16.948 lam     2.5 reach 14.72 cost  8299.6 overlap 5245.57 mm2 best     inf accepted 0.35
-  move   8700: T   8.013 lam     6.3 reach 11.63 cost  8595.1 overlap 4481.21 mm2 best     inf accepted 0.18
-  move  13050: T   3.788 lam    15.8 reach  8.90 cost 10484.6 overlap 3941.97 mm2 best     inf accepted 0.11
-  move  17400: T   1.791 lam    39.8 reach  6.54 cost 11005.5 overlap 3782.80 mm2 best     inf accepted 0.09
-  move  21750: T   0.847 lam   100.0 reach  4.54 cost 11549.4 overlap 3740.32 mm2 best     inf accepted 0.06
-  move  26100: T   0.400 lam   251.1 reach  2.91 cost 11943.6 overlap 3718.43 mm2 best     inf accepted 0.06
-  move  30450: T   0.189 lam   630.8 reach  1.64 cost 13960.4 overlap 3693.71 mm2 best     inf accepted 0.06
-  move  34800: T   0.089 lam  1584.6 reach  0.73 cost 15905.1 overlap 3668.02 mm2 best     inf accepted 0.06
-  move  43500: T   0.020 lam  9997.9 reach  0.10 cost 20416.7 overlap 3612.71 mm2 best     inf accepted 0.09
-  NOTE: run 1 left no legal pose for ANT1, ANT_LF, ANT_NFC, BT1, C1, C10, C2, C3, C4, C5, C6, C7, C8, C9, C_AGDC, C_BTST, C_CCd, C_FGV, C_REGN, C_SMPS, DA3, DA4, DA5, DA7, DA8, D_IR, FLT1, FLT2, J_GPIO, J_IBTN, J_SD, J_SUBG, J_SWD, J_USB, L13, L14, LS1, L_CHG, L_SMPS, M1, Q_IBTN, Q_IR, Q_SPK, Q_VIB, R13, R37, RN1, R_CC1, R_CC2, R_FGB, R_FGO, R_ILIM, R_MID1, R_MID2, R_TS1, R_TS2, SW1, SW2, SW_B, SW_D, SW_L, SW_O, SW_R, SW_U, U1, U10, U2, U3, U5, U6, U7, U8, U8B, U9, U_IR, VD4, VD_IBTN, VD_USB, VT4, VT6, X10, X6, X_NFC1, Y1, Y2, ZQ1, ZQ3; annealing again from a fresh start
-  move   4350: T  15.437 lam     2.5 reach 14.72 cost  7126.6 overlap 6038.83 mm2 best     inf accepted 0.32
-  move   8700: T   7.375 lam     6.3 reach 11.63 cost  7836.8 overlap 4401.07 mm2 best     inf accepted 0.17
-  move  13050: T   3.523 lam    15.8 reach  8.90 cost  8284.9 overlap 4003.98 mm2 best     inf accepted 0.09
-  move  17400: T   1.683 lam    39.8 reach  6.54 cost  8342.7 overlap 3851.33 mm2 best     inf accepted 0.09
-  move  21750: T   0.804 lam   100.0 reach  4.54 cost  8415.5 overlap 3828.57 mm2 best     inf accepted 0.05
-  move  26100: T   0.384 lam   251.1 reach  2.91 cost 10910.3 overlap 3736.93 mm2 best     inf accepted 0.05
-  move  30450: T   0.183 lam   630.8 reach  1.64 cost 19135.7 overlap 3684.04 mm2 best     inf accepted 0.06
-  move  34800: T   0.088 lam  1584.6 reach  0.73 cost 19258.1 overlap 3672.49 mm2 best     inf accepted 0.05
-  move  39150: T   0.042 lam  3980.2 reach  0.18 cost 19179.3 overlap 3659.34 mm2 best     inf accepted 0.06
-  move  43500: T   0.020 lam  9997.9 reach  0.10 cost 20209.3 overlap 3589.80 mm2 best     inf accepted 0.08
-  NOTE: run 2 left no legal pose for ANT1, ANT_LF, ANT_NFC, BT1, C1, C10, C2, C3, C4, C5, C6, C7, C8, C9, C_AGDC, C_BTST, C_CCd, C_FGV, C_REGN, C_SMPS, DA3, DA4, DA5, DA7, DA8, D_IR, FLT1, FLT2, J_GPIO, J_IBTN, J_SD, J_SUBG, J_SWD, J_USB, L13, L14, LS1, L_CHG, L_SMPS, M1, Q_IBTN, Q_IR, Q_SPK, Q_VIB, R13, R37, RN1, R_CC1, R_CC2, R_FGB, R_FGO, R_ILIM, R_MID1, R_MID2, R_TS1, R_TS2, SW1, SW2, SW_B, SW_D, SW_L, SW_O, SW_R, SW_U, U1, U10, U2, U3, U5, U6, U7, U8, U8B, U9, U_IR, VD4, VD_IBTN, VD_USB, VT4, VT6, X10, X6, X_NFC1, Y1, Y2, ZQ1, ZQ3; annealing again from a fresh start
-  move   4350: T  12.909 lam     2.5 reach 14.72 cost  8419.7 overlap 4628.39 mm2 best     inf accepted 0.34
-  move   8700: T   6.291 lam     6.3 reach 11.63 cost  8027.0 overlap 4074.72 mm2 best     inf accepted 0.18
-  move  13050: T   3.066 lam    15.8 reach  8.90 cost  7974.1 overlap 3911.67 mm2 best     inf accepted 0.11
-  move  17400: T   1.494 lam    39.8 reach  6.54 cost  7929.9 overlap 3861.21 mm2 best     inf accepted 0.08
-  move  21750: T   0.728 lam   100.0 reach  4.54 cost  8285.5 overlap 3781.99 mm2 best     inf accepted 0.07
-  move  26100: T   0.355 lam   251.1 reach  2.91 cost  8502.2 overlap 3763.16 mm2 best     inf accepted 0.05
-  move  30450: T   0.173 lam   630.8 reach  1.64 cost  9278.6 overlap 3733.10 mm2 best     inf accepted 0.05
-  move  34800: T   0.084 lam  1584.6 reach  0.73 cost 12185.6 overlap 3638.12 mm2 best     inf accepted 0.08
-  move  39150: T   0.041 lam  3980.2 reach  0.18 cost 12360.7 overlap 3621.87 mm2 best     inf accepted 0.07
-  move  43500: T   0.020 lam  9997.9 reach  0.10 cost 12374.9 overlap 3617.53 mm2 best     inf accepted 0.07
-  NOTE: run 3 left no legal pose for ANT1, ANT_LF, ANT_NFC, BT1, C1, C10, C2, C3, C4, C5, C6, C7, C8, C9, C_AGDC, C_BTST, C_CCd, C_FGV, C_REGN, C_SMPS, DA3, DA4, DA5, DA7, DA8, D_IR, FLT1, FLT2, J_GPIO, J_IBTN, J_SD, J_SUBG, J_SWD, J_USB, L13, L14, LS1, L_CHG, L_SMPS, M1, Q_IBTN, Q_IR, Q_SPK, Q_VIB, R13, R37, RN1, R_CC1, R_CC2, R_FGB, R_FGO, R_ILIM, R_MID1, R_MID2, R_TS1, R_TS2, SW1, SW2, SW_B, SW_D, SW_L, SW_O, SW_R, SW_U, U1, U10, U2, U3, U5, U6, U7, U8, U8B, U9, U_IR, VD4, VD_IBTN, VD_USB, VT4, VT6, X10, X6, X_NFC1, Y1, Y2, ZQ1, ZQ3
-place_simple: annealed 43500 moves in 631.0 s; cost 20416.7 (wire 7185.9 mm, 1609 crossings, claims 242.8, 3 claim limit(s) broken, decaps 19.8, halo 2635.99, pad hits 1276, congestion 12.70, groups 526.6: mcu 65.5, subghz 0.4, io 106.8, nfc 104.2, rfid125 10.6, ui 67.4, power 94.9, passive 76.6, hints 0.0)
-  WARNING: no legal pose found for: ANT1, ANT_LF, ANT_NFC, BT1, C1, C10, C2, C3, C4, C5, C6, C7, C8, C9, C_AGDC, C_BTST, C_CCd, C_FGV, C_REGN, C_SMPS, DA3, DA4, DA5, DA7, DA8, D_IR, FLT1, FLT2, J_GPIO, J_IBTN, J_SD, J_SUBG, J_SWD, J_USB, L13, L14, LS1, L_CHG, L_SMPS, M1, Q_IBTN, Q_IR, Q_SPK, Q_VIB, R13, R37, RN1, R_CC1, R_CC2, R_FGB, R_FGO, R_ILIM, R_MID1, R_MID2, R_TS1, R_TS2, SW1, SW2, SW_B, SW_D, SW_L, SW_O, SW_R, SW_U, U1, U10, U2, U3, U5, U6, U7, U8, U8B, U9, U_IR, VD4, VD_IBTN, VD_USB, VT4, VT6, X10, X6, X_NFC1, Y1, Y2, ZQ1, ZQ3
-Modified 87 footprint positions
-Successfully wrote wk/s1.kicad_pcb
-  floorplan: no error (check_floorplan --intent)
-  assembly: NOT BUILDABLE (blocking, containment_blocking, courtyard_blocking_gating, oob_pad_copper_gating_count) (check_assembly --baseline)
-JSON_SUMMARY: {"final": {"wire": 7185.91206504, "crossings": 1609, "claims": 242.79311448202282, "decaps": 19.792921053190085, "groups": 526.5718810710215, "hints": 0, "halo": 2635.99150816561, "congestion": 12.7011768093875, "pad_hits": 1276.0, "decap_limits": 0.0, "decap_broken": 0, "claim_limits": 184.60963695970355, "claim_broken": 3, "template": 0, "cost": 20416.74418879309}, "moves": 43500, "seed": 1, "start": "scattered", "reseated": [], "illegal": ["ANT1", "ANT_LF", "ANT_NFC", "BT1", "C1", "C10", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C_AGDC", "C_BTST", "C_CCd", "C_FGV", "C_REGN", "C_SMPS", "DA3", "DA4", "DA5", "DA7", "DA8", "D_IR", "FLT1", "FLT2", "J_GPIO", "J_IBTN", "J_SD", "J_SUBG", "J_SWD", "J_USB", "L13", "L14", "LS1", "L_CHG", "L_SMPS", "M1", "Q_IBTN", "Q_IR", "Q_SPK", "Q_VIB", "R13", "R37", "RN1", "R_CC1", "R_CC2", "R_FGB", "R_FGO", "R_ILIM", "R_MID1", "R_MID2", "R_TS1", "R_TS2", "SW1", "SW2", "SW_B", "SW_D", "SW_L", "SW_O", "SW_R", "SW_U", "U1", "U10", "U2", "U3", "U5", "U6", "U7", "U8", "U8B", "U9", "U_IR", "VD4", "VD_IBTN", "VD_USB", "VT4", "VT6", "X10", "X6", "X_NFC1", "Y1", "Y2", "ZQ1", "ZQ3"], "refused": {}, "oversubscribed": [], "floorplan": {"errors": 0, "rules": []}, "assembly": {"blocking": 58, "buildable": false, "fired": ["blocking", "containment_blocking", "courtyard_blocking_gating", "oob_pad_copper_gating_count"]}, "hints_saturated": [], "estimate_fallback": [], "seconds": {"setup": 1.1, "anneal": 631.0}}
+  move   3600: T  13.227 lam     2.5 reach 14.72 cost  9495.8 overlap 3286.70 mm2 best     inf accepted 0.33
