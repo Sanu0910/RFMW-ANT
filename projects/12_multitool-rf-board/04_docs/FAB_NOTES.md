@@ -53,3 +53,12 @@ Controlled impedance: 50 Ω single-ended on L1 over L2 for the RF nets
 1. Open in KiCad, run DRC against the fab's rule set.
 2. Confirm the fab supports 0.15 mm drills / 0.1 mm space (or re-route to its floor).
 3. Radios (CC1101 sub-GHz, BLE) need type approval (FCC / CE / WPC-ETA + BIS in India) before sale.
+
+## Antenna PCB (nova-rf1-antenna.kicad_pcb)
+Original dedicated antenna board (70 x 34 mm) with the two coupled coils drawn as real copper
+spirals (modified-Wheeler inductance; re-measure/tune on the real stack-up):
+- **125 kHz RFID spiral:** ~28 turns, L ~25 uH, parallel resonant cap ~65 nF at 125 kHz.
+- **13.56 MHz NFC loop:** ~5 turns, L ~0.70 uH, resonant cap ~198 pF (tune to the ST25R3916
+  matching network; target loop ~1 uH).
+Connects to the main board via the coil nets (LF_COIL_P, NFC_ANT_P). Own layout/silk - no
+Flipper outline art, name or part marking. `02_python/build_antenna_pcb.py` regenerates it.
