@@ -16,9 +16,9 @@ C9,10uF,10uF,Murata,C_0805,passive,bulk
 C_SMPS,2.2uF,2.2uF,Murata,C_0402,mcu,SMPS output decoupling (VFB)
 DA3,LMV358,LMV358AIDGKR,Texas Instruments,VSSOP-8,rfid125,RFID RX band-pass/amplifier stage 1 (dual op-amp)
 DA4,LMV358,LMV358AIDGKR,Texas Instruments,VSSOP-8,rfid125,RFID RX amplifier stage 2 (dual op-amp)
-DA4,LP5562,LP5562TMX,Texas Instruments,DSBGA-12,io,"RGB LED driver (notification LED + backlight), I2C"
 DA5,LMV331,LMV331IDCKR,Texas Instruments,SC-70-5,rfid125,RFID envelope comparator -> digital
-DA5,RS3221-3.3,RS3221-3.3YF3,Runic,DFN-6,power,3.3V LDO (clean analog/LDO rail)
+DA7,LP5562,LP5562TMX,Texas Instruments,DSBGA-12,io,"RGB LED driver (notification LED + backlight), I2C"
+DA8,RS3221-3.3,RS3221-3.3YF3,Runic,DFN-6,power,3.3V LDO (clean analog/LDO rail)
 D_IR,IR LED x3,VSMY14940,Vishay,LED_IR,io,"IR transmit LEDs (3x, 39R series each)"
 FLT1,BLE filter,LFL182G45TC1A108,Murata,RF_filter,mcu,2.4GHz BLE band-pass filter
 FLT2,balun,B0310J50100AHF,Johanson,Balun_0310,subghz,"CC1101 differential-to-SE balun + LC match (L4 3.3nH, L5 6.8nH, C32 1.2pF)"

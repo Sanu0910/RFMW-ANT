@@ -219,7 +219,7 @@ part("U9", "loadsw", "TPS22917", "Texas Instruments", "SOT-23-6", "power",
      "peripheral-rail load switch (SD/display/radios)",
      {"VIN": "+3V3", "VOUT": "+3V3_PERIPH", "ON": "PERIPH_EN", "GND": "GND"})
 part("U10", "ESD", "USBLC6-2SC6", "STMicroelectronics", "SOT-23-6", "power", "USB + CC ESD protection",
-     {"IO1": "USB_DM", "IO2": "USB_DP", "VBUS": "VBUS", "GND": "GND"})
+     {"I/O1": "USB_DM", "I/O2": "USB_DP", "VBUS": "VBUS", "GND": "GND"})
 part("R_CC1", "5.1k", "5.1k", "Yageo", "R_0402", "power", "USB-C CC pulldown", {"1": "USB_CC1", "2": "GND"})
 part("R_CC2", "5.1k", "5.1k", "Yageo", "R_0402", "power", "USB-C CC pulldown", {"1": "USB_CC2", "2": "GND"})
 
