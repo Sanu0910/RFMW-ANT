@@ -30,6 +30,7 @@ Reverse engineering: [`docs/REA.md`](docs/REA.md) — REA (Reverse Engineer Anyt
 | 10 | [`projects/10_minev-quantum-notebook`](projects/10_minev-quantum-notebook) | Saved copy of Zlatko Minev's Quantum Notebook: 76 talks, lectures and notes on superconducting qubits, cQED, quantum hardware design and error mitigation (CC BY-NC-ND 4.0) | — | verbatim PDF archive + website source, index by shelf/year |
 | 11 | [`projects/11_customcst-fdtd`](projects/11_customcst-fdtd) | Saved copy of customcst: CST-style STEP → non-uniform grid → 3D FDTD → S11 solver in Python (public domain) | RF/microwave | source, numerical checks, notes |
 | 12 | [`projects/12_multitool-rf-board`](projects/12_multitool-rf-board) | CRL-MT1: original firmware-compatible multi-tool RF board (STM32WB55, CC1101 sub-GHz, ST25R3916 NFC, 125 kHz RFID, IR, iButton); runs the open Flipper Zero firmware; not a Flipper clone, no trademark/trade dress | sub-GHz · 13.56 MHz · 125 kHz | architecture from firmware pin map, schematic netlist, BOM, firmware GPIO header (schematic stage) |
+| 13 | [`projects/13_bathroom-presence-sensor-switch`](projects/13_bathroom-presence-sensor-switch) | SAMAY ELECTRONICS **SPS-24G-01** smart presence light switch: HLK-LD2410B 24 GHz radar, ATtiny13A, MOC3063 + BTA16 zero-cross triac, HLK-PM01, 85–265 VAC, mains-isolated | 24 GHz presence / 230 V | 70×56 mm 2-layer KiCad 9 mains PCB (ERC/DRC clean, ≥9.5 mm isolation + slot), Gerbers, CPL, BOM, STEP, datasheet, safety review, firmware |
 
 **Each project folder contains:**
 - `00_README.md`: what is where

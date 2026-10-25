@@ -1,0 +1,82 @@
+(footprint
+	"Fuse_TR5_P5.08mm"
+	(version 20241229)
+	(generator "rfmw_make_lib")
+	(layer "F.Cu")
+	(descr "TR5 radial time-lag fuse, 5.08 mm lead pitch (382/372 series)")
+	(tags "fuse TR5 radial time-lag mains")
+	(property
+		"Reference"
+		"REF**"
+		(at 0 -4.85 0)
+		(layer "F.SilkS")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property
+		"Value"
+		"Fuse_TR5_P5.08mm"
+		(at 0 4.85 0)
+		(layer "F.Fab")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_rect
+		(start -3.8 -3.65)
+		(end 3.8 3.65)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+	)
+	(fp_rect
+		(start -4 -3.85)
+		(end 4 3.85)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+	)
+	(fp_rect
+		(start -4.2 -4.05)
+		(end 4.2 4.05)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+	)
+	(pad
+		"1"
+		thru_hole
+		rect
+		(at -2.54 0)
+		(size 1.7 1.7)
+		(drill 0.9)
+		(layers "*.Cu" "*.Mask")
+		(roundrect_rratio 0)
+	)
+	(pad
+		"2"
+		thru_hole
+		circle
+		(at 2.54 0)
+		(size 1.7 1.7)
+		(drill 0.9)
+		(layers "*.Cu" "*.Mask")
+	)
+)
