@@ -1,0 +1,4 @@
+(fp_lib_table
+	(version 7)
+	(lib (name "bps")(type "KiCad")(uri "${KIPRJMOD}/bps.pretty")(options "")(descr "SPS-24G-01 project footprints"))
+)
