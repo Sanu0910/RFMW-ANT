@@ -6,7 +6,7 @@ A low-cost 4G Cat-1 + 2G bike tracker. **Not designed yet.** This folder holds t
 |---|---|
 | `LITE_BOM_preliminary.csv` | Candidate parts with estimated 1k prices (≈ ₹1,362 per unit) |
 | `poster_lite.html` / `SamayTrackLite_poster.png` / `.pdf` | Launch poster (₹3,499 incl. year 1, then ₹999/yr) |
-| `../07_marketing/SamayTrack_Lite_Plan.pdf` | 3-page plan: design, cost, price, money, timeline |
+| `../premium/07_marketing/SamayTrack_Lite_Plan.pdf` | 3-page plan: design, cost, price, money, timeline |
 
 ## BOM summary (estimate at 1,000 pcs, INR, excl. GST)
 

@@ -342,7 +342,7 @@ def on_page(c, doc):
     c.setFillColor(GREY)
     c.drawString(18 * mm, A4[1] - 11 * mm, "CRL-TRK-2W-01 — AIS-140 two-wheeler GNSS / LTE-M tracker")
     c.drawRightString(A4[0] - 18 * mm, A4[1] - 11 * mm, "Workflow & use-case guide · rev A0")
-    c.drawString(18 * mm, 10 * mm, "projects/07_ais140-2w-gnss-tracker · github.com/sanu0910/rfmw-ant")
+    c.drawString(18 * mm, 10 * mm, "projects/07_ais140-2w-gnss-tracker/premium · github.com/sanu0910/rfmw-ant")
     c.drawRightString(A4[0] - 18 * mm, 10 * mm, f"page {doc.page}")
     c.restoreState()
 
@@ -633,7 +633,7 @@ def build():
 
     # ---------------- 9 which file
     P("9. Which file do I need?", H1)
-    P("All files are in <b>projects/07_ais140-2w-gnss-tracker/</b> of the GitHub repository.", LEAD)
+    P("All files are in <b>projects/07_ais140-2w-gnss-tracker/premium/</b> of the GitHub repository.", LEAD)
     wf = [["I am a …", "I want to …", "Open"],
           ["Fleet owner / manager", "understand features and alerts", "this PDF (sections 1, 3–5)"],
           ["Installer", "wire and mount the unit", "this PDF section 6; 04_docs/DESIGN_REPORT.md §6"],
@@ -649,7 +649,7 @@ def build():
     s.append(table(wf, [34 * mm, 46 * mm, W - 80 * mm]))
     s.append(Spacer(1, 6 * mm))
     P("Regenerate everything", H2)
-    s.append(callout("<font face='Courier' size='8'>cd projects/07_ais140-2w-gnss-tracker/02_python<br/>"
+    s.append(callout("<font face='Courier' size='8'>cd projects/07_ais140-2w-gnss-tracker/premium/02_python<br/>"
                      "python3 make_lib.py &amp;&amp; python3 make_schematic.py &amp;&amp; python3 make_bom.py "
                      "&amp;&amp; python3 make_pins.py<br/>"
                      "python3 make_pcb.py dsn → Freerouting 1.9 → make_pcb.py ses / finish / patch<br/>"
