@@ -1,6 +1,6 @@
 # CRL-TRK-2W-L1 - "Samay Track 2W Lite": low-cost Cat-1 / 2G two-wheeler tracker
 
-The consumer variant of CRL-TRK-2W-01, from `../07_marketing/BUSINESS_PLAN_NOTES.md` section 5.
+The consumer variant of CRL-TRK-2W-01, from `../premium/07_marketing/BUSINESS_PLAN_NOTES.md` section 5.
 **60 x 45 mm, 2-layer, single-sided SMT, about Rs 1,440 hardware at 1 000 pcs**, same outline, holes and enclosure as the full version.
 
 Quectel EC200U-CN Cat-1 bis + GSM (runs the firmware, no separate MCU) · Quectel L76K GPS/BDS/GLONASS · LIS3DH ·
