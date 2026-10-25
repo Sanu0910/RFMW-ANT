@@ -1,0 +1,26 @@
+Comment,Designator,Footprint,LCSC Part #,Manufacturer Part Number
+100nF,"C1,C4,C5,C6,CB2",C_0603_1608Metric,,0603 MLCC X7R 50V
+10uF,C2,C_0805_2012Metric,,0805 MLCC X7R 50V
+220uF/10V,CB1,CP_Radial_D6.3mm_P2.50mm,,"220uF 10V radial (105C, low-ESR)"
+10nF 400VAC,CS1,C_Rect_L10.0mm_W4.0mm_P7.50mm_FKS3_FKP3,,10 nF 400 VAC X1 film (e.g. BFC233820103)
+100nF X2,CX1,C_Rect_L11.0mm_W5.1mm_P10.00mm_MKT,,R46KI31000001M (100 nF 275 VAC X2)
+STATUS,D1,LED_0805_2012Metric,,green 0805 (fault = red/blink pattern in firmware)
+T500mA 250V,F1,Fuse_TR5_P5.08mm,,"0382.500HAT1 (TR5, T 500 mA 250 V)"
+L / N / LAMP,J1,"TerminalBlock_Phoenix_MKDS-1,5-3-5.08_1x03_P5.08mm_Horizontal",,"MKDS 1,5/3-5.08 (or MX126-5.0-03P)"
+AVR-ISP,J2,PinHeader_2x03_P2.54mm_Vertical,,2x3 2.54 mm header (or pads only / pogo)
+LD2410B,J3,LD2410B_Module,,HLK-LD2410B
+CFG UART,J4,PinHeader_1x03_P2.54mm_Vertical,,1x3 2.54 mm (pads only)
+14D471K,MOV1,Varistor_Disc_D16mm_P7.5mm,,B72214S0471K101 (S14K300) / 14D471K
+5D-9,NTC1,NTC_Disc_D11mm_P5mm,,MF72-5D9
+HLK-PM01,PS1,Converter_ACDC_Hi-Link_HLK-PMxx,,HLK-PM01
+BTA16-600B,Q1,TO-220-3_Vertical,,BTA16-600B
+330R,R1,R_0805_2012Metric,,0805 1% thick film
+1M,RB1,R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,,axial 0.5 W 350 V
+180R,RG1,R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal,,axial 0.5 W 350 V
+1k,"RL1,RS2",R_0603_1608Metric,,0603 1% thick film
+10k,"RP1,RR1",R_0603_1608Metric,,0603 1% thick film
+100R 2W,RS1,R_Axial_DIN0411_L9.9mm_D3.6mm_P15.24mm_Horizontal,,axial 2 W MO 350 V
+10k,RV1,Potentiometer_Bourns_3386P_Vertical,,3386P-1-103 (10 k)
+OVERRIDE,SW1,SW_PUSH_6mm,,6x6x5 mm tactile (TS-1101 / PTS645)
+ATtiny13A-SU,U1,SOIC-8_3.9x4.9mm_P1.27mm,,ATTINY13A-SU
+MOC3063,U2,SMDIP-6_W9.53mm_Clearance8mm,,MOC3063SR2M (gull-wing SMD)

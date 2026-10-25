@@ -1,0 +1,2486 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "fd9b4542-3992-5cdc-a46e-9628e02a7d53")
+	(paper "A3")
+	(title_block
+		(title "SPS-24G-01 - Zero-Cross Opto-Triac AC Load Control")
+		(date "2026-10-24")
+		(rev "A0")
+		(company "SAMAY ELECTRONICS")
+		(comment 1 "Generated from 02_python/design.py - edit the source, then regenerate")
+		(comment 2 "Sheet 3: Zero-Cross Opto-Triac AC Load Control")
+	)
+	(lib_symbols
+		(symbol
+			"bps:MOC3063"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property
+				"Reference"
+				"U"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property
+				"Value"
+				"MOC3063"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property
+				"Footprint"
+				"Package_DIP:DIP-6_W7.62mm"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property
+				"Datasheet"
+				"https://www.onsemi.com/pdf/datasheet/moc3061m-d.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property
+				"Description"
+				"Zero-cross opto-triac driver, 600 V, 7.5 kVrms isolation, DIP-6"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol
+				"MOC3063_0_1"
+				(rectangle
+					(start -5.08 3.81)
+					(end 5.08 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 3.21)
+						(xy 0 -3.21)
+					)
+					(stroke
+						(width 0.2)
+						(type dash)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol
+				"MOC3063_1_1"
+				(pin
+					passive
+					line
+					(at -7.62 2.54 0)
+					(length 2.54)
+					(name
+						"ANODE"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number
+						"1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin
+					passive
+					line
+					(at -7.62 -2.54 0)
+					(length 2.54)
+					(name
+						"CATHODE"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number
+						"2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin
+					passive
+					line
+					(at 7.62 2.54 180)
+					(length 2.54)
+					(name
+						"MT"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number
+						"6"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin
+					passive
+					line
+					(at 7.62 -2.54 180)
+					(length 2.54)
+					(name
+						"MT"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number
+						"4"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin
+					no_connect
+					line
+					(at -7.62 0 0)
+					(length 2.54)
+					(name
+						"NC"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number
+						"3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin
+					no_connect
+					line
+					(at 7.62 0 180)
+					(length 2.54)
+					(name
+						"NC"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number
+						"5"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol
+			"power:GND"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property
+				"Reference"
+				"#PWR"
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property
+				"Value"
+				"GND"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property
+				"Footprint"
+				""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property
+				"Datasheet"
+				""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property
+				"Description"
+				"Power symbol creates a global label with name \"GND\" , ground"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property
+				"ki_keywords"
+				"global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol
+				"GND_0_1"
+				(polyline
+					(pts
+						(xy 0 0)
+						(xy 0 -1.27)
+						(xy 1.27 -1.27)
+						(xy 0 -2.54)
+						(xy -1.27 -1.27)
+						(xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol
+				"GND_1_1"
+				(pin
+					power_in
+					line
+					(at 0 0 270)
+					(length 0)
+					(name
+						"~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number
+						"1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol
+			"Device:R"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property
+				"Reference"
+				"R"
+				(at 2.032 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property
+				"Value"
+				"R"
+				(at 0 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property
+				"Footprint"
+				""
+				(at -1.778 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property
+				"Datasheet"
+				"~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property
+				"Description"
+				"Resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property
+				"ki_keywords"
+				"R res resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property
+				"ki_fp_filters"
+				"R_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol
+				"R_0_1"
+				(rectangle
+					(start -1.016 -2.54)
+					(end 1.016 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol
+				"R_1_1"
+				(pin
+					passive
+					line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name
+						"~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number
+						"1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin
+					passive
+					line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name
+						"~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number
+						"2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol
+			"Triac_Thyristor:BTA16-600B"
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property
+				"Reference"
+				"Q"
+				(at 5.08 1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property
+				"Value"
+				"BTA16-600B"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property
+				"Footprint"
+				"Package_TO_SOT_THT:TO-220-3_Vertical"
+				(at 5.08 -1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property
+				"Datasheet"
+				"https://www.st.com/resource/en/datasheet/bta16.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property
+				"Description"
+				"16A RMS, 600V Off-State Voltage, 50mA Sensitivity, Insulated, Triac, TO-220"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property
+				"ki_keywords"
+				"Triac"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property
+				"ki_fp_filters"
+				"TO?220*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol
+				"BTA16-600B_0_1"
+				(polyline
+					(pts
+						(xy -2.54 1.27)
+						(xy 2.54 1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 1.27)
+						(xy -1.27 -1.27)
+						(xy 0 1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -1.27)
+						(xy 2.54 -1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -2.54)
+						(xy -0.635 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -1.27)
+						(xy 1.27 1.27)
+						(xy 2.54 -1.27)
+					)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol
+				"BTA16-600B_1_1"
+				(pin
+					input
+					line
+					(at -3.81 -2.54 0)
+					(length 2.54)
+					(name
+						"G"
+						(effects
+							(font
+								(size 0.635 0.635)
+							)
+						)
+					)
+					(number
+						"3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin
+					passive
+					line
+					(at 0 3.81 270)
+					(length 2.54)
+					(name
+						"A2"
+						(effects
+							(font
+								(size 0.635 0.635)
+							)
+						)
+					)
+					(number
+						"2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin
+					passive
+					line
+					(at 0 -3.81 90)
+					(length 2.54)
+					(name
+						"A1"
+						(effects
+							(font
+								(size 0.635 0.635)
+							)
+						)
+					)
+					(number
+						"1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol
+			"Device:C"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property
+				"Reference"
+				"C"
+				(at 0.635 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property
+				"Value"
+				"C"
+				(at 0.635 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property
+				"Footprint"
+				""
+				(at 0.9652 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property
+				"Datasheet"
+				"~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property
+				"Description"
+				"Unpolarized capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property
+				"ki_keywords"
+				"cap capacitor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property
+				"ki_fp_filters"
+				"C_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol
+				"C_0_1"
+				(polyline
+					(pts
+						(xy -2.032 0.762)
+						(xy 2.032 0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.032 -0.762)
+						(xy 2.032 -0.762)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol
+				"C_1_1"
+				(pin
+					passive
+					line
+					(at 0 3.81 270)
+					(length 2.794)
+					(name
+						"~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number
+						"1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin
+					passive
+					line
+					(at 0 -3.81 90)
+					(length 2.794)
+					(name
+						"~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number
+						"2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol
+			"Connector:TestPoint"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.762)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property
+				"Reference"
+				"TP"
+				(at 0 6.858 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property
+				"Value"
+				"TestPoint"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property
+				"Footprint"
+				""
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property
+				"Datasheet"
+				"~"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property
+				"Description"
+				"test point"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property
+				"ki_keywords"
+				"test point tp"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property
+				"ki_fp_filters"
+				"Pin* Test*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol
+				"TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol
+				"TestPoint_1_1"
+				(pin
+					passive
+					line
+					(at 0 0 90)
+					(length 2.54)
+					(name
+						"1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number
+						"1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(symbol
+		(lib_id "bps:MOC3063")
+		(at 39.37 31.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "40964f3d-d1a1-5069-803b-8f752512a3ad")
+		(property
+			"Reference"
+			"U2"
+			(at 39.37 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"Value"
+			"MOC3063"
+			(at 39.37 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"Footprint"
+			"Package_DIP:SMDIP-6_W9.53mm_Clearance8mm"
+			(at 39.37 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Datasheet"
+			"https://www.onsemi.com/pdf/datasheet/moc3061m-d.pdf"
+			(at 39.37 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Description"
+			"Zero-cross opto-triac driver, SMD-DIP6 with 8 mm pad-row creepage, 7.5 kVrms isolation, Vdrm 600 V"
+			(at 39.37 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"MPN"
+			"MOC3063SR2M (gull-wing SMD)"
+			(at 39.37 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Manufacturer"
+			"onsemi / Liteon"
+			(at 39.37 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Note"
+			"Input LED (1,2) = SELV side; output triac (4,6) = mains side. Pins 3,5 NC. 8 mm land spacing keeps the opto's own primary-secondary PCB creepage >= 6 mm."
+			(at 39.37 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin
+			"1"
+			(uuid "b2adf0ea-1623-5d1b-b7e1-e30dde3a43bf")
+		)
+		(pin
+			"2"
+			(uuid "473e2115-ca5d-5b46-aedb-c8eea62dd6ba")
+		)
+		(pin
+			"6"
+			(uuid "3faf2975-af54-540f-87a2-8bfecc495895")
+		)
+		(pin
+			"4"
+			(uuid "518ffe95-2f35-5a55-99ab-8f94f6ada639")
+		)
+		(pin
+			"3"
+			(uuid "baf85764-e806-536c-aae5-d0208f814bc1")
+		)
+		(pin
+			"5"
+			(uuid "29920db6-bfca-5cbb-8530-131590bd8496")
+		)
+		(instances
+			(project
+				"bps_switch"
+				(path
+					"/ae9e4f14-9949-5765-bfd0-b48f9e079f88/fd9b4542-3992-5cdc-a46e-9628e02a7d53"
+					(reference "U2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 31.75 29.21)
+			(xy 29.21 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dc952660-a19c-571a-968d-48a6f0bead89")
+	)
+	(global_label
+		"OPTO_A"
+		(shape bidirectional)
+		(at 29.21 29.21 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b220ba50-a4c6-5618-bfb1-60f5c3229113")
+		(property
+			"Intersheetrefs"
+			"${INTERSHEET_REFS}"
+			(at 29.21 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 31.75 34.29)
+			(xy 29.21 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1bc4075f-5c7b-538b-9f2a-44c01152829b")
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 29.21 34.29 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "06337b26-c93f-5402-bd3c-aa4a10b53d6c")
+		(property
+			"Reference"
+			"#PWR004"
+			(at 29.21 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Value"
+			"GND"
+			(at 29.21 38.1 0)
+			(effects
+				(font
+					(size 1 1)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Footprint"
+			""
+			(at 29.21 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Datasheet"
+			""
+			(at 29.21 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Description"
+			""
+			(at 29.21 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin
+			"1"
+			(uuid "4e29f24a-6406-5c42-be2f-dd0efe5c56c5")
+		)
+		(instances
+			(project
+				"bps_switch"
+				(path
+					"/ae9e4f14-9949-5765-bfd0-b48f9e079f88/fd9b4542-3992-5cdc-a46e-9628e02a7d53"
+					(reference "#PWR004")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 46.99 29.21)
+			(xy 49.53 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "15479c94-510e-5f95-8045-508199fae8fd")
+	)
+	(global_label
+		"ACL_F"
+		(shape bidirectional)
+		(at 49.53 29.21 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e2f9a70f-01ba-5664-b887-e1976b6d0345")
+		(property
+			"Intersheetrefs"
+			"${INTERSHEET_REFS}"
+			(at 49.53 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 46.99 34.29)
+			(xy 49.53 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "58356758-0cac-582c-967e-057c07397d1d")
+	)
+	(global_label
+		"TRIAC_MT"
+		(shape bidirectional)
+		(at 49.53 34.29 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a4b310e1-6af8-561d-8fea-bfbe312b0fb8")
+		(property
+			"Intersheetrefs"
+			"${INTERSHEET_REFS}"
+			(at 49.53 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(no_connect
+		(at 31.75 31.75)
+		(uuid "ebc5f09b-1355-5338-a3ac-0c9c01f6eba0")
+	)
+	(no_connect
+		(at 46.99 31.75)
+		(uuid "9fc5ab55-0da1-5786-a6c3-ba15d26497c4")
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 66.04 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d7b7b54a-17ed-5c67-b6cf-e32d5ca65390")
+		(property
+			"Reference"
+			"R1"
+			(at 68.58 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property
+			"Value"
+			"330R"
+			(at 68.58 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property
+			"Footprint"
+			"Resistor_SMD:R_0805_2012Metric"
+			(at 66.04 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Datasheet"
+			"~"
+			(at 66.04 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Description"
+			"Resistor"
+			(at 66.04 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"MPN"
+			"0805 1% thick film"
+			(at 66.04 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Manufacturer"
+			"Yageo / Uniroyal"
+			(at 66.04 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Note"
+			"Opto LED current = (5 - 1.2 V)/330 ~ 11.5 mA > IFT(10 mA) of MOC3063. Driven by MCU PB0/MOSI."
+			(at 66.04 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin
+			"1"
+			(uuid "fd9edc95-812e-59c2-ac5b-5c5ab113fbbd")
+		)
+		(pin
+			"2"
+			(uuid "6f497b6b-35b1-599c-8a24-379f06f6320e")
+		)
+		(instances
+			(project
+				"bps_switch"
+				(path
+					"/ae9e4f14-9949-5765-bfd0-b48f9e079f88/fd9b4542-3992-5cdc-a46e-9628e02a7d53"
+					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 66.04 34.29)
+			(xy 66.04 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a27adfbc-fa87-59f6-8d2a-53d4daf7eff4")
+	)
+	(global_label
+		"MOSI"
+		(shape bidirectional)
+		(at 66.04 31.75 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4dac315c-5b3b-581f-81d2-32ff900873af")
+		(property
+			"Intersheetrefs"
+			"${INTERSHEET_REFS}"
+			(at 66.04 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 66.04 41.91)
+			(xy 66.04 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b4998ee-60e7-50a5-a0c9-9bcee19561fa")
+	)
+	(global_label
+		"OPTO_A"
+		(shape bidirectional)
+		(at 66.04 44.45 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "af6afcaa-8836-55c8-afb0-e8a6cd6b2f06")
+		(property
+			"Intersheetrefs"
+			"${INTERSHEET_REFS}"
+			(at 66.04 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 86.36 41.91 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9b7c83be-99f7-5dee-8dcf-0b6353724f83")
+		(property
+			"Reference"
+			"RG1"
+			(at 88.9 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property
+			"Value"
+			"180R"
+			(at 88.9 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property
+			"Footprint"
+			"Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal"
+			(at 86.36 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Datasheet"
+			"~"
+			(at 86.36 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Description"
+			"Triac gate resistor (MOC3063 pin4 -> BTA16 gate)"
+			(at 86.36 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"MPN"
+			"axial 0.5 W 350 V"
+			(at 86.36 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Manufacturer"
+			"Yageo"
+			(at 86.36 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Note"
+			"180 ohm per the brief; ON AN-3004 suggests >=360 ohm for 230 V non-ZC - OK here because MOC3063 is zero-crossing (fires near 0 V). VERIFY peak opto current < ITSM(1 A)."
+			(at 86.36 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin
+			"1"
+			(uuid "4a117b8b-1887-583f-b6a5-3684e12ba217")
+		)
+		(pin
+			"2"
+			(uuid "6104bbf0-2546-56af-a814-50916b66ec5c")
+		)
+		(instances
+			(project
+				"bps_switch"
+				(path
+					"/ae9e4f14-9949-5765-bfd0-b48f9e079f88/fd9b4542-3992-5cdc-a46e-9628e02a7d53"
+					(reference "RG1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 86.36 38.1)
+			(xy 86.36 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "61e883f7-b4fa-547f-a849-abd5cba6fcc4")
+	)
+	(global_label
+		"TRIAC_MT"
+		(shape bidirectional)
+		(at 86.36 35.56 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8ac29ede-68f4-534c-9ba7-d1687f3ca95b")
+		(property
+			"Intersheetrefs"
+			"${INTERSHEET_REFS}"
+			(at 86.36 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 86.36 45.72)
+			(xy 86.36 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "73754b35-e897-5915-a30f-f58f2b01778f")
+	)
+	(global_label
+		"TRIAC_G"
+		(shape bidirectional)
+		(at 86.36 48.26 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3b538805-65ed-539a-96cf-517d61d5e5e6")
+		(property
+			"Intersheetrefs"
+			"${INTERSHEET_REFS}"
+			(at 86.36 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Triac_Thyristor:BTA16-600B")
+		(at 120.65 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8109c394-da4f-5dd1-ba61-ae75f9d823a7")
+		(property
+			"Reference"
+			"Q1"
+			(at 120.65 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"Value"
+			"BTA16-600B"
+			(at 120.65 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"Footprint"
+			"Package_TO_SOT_THT:TO-220-3_Vertical"
+			(at 120.65 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Datasheet"
+			"https://www.st.com/resource/en/datasheet/bta16.pdf"
+			(at 120.65 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Description"
+			"Triac 16 A / 600 V, isolated tab TO-220. MT1(A1)=Line, MT2(A2)=Lamp, Gate from MOC3063."
+			(at 120.65 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"MPN"
+			"BTA16-600B"
+			(at 120.65 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Manufacturer"
+			"STMicroelectronics"
+			(at 120.65 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Note"
+			"Non-snubberless part -> external snubber fitted (RS1/CS1). Derate: ~6 A continuous no heatsink. VERIFY heatsinking / lamp current; add a clip-on sink for >2 A loads."
+			(at 120.65 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin
+			"3"
+			(uuid "55a80ee1-36b1-56aa-96b6-7f118aeaf862")
+		)
+		(pin
+			"2"
+			(uuid "44d5b8b5-62dd-5d22-af5f-e86b3e8f8be5")
+		)
+		(pin
+			"1"
+			(uuid "e8570aee-64fc-5c07-90c6-cec7251b980e")
+		)
+		(instances
+			(project
+				"bps_switch"
+				(path
+					"/ae9e4f14-9949-5765-bfd0-b48f9e079f88/fd9b4542-3992-5cdc-a46e-9628e02a7d53"
+					(reference "Q1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 116.84 40.64)
+			(xy 114.3 40.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b9997b04-7771-5c6c-8234-3035cb9b4b13")
+	)
+	(global_label
+		"TRIAC_G"
+		(shape bidirectional)
+		(at 114.3 40.64 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e4fa303a-26e9-5025-9595-5539bff6bc8b")
+		(property
+			"Intersheetrefs"
+			"${INTERSHEET_REFS}"
+			(at 114.3 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 120.65 34.29)
+			(xy 120.65 31.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a74ff313-9f9c-5128-b034-b2d15a735833")
+	)
+	(global_label
+		"LAMP"
+		(shape bidirectional)
+		(at 120.65 31.75 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2f49219d-4efc-50a9-98a2-fcdb053305f2")
+		(property
+			"Intersheetrefs"
+			"${INTERSHEET_REFS}"
+			(at 120.65 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 120.65 41.91)
+			(xy 120.65 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fca19bc0-88f8-56f2-9d0f-91fbbcdcff43")
+	)
+	(global_label
+		"ACL_F"
+		(shape bidirectional)
+		(at 120.65 44.45 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4ba3e18c-adfb-598e-af8f-56f57d08ff73")
+		(property
+			"Intersheetrefs"
+			"${INTERSHEET_REFS}"
+			(at 120.65 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 137.16 39.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a3518f49-c9e8-5c07-8942-0e5d65a2df8c")
+		(property
+			"Reference"
+			"RS1"
+			(at 139.7 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property
+			"Value"
+			"100R 2W"
+			(at 139.7 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property
+			"Footprint"
+			"Resistor_THT:R_Axial_DIN0411_L9.9mm_D3.6mm_P15.24mm_Horizontal"
+			(at 137.16 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Datasheet"
+			"~"
+			(at 137.16 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Description"
+			"Snubber resistor (dv/dt)"
+			(at 137.16 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"MPN"
+			"axial 2 W MO 350 V"
+			(at 137.16 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Manufacturer"
+			"Vishay"
+			(at 137.16 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin
+			"1"
+			(uuid "50a2be24-3e9d-5b29-8030-7ff535872cb1")
+		)
+		(pin
+			"2"
+			(uuid "9f080e40-3abe-5850-b9f9-51717390870d")
+		)
+		(instances
+			(project
+				"bps_switch"
+				(path
+					"/ae9e4f14-9949-5765-bfd0-b48f9e079f88/fd9b4542-3992-5cdc-a46e-9628e02a7d53"
+					(reference "RS1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 137.16 35.56)
+			(xy 137.16 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1a086241-3dc1-55e6-aeb4-7dae3eeebe12")
+	)
+	(global_label
+		"ACL_F"
+		(shape bidirectional)
+		(at 137.16 33.02 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5fd4bd2d-d00e-5442-8856-465e8a022959")
+		(property
+			"Intersheetrefs"
+			"${INTERSHEET_REFS}"
+			(at 137.16 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 137.16 43.18)
+			(xy 137.16 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "91b653c7-3a2b-55c1-9193-d4322229accf")
+	)
+	(global_label
+		"SNUB_M"
+		(shape bidirectional)
+		(at 137.16 45.72 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6987e6bc-ae69-59b1-ae25-e4886b578863")
+		(property
+			"Intersheetrefs"
+			"${INTERSHEET_REFS}"
+			(at 137.16 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 154.94 40.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f06d3564-0ff0-5280-8df7-bb23004c93c8")
+		(property
+			"Reference"
+			"CS1"
+			(at 157.48 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property
+			"Value"
+			"10nF 400VAC"
+			(at 157.48 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property
+			"Footprint"
+			"Capacitor_THT:C_Rect_L10.0mm_W4.0mm_P7.50mm_FKS3_FKP3"
+			(at 154.94 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Datasheet"
+			"~"
+			(at 154.94 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Description"
+			"Snubber cap across the triac (with RS1): dv/dt suppression"
+			(at 154.94 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"MPN"
+			"10 nF 400 VAC X1 film (e.g. BFC233820103)"
+			(at 154.94 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Manufacturer"
+			"Vishay / KEMET"
+			(at 154.94 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin
+			"1"
+			(uuid "8c801979-b35d-5247-9a7f-0c6e2710c900")
+		)
+		(pin
+			"2"
+			(uuid "b8202e69-c96f-5f4b-b1b2-8361c02ef75e")
+		)
+		(instances
+			(project
+				"bps_switch"
+				(path
+					"/ae9e4f14-9949-5765-bfd0-b48f9e079f88/fd9b4542-3992-5cdc-a46e-9628e02a7d53"
+					(reference "CS1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 154.94 36.83)
+			(xy 154.94 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "366bd85b-62ca-5cf2-866b-676c24859043")
+	)
+	(global_label
+		"SNUB_M"
+		(shape bidirectional)
+		(at 154.94 34.29 90)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e08361e6-b264-549f-9282-0431eace5327")
+		(property
+			"Intersheetrefs"
+			"${INTERSHEET_REFS}"
+			(at 154.94 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 154.94 44.45)
+			(xy 154.94 46.99)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cb51b3bc-0ed6-5242-aeb3-b1e91a21fde3")
+	)
+	(global_label
+		"LAMP"
+		(shape bidirectional)
+		(at 154.94 46.99 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4f3f71d5-a076-561d-8faa-505c196c3f72")
+		(property
+			"Intersheetrefs"
+			"${INTERSHEET_REFS}"
+			(at 154.94 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 182.88 31.75 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(uuid "eada20ae-27ac-5c7e-a130-0f7e94408555")
+		(property
+			"Reference"
+			"TP3"
+			(at 182.88 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"Value"
+			"TRIAC_G"
+			(at 182.88 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property
+			"Footprint"
+			"TestPoint:TestPoint_Pad_D1.5mm"
+			(at 182.88 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Datasheet"
+			"~"
+			(at 182.88 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Description"
+			"test point"
+			(at 182.88 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"MPN"
+			"Test pad 1.5 mm (no part)"
+			(at 182.88 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property
+			"Manufacturer"
+			""
+			(at 182.88 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin
+			"1"
+			(uuid "99338b83-f3c5-5b49-a682-7bec610cf81b")
+		)
+		(instances
+			(project
+				"bps_switch"
+				(path
+					"/ae9e4f14-9949-5765-bfd0-b48f9e079f88/fd9b4542-3992-5cdc-a46e-9628e02a7d53"
+					(reference "TP3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 182.88 31.75)
+			(xy 182.88 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6ff3b4e1-6e6b-58e5-ae74-147592307842")
+	)
+	(global_label
+		"TRIAC_G"
+		(shape bidirectional)
+		(at 182.88 34.29 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2a908758-7a44-5676-9104-59541c764b9f")
+		(property
+			"Intersheetrefs"
+			"${INTERSHEET_REFS}"
+			(at 182.88 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(text
+		"DESIGN NOTES\n!! MAINS on the triac (Q1) and the MOC3063 output pins 4/6. The opto is the isolation barrier. !!\nMCU PB0/MOSI -> R1 (330R) -> MOC3063 LED (pins 1/2, SELV). Opto output (4/6) drives the BTA16 gate.\nMOC3063 is ZERO-CROSSING: it only fires near the mains zero-crossing -> low EMI, low gate inrush.\nRG1 180R = gate resistor (ACL_F -> opto -> gate). RS1 100R + CS1 10 nF = dv/dt snubber across MT1-MT2.\nQ1 BTA16-600B: MT1(A1)=Line (ACL_F), MT2(A2)=Lamp. Derate / heatsink for lamp currents > ~2 A.\nVERIFY per ON AN-3004: peak opto current < 1 A ITSM; 180R OK for a zero-cross opto, raise to 360R if not."
+		(exclude_from_sim no)
+		(at 20 66.04 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+			)
+			(justify left top)
+		)
+		(uuid "c3b7223d-c0f0-524b-945a-4aec3a4c0cc5")
+	)
+	(text
+		"PART NOTES (VERIFY = check against vendor datasheet before release)\nU2: Input LED (1,2) = SELV side; output triac (4,6) = mains side. Pins 3,5 NC. 8 mm land spacing keeps the opto's own primary-secondary PCB creepage >= 6 mm.\nR1: Opto LED current = (5 - 1.2 V)/330 ~ 11.5 mA > IFT(10 mA) of MOC3063. Driven by MCU PB0/MOSI.\nRG1: 180 ohm per the brief; ON AN-3004 suggests >=360 ohm for 230 V non-ZC - OK here because MOC3063 is zero-crossing (fires near 0 V). VERIFY peak opto current < ITSM(1 A).\nQ1: Non-snubberless part -> external snubber fitted (RS1/CS1). Derate: ~6 A continuous no heatsink. VERIFY heatsinking / lamp current; add a clip-on sink for >2 A loads."
+		(exclude_from_sim no)
+		(at 219.71 66.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "62c36151-d3d9-5257-a930-82b53de726b9")
+	)
+)

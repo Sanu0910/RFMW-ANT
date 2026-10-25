@@ -1,0 +1,180 @@
+(footprint
+	"LD2410B_Module"
+	(version 20241229)
+	(generator "rfmw_make_lib")
+	(layer "F.Cu")
+	(descr "Hi-Link HLK-LD2410B 24 GHz presence radar on a vertical 5-pin 1.27 mm header")
+	(tags "LD2410B radar 24GHz mmwave presence Hi-Link")
+	(property
+		"Reference"
+		"REF**"
+		(at 0 -2.2 0)
+		(layer "F.SilkS")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property
+		"Value"
+		"LD2410B_Module"
+		(at 0 3.6 0)
+		(layer "F.Fab")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(pad
+		"1"
+		thru_hole
+		rect
+		(at -2.54 0)
+		(size 0.95 0.95)
+		(drill 0.55)
+		(layers "*.Cu" "*.Mask")
+		(roundrect_rratio 0)
+	)
+	(fp_text
+		user
+		"OUT"
+		(at -2.54 1.6 0)
+		(layer "F.SilkS")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.075)
+			)
+		)
+	)
+	(pad
+		"2"
+		thru_hole
+		circle
+		(at -1.27 0)
+		(size 0.95 0.95)
+		(drill 0.55)
+		(layers "*.Cu" "*.Mask")
+	)
+	(fp_text
+		user
+		"TX"
+		(at -1.27 1.6 0)
+		(layer "F.SilkS")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.075)
+			)
+		)
+	)
+	(pad
+		"3"
+		thru_hole
+		circle
+		(at 0 0)
+		(size 0.95 0.95)
+		(drill 0.55)
+		(layers "*.Cu" "*.Mask")
+	)
+	(fp_text
+		user
+		"RX"
+		(at 0 1.6 0)
+		(layer "F.SilkS")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.075)
+			)
+		)
+	)
+	(pad
+		"4"
+		thru_hole
+		circle
+		(at 1.27 0)
+		(size 0.95 0.95)
+		(drill 0.55)
+		(layers "*.Cu" "*.Mask")
+	)
+	(fp_text
+		user
+		"GND"
+		(at 1.27 1.6 0)
+		(layer "F.SilkS")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.075)
+			)
+		)
+	)
+	(pad
+		"5"
+		thru_hole
+		circle
+		(at 2.54 0)
+		(size 0.95 0.95)
+		(drill 0.55)
+		(layers "*.Cu" "*.Mask")
+	)
+	(fp_text
+		user
+		"VCC"
+		(at 2.54 1.6 0)
+		(layer "F.SilkS")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.075)
+			)
+		)
+	)
+	(fp_rect
+		(start -3.8 -1)
+		(end 3.8 0.8)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+	)
+	(fp_line
+		(start -3.8 -1)
+		(end 3.8 -1)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+	)
+	(fp_text
+		user
+		"LD2410B vertical - ANT faces cover"
+		(at 0 -2 0)
+		(layer "F.Fab")
+		(effects
+			(font
+				(size 0.7 0.7)
+				(thickness 0.105)
+			)
+		)
+	)
+	(fp_rect
+		(start -4.1 -1.4)
+		(end 4.1 2.1)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+	)
+)

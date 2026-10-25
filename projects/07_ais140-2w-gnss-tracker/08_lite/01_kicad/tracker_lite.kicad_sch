@@ -1,0 +1,227 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "0ed4319f-d730-513f-9ab4-5578a9ccc7d0")
+	(paper "A3")
+	(title_block
+		(title "CRL-TRK-2W-L1 - Top level")
+		(date "2026-10-20")
+		(rev "A0")
+		(company "CRL / BEL - RFM Lab")
+		(comment 1 "Generated from 02_python/design.py - edit the source, then regenerate")
+		(comment 2 "Top level: block diagram")
+	)
+	(lib_symbols)
+	(sheet
+		(at 25.4 40.64)
+		(size 101.6 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "a1501f95-fc5f-5d01-a973-99825f2b8ae1")
+		(property
+			"Sheetname"
+			"Power Input, Buck, Charger & Power Path"
+			(at 25.4 39.94 0)
+			(effects
+				(font
+					(size 1.8 1.8)
+				)
+				(justify left bottom)
+			)
+		)
+		(property
+			"Sheetfile"
+			"power.kicad_sch"
+			(at 25.4 71.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project
+				"tracker_lite"
+				(path
+					"/0ed4319f-d730-513f-9ab4-5578a9ccc7d0"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 146.05 40.64)
+		(size 101.6 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "b64969d3-ff75-5806-8f3e-c422dda5b496")
+		(property
+			"Sheetname"
+			"Cat-1 / GSM Modem, SIM & LTE RF"
+			(at 146.05 39.94 0)
+			(effects
+				(font
+					(size 1.8 1.8)
+				)
+				(justify left bottom)
+			)
+		)
+		(property
+			"Sheetfile"
+			"modem.kicad_sch"
+			(at 146.05 71.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project
+				"tracker_lite"
+				(path
+					"/0ed4319f-d730-513f-9ab4-5578a9ccc7d0"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 25.4 91.44)
+		(size 101.6 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "739fe076-0d41-59b3-b271-97d6d0e472d7")
+		(property
+			"Sheetname"
+			"GNSS (L76K) & Level Shift"
+			(at 25.4 90.74 0)
+			(effects
+				(font
+					(size 1.8 1.8)
+				)
+				(justify left bottom)
+			)
+		)
+		(property
+			"Sheetfile"
+			"gnss.kicad_sch"
+			(at 25.4 122.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project
+				"tracker_lite"
+				(path
+					"/0ed4319f-d730-513f-9ab4-5578a9ccc7d0"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 146.05 91.44)
+		(size 101.6 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "c6622045-f5b2-542b-b264-2c1f235b7b5a")
+		(property
+			"Sheetname"
+			"Accelerometer, Vehicle I/O & LEDs"
+			(at 146.05 90.74 0)
+			(effects
+				(font
+					(size 1.8 1.8)
+				)
+				(justify left bottom)
+			)
+		)
+		(property
+			"Sheetfile"
+			"io.kicad_sch"
+			(at 146.05 122.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project
+				"tracker_lite"
+				(path
+					"/0ed4319f-d730-513f-9ab4-5578a9ccc7d0"
+					(page "5")
+				)
+			)
+		)
+	)
+	(text
+		"CRL-TRK-2W-L1  Two-wheeler tracker LITE  -  60 x 45 mm, 2-layer 1.6 mm FR-4, single-sided SMT\n\nVEHICLE 9-30 V -> F1 / D1 TVS -> D2 reverse diode -> XL1509 buck 4.44 V -+-> D4 -> VSYS 3.3-4.3 V -> EC200U VBAT\n                                                                       +-> MCP73831 -> 300 mAh LiPo -> Q1 P-FET -> VSYS\n\nEC200U-CN (Cat-1 bis + GSM, runs the firmware) -> U.FL -> FPC LTE/GSM antenna\n      <-MAIN UART (BSS138 1.8/3.3 V)-> L76K GPS/BDS/GLONASS -> U.FL -> active L1 patch\n      <-I2C-> LIS3DH   <-GPIO-> IGN sense, relay driver, GNSS_EN   <-ADC-> VIN/30, VBAT/4\n\nParked (ignition off): modem sleep + GNSS off + LIS3DH wake-on-motion, ~2-3 mA from the vehicle battery."
+		(exclude_from_sim no)
+		(at 25.4 160 0)
+		(effects
+			(font
+				(size 1.6 1.6)
+			)
+			(justify left top)
+		)
+		(uuid "5fe4ed9e-b095-5be3-81f3-447035b8370e")
+	)
+	(sheet_instances
+		(path
+			"/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

@@ -1,0 +1,227 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "ae9e4f14-9949-5765-bfd0-b48f9e079f88")
+	(paper "A3")
+	(title_block
+		(title "SPS-24G-01 - Top level")
+		(date "2026-10-24")
+		(rev "A0")
+		(company "SAMAY ELECTRONICS")
+		(comment 1 "Generated from 02_python/design.py - edit the source, then regenerate")
+		(comment 2 "Top level: block diagram")
+	)
+	(lib_symbols)
+	(sheet
+		(at 25.4 40.64)
+		(size 101.6 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "e6ca9aaa-f514-5b38-a937-d6ddd2290419")
+		(property
+			"Sheetname"
+			"AC Input Protection, Isolated 5 V Supply"
+			(at 25.4 39.94 0)
+			(effects
+				(font
+					(size 1.8 1.8)
+				)
+				(justify left bottom)
+			)
+		)
+		(property
+			"Sheetfile"
+			"power.kicad_sch"
+			(at 25.4 71.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project
+				"bps_switch"
+				(path
+					"/ae9e4f14-9949-5765-bfd0-b48f9e079f88"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 146.05 40.64)
+		(size 101.6 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "fd9b4542-3992-5cdc-a46e-9628e02a7d53")
+		(property
+			"Sheetname"
+			"Zero-Cross Opto-Triac AC Load Control"
+			(at 146.05 39.94 0)
+			(effects
+				(font
+					(size 1.8 1.8)
+				)
+				(justify left bottom)
+			)
+		)
+		(property
+			"Sheetfile"
+			"load.kicad_sch"
+			(at 146.05 71.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project
+				"bps_switch"
+				(path
+					"/ae9e4f14-9949-5765-bfd0-b48f9e079f88"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 25.4 91.44)
+		(size 101.6 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "016f30f4-977a-5dcd-927c-97df38a57556")
+		(property
+			"Sheetname"
+			"ATtiny13A Controller & ISP"
+			(at 25.4 90.74 0)
+			(effects
+				(font
+					(size 1.8 1.8)
+				)
+				(justify left bottom)
+			)
+		)
+		(property
+			"Sheetfile"
+			"mcu.kicad_sch"
+			(at 25.4 122.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project
+				"bps_switch"
+				(path
+					"/ae9e4f14-9949-5765-bfd0-b48f9e079f88"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 146.05 91.44)
+		(size 101.6 30.48)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0)
+		)
+		(uuid "c9afbb70-f3e5-5418-ad64-84b2f52d36b1")
+		(property
+			"Sheetname"
+			"Radar, Button, LED, Delay Trimmer"
+			(at 146.05 90.74 0)
+			(effects
+				(font
+					(size 1.8 1.8)
+				)
+				(justify left bottom)
+			)
+		)
+		(property
+			"Sheetfile"
+			"io.kicad_sch"
+			(at 146.05 122.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project
+				"bps_switch"
+				(path
+					"/ae9e4f14-9949-5765-bfd0-b48f9e079f88"
+					(page "5")
+				)
+			)
+		)
+	)
+	(text
+		"SPS-24G-01  Smart Presence Sensor Switch  -  70 x 56 mm, 2-layer 1.6 mm FR-4, 1 oz, ENIG  (SAMAY ELECTRONICS)\nStandalone (no WiFi / no BLE). Fits a standard Indian 86 x 86 mm modular wall box.\n\n===== HIGH-VOLTAGE (AC) SECTION =====================|===== LOW-VOLTAGE (SELV) SECTION ==========\nL in -> F1 T500mA -> ACL_F -+- MOV1 14D471K           |  HLK-PM01 +5V -> ATtiny13A-SU\n                            +- CX1 100nF X2 + RB1 1M  |      PB4 <- LD2410B OUT (24 GHz radar)\n                            +- NTC1 5D-9 -> HLK-PM01 AC/L  |  PB3 <- 10k delay trimmer (10 s..10 min)\n                            +- BTA16-600B MT1          |      PB2 <- override button, PB1 -> status LED\nLAMP out <- BTA16 MT2 ; gate <- RG1 180R <- MOC3063   |      PB0 -> MOC3063 LED (opto, SELV side)\nsnubber RS1 100R + CS1 10nF across MT1-MT2            |  ISP: 6-pin AVR header (program with mains OFF)\n\nIsolation: HLK-PM01 (reinforced AC-DC) + MOC3063 (7.5 kVrms opto) are the ONLY parts crossing the barrier.\n>= 6 mm creepage / >= 3 mm clearance + a routed isolation slot separate the two sections. SEE SAFETY_REVIEW.md."
+		(exclude_from_sim no)
+		(at 25.4 150 0)
+		(effects
+			(font
+				(size 1.6 1.6)
+			)
+			(justify left top)
+		)
+		(uuid "eee46ffd-8479-5248-979b-1ce8ad84389d")
+	)
+	(sheet_instances
+		(path
+			"/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)
