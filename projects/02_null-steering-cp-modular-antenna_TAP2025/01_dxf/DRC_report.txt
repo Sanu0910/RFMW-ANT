@@ -27,7 +27,7 @@
       features < 0.10 mm wide: area 0.0078 mm2
    MID: 0 islands, min gap 99.000 mm
    BOT: 1 islands, min gap 99.000 mm
-      features < 0.10 mm wide: area 0.0041 mm2
+      features < 0.10 mm wide: area 0.0052 mm2
    SILK_TOP: 2 labels touch copper (OK on large ground pours if mask is present; move if on pads)
    SILK_BOT: 1 labels touch copper (OK on large ground pours if mask is present; move if on pads)
 == UNIT_A_mid-paper
@@ -35,7 +35,7 @@
       features < 0.10 mm wide: area 0.0254 mm2 (check)
    MID: 1 islands, min gap 99.000 mm
    BOT: 4 islands, min gap 0.400 mm
-      features < 0.10 mm wide: area 0.0166 mm2 (check)
+      features < 0.10 mm wide: area 0.0176 mm2 (check)
    SILK_TOP: 2 labels touch copper (OK on large ground pours if mask is present; move if on pads)
    SILK_BOT: 2 labels touch copper (OK on large ground pours if mask is present; move if on pads)
 == UNIT_A_mid-extended
@@ -43,7 +43,7 @@
       features < 0.10 mm wide: area 0.0254 mm2 (check)
    MID: 1 islands, min gap 99.000 mm
    BOT: 4 islands, min gap 0.400 mm
-      features < 0.10 mm wide: area 0.0166 mm2 (check)
+      features < 0.10 mm wide: area 0.0176 mm2 (check)
    SILK_TOP: 2 labels touch copper (OK on large ground pours if mask is present; move if on pads)
    SILK_BOT: 2 labels touch copper (OK on large ground pours if mask is present; move if on pads)
 == UNIT_B_mid-paper
@@ -51,7 +51,7 @@
       features < 0.10 mm wide: area 0.0254 mm2 (check)
    MID: 1 islands, min gap 99.000 mm
    BOT: 4 islands, min gap 0.400 mm
-      features < 0.10 mm wide: area 0.0166 mm2 (check)
+      features < 0.10 mm wide: area 0.0176 mm2 (check)
    SILK_TOP: 2 labels touch copper (OK on large ground pours if mask is present; move if on pads)
    SILK_BOT: 2 labels touch copper (OK on large ground pours if mask is present; move if on pads)
 == UNIT_B_mid-extended
@@ -59,7 +59,7 @@
       features < 0.10 mm wide: area 0.0254 mm2 (check)
    MID: 1 islands, min gap 99.000 mm
    BOT: 4 islands, min gap 0.400 mm
-      features < 0.10 mm wide: area 0.0166 mm2 (check)
+      features < 0.10 mm wide: area 0.0176 mm2 (check)
    SILK_TOP: 2 labels touch copper (OK on large ground pours if mask is present; move if on pads)
    SILK_BOT: 2 labels touch copper (OK on large ground pours if mask is present; move if on pads)
 == SYS1D_U1A_U2B_coplanar_panel
@@ -67,7 +67,7 @@
       features < 0.10 mm wide: area 0.0487 mm2 (check)
    MID: 1 islands, min gap 99.000 mm
    BOT: 8 islands, min gap 0.400 mm
-      features < 0.10 mm wide: area 0.0332 mm2 (check)
+      features < 0.10 mm wide: area 0.0353 mm2 (check)
    SILK_TOP: 4 labels touch copper (OK on large ground pours if mask is present; move if on pads)
    SILK_BOT: 4 labels touch copper (OK on large ground pours if mask is present; move if on pads)
 == SYS2D_row_front_y-12p5
@@ -75,7 +75,7 @@
       features < 0.10 mm wide: area 0.0487 mm2 (check)
    MID: 1 islands, min gap 99.000 mm
    BOT: 8 islands, min gap 0.400 mm
-      features < 0.10 mm wide: area 0.0332 mm2 (check)
+      features < 0.10 mm wide: area 0.0353 mm2 (check)
    SILK_TOP: 4 labels touch copper (OK on large ground pours if mask is present; move if on pads)
    SILK_BOT: 4 labels touch copper (OK on large ground pours if mask is present; move if on pads)
 == SYS2D_row_back_y+12p5
@@ -83,7 +83,7 @@
       features < 0.10 mm wide: area 0.0467 mm2 (check)
    MID: 1 islands, min gap 99.000 mm
    BOT: 7 islands, min gap 0.400 mm
-      features < 0.10 mm wide: area 0.0311 mm2 (check)
+      features < 0.10 mm wide: area 0.0332 mm2 (check)
    SILK_TOP: 4 labels touch copper (OK on large ground pours if mask is present; move if on pads)
    SILK_BOT: 4 labels touch copper (OK on large ground pours if mask is present; move if on pads)
 == CP_wing_U1_typeA
@@ -91,7 +91,7 @@
       features < 0.10 mm wide: area 0.0254 mm2 (check)
    MID: 1 islands, min gap 99.000 mm
    BOT: 4 islands, min gap 0.400 mm
-      features < 0.10 mm wide: area 0.0166 mm2 (check)
+      features < 0.10 mm wide: area 0.0176 mm2 (check)
    SILK_TOP: 2 labels touch copper (OK on large ground pours if mask is present; move if on pads)
    SILK_BOT: 2 labels touch copper (OK on large ground pours if mask is present; move if on pads)
 == CP_wing_U2_typeB
@@ -99,7 +99,7 @@
       features < 0.10 mm wide: area 0.0254 mm2 (check)
    MID: 1 islands, min gap 99.000 mm
    BOT: 4 islands, min gap 0.400 mm
-      features < 0.10 mm wide: area 0.0166 mm2 (check)
+      features < 0.10 mm wide: area 0.0176 mm2 (check)
    SILK_TOP: 2 labels touch copper (OK on large ground pours if mask is present; move if on pads)
    SILK_BOT: 2 labels touch copper (OK on large ground pours if mask is present; move if on pads)
 == CP_wing_U3_typeB
@@ -107,7 +107,7 @@
       features < 0.10 mm wide: area 0.0254 mm2 (check)
    MID: 1 islands, min gap 99.000 mm
    BOT: 4 islands, min gap 0.400 mm
-      features < 0.10 mm wide: area 0.0166 mm2 (check)
+      features < 0.10 mm wide: area 0.0176 mm2 (check)
    SILK_TOP: 2 labels touch copper (OK on large ground pours if mask is present; move if on pads)
    SILK_BOT: 2 labels touch copper (OK on large ground pours if mask is present; move if on pads)
 == CP_wing_U4_typeA
@@ -115,7 +115,7 @@
       features < 0.10 mm wide: area 0.0254 mm2 (check)
    MID: 1 islands, min gap 99.000 mm
    BOT: 4 islands, min gap 0.400 mm
-      features < 0.10 mm wide: area 0.0166 mm2 (check)
+      features < 0.10 mm wide: area 0.0176 mm2 (check)
    SILK_TOP: 2 labels touch copper (OK on large ground pours if mask is present; move if on pads)
    SILK_BOT: 2 labels touch copper (OK on large ground pours if mask is present; move if on pads)
 == WILKINSON_1x2_6GHz_pitch25
@@ -139,6 +139,6 @@
       features < 0.10 mm wide: area 0.1271 mm2 (check)
    MID: 5 islands, min gap 3.000 mm
    BOT: 23 islands, min gap 0.400 mm
-      features < 0.10 mm wide: area 0.0881 mm2 (check)
+      features < 0.10 mm wide: area 0.0933 mm2 (check)
    SILK_TOP: 14 labels touch copper (OK on large ground pours if mask is present; move if on pads)
    SILK_BOT: 11 labels touch copper (OK on large ground pours if mask is present; move if on pads)

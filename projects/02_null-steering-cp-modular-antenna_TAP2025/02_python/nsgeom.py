@@ -164,10 +164,16 @@ def dipole(b, y0=0.0, front="TOP", back="BOT", feed_w_in=None, decoupling=True):
         b.add(front, arm.intersection(box(-hw, y0, hw, ytop)))
     if decoupling:
         b.add(front, box(hw - d["ls_w"], yg - 0.01, hw, yg + d["ls"]))                   # mutual-coupling stub
-    # back side: feeder + folded microstrip loop crossing the slot line (balun)
-    w2 = d["w2"]; yf = y0 + d["l4f"]; x6 = d["l6"] / 2; ytopl = yf + d["l5"]
-    path = [(0, y0), (0, yf), (-x6, yf), (-x6, ytopl), (x6, ytopl), (x6, ytopl - (d["l5"] - d["l7"]))]
-    b.add(back, thick(path, w2))
+    # back side: microstrip feeder -> closed rectangular loop (left half) + tuning stub (right half),
+    # i.e. the microstrip-to-slotline balun exactly as drawn in Fig. 6(b):
+    #   centre bar at x=0 is the feeder continuing up as the loop's right wall and the slot-line cross-over;
+    #   left wall at -l6/2, top bar spans the full l6, right stub at +l6/2 hangs down to l7 above the loop floor.
+    w2 = d["w2"]; yf = y0 + d["l4f"]; xh = d["l6"] / 2; ytopl = yf + d["l5"]
+    b.add(back, thick([(0, y0), (0, ytopl)], w2))                 # feeder (l4) + loop right wall / slot cross-over (l5)
+    b.add(back, thick([(-xh, yf), (0, yf)], w2))                  # loop floor: left wall -> centre bar
+    b.add(back, thick([(-xh, yf), (-xh, ytopl)], w2))             # loop left wall (l5)
+    b.add(back, thick([(-xh, ytopl), (xh, ytopl)], w2))           # top bar (full l6)
+    b.add(back, thick([(xh, ytopl), (xh, yf + d["l7"])], w2))     # right tuning stub, open l7 above the loop floor
     if feed_w_in and abs(feed_w_in - w2) > 1e-3:
         b.add(back, box(-feed_w_in / 2, y0 - 0.01, feed_w_in / 2, y0 + 0.6))         # width step at the junction
     # silkscreen
