@@ -35,7 +35,7 @@ DP = dict(Lant=24.0, W=25.0, w1=1.6, w2=1.07, l1=1.65, l2=3.1, l3=14.2, l4=4.5, 
           l5=4.0, l6=4.1, l7=0.43, gs=0.11, ls=4.1, ls_w=1.2)
 # l6 printed as "li"; ls (decoupling strip height) and its width not given -> [ASSUMED] ls=4.1, ls_w=1.2
 
-def ellipse(cx, cy, ax, ay, n=96):
+def ellipse(cx, cy, ax, ay, n=256):
     return scale(Point(cx, cy).buffer(1.0, resolution=n // 4), ax, ay)
 
 def thick(pts, w):
@@ -164,16 +164,18 @@ def dipole(b, y0=0.0, front="TOP", back="BOT", feed_w_in=None, decoupling=True):
         b.add(front, arm.intersection(box(-hw, y0, hw, ytop)))
     if decoupling:
         b.add(front, box(hw - d["ls_w"], yg - 0.01, hw, yg + d["ls"]))                   # mutual-coupling stub
-    # back side: microstrip feeder -> closed rectangular loop (left half) + tuning stub (right half),
-    # i.e. the microstrip-to-slotline balun exactly as drawn in Fig. 6(b):
-    #   centre bar at x=0 is the feeder continuing up as the loop's right wall and the slot-line cross-over;
-    #   left wall at -l6/2, top bar spans the full l6, right stub at +l6/2 hangs down to l7 above the loop floor.
+    # back side: microstrip-to-slotline balun as drawn in Fig. 6(b): the feeder (x=0, length l4) ends at the
+    # loop floor and turns left; left wall (l5) up; top bar (l6) across the slot line, which it crosses at x=0;
+    # right tuning stub hangs down, open-ended. Nothing runs up the middle: the slot square (dotted in Fig. 6(b))
+    # lies in the copper-free loop interior. Dimensions are taken centre line to centre line, which keeps the
+    # top bar over the slot line (05_docs/MODEL_VERIFICATION.md lists the conflict between l4, l5, l7 and the
+    # front-view l1-l3). Bars are extended by w2/2 so the corners are filled.
     w2 = d["w2"]; yf = y0 + d["l4f"]; xh = d["l6"] / 2; ytopl = yf + d["l5"]
-    b.add(back, thick([(0, y0), (0, ytopl)], w2))                 # feeder (l4) + loop right wall / slot cross-over (l5)
-    b.add(back, thick([(-xh, yf), (0, yf)], w2))                  # loop floor: left wall -> centre bar
-    b.add(back, thick([(-xh, yf), (-xh, ytopl)], w2))             # loop left wall (l5)
-    b.add(back, thick([(-xh, ytopl), (xh, ytopl)], w2))           # top bar (full l6)
-    b.add(back, thick([(xh, ytopl), (xh, yf + d["l7"])], w2))     # right tuning stub, open l7 above the loop floor
+    b.add(back, thick([(0, y0), (0, yf + w2 / 2)], w2))                    # feeder (l4) up to the floor's top edge
+    b.add(back, thick([(-xh - w2 / 2, yf), (w2 / 2, yf)], w2))            # loop floor: feeder -> left wall
+    b.add(back, thick([(-xh, yf), (-xh, ytopl)], w2))                      # loop left wall (l5)
+    b.add(back, thick([(-xh - w2 / 2, ytopl), (xh + w2 / 2, ytopl)], w2))  # top bar (l6), crosses the slot line
+    b.add(back, thick([(xh, ytopl), (xh, yf + d["l7"])], w2))              # right tuning stub, open end l7 above the floor centre line
     if feed_w_in and abs(feed_w_in - w2) > 1e-3:
         b.add(back, box(-feed_w_in / 2, y0 - 0.01, feed_w_in / 2, y0 + 0.6))         # width step at the junction
     # silkscreen

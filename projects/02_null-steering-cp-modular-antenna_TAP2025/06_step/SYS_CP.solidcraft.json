@@ -1,0 +1,2796 @@
+{
+"commands": [
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": -0.017,
+"name": "U1_A_BOT_Cu_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/U1_A_BOT.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.017,
+"profiles": [
+{
+"point": [
+-7.2,
+5.1499999999999995
+]
+},
+{
+"point": [
+-0.45,
+5.1499999999999995
+]
+},
+{
+"point": [
+0.0,
+29.106961888872227
+]
+},
+{
+"point": [
+0.0,
+1.9999999999999993
+]
+}
+],
+"operation": "new",
+"body_name": "U1_A_BOT_Cu"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U1_A_BOT_Cu",
+"U1_A_BOT_Cu (2)",
+"U1_A_BOT_Cu (3)",
+"U1_A_BOT_Cu (4)"
+],
+"color": "#c8823a"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0.5995,
+"name": "U1_A_MID_Cu_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/U1_A_MID.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.017,
+"profiles": [
+{
+"point": [
+-8.449668700565825,
+18.05399070275041
+]
+}
+],
+"operation": "new",
+"body_name": "U1_A_MID_Cu"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U1_A_MID_Cu"
+],
+"color": "#c8823a"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 1.116,
+"name": "U1_A_TOP_Cu_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/U1_A_TOP.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.017,
+"profiles": [
+{
+"point": [
+-2.5,
+1.2
+]
+},
+{
+"point": [
+2.220446049250313e-16,
+14.498581289964044
+]
+},
+{
+"point": [
+-7.2,
+30.849999999999998
+]
+},
+{
+"point": [
+-0.45,
+30.849999999999998
+]
+},
+{
+"point": [
+-0.855,
+47.849999999999994
+]
+},
+{
+"point": [
+2.5,
+1.2
+]
+},
+{
+"point": [
+0.0,
+34.0
+]
+}
+],
+"operation": "new",
+"body_name": "U1_A_TOP_Cu"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U1_A_TOP_Cu",
+"U1_A_TOP_Cu (2)",
+"U1_A_TOP_Cu (3)",
+"U1_A_TOP_Cu (4)",
+"U1_A_TOP_Cu (5)",
+"U1_A_TOP_Cu (6)",
+"U1_A_TOP_Cu (7)"
+],
+"color": "#c8823a"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0.0,
+"name": "U1_A_lam_lower_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/U1_A_lam_lower.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.608,
+"profiles": [
+{
+"point": [
+0.0,
+30.0
+]
+}
+],
+"operation": "new",
+"body_name": "U1_A_lam_lower"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U1_A_lam_lower"
+],
+"color": "#d8cfa8"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0.608,
+"name": "U1_A_lam_upper_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/U1_A_lam_upper.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.508,
+"profiles": [
+{
+"point": [
+0.0,
+30.0
+]
+}
+],
+"operation": "new",
+"body_name": "U1_A_lam_upper"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U1_A_lam_upper"
+],
+"color": "#e9e1c6"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0.0,
+"name": "U1_A_vias_0_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/U1_A_vias_0.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.608,
+"profiles": [
+{
+"point": [
+-1.4,
+3.1999999999999993
+]
+},
+{
+"point": [
+-1.4,
+1.9999999999999996
+]
+},
+{
+"point": [
+-1.4,
+0.7999999999999994
+]
+},
+{
+"point": [
+1.4,
+3.1999999999999993
+]
+},
+{
+"point": [
+1.4,
+1.9999999999999996
+]
+},
+{
+"point": [
+1.4,
+0.7999999999999994
+]
+}
+],
+"operation": "new",
+"body_name": "U1_A_vias_0"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U1_A_vias_0",
+"U1_A_vias_0 (2)",
+"U1_A_vias_0 (3)",
+"U1_A_vias_0 (4)",
+"U1_A_vias_0 (5)",
+"U1_A_vias_0 (6)"
+],
+"color": "#b87333"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0.608,
+"name": "U1_A_vias_1_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/U1_A_vias_1.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.5080000000000001,
+"profiles": [
+{
+"point": [
+-1.4,
+32.8
+]
+},
+{
+"point": [
+-1.4,
+33.99999999999999
+]
+},
+{
+"point": [
+-1.4,
+35.199999999999996
+]
+},
+{
+"point": [
+1.4,
+32.8
+]
+},
+{
+"point": [
+1.4,
+33.99999999999999
+]
+},
+{
+"point": [
+1.4,
+35.199999999999996
+]
+},
+{
+"point": [
+-2.0,
+1.4
+]
+},
+{
+"point": [
+-2.6,
+1.4
+]
+},
+{
+"point": [
+-3.2,
+1.4
+]
+},
+{
+"point": [
+2.0,
+1.4
+]
+},
+{
+"point": [
+2.6,
+1.4
+]
+},
+{
+"point": [
+3.2,
+1.4
+]
+}
+],
+"operation": "new",
+"body_name": "U1_A_vias_1"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U1_A_vias_1",
+"U1_A_vias_1 (2)",
+"U1_A_vias_1 (3)",
+"U1_A_vias_1 (4)",
+"U1_A_vias_1 (5)",
+"U1_A_vias_1 (6)",
+"U1_A_vias_1 (7)",
+"U1_A_vias_1 (8)",
+"U1_A_vias_1 (9)",
+"U1_A_vias_1 (10)",
+"U1_A_vias_1 (11)",
+"U1_A_vias_1 (12)"
+],
+"color": "#b87333"
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"U1_A_BOT_Cu",
+"U1_A_BOT_Cu (2)",
+"U1_A_BOT_Cu (3)",
+"U1_A_BOT_Cu (4)",
+"U1_A_MID_Cu",
+"U1_A_TOP_Cu",
+"U1_A_TOP_Cu (2)",
+"U1_A_TOP_Cu (3)",
+"U1_A_TOP_Cu (4)",
+"U1_A_TOP_Cu (5)",
+"U1_A_TOP_Cu (6)",
+"U1_A_TOP_Cu (7)",
+"U1_A_lam_lower",
+"U1_A_lam_upper",
+"U1_A_vias_0",
+"U1_A_vias_0 (2)",
+"U1_A_vias_0 (3)",
+"U1_A_vias_0 (4)",
+"U1_A_vias_0 (5)",
+"U1_A_vias_0 (6)",
+"U1_A_vias_1",
+"U1_A_vias_1 (2)",
+"U1_A_vias_1 (3)",
+"U1_A_vias_1 (4)",
+"U1_A_vias_1 (5)",
+"U1_A_vias_1 (6)",
+"U1_A_vias_1 (7)",
+"U1_A_vias_1 (8)",
+"U1_A_vias_1 (9)",
+"U1_A_vias_1 (10)",
+"U1_A_vias_1 (11)",
+"U1_A_vias_1 (12)"
+],
+"translate": [
+0,
+0,
+-0.558
+]
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"U1_A_BOT_Cu",
+"U1_A_BOT_Cu (2)",
+"U1_A_BOT_Cu (3)",
+"U1_A_BOT_Cu (4)",
+"U1_A_MID_Cu",
+"U1_A_TOP_Cu",
+"U1_A_TOP_Cu (2)",
+"U1_A_TOP_Cu (3)",
+"U1_A_TOP_Cu (4)",
+"U1_A_TOP_Cu (5)",
+"U1_A_TOP_Cu (6)",
+"U1_A_TOP_Cu (7)",
+"U1_A_lam_lower",
+"U1_A_lam_upper",
+"U1_A_vias_0",
+"U1_A_vias_0 (2)",
+"U1_A_vias_0 (3)",
+"U1_A_vias_0 (4)",
+"U1_A_vias_0 (5)",
+"U1_A_vias_0 (6)",
+"U1_A_vias_1",
+"U1_A_vias_1 (2)",
+"U1_A_vias_1 (3)",
+"U1_A_vias_1 (4)",
+"U1_A_vias_1 (5)",
+"U1_A_vias_1 (6)",
+"U1_A_vias_1 (7)",
+"U1_A_vias_1 (8)",
+"U1_A_vias_1 (9)",
+"U1_A_vias_1 (10)",
+"U1_A_vias_1 (11)",
+"U1_A_vias_1 (12)"
+],
+"axis": [
+1,
+0,
+0
+],
+"angle": "90 deg"
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"U1_A_BOT_Cu",
+"U1_A_BOT_Cu (2)",
+"U1_A_BOT_Cu (3)",
+"U1_A_BOT_Cu (4)",
+"U1_A_MID_Cu",
+"U1_A_TOP_Cu",
+"U1_A_TOP_Cu (2)",
+"U1_A_TOP_Cu (3)",
+"U1_A_TOP_Cu (4)",
+"U1_A_TOP_Cu (5)",
+"U1_A_TOP_Cu (6)",
+"U1_A_TOP_Cu (7)",
+"U1_A_lam_lower",
+"U1_A_lam_upper",
+"U1_A_vias_0",
+"U1_A_vias_0 (2)",
+"U1_A_vias_0 (3)",
+"U1_A_vias_0 (4)",
+"U1_A_vias_0 (5)",
+"U1_A_vias_0 (6)",
+"U1_A_vias_1",
+"U1_A_vias_1 (2)",
+"U1_A_vias_1 (3)",
+"U1_A_vias_1 (4)",
+"U1_A_vias_1 (5)",
+"U1_A_vias_1 (6)",
+"U1_A_vias_1 (7)",
+"U1_A_vias_1 (8)",
+"U1_A_vias_1 (9)",
+"U1_A_vias_1 (10)",
+"U1_A_vias_1 (11)",
+"U1_A_vias_1 (12)"
+],
+"translate": [
+12.5,
+0,
+0
+]
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"U1_A_BOT_Cu",
+"U1_A_BOT_Cu (2)",
+"U1_A_BOT_Cu (3)",
+"U1_A_BOT_Cu (4)",
+"U1_A_MID_Cu",
+"U1_A_TOP_Cu",
+"U1_A_TOP_Cu (2)",
+"U1_A_TOP_Cu (3)",
+"U1_A_TOP_Cu (4)",
+"U1_A_TOP_Cu (5)",
+"U1_A_TOP_Cu (6)",
+"U1_A_TOP_Cu (7)",
+"U1_A_lam_lower",
+"U1_A_lam_upper",
+"U1_A_vias_0",
+"U1_A_vias_0 (2)",
+"U1_A_vias_0 (3)",
+"U1_A_vias_0 (4)",
+"U1_A_vias_0 (5)",
+"U1_A_vias_0 (6)",
+"U1_A_vias_1",
+"U1_A_vias_1 (2)",
+"U1_A_vias_1 (3)",
+"U1_A_vias_1 (4)",
+"U1_A_vias_1 (5)",
+"U1_A_vias_1 (6)",
+"U1_A_vias_1 (7)",
+"U1_A_vias_1 (8)",
+"U1_A_vias_1 (9)",
+"U1_A_vias_1 (10)",
+"U1_A_vias_1 (11)",
+"U1_A_vias_1 (12)"
+],
+"axis": [
+0,
+0,
+1
+],
+"angle": "45 deg"
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"U1_A_BOT_Cu",
+"U1_A_BOT_Cu (2)",
+"U1_A_BOT_Cu (3)",
+"U1_A_BOT_Cu (4)",
+"U1_A_MID_Cu",
+"U1_A_TOP_Cu",
+"U1_A_TOP_Cu (2)",
+"U1_A_TOP_Cu (3)",
+"U1_A_TOP_Cu (4)",
+"U1_A_TOP_Cu (5)",
+"U1_A_TOP_Cu (6)",
+"U1_A_TOP_Cu (7)",
+"U1_A_lam_lower",
+"U1_A_lam_upper",
+"U1_A_vias_0",
+"U1_A_vias_0 (2)",
+"U1_A_vias_0 (3)",
+"U1_A_vias_0 (4)",
+"U1_A_vias_0 (5)",
+"U1_A_vias_0 (6)",
+"U1_A_vias_1",
+"U1_A_vias_1 (2)",
+"U1_A_vias_1 (3)",
+"U1_A_vias_1 (4)",
+"U1_A_vias_1 (5)",
+"U1_A_vias_1 (6)",
+"U1_A_vias_1 (7)",
+"U1_A_vias_1 (8)",
+"U1_A_vias_1 (9)",
+"U1_A_vias_1 (10)",
+"U1_A_vias_1 (11)",
+"U1_A_vias_1 (12)"
+],
+"translate": [
+0,
+0,
+0.0
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": -0.017,
+"name": "U2_B_BOT_Cu_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/U2_B_BOT.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.017,
+"profiles": [
+{
+"point": [
+0.0,
+1.9999999999999993
+]
+},
+{
+"point": [
+0.45,
+5.1499999999999995
+]
+},
+{
+"point": [
+0.0,
+29.106961888872227
+]
+},
+{
+"point": [
+7.2,
+5.1499999999999995
+]
+}
+],
+"operation": "new",
+"body_name": "U2_B_BOT_Cu"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U2_B_BOT_Cu",
+"U2_B_BOT_Cu (2)",
+"U2_B_BOT_Cu (3)",
+"U2_B_BOT_Cu (4)"
+],
+"color": "#c8823a"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0.5995,
+"name": "U2_B_MID_Cu_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/U2_B_MID.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.017,
+"profiles": [
+{
+"point": [
+-8.449668700565825,
+18.05399070275041
+]
+}
+],
+"operation": "new",
+"body_name": "U2_B_MID_Cu"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U2_B_MID_Cu"
+],
+"color": "#c8823a"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 1.116,
+"name": "U2_B_TOP_Cu_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/U2_B_TOP.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.017,
+"profiles": [
+{
+"point": [
+-2.5,
+1.2
+]
+},
+{
+"point": [
+-1.1102230246251565e-16,
+14.498581289964044
+]
+},
+{
+"point": [
+0.45,
+30.849999999999998
+]
+},
+{
+"point": [
+0.0,
+34.0
+]
+},
+{
+"point": [
+-0.855,
+47.849999999999994
+]
+},
+{
+"point": [
+2.5,
+1.2
+]
+},
+{
+"point": [
+7.2,
+30.849999999999998
+]
+}
+],
+"operation": "new",
+"body_name": "U2_B_TOP_Cu"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U2_B_TOP_Cu",
+"U2_B_TOP_Cu (2)",
+"U2_B_TOP_Cu (3)",
+"U2_B_TOP_Cu (4)",
+"U2_B_TOP_Cu (5)",
+"U2_B_TOP_Cu (6)",
+"U2_B_TOP_Cu (7)"
+],
+"color": "#c8823a"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0.0,
+"name": "U2_B_lam_lower_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/U2_B_lam_lower.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.608,
+"profiles": [
+{
+"point": [
+0.0,
+30.0
+]
+}
+],
+"operation": "new",
+"body_name": "U2_B_lam_lower"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U2_B_lam_lower"
+],
+"color": "#d8cfa8"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0.608,
+"name": "U2_B_lam_upper_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/U2_B_lam_upper.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.508,
+"profiles": [
+{
+"point": [
+0.0,
+30.0
+]
+}
+],
+"operation": "new",
+"body_name": "U2_B_lam_upper"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U2_B_lam_upper"
+],
+"color": "#e9e1c6"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0.0,
+"name": "U2_B_vias_0_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/U2_B_vias_0.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.608,
+"profiles": [
+{
+"point": [
+1.4,
+3.1999999999999993
+]
+},
+{
+"point": [
+1.4,
+1.9999999999999996
+]
+},
+{
+"point": [
+1.4,
+0.7999999999999994
+]
+},
+{
+"point": [
+-1.4,
+3.1999999999999993
+]
+},
+{
+"point": [
+-1.4,
+1.9999999999999996
+]
+},
+{
+"point": [
+-1.4,
+0.7999999999999994
+]
+}
+],
+"operation": "new",
+"body_name": "U2_B_vias_0"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U2_B_vias_0",
+"U2_B_vias_0 (2)",
+"U2_B_vias_0 (3)",
+"U2_B_vias_0 (4)",
+"U2_B_vias_0 (5)",
+"U2_B_vias_0 (6)"
+],
+"color": "#b87333"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0.608,
+"name": "U2_B_vias_1_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/U2_B_vias_1.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.5080000000000001,
+"profiles": [
+{
+"point": [
+1.4,
+32.8
+]
+},
+{
+"point": [
+1.4,
+33.99999999999999
+]
+},
+{
+"point": [
+1.4,
+35.199999999999996
+]
+},
+{
+"point": [
+-1.4,
+32.8
+]
+},
+{
+"point": [
+-1.4,
+33.99999999999999
+]
+},
+{
+"point": [
+-1.4,
+35.199999999999996
+]
+},
+{
+"point": [
+2.0,
+1.4
+]
+},
+{
+"point": [
+2.6,
+1.4
+]
+},
+{
+"point": [
+3.2,
+1.4
+]
+},
+{
+"point": [
+-2.0,
+1.4
+]
+},
+{
+"point": [
+-2.6,
+1.4
+]
+},
+{
+"point": [
+-3.2,
+1.4
+]
+}
+],
+"operation": "new",
+"body_name": "U2_B_vias_1"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U2_B_vias_1",
+"U2_B_vias_1 (2)",
+"U2_B_vias_1 (3)",
+"U2_B_vias_1 (4)",
+"U2_B_vias_1 (5)",
+"U2_B_vias_1 (6)",
+"U2_B_vias_1 (7)",
+"U2_B_vias_1 (8)",
+"U2_B_vias_1 (9)",
+"U2_B_vias_1 (10)",
+"U2_B_vias_1 (11)",
+"U2_B_vias_1 (12)"
+],
+"color": "#b87333"
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"U2_B_BOT_Cu",
+"U2_B_BOT_Cu (2)",
+"U2_B_BOT_Cu (3)",
+"U2_B_BOT_Cu (4)",
+"U2_B_MID_Cu",
+"U2_B_TOP_Cu",
+"U2_B_TOP_Cu (2)",
+"U2_B_TOP_Cu (3)",
+"U2_B_TOP_Cu (4)",
+"U2_B_TOP_Cu (5)",
+"U2_B_TOP_Cu (6)",
+"U2_B_TOP_Cu (7)",
+"U2_B_lam_lower",
+"U2_B_lam_upper",
+"U2_B_vias_0",
+"U2_B_vias_0 (2)",
+"U2_B_vias_0 (3)",
+"U2_B_vias_0 (4)",
+"U2_B_vias_0 (5)",
+"U2_B_vias_0 (6)",
+"U2_B_vias_1",
+"U2_B_vias_1 (2)",
+"U2_B_vias_1 (3)",
+"U2_B_vias_1 (4)",
+"U2_B_vias_1 (5)",
+"U2_B_vias_1 (6)",
+"U2_B_vias_1 (7)",
+"U2_B_vias_1 (8)",
+"U2_B_vias_1 (9)",
+"U2_B_vias_1 (10)",
+"U2_B_vias_1 (11)",
+"U2_B_vias_1 (12)"
+],
+"translate": [
+0,
+0,
+-0.558
+]
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"U2_B_BOT_Cu",
+"U2_B_BOT_Cu (2)",
+"U2_B_BOT_Cu (3)",
+"U2_B_BOT_Cu (4)",
+"U2_B_MID_Cu",
+"U2_B_TOP_Cu",
+"U2_B_TOP_Cu (2)",
+"U2_B_TOP_Cu (3)",
+"U2_B_TOP_Cu (4)",
+"U2_B_TOP_Cu (5)",
+"U2_B_TOP_Cu (6)",
+"U2_B_TOP_Cu (7)",
+"U2_B_lam_lower",
+"U2_B_lam_upper",
+"U2_B_vias_0",
+"U2_B_vias_0 (2)",
+"U2_B_vias_0 (3)",
+"U2_B_vias_0 (4)",
+"U2_B_vias_0 (5)",
+"U2_B_vias_0 (6)",
+"U2_B_vias_1",
+"U2_B_vias_1 (2)",
+"U2_B_vias_1 (3)",
+"U2_B_vias_1 (4)",
+"U2_B_vias_1 (5)",
+"U2_B_vias_1 (6)",
+"U2_B_vias_1 (7)",
+"U2_B_vias_1 (8)",
+"U2_B_vias_1 (9)",
+"U2_B_vias_1 (10)",
+"U2_B_vias_1 (11)",
+"U2_B_vias_1 (12)"
+],
+"axis": [
+1,
+0,
+0
+],
+"angle": "90 deg"
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"U2_B_BOT_Cu",
+"U2_B_BOT_Cu (2)",
+"U2_B_BOT_Cu (3)",
+"U2_B_BOT_Cu (4)",
+"U2_B_MID_Cu",
+"U2_B_TOP_Cu",
+"U2_B_TOP_Cu (2)",
+"U2_B_TOP_Cu (3)",
+"U2_B_TOP_Cu (4)",
+"U2_B_TOP_Cu (5)",
+"U2_B_TOP_Cu (6)",
+"U2_B_TOP_Cu (7)",
+"U2_B_lam_lower",
+"U2_B_lam_upper",
+"U2_B_vias_0",
+"U2_B_vias_0 (2)",
+"U2_B_vias_0 (3)",
+"U2_B_vias_0 (4)",
+"U2_B_vias_0 (5)",
+"U2_B_vias_0 (6)",
+"U2_B_vias_1",
+"U2_B_vias_1 (2)",
+"U2_B_vias_1 (3)",
+"U2_B_vias_1 (4)",
+"U2_B_vias_1 (5)",
+"U2_B_vias_1 (6)",
+"U2_B_vias_1 (7)",
+"U2_B_vias_1 (8)",
+"U2_B_vias_1 (9)",
+"U2_B_vias_1 (10)",
+"U2_B_vias_1 (11)",
+"U2_B_vias_1 (12)"
+],
+"translate": [
+12.5,
+0,
+0
+]
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"U2_B_BOT_Cu",
+"U2_B_BOT_Cu (2)",
+"U2_B_BOT_Cu (3)",
+"U2_B_BOT_Cu (4)",
+"U2_B_MID_Cu",
+"U2_B_TOP_Cu",
+"U2_B_TOP_Cu (2)",
+"U2_B_TOP_Cu (3)",
+"U2_B_TOP_Cu (4)",
+"U2_B_TOP_Cu (5)",
+"U2_B_TOP_Cu (6)",
+"U2_B_TOP_Cu (7)",
+"U2_B_lam_lower",
+"U2_B_lam_upper",
+"U2_B_vias_0",
+"U2_B_vias_0 (2)",
+"U2_B_vias_0 (3)",
+"U2_B_vias_0 (4)",
+"U2_B_vias_0 (5)",
+"U2_B_vias_0 (6)",
+"U2_B_vias_1",
+"U2_B_vias_1 (2)",
+"U2_B_vias_1 (3)",
+"U2_B_vias_1 (4)",
+"U2_B_vias_1 (5)",
+"U2_B_vias_1 (6)",
+"U2_B_vias_1 (7)",
+"U2_B_vias_1 (8)",
+"U2_B_vias_1 (9)",
+"U2_B_vias_1 (10)",
+"U2_B_vias_1 (11)",
+"U2_B_vias_1 (12)"
+],
+"axis": [
+0,
+0,
+1
+],
+"angle": "135 deg"
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"U2_B_BOT_Cu",
+"U2_B_BOT_Cu (2)",
+"U2_B_BOT_Cu (3)",
+"U2_B_BOT_Cu (4)",
+"U2_B_MID_Cu",
+"U2_B_TOP_Cu",
+"U2_B_TOP_Cu (2)",
+"U2_B_TOP_Cu (3)",
+"U2_B_TOP_Cu (4)",
+"U2_B_TOP_Cu (5)",
+"U2_B_TOP_Cu (6)",
+"U2_B_TOP_Cu (7)",
+"U2_B_lam_lower",
+"U2_B_lam_upper",
+"U2_B_vias_0",
+"U2_B_vias_0 (2)",
+"U2_B_vias_0 (3)",
+"U2_B_vias_0 (4)",
+"U2_B_vias_0 (5)",
+"U2_B_vias_0 (6)",
+"U2_B_vias_1",
+"U2_B_vias_1 (2)",
+"U2_B_vias_1 (3)",
+"U2_B_vias_1 (4)",
+"U2_B_vias_1 (5)",
+"U2_B_vias_1 (6)",
+"U2_B_vias_1 (7)",
+"U2_B_vias_1 (8)",
+"U2_B_vias_1 (9)",
+"U2_B_vias_1 (10)",
+"U2_B_vias_1 (11)",
+"U2_B_vias_1 (12)"
+],
+"translate": [
+0,
+0,
+0.0
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": -0.017,
+"name": "U4_A_BOT_Cu_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/U4_A_BOT.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.017,
+"profiles": [
+{
+"point": [
+-7.2,
+5.1499999999999995
+]
+},
+{
+"point": [
+-0.45,
+5.1499999999999995
+]
+},
+{
+"point": [
+0.0,
+29.106961888872227
+]
+},
+{
+"point": [
+0.0,
+1.9999999999999993
+]
+}
+],
+"operation": "new",
+"body_name": "U4_A_BOT_Cu"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U4_A_BOT_Cu",
+"U4_A_BOT_Cu (2)",
+"U4_A_BOT_Cu (3)",
+"U4_A_BOT_Cu (4)"
+],
+"color": "#c8823a"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0.5995,
+"name": "U4_A_MID_Cu_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/U4_A_MID.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.017,
+"profiles": [
+{
+"point": [
+-8.449668700565825,
+18.05399070275041
+]
+}
+],
+"operation": "new",
+"body_name": "U4_A_MID_Cu"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U4_A_MID_Cu"
+],
+"color": "#c8823a"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 1.116,
+"name": "U4_A_TOP_Cu_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/U4_A_TOP.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.017,
+"profiles": [
+{
+"point": [
+-2.5,
+1.2
+]
+},
+{
+"point": [
+2.220446049250313e-16,
+14.498581289964044
+]
+},
+{
+"point": [
+-7.2,
+30.849999999999998
+]
+},
+{
+"point": [
+-0.45,
+30.849999999999998
+]
+},
+{
+"point": [
+-0.855,
+47.849999999999994
+]
+},
+{
+"point": [
+2.5,
+1.2
+]
+},
+{
+"point": [
+0.0,
+34.0
+]
+}
+],
+"operation": "new",
+"body_name": "U4_A_TOP_Cu"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U4_A_TOP_Cu",
+"U4_A_TOP_Cu (2)",
+"U4_A_TOP_Cu (3)",
+"U4_A_TOP_Cu (4)",
+"U4_A_TOP_Cu (5)",
+"U4_A_TOP_Cu (6)",
+"U4_A_TOP_Cu (7)"
+],
+"color": "#c8823a"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0.0,
+"name": "U4_A_lam_lower_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/U4_A_lam_lower.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.608,
+"profiles": [
+{
+"point": [
+0.0,
+30.0
+]
+}
+],
+"operation": "new",
+"body_name": "U4_A_lam_lower"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U4_A_lam_lower"
+],
+"color": "#d8cfa8"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0.608,
+"name": "U4_A_lam_upper_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/U4_A_lam_upper.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.508,
+"profiles": [
+{
+"point": [
+0.0,
+30.0
+]
+}
+],
+"operation": "new",
+"body_name": "U4_A_lam_upper"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U4_A_lam_upper"
+],
+"color": "#e9e1c6"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0.0,
+"name": "U4_A_vias_0_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/U4_A_vias_0.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.608,
+"profiles": [
+{
+"point": [
+-1.4,
+3.1999999999999993
+]
+},
+{
+"point": [
+-1.4,
+1.9999999999999996
+]
+},
+{
+"point": [
+-1.4,
+0.7999999999999994
+]
+},
+{
+"point": [
+1.4,
+3.1999999999999993
+]
+},
+{
+"point": [
+1.4,
+1.9999999999999996
+]
+},
+{
+"point": [
+1.4,
+0.7999999999999994
+]
+}
+],
+"operation": "new",
+"body_name": "U4_A_vias_0"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U4_A_vias_0",
+"U4_A_vias_0 (2)",
+"U4_A_vias_0 (3)",
+"U4_A_vias_0 (4)",
+"U4_A_vias_0 (5)",
+"U4_A_vias_0 (6)"
+],
+"color": "#b87333"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0.608,
+"name": "U4_A_vias_1_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/U4_A_vias_1.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.5080000000000001,
+"profiles": [
+{
+"point": [
+-1.4,
+32.8
+]
+},
+{
+"point": [
+-1.4,
+33.99999999999999
+]
+},
+{
+"point": [
+-1.4,
+35.199999999999996
+]
+},
+{
+"point": [
+1.4,
+32.8
+]
+},
+{
+"point": [
+1.4,
+33.99999999999999
+]
+},
+{
+"point": [
+1.4,
+35.199999999999996
+]
+},
+{
+"point": [
+-2.0,
+1.4
+]
+},
+{
+"point": [
+-2.6,
+1.4
+]
+},
+{
+"point": [
+-3.2,
+1.4
+]
+},
+{
+"point": [
+2.0,
+1.4
+]
+},
+{
+"point": [
+2.6,
+1.4
+]
+},
+{
+"point": [
+3.2,
+1.4
+]
+}
+],
+"operation": "new",
+"body_name": "U4_A_vias_1"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U4_A_vias_1",
+"U4_A_vias_1 (2)",
+"U4_A_vias_1 (3)",
+"U4_A_vias_1 (4)",
+"U4_A_vias_1 (5)",
+"U4_A_vias_1 (6)",
+"U4_A_vias_1 (7)",
+"U4_A_vias_1 (8)",
+"U4_A_vias_1 (9)",
+"U4_A_vias_1 (10)",
+"U4_A_vias_1 (11)",
+"U4_A_vias_1 (12)"
+],
+"color": "#b87333"
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"U4_A_BOT_Cu",
+"U4_A_BOT_Cu (2)",
+"U4_A_BOT_Cu (3)",
+"U4_A_BOT_Cu (4)",
+"U4_A_MID_Cu",
+"U4_A_TOP_Cu",
+"U4_A_TOP_Cu (2)",
+"U4_A_TOP_Cu (3)",
+"U4_A_TOP_Cu (4)",
+"U4_A_TOP_Cu (5)",
+"U4_A_TOP_Cu (6)",
+"U4_A_TOP_Cu (7)",
+"U4_A_lam_lower",
+"U4_A_lam_upper",
+"U4_A_vias_0",
+"U4_A_vias_0 (2)",
+"U4_A_vias_0 (3)",
+"U4_A_vias_0 (4)",
+"U4_A_vias_0 (5)",
+"U4_A_vias_0 (6)",
+"U4_A_vias_1",
+"U4_A_vias_1 (2)",
+"U4_A_vias_1 (3)",
+"U4_A_vias_1 (4)",
+"U4_A_vias_1 (5)",
+"U4_A_vias_1 (6)",
+"U4_A_vias_1 (7)",
+"U4_A_vias_1 (8)",
+"U4_A_vias_1 (9)",
+"U4_A_vias_1 (10)",
+"U4_A_vias_1 (11)",
+"U4_A_vias_1 (12)"
+],
+"translate": [
+0,
+0,
+-0.558
+]
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"U4_A_BOT_Cu",
+"U4_A_BOT_Cu (2)",
+"U4_A_BOT_Cu (3)",
+"U4_A_BOT_Cu (4)",
+"U4_A_MID_Cu",
+"U4_A_TOP_Cu",
+"U4_A_TOP_Cu (2)",
+"U4_A_TOP_Cu (3)",
+"U4_A_TOP_Cu (4)",
+"U4_A_TOP_Cu (5)",
+"U4_A_TOP_Cu (6)",
+"U4_A_TOP_Cu (7)",
+"U4_A_lam_lower",
+"U4_A_lam_upper",
+"U4_A_vias_0",
+"U4_A_vias_0 (2)",
+"U4_A_vias_0 (3)",
+"U4_A_vias_0 (4)",
+"U4_A_vias_0 (5)",
+"U4_A_vias_0 (6)",
+"U4_A_vias_1",
+"U4_A_vias_1 (2)",
+"U4_A_vias_1 (3)",
+"U4_A_vias_1 (4)",
+"U4_A_vias_1 (5)",
+"U4_A_vias_1 (6)",
+"U4_A_vias_1 (7)",
+"U4_A_vias_1 (8)",
+"U4_A_vias_1 (9)",
+"U4_A_vias_1 (10)",
+"U4_A_vias_1 (11)",
+"U4_A_vias_1 (12)"
+],
+"axis": [
+1,
+0,
+0
+],
+"angle": "90 deg"
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"U4_A_BOT_Cu",
+"U4_A_BOT_Cu (2)",
+"U4_A_BOT_Cu (3)",
+"U4_A_BOT_Cu (4)",
+"U4_A_MID_Cu",
+"U4_A_TOP_Cu",
+"U4_A_TOP_Cu (2)",
+"U4_A_TOP_Cu (3)",
+"U4_A_TOP_Cu (4)",
+"U4_A_TOP_Cu (5)",
+"U4_A_TOP_Cu (6)",
+"U4_A_TOP_Cu (7)",
+"U4_A_lam_lower",
+"U4_A_lam_upper",
+"U4_A_vias_0",
+"U4_A_vias_0 (2)",
+"U4_A_vias_0 (3)",
+"U4_A_vias_0 (4)",
+"U4_A_vias_0 (5)",
+"U4_A_vias_0 (6)",
+"U4_A_vias_1",
+"U4_A_vias_1 (2)",
+"U4_A_vias_1 (3)",
+"U4_A_vias_1 (4)",
+"U4_A_vias_1 (5)",
+"U4_A_vias_1 (6)",
+"U4_A_vias_1 (7)",
+"U4_A_vias_1 (8)",
+"U4_A_vias_1 (9)",
+"U4_A_vias_1 (10)",
+"U4_A_vias_1 (11)",
+"U4_A_vias_1 (12)"
+],
+"translate": [
+12.5,
+0,
+0
+]
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"U4_A_BOT_Cu",
+"U4_A_BOT_Cu (2)",
+"U4_A_BOT_Cu (3)",
+"U4_A_BOT_Cu (4)",
+"U4_A_MID_Cu",
+"U4_A_TOP_Cu",
+"U4_A_TOP_Cu (2)",
+"U4_A_TOP_Cu (3)",
+"U4_A_TOP_Cu (4)",
+"U4_A_TOP_Cu (5)",
+"U4_A_TOP_Cu (6)",
+"U4_A_TOP_Cu (7)",
+"U4_A_lam_lower",
+"U4_A_lam_upper",
+"U4_A_vias_0",
+"U4_A_vias_0 (2)",
+"U4_A_vias_0 (3)",
+"U4_A_vias_0 (4)",
+"U4_A_vias_0 (5)",
+"U4_A_vias_0 (6)",
+"U4_A_vias_1",
+"U4_A_vias_1 (2)",
+"U4_A_vias_1 (3)",
+"U4_A_vias_1 (4)",
+"U4_A_vias_1 (5)",
+"U4_A_vias_1 (6)",
+"U4_A_vias_1 (7)",
+"U4_A_vias_1 (8)",
+"U4_A_vias_1 (9)",
+"U4_A_vias_1 (10)",
+"U4_A_vias_1 (11)",
+"U4_A_vias_1 (12)"
+],
+"axis": [
+0,
+0,
+1
+],
+"angle": "225 deg"
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"U4_A_BOT_Cu",
+"U4_A_BOT_Cu (2)",
+"U4_A_BOT_Cu (3)",
+"U4_A_BOT_Cu (4)",
+"U4_A_MID_Cu",
+"U4_A_TOP_Cu",
+"U4_A_TOP_Cu (2)",
+"U4_A_TOP_Cu (3)",
+"U4_A_TOP_Cu (4)",
+"U4_A_TOP_Cu (5)",
+"U4_A_TOP_Cu (6)",
+"U4_A_TOP_Cu (7)",
+"U4_A_lam_lower",
+"U4_A_lam_upper",
+"U4_A_vias_0",
+"U4_A_vias_0 (2)",
+"U4_A_vias_0 (3)",
+"U4_A_vias_0 (4)",
+"U4_A_vias_0 (5)",
+"U4_A_vias_0 (6)",
+"U4_A_vias_1",
+"U4_A_vias_1 (2)",
+"U4_A_vias_1 (3)",
+"U4_A_vias_1 (4)",
+"U4_A_vias_1 (5)",
+"U4_A_vias_1 (6)",
+"U4_A_vias_1 (7)",
+"U4_A_vias_1 (8)",
+"U4_A_vias_1 (9)",
+"U4_A_vias_1 (10)",
+"U4_A_vias_1 (11)",
+"U4_A_vias_1 (12)"
+],
+"translate": [
+0,
+0,
+0.0
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": -0.017,
+"name": "U3_B_BOT_Cu_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/U3_B_BOT.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.017,
+"profiles": [
+{
+"point": [
+0.0,
+1.9999999999999993
+]
+},
+{
+"point": [
+0.45,
+5.1499999999999995
+]
+},
+{
+"point": [
+0.0,
+29.106961888872227
+]
+},
+{
+"point": [
+7.2,
+5.1499999999999995
+]
+}
+],
+"operation": "new",
+"body_name": "U3_B_BOT_Cu"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U3_B_BOT_Cu",
+"U3_B_BOT_Cu (2)",
+"U3_B_BOT_Cu (3)",
+"U3_B_BOT_Cu (4)"
+],
+"color": "#c8823a"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0.5995,
+"name": "U3_B_MID_Cu_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/U3_B_MID.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.017,
+"profiles": [
+{
+"point": [
+-8.449668700565825,
+18.05399070275041
+]
+}
+],
+"operation": "new",
+"body_name": "U3_B_MID_Cu"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U3_B_MID_Cu"
+],
+"color": "#c8823a"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 1.116,
+"name": "U3_B_TOP_Cu_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/U3_B_TOP.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.017,
+"profiles": [
+{
+"point": [
+-2.5,
+1.2
+]
+},
+{
+"point": [
+-1.1102230246251565e-16,
+14.498581289964044
+]
+},
+{
+"point": [
+0.45,
+30.849999999999998
+]
+},
+{
+"point": [
+0.0,
+34.0
+]
+},
+{
+"point": [
+-0.855,
+47.849999999999994
+]
+},
+{
+"point": [
+2.5,
+1.2
+]
+},
+{
+"point": [
+7.2,
+30.849999999999998
+]
+}
+],
+"operation": "new",
+"body_name": "U3_B_TOP_Cu"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U3_B_TOP_Cu",
+"U3_B_TOP_Cu (2)",
+"U3_B_TOP_Cu (3)",
+"U3_B_TOP_Cu (4)",
+"U3_B_TOP_Cu (5)",
+"U3_B_TOP_Cu (6)",
+"U3_B_TOP_Cu (7)"
+],
+"color": "#c8823a"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0.0,
+"name": "U3_B_lam_lower_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/U3_B_lam_lower.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.608,
+"profiles": [
+{
+"point": [
+0.0,
+30.0
+]
+}
+],
+"operation": "new",
+"body_name": "U3_B_lam_lower"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U3_B_lam_lower"
+],
+"color": "#d8cfa8"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0.608,
+"name": "U3_B_lam_upper_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/U3_B_lam_upper.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.508,
+"profiles": [
+{
+"point": [
+0.0,
+30.0
+]
+}
+],
+"operation": "new",
+"body_name": "U3_B_lam_upper"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U3_B_lam_upper"
+],
+"color": "#e9e1c6"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0.0,
+"name": "U3_B_vias_0_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/U3_B_vias_0.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.608,
+"profiles": [
+{
+"point": [
+1.4,
+3.1999999999999993
+]
+},
+{
+"point": [
+1.4,
+1.9999999999999996
+]
+},
+{
+"point": [
+1.4,
+0.7999999999999994
+]
+},
+{
+"point": [
+-1.4,
+3.1999999999999993
+]
+},
+{
+"point": [
+-1.4,
+1.9999999999999996
+]
+},
+{
+"point": [
+-1.4,
+0.7999999999999994
+]
+}
+],
+"operation": "new",
+"body_name": "U3_B_vias_0"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U3_B_vias_0",
+"U3_B_vias_0 (2)",
+"U3_B_vias_0 (3)",
+"U3_B_vias_0 (4)",
+"U3_B_vias_0 (5)",
+"U3_B_vias_0 (6)"
+],
+"color": "#b87333"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0.608,
+"name": "U3_B_vias_1_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/U3_B_vias_1.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.5080000000000001,
+"profiles": [
+{
+"point": [
+1.4,
+32.8
+]
+},
+{
+"point": [
+1.4,
+33.99999999999999
+]
+},
+{
+"point": [
+1.4,
+35.199999999999996
+]
+},
+{
+"point": [
+-1.4,
+32.8
+]
+},
+{
+"point": [
+-1.4,
+33.99999999999999
+]
+},
+{
+"point": [
+-1.4,
+35.199999999999996
+]
+},
+{
+"point": [
+2.0,
+1.4
+]
+},
+{
+"point": [
+2.6,
+1.4
+]
+},
+{
+"point": [
+3.2,
+1.4
+]
+},
+{
+"point": [
+-2.0,
+1.4
+]
+},
+{
+"point": [
+-2.6,
+1.4
+]
+},
+{
+"point": [
+-3.2,
+1.4
+]
+}
+],
+"operation": "new",
+"body_name": "U3_B_vias_1"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U3_B_vias_1",
+"U3_B_vias_1 (2)",
+"U3_B_vias_1 (3)",
+"U3_B_vias_1 (4)",
+"U3_B_vias_1 (5)",
+"U3_B_vias_1 (6)",
+"U3_B_vias_1 (7)",
+"U3_B_vias_1 (8)",
+"U3_B_vias_1 (9)",
+"U3_B_vias_1 (10)",
+"U3_B_vias_1 (11)",
+"U3_B_vias_1 (12)"
+],
+"color": "#b87333"
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"U3_B_BOT_Cu",
+"U3_B_BOT_Cu (2)",
+"U3_B_BOT_Cu (3)",
+"U3_B_BOT_Cu (4)",
+"U3_B_MID_Cu",
+"U3_B_TOP_Cu",
+"U3_B_TOP_Cu (2)",
+"U3_B_TOP_Cu (3)",
+"U3_B_TOP_Cu (4)",
+"U3_B_TOP_Cu (5)",
+"U3_B_TOP_Cu (6)",
+"U3_B_TOP_Cu (7)",
+"U3_B_lam_lower",
+"U3_B_lam_upper",
+"U3_B_vias_0",
+"U3_B_vias_0 (2)",
+"U3_B_vias_0 (3)",
+"U3_B_vias_0 (4)",
+"U3_B_vias_0 (5)",
+"U3_B_vias_0 (6)",
+"U3_B_vias_1",
+"U3_B_vias_1 (2)",
+"U3_B_vias_1 (3)",
+"U3_B_vias_1 (4)",
+"U3_B_vias_1 (5)",
+"U3_B_vias_1 (6)",
+"U3_B_vias_1 (7)",
+"U3_B_vias_1 (8)",
+"U3_B_vias_1 (9)",
+"U3_B_vias_1 (10)",
+"U3_B_vias_1 (11)",
+"U3_B_vias_1 (12)"
+],
+"translate": [
+0,
+0,
+-0.558
+]
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"U3_B_BOT_Cu",
+"U3_B_BOT_Cu (2)",
+"U3_B_BOT_Cu (3)",
+"U3_B_BOT_Cu (4)",
+"U3_B_MID_Cu",
+"U3_B_TOP_Cu",
+"U3_B_TOP_Cu (2)",
+"U3_B_TOP_Cu (3)",
+"U3_B_TOP_Cu (4)",
+"U3_B_TOP_Cu (5)",
+"U3_B_TOP_Cu (6)",
+"U3_B_TOP_Cu (7)",
+"U3_B_lam_lower",
+"U3_B_lam_upper",
+"U3_B_vias_0",
+"U3_B_vias_0 (2)",
+"U3_B_vias_0 (3)",
+"U3_B_vias_0 (4)",
+"U3_B_vias_0 (5)",
+"U3_B_vias_0 (6)",
+"U3_B_vias_1",
+"U3_B_vias_1 (2)",
+"U3_B_vias_1 (3)",
+"U3_B_vias_1 (4)",
+"U3_B_vias_1 (5)",
+"U3_B_vias_1 (6)",
+"U3_B_vias_1 (7)",
+"U3_B_vias_1 (8)",
+"U3_B_vias_1 (9)",
+"U3_B_vias_1 (10)",
+"U3_B_vias_1 (11)",
+"U3_B_vias_1 (12)"
+],
+"axis": [
+1,
+0,
+0
+],
+"angle": "90 deg"
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"U3_B_BOT_Cu",
+"U3_B_BOT_Cu (2)",
+"U3_B_BOT_Cu (3)",
+"U3_B_BOT_Cu (4)",
+"U3_B_MID_Cu",
+"U3_B_TOP_Cu",
+"U3_B_TOP_Cu (2)",
+"U3_B_TOP_Cu (3)",
+"U3_B_TOP_Cu (4)",
+"U3_B_TOP_Cu (5)",
+"U3_B_TOP_Cu (6)",
+"U3_B_TOP_Cu (7)",
+"U3_B_lam_lower",
+"U3_B_lam_upper",
+"U3_B_vias_0",
+"U3_B_vias_0 (2)",
+"U3_B_vias_0 (3)",
+"U3_B_vias_0 (4)",
+"U3_B_vias_0 (5)",
+"U3_B_vias_0 (6)",
+"U3_B_vias_1",
+"U3_B_vias_1 (2)",
+"U3_B_vias_1 (3)",
+"U3_B_vias_1 (4)",
+"U3_B_vias_1 (5)",
+"U3_B_vias_1 (6)",
+"U3_B_vias_1 (7)",
+"U3_B_vias_1 (8)",
+"U3_B_vias_1 (9)",
+"U3_B_vias_1 (10)",
+"U3_B_vias_1 (11)",
+"U3_B_vias_1 (12)"
+],
+"translate": [
+12.5,
+0,
+0
+]
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"U3_B_BOT_Cu",
+"U3_B_BOT_Cu (2)",
+"U3_B_BOT_Cu (3)",
+"U3_B_BOT_Cu (4)",
+"U3_B_MID_Cu",
+"U3_B_TOP_Cu",
+"U3_B_TOP_Cu (2)",
+"U3_B_TOP_Cu (3)",
+"U3_B_TOP_Cu (4)",
+"U3_B_TOP_Cu (5)",
+"U3_B_TOP_Cu (6)",
+"U3_B_TOP_Cu (7)",
+"U3_B_lam_lower",
+"U3_B_lam_upper",
+"U3_B_vias_0",
+"U3_B_vias_0 (2)",
+"U3_B_vias_0 (3)",
+"U3_B_vias_0 (4)",
+"U3_B_vias_0 (5)",
+"U3_B_vias_0 (6)",
+"U3_B_vias_1",
+"U3_B_vias_1 (2)",
+"U3_B_vias_1 (3)",
+"U3_B_vias_1 (4)",
+"U3_B_vias_1 (5)",
+"U3_B_vias_1 (6)",
+"U3_B_vias_1 (7)",
+"U3_B_vias_1 (8)",
+"U3_B_vias_1 (9)",
+"U3_B_vias_1 (10)",
+"U3_B_vias_1 (11)",
+"U3_B_vias_1 (12)"
+],
+"axis": [
+0,
+0,
+1
+],
+"angle": "315 deg"
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"U3_B_BOT_Cu",
+"U3_B_BOT_Cu (2)",
+"U3_B_BOT_Cu (3)",
+"U3_B_BOT_Cu (4)",
+"U3_B_MID_Cu",
+"U3_B_TOP_Cu",
+"U3_B_TOP_Cu (2)",
+"U3_B_TOP_Cu (3)",
+"U3_B_TOP_Cu (4)",
+"U3_B_TOP_Cu (5)",
+"U3_B_TOP_Cu (6)",
+"U3_B_TOP_Cu (7)",
+"U3_B_lam_lower",
+"U3_B_lam_upper",
+"U3_B_vias_0",
+"U3_B_vias_0 (2)",
+"U3_B_vias_0 (3)",
+"U3_B_vias_0 (4)",
+"U3_B_vias_0 (5)",
+"U3_B_vias_0 (6)",
+"U3_B_vias_1",
+"U3_B_vias_1 (2)",
+"U3_B_vias_1 (3)",
+"U3_B_vias_1 (4)",
+"U3_B_vias_1 (5)",
+"U3_B_vias_1 (6)",
+"U3_B_vias_1 (7)",
+"U3_B_vias_1 (8)",
+"U3_B_vias_1 (9)",
+"U3_B_vias_1 (10)",
+"U3_B_vias_1 (11)",
+"U3_B_vias_1 (12)"
+],
+"translate": [
+0,
+0,
+0.0
+]
+}
+}
+]
+}

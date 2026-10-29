@@ -9,6 +9,16 @@
         "."
       ],
       "env": {}
+    },
+    "kicad": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "/opt/KiCAD-MCP-Server/dist/index.js"
+      ],
+      "env": {
+        "KICAD_PYTHON": "/opt/KiCAD-MCP-Server/kicad-python-chroot.sh"
+      }
     }
   }
 }

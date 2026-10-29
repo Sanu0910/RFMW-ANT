@@ -10,7 +10,7 @@ Verified: MCP `initialize`, `tools/list` (244 tools), `open_project` and `get_bo
 `projects/07_ais140-2w-gnss-tracker`. Real-time IPC (live KiCad GUI) is not available headless — the server
 uses the SWIG backend on files.
 
-Register it:
+It is registered for this repository as `kicad` in `.mcp.json` (enabled in `.claude/settings.json`), so it connects in any session started after the install script has run. To register it elsewhere:
 
 ```bash
 claude mcp add kicad -e KICAD_PYTHON=/opt/KiCAD-MCP-Server/kicad-python-chroot.sh -- node /opt/KiCAD-MCP-Server/dist/index.js

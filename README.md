@@ -52,6 +52,8 @@ cd projects/03_1bit-rba-mmwave-1x5_AWPL2026/02_python && python rba_array.py && 
 ## Conventions
 [`docs/CONVENTIONS.md`](docs/CONVENTIONS.md) covers units, DXF layer naming, HFSS import, and how assumptions are flagged.
 
+Each project has a `STATUS.md` (where it stands, open items, next step) and a `CHANGELOG.md` (dated history). Start there when coming back to a project. The tool setup is in [`STATUS.md`](STATUS.md).
+
 ## Status
 | Item | Status |
 |---|---|
