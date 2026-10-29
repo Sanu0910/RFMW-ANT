@@ -43,6 +43,8 @@ Reverse engineering: [`docs/REA.md`](docs/REA.md) — REA (Reverse Engineer Anyt
 - STEP models (project 04 on), built with [SolidCraft](https://github.com/bherbruck/solidcraft) `solidcraft-cli`
 
 ## Quick start
+**Running locally (all tools + MCP servers) and pushing finished projects:** see [`LOCAL_SETUP.md`](LOCAL_SETUP.md).
+
 ```bash
 pip install -r docs/requirements.txt
 cd projects/03_1bit-rba-mmwave-1x5_AWPL2026/02_python && python rba_array.py && python build_rba.py

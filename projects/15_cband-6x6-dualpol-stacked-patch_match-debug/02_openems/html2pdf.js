@@ -1,5 +1,10 @@
 // usage: node html2pdf.js in.html out.pdf   (uses the preinstalled Playwright Chromium)
-const { chromium } = require('playwright');
+let pw;
+try { pw = require('playwright'); } catch (e) {   // fall back to a global npm install
+  const root = require('child_process').execSync('npm root -g').toString().trim();
+  pw = require(require('path').join(root, 'playwright'));
+}
+const { chromium } = pw;
 (async () => {
   const [inp, out] = process.argv.slice(2);
   const b = await chromium.launch();

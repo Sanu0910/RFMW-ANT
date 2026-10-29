@@ -3,22 +3,20 @@
     "solidcraft": {
       "type": "stdio",
       "command": "solidcraft-cli",
-      "args": [
-        "mcp",
-        "--allow-path",
-        "."
-      ],
+      "args": ["mcp", "--allow-path", "."],
       "env": {}
     },
     "kicad": {
       "type": "stdio",
-      "command": "node",
-      "args": [
-        "/opt/KiCAD-MCP-Server/dist/index.js"
-      ],
-      "env": {
-        "KICAD_PYTHON": "/opt/KiCAD-MCP-Server/kicad-python-chroot.sh"
-      }
+      "command": "sh",
+      "args": ["tools/mcp/kicad.sh"],
+      "env": {}
+    },
+    "hertzon": {
+      "type": "stdio",
+      "command": "sh",
+      "args": ["tools/mcp/hertzon.sh"],
+      "env": {}
     }
   }
 }

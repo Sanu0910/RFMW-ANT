@@ -12,3 +12,7 @@ freerouting*.log
 *.dsn
 *.ses
 *.kicad_prl
+
+# local Python env and solver output
+.venv/
+**/sim/
