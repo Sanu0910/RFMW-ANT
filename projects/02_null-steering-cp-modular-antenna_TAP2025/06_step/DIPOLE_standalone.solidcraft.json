@@ -1,0 +1,133 @@
+{
+"commands": [
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": -0.017,
+"name": "BOT_Cu_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/BOT.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.017,
+"profiles": [
+{
+"point": [
+-1.025,
+4.715
+]
+}
+],
+"operation": "new",
+"body_name": "BOT_Cu"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"BOT_Cu"
+],
+"color": "#c8823a"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0.508,
+"name": "TOP_Cu_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/TOP.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.017,
+"profiles": [
+{
+"point": [
+-0.855,
+11.850000000000001
+]
+}
+],
+"operation": "new",
+"body_name": "TOP_Cu"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"TOP_Cu"
+],
+"color": "#c8823a"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0.0,
+"name": "lam_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/lam.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.508,
+"profiles": [
+{
+"point": [
+0.0,
+12.0
+]
+}
+],
+"operation": "new",
+"body_name": "lam"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"lam"
+],
+"color": "#e9e1c6"
+}
+}
+]
+}

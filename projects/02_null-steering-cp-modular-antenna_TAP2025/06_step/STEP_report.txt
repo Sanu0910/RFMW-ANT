@@ -1,0 +1,209 @@
+STEP build report (SolidCraft 0.26.1) - every body measured by SolidCraft vs. area x thickness from nsgeom.py
+Tolerance 0.050 % per body; extents checked against the paper's board sizes (W = 25, L = 36 + 24 mm) and stack-up.
+
+== DIPOLE_standalone: 3 bodies, total volume 310.2837 mm3
+   body                           count   expected mm3 SolidCraft mm3     error
+   BOT_Cu                         1/1          0.33142        0.33142  -0.0000%  PASS
+   TOP_Cu                         1/1          5.15229        5.15229  +0.0000%  PASS
+   lam                            1/1        304.80000      304.80000  -0.0000%  PASS
+   x extent  -12.5000 ..   12.5000   expected  -12.5000 ..   12.5000   PASS
+   y extent    0.0000 ..   24.0000   expected    0.0000 ..   24.0000   PASS
+   z extent   -0.0170 ..    0.5250   expected   -0.0170 ..    0.5250   PASS
+   ALL PASS
+
+== PS_standalone: 39 bodies, total volume 1022.8045 mm3
+   body                           count   expected mm3 SolidCraft mm3     error
+   BOT_Cu                         6/6          1.63440        1.63440  +0.0000%  PASS
+   MID_Cu                         1/1         14.26614       14.26614  -0.0000%  PASS
+   TOP_Cu                         6/6          1.55775        1.55775  -0.0000%  PASS
+   lam_lower                      1/1        547.20000      547.20000  +0.0000%  PASS
+   lam_upper                      1/1        457.20000      457.20000  +0.0000%  PASS
+   vias_0                        12/12         0.51572        0.51549  -0.0451%  PASS
+   vias_1                        12/12         0.43090        0.43071  -0.0451%  PASS
+   x extent  -12.5000 ..   12.5000   expected  -12.5000 ..   12.5000   PASS
+   y extent    0.0000 ..   36.0000   expected    0.0000 ..   36.0000   PASS
+   z extent   -0.0170 ..    1.1330   expected   -0.0170 ..    1.1330   PASS
+   ALL PASS
+
+== UNIT_A_mid-paper: 32 bodies, total volume 1697.4540 mm3
+   body                           count   expected mm3 SolidCraft mm3     error
+   BOT_Cu                         4/4          1.78938        1.78938  -0.0000%  PASS
+   MID_Cu                         1/1         14.26614       14.26614  -0.0000%  PASS
+   TOP_Cu                         7/7          6.71004        6.71004  -0.0000%  PASS
+   lam_lower                      1/1        912.00000      912.00000  +0.0000%  PASS
+   lam_upper                      1/1        762.00000      762.00000  +0.0000%  PASS
+   vias_0                         6/6          0.25786        0.25775  -0.0451%  PASS
+   vias_1                        12/12         0.43090        0.43071  -0.0451%  PASS
+   x extent  -12.5000 ..   12.5000   expected  -12.5000 ..   12.5000   PASS
+   y extent    0.0000 ..   60.0000   expected    0.0000 ..   60.0000   PASS
+   z extent   -0.0170 ..    1.1330   expected   -0.0170 ..    1.1330   PASS
+   ALL PASS
+
+== UNIT_B_mid-paper: 32 bodies, total volume 1697.4540 mm3
+   body                           count   expected mm3 SolidCraft mm3     error
+   BOT_Cu                         4/4          1.78938        1.78938  +0.0000%  PASS
+   MID_Cu                         1/1         14.26614       14.26614  -0.0000%  PASS
+   TOP_Cu                         7/7          6.71004        6.71004  -0.0000%  PASS
+   lam_lower                      1/1        912.00000      912.00000  +0.0000%  PASS
+   lam_upper                      1/1        762.00000      762.00000  +0.0000%  PASS
+   vias_0                         6/6          0.25786        0.25775  -0.0451%  PASS
+   vias_1                        12/12         0.43090        0.43071  -0.0451%  PASS
+   x extent  -12.5000 ..   12.5000   expected  -12.5000 ..   12.5000   PASS
+   y extent    0.0000 ..   60.0000   expected    0.0000 ..   60.0000   PASS
+   z extent   -0.0170 ..    1.1330   expected   -0.0170 ..    1.1330   PASS
+   ALL PASS
+
+== UNIT_A_mid-extended: 50 bodies, total volume 1702.2130 mm3
+   body                           count   expected mm3 SolidCraft mm3     error
+   BOT_Cu                         4/4          1.78938        1.78938  -0.0000%  PASS
+   MID_Cu                         1/1         18.37906       18.37906  +0.0000%  PASS
+   TOP_Cu                         7/7          6.71004        6.71004  -0.0000%  PASS
+   lam_lower                      1/1        912.00000      912.00000  +0.0000%  PASS
+   lam_upper                      1/1        762.00000      762.00000  +0.0000%  PASS
+   vias_0                         6/6          0.25786        0.25775  -0.0451%  PASS
+   vias_1                        30/30         1.07725        1.07677  -0.0451%  PASS
+   x extent  -12.5000 ..   12.5000   expected  -12.5000 ..   12.5000   PASS
+   y extent    0.0000 ..   60.0000   expected    0.0000 ..   60.0000   PASS
+   z extent   -0.0170 ..    1.1330   expected   -0.0170 ..    1.1330   PASS
+   ALL PASS
+
+== UNIT_B_mid-extended: 50 bodies, total volume 1702.2130 mm3
+   body                           count   expected mm3 SolidCraft mm3     error
+   BOT_Cu                         4/4          1.78938        1.78938  +0.0000%  PASS
+   MID_Cu                         1/1         18.37906       18.37906  +0.0000%  PASS
+   TOP_Cu                         7/7          6.71004        6.71004  -0.0000%  PASS
+   lam_lower                      1/1        912.00000      912.00000  +0.0000%  PASS
+   lam_upper                      1/1        762.00000      762.00000  +0.0000%  PASS
+   vias_0                         6/6          0.25786        0.25775  -0.0451%  PASS
+   vias_1                        30/30         1.07725        1.07677  -0.0451%  PASS
+   x extent  -12.5000 ..   12.5000   expected  -12.5000 ..   12.5000   PASS
+   y extent    0.0000 ..   60.0000   expected    0.0000 ..   60.0000   PASS
+   z extent   -0.0170 ..    1.1330   expected   -0.0170 ..    1.1330   PASS
+   ALL PASS
+
+== SYS_1D: 64 bodies, total volume 3394.9080 mm3
+   body                           count   expected mm3 SolidCraft mm3     error
+   U1_A_BOT_Cu                    4/4          1.78938        1.78938  +0.0000%  PASS
+   U1_A_MID_Cu                    1/1         14.26614       14.26614  -0.0000%  PASS
+   U1_A_TOP_Cu                    7/7          6.71004        6.71004  -0.0000%  PASS
+   U1_A_lam_lower                 1/1        912.00000      912.00000  +0.0000%  PASS
+   U1_A_lam_upper                 1/1        762.00000      762.00000  +0.0000%  PASS
+   U1_A_vias_0                    6/6          0.25786        0.25775  -0.0451%  PASS
+   U1_A_vias_1                   12/12         0.43090        0.43071  -0.0451%  PASS
+   U2_B_BOT_Cu                    4/4          1.78938        1.78938  +0.0000%  PASS
+   U2_B_MID_Cu                    1/1         14.26614       14.26614  -0.0000%  PASS
+   U2_B_TOP_Cu                    7/7          6.71004        6.71004  -0.0000%  PASS
+   U2_B_lam_lower                 1/1        912.00000      912.00000  +0.0000%  PASS
+   U2_B_lam_upper                 1/1        762.00000      762.00000  +0.0000%  PASS
+   U2_B_vias_0                    6/6          0.25786        0.25775  -0.0451%  PASS
+   U2_B_vias_1                   12/12         0.43090        0.43071  -0.0451%  PASS
+   x extent  -25.0000 ..   25.0000   expected  -25.0000 ..   25.0000   PASS
+   y extent   -0.5750 ..    0.5750   expected   -0.5750 ..    0.5750   PASS
+   z extent   -0.0000 ..   60.0000   expected    0.0000 ..   60.0000   PASS
+   ALL PASS
+
+== SYS_2D: 128 bodies, total volume 6789.8161 mm3
+   body                           count   expected mm3 SolidCraft mm3     error
+   U1_A_BOT_Cu                    4/4          1.78938        1.78938  +0.0000%  PASS
+   U1_A_MID_Cu                    1/1         14.26614       14.26614  +0.0000%  PASS
+   U1_A_TOP_Cu                    7/7          6.71004        6.71004  -0.0000%  PASS
+   U1_A_lam_lower                 1/1        912.00000      912.00000  -0.0000%  PASS
+   U1_A_lam_upper                 1/1        762.00000      762.00000  +0.0000%  PASS
+   U1_A_vias_0                    6/6          0.25786        0.25775  -0.0451%  PASS
+   U1_A_vias_1                   12/12         0.43090        0.43071  -0.0451%  PASS
+   U2_B_BOT_Cu                    4/4          1.78938        1.78938  +0.0000%  PASS
+   U2_B_MID_Cu                    1/1         14.26614       14.26614  +0.0000%  PASS
+   U2_B_TOP_Cu                    7/7          6.71004        6.71004  -0.0000%  PASS
+   U2_B_lam_lower                 1/1        912.00000      912.00000  -0.0000%  PASS
+   U2_B_lam_upper                 1/1        762.00000      762.00000  +0.0000%  PASS
+   U2_B_vias_0                    6/6          0.25786        0.25775  -0.0451%  PASS
+   U2_B_vias_1                   12/12         0.43090        0.43071  -0.0451%  PASS
+   U3_B_BOT_Cu                    4/4          1.78938        1.78938  +0.0000%  PASS
+   U3_B_MID_Cu                    1/1         14.26614       14.26614  +0.0000%  PASS
+   U3_B_TOP_Cu                    7/7          6.71004        6.71004  -0.0000%  PASS
+   U3_B_lam_lower                 1/1        912.00000      912.00000  -0.0000%  PASS
+   U3_B_lam_upper                 1/1        762.00000      762.00000  +0.0000%  PASS
+   U3_B_vias_0                    6/6          0.25786        0.25775  -0.0451%  PASS
+   U3_B_vias_1                   12/12         0.43090        0.43071  -0.0451%  PASS
+   U4_A_BOT_Cu                    4/4          1.78938        1.78938  +0.0000%  PASS
+   U4_A_MID_Cu                    1/1         14.26614       14.26614  +0.0000%  PASS
+   U4_A_TOP_Cu                    7/7          6.71004        6.71004  -0.0000%  PASS
+   U4_A_lam_lower                 1/1        912.00000      912.00000  -0.0000%  PASS
+   U4_A_lam_upper                 1/1        762.00000      762.00000  +0.0000%  PASS
+   U4_A_vias_0                    6/6          0.25786        0.25775  -0.0451%  PASS
+   U4_A_vias_1                   12/12         0.43090        0.43071  -0.0451%  PASS
+   x extent  -25.0000 ..   25.0000   expected  -25.0000 ..   25.0000   PASS
+   y extent  -13.0750 ..   13.0750   expected  -13.0750 ..   13.0750   PASS
+   z extent   -0.0000 ..   60.0000   expected    0.0000 ..   60.0000   PASS
+   ALL PASS
+
+== SYS_CP: 128 bodies, total volume 6789.8161 mm3
+   body                           count   expected mm3 SolidCraft mm3     error
+   U1_A_BOT_Cu                    4/4          1.78938        1.78938  -0.0000%  PASS
+   U1_A_MID_Cu                    1/1         14.26614       14.26614  +0.0000%  PASS
+   U1_A_TOP_Cu                    7/7          6.71004        6.71004  -0.0000%  PASS
+   U1_A_lam_lower                 1/1        912.00000      912.00000  +0.0000%  PASS
+   U1_A_lam_upper                 1/1        762.00000      762.00000  -0.0000%  PASS
+   U1_A_vias_0                    6/6          0.25786        0.25775  -0.0451%  PASS
+   U1_A_vias_1                   12/12         0.43090        0.43071  -0.0451%  PASS
+   U2_B_BOT_Cu                    4/4          1.78938        1.78938  +0.0000%  PASS
+   U2_B_MID_Cu                    1/1         14.26614       14.26614  +0.0000%  PASS
+   U2_B_TOP_Cu                    7/7          6.71004        6.71004  +0.0000%  PASS
+   U2_B_lam_lower                 1/1        912.00000      912.00000  +0.0000%  PASS
+   U2_B_lam_upper                 1/1        762.00000      762.00000  -0.0000%  PASS
+   U2_B_vias_0                    6/6          0.25786        0.25775  -0.0451%  PASS
+   U2_B_vias_1                   12/12         0.43090        0.43071  -0.0451%  PASS
+   U4_A_BOT_Cu                    4/4          1.78938        1.78938  -0.0000%  PASS
+   U4_A_MID_Cu                    1/1         14.26614       14.26614  +0.0000%  PASS
+   U4_A_TOP_Cu                    7/7          6.71004        6.71004  -0.0000%  PASS
+   U4_A_lam_lower                 1/1        912.00000      912.00000  +0.0000%  PASS
+   U4_A_lam_upper                 1/1        762.00000      762.00000  -0.0000%  PASS
+   U4_A_vias_0                    6/6          0.25786        0.25775  -0.0451%  PASS
+   U4_A_vias_1                   12/12         0.43090        0.43071  -0.0451%  PASS
+   U3_B_BOT_Cu                    4/4          1.78938        1.78938  -0.0000%  PASS
+   U3_B_MID_Cu                    1/1         14.26614       14.26614  +0.0000%  PASS
+   U3_B_TOP_Cu                    7/7          6.71004        6.71004  -0.0000%  PASS
+   U3_B_lam_lower                 1/1        912.00000      912.00000  +0.0000%  PASS
+   U3_B_lam_upper                 1/1        762.00000      762.00000  -0.0000%  PASS
+   U3_B_vias_0                    6/6          0.25786        0.25775  -0.0451%  PASS
+   U3_B_vias_1                   12/12         0.43090        0.43071  -0.0451%  PASS
+   x extent  -18.0843 ..   18.0843   expected  -18.0843 ..   18.0843   PASS
+   y extent  -18.0843 ..   18.0843   expected  -18.0843 ..   18.0843   PASS
+   z extent   -0.0000 ..   60.0000   expected    0.0000 ..   60.0000   PASS
+   ALL PASS
+
+== SYS_CP_cophased: 128 bodies, total volume 6789.8161 mm3
+   body                           count   expected mm3 SolidCraft mm3     error
+   U1_A_BOT_Cu                    4/4          1.78938        1.78938  -0.0000%  PASS
+   U1_A_MID_Cu                    1/1         14.26614       14.26614  +0.0000%  PASS
+   U1_A_TOP_Cu                    7/7          6.71004        6.71004  -0.0000%  PASS
+   U1_A_lam_lower                 1/1        912.00000      912.00000  +0.0000%  PASS
+   U1_A_lam_upper                 1/1        762.00000      762.00000  -0.0000%  PASS
+   U1_A_vias_0                    6/6          0.25786        0.25775  -0.0451%  PASS
+   U1_A_vias_1                   12/12         0.43090        0.43071  -0.0451%  PASS
+   U2_A_BOT_Cu                    4/4          1.78938        1.78938  -0.0000%  PASS
+   U2_A_MID_Cu                    1/1         14.26614       14.26614  +0.0000%  PASS
+   U2_A_TOP_Cu                    7/7          6.71004        6.71004  -0.0000%  PASS
+   U2_A_lam_lower                 1/1        912.00000      912.00000  +0.0000%  PASS
+   U2_A_lam_upper                 1/1        762.00000      762.00000  -0.0000%  PASS
+   U2_A_vias_0                    6/6          0.25786        0.25775  -0.0451%  PASS
+   U2_A_vias_1                   12/12         0.43090        0.43071  -0.0451%  PASS
+   U4_B_BOT_Cu                    4/4          1.78938        1.78938  +0.0000%  PASS
+   U4_B_MID_Cu                    1/1         14.26614       14.26614  +0.0000%  PASS
+   U4_B_TOP_Cu                    7/7          6.71004        6.71004  +0.0000%  PASS
+   U4_B_lam_lower                 1/1        912.00000      912.00000  +0.0000%  PASS
+   U4_B_lam_upper                 1/1        762.00000      762.00000  -0.0000%  PASS
+   U4_B_vias_0                    6/6          0.25786        0.25775  -0.0451%  PASS
+   U4_B_vias_1                   12/12         0.43090        0.43071  -0.0451%  PASS
+   U3_B_BOT_Cu                    4/4          1.78938        1.78938  -0.0000%  PASS
+   U3_B_MID_Cu                    1/1         14.26614       14.26614  +0.0000%  PASS
+   U3_B_TOP_Cu                    7/7          6.71004        6.71004  -0.0000%  PASS
+   U3_B_lam_lower                 1/1        912.00000      912.00000  +0.0000%  PASS
+   U3_B_lam_upper                 1/1        762.00000      762.00000  -0.0000%  PASS
+   U3_B_vias_0                    6/6          0.25786        0.25775  -0.0451%  PASS
+   U3_B_vias_1                   12/12         0.43090        0.43071  -0.0451%  PASS
+   x extent  -18.0843 ..   18.0843   expected  -18.0843 ..   18.0843   PASS
+   y extent  -18.0843 ..   18.0843   expected  -18.0843 ..   18.0843   PASS
+   z extent   -0.0000 ..   60.0000   expected    0.0000 ..   60.0000   PASS
+   ALL PASS
+

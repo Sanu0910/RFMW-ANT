@@ -20,7 +20,8 @@ Rebuild of Younus, Sultan, Fumeaux & Abbosh, "Reconfigurable Modular Antenna Sys
 | `02_python/results` | Plots and CSVs: null-steering cuts, uv maps, Monte Carlo, CP AR table, null-angle → bias LUT |
 | `03_matlab` | Same models in MATLAB (`ns_demo_phase_shifter`, `ns_demo_system`); outputs identical to Python (checked in Octave 8.4) |
 | `04_hfss` | `hfss_ns_build.py`: PyAEDT build of PS / dipole / unit / 1-D / 2-D / CP with one C variable per varactor |
-| `05_docs` | Designer and verification guide (PDF / HTML / MD) |
+| `05_docs` | Designer and verification guide (PDF / HTML / MD); **`MODEL_VERIFICATION.md`**: every dimension measured on the model vs. the paper |
+| `06_step` | STEP AP242 built with SolidCraft (`02_python/build_step.py`): standalone phase shifter and dipole, units A/B (MID as in the paper / extended), 1-D, 2-D, CP and co-phased CP systems; `STEP_report.txt` checks every body's volume and the board sizes; `renders/` |
 
 ## DXF layers
 - **Copper:** TOP (front, z = 1.116), MID (inner GND, z = 0.608), BOT (back, z = 0). Holes are on `*_CUTOUT`; subtract them in HFSS.
