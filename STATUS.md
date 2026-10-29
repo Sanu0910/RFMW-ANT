@@ -17,7 +17,7 @@ Verified in the session of 2026-10-29:
 | KiCad 9.0.9 (chroot in `/opt/kicad9`) | Working | `kicad-cli pcb drc` on project 13 ran and gave the documented result | `DOCKER_MIRROR=mirror.gcr.io bash tools/install_kicad_mcp.sh` |
 | KiCad MCP server 2.8.3 | Working | Server starts and lists 244 tools. **Not registered** in `.mcp.json`, so a session can't call it as tools yet | Same script; register with the `claude mcp add kicad ...` line it prints |
 | KiCadRoutingTools (grid_router 0.23.7) | Working | Test route on `cap_chain.kicad_pcb`: 0 → 8 tracks | `sh tools/install_krt.sh` |
-| Hertzon 0.2.6 (EMerge FEM) | Installed | Solver warm-up passed; hairpin-filter example solve started | `bash tools/install_hertzon.sh` |
+| Hertzon 0.2.6 (EMerge FEM) | Working | `HairpinFilter.hzn` example solved headless: 91-point S2P over 2.0–2.9 GHz, passband S21 −2.3 dB / S11 −13 dB at 2.56 GHz | `bash tools/install_hertzon.sh` |
 | Backplane 0.10.0 | Working | Headless web UI answered HTTP 200 on port 3787 | `bash tools/install_backplane.sh` |
 | REA | Not installed | Not needed for RF/PCB work | `bash tools/install_rea.sh` |
 
