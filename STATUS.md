@@ -15,7 +15,7 @@ Verified in the session of 2026-10-29:
 | openEMS v0.37.0 + CSXCAD | Working | `MSL_NotchFilter.py` tutorial ran headless: 15 402 steps, 270 k cells, 37 s (111 MCells/s) | `bash tools/install_openems.sh` (~20 min build) |
 | gds2openEMS | Installed | Install script import check passed | `bash tools/install_gds2openems.sh` (after openEMS) |
 | KiCad 9.0.9 (chroot in `/opt/kicad9`) | Working | `kicad-cli pcb drc` on project 13 ran and gave the documented result | `DOCKER_MIRROR=mirror.gcr.io bash tools/install_kicad_mcp.sh` |
-| KiCad MCP server 2.8.3 | Working | Server starts and lists 244 tools. **Not registered** in `.mcp.json`, so a session can't call it as tools yet | Same script; register with the `claude mcp add kicad ...` line it prints |
+| KiCad MCP server 2.8.3 | Working | Server starts and lists 244 tools. Registered as `kicad` in `.mcp.json` | Same script (the server only connects once `/opt/KiCAD-MCP-Server` exists) |
 | KiCadRoutingTools (grid_router 0.23.7) | Working | Test route on `cap_chain.kicad_pcb`: 0 → 8 tracks | `sh tools/install_krt.sh` |
 | Hertzon 0.2.6 (EMerge FEM) | Working | `HairpinFilter.hzn` example solved headless: 91-point S2P over 2.0–2.9 GHz, passband S21 −2.3 dB / S11 −13 dB at 2.56 GHz | `bash tools/install_hertzon.sh` |
 | Backplane 0.10.0 | Working | Headless web UI answered HTTP 200 on port 3787 | `bash tools/install_backplane.sh` |

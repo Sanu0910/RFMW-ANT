@@ -1,3 +1,6 @@
 {
-  "enabledMcpjsonServers": ["solidcraft"]
+  "enabledMcpjsonServers": [
+    "solidcraft",
+    "kicad"
+  ]
 }
