@@ -1,0 +1,12 @@
+element sim element_nopar: gap er=1.0, parasitic=False, par scale=1.0, Zref=100.0
+ 4.0 GHz  S11  -0.52 dB  VSWR 33.14  S21  -11.1 dB  Zin  1758.3+1652.5j
+ 4.5 GHz  S11  -0.86 dB  VSWR 20.21  S21  -10.6 dB  Zin    26.7 -208.4j
+ 5.0 GHz  S11  -1.14 dB  VSWR 15.31  S21  -14.1 dB  Zin     8.0  -46.7j
+ 5.5 GHz  S11  -1.27 dB  VSWR 13.73  S21  -36.6 dB  Zin     8.8  +45.8j
+ 6.0 GHz  S11  -1.45 dB  VSWR 12.03  S21  -21.5 dB  Zin    97.7 +314.2j
+ 6.5 GHz  S11  -1.95 dB  VSWR  8.95  S21   -9.5 dB  Zin    42.6 -163.7j
+ 7.0 GHz  S11  -2.10 dB  VSWR  8.30  S21   -6.6 dB  Zin    13.8  -38.0j
+ 5.0 GHz  broadside G(accepted)  7.15 dBi  realised G  0.77 dBi
+ 5.5 GHz  broadside G(accepted)  8.23 dBi  realised G  2.27 dBi
+ 6.0 GHz  broadside G(accepted)  7.31 dBi  realised G  1.83 dBi
+ 6.5 GHz  broadside G(accepted)  3.67 dBi  realised G -0.74 dBi
