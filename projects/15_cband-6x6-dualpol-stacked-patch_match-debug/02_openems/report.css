@@ -1,0 +1,18 @@
+body { font-family: "DejaVu Sans", Arial, sans-serif; font-size: 10pt; line-height: 1.42; color: #1a1a1a; }
+h1 { font-size: 19pt; margin: 0 0 4px 0; color: #0b3d6b; }
+h2 { font-size: 13.5pt; color: #0b3d6b; border-bottom: 2px solid #0b3d6b; padding-bottom: 2px; margin-top: 20px; page-break-after: avoid; }
+h3 { font-size: 11pt; color: #23527c; margin-bottom: 4px; page-break-after: avoid; }
+.sub { color: #555; font-size: 9.5pt; margin-bottom: 12px; }
+.box { border-left: 5px solid #c0392b; background: #fbeeee; padding: 8px 12px; margin: 10px 0; }
+.good { border-left-color: #1e8449; background: #eaf6ee; }
+.note { border-left-color: #b9770e; background: #fdf3e3; }
+table { border-collapse: collapse; margin: 8px 0 12px 0; font-size: 8.8pt; width: 100%; page-break-inside: avoid; }
+th, td { border: 1px solid #bbb; padding: 3px 6px; text-align: left; vertical-align: top; }
+th { background: #e8eef5; }
+figure { margin: 10px 0; text-align: center; page-break-inside: avoid; }
+figcaption { font-size: 8.5pt; color: #444; margin-top: 3px; }
+pre { font-size: 7.6pt; background: #f5f5f5; padding: 6px; white-space: pre-wrap; page-break-inside: avoid; }
+code { font-size: 8.8pt; background: #f2f2f2; padding: 0 2px; }
+.missing { color: #999; font-style: italic; }
+.pb { page-break-before: always; }
+ol li, ul li { margin-bottom: 3px; }

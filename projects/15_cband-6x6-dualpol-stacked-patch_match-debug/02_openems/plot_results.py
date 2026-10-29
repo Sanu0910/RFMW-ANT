@@ -7,7 +7,6 @@ import matplotlib.pyplot as plt
 R = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '03_results')
 LBL = {'element_air': 'as built (air gap, parasitic 16.2-17.8 mm)',
        'element_nopar': 'driven patch only (no parasitic/FR4)',
-       'element_gap4p5': 'gap filled er 4.5 (stack-up PDF value)',
        'element_par1.15': 'parasitic x1.15', 'element_par1.25': 'parasitic x1.25',
        'element_par1.35': 'parasitic x1.35'}
 

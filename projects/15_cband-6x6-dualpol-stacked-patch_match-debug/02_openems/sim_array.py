@@ -67,7 +67,9 @@ def thin(v, d):
     return np.array(out)
 mesh.AddLine('x', thin(xs, 0.2)); mesh.AddLine('y', thin(ys, 0.2)); mesh.AddLine('z', thin(zs, 0.05))
 mesh.SmoothMeshLines('x', 4.0, 1.3); mesh.SmoothMeshLines('y', 4.0, 1.3); mesh.SmoothMeshLines('z', 4.0, 1.3)
-nf2ff = FDTD.CreateNF2FFBox()
+fz = np.array([4.5e9, 5.0e9, 5.5e9, 6.0e9, 6.5e9])
+# frequency-domain NF2FF dumps only (time-domain dumps of the full board exceed 15 GB)
+nf2ff = FDTD.CreateNF2FFBox(frequency=fz)
 
 if not a.post_only:
     n = [len(mesh.GetLines(d)) for d in 'xyz']
@@ -81,7 +83,6 @@ sii = pe.uf_ref / pe.uf_inc
 sji = po.uf_ref / pe.uf_inc
 zin = pe.uf_tot / pe.if_tot
 
-fz = np.array([4.5e9, 5.0e9, 5.5e9, 6.0e9, 6.5e9])
 nf = nf2ff.CalcNF2FF(sim, fz, [0.0], [0.0], center=[0, 0, g.Z_DRV], outfile='nf2ff_broadside.h5')
 Pinc = np.array([np.interp(f, freq, pe.P_inc) for f in fz])
 Pacc = np.array([np.interp(f, freq, pe.P_acc) for f in fz])

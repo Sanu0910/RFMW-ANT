@@ -101,7 +101,9 @@ mesh.SmoothMeshLines('x', res_xy * 2, 1.4)
 mesh.SmoothMeshLines('y', res_xy * 2, 1.4)
 mesh.SmoothMeshLines('z', 2.0, 1.4)
 
-nf2ff = FDTD.CreateNF2FFBox()
+fz = np.array([5.0e9, 5.5e9, 6.0e9, 6.5e9])
+# frequency-domain NF2FF dumps only (time-domain dumps of the full board exceed 15 GB)
+nf2ff = FDTD.CreateNF2FFBox(frequency=fz)
 
 if not a.plot_only:
     print('mesh cells', len(mesh.GetLines('x')), len(mesh.GetLines('y')), len(mesh.GetLines('z')))
@@ -113,7 +115,6 @@ s11 = p1.uf_ref / p1.uf_inc
 s21 = p2.uf_ref / p1.uf_inc
 zin = p1.uf_tot / p1.if_tot
 # second run is needed for S22; by symmetry of the edge feeds we only report port-1 quantities here
-fz = np.array([5.0e9, 5.5e9, 6.0e9, 6.5e9])
 nf = nf2ff.CalcNF2FF(sim, fz, [0.0], [0.0], center=[CX, CY, g.Z_DRV], outfile='nf2ff_broadside.h5')
 Pin = np.array([np.interp(f, freq, np.real(0.5 * p1.uf_tot * np.conj(p1.if_tot))) for f in fz])
 Pinc = np.array([np.interp(f, freq, p1.P_inc) for f in fz])
