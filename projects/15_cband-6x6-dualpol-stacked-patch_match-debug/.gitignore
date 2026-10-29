@@ -1,0 +1,4 @@
+sim/
+02_openems/sim/
+02_openems/*.log
+02_openems/log_*.txt
