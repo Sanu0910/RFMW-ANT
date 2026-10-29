@@ -1,4 +1,5 @@
-"""Pull a Docker Hub image (amd64) and unpack it as a rootfs, applying whiteouts. No daemon needed."""
+"""Pull a Docker Hub image (amd64) and unpack it as a rootfs, applying whiteouts. No daemon needed.
+DOCKER_MIRROR=mirror.gcr.io pulls through Google's anonymous Docker Hub mirror (no 429 rate limit)."""
 import hashlib, json, os, shutil, sys, tarfile, urllib.request
 repo, tag, dest = sys.argv[1], sys.argv[2], sys.argv[3]
 def get(url, tok=None, accept=None):
@@ -6,8 +7,9 @@ def get(url, tok=None, accept=None):
     if tok: h["Authorization"] = "Bearer " + tok
     if accept: h["Accept"] = accept
     return urllib.request.urlopen(urllib.request.Request(url, headers=h), timeout=600)
-tok = json.load(get(f"https://auth.docker.io/token?service=registry.docker.io&scope=repository:{repo}:pull"))["token"]
-R = f"https://registry-1.docker.io/v2/{repo}"
+MIRROR = os.environ.get("DOCKER_MIRROR")
+tok = None if MIRROR else json.load(get(f"https://auth.docker.io/token?service=registry.docker.io&scope=repository:{repo}:pull"))["token"]
+R = f"https://{MIRROR or 'registry-1.docker.io'}/v2/{repo}"
 idx = json.load(get(f"{R}/manifests/{tag}", tok, "application/vnd.docker.distribution.manifest.list.v2+json,application/vnd.oci.image.index.v1+json"))
 dig = next(m["digest"] for m in idx["manifests"] if m["platform"]["architecture"] == "amd64")
 man = json.load(get(f"{R}/manifests/{dig}", tok, "application/vnd.docker.distribution.manifest.v2+json,application/vnd.oci.image.manifest.v1+json"))
@@ -18,7 +20,8 @@ for i, L in enumerate(man["layers"]):
     blob = os.path.join(cache, L["digest"].split(":")[1])
     for attempt in range(6):
         if os.path.exists(blob) and os.path.getsize(blob) == L["size"]: break
-        os.system(f'curl -fsSL --retry 5 -C - -H "Authorization: Bearer {tok}" -o {blob} {R}/blobs/{L["digest"]}')
+        auth = f'-H "Authorization: Bearer {tok}"' if tok else ""
+        os.system(f'curl -fsSL --retry 5 -C - {auth} -o {blob} {R}/blobs/{L["digest"]}')
     assert hashlib.sha256(open(blob, "rb").read()).hexdigest() == L["digest"].split(":")[1], "checksum"
     with tarfile.open(blob, mode="r:*") as t:
         for m in t:
