@@ -1,0 +1,33 @@
+# Changelog: 12_multitool-rf-board
+
+Newest first. Add an entry for every change (date, what changed, why). Entries up to 2026-10-29 were built from git history.
+
+## 2026-10-24
+- proj12: original antenna PCB (125kHz spiral + 13.56MHz NFC loop) (`7b412f5`)
+- proj12: datasheet-style PDF (NOVA-RF1_datasheet.pdf) (`f2705b3`)
+- proj12: final elegant + corrected board routed 101/104 + fab package (`e9180f2`)
+- proj12: level-1 design verification + fix 3 netlist bugs it caught (`9eb806a`)
+- proj12: elegant rounded handheld outline (no more square cut) (`1d7c8be`)
+- proj12: NOVA-RF1 compact route 103/104 + both planes + full fab package (`68c2102`)
+- proj12: NOVA-RF1 product PDF (working principle + BOM cost + PCB photos) (`3f0a0db`)
+- proj12: rename board CRL-MT1 -> NOVA-RF1 (project-wide) (`5ed2dff`)
+- proj12: parametric two-part handheld enclosure (gmsh/OCC) (`309fa22`)
+- proj12: fab-package tooling + JLCPCB BOM + fab notes (`699553c`)
+- proj12: smaller board 100x60mm, crystals clustered under their ICs (`b7d7b9a`)
+- proj12: route compact board - 104/105 nets, 4-layer, GND plane (`046bdcc`)
+- proj12: compact two-sided board (110x66mm) - buildable (`73e9ef8`)
+- proj12: deterministic legal placement - buildable, 0 overlaps (`2615d98`)
+- proj12: lock connectors/antennas/buttons on board edges for placement (`7e6e558`)
+- proj12: board outline + KRT placement inputs (groups/intent) (`b653c16`)
+- proj12: transcribe all 8 chip pinouts from datasheets - board complete, 0 pending (`55924cb`)
+- proj12: PCB generator stage 1 - load 68 parts onto real footprints + nets (`2233774`)
+- proj12: custom footprints + full pad-name validation (69 parts PCB-ready) (`b81b187`)
+- proj12: footprint map + pad->net resolution engine (pinmap.py) (`56a019b`)
+- proj12: datasheet-accurate netlist fixes (verified vs KiCad STM32WB55 symbol) (`8fe23ee`)
+- proj12: generate KiCad 9 schematic, ERC passes 0 errors (105 nets) (`e46fcab`)
+- proj12: add exact NFC matching net + iButton/IR/speaker parts from official schematics (`244f77c`)
+- Project 12: record the 4-board set and exact sizes from the official assembly drawings (`20ff4f1`)
+- Project 12: real RF/analog front-ends from official sheets (BLE filter, CC1101 balun+BGS13 switches, 125k op-amp AFE) (`a562c34`)
+- Project 12: refine from official schematics (real regulators, LP5562, two-board FFC split, ESD/series, BAT+NTC) (`e4a57a7`)
+- Project 12: add DIY module-build route and official board-size facts (`38ea668`)
+- Project 12: CRL-MT1 original firmware-compatible multi-tool board (architecture, netlist, BOM) (`71929f5`)
