@@ -21,8 +21,8 @@ corporate network built from 100 &Omega; branches and 70.7 &Omega; quarter-wave 
 """
 
 ARRAY_INTERIM = """
-<p><b>Preliminary reading</b> (12.8 ns of port 1 and 17.0 ns of port 2 recorded, about 2.5 h into the runs; field energy
-down by only 11&ndash;15 dB). Both array ports are best in the middle of the band, where the element is matched: S22 stays mostly
+<p><b>Preliminary reading</b> (25.0 ns of port 1 and 33.1 ns of port 2 recorded, about 4.5 h into the runs; field energy
+down by 18&ndash;22 dB; the curves have hardly changed since the 2.5 h reading). Both array ports are best in the middle of the band, where the element is matched: S22 stays mostly
 below &minus;10 dB from about 5.2 to 6.2 GHz, and S11 has its best stretch around 5.0&ndash;5.8 GHz. Below ~4.8 GHz and above ~6.3 GHz
 both ports sit mostly at VSWR 3 or worse. V/H coupling is below &minus;20 dB over most of the band. This already follows the element
 result (section 4). The final curves will be smoother and slightly worse, because reflections that come back late

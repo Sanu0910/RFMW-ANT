@@ -3,6 +3,7 @@
 Newest first.
 
 ## 2026-10-30
+- Client report `04_docs/Telmart_CBand_Array_VSWR_Report.pdf` (8 pages, Telmart branding, doc. TM-RF-15-001 Rev. A) built by `02_openems/client_report.py`; `html2pdf.js` takes an optional footer text. Preliminary array curves refreshed (4.5 h into the runs).
 - Preliminary full-array S11/S22/S21 (`02_openems/array_interim.py`, `03_results/array_interim*`) from the runs in progress, ~2.5 h in; added to report section 6, marked preliminary.
 - Report rev. 2 (12 pages): new section 7 "Wideband redesign study", section 9 rewritten as "What can be done next" (work plan + design advice), array status updated.
 - Wideband element study: `sim_wb_element.py` (aperture-coupled stacked patch, single/dual-pol), `opt_wb_element.py` ((1+4) evolution strategy), `match_wb.py` (feed-layer matching on every candidate), `wb_figures.py`. 40 runs; best candidate `wbN4` VSWR<=3 4.95-5.75 GHz, no better than the present element. Results in `03_results/wb*`, `opt*`, `match_wb.txt`, `opt_wb_log.txt`.
