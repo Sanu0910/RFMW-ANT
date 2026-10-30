@@ -18,7 +18,10 @@ _Last updated: 2026-10-30. Update this file whenever the project changes (see `d
 - Client report for sharing: `04_docs/Telmart_CBand_Array_VSWR_Report.pdf` (`02_openems/client_report.py`, TM-RF-15-001 Rev. A, interim); issue Rev. B when the full-array runs finish
 - Results-only client report (protects methods/IP): `04_docs/Telmart_CBand_Array_Results_Status.pdf` (`02_openems/client_results_report.py`, TM-RF-15-002 Rev. A)
 
+- Measured panel data (`05_measured/`, `compare_measured.py`): S11 matches the simulated array character; gain 20.4 dBi peak vs 23 dBi rating, aperture efficiency 25-35 % mid-band and 3-8 % at 6.2-6.4 GHz (mismatch explains <= 1.5 dB of that)
+
 ## Open items
+- Clarify with the user: V/H port mapping, S11 calibration plane, horn gain table, radome on/off during gain test, test range (indoor ~5 m), real spec band (4.9-6.4 GHz?) and gain target (23 dBi?)
 - Full-array runs (`sim_array.py --port 1/2`): restarted 2026-10-30 in WSL on the local PC (6 + 10 threads); ~35-45 k steps each, several hours per port. Final results replace the preliminary curves in report section 6 (`python array_interim.py` gives an update at any time)
 - Wideband element iteration 2: unit cell with periodic boundaries, dielectric-loaded patches, resonant dog-bone/H slots, dual-pol, ~150-250 evaluations (report section 9)
 - Plan B element: L-probe / differential-probe patch or crossed dipole
