@@ -1,0 +1,15 @@
+wideband element opt01_1: port 1, dual=False, params {"Lp1": 19.72, "Lp2": 21.75, "h1": 3.09, "h2": 4.77, "Ls": 20.0, "Ws": 1.02, "Lst": 3.75, "yH": 9.0, "Ls2": 12.0, "G": 50.0}
+worst VSWR 4-7 GHz 166.44, share of 4-7 GHz with VSWR<=2: 0 %, <=3: 21 %
+ 4.00 GHz  S11  -6.47 dB  VSWR  2.81  Zin   87.2 +60.8j
+ 4.25 GHz  S11  -8.20 dB  VSWR  2.27  Zin  113.5  +3.5j
+ 4.50 GHz  S11  -8.25 dB  VSWR  2.26  Zin  112.9  -4.9j
+ 4.75 GHz  S11  -4.32 dB  VSWR  4.10  Zin  127.2 -94.6j
+ 5.00 GHz  S11  -2.08 dB  VSWR  8.39  Zin   24.9 -86.4j
+ 5.25 GHz  S11  -1.16 dB  VSWR 15.05  Zin    6.6 -49.6j
+ 5.50 GHz  S11  -0.75 dB  VSWR 23.28  Zin    2.8 -28.4j
+ 5.75 GHz  S11  -0.51 dB  VSWR 34.32  Zin    1.5 -12.2j
+ 6.00 GHz  S11  -0.28 dB  VSWR 62.90  Zin    0.8  +4.4j
+ 6.25 GHz  S11  -0.11 dB  VSWR 154.83  Zin    0.4 +30.7j
+ 6.50 GHz  S11  -0.51 dB  VSWR 33.85  Zin   23.2+190.3j
+ 6.75 GHz  S11  -1.16 dB  VSWR 15.01  Zin    9.7 -68.5j
+ 7.00 GHz  S11  -1.35 dB  VSWR 12.91  Zin    4.5 -19.5j

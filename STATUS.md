@@ -47,4 +47,4 @@ Each project folder has its own `STATUS.md` and `CHANGELOG.md`.
 | 12 | NOVA-RF1 multi-tool board | Routed 101/104 nets; 3 nets and RF matching left |
 | 13 | SPS-24G-01 presence switch | Routed + fab package; mains safety items open |
 | 14 | MVDR beamforming explainer | Complete |
-| 15 | C-band 6×6 stacked-patch S11 debug | Report done (element-level openEMS); full-array run open |
+| 15 | C-band 6×6 stacked-patch S11 debug | Report rev. 2 (root cause + redesign study, iteration 1 below target); full-array runs in progress |

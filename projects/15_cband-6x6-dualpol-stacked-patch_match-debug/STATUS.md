@@ -1,8 +1,8 @@
 # Status: 15_cband-6x6-dualpol-stacked-patch_match-debug
 
-_Last updated: 2026-10-29. Update this file whenever the project changes (see `docs/CONVENTIONS.md`)._
+_Last updated: 2026-10-30. Update this file whenever the project changes (see `docs/CONVENTIONS.md`)._
 
-**State:** Report delivered: `04_docs/CBand_6x6_Array_S11_Analysis_Report.pdf`. Root cause is the element bandwidth (edge-fed stacked patch, one merged resonance, ~16 %). The full-array openEMS run is not finished.
+**State:** Report rev. 2 delivered: `04_docs/CBand_6x6_Array_S11_Analysis_Report.pdf` (12 pages). Root cause is the element bandwidth (edge-fed stacked patch, one merged resonance, ~16 %). A first wideband redesign iteration (aperture-coupled stacked patch, 40 openEMS runs) did not beat the present element. The full-array openEMS runs are in progress on the local PC (WSL).
 
 ## Done
 - Inputs decoded (`01_input/`): F.Cu parasitics, In2.Cu driven patches + two 36-way corporate feeds, B.Cu ground, stack-up
@@ -11,11 +11,17 @@ _Last updated: 2026-10-29. Update this file whenever the project changes (see `d
 - Matching study (`match_study.py`): no line/stub/transformer network reaches VSWR<3 over 4-7 GHz -> radiator bandwidth is the limit
 - Variants: without the parasitic there is no match anywhere; a larger parasitic (x1.15/1.25/1.35) moves the window down and narrows it
 - Stack-up used: 4 mm air gap, er 1.0 (as built, per the user)
-- PDF report (`02_openems/build_report.py`), 9 pages
+- Wideband redesign study (`sim_wb_element.py`, `opt_wb_element.py`, `match_wb.py`, `wb_figures.py`): aperture-coupled stacked patch, single-pol, 40 runs. Best candidate `wbN4` VSWR<=3 4.95-5.75 GHz (15 %), no better than the present element; feed-layer matching cannot widen it. Findings and the plan for iteration 2 are in report sections 7 and 9
+- Array model fixes (`sim_array.py`): port coordinates rounded to the mesh grid (port 2 injected no energy before), `--threads` / `--nrts` options
+- PDF report (`02_openems/build_report.py`), 12 pages, with "What can be done next" plan
 
 ## Open items
-- Full-array runs (`sim_array.py --port 1/2`): about 3 h per port on 4 cores. Two attempts were lost (disk full from time-domain NF2FF dumps, now FD-only; then a worker restart)
-- A redesigned wideband element (aperture-coupled or L-probe stacked patch) is not started
+- Full-array runs (`sim_array.py --port 1/2`): restarted 2026-10-30 in WSL on the local PC (6 + 10 threads); ~35-45 k steps each, several hours per port. Results go into report section 6
+- Wideband element iteration 2: unit cell with periodic boundaries, dielectric-loaded patches, resonant dog-bone/H slots, dual-pol, ~150-250 evaluations (report section 9)
+- Plan B element: L-probe / differential-probe patch or crossed dipole
 
 ## Resume here
-`cd 02_openems && source /opt/openEMS/venv/bin/activate && python sim_element.py` (needs `bash tools/install_openems.sh` + `pip install ezdxf shapely` in the venv), then `python plot_results.py`.
+Local (Windows + WSL Ubuntu): openEMS is in `/opt/openEMS` inside WSL, run folder `/root/p15` (copy of this project).
+Array runs: `wsl -d Ubuntu -u root -- tail -1 /root/p15/02_openems/log_array_p1.txt` (and `_p2`). When both have finished:
+`wsl -d Ubuntu -u root -- bash /root/pull.sh` (copies results back, see `02_openems/_pull_wsl.sh`), then in `02_openems`:
+`python plot_results.py && python build_report.py`.

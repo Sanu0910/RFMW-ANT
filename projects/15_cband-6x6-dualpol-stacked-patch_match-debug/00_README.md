@@ -3,7 +3,9 @@
 User design, 4-7 GHz, 276.86 mm board. Symptom: gain is fine but VSWR stays above 3:1.
 
 - `01_input/` the supplied DXFs (F_CU, IN2_CU, GND) and stack-up PDF
-- `02_openems/` geometry loader (`cbgeom.py`), element model, full-array model, matching study, plots
+- `02_openems/` geometry loader (`cbgeom.py`), element model, full-array model, matching study, plots;
+  wideband redesign study (`sim_wb_element.py`, `opt_wb_element.py`, `match_wb.py`, `wb_figures.py`);
+  `_*_wsl.sh` helpers to run the models in WSL on a Windows PC
 - `03_results/` S-parameter CSVs, summaries, plots
 - `04_docs/CBand_6x6_Array_S11_Analysis_Report.pdf` the full analysis report (HTML copy beside it)
 
