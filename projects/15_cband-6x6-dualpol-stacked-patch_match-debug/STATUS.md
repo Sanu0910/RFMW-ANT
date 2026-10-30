@@ -2,7 +2,7 @@
 
 _Last updated: 2026-10-30 (evening). Update this file whenever the project changes (see `docs/CONVENTIONS.md`)._
 
-**State:** VSWR fixes within the present design (option 1: parasitic sizes / gap; option 2: feed widths) were checked full-wave and give no real improvement: the element bandwidth is the limit. Next: new wideband element (option 3) if the full band is needed. STEP model with SMA jacks: `07_step/CBand_6x6_asbuilt_with_SMA.step`. Full-array runs of the present design in progress.
+**State:** VSWR fixes within the present design (option 1: parasitic sizes / gap; option 2: feed widths) were checked full-wave and give no real improvement: the element bandwidth is the limit. Next: new wideband element (option 3) if the full band is needed. STEP model with SMA jacks: `07_step/CBand_6x6_asbuilt_with_SMA.step`. Full-array port 2 finished: simulated gain matches the measured gain shortfall and high-band drop (design-caused); port 1 still running (~3 h).
 
 ## Done
 - Inputs decoded (`01_input/`): F.Cu parasitics, In2.Cu driven patches + two 36-way corporate feeds, B.Cu ground, stack-up

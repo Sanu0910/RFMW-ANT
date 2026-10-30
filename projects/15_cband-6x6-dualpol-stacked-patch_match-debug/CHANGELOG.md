@@ -3,6 +3,7 @@
 Newest first.
 
 ## 2026-10-30
+- Full-array run port 2 (H) finished (80 000 steps, -31.6 dB): S22 VSWR <= 1.8 at the 5.0-6.25 GHz spot frequencies, 2.7-5.6 outside; broadside realised gain 17.1 / 15.1 / 18.9 / 21.2 / 13.7 dBi at 4.5 / 5.0 / 5.5 / 6.0 / 6.5 GHz, gain vs accepted power almost the same. The simulated gain reproduces the measured shortfall and the drop above ~6.2 GHz, so the gain problem is in the design, not the radome or the test range. `03_results/array_p2_*`, `measured_vs_sim.png`. Port 1 still running.
 - Option 1 (uniform 16.2 mm parasitics) and option 2 (wider feed start, lines >= 0.73 mm) both evaluated full-wave from the layer files: neither improves the element match (option 2: H 3.50 -> 3.67, V 3.59 -> 3.58 worst VSWR over 5.1-6.2 GHz; `03_results/opt2_vswr.png`, `opt2_summary.txt`). The first option-2 design had used the 60 mm-ground model, whose ground-edge effects overstated the as-built mismatch (4.6 instead of 3.5); `fixb_design.py` now starts from the infinite-ground as-built model of both feeds. `fix_parasitics.py` removed; `06_fixB/` keeps the option-2 layout with a NOT RECOMMENDED note.
 - STEP model rebuilt from the as-built layers: `07_step/CBand_6x6_asbuilt_with_SMA.step` (52 bodies, all checks PASS).
 - Feed-line width change (fixb_design.py: thin 0.25 mm and wide >= 0.73 mm versions) evaluated and rejected by the user ("keep the line same"); the line-modifying layout script was removed.
