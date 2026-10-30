@@ -3,6 +3,7 @@
 Newest first.
 
 ## 2026-10-30
+- Results-only client report `04_docs/Telmart_CBand_Array_Results_Status.pdf` (5 pages, TM-RF-15-002 Rev. A) built by `02_openems/client_results_report.py`: results, neutral re-plotted figures (`04_docs/res_*.png`) and project status; no methods, tools or design concepts disclosed. Preliminary array curves refreshed (5.5 h into the runs).
 - Client report `04_docs/Telmart_CBand_Array_VSWR_Report.pdf` (8 pages, Telmart branding, doc. TM-RF-15-001 Rev. A) built by `02_openems/client_report.py`; `html2pdf.js` takes an optional footer text. Preliminary array curves refreshed (4.5 h into the runs).
 - Preliminary full-array S11/S22/S21 (`02_openems/array_interim.py`, `03_results/array_interim*`) from the runs in progress, ~2.5 h in; added to report section 6, marked preliminary.
 - Report rev. 2 (12 pages): new section 7 "Wideband redesign study", section 9 rewritten as "What can be done next" (work plan + design advice), array status updated.
