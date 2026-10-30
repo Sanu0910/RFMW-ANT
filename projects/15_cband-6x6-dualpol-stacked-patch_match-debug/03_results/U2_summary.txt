@@ -1,0 +1,16 @@
+tuned element U2: port 1, params {"L1": 16.5, "L2": 18.5, "h": 6.0, "ins": 0.0, "wt": 0.0, "lt": 0.0, "wt2": 0.0, "lt2": 0.0, "LF": 10.0, "G": 60.0}
+4.9-6.4 GHz: worst VSWR 18.63, VSWR<=2 0 %, <=3 0 %, worst isolation -15.7 dB
+4.0-7.0 GHz: worst VSWR 55.47, VSWR<=2 0 %, <=3 0 %, worst isolation -15.2 dB
+ 4.00 GHz  S11  -0.41 dB  VSWR 42.52  S21  -15.7 dB  Zin   31.2+348.9j
+ 4.25 GHz  S11  -0.53 dB  VSWR 32.79  S21  -16.3 dB  Zin  138.2+651.6j
+ 4.50 GHz  S11  -0.95 dB  VSWR 18.24  S21  -17.1 dB  Zin 1719.0+423.4j
+ 4.75 GHz  S11  -1.60 dB  VSWR 10.86  S21  -17.9 dB  Zin  412.3-521.0j
+ 5.00 GHz  S11  -1.87 dB  VSWR  9.33  S21  -18.5 dB  Zin  164.9-344.1j
+ 5.25 GHz  S11  -1.87 dB  VSWR  9.33  S21  -19.2 dB  Zin   71.6-228.9j
+ 5.50 GHz  S11  -1.94 dB  VSWR  9.00  S21  -21.0 dB  Zin   32.1-134.9j
+ 5.75 GHz  S11  -2.51 dB  VSWR  6.96  S21  -28.4 dB  Zin   19.8 -60.6j
+ 6.00 GHz  S11  -3.89 dB  VSWR  4.54  S21  -34.5 dB  Zin   24.4 +32.0j
+ 6.25 GHz  S11  -1.46 dB  VSWR 11.89  S21  -18.1 dB  Zin   79.5+280.8j
+ 6.50 GHz  S11  -0.78 dB  VSWR 22.20  S21  -15.4 dB  Zin  287.4-739.4j
+ 6.75 GHz  S11  -0.39 dB  VSWR 44.45  S21  -15.2 dB  Zin   17.8-262.0j
+ 7.00 GHz  S11  -0.31 dB  VSWR 55.47  S21  -15.4 dB  Zin    7.1-171.7j

@@ -1,0 +1,12 @@
+ot00_0 matched worst VSWR 3.33 {"L1": 17.07, "L2": 16.2, "h": 4.0, "ins": 0.0}
+ot01_0 matched worst VSWR 4.99 {"L1": 16.53, "L2": 14.81, "h": 3.87, "ins": 0.25}
+ot01_1 matched worst VSWR 3.93 {"L1": 17.84, "L2": 16.32, "h": 3.71, "ins": 0.0}
+ot01_2 matched worst VSWR 5.26 {"L1": 17.58, "L2": 17.92, "h": 4.14, "ins": 0.0}
+ot01_3 matched worst VSWR 11.95 {"L1": 16.42, "L2": 17.88, "h": 4.11, "ins": 0.0}
+-- gen 1: best matched worst VSWR 3.33 step 0.105 {"L1": 17.07, "L2": 16.2, "h": 4.0, "ins": 0.0}
+oi00_0 matched worst VSWR 3.36 {"L1": 17.07, "L2": 16.2, "h": 4.0, "ins": 0.0}
+oi01_0 matched worst VSWR 11.69 {"L1": 16.82, "L2": 15.55, "h": 3.94, "ins": 0.12}
+oi01_1 matched worst VSWR 11.41 {"L1": 17.43, "L2": 16.25, "h": 3.86, "ins": 0.0}
+oi01_2 matched worst VSWR 11.38 {"L1": 17.31, "L2": 17.0, "h": 4.07, "ins": 0.0}
+oi01_3 matched worst VSWR 3.51 {"L1": 16.77, "L2": 16.98, "h": 4.05, "ins": 0.0}
+-- gen 1: best matched worst VSWR 3.36 step 0.049 {"L1": 17.07, "L2": 16.2, "h": 4.0, "ins": 0.0}
