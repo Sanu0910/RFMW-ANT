@@ -34,17 +34,22 @@ PORTS = {1: dict(x=-76.95, y=(-3.30, -0.80)),   # filled in exactly by find_port
          2: dict(x=-1.45, y=(-3.30, -0.80))}
 
 
-def _polys(name):
+def _polys(name, folder=INP):
     out = []
-    for e in ezdxf.readfile(os.path.join(INP, name)).modelspace():
+    for e in ezdxf.readfile(os.path.join(folder, name)).modelspace():
         if e.dxftype() == 'LWPOLYLINE':
             p = Polygon([v[:2] for v in e.get_points()])
             out.append(p if p.is_valid else p.buffer(0))
     return out
 
 
-def layers():
-    """Return dict of shapely geometries: 'par' (F.Cu), 'drv' (In2.Cu), 'gnd' (B.Cu)."""
+def layers(variant=None):
+    """Return dict of shapely geometries: 'par' (F.Cu), 'drv' (In2.Cu), 'gnd' (B.Cu).
+    variant='fixB' reads the fix-B layer files from 06_fixB/ instead of the supplied ones in 01_input/."""
+    if variant == 'fixB':
+        d = os.path.join(HERE, '..', '06_fixB')
+        return dict(par=unary_union(_polys('F_CU_fixB.dxf', d)), drv=unary_union(_polys('IN2_CU_fixB.dxf', d)),
+                    gnd=unary_union(_polys('GND.dxf', d)))
     return dict(par=unary_union(_polys('F_CU.dxf')),
                 drv=unary_union(_polys('IN2_CU.dxf')),
                 gnd=unary_union(_polys('GND.dxf')))

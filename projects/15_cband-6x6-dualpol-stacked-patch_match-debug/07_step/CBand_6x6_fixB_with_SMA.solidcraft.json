@@ -1,0 +1,836 @@
+{
+"commands": [
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": -0.035,
+"name": "B_Cu_ground_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/B_Cu_ground.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.035,
+"profiles": [
+{
+"point": [
+30.93217741065763,
+0.0003660689317801502
+]
+}
+],
+"operation": "new",
+"body_name": "B_Cu_ground"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"B_Cu_ground"
+],
+"color": "#c8823a"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0.0,
+"name": "RT5880_0p8_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/RT5880_0p8.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.8,
+"profiles": [
+{
+"point": [
+0.0,
+68.50800000000001
+]
+}
+],
+"operation": "new",
+"body_name": "RT5880_0p8"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"RT5880_0p8"
+],
+"color": "#e9e1c6"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0.8,
+"name": "In2_Cu_fixB_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/In2_Cu_fixB.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.035,
+"profiles": [
+{
+"point": [
+-137.0097,
+-131.5591
+]
+},
+{
+"point": [
+137.0097,
+-131.5591
+]
+},
+{
+"point": [
+-99.15689402571265,
+-1.9848000000000001
+]
+},
+{
+"point": [
+-137.0097,
+131.5591
+]
+},
+{
+"point": [
+137.0097,
+131.5591
+]
+}
+],
+"operation": "new",
+"body_name": "In2_Cu_fixB"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"In2_Cu_fixB",
+"In2_Cu_fixB (2)",
+"In2_Cu_fixB (3)",
+"In2_Cu_fixB (4)",
+"In2_Cu_fixB (5)"
+],
+"color": "#c8823a"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 4.8,
+"name": "FR4_0p4_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/FR4_0p4.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.4,
+"profiles": [
+{
+"point": [
+0.0,
+0.0
+]
+}
+],
+"operation": "new",
+"body_name": "FR4_0p4"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"FR4_0p4"
+],
+"color": "#b9c27a"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 5.2,
+"name": "F_Cu_fixB_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/F_Cu_fixB.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.035,
+"profiles": [
+{
+"point": [
+-61.82515,
+-111.87495000000001
+]
+},
+{
+"point": [
+-105.36525,
+-111.87495
+]
+},
+{
+"point": [
+-16.31425,
+-111.86994999999997
+]
+},
+{
+"point": [
+-61.97515,
+-68.17495000000001
+]
+},
+{
+"point": [
+-16.46425,
+-67.90825
+]
+},
+{
+"point": [
+-105.51525000000001,
+-67.84785
+]
+},
+{
+"point": [
+-62.12515,
+-24.320050000000005
+]
+},
+{
+"point": [
+-16.61545,
+-24.191250000000004
+]
+},
+{
+"point": [
+-105.61564999999999,
+-23.74775
+]
+},
+{
+"point": [
+-105.71615,
+19.273049999999998
+]
+},
+{
+"point": [
+-16.769250000000003,
+19.71165
+]
+},
+{
+"point": [
+-62.275150000000004,
+19.84045
+]
+},
+{
+"point": [
+-106.20175,
+63.42284999999999
+]
+},
+{
+"point": [
+-16.96425,
+63.47865
+]
+},
+{
+"point": [
+-62.475150000000006,
+63.74534999999999
+]
+},
+{
+"point": [
+-62.62515000000002,
+107.44535
+]
+},
+{
+"point": [
+-105.22465,
+107.44535
+]
+},
+{
+"point": [
+-17.11425,
+107.44535
+]
+},
+{
+"point": [
+114.13065000000002,
+-111.89315
+]
+},
+{
+"point": [
+71.54945000000001,
+-111.87495000000001
+]
+},
+{
+"point": [
+26.03865,
+-111.87495000000001
+]
+},
+{
+"point": [
+71.47535,
+-68.17495000000001
+]
+},
+{
+"point": [
+25.88865,
+-67.90825
+]
+},
+{
+"point": [
+114.93964999999999,
+-67.84605
+]
+},
+{
+"point": [
+71.24955,
+-24.23745
+]
+},
+{
+"point": [
+25.737450000000003,
+-24.191250000000004
+]
+},
+{
+"point": [
+114.74015,
+-23.620549999999994
+]
+},
+{
+"point": [
+114.54065,
+19.21865
+]
+},
+{
+"point": [
+25.58865,
+19.71165
+]
+},
+{
+"point": [
+71.09455,
+19.84045
+]
+},
+{
+"point": [
+114.62615,
+63.415450000000014
+]
+},
+{
+"point": [
+25.388650000000002,
+63.47865
+]
+},
+{
+"point": [
+70.89955000000002,
+63.74225
+]
+},
+{
+"point": [
+70.74955,
+107.44535
+]
+},
+{
+"point": [
+113.34905,
+107.44535
+]
+},
+{
+"point": [
+25.485249999999997,
+107.44535
+]
+}
+],
+"operation": "new",
+"body_name": "F_Cu_fixB"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"F_Cu_fixB",
+"F_Cu_fixB (2)",
+"F_Cu_fixB (3)",
+"F_Cu_fixB (4)",
+"F_Cu_fixB (5)",
+"F_Cu_fixB (6)",
+"F_Cu_fixB (7)",
+"F_Cu_fixB (8)",
+"F_Cu_fixB (9)",
+"F_Cu_fixB (10)",
+"F_Cu_fixB (11)",
+"F_Cu_fixB (12)",
+"F_Cu_fixB (13)",
+"F_Cu_fixB (14)",
+"F_Cu_fixB (15)",
+"F_Cu_fixB (16)",
+"F_Cu_fixB (17)",
+"F_Cu_fixB (18)",
+"F_Cu_fixB (19)",
+"F_Cu_fixB (20)",
+"F_Cu_fixB (21)",
+"F_Cu_fixB (22)",
+"F_Cu_fixB (23)",
+"F_Cu_fixB (24)",
+"F_Cu_fixB (25)",
+"F_Cu_fixB (26)",
+"F_Cu_fixB (27)",
+"F_Cu_fixB (28)",
+"F_Cu_fixB (29)",
+"F_Cu_fixB (30)",
+"F_Cu_fixB (31)",
+"F_Cu_fixB (32)",
+"F_Cu_fixB (33)",
+"F_Cu_fixB (34)",
+"F_Cu_fixB (35)",
+"F_Cu_fixB (36)"
+],
+"color": "#c8823a"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": -1.635,
+"name": "SMA1_flange_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/SMA1_flange.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.6,
+"profiles": [
+{
+"point": [
+-81.1498456445818,
+-2.038845240764015
+]
+}
+],
+"operation": "new",
+"body_name": "SMA1_flange"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SMA1_flange"
+],
+"color": "#d4af37"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": -11.135,
+"name": "SMA1_body_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/SMA1_body.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 9.5,
+"profiles": [
+{
+"point": [
+-79.56219128916361,
+-2.038845240764015
+]
+}
+],
+"operation": "new",
+"body_name": "SMA1_body"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SMA1_body"
+],
+"color": "#d4af37"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": -11.135,
+"name": "SMA1_ptfe_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/SMA1_ptfe.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 11.1,
+"profiles": [
+{
+"point": [
+-78.29240437493604,
+-2.056208159943975
+]
+}
+],
+"operation": "new",
+"body_name": "SMA1_ptfe"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SMA1_ptfe"
+],
+"color": "#f2f2f2"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": -10.135,
+"name": "SMA1_pin_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/SMA1_pin.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 10.97,
+"profiles": [
+{
+"point": [
+-76.95,
+-2.064
+]
+}
+],
+"operation": "new",
+"body_name": "SMA1_pin"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SMA1_pin"
+],
+"color": "#e6c35c"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": -1.635,
+"name": "SMA2_flange_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/SMA2_flange.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.6,
+"profiles": [
+{
+"point": [
+-5.107845644581804,
+-2.1068452407640152
+]
+}
+],
+"operation": "new",
+"body_name": "SMA2_flange"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SMA2_flange"
+],
+"color": "#d4af37"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": -11.135,
+"name": "SMA2_body_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/SMA2_body.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 9.5,
+"profiles": [
+{
+"point": [
+-3.5201912891636096,
+-2.1571547592359854
+]
+}
+],
+"operation": "new",
+"body_name": "SMA2_body"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SMA2_body"
+],
+"color": "#d4af37"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": -11.135,
+"name": "SMA2_ptfe_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/SMA2_ptfe.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 11.1,
+"profiles": [
+{
+"point": [
+0.4344043749360448,
+-2.1397918400560245
+]
+}
+],
+"operation": "new",
+"body_name": "SMA2_ptfe"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SMA2_ptfe"
+],
+"color": "#f2f2f2"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": -10.135,
+"name": "SMA2_pin_sk"
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/SMA2_pin.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 10.97,
+"profiles": [
+{
+"point": [
+-0.908,
+-2.132
+]
+}
+],
+"operation": "new",
+"body_name": "SMA2_pin"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SMA2_pin"
+],
+"color": "#e6c35c"
+}
+}
+]
+}

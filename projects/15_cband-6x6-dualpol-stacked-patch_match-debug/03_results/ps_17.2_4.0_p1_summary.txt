@@ -1,0 +1,4 @@
+element from layer files, variant asbuilt, port 1 (H feed), Zref 100
+4.9-6.4 GHz: worst VSWR 7.82, VSWR<=2 34 %, <=3 59 %, worst coupling -14.4 dB
+5.1-6.2 GHz: worst VSWR 6.25, VSWR<=2 46 %, <=3 71 %, worst coupling -20.4 dB
+5.2-6.1 GHz: worst VSWR 5.09, VSWR<=2 56 %, <=3 76 %, worst coupling -21.2 dB

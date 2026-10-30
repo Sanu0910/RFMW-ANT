@@ -1,8 +1,8 @@
 # Status: 15_cband-6x6-dualpol-stacked-patch_match-debug
 
-_Last updated: 2026-10-30. Update this file whenever the project changes (see `docs/CONVENTIONS.md`)._
+_Last updated: 2026-10-30 (evening). Update this file whenever the project changes (see `docs/CONVENTIONS.md`)._
 
-**State:** Report rev. 2 delivered: `04_docs/CBand_6x6_Array_S11_Analysis_Report.pdf` (12 pages). Root cause is the element bandwidth (edge-fed stacked patch, one merged resonance, ~16 %). A first wideband redesign iteration (aperture-coupled stacked patch, 40 openEMS runs) did not beat the present element. The full-array openEMS runs are in progress on the local PC (WSL).
+**State:** Fix B = uniform 16.2 mm parasitics (lines unchanged) + STEP with SMA jacks done (07_step/).  Report rev. 2 delivered: `04_docs/CBand_6x6_Array_S11_Analysis_Report.pdf` (12 pages). Root cause is the element bandwidth (edge-fed stacked patch, one merged resonance, ~16 %). A first wideband redesign iteration (aperture-coupled stacked patch, 40 openEMS runs) did not beat the present element. The full-array openEMS runs are in progress on the local PC (WSL).
 
 ## Done
 - Inputs decoded (`01_input/`): F.Cu parasitics, In2.Cu driven patches + two 36-way corporate feeds, B.Cu ground, stack-up
@@ -23,7 +23,7 @@ _Last updated: 2026-10-30. Update this file whenever the project changes (see `d
 - VSWR fix (element retune + matching section on each 100-ohm branch, same build): fix B gives VSWR <= 2 at ~5.17-6.17 GHz and VSWR <= 3 at ~5.05-6.25 GHz on both ports; fix A gives VSWR <= 3 at ~4.98-6.22 GHz. Figure `03_results/fix_vswr.png`
 
 ## Open items
-- Waiting for the user: choose fix A or B, then update the feed-layer layout (72 matching sections) and the STEP model with the SMA 4-hole flange connectors
+- Decide with the user: fix B (all parasitics 16.2 mm) trades low-band for high-band match; full-array comparison (as built vs fix B) needed. With the feed lines fixed, VSWR over 4.9-6.4 GHz cannot be met by patch/gap changes (element limit)
 - Clarify with the user: V/H port mapping, S11 calibration plane, horn gain table, radome on/off during gain test, test range (indoor ~5 m), real spec band (4.9-6.4 GHz?) and gain target (23 dBi?)
 - Full-array runs (`sim_array.py --port 1/2`): restarted 2026-10-30 in WSL on the local PC (6 + 10 threads); ~35-45 k steps each, several hours per port. Final results replace the preliminary curves in report section 6 (`python array_interim.py` gives an update at any time)
 - Wideband element iteration 2: unit cell with periodic boundaries, dielectric-loaded patches, resonant dog-bone/H slots, dual-pol, ~150-250 evaluations (report section 9)
