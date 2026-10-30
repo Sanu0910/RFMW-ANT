@@ -3,6 +3,8 @@
 Newest first.
 
 ## 2026-10-30
+- Option 1 (uniform 16.2 mm parasitics) and option 2 (wider feed start, lines >= 0.73 mm) both evaluated full-wave from the layer files: neither improves the element match (option 2: H 3.50 -> 3.67, V 3.59 -> 3.58 worst VSWR over 5.1-6.2 GHz; `03_results/opt2_vswr.png`, `opt2_summary.txt`). The first option-2 design had used the 60 mm-ground model, whose ground-edge effects overstated the as-built mismatch (4.6 instead of 3.5); `fixb_design.py` now starts from the infinite-ground as-built model of both feeds. `fix_parasitics.py` removed; `06_fixB/` keeps the option-2 layout with a NOT RECOMMENDED note.
+- STEP model rebuilt from the as-built layers: `07_step/CBand_6x6_asbuilt_with_SMA.step` (52 bodies, all checks PASS).
 - Feed-line width change (fixb_design.py: thin 0.25 mm and wide >= 0.73 mm versions) evaluated and rejected by the user ("keep the line same"); the line-modifying layout script was removed.
 - Fix B (final, lines unchanged): `fix_parasitics.py` -> `06_fixB/` (F.Cu all 16.2 mm, In2.Cu and B.Cu identical to the input). Element study from the layer files (`sim_element_fix.py`, infinite ground): as built H feed worst VSWR 3.50 / V feed 3.59 over 5.1-6.2 GHz; parasitic 15.6-16.8 mm and gap 3.5-4.5 mm give no improvement; per-row sizes 16.2-17.8 mm form a stagger tuning (larger = better low band, worse high band) - `03_results/fix_rows.png`, `fix_rows.txt`.
 - STEP model `07_step/CBand_6x6_fixB_with_SMA.step` (SolidCraft, 52 bodies, all volume checks PASS): ground, RT5880, In2.Cu, FR4, uniform parasitics, two 4-hole flange SMA jacks with centre pins at the launch points (`02_openems/build_step.py`). Renders `07_step/step_*.png`.

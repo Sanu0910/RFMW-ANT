@@ -1,10 +1,10 @@
-STEP build report: CBand_6x6_fixB_with_SMA.step (52 bodies)
+STEP build report: CBand_6x6_asbuilt_with_SMA.step (52 bodies)
 body                 count   expected mm3 SolidCraft mm3     error
 B_Cu_ground          1/1        2681.8314      2681.8314  -0.0000%  PASS
 RT5880_0p8           1/1       61319.0442     61319.0442  +0.0000%  PASS
-In2_Cu_fixB          5/5         580.3207       580.3207  -0.0000%  PASS
+In2_Cu               5/5         580.3207       580.3207  -0.0000%  PASS
 FR4_0p4              1/1       30660.5838     30660.5838  +0.0000%  PASS
-F_Cu_fixB           36/36        330.6744       330.6744  +0.0000%  PASS
+F_Cu                36/36        365.2426       365.2426  +0.0000%  PASS
 SMA1_flange          1/1         200.5731       200.5731  -0.0000%  PASS
 SMA1_body            1/1         175.4158       175.4158  +0.0000%  PASS
 SMA1_ptfe            1/1         132.4738       132.4738  -0.0000%  PASS

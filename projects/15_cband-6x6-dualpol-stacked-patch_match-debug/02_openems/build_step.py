@@ -1,18 +1,18 @@
-"""STEP (AP242) model of the C-band 6x6 array with fix B and the two 4-hole flange SMA jacks, built with SolidCraft.
+"""STEP (AP242) model of the C-band 6x6 array as built (supplied layer files) with the two 4-hole flange SMA jacks, built with SolidCraft.
 
     python build_step.py --prepare      (needs ezdxf + shapely; writes 07_step/dxf_src/*.dxf and the command script)
     python build_step.py --run          (needs solidcraft-cli on PATH; writes 07_step/*.step and STEP_report.txt)
     python build_step.py                (both)
 
-Variant: fix B layers from 06_fixB/ (In2.Cu with the new feed sections, F.Cu with all parasitics 16.2 mm).
+Layers: 01_input (as built). The fix studies (06_fixB, option 2) did not improve the match, so the model is the board as built.
 Frame: mm, board centre at (0, 0), z = 0 on top of the ground copper's lower face ... see stack below; +z to the sky.
 
 Stack (z, mm):                  B.Cu ground          -0.035 .. 0
                                 RT5880 0.8           0 .. 0.8
-                                In2.Cu (fix B)       0.8 .. 0.835
+                                In2.Cu               0.8 .. 0.835
                                 air gap 4.0          (spacers not modelled)
                                 FR4 0.4              4.8 .. 5.2
-                                F.Cu (fix B)         5.2 .. 5.235
+                                F.Cu                 5.2 .. 5.235
 Copper 35 um [ASSUMED 1 oz]. FR4 sheet = board outline [ASSUMED, same as the ground outline].
 SMA jacks [ASSUMED generic 4-hole flange panel jack, dimensions below] on the ground side (-z) at the two coax launch
 points found in IN2_CU.dxf; the 1.27 mm centre pin passes through a 1.3 mm hole in the RT5880 and a 4.2 mm antipad in
@@ -23,7 +23,7 @@ import os, sys, json, math, shutil, subprocess, zipfile, re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.abspath(os.path.join(HERE, '..', '07_step')); TMP = os.path.join(OUT, 'dxf_src')
-NAME = 'CBand_6x6_fixB_with_SMA'
+NAME = 'CBand_6x6_asbuilt_with_SMA'
 CU, H_SUB, Z_FR4, H_FR4 = 0.035, 0.8, 4.8, 0.4
 TOL = 5e-4
 COL = {'cu': '#c8823a', 'rt5880': '#e9e1c6', 'fr4': '#b9c27a', 'brass': '#d4af37', 'ptfe': '#f2f2f2', 'pin': '#e6c35c'}
@@ -39,7 +39,7 @@ def prepare():
     sys.path.insert(0, HERE)
     import cbgeom as g
     os.makedirs(TMP, exist_ok=True)
-    L = g.layers('fixB'); P = g.find_ports(g.layers()['drv'])
+    L = g.layers(); P = g.find_ports(L['drv'])
     pins = [(round(P[k]['x'] + 0.6, 3), round(sum(P[k]['y']) / 2, 3)) for k in (1, 2)]   # 0.6 mm in from the line end
 
     def write(name, geom, circles=()):
@@ -73,9 +73,9 @@ def prepare():
     antipads = unary_union([Point(x, y).buffer(SMA['antipad_d'] / 2, 64) for x, y in pins])
     body('B_Cu_ground', outline.difference(antipads), -CU, CU, 'cu')
     body('RT5880_0p8', outline.difference(holes_pin), 0.0, H_SUB, 'rt5880')
-    body('In2_Cu_fixB', L['drv'], H_SUB, CU, 'cu')
+    body('In2_Cu', L['drv'], H_SUB, CU, 'cu')
     body('FR4_0p4', outline, Z_FR4, H_FR4, 'fr4')
-    body('F_Cu_fixB', L['par'], Z_FR4 + H_FR4, CU, 'cu')
+    body('F_Cu', L['par'], Z_FR4 + H_FR4, CU, 'cu')
     for k, (x, y) in enumerate(pins, start=1):
         f2, hs = SMA['flange'] / 2, SMA['hole_sp'] / 2
         flange = box(x - f2, y - f2, x + f2, y + f2).difference(unary_union(

@@ -1,37 +1,5 @@
-Fix B: 36 parasitic patches set to 16.2 mm (centres unchanged); In2.Cu and B.Cu unchanged; air gap 4.0 mm unchanged.
-parasitic at (-105.225,  107.445): 16.20 mm -> 16.20 mm
-parasitic at ( -62.625,  107.445): 16.20 mm -> 16.20 mm
-parasitic at ( -17.114,  107.445): 16.20 mm -> 16.20 mm
-parasitic at (  25.485,  107.445): 16.20 mm -> 16.20 mm
-parasitic at (  70.750,  107.445): 16.20 mm -> 16.20 mm
-parasitic at ( 113.349,  107.445): 16.20 mm -> 16.20 mm
-parasitic at ( -62.475,   63.745): 16.50 mm -> 16.20 mm
-parasitic at (  70.900,   63.742): 16.50 mm -> 16.20 mm
-parasitic at (-106.202,   63.423): 16.50 mm -> 16.20 mm
-parasitic at ( -16.964,   63.479): 16.50 mm -> 16.20 mm
-parasitic at (  25.389,   63.479): 16.50 mm -> 16.20 mm
-parasitic at ( 114.626,   63.415): 16.50 mm -> 16.20 mm
-parasitic at ( -62.275,   19.840): 16.90 mm -> 16.20 mm
-parasitic at ( -16.769,   19.712): 16.90 mm -> 16.20 mm
-parasitic at (  25.589,   19.712): 16.90 mm -> 16.20 mm
-parasitic at (  71.095,   19.840): 16.90 mm -> 16.20 mm
-parasitic at (-105.716,   19.273): 16.90 mm -> 16.20 mm
-parasitic at ( 114.541,   19.219): 16.90 mm -> 16.20 mm
-parasitic at (-105.616,  -23.748): 17.20 mm -> 16.20 mm
-parasitic at ( -62.125,  -24.320): 17.20 mm -> 16.20 mm
-parasitic at ( -16.615,  -24.191): 17.20 mm -> 16.20 mm
-parasitic at (  25.737,  -24.191): 17.20 mm -> 16.20 mm
-parasitic at (  71.250,  -24.237): 17.20 mm -> 16.20 mm
-parasitic at ( 114.740,  -23.621): 17.20 mm -> 16.20 mm
-parasitic at (-105.515,  -67.848): 17.50 mm -> 16.20 mm
-parasitic at ( -61.975,  -68.175): 17.50 mm -> 16.20 mm
-parasitic at ( -16.464,  -67.908): 17.50 mm -> 16.20 mm
-parasitic at (  25.889,  -67.908): 17.50 mm -> 16.20 mm
-parasitic at (  71.475,  -68.175): 17.50 mm -> 16.20 mm
-parasitic at ( 114.940,  -67.846): 17.50 mm -> 16.20 mm
-parasitic at (-105.365, -111.875): 17.80 mm -> 16.20 mm
-parasitic at ( -61.825, -111.875): 17.80 mm -> 16.20 mm
-parasitic at ( -16.314, -111.870): 17.80 mm -> 16.20 mm
-parasitic at (  26.039, -111.875): 17.80 mm -> 16.20 mm
-parasitic at (  71.549, -111.875): 17.80 mm -> 16.20 mm
-parasitic at ( 114.131, -111.893): 17.80 mm -> 16.20 mm
+Option 2 / fix B (wide): 72 feeds; section A 4.088 mm x 1.93 mm, section B 2.001 mm x 6.37 mm, then the existing 0.73 mm line
+connected copper pieces on In2.Cu: before 5, after 5 (OK)
+smallest gap from new copper to other copper: 0.526 mm at the feed starting [-17.27 -32.56] (OK, limit 0.2 mm)
+F.Cu (parasitics) and B.Cu (ground) unchanged
+ALL CHECKS PASS
