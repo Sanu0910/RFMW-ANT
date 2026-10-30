@@ -98,7 +98,10 @@ def element_table(tag):
 def array_section():
     d1, d2 = csv('array_p1'), csv('array_p2')
     if d1 is None and d2 is None:
-        return T.ARRAY_PENDING
+        pre = os.path.join(R, 'array_interim.png')
+        return T.ARRAY_PENDING + (img(pre, '92%', 'Fig. 6 - PRELIMINARY full-array S-parameters from the runs still in progress (truncated time signals: '
+                                     'the sharp dips and the ripple are partly truncation artefacts, and late reflections are not yet included).')
+                                 + T.ARRAY_INTERIM if os.path.exists(pre) else '')
     html = img(os.path.join(R, 'array_S.png'), '92%', 'Full 6x6 array as drawn: port reflections and port-to-port coupling (50 &Omega;).')
     rows = []
     for d, name in ((d1, 'Port 1 (V-pol) S11'), (d2, 'Port 2 (H-pol) S22')):

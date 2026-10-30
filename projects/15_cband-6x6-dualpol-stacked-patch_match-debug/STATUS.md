@@ -13,10 +13,11 @@ _Last updated: 2026-10-30. Update this file whenever the project changes (see `d
 - Stack-up used: 4 mm air gap, er 1.0 (as built, per the user)
 - Wideband redesign study (`sim_wb_element.py`, `opt_wb_element.py`, `match_wb.py`, `wb_figures.py`): aperture-coupled stacked patch, single-pol, 40 runs. Best candidate `wbN4` VSWR<=3 4.95-5.75 GHz (15 %), no better than the present element; feed-layer matching cannot widen it. Findings and the plan for iteration 2 are in report sections 7 and 9
 - Array model fixes (`sim_array.py`): port coordinates rounded to the mesh grid (port 2 injected no energy before), `--threads` / `--nrts` options
+- Preliminary array S-parameters (`array_interim.py`) from the running full-array models: best mid-band (S22 mostly < -10 dB at ~5.2-6.2 GHz), VSWR >= 3 mostly below ~4.8 and above ~6.3 GHz, V/H coupling < -20 dB over most of the band
 - PDF report (`02_openems/build_report.py`), 12 pages, with "What can be done next" plan
 
 ## Open items
-- Full-array runs (`sim_array.py --port 1/2`): restarted 2026-10-30 in WSL on the local PC (6 + 10 threads); ~35-45 k steps each, several hours per port. Results go into report section 6
+- Full-array runs (`sim_array.py --port 1/2`): restarted 2026-10-30 in WSL on the local PC (6 + 10 threads); ~35-45 k steps each, several hours per port. Final results replace the preliminary curves in report section 6 (`python array_interim.py` gives an update at any time)
 - Wideband element iteration 2: unit cell with periodic boundaries, dielectric-loaded patches, resonant dog-bone/H slots, dual-pol, ~150-250 evaluations (report section 9)
 - Plan B element: L-probe / differential-probe patch or crossed dipole
 

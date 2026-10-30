@@ -20,6 +20,15 @@ the array input match cannot be better than the match of the elements it is feed
 corporate network built from 100 &Omega; branches and 70.7 &Omega; quarter-wave transformers.</div>
 """
 
+ARRAY_INTERIM = """
+<p><b>Preliminary reading</b> (12.8 ns of port 1 and 17.0 ns of port 2 recorded, about 2.5 h into the runs; field energy
+down by only 11&ndash;15 dB). Both array ports are best in the middle of the band, where the element is matched: S22 stays mostly
+below &minus;10 dB from about 5.2 to 6.2 GHz, and S11 has its best stretch around 5.0&ndash;5.8 GHz. Below ~4.8 GHz and above ~6.3 GHz
+both ports sit mostly at VSWR 3 or worse. V/H coupling is below &minus;20 dB over most of the band. This already follows the element
+result (section 4). The final curves will be smoother and slightly worse, because reflections that come back late
+through the long feed network are not in the record yet.</p>
+"""
+
 ARRAY_TEXT = """
 <p>The array result follows the element result: wherever the element is mismatched, the quarter-wave-transformer
 corporate network passes the reflection straight back to the connector (in-phase reflections from 36 identical elements
