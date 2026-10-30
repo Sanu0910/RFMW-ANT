@@ -133,6 +133,8 @@ itself, whose matched bandwidth is about {ep:.0f} %, well below the 54 % needed 
 inside its band, which is why the gain is as expected while the VSWR is poor.</div>
 <div class="callout"><b>Consequence.</b> A change to the feed network alone cannot bring the VSWR below 3:1 across 4&ndash;7 GHz.
 A new wideband radiating element is required; its development has started (section 5).</div>
+<div class="callout amber"><b>Measured panel.</b> Bench measurements confirm the input-match behaviour and show a gain of 20.4 dBi peak,
+about 3 dB below the 23 dBi rating, with a strong drop above 6 GHz (section 6).</div>
 
 <h2><span class="num">2</span>Design reviewed</h2>
 <table>
@@ -142,7 +144,7 @@ A new wideband radiating element is required; its development has started (secti
 <tr><td>Stack-up</td><td>Ground / RT5880 0.8 mm / driven patches and feeds / 4 mm air / FR4 0.4 mm / parasitic patches</td></tr>
 <tr><td>Reported symptom</td><td>Gain as expected; VSWR above 3:1 over most of 4&ndash;7 GHz</td></tr>
 </table>
-{C.fig(os.path.join(D, 'fig_layout.png'), next(n), 'Array layout reviewed (client design). Red: input 1 feed network; blue: input 2 feed network.', '54%')}
+{C.fig(os.path.join(D, 'fig_layout.png'), next(n), 'Array layout reviewed (client design). Red: input 1 feed network; blue: input 2 feed network.', '40%')}
 
 <div class="pb"></div>{hdr}
 <h2><span class="num">3</span>Element results (present design)</h2>
@@ -174,12 +176,25 @@ Iteration 1 has been completed; it is matched from {w0:.2f} to {w1:.2f} GHz and 
 {fig('dev', 'Element development: iteration 1 compared with the present design.', '66%')}
 
 <div class="pb"></div>{hdr}
-<h2><span class="num">6</span>Project status</h2>
+<h2><span class="num">6</span>Measured results of the built panel</h2>
+{C.fig(os.path.join(R, 'measured_vs_sim.png'), next(n), 'Built panel: measured input match (markers) against the predicted array response (left), and measured gain against the aperture limit and the 23 dBi rating (right).', '100%')}
+{C.measured_table()}
+<ul>
+<li>The measured input match agrees with the predicted array response: best in the middle of the band, poorer at the band edges.</li>
+<li>Measured peak gain is 20.4 dBi (V) and 20.0 dBi (H), about 3 dB below the 23 dBi rating.</li>
+<li>Gain drops to 11&ndash;15 dBi at 6.2&ndash;6.4 GHz. The input mismatch accounts for at most about 1.5 dB of this; the cause of the
+remaining drop is under investigation.</li>
+</ul>
+
+<div class="pb"></div>{hdr}
+<h2><span class="num">7</span>Project status</h2>
 <table>
 <tr><th style="width:5%">#</th><th style="width:38%">Work package</th><th style="width:17%">Status</th><th>Result / next output</th></tr>
 <tr><td>1</td><td>Design data review (layout and stack-up)</td><td>&#9679; Completed</td><td>Design decoded, both feed networks traced</td></tr>
 <tr><td>2</td><td>Element performance analysis, present design</td><td>&#9679; Completed</td><td>Root cause identified: element bandwidth ~{ep:.0f} %</td></tr>
 <tr><td>3</td><td>Feed-network correction assessment</td><td>&#9679; Completed</td><td>Feed-network change alone is not sufficient</td></tr>
+<tr><td>3b</td><td>Bench measurement of the built panel (input match, gain)</td><td>&#9679; Completed</td><td>Input match confirmed; gain shortfall identified (section 6)</td></tr>
+<tr><td>3c</td><td>Gain shortfall investigation</td><td>&#9680; In progress</td><td>Cause of the ~3 dB shortfall and the high-band drop</td></tr>
 <tr><td>4</td><td>Complete-array verification, present design</td><td>&#9680; In progress</td><td>Preliminary results issued (section 4); final values in Rev. B</td></tr>
 <tr><td>5</td><td>Wideband element development</td><td>&#9680; In progress</td><td>Iteration 1 completed; iteration 2 is the next step</td></tr>
 <tr><td>6</td><td>Array integration of the new element</td><td>&#9675; Planned</td><td>Updated array layout and simulated performance</td></tr>
@@ -187,11 +202,12 @@ Iteration 1 has been completed; it is matched from {w0:.2f} to {w1:.2f} GHz and 
 </table>
 <p class="small">&#9679; completed &nbsp; &#9680; in progress &nbsp; &#9675; planned</p>
 
-<h2><span class="num">7</span>Actions requested from the client</h2>
+<h2><span class="num">8</span>Actions requested from the client</h2>
 <ul>
 <li>Confirm the required specification: VSWR limit (3:1 or 2:1), band edges, gain and isolation targets.</li>
 <li>Confirm any mechanical constraints for the new element (total height, materials, array size and pitch).</li>
-<li>If available, share measured S-parameters of the existing board for correlation.</li>
+<li>Confirm which panel port is V and which is H, and whether the gain was measured with the radome fitted.</li>
+<li>If possible, repeat the gain measurement with and without the radome, and provide pattern cuts at 5.5 and 6.4 GHz.</li>
 </ul>
 """
 

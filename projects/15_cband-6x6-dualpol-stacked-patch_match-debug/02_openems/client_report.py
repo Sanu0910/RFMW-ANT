@@ -40,6 +40,28 @@ def interim_stats():
     return out
 
 
+def measured_table():
+    """HTML table of the bench measurements (05_measured/measured_2026-10-30.csv) with aperture efficiency."""
+    p = os.path.join(HERE, '..', '05_measured', 'measured_2026-10-30.csv')
+    if not os.path.exists(p):
+        return ''
+    m = np.genfromtxt(p, delimiter=',', comments='#', skip_header=4, names=True)
+    extra = {5800: (-14.687, -13.329), 6000: (-14.039, -8.103)}   # nearest S11 markers (5.7 / 5.9 GHz)
+    rows = ''
+    for r in m:
+        f = r['f_MHz']; ceil = 10 * np.log10(4 * np.pi * 0.27686 ** 2 / (3e8 / (f * 1e6)) ** 2)
+        a, b = r['S11_A_dB'], r['S11_B_dB']
+        sa = f'{a:.1f}' if np.isfinite(a) else f'{extra[int(f)][0]:.1f}*'
+        sb = f'{b:.1f}' if np.isfinite(b) else f'{extra[int(f)][1]:.1f}*'
+        eff = lambda g: f'{10 ** ((g - ceil) / 10) * 100:.0f} %'
+        rows += (f'<tr><td>{f / 1e3:.1f}</td><td>{sa}</td><td>{sb}</td><td>{r["gain_V_dBi"]:.1f}</td><td>{r["gain_H_dBi"]:.1f}</td>'
+                 f'<td>{ceil:.1f}</td><td>{eff(r["gain_V_dBi"])} / {eff(r["gain_H_dBi"])}</td></tr>')
+    return ('<table><tr><th>f (GHz)</th><th>S11 port A (dB)</th><th>S11 port B (dB)</th><th>Gain V (dBi)</th><th>Gain H (dBi)</th>'
+            '<th>Aperture limit (dBi)</th><th>Aperture efficiency V / H</th></tr>' + rows + '</table>'
+            '<p class="small">* nearest S11 marker (5.7 / 5.9 GHz). Gain by substitution against a reference horn at ~5 m. '
+            'Port A/B to V/H mapping and radome condition during the gain test to be confirmed.</p>')
+
+
 CSS = f"""
 @page {{ size: A4; }}
 body {{ font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; line-height: 1.45; color: #1d2733; margin: 0; }}
@@ -146,7 +168,9 @@ while the VSWR is poor.</div>
 redesigned wideband radiating element. Short-term improvements (equal parasitic sizes, per-element transformers, assembly
 tolerances) centre and stabilise the present band but will not widen it to 4&ndash;7 GHz.</div>
 <div class="callout amber"><b>Status.</b> The element-level analysis is complete. The full-array simulation is still running;
-the preliminary array results in section 5.4 agree with the element-level conclusions. A first wideband redesign iteration
+the preliminary array results in section 5.4 agree with the element-level conclusions, and bench measurements of the built panel
+(section 5.6) confirm the input-match behaviour. The measurements also show a gain shortfall of about 3 dB mid-band and a
+strong gain drop above 6 GHz, which is now part of the investigation. A first wideband redesign iteration
 has been completed and has defined the requirements for the next design iteration (section 7).</div>
 
 <h2><span class="num">2</span>Reported issue and scope</h2>
@@ -231,6 +255,22 @@ valid design but not yet wider than the present element. The iteration identifie
 </ul>
 {fig(os.path.join(R, 'wb_S11.png'), next(n), 'First-iteration wideband candidate compared with the present element.', '64%')}
 
+<div class="pb"></div>{header()}
+<h3>5.6 Measured results of the built panel</h3>
+<p>The client's built panel was measured on the bench: input match of both ports with a calibrated network analyser, and
+broadside gain by substitution against a reference horn.</p>
+{fig(os.path.join(R, 'measured_vs_sim.png'), next(n), 'Measured panel against simulation. Left: measured input match (markers) over the simulated array curves. Right: measured gain against the aperture limit of the 276.86 mm panel and the 23 dBi rating.', '100%')}
+{measured_table()}
+<ul>
+<li><b>Input match confirms the analysis.</b> Both ports show the same rippled response as the simulated array and are best in the middle
+of the band. Port A meets VSWR &le; 3 at all markers except 6.2 GHz; port B is at about VSWR 3 at 4.9&ndash;5.2 GHz.</li>
+<li><b>Gain is below the rating.</b> Peak gain is 20.4 dBi (V) and 20.0 dBi (H), about 3 dB under 23 dBi, corresponding to 25&ndash;35 %
+aperture efficiency mid-band (a well-designed panel reaches 50&ndash;70 %).</li>
+<li><b>Gain collapses at the top of the band:</b> 11&ndash;15 dBi at 6.2&ndash;6.4 GHz (3&ndash;8 % efficiency). Mismatch explains at most
+about 1.5 dB of this. The remaining shortfall points to losses or phase errors (feed network, FR4 parasitic layer, radome) and is
+being investigated.</li>
+</ul>
+
 <h2><span class="num">6</span>Root causes</h2>
 <table>
 <tr><th style="width:5%">#</th><th style="width:33%">Cause</th><th style="width:30%">Evidence</th><th>Impact</th></tr>
@@ -239,6 +279,7 @@ valid design but not yet wider than the present element. The iteration identifie
 <tr><td>3</td><td>Driven and parasitic resonances merge (similar sizes)</td><td>Single resonance; resizing only shifts the window</td><td>No double-tuned wideband response</td></tr>
 <tr><td>4</td><td>Parasitic sizes graded by row (16.2&ndash;17.8 mm)</td><td>Layout; parasitic-size sweep</td><td>Rows matched at different frequencies</td></tr>
 <tr><td>5</td><td>Element pitch &asymp; 1.03 &lambda; at 7 GHz</td><td>Layout geometry</td><td>Grating lobes and gain reduction near 7 GHz (affects gain, not VSWR)</td></tr>
+<tr><td>6</td><td>Gain shortfall and high-band gain drop (under investigation)</td><td>Bench measurement: 25&ndash;35 % aperture efficiency, 3&ndash;8 % at 6.2&ndash;6.4 GHz</td><td>About 3 dB below the 23 dBi rating mid-band; 6&ndash;9 dB further loss at 6.2&ndash;6.4 GHz</td></tr>
 </table>
 
 <h2><span class="num">7</span>Recommendations and next steps</h2>
@@ -254,7 +295,8 @@ valid design but not yet wider than the present element. The iteration identifie
 <h3>7.2 Plan for the next phase</h3>
 <table>
 <tr><th style="width:5%">Phase</th><th style="width:30%">Activity</th><th>Deliverable</th></tr>
-<tr><td>1</td><td>Complete the full-array simulation of the present design</td><td>Final array S-parameters and gain; report revision B</td></tr>
+<tr><td>1</td><td>Complete the full-array simulation of the present design and compare its gain with the measurement</td><td>Final array S-parameters and gain; cause of the gain shortfall; report revision B</td></tr>
+<tr><td>1b</td><td>Bench checks: gain and S11 with and without radome, without the parasitic layer, and pattern cuts at 5.5 and 6.4 GHz</td><td>Separates radome, parasitic-layer and feed-phase effects</td></tr>
 <tr><td>2</td><td>Wideband element, iteration 2: unit-cell model, laminate/foam stack, resonant H-slots, dual polarisation, systematic optimisation</td><td>Element meeting VSWR &lt; 3 (target &lt; 2) over 4&ndash;7 GHz, with isolation and pattern data</td></tr>
 <tr><td>3</td><td>Array integration: feed network redesign for the new element, full-array verification</td><td>Array layout files and simulated performance</td></tr>
 <tr><td>4</td><td>Prototype and measurement: element test coupon, network with resistive loads, full array</td><td>Measured S-parameters and patterns; correlation with simulation</td></tr>
@@ -264,7 +306,8 @@ valid design but not yet wider than the present element. The iteration identifie
 
 <h2><span class="num">8</span>Assumptions and limitations</h2>
 <ul>
-<li>Results are from simulation; no measured data of the board was available. The comparison is with the reported symptom.</li>
+<li>Bench measurements were made by the client team on a bench range (~5 m), not in an anechoic chamber; gain values carry an estimated &plusmn;1&ndash;2 dB uncertainty.
+The port A/B to V/H mapping and the radome condition during the gain test are to be confirmed.</li>
 <li>The air gap is modelled as 4.0 mm of air (&epsilon;<sub>r</sub> 1.0), as built.</li>
 <li>Copper thickness, solder mask, connectors and the mechanical spacers are not modelled.</li>
 <li>The array mesh (0.5 mm) approximates the 0.73 mm lines, which can shift network resonances by a few percent.</li>

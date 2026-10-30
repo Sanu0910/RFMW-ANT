@@ -168,6 +168,15 @@ def wb_section(best='wbN4'):
     return html + T.WB_TEXT
 
 
+def meas_section():
+    import client_report as CR
+    tab = CR.measured_table()
+    if not tab:
+        return '<p class="missing">[no measured data]</p>'
+    return (img(os.path.join(R, 'measured_vs_sim.png'), '100%', 'Fig. 7 - Built panel: measured S11 markers over the simulated array (left); measured gain against the aperture limit and the 23 dBi rating (right).')
+            + tab + T.MEAS_TEXT)
+
+
 def main():
     match = open(os.path.join(R, 'match_study.txt')).read() if os.path.exists(os.path.join(R, 'match_study.txt')) else ''
     css = open(os.path.join(HERE, 'report.css')).read()
@@ -182,7 +191,8 @@ def main():
         variant_table=variant_table(),
         match=f'<pre>{match}</pre>',
         array=array_section(),
-        wb=wb_section())
+        wb=wb_section(),
+        meas=meas_section())
     html = f'<!doctype html><html><head><meta charset="utf-8"><title>C-band array S11 report</title><style>{css}</style></head><body>{body}</body></html>'
     open(OUT_HTML, 'w').write(html)
     subprocess.run(['node', os.path.join(HERE, 'html2pdf.js'), OUT_HTML, OUT_PDF], check=True)

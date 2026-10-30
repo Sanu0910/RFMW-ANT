@@ -14,7 +14,7 @@ _Last updated: 2026-10-30. Update this file whenever the project changes (see `d
 - Wideband redesign study (`sim_wb_element.py`, `opt_wb_element.py`, `match_wb.py`, `wb_figures.py`): aperture-coupled stacked patch, single-pol, 40 runs. Best candidate `wbN4` VSWR<=3 4.95-5.75 GHz (15 %), no better than the present element; feed-layer matching cannot widen it. Findings and the plan for iteration 2 are in report sections 7 and 9
 - Array model fixes (`sim_array.py`): port coordinates rounded to the mesh grid (port 2 injected no energy before), `--threads` / `--nrts` options
 - Preliminary array S-parameters (`array_interim.py`) from the running full-array models: best mid-band (S22 mostly < -10 dB at ~5.2-6.2 GHz), VSWR >= 3 mostly below ~4.8 and above ~6.3 GHz, V/H coupling < -20 dB over most of the band
-- PDF report (`02_openems/build_report.py`), 12 pages, with "What can be done next" plan
+- PDF report (`02_openems/build_report.py`), 15 pages (measured section in 6), with "What can be done next" plan
 - Client report for sharing: `04_docs/Telmart_CBand_Array_VSWR_Report.pdf` (`02_openems/client_report.py`, TM-RF-15-001 Rev. A, interim); issue Rev. B when the full-array runs finish
 - Results-only client report (protects methods/IP): `04_docs/Telmart_CBand_Array_Results_Status.pdf` (`02_openems/client_results_report.py`, TM-RF-15-002 Rev. A)
 

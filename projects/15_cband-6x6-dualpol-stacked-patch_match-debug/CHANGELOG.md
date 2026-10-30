@@ -3,6 +3,7 @@
 Newest first.
 
 ## 2026-10-30
+- "Measured results" section added to all three reports: engineering report section 6 (15 pages), client report 5.6 + root cause 6 + plan item 1b (10 pages), results-only report section 6 + status rows + client actions (6 pages). Shared table `client_report.measured_table()`.
 - Bench measurements of the built panel added (`05_measured/`: gain vs reference horn, S21, S11 of both ports, setup photos) and compared with the simulation (`02_openems/compare_measured.py` -> `03_results/measured_vs_sim.png`). Measured S11 follows the simulated array; measured gain 20.4 dBi peak (25-35 % aperture efficiency mid-band) falling to 11-14 dBi at 6.2-6.4 GHz.
 - Results-only client report `04_docs/Telmart_CBand_Array_Results_Status.pdf` (5 pages, TM-RF-15-002 Rev. A) built by `02_openems/client_results_report.py`: results, neutral re-plotted figures (`04_docs/res_*.png`) and project status; no methods, tools or design concepts disclosed. Preliminary array curves refreshed (5.5 h into the runs).
 - Client report `04_docs/Telmart_CBand_Array_VSWR_Report.pdf` (8 pages, Telmart branding, doc. TM-RF-15-001 Rev. A) built by `02_openems/client_report.py`; `html2pdf.js` takes an optional footer text. Preliminary array curves refreshed (4.5 h into the runs).

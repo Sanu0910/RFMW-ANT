@@ -71,6 +71,26 @@ item 2 (unit cell, dielectric-loaded patches, resonant dog-bone/H slots, a real 
 version tried here does not get there.</p>
 """
 
+MEAS_TEXT = """
+<ul>
+<li><b>Input match:</b> the measured S11 of both ports (markers 4.9&ndash;6.4 GHz) follows the simulated array: rippled, best mid-band.
+Port A is at VSWR &le; 3 at every marker except 6.2 GHz (&minus;5.3 dB); port B is at about VSWR 3 at 4.9&ndash;5.2 GHz (&minus;6 dB) and better from 5.5 GHz up.
+This confirms the element-limited match found in sections 4&ndash;5.</li>
+<li><b>Gain:</b> 20.4 dBi (V, 5.5 GHz) and 20.0 dBi (H, 5.2 GHz) peak, about 3 dB below the 23 dBi rating. Against the aperture limit
+4&pi;A/&lambda;&sup2; of the 276.86 mm board this is only 25&ndash;35 % aperture efficiency mid-band, and 3&ndash;8 % at 6.2&ndash;6.4 GHz
+(11&ndash;15 dBi). Mismatch loss explains at most ~1.5 dB (S11 = &minus;5.3 dB), so the high-band drop of 6&ndash;9 dB is mainly loss, phase error or
+pattern distortion, not reflection.</li>
+<li><b>Candidates for the gain shortfall</b> (to be separated): the radome (fitted in the test photos), dielectric loss in the resonant
+FR4 parasitic layer (tan&delta; 0.02), radiation and loss of the unshielded 36-way feed lines on the patch layer, frequency-dependent
+phase of the 180&deg; meander corrections, the graded parasitic sizes, and the bench range itself (indoor, ~5 m, multipath, horn calibration).</li>
+<li><b>Check:</b> the full-array runs report broadside realised gain at 4.5&ndash;6.5 GHz. If the simulation also collapses above 6 GHz, the cause
+is in the design; if it stays near 22&ndash;23 dBi, it is in the build, the radome or the measurement. Bench checks: radome on/off, parasitic
+layer removed, pattern cuts at 5.5 and 6.4 GHz.</li>
+<li>Open points: port A/B to V/H mapping, S11 calibration plane, horn gain table, radome condition during the gain test, real spec band
+(the markers suggest 4.9&ndash;6.4 GHz, i.e. 27 % instead of 54 %).</li>
+</ul>
+"""
+
 BODY = r"""
 <h1>C-band 6&times;6 Dual-Polarised Stacked-Patch Array</h1>
 <div class="sub">S11 / VSWR root-cause analysis with openEMS (FDTD) &middot; project <code>15_cband-6x6-dualpol-stacked-patch_match-debug</code> &middot; {date}<br>
@@ -157,6 +177,8 @@ is too large to compensate with a passive network (Bode&ndash;Fano limit). The f
 
 <h2>6. Full array</h2>
 {array}
+<h3 class="pb">Measured panel vs simulation (bench data 2026-10-30)</h3>
+{meas}
 
 <h2 class="pb">7. Wideband redesign study (first iteration)</h2>
 {wb}
