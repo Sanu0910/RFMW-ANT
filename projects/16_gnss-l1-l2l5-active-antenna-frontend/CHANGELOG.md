@@ -3,6 +3,7 @@
 Newest first.
 
 ## 2026-10-31
+- Shareable filter-rejection document `Report/Filter_Rejection_Analysis.pdf/.docx` (`Scripts/make_rejection_doc.py`, 10 pages): in-band IL and ripple per GNSS band, filter compliance with the data-sheet limits (L-band filters + TA1442A), near-band and out-of-band rejection after each filter stage and for the complete L1, L2/L5 and NavIC S chains, cross-band rejection, interference consequences; tables in `Extracted_Data/rejection_doc_*.csv`.
 - NavIC S-band branch added (user request, 2 new datasheets): Tai-Saw TA1442A 2492 MHz SAW and TTM/Xinger C2327J5003AHF hybrid; chain patch -> hybrid -> TQP3M9037 (Qorvo 2.3-2.6 GHz ref. design) -> TA1442A -> TQP3M9037 -> TA1442A, separate output (`Scripts/sband.py`, `TA1442A.s2p`, `C2327J5003AHF.s4p`, `SIM_SBand_2port.s2p`). Gain 35.0 dB, NF 1.17 dB; Wi-Fi ch 13 / LTE B41 overload LNA 2 and the TA1442A rating (3 dB BW ~62 MHz).
 - Simulator-style plots (`Scripts/aedt_style.py`: report window, Curve Info, marker tables, Smith chart) for L-band (`lband_aedt_plots.py`) and S-band.
 - Internal technical note `Report/Internal_ActiveAntenna_RF_Technical_Note.pdf/.docx` (BEL internal marking, 20 pages; `make_internal_report.py`). AEDT script now also builds design `SBand_2port`.

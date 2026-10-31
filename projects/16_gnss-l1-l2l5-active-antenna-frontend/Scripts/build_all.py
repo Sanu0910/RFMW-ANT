@@ -11,7 +11,8 @@
 4. crosscheck_heavi.py  heavi cross-check (runs with the repo .venv python, where heavi lives)
 5. build_circuitrf.py   circuitRF netlist + CLI run + comparison
 6. aedt_circuit.py      ANSYS AEDT Circuit project (only with --aedt; needs AEDT + licence)
-7. make_report.py       PDF + DOCX report; make_internal_report.py  internal technical note
+7. make_report.py       PDF + DOCX report; make_internal_report.py  internal technical note;
+   make_rejection_doc.py   filter rejection analysis document
 """
 import json
 import subprocess
@@ -65,3 +66,4 @@ if __name__ == "__main__":
     compare_aedt()
     run("make_report.py")
     run("make_internal_report.py")
+    run("make_rejection_doc.py")
