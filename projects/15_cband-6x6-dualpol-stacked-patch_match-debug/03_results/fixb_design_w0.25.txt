@@ -1,0 +1,7 @@
+fix B on the real route, band 5.1-6.2 GHz
+  as built: worst VSWR 4.62; circuit with new sections: worst VSWR 2.68, VSWR<=2 61 %
+  section A: 64.0 ohm, width 1.690 mm, 6.62 mm from the patch edge along the route
+  section B: 150.0 ohm, width 0.248 mm, 15.29 mm, then the existing 0.73 mm line
+  params {"band": [5.1, 6.2], "zA": 64.0, "wA": 1.69, "a": 6.62, "zB": 150.0, "wB": 0.248, "b": 15.29}
+  4.9-6.4 GHz: worst VSWR 5.41 (as built 6.83)
+  5.0-6.3 GHz: worst VSWR 3.68 (as built 5.61)

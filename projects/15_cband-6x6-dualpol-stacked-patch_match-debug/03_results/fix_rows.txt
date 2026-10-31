@@ -1,0 +1,8 @@
+Fix B per row: element VSWR (H feed), as drawn vs all parasitics 16.2 mm
+row  parasitic  worst VSWR 5.1-6.2 GHz  VSWR<=2 in 5.1-6.2 GHz   (after fix: all rows as row 1)
+ 1     16.2 mm      3.35                    0 %
+ 2     16.5 mm      4.10                   30 %
+ 3     16.9 mm      4.95                   43 %
+ 4     17.2 mm      6.25                   46 %
+ 5     17.5 mm      7.23                   48 %
+ 6     17.8 mm      8.48                   46 %

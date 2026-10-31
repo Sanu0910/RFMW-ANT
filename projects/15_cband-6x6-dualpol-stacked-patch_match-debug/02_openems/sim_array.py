@@ -21,6 +21,8 @@ ap.add_argument('--gap-tand', type=float, default=0.0)
 ap.add_argument('--res', type=float, default=0.5)
 ap.add_argument('--tag', default=None)
 ap.add_argument('--post-only', action='store_true')
+ap.add_argument('--threads', type=int, default=0)
+ap.add_argument('--nrts', type=int, default=80000)
 a = ap.parse_args()
 tag = a.tag or f'array_p{a.port}'
 
@@ -34,7 +36,7 @@ L = g.layers()
 P = g.find_ports(L['drv'])
 B = 138.43
 
-FDTD = openEMS(NrTS=80000, EndCriteria=10 ** (-35 / 10))
+FDTD = openEMS(NrTS=a.nrts, EndCriteria=10 ** (-35 / 10))
 FDTD.SetGaussExcite(f0, fc)
 FDTD.SetBoundaryCond(['PML_8'] * 6)
 CSX = ContinuousStructure(); FDTD.SetCSX(CSX)
@@ -52,7 +54,10 @@ g.add_poly(pec, L['par'], g.Z_PAR)
 
 ports = []
 for k in (1, 2):
-    x, (y0, y1) = P[k]['x'], P[k]['y']
+    # snap the port to the same 1 um grid as the mesh lines (thin() rounds to 3 decimals): port 2 at x = -1.5081
+    # sat 0.1 um off its mesh line and injected no energy at all
+    x, y0, y1 = (round(v, 3) for v in (P[k]['x'], *P[k]['y']))
+    P[k]['x'], P[k]['y'] = x, (y0, y1)
     ports.append(FDTD.AddLumpedPort(k, 50, [x, y0, 0], [x, y1, g.H_SUB], 'z',
                                     excite=1.0 if k == a.port else 0, priority=5))
 
@@ -74,7 +79,7 @@ nf2ff = FDTD.CreateNF2FFBox(frequency=fz)
 if not a.post_only:
     n = [len(mesh.GetLines(d)) for d in 'xyz']
     print('mesh', n, 'cells %.1f M' % (np.prod(n) / 1e6))
-    FDTD.Run(sim, cleanup=True, verbose=1)
+    FDTD.Run(sim, cleanup=True, verbose=1, numThreads=a.threads)
 
 for p in ports:
     p.CalcPort(sim, freq, ref_impedance=50)

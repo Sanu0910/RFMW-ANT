@@ -1,0 +1,19 @@
+parameter,min,typ,max,unit
+Band 1 (L1) center frequency,,1582.1875,,MHz
+Band 1 insertion loss,,3.8,4.6,dB
+Band 1 amplitude ripple,,0.6,2.0,dB
+Band 1 return loss,,-13.0,-6.0,dB
+Band 1 attenuation 10-1330 MHz,32.0,38.0,,dB
+Band 1 attenuation 1660-2000 MHz,27.0,33.0,,dB
+Band 2 (L2+L5) center frequency,,1206.9225,,MHz
+Band 2 insertion loss,,4.2,5.2,dB
+Band 2 amplitude ripple,,1.2,2.5,dB
+Band 2 return loss,,-8.0,-6.0,dB
+Band 2 attenuation 10-1100 MHz,17.0,23.0,,dB
+Band 2 attenuation 1320-2000 MHz,20.0,28.0,,dB
+Isolation 1196.9-1248.625 MHz,22.0,35.0,,dB
+Isolation 1574.22-1576.62 MHz,22.0,31.0,,dB
+Operating temperature,-40.0,,85.0,C
+Input power level,,10.0,,dBm
+DC voltage,,3.0,,V
+MSL,,1.0,,

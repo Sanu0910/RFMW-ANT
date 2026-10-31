@@ -32,7 +32,8 @@ Reverse engineering: [`docs/REA.md`](docs/REA.md) — REA (Reverse Engineer Anyt
 | 12 | [`projects/12_multitool-rf-board`](projects/12_multitool-rf-board) | CRL-MT1: original firmware-compatible multi-tool RF board (STM32WB55, CC1101 sub-GHz, ST25R3916 NFC, 125 kHz RFID, IR, iButton); runs the open Flipper Zero firmware; not a Flipper clone, no trademark/trade dress | sub-GHz · 13.56 MHz · 125 kHz | architecture from firmware pin map, schematic netlist, BOM, firmware GPIO header (schematic stage) |
 | 13 | [`projects/13_bathroom-presence-sensor-switch`](projects/13_bathroom-presence-sensor-switch) | SAMAY ELECTRONICS **SPS-24G-01** smart presence light switch: HLK-LD2410B 24 GHz radar, ATtiny13A, MOC3063 + BTA16 zero-cross triac, HLK-PM01, 85–265 VAC, mains-isolated | 24 GHz presence / 230 V | 70×56 mm 2-layer KiCad 9 mains PCB (ERC/DRC clean, ≥9.5 mm isolation + slot), Gerbers, CPL, BOM, STEP, datasheet, safety review, firmware |
 | 14 | [`projects/14_mvdr-beamforming-explainer`](projects/14_mvdr-beamforming-explainer) | MVDR (Capon) adaptive beamformer animated explainer: steering vectors, covariance, nulls, eigenvalues and SINR computed live from the algorithm for anti-jam / anti-spoof GNSS arrays | antenna arrays / DSP | unit-tested `mvdr_core.py`, matplotlib+ffmpeg render engine, 1080p explainer video |
-| 15 | [`projects/15_cband-6x6-dualpol-stacked-patch_match-debug`](projects/15_cband-6x6-dualpol-stacked-patch_match-debug) | User design: C-band 6×6 dual-pol edge-fed stacked-patch array (RT5880 + 4 mm air + FR4) whose VSWR never gets below 3:1 | 4–7 GHz | openEMS element and full-array models from the DXFs, parasitic sweep, matching study, PDF root-cause report |
+| 15 | [`projects/15_cband-6x6-dualpol-stacked-patch_match-debug`](projects/15_cband-6x6-dualpol-stacked-patch_match-debug) | User design: C-band 6×6 dual-pol edge-fed stacked-patch array (RT5880 + 4 mm air + FR4) whose VSWR never gets below 3:1 | 4–7 GHz | openEMS element and full-array models from the DXFs, parasitic sweep, matching study, wideband (aperture-coupled) redesign study, PDF root-cause report |
+| 16 | [`projects/16_gnss-l1-l2l5-active-antenna-frontend`](projects/16_gnss-l1-l2l5-active-antenna-frontend) | Multi-band GNSS / NavIC active antenna front end from datasheets: L1 + L2/L5 (2x HC125A, 4x TQP3M9037, B7504 / B8889 SAWs, DXP.02.A combiner) and NavIC S (C2327J5003AHF hybrid, 2x TQP3M9037, 2x TA1442A SAW) | 1.16–1.61 GHz, 2.49 GHz | extracted parameter tables, Touchstone models, scikit-rf system simulation (gain, NF, K/mu, group delay, rejection, cascade, interferers), heavi + circuitRF cross-checks, PyAEDT Circuit script (2 designs), simulator-style plots, PDF/DOCX report + internal technical note |
 
 **Each project folder contains:**
 - `00_README.md`: what is where
@@ -43,6 +44,8 @@ Reverse engineering: [`docs/REA.md`](docs/REA.md) — REA (Reverse Engineer Anyt
 - STEP models (project 04 on), built with [SolidCraft](https://github.com/bherbruck/solidcraft) `solidcraft-cli`
 
 ## Quick start
+**Running locally (all tools + MCP servers) and pushing finished projects:** see [`LOCAL_SETUP.md`](LOCAL_SETUP.md).
+
 ```bash
 pip install -r docs/requirements.txt
 cd projects/03_1bit-rba-mmwave-1x5_AWPL2026/02_python && python rba_array.py && python build_rba.py

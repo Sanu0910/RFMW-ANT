@@ -1,0 +1,1591 @@
+{
+ "summary": [
+  {
+   "band": "L1/E1/B1C",
+   "f_mhz": 1575.42,
+   "branch": "L1",
+   "gain_db": 38.599575195712646,
+   "gain_ripple_db": 0.3400804357666516,
+   "nf_db": 0.73779706777645,
+   "s11_db": -8.142116412942634,
+   "s22_db": -14.444893438475146,
+   "vswr_in": 2.2875619047849223,
+   "vswr_out": 1.4678067392261422,
+   "reverse_iso_db": 64.8885530134022,
+   "gd_ns": 38.01660284089166,
+   "gd_ripple_ns": 0.09187005603232734,
+   "cross_band_db": -67.0179523562772
+  },
+  {
+   "band": "B1I",
+   "f_mhz": 1561.098,
+   "branch": "L1",
+   "gain_db": 37.687165949707776,
+   "gain_ripple_db": 0.5064052815183686,
+   "nf_db": 0.740574415561204,
+   "s11_db": -14.166488415787118,
+   "s22_db": -16.58798241995327,
+   "vswr_in": 1.486752432640072,
+   "vswr_out": 1.3477364552095241,
+   "reverse_iso_db": 65.9879458258895,
+   "gd_ns": 44.38160940873214,
+   "gd_ripple_ns": 6.235477598678109,
+   "cross_band_db": -69.7386336511041
+  },
+  {
+   "band": "G1",
+   "f_mhz": 1602.0,
+   "branch": "L1",
+   "gain_db": 37.56416819256318,
+   "gain_ripple_db": 0.13907465129805985,
+   "nf_db": 0.7293535715651176,
+   "s11_db": -9.15492267801094,
+   "s22_db": -18.873823290785662,
+   "vswr_in": 2.0700320100748915,
+   "vswr_out": 1.2569380834565225,
+   "reverse_iso_db": 65.59112760692612,
+   "gd_ns": 41.827747474326515,
+   "gd_ripple_ns": 9.718387647298641,
+   "cross_band_db": -65.79220174693673
+  },
+  {
+   "band": "L5/E5a/B2a",
+   "f_mhz": 1176.45,
+   "branch": "L2/L5",
+   "gain_db": 41.985088621547675,
+   "gain_ripple_db": 1.1380899747011384,
+   "nf_db": 0.5888203433577115,
+   "s11_db": -12.450868626543182,
+   "s22_db": -15.243901565538412,
+   "vswr_in": 1.6263350170489939,
+   "vswr_out": 1.4180988490991862,
+   "reverse_iso_db": 67.39849577934228,
+   "gd_ns": 27.293753305174995,
+   "gd_ripple_ns": 14.903348595554188,
+   "cross_band_db": -138.37722857515442
+  },
+  {
+   "band": "E5b/B2b",
+   "f_mhz": 1207.14,
+   "branch": "L2/L5",
+   "gain_db": 41.55258756921442,
+   "gain_ripple_db": 0.42262559996615323,
+   "nf_db": 0.6000231341066241,
+   "s11_db": -6.618084220764557,
+   "s22_db": -8.659948109874525,
+   "vswr_in": 2.7506726768307423,
+   "vswr_out": 2.1694706589632355,
+   "reverse_iso_db": 67.35883015735813,
+   "gd_ns": 24.222355300881357,
+   "gd_ripple_ns": 5.204230841752029,
+   "cross_band_db": -140.20169941399305
+  },
+  {
+   "band": "L2",
+   "f_mhz": 1227.6,
+   "branch": "L2/L5",
+   "gain_db": 40.140882239421465,
+   "gain_ripple_db": 0.4084974423085157,
+   "nf_db": 0.6209425018310887,
+   "s11_db": -9.77211692767446,
+   "s22_db": -12.917834155556458,
+   "vswr_in": 1.9613577429869369,
+   "vswr_out": 1.58397907291379,
+   "reverse_iso_db": 68.45198348031998,
+   "gd_ns": 32.013065431280516,
+   "gd_ripple_ns": 0.7616509109120067,
+   "cross_band_db": -153.85242746288588
+  },
+  {
+   "band": "G2",
+   "f_mhz": 1248.0,
+   "branch": "L2/L5",
+   "gain_db": 33.40265189744742,
+   "gain_ripple_db": 12.367570604031826,
+   "nf_db": 0.6705052383094028,
+   "s11_db": -13.745832599177493,
+   "s22_db": -16.292921777764377,
+   "vswr_in": 1.5171514049803185,
+   "vswr_out": 1.3619264084034004,
+   "reverse_iso_db": 74.87119350802837,
+   "gd_ns": 80.0532141638871,
+   "gd_ripple_ns": 33.06436278725641,
+   "cross_band_db": -162.16140400677233
+  }
+ ],
+ "budgets": {
+  "L1 C/A (1575.42 MHz, 2.046 MHz)": [
+   {
+    "stage": "HC125A (RHCP combine)",
+    "gain_db": -0.36099100362098063,
+    "nf_db": 0.36099100362098063,
+    "oip3_dbm": null,
+    "op1db_dbm": null,
+    "cum_gain_db": -0.36099100362098074,
+    "cum_nf_db": 0.3609910036209807,
+    "cum_iip3_dbm": null,
+    "cum_iip1db_dbm": null,
+    "signal_dbm": -128.86099100362097,
+    "noise_dbm": -110.86613090046669,
+    "snr_db": -17.994860103154295
+   },
+   {
+    "stage": "LNA1 TQP3M9037 + bias",
+    "gain_db": 21.953003158985695,
+    "nf_db": 0.37214495088200383,
+    "oip3_dbm": 34.8221375,
+    "op1db_dbm": 20.9024425,
+    "cum_gain_db": 21.592012155364714,
+    "cum_nf_db": 0.7331359545029843,
+    "cum_iip3_dbm": 13.230125344635281,
+    "cum_iip1db_dbm": 0.3104303446352855,
+    "signal_dbm": -106.90798784463529,
+    "noise_dbm": -88.54098279059899,
+    "snr_db": -18.367005054036298
+   },
+   {
+    "stage": "B7504 #1",
+    "gain_db": -0.8931999999999933,
+    "nf_db": 0.8931999999999933,
+    "oip3_dbm": null,
+    "op1db_dbm": null,
+    "cum_gain_db": 20.698812155364724,
+    "cum_nf_db": 0.7389378370271925,
+    "cum_iip3_dbm": 13.230125344635281,
+    "cum_iip1db_dbm": 0.3104303446352855,
+    "signal_dbm": -107.80118784463528,
+    "noise_dbm": -89.42838090807477,
+    "snr_db": -18.372806936560508
+   },
+   {
+    "stage": "LNA2 TQP3M9037 + bias",
+    "gain_db": 21.953003158985695,
+    "nf_db": 0.37214495088200383,
+    "oip3_dbm": 34.8221375,
+    "op1db_dbm": 20.9024425,
+    "cum_gain_db": 42.651815314350415,
+    "cum_nf_db": 0.7417274101860303,
+    "cum_iip3_dbm": -7.8635706768852085,
+    "cum_iip1db_dbm": -20.783265676885208,
+    "signal_dbm": -85.84818468564958,
+    "noise_dbm": -67.47258817593024,
+    "snr_db": -18.375596509719344
+   },
+   {
+    "stage": "B7504 #2",
+    "gain_db": -0.8931999999999933,
+    "nf_db": 0.8931999999999933,
+    "oip3_dbm": null,
+    "op1db_dbm": null,
+    "cum_gain_db": 41.75861531435042,
+    "cum_nf_db": 0.7417728061587305,
+    "cum_iip3_dbm": -7.8635706768852085,
+    "cum_iip1db_dbm": -20.783265676885208,
+    "signal_dbm": -86.74138468564958,
+    "noise_dbm": -68.36574277995753,
+    "snr_db": -18.37564190569205
+   },
+   {
+    "stage": "DXP.02.A (combiner)",
+    "gain_db": -3.308476387720746,
+    "nf_db": 3.308476387720746,
+    "oip3_dbm": null,
+    "op1db_dbm": null,
+    "cum_gain_db": 38.45013892662968,
+    "cum_nf_db": 0.7420517074326958,
+    "cum_iip3_dbm": -7.8635706768852085,
+    "cum_iip1db_dbm": -20.783265676885208,
+    "signal_dbm": -90.04986107337032,
+    "noise_dbm": -71.67394026640432,
+    "snr_db": -18.375920806966008
+   }
+  ],
+  "L5 (1176.45 MHz, 20.46 MHz)": [
+   {
+    "stage": "HC125A (RHCP combine)",
+    "gain_db": -0.1911500506451105,
+    "nf_db": 0.1911500506451105,
+    "oip3_dbm": null,
+    "op1db_dbm": null,
+    "cum_gain_db": -0.19115005064511054,
+    "cum_nf_db": 0.19115005064511092,
+    "cum_iip3_dbm": null,
+    "cum_iip1db_dbm": null,
+    "signal_dbm": -128.09115005064513,
+    "noise_dbm": -100.86613090046669,
+    "snr_db": -27.225019150178426
+   },
+   {
+    "stage": "LNA1 TQP3M9037 + bias",
+    "gain_db": 23.605624530092555,
+    "nf_db": 0.3937502673298629,
+    "oip3_dbm": 34.57278125,
+    "op1db_dbm": 21.55076875,
+    "cum_gain_db": 23.414474479447446,
+    "cum_nf_db": 0.5849003179749737,
+    "cum_iip3_dbm": 11.158306770552553,
+    "cum_iip1db_dbm": -0.8637057294474454,
+    "signal_dbm": -104.48552552055256,
+    "noise_dbm": -76.86675610304427,
+    "snr_db": -27.61876941750829
+   },
+   {
+    "stage": "B8889 #1",
+    "gain_db": -0.9108000000000033,
+    "nf_db": 0.9108000000000033,
+    "oip3_dbm": null,
+    "op1db_dbm": null,
+    "cum_gain_db": 22.50367447944744,
+    "cum_nf_db": 0.5889332367432953,
+    "cum_iip3_dbm": 11.158306770552553,
+    "cum_iip1db_dbm": -0.8637057294474454,
+    "signal_dbm": -105.39632552055257,
+    "noise_dbm": -77.77352318427594,
+    "snr_db": -27.62280233627662
+   },
+   {
+    "stage": "LNA2 TQP3M9037 + bias",
+    "gain_db": 23.605624530092555,
+    "nf_db": 0.3937502673298629,
+    "oip3_dbm": 34.57278125,
+    "op1db_dbm": 21.55076875,
+    "cum_gain_db": 46.109299009539995,
+    "cum_nf_db": 0.5909548368674629,
+    "cum_iip3_dbm": -11.559806013328679,
+    "cum_iip1db_dbm": -23.581818513328678,
+    "signal_dbm": -81.79070099046001,
+    "noise_dbm": -54.16587705405922,
+    "snr_db": -27.624823936400787
+   },
+   {
+    "stage": "B8889 #2",
+    "gain_db": -0.9108000000000033,
+    "nf_db": 0.9108000000000033,
+    "oip3_dbm": null,
+    "op1db_dbm": null,
+    "cum_gain_db": 45.19849900954,
+    "cum_nf_db": 0.5909765005432703,
+    "cum_iip3_dbm": -11.559806013328679,
+    "cum_iip1db_dbm": -23.581818513328678,
+    "signal_dbm": -82.70150099046,
+    "noise_dbm": -55.07665539038342,
+    "snr_db": -27.624845600076583
+   },
+   {
+    "stage": "DXP.02.A (combiner)",
+    "gain_db": -3.1384257884262117,
+    "nf_db": 3.1384257884262117,
+    "oip3_dbm": null,
+    "op1db_dbm": null,
+    "cum_gain_db": 42.06007322111379,
+    "cum_nf_db": 0.5910978642040263,
+    "cum_iip3_dbm": -11.559806013328679,
+    "cum_iip1db_dbm": -23.581818513328678,
+    "signal_dbm": -85.83992677888622,
+    "noise_dbm": -58.214959815148866,
+    "snr_db": -27.62496696373735
+   }
+  ],
+  "L2C (1227.60 MHz, 2.046 MHz)": [
+   {
+    "stage": "HC125A (RHCP combine)",
+    "gain_db": -0.21661362836312892,
+    "nf_db": 0.21661362836312892,
+    "oip3_dbm": null,
+    "op1db_dbm": null,
+    "cum_gain_db": -0.2166136283631288,
+    "cum_nf_db": 0.21661362836312936,
+    "cum_iip3_dbm": null,
+    "cum_iip1db_dbm": null,
+    "signal_dbm": -130.21661362836312,
+    "noise_dbm": -110.86613090046669,
+    "snr_db": -19.35048272789645
+   },
+   {
+    "stage": "LNA1 TQP3M9037 + bias",
+    "gain_db": 23.385833133884617,
+    "nf_db": 0.3955732981636764,
+    "oip3_dbm": 34.604749999999996,
+    "op1db_dbm": 21.46765,
+    "cum_gain_db": 23.16921950552149,
+    "cum_nf_db": 0.6121869265268061,
+    "cum_iip3_dbm": 11.435530494478508,
+    "cum_iip1db_dbm": -0.7015695055214894,
+    "signal_dbm": -106.83078049447852,
+    "noise_dbm": -87.08472446841839,
+    "snr_db": -19.746056026060117
+   },
+   {
+    "stage": "B8889 #1",
+    "gain_db": -1.4545275848084014,
+    "nf_db": 1.4545275848084014,
+    "oip3_dbm": null,
+    "op1db_dbm": null,
+    "cum_gain_db": 21.714691920713086,
+    "cum_nf_db": 0.6194141946648675,
+    "cum_iip3_dbm": 11.435530494478508,
+    "cum_iip1db_dbm": -0.7015695055214894,
+    "signal_dbm": -108.28530807928692,
+    "noise_dbm": -88.53202478508874,
+    "snr_db": -19.753283294198184
+   },
+   {
+    "stage": "LNA2 TQP3M9037 + bias",
+    "gain_db": 23.385833133884617,
+    "nf_db": 0.3955732981636764,
+    "oip3_dbm": 34.604749999999996,
+    "op1db_dbm": 21.46765,
+    "cum_gain_db": 45.100525054597696,
+    "cum_nf_db": 0.6218331295945414,
+    "cum_iip3_dbm": -10.523525215749725,
+    "cum_iip1db_dbm": -22.660625215749718,
+    "signal_dbm": -84.8994749454023,
+    "noise_dbm": -65.14377271627446,
+    "snr_db": -19.75570222912785
+   },
+   {
+    "stage": "B8889 #2",
+    "gain_db": -1.4545275848084014,
+    "nf_db": 1.4545275848084014,
+    "oip3_dbm": null,
+    "op1db_dbm": null,
+    "cum_gain_db": 43.64599746978931,
+    "cum_nf_db": 0.6218793930527027,
+    "cum_iip3_dbm": -10.523525215749725,
+    "cum_iip1db_dbm": -22.660625215749718,
+    "signal_dbm": -86.35400253021069,
+    "noise_dbm": -66.59825403762467,
+    "snr_db": -19.755748492586022
+   },
+   {
+    "stage": "DXP.02.A (combiner)",
+    "gain_db": -3.555468750000002,
+    "nf_db": 3.555468750000002,
+    "oip3_dbm": null,
+    "op1db_dbm": null,
+    "cum_gain_db": 40.0905287197893,
+    "cum_nf_db": 0.6220854245120634,
+    "cum_iip3_dbm": -10.523525215749725,
+    "cum_iip1db_dbm": -22.660625215749718,
+    "signal_dbm": -89.90947128021071,
+    "noise_dbm": -70.15351675616532,
+    "snr_db": -19.75595452404538
+   }
+  ]
+ },
+ "interferers": [
+  {
+   "interferer": "LTE B13/B14 UL",
+   "f_mhz": 787.0,
+   "p_ant_dbm": -10.0,
+   "branch": "L1",
+   "lna1_in": -10.183074276027593,
+   "lna1_out": 15.018519109159275,
+   "saw1_out": -43.185452390840766,
+   "lna2_out": -17.983859005653898,
+   "saw2_out": -76.18783050565393,
+   "rf_out": -131.45629813065395,
+   "lna1_backoff_db": 6.981480890840725,
+   "lna2_backoff_db": 39.9838590056539
+  },
+  {
+   "interferer": "LTE B13/B14 UL",
+   "f_mhz": 787.0,
+   "p_ant_dbm": -10.0,
+   "branch": "L2/L5",
+   "lna1_in": -10.183074276027593,
+   "lna1_out": 15.018519109159275,
+   "saw1_out": -33.11760589084072,
+   "lna2_out": -7.916012505653853,
+   "saw2_out": -56.052137505653846,
+   "rf_out": -88.92943410700519,
+   "lna1_backoff_db": 6.981480890840725,
+   "lna2_backoff_db": 29.916012505653853
+  },
+  {
+   "interferer": "GSM-900 / LTE B8 UL",
+   "f_mhz": 897.5,
+   "p_ant_dbm": -10.0,
+   "branch": "L1",
+   "lna1_in": -10.18307427602759,
+   "lna1_out": 14.59277323239094,
+   "saw1_out": -44.384064321488395,
+   "lna2_out": -19.608216813069866,
+   "saw2_out": -78.58505436694921,
+   "rf_out": -130.67080213480634,
+   "lna1_backoff_db": 7.40722676760906,
+   "lna2_backoff_db": 41.608216813069866
+  },
+  {
+   "interferer": "GSM-900 / LTE B8 UL",
+   "f_mhz": 897.5,
+   "p_ant_dbm": -10.0,
+   "branch": "L2/L5",
+   "lna1_in": -10.18307427602759,
+   "lna1_out": 14.59277323239094,
+   "saw1_out": -31.407226767609075,
+   "lna2_out": -6.631379259190545,
+   "saw2_out": -52.63137925919056,
+   "rf_out": -89.46163287888169,
+   "lna1_backoff_db": 7.40722676760906,
+   "lna2_backoff_db": 28.631379259190545
+  },
+  {
+   "interferer": "DME/TACAN (aviation)",
+   "f_mhz": 1150.0,
+   "p_ant_dbm": -30.0,
+   "branch": "L1",
+   "lna1_in": -30.18313583812231,
+   "lna1_out": -6.462736969286119,
+   "saw1_out": -75.19176922735065,
+   "lna2_out": -51.471370358514456,
+   "saw2_out": -120.20040261657897,
+   "rf_out": -172.200402616579,
+   "lna1_backoff_db": 28.05648696928612,
+   "lna2_backoff_db": 73.06512035851446
+  },
+  {
+   "interferer": "DME/TACAN (aviation)",
+   "f_mhz": 1150.0,
+   "p_ant_dbm": -30.0,
+   "branch": "L2/L5",
+   "lna1_in": -30.18313583812231,
+   "lna1_out": -6.462736969286119,
+   "saw1_out": -10.462736969286121,
+   "lna2_out": 13.25766189955007,
+   "saw2_out": 9.257661899550069,
+   "rf_out": 3.2576618995500546,
+   "lna1_backoff_db": 28.05648696928612,
+   "lna2_backoff_db": 8.33608810044993
+  },
+  {
+   "interferer": "ARNS radar",
+   "f_mhz": 1260.0,
+   "p_ant_dbm": -40.0,
+   "branch": "L1",
+   "lna1_in": -40.245649916446,
+   "lna1_out": -16.99873246332406,
+   "saw1_out": -92.56673246332407,
+   "lna2_out": -69.31981501020213,
+   "saw2_out": -144.88781501020213,
+   "rf_out": -193.71255091524665,
+   "lna1_backoff_db": 38.41373246332406,
+   "lna2_backoff_db": 90.73481501020214
+  },
+  {
+   "interferer": "ARNS radar",
+   "f_mhz": 1260.0,
+   "p_ant_dbm": -40.0,
+   "branch": "L2/L5",
+   "lna1_in": -40.245649916446,
+   "lna1_out": -16.99873246332406,
+   "saw1_out": -46.086046066170894,
+   "lna2_out": -22.839128613048956,
+   "saw2_out": -51.92644221589579,
+   "rf_out": -57.5264422158958,
+   "lna1_backoff_db": 38.41373246332406,
+   "lna2_backoff_db": 44.254128613048955
+  },
+  {
+   "interferer": "Inmarsat L-band DL",
+   "f_mhz": 1545.0,
+   "p_ant_dbm": -80.0,
+   "branch": "L1",
+   "lna1_in": -80.35070699430892,
+   "lna1_out": -58.27636922897403,
+   "saw1_out": -65.40276922897404,
+   "lna2_out": -43.32843146363915,
+   "saw2_out": -50.45483146363915,
+   "rf_out": -57.954831463639145,
+   "lna1_backoff_db": 79.22824422897403,
+   "lna2_backoff_db": 64.28030646363915
+  },
+  {
+   "interferer": "Inmarsat L-band DL",
+   "f_mhz": 1545.0,
+   "p_ant_dbm": -80.0,
+   "branch": "L2/L5",
+   "lna1_in": -80.35070699430892,
+   "lna1_out": -58.27636922897403,
+   "saw1_out": -97.49715376082733,
+   "lna2_out": -75.42281599549244,
+   "saw2_out": -114.64360052734574,
+   "rf_out": -147.64360052734577,
+   "lna1_backoff_db": 79.22824422897403,
+   "lna2_backoff_db": 96.37469099549244
+  },
+  {
+   "interferer": "Iridium",
+   "f_mhz": 1621.0,
+   "p_ant_dbm": -20.0,
+   "branch": "L1",
+   "lna1_in": -20.369824857846645,
+   "lna1_out": 1.4030790484328222,
+   "saw1_out": -9.747509186861299,
+   "lna2_out": 12.025394719418168,
+   "saw2_out": 0.874806484124047,
+   "rf_out": -8.321002561219759,
+   "lna1_backoff_db": 19.42529595156718,
+   "lna2_backoff_db": 8.802980280581833
+  },
+  {
+   "interferer": "Iridium",
+   "f_mhz": 1621.0,
+   "p_ant_dbm": -20.0,
+   "branch": "L2/L5",
+   "lna1_in": -20.369824857846645,
+   "lna1_out": 1.4030790484328222,
+   "saw1_out": -33.48797502911945,
+   "lna2_out": -11.71507112283998,
+   "saw2_out": -46.60612520039225,
+   "rf_out": -78.27329320039225,
+   "lna1_backoff_db": 19.42529595156718,
+   "lna2_backoff_db": 32.54344612283998
+  },
+  {
+   "interferer": "Inmarsat UL",
+   "f_mhz": 1643.0,
+   "p_ant_dbm": -20.0,
+   "branch": "L1",
+   "lna1_in": -20.370677745242244,
+   "lna1_out": 1.3156063742277446,
+   "saw1_out": -29.521060292438946,
+   "lna2_out": -7.834776172968958,
+   "saw2_out": -38.671442839635645,
+   "rf_out": -83.50292671060342,
+   "lna1_backoff_db": 19.477018625772256,
+   "lna2_backoff_db": 28.62740117296896
+  },
+  {
+   "interferer": "Inmarsat UL",
+   "f_mhz": 1643.0,
+   "p_ant_dbm": -20.0,
+   "branch": "L2/L5",
+   "lna1_in": -20.370677745242244,
+   "lna1_out": 1.3156063742277446,
+   "saw1_out": -30.68439362577227,
+   "lna2_out": -8.998109506302281,
+   "saw2_out": -40.9981095063023,
+   "rf_out": -76.6249255063023,
+   "lna1_backoff_db": 19.477018625772256,
+   "lna2_backoff_db": 29.790734506302282
+  },
+  {
+   "interferer": "LTE B3 UL",
+   "f_mhz": 1747.5,
+   "p_ant_dbm": -10.0,
+   "branch": "L1",
+   "lna1_in": -10.370677332265235,
+   "lna1_out": 10.912099087137626,
+   "saw1_out": -49.284660172121626,
+   "lna2_out": -28.001883752718765,
+   "saw2_out": -88.19864301197802,
+   "rf_out": -123.198643011978,
+   "lna1_backoff_db": 9.654900912862374,
+   "lna2_backoff_db": 48.56888375271876
+  },
+  {
+   "interferer": "LTE B3 UL",
+   "f_mhz": 1747.5,
+   "p_ant_dbm": -10.0,
+   "branch": "L2/L5",
+   "lna1_in": -10.370677332265235,
+   "lna1_out": 10.912099087137626,
+   "saw1_out": -29.3926256889751,
+   "lna2_out": -8.10984926957224,
+   "saw2_out": -48.41457404568497,
+   "rf_out": -84.33963654568498,
+   "lna1_backoff_db": 9.654900912862374,
+   "lna2_backoff_db": 28.67684926957224
+  },
+  {
+   "interferer": "DCS-1800 DL",
+   "f_mhz": 1842.5,
+   "p_ant_dbm": -30.0,
+   "branch": "L1",
+   "lna1_in": -30.370677332265238,
+   "lna1_out": -9.436831901330528,
+   "saw1_out": -68.33008190133052,
+   "lna2_out": -47.396236470395806,
+   "saw2_out": -106.28948647039579,
+   "rf_out": -141.00500209539575,
+   "lna1_backoff_db": 29.737831901330527,
+   "lna2_backoff_db": 67.69723647039581
+  },
+  {
+   "interferer": "DCS-1800 DL",
+   "f_mhz": 1842.5,
+   "p_ant_dbm": -30.0,
+   "branch": "L2/L5",
+   "lna1_in": -30.370677332265238,
+   "lna1_out": -9.436831901330528,
+   "saw1_out": -53.026818068231314,
+   "lna2_out": -32.092972637296604,
+   "saw2_out": -75.6829588041974,
+   "rf_out": -112.1555338041974,
+   "lna1_backoff_db": 29.737831901330527,
+   "lna2_backoff_db": 52.3939726372966
+  },
+  {
+   "interferer": "LTE B1 UL",
+   "f_mhz": 1950.0,
+   "p_ant_dbm": -10.0,
+   "branch": "L1",
+   "lna1_in": -10.370677332265235,
+   "lna1_out": 10.187485062837837,
+   "saw1_out": -44.31251493716216,
+   "lna2_out": -23.75435254205909,
+   "saw2_out": -78.2543525420591,
+   "rf_out": -111.7793525420591,
+   "lna1_backoff_db": 9.812514937162163,
+   "lna2_backoff_db": 43.754352542059095
+  },
+  {
+   "interferer": "LTE B1 UL",
+   "f_mhz": 1950.0,
+   "p_ant_dbm": -10.0,
+   "branch": "L2/L5",
+   "lna1_in": -10.370677332265235,
+   "lna1_out": 10.187485062837837,
+   "saw1_out": -34.810554989804906,
+   "lna2_out": -14.252392594701835,
+   "saw2_out": -59.25043264734458,
+   "rf_out": -92.73507120156145,
+   "lna1_backoff_db": 9.812514937162163,
+   "lna2_backoff_db": 34.25239259470183
+  }
+ ],
+ "stability": {
+  "lna_table_k_min": 1.0142842268021084,
+  "lna_table_k_min_f_ghz": 0.05,
+  "lna_table_mu_min": 1.057078887889735,
+  "lna_table_delta_max": 0.7105629872051438,
+  "stage_k_min": 1.1281843164239895,
+  "stage_mu_min": 1.475182937449177,
+  "branch_l1_k_min": 7.844663228774548,
+  "branch_l1_mu_min": 1.0351430450670303,
+  "branch_l2_k_min": 6.7301783527726995,
+  "branch_l2_mu_min": 1.0360872625719566
+ },
+ "hc_phase_offsets_deg": [
+  165.0,
+  270.0,
+  1.0130243272097517
+ ],
+ "validation": [
+  {
+   "item": "B7504 IL 1559.1-1563.1 MHz",
+   "ds_typ": 1.1,
+   "ds_max": 2.0,
+   "model": 1.064691189935222
+  },
+  {
+   "item": "B7504 IL 1574.4-1576.4 MHz",
+   "ds_typ": 0.9,
+   "ds_max": 1.4,
+   "model": 0.8969166666666654
+  },
+  {
+   "item": "B7504 IL 1597.5-1605.9 MHz",
+   "ds_typ": 1.2,
+   "ds_max": 2.0,
+   "model": 1.0354382945124294
+  },
+  {
+   "item": "B8889 IL 1166.22-1186.68 MHz",
+   "ds_typ": 0.9,
+   "ds_max": 1.5,
+   "model": 0.9159652439024385
+  },
+  {
+   "item": "B8889 IL 1205.09-1209.19 MHz",
+   "ds_typ": 1.0,
+   "ds_max": 1.3,
+   "model": 0.8709499999999966
+  },
+  {
+   "item": "B8889 IL 1226.58-1228.62 MHz",
+   "ds_typ": 1.4,
+   "ds_max": 2.6,
+   "model": 1.4819010603373999
+  },
+  {
+   "item": "B7504 att 10-925 MHz (min 45)",
+   "ds_typ": 58,
+   "ds_max": null,
+   "model": 57.99999999999998
+  },
+  {
+   "item": "B7504 att 814-915 MHz (min 45)",
+   "ds_typ": 58,
+   "ds_max": null,
+   "model": 58.34416993103446
+  },
+  {
+   "item": "B7504 att 925-960 MHz (min 45)",
+   "ds_typ": 60,
+   "ds_max": null,
+   "model": 59.438962438423665
+  },
+  {
+   "item": "B7504 att 1427-1463 MHz (min 50)",
+   "ds_typ": 55,
+   "ds_max": null,
+   "model": 56.575840407839955
+  },
+  {
+   "item": "B7504 att 1695-1710 MHz (min 50)",
+   "ds_typ": 53,
+   "ds_max": null,
+   "model": 57.36607142857146
+  },
+  {
+   "item": "B7504 att 1710-1785 MHz (min 50)",
+   "ds_typ": 53,
+   "ds_max": null,
+   "model": 60.00000000000001
+  },
+  {
+   "item": "B7504 att 1850-1980 MHz (min 45)",
+   "ds_typ": 53,
+   "ds_max": null,
+   "model": 54.0
+  },
+  {
+   "item": "B7504 att 2010-2025 MHz (min 45)",
+   "ds_typ": 55,
+   "ds_max": null,
+   "model": 54.871093750000036
+  },
+  {
+   "item": "B7504 att 2305-2315 MHz (min 45)",
+   "ds_typ": 52,
+   "ds_max": null,
+   "model": 51.993640978475725
+  },
+  {
+   "item": "B7504 att 2401-2483 MHz (min 45)",
+   "ds_typ": 50,
+   "ds_max": null,
+   "model": 49.48303753967566
+  },
+  {
+   "item": "B7504 att 2500-2570 MHz (min 45)",
+   "ds_typ": 49,
+   "ds_max": null,
+   "model": 48.774944728799674
+  },
+  {
+   "item": "B7504 att 4400-4900 MHz (min 35)",
+   "ds_typ": 41,
+   "ds_max": null,
+   "model": 40.999999999999986
+  },
+  {
+   "item": "B7504 att 5150-5850 MHz (min 35)",
+   "ds_typ": 42,
+   "ds_max": null,
+   "model": 42.0
+  },
+  {
+   "item": "B8889 att 698-748 MHz (min 46)",
+   "ds_typ": 49,
+   "ds_max": null,
+   "model": 48.99999999999999
+  },
+  {
+   "item": "B8889 att 777-798 MHz (min 44)",
+   "ds_typ": 48,
+   "ds_max": null,
+   "model": 47.659211211211215
+  },
+  {
+   "item": "B8889 att 807-915 MHz (min 41)",
+   "ds_typ": 45,
+   "ds_max": null,
+   "model": 45.70845481049563
+  },
+  {
+   "item": "B8889 att 925-960 MHz (min 41)",
+   "ds_typ": 45,
+   "ds_max": null,
+   "model": 45.000000000000014
+  },
+  {
+   "item": "B8889 att 1427-1463 MHz (min 30)",
+   "ds_typ": 42,
+   "ds_max": null,
+   "model": 40.59199999999998
+  },
+  {
+   "item": "B8889 att 1626.5-1660.5 MHz (min 20)",
+   "ds_typ": 32,
+   "ds_max": null,
+   "model": 32.000000000000014
+  },
+  {
+   "item": "B8889 att 1695-1785 MHz (min 25)",
+   "ds_typ": 40,
+   "ds_max": null,
+   "model": 35.903338200466685
+  },
+  {
+   "item": "B8889 att 1850-2025 MHz (min 30)",
+   "ds_typ": 45,
+   "ds_max": null,
+   "model": 43.7847438091331
+  },
+  {
+   "item": "B8889 att 2300-2400 MHz (min 36)",
+   "ds_typ": 42,
+   "ds_max": null,
+   "model": 40.34818149441267
+  },
+  {
+   "item": "B8889 att 2400-2483 MHz (min 33)",
+   "ds_typ": 39,
+   "ds_max": null,
+   "model": 38.24662044411799
+  },
+  {
+   "item": "B8889 att 2500-2690 MHz (min 33)",
+   "ds_typ": 37,
+   "ds_max": null,
+   "model": 36.67313826516018
+  },
+  {
+   "item": "B8889 att 3400-3800 MHz (min 29)",
+   "ds_typ": 33,
+   "ds_max": null,
+   "model": 32.47157190635453
+  },
+  {
+   "item": "B8889 att 5150-5925 MHz (min 22)",
+   "ds_typ": 26,
+   "ds_max": null,
+   "model": 25.071953828929097
+  },
+  {
+   "item": "B7504 group-delay ripple 1597.5-1605.9 MHz [ns]",
+   "ds_typ": 4.0,
+   "ds_max": 15,
+   "model": 3.516509506207413
+  },
+  {
+   "item": "DXP IL band 1 @1582.19 MHz",
+   "ds_typ": 3.8,
+   "ds_max": 4.6,
+   "model": 3.2999999999999865
+  },
+  {
+   "item": "DXP IL band 2 @1206.92 MHz",
+   "ds_typ": 4.2,
+   "ds_max": 5.2,
+   "model": 3.2502750000000007
+  },
+  {
+   "item": "TQP3M9037 gain @2.0 GHz (table) vs spec @1.95",
+   "ds_typ": 20.0,
+   "ds_max": 21.5,
+   "model": 20.28
+  }
+ ],
+ "extras": {
+  "rejection": [
+   {
+    "band": "LTE B13/B14 UL",
+    "f_lo_mhz": 777,
+    "f_hi_mhz": 798,
+    "rej_min_L1_dBc": 161.45182095933515,
+    "rej_mean_L1_dBc": 161.8510716816251,
+    "rej_min_L2/L5_dBc": 114.76298634599432,
+    "rej_mean_L2/L5_dBc": 114.9174689732449
+   },
+   {
+    "band": "GSM-900 / LTE B8 UL",
+    "f_lo_mhz": 880,
+    "f_hi_mhz": 915,
+    "rej_min_L1_dBc": 155.82962206094837,
+    "rej_mean_L1_dBc": 157.00494142737566,
+    "rej_min_L2/L5_dBc": 114.9022684544158,
+    "rej_mean_L2/L5_dBc": 119.37876216836715
+   },
+   {
+    "band": "GSM-900 DL",
+    "f_lo_mhz": 925,
+    "f_hi_mhz": 960,
+    "rej_min_L1_dBc": 155.86614127617585,
+    "rej_mean_L1_dBc": 156.5240543329571,
+    "rej_min_L2/L5_dBc": 117.09614639957984,
+    "rej_mean_L2/L5_dBc": 126.5836621016296
+   },
+   {
+    "band": "DME/TACAN (below L5)",
+    "f_lo_mhz": 960,
+    "f_hi_mhz": 1150,
+    "rej_min_L1_dBc": 157.32205732426456,
+    "rej_mean_L1_dBc": 163.22386123872027,
+    "rej_min_L2/L5_dBc": 8.174828001943297,
+    "rej_mean_L2/L5_dBc": 111.57667087034424
+   },
+   {
+    "band": "ARNS / radar",
+    "f_lo_mhz": 1260,
+    "f_hi_mhz": 1300,
+    "rej_min_L1_dBc": 168.69491465152262,
+    "rej_mean_L1_dBc": 185.15771602874406,
+    "rej_min_L2/L5_dBc": 66.46922094179223,
+    "rej_mean_L2/L5_dBc": 96.40515232781382
+   },
+   {
+    "band": "LTE B11/B21 / B32 (L-band)",
+    "f_lo_mhz": 1427,
+    "f_hi_mhz": 1511,
+    "rej_min_L1_dBc": 122.79502235887466,
+    "rej_mean_L1_dBc": 137.5257365381897,
+    "rej_min_L2/L5_dBc": 110.19358462542725,
+    "rej_mean_L2/L5_dBc": 113.37743226753291
+   },
+   {
+    "band": "Inmarsat DL",
+    "f_lo_mhz": 1525,
+    "f_hi_mhz": 1559,
+    "rej_min_L1_dBc": 0.874322639644177,
+    "rej_mean_L1_dBc": 29.568044138971263,
+    "rej_min_L2/L5_dBc": 110.94285386534753,
+    "rej_mean_L2/L5_dBc": 112.5135876575102
+   },
+   {
+    "band": "Iridium",
+    "f_lo_mhz": 1616,
+    "f_hi_mhz": 1626.5,
+    "rej_min_L1_dBc": 4.674647970920489,
+    "rej_mean_L1_dBc": 28.362168753697407,
+    "rej_min_L2/L5_dBc": 104.84320840722624,
+    "rej_mean_L2/L5_dBc": 106.25359437213442
+   },
+   {
+    "band": "Inmarsat UL",
+    "f_lo_mhz": 1626.5,
+    "f_hi_mhz": 1660.5,
+    "rej_min_L1_dBc": 51.63406917021799,
+    "rej_mean_L1_dBc": 101.91481035072235,
+    "rej_min_L2/L5_dBc": 85.50052390373526,
+    "rej_mean_L2/L5_dBc": 96.15866613609296
+   },
+   {
+    "band": "LTE B3 UL",
+    "f_lo_mhz": 1710,
+    "f_hi_mhz": 1785,
+    "rej_min_L1_dBc": 151.7156168025371,
+    "rej_mean_L1_dBc": 159.37474346899157,
+    "rej_min_L2/L5_dBc": 109.22244815675722,
+    "rej_mean_L2/L5_dBc": 114.90567795001178
+   },
+   {
+    "band": "DCS-1800 / LTE B3 DL",
+    "f_lo_mhz": 1805,
+    "f_hi_mhz": 1880,
+    "rej_min_L1_dBc": 139.78051303053405,
+    "rej_mean_L1_dBc": 146.95827231862722,
+    "rej_min_L2/L5_dBc": 120.16688440035416,
+    "rej_mean_L2/L5_dBc": 121.20243514702919
+   },
+   {
+    "band": "PCS / LTE B2 UL",
+    "f_lo_mhz": 1850,
+    "f_hi_mhz": 1910,
+    "rej_min_L1_dBc": 136.65488358967613,
+    "rej_mean_L1_dBc": 140.38688790657386,
+    "rej_min_L2/L5_dBc": 121.47434745955046,
+    "rej_mean_L2/L5_dBc": 121.51944190280011
+   },
+   {
+    "band": "LTE B1 UL",
+    "f_lo_mhz": 1920,
+    "f_hi_mhz": 1980,
+    "rej_min_L1_dBc": 136.53745864665692,
+    "rej_mean_L1_dBc": 137.08957491604676,
+    "rej_min_L2/L5_dBc": 120.86239345315236,
+    "rej_mean_L2/L5_dBc": 121.18190017163388
+   },
+   {
+    "band": "LTE B1 DL / B4 DL",
+    "f_lo_mhz": 2110,
+    "f_hi_mhz": 2170,
+    "rej_min_L1_dBc": 133.80441723520394,
+    "rej_mean_L1_dBc": 134.65687983487206,
+    "rej_min_L2/L5_dBc": 118.3314588622085,
+    "rej_mean_L2/L5_dBc": 118.64648200116892
+   }
+  ],
+  "filter_files": [
+   {
+    "file": "B7504.s2p",
+    "points": 11981,
+    "f_min_mhz": 10.0,
+    "f_max_mhz": 6000.0,
+    "passive": true
+   },
+   {
+    "file": "B8889_matched.s2p",
+    "points": 11981,
+    "f_min_mhz": 10.0,
+    "f_max_mhz": 6000.0,
+    "passive": true
+   },
+   {
+    "file": "B8889_bare_deembedded.s2p",
+    "points": 11401,
+    "f_min_mhz": 300.0,
+    "f_max_mhz": 6000.0,
+    "passive": true
+   },
+   {
+    "file": "DXP02A_common_to_L1.s2p",
+    "points": 3201,
+    "f_min_mhz": 600.0,
+    "f_max_mhz": 2200.0,
+    "passive": true
+   },
+   {
+    "file": "DXP02A_common_to_L2L5.s2p",
+    "points": 3201,
+    "f_min_mhz": 600.0,
+    "f_max_mhz": 2200.0,
+    "passive": true
+   }
+  ],
+  "filter_rejection": [
+   {
+    "filter": "B7504",
+    "f_lo_mhz": 10,
+    "f_hi_mhz": 925,
+    "spec_min_att_db": 45,
+    "spec_typ_att_db": 58,
+    "model_min_att_db": 57.99999999999998,
+    "model_min_rej_dbc": 57.106799999999986,
+    "margin_to_spec_db": 12.999999999999979
+   },
+   {
+    "filter": "B7504",
+    "f_lo_mhz": 814,
+    "f_hi_mhz": 915,
+    "spec_min_att_db": 45,
+    "spec_typ_att_db": 58,
+    "model_min_att_db": 58.34416993103446,
+    "model_min_rej_dbc": 57.450969931034464,
+    "margin_to_spec_db": 13.344169931034457
+   },
+   {
+    "filter": "B7504",
+    "f_lo_mhz": 925,
+    "f_hi_mhz": 960,
+    "spec_min_att_db": 45,
+    "spec_typ_att_db": 60,
+    "model_min_att_db": 59.438962438423665,
+    "model_min_rej_dbc": 58.54576243842367,
+    "margin_to_spec_db": 14.438962438423665
+   },
+   {
+    "filter": "B7504",
+    "f_lo_mhz": 1427,
+    "f_hi_mhz": 1463,
+    "spec_min_att_db": 50,
+    "spec_typ_att_db": 55,
+    "model_min_att_db": 56.575840407839955,
+    "model_min_rej_dbc": 55.68264040783996,
+    "margin_to_spec_db": 6.575840407839955
+   },
+   {
+    "filter": "B7504",
+    "f_lo_mhz": 1695,
+    "f_hi_mhz": 1710,
+    "spec_min_att_db": 50,
+    "spec_typ_att_db": 53,
+    "model_min_att_db": 57.36607142857146,
+    "model_min_rej_dbc": 56.472871428571466,
+    "margin_to_spec_db": 7.366071428571459
+   },
+   {
+    "filter": "B7504",
+    "f_lo_mhz": 1710,
+    "f_hi_mhz": 1785,
+    "spec_min_att_db": 50,
+    "spec_typ_att_db": 53,
+    "model_min_att_db": 60.00000000000001,
+    "model_min_rej_dbc": 59.106800000000014,
+    "margin_to_spec_db": 10.000000000000007
+   },
+   {
+    "filter": "B7504",
+    "f_lo_mhz": 1850,
+    "f_hi_mhz": 1980,
+    "spec_min_att_db": 45,
+    "spec_typ_att_db": 53,
+    "model_min_att_db": 54.0,
+    "model_min_rej_dbc": 53.10680000000001,
+    "margin_to_spec_db": 9.0
+   },
+   {
+    "filter": "B7504",
+    "f_lo_mhz": 2010,
+    "f_hi_mhz": 2025,
+    "spec_min_att_db": 45,
+    "spec_typ_att_db": 55,
+    "model_min_att_db": 54.871093750000036,
+    "model_min_rej_dbc": 53.97789375000004,
+    "margin_to_spec_db": 9.871093750000036
+   },
+   {
+    "filter": "B7504",
+    "f_lo_mhz": 2305,
+    "f_hi_mhz": 2315,
+    "spec_min_att_db": 45,
+    "spec_typ_att_db": 52,
+    "model_min_att_db": 51.993640978475725,
+    "model_min_rej_dbc": 51.10044097847573,
+    "margin_to_spec_db": 6.9936409784757245
+   },
+   {
+    "filter": "B7504",
+    "f_lo_mhz": 2401,
+    "f_hi_mhz": 2483,
+    "spec_min_att_db": 45,
+    "spec_typ_att_db": 50,
+    "model_min_att_db": 49.48303753967566,
+    "model_min_rej_dbc": 48.58983753967566,
+    "margin_to_spec_db": 4.4830375396756565
+   },
+   {
+    "filter": "B7504",
+    "f_lo_mhz": 2500,
+    "f_hi_mhz": 2570,
+    "spec_min_att_db": 45,
+    "spec_typ_att_db": 49,
+    "model_min_att_db": 48.774944728799674,
+    "model_min_rej_dbc": 47.88174472879968,
+    "margin_to_spec_db": 3.7749447287996745
+   },
+   {
+    "filter": "B7504",
+    "f_lo_mhz": 4400,
+    "f_hi_mhz": 4900,
+    "spec_min_att_db": 35,
+    "spec_typ_att_db": 41,
+    "model_min_att_db": 40.999999999999986,
+    "model_min_rej_dbc": 40.10679999999999,
+    "margin_to_spec_db": 5.999999999999986
+   },
+   {
+    "filter": "B7504",
+    "f_lo_mhz": 5150,
+    "f_hi_mhz": 5850,
+    "spec_min_att_db": 35,
+    "spec_typ_att_db": 42,
+    "model_min_att_db": 42.0,
+    "model_min_rej_dbc": 41.10680000000001,
+    "margin_to_spec_db": 7.0
+   },
+   {
+    "filter": "B8889",
+    "f_lo_mhz": 698,
+    "f_hi_mhz": 748,
+    "spec_min_att_db": 46,
+    "spec_typ_att_db": 49,
+    "model_min_att_db": 48.99999999999999,
+    "model_min_rej_dbc": 48.08919999999999,
+    "margin_to_spec_db": 2.999999999999993
+   },
+   {
+    "filter": "B8889",
+    "f_lo_mhz": 777,
+    "f_hi_mhz": 798,
+    "spec_min_att_db": 44,
+    "spec_typ_att_db": 48,
+    "model_min_att_db": 47.659211211211215,
+    "model_min_rej_dbc": 46.74841121121121,
+    "margin_to_spec_db": 3.6592112112112147
+   },
+   {
+    "filter": "B8889",
+    "f_lo_mhz": 807,
+    "f_hi_mhz": 915,
+    "spec_min_att_db": 41,
+    "spec_typ_att_db": 45,
+    "model_min_att_db": 45.70845481049563,
+    "model_min_rej_dbc": 44.79765481049563,
+    "margin_to_spec_db": 4.708454810495631
+   },
+   {
+    "filter": "B8889",
+    "f_lo_mhz": 925,
+    "f_hi_mhz": 960,
+    "spec_min_att_db": 41,
+    "spec_typ_att_db": 45,
+    "model_min_att_db": 45.000000000000014,
+    "model_min_rej_dbc": 44.08920000000001,
+    "margin_to_spec_db": 4.000000000000014
+   },
+   {
+    "filter": "B8889",
+    "f_lo_mhz": 1427,
+    "f_hi_mhz": 1463,
+    "spec_min_att_db": 30,
+    "spec_typ_att_db": 42,
+    "model_min_att_db": 40.59199999999998,
+    "model_min_rej_dbc": 39.681199999999976,
+    "margin_to_spec_db": 10.591999999999977
+   },
+   {
+    "filter": "B8889",
+    "f_lo_mhz": 1626.5,
+    "f_hi_mhz": 1660.5,
+    "spec_min_att_db": 20,
+    "spec_typ_att_db": 32,
+    "model_min_att_db": 32.000000000000014,
+    "model_min_rej_dbc": 31.089200000000012,
+    "margin_to_spec_db": 12.000000000000014
+   },
+   {
+    "filter": "B8889",
+    "f_lo_mhz": 1695,
+    "f_hi_mhz": 1785,
+    "spec_min_att_db": 25,
+    "spec_typ_att_db": 40,
+    "model_min_att_db": 35.903338200466685,
+    "model_min_rej_dbc": 34.99253820046668,
+    "margin_to_spec_db": 10.903338200466685
+   },
+   {
+    "filter": "B8889",
+    "f_lo_mhz": 1850,
+    "f_hi_mhz": 2025,
+    "spec_min_att_db": 30,
+    "spec_typ_att_db": 45,
+    "model_min_att_db": 43.7847438091331,
+    "model_min_rej_dbc": 42.873943809133095,
+    "margin_to_spec_db": 13.784743809133097
+   },
+   {
+    "filter": "B8889",
+    "f_lo_mhz": 2300,
+    "f_hi_mhz": 2400,
+    "spec_min_att_db": 36,
+    "spec_typ_att_db": 42,
+    "model_min_att_db": 40.34818149441267,
+    "model_min_rej_dbc": 39.43738149441267,
+    "margin_to_spec_db": 4.348181494412671
+   },
+   {
+    "filter": "B8889",
+    "f_lo_mhz": 2400,
+    "f_hi_mhz": 2483,
+    "spec_min_att_db": 33,
+    "spec_typ_att_db": 39,
+    "model_min_att_db": 38.24662044411799,
+    "model_min_rej_dbc": 37.335820444117985,
+    "margin_to_spec_db": 5.246620444117987
+   },
+   {
+    "filter": "B8889",
+    "f_lo_mhz": 2500,
+    "f_hi_mhz": 2690,
+    "spec_min_att_db": 33,
+    "spec_typ_att_db": 37,
+    "model_min_att_db": 36.67313826516018,
+    "model_min_rej_dbc": 35.76233826516018,
+    "margin_to_spec_db": 3.6731382651601834
+   },
+   {
+    "filter": "B8889",
+    "f_lo_mhz": 3400,
+    "f_hi_mhz": 3800,
+    "spec_min_att_db": 29,
+    "spec_typ_att_db": 33,
+    "model_min_att_db": 32.47157190635453,
+    "model_min_rej_dbc": 31.560771906354525,
+    "margin_to_spec_db": 3.4715719063545265
+   },
+   {
+    "filter": "B8889",
+    "f_lo_mhz": 5150,
+    "f_hi_mhz": 5925,
+    "spec_min_att_db": 22,
+    "spec_typ_att_db": 26,
+    "model_min_att_db": 25.071953828929097,
+    "model_min_rej_dbc": 24.161153828929095,
+    "margin_to_spec_db": 3.0719538289290966
+   },
+   {
+    "filter": "DXP L1",
+    "f_lo_mhz": 600,
+    "f_hi_mhz": 1330,
+    "spec_min_att_db": 32,
+    "spec_typ_att_db": 38,
+    "model_min_att_db": 39.000000000000014,
+    "model_min_rej_dbc": 35.70000000000003,
+    "margin_to_spec_db": 3.7000000000000313
+   },
+   {
+    "filter": "DXP L1",
+    "f_lo_mhz": 1660,
+    "f_hi_mhz": 2000,
+    "spec_min_att_db": 27,
+    "spec_typ_att_db": 33,
+    "model_min_att_db": 33.000000000000014,
+    "model_min_rej_dbc": 29.700000000000028,
+    "margin_to_spec_db": 2.7000000000000277
+   },
+   {
+    "filter": "DXP L2/L5",
+    "f_lo_mhz": 600,
+    "f_hi_mhz": 1100,
+    "spec_min_att_db": 17,
+    "spec_typ_att_db": 23,
+    "model_min_att_db": 24.000000000000014,
+    "model_min_rej_dbc": 20.749725000000012,
+    "margin_to_spec_db": 3.749725000000012
+   },
+   {
+    "filter": "DXP L2/L5",
+    "f_lo_mhz": 1320,
+    "f_hi_mhz": 2000,
+    "spec_min_att_db": 20,
+    "spec_typ_att_db": 28,
+    "model_min_att_db": 29.0,
+    "model_min_rej_dbc": 25.749724999999998,
+    "margin_to_spec_db": 5.749724999999998
+   }
+  ],
+  "insertion_loss": [
+   {
+    "band": "L1/E1/B1C",
+    "f_mhz": 1575.42,
+    "hybrid_db": 0.36099100362098063,
+    "saw_db": 0.8931999999999933,
+    "saw_max_in_bw_db": 0.9081999999999936,
+    "dxp_db": 3.308476387720746,
+    "total_passive_db": 5.455867391341713,
+    "total_passive_max_in_bw_db": 5.490027257182879,
+    "hc_excess_4port_db": 0.35809967160766054
+   },
+   {
+    "band": "B1I",
+    "f_mhz": 1561.098,
+    "hybrid_db": 0.3543181233119583,
+    "saw_db": 1.0689466135458354,
+    "saw_max_in_bw_db": 1.1186661728681788,
+    "dxp_db": 3.6855403348554105,
+    "total_passive_db": 6.1777516852590395,
+    "total_passive_max_in_bw_db": 6.370432222084341,
+    "hc_excess_4port_db": 0.35147915956486314
+   },
+   {
+    "band": "G1",
+    "f_mhz": 1602.0,
+    "hybrid_db": 0.36763378509364586,
+    "saw_db": 1.020799999999973,
+    "saw_max_in_bw_db": 1.1349369127516513,
+    "dxp_db": 3.5096000000000043,
+    "total_passive_db": 5.918833785093597,
+    "total_passive_max_in_bw_db": 6.2130460711325215,
+    "hc_excess_4port_db": 0.3646683006205734
+   },
+   {
+    "band": "L5/E5a/B2a",
+    "f_mhz": 1176.45,
+    "hybrid_db": 0.1911500506451105,
+    "saw_db": 0.9108000000000033,
+    "saw_max_in_bw_db": 0.9999999999999932,
+    "dxp_db": 3.1384257884262117,
+    "total_passive_db": 5.151175839071328,
+    "total_passive_max_in_bw_db": 5.515774101205186,
+    "hc_excess_4port_db": 0.18956078086572614
+   },
+   {
+    "band": "E5b/B2b",
+    "f_mhz": 1207.14,
+    "hybrid_db": 0.20069363282530214,
+    "saw_db": 0.8683999999999931,
+    "saw_max_in_bw_db": 1.076799999999989,
+    "dxp_db": 3.2502750000000007,
+    "total_passive_db": 5.187768632825289,
+    "total_passive_max_in_bw_db": 5.766449091428724,
+    "hc_excess_4port_db": 0.19926238375336985
+   },
+   {
+    "band": "L2",
+    "f_mhz": 1227.6,
+    "hybrid_db": 0.21661362836312892,
+    "saw_db": 1.4545275848084014,
+    "saw_max_in_bw_db": 1.5598749348619028,
+    "dxp_db": 3.555468750000002,
+    "total_passive_db": 6.681137547979933,
+    "total_passive_max_in_bw_db": 6.909369683356303,
+    "hc_excess_4port_db": 0.21514003282328475
+   },
+   {
+    "band": "G2",
+    "f_mhz": 1248.0,
+    "hybrid_db": 0.23527405554774894,
+    "saw_db": 4.999999999999992,
+    "saw_max_in_bw_db": 9.564986441450836,
+    "dxp_db": 4.200000000000003,
+    "total_passive_db": 14.435274055547735,
+    "total_passive_max_in_bw_db": 23.805704773557267,
+    "hc_excess_4port_db": 0.23365410498912992
+   }
+  ],
+  "output_noise_total_dbm": -51.285271516331775,
+  "output_noise_psd_peak_dbm_hz": -130.6814616721208,
+  "rf_parameters": [
+   {
+    "band": "L1/E1/B1C",
+    "f_mhz": 1575.42,
+    "gain_db": 38.59957518926311,
+    "nf_db": 0.73779706777645,
+    "te_k": 53.69855375345248,
+    "rl_in_db": 8.142116327060412,
+    "rl_out_db": 14.444893487571232,
+    "mismatch_loss_in_db": 0.7231503336226935,
+    "reverse_iso_db": 64.88855297067224,
+    "xpd_db": 31.7654177185967,
+    "ar_db": 0.4484043885047022,
+    "gd_ns": 38.01660310651985,
+    "iip3_dbm": -7.8635706768852085,
+    "oip3_dbm": 30.736004512377903,
+    "ip1db_in_dbm": -20.783265676885208,
+    "op1db_out_dbm": 16.816309512377906,
+    "sfdr_db": 68.19305064105129,
+    "cn0_dbhz": 44.76220293222355,
+    "bw_mhz": 2.046
+   },
+   {
+    "band": "B1I",
+    "f_mhz": 1561.098,
+    "gain_db": 37.687165944942336,
+    "nf_db": 0.740574415561204,
+    "te_k": 53.918422010924125,
+    "rl_in_db": 14.166488285217767,
+    "rl_out_db": 16.58798244176146,
+    "mismatch_loss_in_db": 0.16966454339290554,
+    "reverse_iso_db": 65.98794577724532,
+    "xpd_db": 31.84482508658761,
+    "ar_db": 0.4443219190954346,
+    "gd_ns": 44.381611241740714
+   },
+   {
+    "band": "G1",
+    "f_mhz": 1602.0,
+    "gain_db": 37.56416820905124,
+    "nf_db": 0.7293535715651176,
+    "te_k": 53.03098869045697,
+    "rl_in_db": 9.154922701466546,
+    "rl_out_db": 18.873823480738217,
+    "mismatch_loss_in_db": 0.5624875455149568,
+    "reverse_iso_db": 65.59112757469043,
+    "xpd_db": 31.655403741793855,
+    "ar_db": 0.4541225083919408,
+    "gd_ns": 41.82774813418403
+   },
+   {
+    "band": "L5/E5a/B2a",
+    "f_mhz": 1176.45,
+    "gain_db": 41.98508849931851,
+    "nf_db": 0.5888203433577115,
+    "te_k": 42.108531461196414,
+    "rl_in_db": 12.450868642014832,
+    "rl_out_db": 15.243901497969077,
+    "mismatch_loss_in_db": 0.2543024393118928,
+    "reverse_iso_db": 67.39849583275999,
+    "xpd_db": 34.36507220205248,
+    "ar_db": 0.3323867371393233,
+    "gd_ns": 27.29375341098831,
+    "iip3_dbm": -11.559806013328679,
+    "oip3_dbm": 30.42528248598983,
+    "ip1db_in_dbm": -23.581818513328678,
+    "op1db_out_dbm": 17.40326998598983,
+    "sfdr_db": 59.16154489970146,
+    "cn0_dbhz": 45.511179656642284,
+    "bw_mhz": 20.46
+   },
+   {
+    "band": "E5b/B2b",
+    "f_mhz": 1207.14,
+    "gain_db": 41.55258773259516,
+    "nf_db": 0.6000231341066241,
+    "te_k": 42.966323882678694,
+    "rl_in_db": 6.618084278520917,
+    "rl_out_db": 8.659948141450167,
+    "mismatch_loss_in_db": 1.0671942295110195,
+    "reverse_iso_db": 67.35883017174196,
+    "xpd_db": 34.819975288082595,
+    "ar_db": 0.3154229296901129,
+    "gd_ns": 24.222355788518914
+   },
+   {
+    "band": "L2",
+    "f_mhz": 1227.6,
+    "gain_db": 40.140882275562035,
+    "nf_db": 0.6209425018310887,
+    "te_k": 44.5740458370727,
+    "rl_in_db": 9.772116893393406,
+    "rl_out_db": 12.917834125076254,
+    "mismatch_loss_in_db": 0.48364944670242094,
+    "reverse_iso_db": 68.45198345121648,
+    "xpd_db": 34.69332331072075,
+    "ar_db": 0.3200569575281801,
+    "gd_ns": 32.01306651927549,
+    "iip3_dbm": -10.523525215749725,
+    "oip3_dbm": 29.61735705981231,
+    "ip1db_in_dbm": -22.660625215749718,
+    "op1db_out_dbm": 16.480257059812317,
+    "sfdr_db": 66.49765065910518,
+    "cn0_dbhz": 43.37905749816891,
+    "bw_mhz": 2.046
+   },
+   {
+    "band": "G2",
+    "f_mhz": 1248.0,
+    "gain_db": 33.40265187827623,
+    "nf_db": 0.6705052383094028,
+    "te_k": 48.41415621071574,
+    "rl_in_db": 13.745832662018717,
+    "rl_out_db": 16.29292202146758,
+    "mismatch_loss_in_db": 0.18729762498441177,
+    "reverse_iso_db": 74.87119338281803,
+    "xpd_db": 34.28201551308884,
+    "ar_db": 0.33558113928819805,
+    "gd_ns": 80.05321381665442
+   }
+  ],
+  "gd_l1_minus_l5_ns": 10.722849695531544,
+  "worst_case": [
+   {
+    "band": "L1",
+    "gain_typ_db": 37.945015314350414,
+    "gain_min_db": 33.206006317971394,
+    "gain_max_db": 41.805015314350406,
+    "nf_typ_db": 0.7701838986892767,
+    "nf_max_db": 0.9715181263174142
+   },
+   {
+    "band": "L5",
+    "gain_typ_db": 41.020099009540004,
+    "gain_min_db": 35.711249060185104,
+    "gain_max_db": 45.28009900954,
+    "nf_typ_db": 0.5973782644216985,
+    "nf_max_db": 0.9654593236202701
+   },
+   {
+    "band": "L2",
+    "gain_typ_db": 39.5550526394061,
+    "gain_min_db": 33.07166626776923,
+    "gain_max_db": 44.0150526394061,
+    "nf_typ_db": 0.6262335511126724,
+    "nf_max_db": 0.9783127286261468
+   }
+  ]
+ }
+}

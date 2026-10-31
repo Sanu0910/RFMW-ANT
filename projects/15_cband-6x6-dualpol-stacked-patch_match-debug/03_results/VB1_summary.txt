@@ -1,0 +1,22 @@
+tuned element VB1: port 1, params {"L1": 17.07, "L2": 16.2, "h": 4.0, "ins": 0.0, "wt": 0.86, "lt": 6.11, "wt2": 0.25, "lt2": 12.85, "LF": 10.0, "G": 60.0, "inf": 1.0}
+4.9-6.4 GHz: worst VSWR 7.07, VSWR<=2 61 %, <=3 77 %, worst isolation -16.1 dB
+4.0-7.0 GHz: worst VSWR 116.01, VSWR<=2 31 %, <=3 39 %, worst isolation -13.5 dB
+ 4.00 GHz  S11  -0.15 dB  VSWR 116.01  S21  -20.1 dB  Zin    0.9  +0.7j
+ 4.25 GHz  S11  -0.19 dB  VSWR 89.23  S21  -18.9 dB  Zin    1.2 +20.7j
+ 4.50 GHz  S11  -0.51 dB  VSWR 33.95  S21  -17.6 dB  Zin    3.6 +48.2j
+ 4.75 GHz  S11  -1.22 dB  VSWR 14.21  S21  -16.3 dB  Zin   13.6 +95.8j
+ 5.00 GHz  S11  -4.11 dB  VSWR  4.31  S21  -17.8 dB  Zin  161.0+192.8j
+ 5.25 GHz  S11 -12.80 dB  VSWR  1.59  S21  -24.7 dB  Zin  117.6 -47.9j
+ 5.50 GHz  S11 -13.45 dB  VSWR  1.54  S21  -26.3 dB  Zin   66.6 +11.9j
+ 5.75 GHz  S11 -11.92 dB  VSWR  1.68  S21  -23.0 dB  Zin   86.3 +46.7j
+ 6.00 GHz  S11 -11.48 dB  VSWR  1.73  S21  -22.1 dB  Zin  109.5 +57.1j
+ 6.25 GHz  S11  -5.90 dB  VSWR  3.06  S21  -19.3 dB  Zin  204.9+131.7j
+ 6.50 GHz  S11  -1.92 dB  VSWR  9.07  S21  -14.6 dB  Zin  131.5-305.7j
+ 6.75 GHz  S11  -0.80 dB  VSWR 21.75  S21  -13.5 dB  Zin   10.2-110.5j
+ 7.00 GHz  S11  -0.38 dB  VSWR 45.45  S21  -13.7 dB  Zin    2.9 -54.6j
+ 4.9 GHz  broadside realised gain  6.06 dBi
+ 5.2 GHz  broadside realised gain  9.90 dBi
+ 5.5 GHz  broadside realised gain 10.55 dBi
+ 5.8 GHz  broadside realised gain 10.64 dBi
+ 6.1 GHz  broadside realised gain 10.43 dBi
+ 6.4 GHz  broadside realised gain  7.47 dBi

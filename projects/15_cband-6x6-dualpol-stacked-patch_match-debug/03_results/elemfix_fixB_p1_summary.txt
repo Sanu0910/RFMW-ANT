@@ -1,0 +1,10 @@
+element from layer files, variant fixB, port 1 (H feed), Zref 100
+4.9-6.4 GHz: worst VSWR 5.47, VSWR<=2 0 %, <=3 64 %, worst coupling -12.8 dB
+5.1-6.2 GHz: worst VSWR 3.67, VSWR<=2 0 %, <=3 86 %, worst coupling -17.3 dB
+5.2-6.1 GHz: worst VSWR 3.03, VSWR<=2 0 %, <=3 99 %, worst coupling -20.4 dB
+ 4.9 GHz  broadside realised gain  6.31 dBi
+ 5.2 GHz  broadside realised gain  8.20 dBi
+ 5.5 GHz  broadside realised gain  8.62 dBi
+ 5.8 GHz  broadside realised gain  8.96 dBi
+ 6.1 GHz  broadside realised gain  8.52 dBi
+ 6.4 GHz  broadside realised gain  6.84 dBi

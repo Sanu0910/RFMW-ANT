@@ -1,0 +1,4 @@
+element from layer files, variant fixB, port 2 (V feed), Zref 100
+4.9-6.4 GHz: worst VSWR 6.34, VSWR<=2 27 %, <=3 67 %, worst coupling -12.8 dB
+5.1-6.2 GHz: worst VSWR 3.58, VSWR<=2 37 %, <=3 91 %, worst coupling -17.3 dB
+5.2-6.1 GHz: worst VSWR 2.79, VSWR<=2 45 %, <=3 100 %, worst coupling -20.5 dB

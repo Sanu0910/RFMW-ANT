@@ -10,10 +10,23 @@ VARIANTS = [
 
 ARRAY_PENDING = """
 <div class="box note"><b>Full-array run still in progress.</b> The complete 276.86 mm board (12 M FDTD cells, both
-36-way networks, 72 feed points) decays slowly because of the long corporate feed lines. Its S11/S22/S21 will be
-added to this report in a later revision. The element-level results below already explain the measured behaviour:
+36-way networks, 72 feed points) decays slowly because of the long corporate feed lines: after 10 400 time steps the
+field energy had only fallen by ~9 dB, so each port needs roughly 35 000&ndash;45 000 steps, several hours per port on this PC
+(16 threads, 7 GB in WSL). Two problems cost the first attempts: the port-2 model put no energy into the board at all, because
+its port coordinate (x = &minus;1.5081 mm) sat 0.1 &micro;m off the mesh line it should snap to (ports are now rounded to the
+mesh grid), and the first port-1 run was lost at step 10 400 when three 12 M-cell models shared the memory.
+S11/S22/S21 will be added in the next revision. The element-level results below already explain the measured behaviour:
 the array input match cannot be better than the match of the elements it is feeding through a reciprocal, near-lossless
 corporate network built from 100 &Omega; branches and 70.7 &Omega; quarter-wave transformers.</div>
+"""
+
+ARRAY_INTERIM = """
+<p><b>Preliminary reading</b> (25.0 ns of port 1 and 33.1 ns of port 2 recorded, about 4.5 h into the runs; field energy
+down by 18&ndash;22 dB; the curves have hardly changed since the 2.5 h reading). Both array ports are best in the middle of the band, where the element is matched: S22 stays mostly
+below &minus;10 dB from about 5.2 to 6.2 GHz, and S11 has its best stretch around 5.0&ndash;5.8 GHz. Below ~4.8 GHz and above ~6.3 GHz
+both ports sit mostly at VSWR 3 or worse. V/H coupling is below &minus;20 dB over most of the band. This already follows the element
+result (section 4). The final curves will be smoother and slightly worse, because reflections that come back late
+through the long feed network are not in the record yet.</p>
 """
 
 ARRAY_TEXT = """
@@ -21,6 +34,61 @@ ARRAY_TEXT = """
 corporate network passes the reflection straight back to the connector (in-phase reflections from 36 identical elements
 add up at the input). Ripple on top of the element curve comes from the network's transformers and the unequal
 line lengths.</p>
+"""
+
+WB_INTRO = """
+<p><b>Idea.</b> The usual way to reach ~50 % bandwidth with a printed patch is the aperture-coupled stacked patch: the 50 &Omega;
+feed line runs under the ground on its own layer and couples to the driven patch through a slot. The slot, the driven patch
+and the parasitic patch can then each supply a resonance, and the feed layer has room for a matching network.
+The model (<code>sim_wb_element.py</code>) keeps the present laminates: feed on RT5880 0.8 mm under a slotted ground, air/foam
+spacer h1, driven patch, air/foam spacer h2, parasitic patch on FR4 0.4 mm. Single polarisation first; the dual-polarised
+version adds a second, orthogonal slot.</p>
+<p><b>Work done.</b> 40 completed full-wave openEMS runs (0.5 mm cells, 0.8 M cells, 3&ndash;12 min each): diagnostics (feed and slot
+alone, single patch), hand-tuned variants, four generations of a (1+4) evolution strategy over seven dimensions
+(<code>opt_wb_element.py</code>), a stub-length sweep, and a physics-guided "small driven / large parasitic" round. On top, every candidate
+was given the best possible feed-layer network (series line + open stub + series line, <code>match_wb.py</code>).</p>
+"""
+
+WB_TEXT = """
+<h3>What the study showed</h3>
+<ul>
+<li><b>The best candidate is no better than the present element yet.</b> It is matched (VSWR &le; 3) from about 5.0 to 5.7 GHz,
+a single resonance just like the as-built element.</li>
+<li><b>Bare air-spaced patches end up the wrong size.</b> In air a patch for 5&ndash;6 GHz must be 20&ndash;23 mm. With two patches of nearly
+the same size the two resonances merge near 5&ndash;5.7 GHz, and the upper (anti-phase) mode hardly radiates.</li>
+<li><b>Nothing couples above ~6 GHz.</b> For every candidate the input resistance falls to a few ohms between 6 and 7 GHz,
+whatever the stub length (sweep 4&ndash;12 mm). The slot sees no radiating resonator there.</li>
+<li><b>Making the driven patch small (to put a resonance near 7 GHz) and the parasitic large</b> (to cover 4.5 GHz) broke the coupling
+completely with this slot (VSWR &gt; 10 everywhere).</li>
+<li><b>A feed-layer network cannot widen a single resonance.</b> For the best candidate the minimax network only spreads the
+mismatch evenly (worst VSWR 12 &rarr; 7) and shrinks the VSWR &le; 3 window. This is the same Bode&ndash;Fano limit as in section 5.</li>
+<li><b>The model itself was checked.</b> The feed + slot alone is a nearly lossless load (no radiation, as expected). A single 20 mm patch
+shows the expected patch resonance near 5.7 GHz. The sharp peaks in the first runs came from the length of line between port and
+slot, not from a spurious mode.</li>
+</ul>
+<p>Conclusion: an aperture-coupled stacked patch is still the right family, but it needs the set-up described in section 9,
+item 2 (unit cell, dielectric-loaded patches, resonant dog-bone/H slots, a real optimisation budget). The quick air-sheet
+version tried here does not get there.</p>
+"""
+
+MEAS_TEXT = """
+<ul>
+<li><b>Input match:</b> the measured S11 of both ports (markers 4.9&ndash;6.4 GHz) follows the simulated array: rippled, best mid-band.
+Port A is at VSWR &le; 3 at every marker except 6.2 GHz (&minus;5.3 dB); port B is at about VSWR 3 at 4.9&ndash;5.2 GHz (&minus;6 dB) and better from 5.5 GHz up.
+This confirms the element-limited match found in sections 4&ndash;5.</li>
+<li><b>Gain:</b> 20.4 dBi (V, 5.5 GHz) and 20.0 dBi (H, 5.2 GHz) peak, about 3 dB below the 23 dBi rating. Against the aperture limit
+4&pi;A/&lambda;&sup2; of the 276.86 mm board this is only 25&ndash;35 % aperture efficiency mid-band, and 3&ndash;8 % at 6.2&ndash;6.4 GHz
+(11&ndash;15 dBi). Mismatch loss explains at most ~1.5 dB (S11 = &minus;5.3 dB), so the high-band drop of 6&ndash;9 dB is mainly loss, phase error or
+pattern distortion, not reflection.</li>
+<li><b>Candidates for the gain shortfall</b> (to be separated): the radome (fitted in the test photos), dielectric loss in the resonant
+FR4 parasitic layer (tan&delta; 0.02), radiation and loss of the unshielded 36-way feed lines on the patch layer, frequency-dependent
+phase of the 180&deg; meander corrections, the graded parasitic sizes, and the bench range itself (indoor, ~5 m, multipath, horn calibration).</li>
+<li><b>Check:</b> the full-array runs report broadside realised gain at 4.5&ndash;6.5 GHz. If the simulation also collapses above 6 GHz, the cause
+is in the design; if it stays near 22&ndash;23 dBi, it is in the build, the radome or the measurement. Bench checks: radome on/off, parasitic
+layer removed, pattern cuts at 5.5 and 6.4 GHz.</li>
+<li>Open points: port A/B to V/H mapping, S11 calibration plane, horn gain table, radome condition during the gain test, real spec band
+(the markers suggest 4.9&ndash;6.4 GHz, i.e. 27 % instead of 54 %).</li>
+</ul>
 """
 
 BODY = r"""
@@ -49,6 +117,10 @@ Because the parasitics are graded row by row (16.2 to 17.8 mm), each row is matc
 frequency part of the aperture is mismatched.</li>
 <li><b>No feed-network change can fix this on its own.</b> A best-case circuit optimisation on the simulated element impedance
 (line + transformer + stub) still leaves a worst-case VSWR of about 9 across 4&ndash;7 GHz (section 5).</li>
+<li><b>A first redesign iteration did not reach the target yet.</b> An aperture-coupled stacked patch (the usual route to
+~50 % bandwidth) was modelled and tuned in 40 full-wave runs (section 7). The best candidate is matched only from
+about 5.0 to 5.7 GHz, no better than the present element. The study shows why: with air-spaced patches both resonances
+end up together near 5&ndash;5.7 GHz and nothing radiates above ~6 GHz. Section 9 lists what has to change in the next iteration.</li>
 
 </ol></div>
 
@@ -105,8 +177,13 @@ is too large to compensate with a passive network (Bode&ndash;Fano limit). The f
 
 <h2>6. Full array</h2>
 {array}
+<h3 class="pb">Measured panel vs simulation (bench data 2026-10-30)</h3>
+{meas}
 
-<h2 class="pb">7. Root causes, ranked</h2>
+<h2 class="pb">7. Wideband redesign study (first iteration)</h2>
+{wb}
+
+<h2 class="pb">8. Root causes, ranked</h2>
 <table>
 <tr><th>#</th><th>Cause</th><th>Evidence</th><th>Effect</th></tr>
 <tr><td>1</td><td>Element bandwidth (~16 %) far below the 54 % target</td><td>Element S11, Smith chart, matching study</td><td>VSWR &gt; 3 over ~70 % of 4&ndash;7 GHz, regardless of the network</td></tr>
@@ -116,8 +193,23 @@ is too large to compensate with a passive network (Bode&ndash;Fano limit). The f
 <tr><td>4</td><td>Element pitch &asymp; 44 mm = 1.03 &lambda; at 7 GHz</td><td>Geometry</td><td>Grating lobes and gain drop near the top of the band. This affects gain, not S11.</td></tr>
 </table>
 
-<h2>8. What to change</h2>
+<h2>9. What can be done next</h2>
+<p>In order of priority. Items 1&ndash;3 are the work plan for the next iteration; items 4&ndash;10 are the design advice from the
+as-built analysis.</p>
 <ol>
+<li><b>Finish the full-array runs</b> (running now, section 6) and check that the array S11/S22 follow the element curve.
+That closes the root-cause loop for the existing board.</li>
+<li><b>Second iteration of the wideband element, set up the way published wideband designs are:</b>
+<ul><li>simulate the element in a <i>unit cell</i> with periodic boundaries at the 44 mm pitch, so the embedded impedance is optimised, not the isolated one;</li>
+<li>print the patches on thin low-loss carriers (e.g. 0.25&ndash;0.5 mm RO4003C/RT5880) over foam instead of bare air sheets. That lowers the patch
+size and separates the two resonances (lower patch near 6.5&ndash;7 GHz, upper patch near 4.3&ndash;4.5 GHz);</li>
+<li>use a near-resonant aperture (dog-bone or H-shaped) that adds a third resonance at the top of the band, and two
+orthogonal H-slots (or a cross slot with a crossover feed) for dual polarisation;</li>
+<li>optimise with a proper budget: about 150&ndash;250 full-wave evaluations with a surrogate or trust-region optimiser. Each evaluation
+takes 3&ndash;12 min on this PC, so this is one to two days of machine time, or a few hours on a cloud machine.</li></ul></li>
+<li><b>Keep a more forgiving element type as plan B:</b> an L-probe-fed or four-probe differentially fed patch on ~0.1 &lambda;
+of foam, or a crossed (bow-tie) dipole over the ground at about &lambda;/4. Dipole-type elements reach 50&ndash;60 % bandwidth with high V/H
+isolation and fit a smaller pitch.</li>
 <li><b>Hold the 4 mm air gap tightly.</b> Check the spacer height on the built board: a 0.3 mm error in a 4 mm gap moves the
 driven-parasitic coupling noticeably.</li>
 <li><b>Re-tune the element as a true double-resonance stacked patch</b> in a unit-cell (periodic) simulation before touching the network:
@@ -140,7 +232,7 @@ element that a wideband feed allows.</li>
 element and network on the bench and confirms this analysis.</li>
 </ol>
 
-<h2>9. Limits of this analysis</h2>
+<h2>10. Limits of this analysis</h2>
 <ul>
 <li>The element was simulated alone on a 60 mm ground. Mutual coupling in the array shifts the embedded impedance a little. The full-array model includes it.</li>
 <li>The full-array mesh (0.5 mm) snaps the 0.73 mm lines to 0.5 or 1.0 mm, which shifts the network's own resonances by a few percent.</li>
@@ -148,7 +240,7 @@ element and network on the bench and confirms this analysis.</li>
 <li>No measured data was available. The comparison is with the reported symptom (VSWR &gt; 3, gain OK).</li>
 </ul>
 
-<h2>10. Reproduce</h2>
+<h2>11. Reproduce</h2>
 <pre>bash tools/install_openems.sh
 /opt/openEMS/venv/bin/pip install ezdxf shapely matplotlib
 cd projects/15_cband-6x6-dualpol-stacked-patch_match-debug/02_openems
@@ -158,5 +250,8 @@ python sim_element.py --tag element_nopar --no-par
 python sim_element.py --tag element_par1.25 --par-scale 1.25
 python match_study.py
 python sim_array.py --port 1 ; python sim_array.py --port 2   # full board, hours
-python make_figures.py ; python plot_results.py ; python build_report.py</pre>
+python sim_wb_element.py --single --set "G=50,dp=10,Lp1=22.09,Lp2=20.77,h1=3.1,h2=4.45,Ls=16.1,Ws=0.92,Lst=5.79" --tag wbN4
+python opt_wb_element.py --gens 8                          # redesign optimiser (4 runs per generation)
+python match_wb.py ; python match_wb.py --apply wbN4       # feed-layer matching on every candidate
+python make_figures.py ; python plot_results.py ; python wb_figures.py wbN4 ; python build_report.py</pre>
 """

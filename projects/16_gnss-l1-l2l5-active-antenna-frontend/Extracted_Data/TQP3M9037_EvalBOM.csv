@@ -1,0 +1,9 @@
+ref,value,description
+C1,100 pF,"input DC block, 0402 NPO"
+C2,100 pF,"output DC block, 0402 NPO"
+C3,100 pF,"VDD bypass, 0402 NPO"
+C4,1.0 uF,"VDD bypass, 0402 X5R"
+L1,18 nH,"RF choke, 0603 ceramic"
+R1,10 kohm,VPD divider (optional)
+R2,33 kohm,VPD divider (optional)
+R3,0 ohm,jumper

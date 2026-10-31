@@ -1,0 +1,4 @@
+wbN4: worst VSWR 4-7 GHz 12.00 unmatched -> 6.93 with the feed-layer network
+network (from the slot side): series line Z1 40.0 ohm L1 13.17 mm, open stub Z3 120.0 ohm L3 6.44 mm, series line Z2 41.2 ohm L2 11.19 mm, then 50 ohm
+share of 4-7 GHz with VSWR<=3: 21 %, VSWR<=2: 13 %
+4.00:5.2 4.12:5.5 4.24:6.1 4.36:6.7 4.48:6.9 4.60:6.6 4.72:5.8 4.84:4.7 4.96:3.5 5.08:2.4 5.20:1.6 5.32:1.1 5.44:1.5 5.56:2.3 5.68:3.2 5.80:4.3 5.92:5.3 6.04:6.1 6.16:6.7 6.28:6.9 6.40:6.9 6.52:6.7 6.64:6.3 6.76:6.0 6.88:6.0 7.00:6.9

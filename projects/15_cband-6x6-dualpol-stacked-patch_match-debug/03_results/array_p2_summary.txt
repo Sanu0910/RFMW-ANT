@@ -1,0 +1,19 @@
+array sim array_p2: port 2 excited, gap er=1.0, in-plane cell 0.5 mm
+ 4.00 GHz  S22  -1.52 dB  VSWR 11.48  S12  -16.1 dB  Zin    5.4 -24.5j
+ 4.25 GHz  S22  -4.82 dB  VSWR  3.70  S12  -18.8 dB  Zin   23.3 -39.7j
+ 4.50 GHz  S22  -3.45 dB  VSWR  5.10  S12  -16.7 dB  Zin   90.9+115.3j
+ 4.75 GHz  S22  -4.26 dB  VSWR  4.16  S12  -24.3 dB  Zin   23.9 +46.7j
+ 5.00 GHz  S22 -10.85 dB  VSWR  1.80  S12  -28.0 dB  Zin   89.8  +5.4j
+ 5.25 GHz  S22 -11.44 dB  VSWR  1.73  S12  -34.8 dB  Zin   35.0 -17.9j
+ 5.50 GHz  S22 -14.12 dB  VSWR  1.49  S12  -68.5 dB  Zin   34.8  -7.1j
+ 5.75 GHz  S22 -12.96 dB  VSWR  1.58  S12  -41.4 dB  Zin   31.8  +2.6j
+ 6.00 GHz  S22 -19.40 dB  VSWR  1.24  S12  -33.3 dB  Zin   40.3  -0.1j
+ 6.25 GHz  S22 -17.89 dB  VSWR  1.29  S12  -37.1 dB  Zin   50.4 -12.9j
+ 6.50 GHz  S22  -6.81 dB  VSWR  2.68  S12  -23.7 dB  Zin   19.0  +6.0j
+ 6.75 GHz  S22  -3.13 dB  VSWR  5.60  S12  -19.2 dB  Zin   38.7 +84.8j
+ 7.00 GHz  S22  -3.63 dB  VSWR  4.86  S12  -26.0 dB  Zin   36.3 -73.4j
+ 4.5 GHz  broadside realised gain 17.11 dBi   gain (accepted power) 19.72 dBi
+ 5.0 GHz  broadside realised gain 15.07 dBi   gain (accepted power) 15.44 dBi
+ 5.5 GHz  broadside realised gain 18.94 dBi   gain (accepted power) 19.11 dBi
+ 6.0 GHz  broadside realised gain 21.20 dBi   gain (accepted power) 21.25 dBi
+ 6.5 GHz  broadside realised gain 13.71 dBi   gain (accepted power) 14.72 dBi

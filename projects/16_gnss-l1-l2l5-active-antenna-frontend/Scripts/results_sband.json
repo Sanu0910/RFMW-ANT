@@ -1,0 +1,386 @@
+{
+ "summary": {
+  "f_mhz": 2492.028,
+  "gain_db": 34.95289696215358,
+  "ripple_sps_db": 0.07797171944831405,
+  "ripple_spec_band_db": 0.2234373588086882,
+  "ripple_rs_16p5MHz_db": 0.46535083484950235,
+  "nf_db": 1.166728658496272,
+  "te_k": 89.37688277792483,
+  "vswr_in": 1.2400513546806098,
+  "vswr_out": 1.1475338460390112,
+  "rl_in_db": 19.39907627553539,
+  "rl_out_db": 23.26096706197236,
+  "reverse_iso_db": 58.18549561911151,
+  "k_min": 6.855813018070427,
+  "mu_min": 1.0526317659008617,
+  "stage_k_min": 1.4408106161308882,
+  "stage_mu_min": 1.121058362069968,
+  "gd_ns": 19.9204617115295,
+  "gd_ripple_sps_ns": 0.34575788002042174,
+  "gd_ripple_rs_ns": 0.9772137148074016,
+  "xpd_db": 32.32315926376813,
+  "ar_db": 0.42050498772985806,
+  "iip3_dbm": -1.439735098617687,
+  "oip3_dbm": 33.51316186353589,
+  "ip1db_in_dbm": -15.867753765284355,
+  "op1db_out_dbm": 18.085143196869225,
+  "sfdr_db": 72.18965329941642,
+  "cn0_dbhz": 40.53327134150371,
+  "output_noise_dbm": -59.675773480538545,
+  "bw_3db_mhz": 62.0,
+  "hyb_phase_offsets": [
+   75.0,
+   185.0,
+   1.0153928311366354
+  ]
+ },
+ "budget": [
+  {
+   "stage": "C2327J5003AHF (RHCP combine)",
+   "gain_db": -0.4336720722579019,
+   "nf_db": 0.4336720722579019,
+   "cum_gain_db": -0.43367207225790183,
+   "cum_nf_db": 0.4336720722579023,
+   "cum_iip3_dbm": null,
+   "cum_iip1db_dbm": null,
+   "signal_dbm": -132.73367207225792,
+   "noise_dbm": -110.89094370623859
+  },
+  {
+   "stage": "LNA1 TQP3M9037 (ref. design)",
+   "gain_db": 19.16799735724031,
+   "nf_db": 0.7255407578087554,
+   "cum_gain_db": 18.734325284982408,
+   "cum_nf_db": 1.1592128300666578,
+   "cum_iip3_dbm": 16.301665381684263,
+   "cum_iip1db_dbm": 1.8736467150175917,
+   "signal_dbm": -113.56567471501761,
+   "noise_dbm": -90.99740559118952
+  },
+  {
+   "stage": "TA1442A #1",
+   "gain_db": -1.5002723322233622,
+   "nf_db": 1.5002723322233622,
+   "cum_gain_db": 17.234052952759043,
+   "cum_nf_db": 1.1775389528042952,
+   "cum_iip3_dbm": 16.301665381684263,
+   "cum_iip1db_dbm": 1.8736467150175917,
+   "signal_dbm": -115.06594704724097,
+   "noise_dbm": -92.47935180067525
+  },
+  {
+   "stage": "LNA2 TQP3M9037 (ref. design)",
+   "gain_db": 19.16799735724031,
+   "nf_db": 0.7255407578087554,
+   "cum_gain_db": 36.40205030999935,
+   "cum_nf_db": 1.1889077893119984,
+   "cum_iip3_dbm": -1.439735098617687,
+   "cum_iip1db_dbm": -15.867753765284355,
+   "signal_dbm": -95.89794969000066,
+   "noise_dbm": -73.29998560692724
+  },
+  {
+   "stage": "TA1442A #2",
+   "gain_db": -1.5002723322233622,
+   "nf_db": 1.5002723322233622,
+   "cum_gain_db": 34.90177797777599,
+   "cum_nf_db": 1.1892198432143921,
+   "cum_iip3_dbm": -1.439735098617687,
+   "cum_iip1db_dbm": -15.867753765284355,
+   "signal_dbm": -97.39822202222402,
+   "noise_dbm": -74.7999458852482
+  }
+ ],
+ "interferers": [
+  {
+   "interferer": "LTE B40 (2300-2400)",
+   "f_mhz": 2350,
+   "p_ant_dbm": -10,
+   "lna1_in": -10.427637810177298,
+   "lna1_out": 9.05277399838478,
+   "saw1_out": -34.947226001615235,
+   "lna2_out": -15.466814193053157,
+   "rf_out": -59.46681419305317,
+   "lna1_backoff_db": 10.55519800161522,
+   "lna2_backoff_db": 35.07478619305316,
+   "saw2_in_vs_10dbm_rating_db": 25.466814193053157
+  },
+  {
+   "interferer": "Wi-Fi ch 1",
+   "f_mhz": 2412,
+   "p_ant_dbm": -10,
+   "lna1_in": -10.432323423562453,
+   "lna1_out": 8.92756912585457,
+   "saw1_out": -27.24054901950656,
+   "lna2_out": -7.880656470089537,
+   "rf_out": -44.04877461545067,
+   "lna1_backoff_db": 10.68040287414543,
+   "lna2_backoff_db": 27.488628470089537,
+   "saw2_in_vs_10dbm_rating_db": 17.880656470089537
+  },
+  {
+   "interferer": "Bluetooth / ISM",
+   "f_mhz": 2441,
+   "p_ant_dbm": -20,
+   "lna1_in": -20.432225541857182,
+   "lna1_out": -1.1377600649435848,
+   "saw1_out": -12.127710036790727,
+   "lna2_out": 7.16675544012287,
+   "rf_out": -3.8231945317242726,
+   "lna1_backoff_db": 20.745732064943585,
+   "lna2_backoff_db": 12.44121655987713,
+   "saw2_in_vs_10dbm_rating_db": 2.83324455987713
+  },
+  {
+   "interferer": "Microwave oven",
+   "f_mhz": 2450,
+   "p_ant_dbm": -30,
+   "lna1_in": -30.432141786884817,
+   "lna1_out": -11.159012875060998,
+   "saw1_out": -15.891363659655807,
+   "lna2_out": 3.3817652521680106,
+   "rf_out": -1.3505855324267984,
+   "lna1_backoff_db": 30.766984875061,
+   "lna2_backoff_db": 16.226206747831988,
+   "saw2_in_vs_10dbm_rating_db": 6.618234747831989
+  },
+  {
+   "interferer": "Wi-Fi ch 13",
+   "f_mhz": 2472,
+   "p_ant_dbm": -10,
+   "lna1_in": -10.432363253562281,
+   "lna1_out": 8.78676936765621,
+   "saw1_out": 6.58252833646784,
+   "lna2_out": 25.80166095768633,
+   "rf_out": 23.59741992649796,
+   "lna1_backoff_db": 10.82120263234379,
+   "lna2_backoff_db": -6.19368895768633,
+   "saw2_in_vs_10dbm_rating_db": -15.80166095768633
+  },
+  {
+   "interferer": "Globalstar DL (sat.)",
+   "f_mhz": 2490,
+   "p_ant_dbm": -120,
+   "lna1_in": -120.43347377751851,
+   "lna1_out": -101.26028231435133,
+   "saw1_out": -102.80706486216353,
+   "lna2_out": -83.63387339899634,
+   "rf_out": -85.18065594680854,
+   "lna1_backoff_db": 120.86825431435133,
+   "lna2_backoff_db": 103.24184539899635,
+   "saw2_in_vs_10dbm_rating_db": 93.63387339899634
+  },
+  {
+   "interferer": "LTE B41 / n41 low",
+   "f_mhz": 2506,
+   "p_ant_dbm": -10,
+   "lna1_in": -10.435566126076928,
+   "lna1_out": 8.695607996644426,
+   "saw1_out": 7.203655501595657,
+   "lna2_out": 26.33482962431701,
+   "rf_out": 24.84287712926824,
+   "lna1_backoff_db": 10.912364003355574,
+   "lna2_backoff_db": -6.7268576243170095,
+   "saw2_in_vs_10dbm_rating_db": -16.33482962431701
+  },
+  {
+   "interferer": "LTE B7 UL",
+   "f_mhz": 2535,
+   "p_ant_dbm": -10,
+   "lna1_in": -10.441533709986913,
+   "lna1_out": 8.611040561586591,
+   "saw1_out": 5.426727183339958,
+   "lna2_out": 24.47930145491346,
+   "rf_out": 21.294988076666826,
+   "lna1_backoff_db": 10.996931438413409,
+   "lna2_backoff_db": -4.871329454913461,
+   "saw2_in_vs_10dbm_rating_db": -14.479301454913461
+  },
+  {
+   "interferer": "LTE B41 / n41 mid",
+   "f_mhz": 2593,
+   "p_ant_dbm": -10,
+   "lna1_in": -10.453884096312862,
+   "lna1_out": 8.434337958527422,
+   "saw1_out": -50.14678320368551,
+   "lna2_out": -31.258561148845224,
+   "rf_out": -89.83968231105816,
+   "lna1_backoff_db": 11.173634041472578,
+   "lna2_backoff_db": 50.86653314884522,
+   "saw2_in_vs_10dbm_rating_db": 41.258561148845224
+  },
+  {
+   "interferer": "LTE B7 DL",
+   "f_mhz": 2655,
+   "p_ant_dbm": -30,
+   "lna1_in": -30.457465734331894,
+   "lna1_out": -11.751646199107586,
+   "saw1_out": -69.65164619910762,
+   "lna2_out": -50.94582666388331,
+   "rf_out": -108.84582666388334,
+   "lna1_backoff_db": 31.359618199107587,
+   "lna2_backoff_db": 70.55379866388331,
+   "saw2_in_vs_10dbm_rating_db": 60.94582666388331
+  },
+  {
+   "interferer": "GNSS L1 (other band)",
+   "f_mhz": 1575.42,
+   "p_ant_dbm": -125,
+   "lna1_in": -125.31352428218494,
+   "lna1_out": -107.47993243087139,
+   "saw1_out": -148.95914615977097,
+   "lna2_out": -131.12555430845742,
+   "rf_out": -172.604768037357,
+   "lna1_backoff_db": 127.08790443087139,
+   "lna2_backoff_db": 150.7335263084574,
+   "saw2_in_vs_10dbm_rating_db": 141.12555430845742
+  },
+  {
+   "interferer": "5G n78",
+   "f_mhz": 3500,
+   "p_ant_dbm": -20,
+   "lna1_in": -20.81320070855042,
+   "lna1_out": -4.959002393814959,
+   "saw1_out": -51.696042527594216,
+   "lna2_out": -35.84184421285876,
+   "rf_out": -82.57888434663802,
+   "lna1_backoff_db": 24.56697439381496,
+   "lna2_backoff_db": 55.449816212858764,
+   "saw2_in_vs_10dbm_rating_db": 45.84184421285876
+  }
+ ],
+ "rejection": [
+  {
+   "band": "LTE B40",
+   "f_lo_mhz": 2300,
+   "f_hi_mhz": 2400,
+   "rej_min_dbc": 81.35142276633988,
+   "rej_mean_dbc": 92.07941148482243
+  },
+  {
+   "band": "Wi-Fi / BT ISM",
+   "f_lo_mhz": 2400,
+   "f_hi_mhz": 2483.5,
+   "rej_min_dbc": 0.39381241200727857,
+   "rej_mean_dbc": 28.371768393310866
+  },
+  {
+   "band": "Globalstar DL",
+   "f_lo_mhz": 2483.5,
+   "f_hi_mhz": 2500,
+   "rej_min_dbc": -0.1013353341678851,
+   "rej_mean_dbc": 0.06418783969923263
+  },
+  {
+   "band": "LTE B41 / n41",
+   "f_lo_mhz": 2496,
+   "f_hi_mhz": 2690,
+   "rej_min_dbc": -0.1013353341678851,
+   "rej_mean_dbc": 77.62018742437178
+  },
+  {
+   "band": "LTE B7 UL",
+   "f_lo_mhz": 2500,
+   "f_hi_mhz": 2570,
+   "rej_min_dbc": -0.09208398239803728,
+   "rej_mean_dbc": 18.91000270903135
+  },
+  {
+   "band": "LTE B7 DL",
+   "f_lo_mhz": 2620,
+   "f_hi_mhz": 2690,
+   "rej_min_dbc": 114.95539690936761,
+   "rej_mean_dbc": 116.21241410414311
+  },
+  {
+   "band": "LTE B1 DL",
+   "f_lo_mhz": 2110,
+   "f_hi_mhz": 2170,
+   "rej_min_dbc": 93.11256727694249,
+   "rej_mean_dbc": 94.75533155433969
+  },
+  {
+   "band": "GNSS L-band",
+   "f_lo_mhz": 1164,
+   "f_hi_mhz": 1610,
+   "rej_min_dbc": 93.88905630303984,
+   "rej_mean_dbc": 98.90148792357517
+  },
+  {
+   "band": "5G n78",
+   "f_lo_mhz": 3300,
+   "f_hi_mhz": 3800,
+   "rej_min_dbc": 97.1414175343952,
+   "rej_mean_dbc": 98.02401226127827
+  }
+ ],
+ "validation": [
+  {
+   "item": "TA1442A attenuation 10-2390 MHz",
+   "spec_min": 33,
+   "spec_typ": 40,
+   "model": 41.00000000000001
+  },
+  {
+   "item": "TA1442A attenuation 2575-3000 MHz",
+   "spec_min": 43,
+   "spec_typ": 50,
+   "model": 50.00000000000001
+  },
+  {
+   "item": "TA1442A IL 2489.5-2494.5 MHz (mean)",
+   "spec_min": null,
+   "spec_typ": 1.55,
+   "model": 1.5045633993340253
+  },
+  {
+   "item": "TA1442A ripple 2489.5-2494.5 MHz",
+   "spec_min": null,
+   "spec_typ": 0.2,
+   "model": 0.09400000000002673
+  },
+  {
+   "item": "TA1442A VNA marker 2390 MHz",
+   "spec_min": null,
+   "spec_typ": 46.73,
+   "model": 46.730000000000004
+  },
+  {
+   "item": "TA1442A VNA marker 2575 MHz",
+   "spec_min": null,
+   "spec_typ": 53.98,
+   "model": 53.98000000000002
+  },
+  {
+   "item": "TA1442A VNA marker 2489.5 MHz",
+   "spec_min": null,
+   "spec_typ": 1.558,
+   "model": 1.5579999999999976
+  },
+  {
+   "item": "TA1442A VNA marker 2494.5 MHz",
+   "spec_min": null,
+   "spec_typ": 1.464,
+   "model": 1.4639999999999709
+  },
+  {
+   "item": "C2327J5003AHF excess IL @2492 MHz",
+   "spec_min": null,
+   "spec_typ": 0.3,
+   "model": 0.4311291022960378
+  },
+  {
+   "item": "C2327J5003AHF isolation @2492 MHz",
+   "spec_min": 18,
+   "spec_typ": 22,
+   "model": 22.747663288962706
+  },
+  {
+   "item": "C2327J5003AHF return loss @2492 MHz",
+   "spec_min": 15,
+   "spec_typ": 18,
+   "model": 18.131129102296036
+  }
+ ]
+}

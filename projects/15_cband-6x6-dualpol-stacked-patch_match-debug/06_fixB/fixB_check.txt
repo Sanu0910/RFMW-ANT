@@ -1,0 +1,5 @@
+Option 2 / fix B (wide): 72 feeds; section A 4.088 mm x 1.93 mm, section B 2.001 mm x 6.37 mm, then the existing 0.73 mm line
+connected copper pieces on In2.Cu: before 5, after 5 (OK)
+smallest gap from new copper to other copper: 0.526 mm at the feed starting [-17.27 -32.56] (OK, limit 0.2 mm)
+F.Cu (parasitics) and B.Cu (ground) unchanged
+ALL CHECKS PASS

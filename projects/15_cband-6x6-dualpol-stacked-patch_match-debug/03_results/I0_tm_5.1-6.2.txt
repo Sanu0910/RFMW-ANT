@@ -1,0 +1,2 @@
+I0: L1 17.07 L2 16.20 h 4.00 ins 0.00 | unmatched worst VSWR 5.1-6.2 GHz 5.34 -> matched 2.37 (VSWR<=2 78 %) | 4-7 GHz worst 81.05, <=3 43 %
+   match: 91.9 ohm (0.86 mm) x 6.11 mm at the patch, then 150.0 ohm (0.25 mm) x 12.85 mm, then 100 ohm (0.73 mm)

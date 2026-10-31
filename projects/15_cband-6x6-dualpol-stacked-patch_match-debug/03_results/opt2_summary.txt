@@ -1,0 +1,11 @@
+Option 2 (wide feed sections, lines >= 0.73 mm) vs as built - element from the layer files, full-wave, 100-ohm branch
+port            band         worst VSWR   VSWR<=2   VSWR<=3   worst V-H coupling
+H feed (port 1) asbuilt  5.1-6.2     3.50      22 %      89 %     -19.4 dB
+H feed (port 1) asbuilt  4.9-6.4     5.87      16 %      66 %     -14.9 dB
+H feed (port 1) fixB     5.1-6.2     3.67       0 %      86 %     -17.3 dB
+H feed (port 1) fixB     4.9-6.4     5.47       0 %      64 %     -12.8 dB
+V feed (port 2) asbuilt  5.1-6.2     3.59      68 %      95 %     -19.5 dB
+V feed (port 2) asbuilt  4.9-6.4     7.51      50 %      70 %     -14.9 dB
+V feed (port 2) fixB     5.1-6.2     3.58      37 %      91 %     -17.3 dB
+V feed (port 2) fixB     4.9-6.4     6.34      27 %      67 %     -12.8 dB
+option 2 element realised gain (H feed): 4.9 GHz 6.31 dBi, 5.2 GHz 8.20 dBi, 5.5 GHz 8.62 dBi, 5.8 GHz 8.96 dBi, 6.1 GHz 8.52 dBi, 6.4 GHz 6.84 dBi

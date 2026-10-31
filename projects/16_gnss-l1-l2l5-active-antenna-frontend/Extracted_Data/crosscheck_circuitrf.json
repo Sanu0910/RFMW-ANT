@@ -1,0 +1,17 @@
+{
+ "S31": {
+  "max_abs_diff_db_inband": 0.000280639128391158
+ },
+ "S32": {
+  "max_abs_diff_db_inband": 0.0004957865856241028
+ },
+ "S11": {
+  "max_abs_diff_db_inband": 0.0007301167404136777
+ },
+ "S22": {
+  "max_abs_diff_db_inband": 0.0006824929584965389
+ },
+ "S33": {
+  "max_abs_diff_db_inband": 8.100447613301753e-05
+ }
+}

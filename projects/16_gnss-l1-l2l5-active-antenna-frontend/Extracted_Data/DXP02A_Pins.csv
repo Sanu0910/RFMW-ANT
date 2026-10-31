@@ -1,0 +1,5 @@
+pin,function
+2,Signal input (common)
+5,GPS L2/L5 output (band 2)
+7,GPS L1 output (band 1)
+"1, 3, 4, 6, 8",Ground

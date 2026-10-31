@@ -1,0 +1,2 @@
+U3: L1 17.50 L2 19.50 h 6.50 ins 0.00 | unmatched worst VSWR 4.9-6.4 GHz 45.03 -> matched 11.04 (VSWR<=2 0 %) | 4-7 GHz worst 388.50, <=3 0 %
+   match: 109.6 ohm (0.58 mm) x 2.15 mm at the patch, open stub 149.5 ohm (0.25 mm) x 7.54 mm, then 65.4 ohm (1.63 mm) x 13.63 mm, then 100 ohm (0.73 mm)

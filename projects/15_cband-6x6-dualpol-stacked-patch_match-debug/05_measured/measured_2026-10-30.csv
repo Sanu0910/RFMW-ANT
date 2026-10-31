@@ -1,0 +1,13 @@
+# Bench measurements of the built panel (user, R&S ZVL), transcribed from the photos/table of 2026-10-30.
+# Gain: substitution against a reference horn ("Horn vs panel"); gain = total loss - RSL - horn gain (horn gain per frequency as used in the table).
+# S11_A / S11_B: the two panel ports (which is V and which is H not stated); markers only, VNA calibrated ("Cal" shown).
+# S21_V_dB / S21_H_dB: horn-to-panel S21 markers (VNA "Cal Off"); cable loss and path loss columns from the table.
+f_MHz,cable_loss_dB,path_loss_dB,total_loss_dB,RSL_V_dB,gain_V_dBi,RSL_H_dB,gain_H_dBi,S21_V_dB,S21_H_dB,S11_A_dB,S11_B_dB
+4900,10.4,60.3,70.7,43.7,16.1,44.7,15.1,-43.751,-44.737,-25.172,-5.885
+5200,11.0,60.8,71.8,41.0,19.2,40.2,20.0,-41.065,-40.396,-12.339,-6.100
+5500,11.4,61.3,72.7,40.0,20.4,41.3,19.1,-40.197,-41.339,-14.660,-18.605
+5800,11.7,61.7,73.4,42.6,19.7,45.2,17.1,-42.627,-45.243,,
+6000,12.2,62.0,74.2,42.7,19.1,44.7,17.1,-42.777,-44.779,,
+6200,12.6,62.3,74.9,47.2,15.1,49.1,13.2,-47.229,-49.117,-5.256,-9.948
+6400,13.3,62.6,75.9,51.9,11.4,49.1,14.2,-51.999,-49.117,-9.287,-10.710
+# extra S11 markers at 5700 and 5900 MHz (S11 screens): A -14.687 / -14.039 dB, B -13.329 / -8.103 dB

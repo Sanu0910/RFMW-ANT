@@ -3,7 +3,7 @@
     python3 plot_results.py && python3 build_report.py      (needs node + Playwright Chromium)
 Narrative lives in report_text.py; numbers are read from 03_results so a re-run updates them.
 """
-import os, re, base64, subprocess, datetime
+import os, re, base64, subprocess, datetime, html as htmllib
 import numpy as np
 import report_text as T
 
@@ -98,7 +98,10 @@ def element_table(tag):
 def array_section():
     d1, d2 = csv('array_p1'), csv('array_p2')
     if d1 is None and d2 is None:
-        return T.ARRAY_PENDING
+        pre = os.path.join(R, 'array_interim.png')
+        return T.ARRAY_PENDING + (img(pre, '92%', 'Fig. 6 - PRELIMINARY full-array S-parameters from the runs still in progress (truncated time signals: '
+                                     'the sharp dips and the ripple are partly truncation artefacts, and late reflections are not yet included).')
+                                 + T.ARRAY_INTERIM if os.path.exists(pre) else '')
     html = img(os.path.join(R, 'array_S.png'), '92%', 'Full 6x6 array as drawn: port reflections and port-to-port coupling (50 &Omega;).')
     rows = []
     for d, name in ((d1, 'Port 1 (V-pol) S11'), (d2, 'Port 2 (H-pol) S22')):
@@ -115,6 +118,65 @@ def array_section():
     return html + T.ARRAY_TEXT
 
 
+def wb_table(tag):
+    p = os.path.join(R, f'{tag}_summary.txt')
+    if not os.path.exists(p):
+        return f'<p class="missing">[{tag} not run]</p>'
+    rows, gain = [], []
+    for ln in open(p):
+        m = re.match(r'\s*([\d.]+) GHz\s+S(\d\d)\s+([-\d.]+) dB\s+VSWR\s+([\d.]+)(?:\s+S\d\d\s+([-\d.]+) dB)?\s+Zin\s+([-\d.]+)\s*([+-][\d.]+)j', ln)
+        if m:
+            rows.append('<tr>' + ''.join(f'<td>{x}</td>' for x in
+                        (m.group(1), m.group(3), m.group(4), m.group(5) or '-', f'{m.group(6)} {m.group(7)}j')) + '</tr>')
+        m = re.match(r'\s*([\d.]+) GHz\s+broadside realised gain\s+([-\d.]+) dBi\s+front/back\s+([-\d.]+) dB', ln)
+        if m:
+            gain.append(f'<tr><td>{m.group(1)}</td><td>{m.group(2)}</td><td>{m.group(3)}</td></tr>')
+    head = htmllib.escape(open(p).readlines()[1])
+    return (f'<p><b>{tag}:</b> {head}</p><table><tr><th>f (GHz)</th><th>S11 (dB)</th><th>VSWR</th><th>Isolation (dB)</th>'
+            '<th>Z<sub>in</sub> (&Omega;)</th></tr>' + ''.join(rows) + '</table>'
+            + ('<table><tr><th>f (GHz)</th><th>Broadside realised gain (dBi)</th><th>Front/back (dB)</th></tr>' + ''.join(gain) + '</table>' if gain else ''))
+
+
+def wb_section(best='wbN4'):
+    if not os.path.exists(os.path.join(R, f'{best}_S.csv')):
+        return '<p class="missing">[wideband element study not run]</p>'
+    html = T.WB_INTRO
+    html += img(os.path.join(D, 'fig_wb_geometry.png'), '96%', f'Fig. 8 - Best aperture-coupled candidate so far ({best}): feed under the ground, coupling slot, driven and parasitic patches.')
+    html += img(os.path.join(R, 'wb_study.png'), '98%', 'Fig. 9 - Representative candidates from the study (|S11| at the 50 &Omega; feed).')
+    html += img(os.path.join(R, 'wb_S11.png'), '88%', 'Fig. 10 - Best candidate, with and without its best feed-layer network, against the present element.')
+    rows = []
+    for tag, name in (('element_air', 'Present element (as built)'), (best, f'Best candidate ({best})'),
+                      (f'{best}_matched', f'{best} + feed-layer network')):
+        d = csv(tag)
+        if d is None:
+            continue
+        s = band_stats(d)
+        rows.append(f'<tr><td>{name}</td><td>{s["best"]}</td><td>{s["bw3"]}</td><td>{s["bw2"]}</td><td>{s["cover3"]}</td><td>{s["worst"]}</td></tr>')
+    html += ('<table><tr><th>Element</th><th>Best</th><th>VSWR&le;3 band</th><th>VSWR&le;2 band</th><th>4-7 GHz with VSWR&le;3</th><th>Worst VSWR 4-7 GHz</th></tr>'
+             + ''.join(rows) + '</table>')
+    html += wb_table(best)
+    for name in ('match_wb.txt', 'opt_wb_log.txt'):
+        p = os.path.join(R, name)
+        if not os.path.exists(p):
+            continue
+        if name == 'match_wb.txt':
+            lines = open(p).read().splitlines()[:9]
+            html += '<p>Top candidates, worst VSWR over 4&ndash;7 GHz without and with the best feed-layer network:</p><pre>' + '\n'.join(lines) + '</pre>'
+        else:
+            gens = list(dict.fromkeys(ln.strip() for ln in open(p) if ln.startswith('-- gen')))   # resumed runs repeat lines
+            html += '<p>Optimiser history (best cost per generation; cost = mean |S11|&sup2; + 0.5&middot;max |S11|&sup2; over 4&ndash;7 GHz):</p><pre>' + '\n'.join(gens) + '</pre>'
+    return html + T.WB_TEXT
+
+
+def meas_section():
+    import client_report as CR
+    tab = CR.measured_table()
+    if not tab:
+        return '<p class="missing">[no measured data]</p>'
+    return (img(os.path.join(R, 'measured_vs_sim.png'), '100%', 'Fig. 7 - Built panel: measured S11 markers over the simulated array (left); measured gain against the aperture limit and the 23 dBi rating (right).')
+            + tab + T.MEAS_TEXT)
+
+
 def main():
     match = open(os.path.join(R, 'match_study.txt')).read() if os.path.exists(os.path.join(R, 'match_study.txt')) else ''
     css = open(os.path.join(HERE, 'report.css')).read()
@@ -128,7 +190,9 @@ def main():
         fig_smith=img(os.path.join(R, 'element_smith.png'), '60%', 'Fig. 5 - As-built element on the Smith chart (100 &Omega;), 4-7 GHz.'),
         variant_table=variant_table(),
         match=f'<pre>{match}</pre>',
-        array=array_section())
+        array=array_section(),
+        wb=wb_section(),
+        meas=meas_section())
     html = f'<!doctype html><html><head><meta charset="utf-8"><title>C-band array S11 report</title><style>{css}</style></head><body>{body}</body></html>'
     open(OUT_HTML, 'w').write(html)
     subprocess.run(['node', os.path.join(HERE, 'html2pdf.js'), OUT_HTML, OUT_PDF], check=True)
