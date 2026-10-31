@@ -116,6 +116,10 @@ claude
   so they connect automatically when `claude` starts in this folder. Type `/mcp` inside Claude Code to see them.
 - `.mcp.json` launches KiCad and Hertzon through `tools/mcp/kicad.sh` and `tools/mcp/hertzon.sh`. These find the
   local installs, so the same file works on your PC and in cloud sessions.
+- **kicad-pro** ([kicad-mcp-pro](https://github.com/oaslananka/kicad-mcp-pro)) runs with `uvx kicad-mcp-pro` in
+  write mode with the `full` profile (289 tools). It needs `uv` (`pip install uv`, or `winget install astral-sh.uv` on Windows) and finds `kicad-cli`
+  by itself (set `KICAD_CLI_PATH` if not). It also works on native Windows with KiCad 9/10. For live board
+  context, start KiCad, enable the IPC API server (Preferences > Plugins) and open the board.
 - The SolidCraft skills in `.claude/skills/` load automatically.
 - `CLAUDE.md` tells Claude Code the repository rules (conventions, status files, how to push).
 

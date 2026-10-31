@@ -2,6 +2,7 @@
   "enabledMcpjsonServers": [
     "solidcraft",
     "kicad",
+    "kicad-pro",
     "hertzon"
   ]
 }
