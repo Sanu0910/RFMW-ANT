@@ -48,3 +48,4 @@ Each project folder has its own `STATUS.md` and `CHANGELOG.md`.
 | 13 | SPS-24G-01 presence switch | Routed + fab package; mains safety items open |
 | 14 | MVDR beamforming explainer | Complete |
 | 15 | C-band 6×6 stacked-patch S11 debug | Report rev. 2 (root cause + redesign study, iteration 1 below target); full-array runs in progress |
+| 16 | GNSS L1 + L2/L5 + NavIC S active front end | L- and S-band simulated, reports + internal note (Draft A); AEDT scripted, not yet solved |

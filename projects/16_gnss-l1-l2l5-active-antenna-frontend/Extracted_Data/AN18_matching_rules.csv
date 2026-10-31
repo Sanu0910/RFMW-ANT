@@ -1,0 +1,11 @@
+topic,rule
+Power matching,Max power transfer when Z_load = Z_source* (eq. on p.4)
+Direct vs 2-step matching,"Direct: lower loss, fewer parts; 2-step: 50 ohm test point, more loss (Table 1)"
+Gain vs noise match,"Z1* = max gain, Z3* = min noise, Z2* = best SNR compromise (p.6-8)"
+Topologies,"High-pass (series C / shunt L), low-pass (series L / shunt C), band-pass (two L) (Fig. 6, 8)"
+Two capacitors,Not possible: SAW and LNA impedances are capacitive (p.10)
+Lowest IL,Two-inductor arrangement usually gives the lowest insertion loss (p.11)
+DC block,SAW filter blocks DC (static model is series/shunt capacitors) (Fig. 9)
+Optimisation,"Pass-band S11 far from centre -> fix input match; 'curled' S11 -> fix output match (Fig. 10, 11)"
+Test level,Network analyser / generator power <= -40 dBm so the LNA stays linear (p.8)
+Simulation Q,"Inductor Q ~45 @315 MHz, ~50 @434 MHz, ~60 @868 MHz; capacitor Q > 100; 0.5 mm x 2 mm MSL (p.13)"

@@ -1,0 +1,7 @@
+ref,value,position
+L2,4.3 nH,"series, common port"
+C1,1.5 pF,"shunt, common port (connector side)"
+L1,4.7 nH,"series, L1 port"
+C3,DNF,"shunt, L1 port"
+L3,3.3 nH,"series, L2/L5 port"
+C2,1 pF,"shunt, L2/L5 port (connector side)"

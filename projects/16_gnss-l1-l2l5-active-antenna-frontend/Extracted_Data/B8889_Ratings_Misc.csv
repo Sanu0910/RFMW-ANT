@@ -1,0 +1,14 @@
+item,value
+Storage temperature,-40 ... +85 C
+DC voltage,5.0 V
+ESD MM,50 V
+ESD HBM,300 V
+ESD CDM,600 V
+Input power 1166.22-1228.62 MHz,"5.0 dBm CW, 2000 h @ 55 C"
+Center frequency fc,1197.42 MHz typ
+Package,"1.1 x 0.9 x 0.45 mm, 5 pads"
+Pins,"1 input, 4 output, 2/3/5 ground"
+Matching,Lp1 = Lp4 = 6.8 nH shunt at input and output (required)
+Terminating impedance,50 ohm // 6.8 nH
+Spec temperature,-30 ... +85 C
+MSL,3

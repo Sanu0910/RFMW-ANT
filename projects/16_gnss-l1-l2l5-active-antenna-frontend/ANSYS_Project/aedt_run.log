@@ -1,0 +1,64 @@
+﻿PyAEDT INFO: Python version 3.12.0 (tags/v3.12.0:0fb18b0, Oct  2 2023, 13:03:39) [MSC v.1935 64 bit (AMD64)].
+PyAEDT INFO: PyAEDT version 1.9.0.
+PyAEDT INFO: Initializing new Desktop session.
+PyAEDT INFO: AEDT version 2026.1.
+PyAEDT INFO: New AEDT session is starting on gRPC port 49674.
+PyAEDT INFO: Starting new AEDT gRPC session on port 49674.
+PyAEDT INFO: Launching AEDT server with gRPC transport mode: TransportMode.WNUA
+PyAEDT ERROR: Failed to start on gRPC port: 49674.
+python : Traceback (most recent call last):
+At line:1 char:391
++ ... d\Scripts"; python aedt_circuit.py *> ..\ANSYS_Project\aedt_run.log;  ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "E:\git\RFMW-ANT\projects\16_gnss-l1-l2l5-active-antenna-frontend\Scripts\aedt_circuit.py", line 158, in 
+<module>
+    main()
+  File "E:\git\RFMW-ANT\projects\16_gnss-l1-l2l5-active-antenna-frontend\Scripts\aedt_circuit.py", line 131, in main
+    cir = Circuit(project=str(project), design="FrontEnd_3port", version=args.version,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\green\AppData\Local\Programs\Python\Python312\Lib\site-packages\ansys\aedt\core\circuit.py", line 
+176, in __init__
+    FieldAnalysisCircuit.__init__(
+  File "C:\Users\green\AppData\Local\Programs\Python\Python312\Lib\site-packages\ansys\aedt\core\application\analysis_n
+exxim.py", line 139, in __init__
+    Analysis.__init__(
+  File 
+"C:\Users\green\AppData\Local\Programs\Python\Python312\Lib\site-packages\ansys\aedt\core\application\analysis.py", 
+line 150, in __init__
+    Design.__init__(
+  File 
+"C:\Users\green\AppData\Local\Programs\Python\Python312\Lib\site-packages\ansys\aedt\core\application\design.py", line 
+221, in __init__
+    self._desktop_class = self.__init_desktop_from_design(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File 
+"C:\Users\green\AppData\Local\Programs\Python\Python312\Lib\site-packages\ansys\aedt\core\application\design.py", line 
+5186, in __init_desktop_from_design
+    return Desktop(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\green\AppData\Local\Programs\Python\Python312\Lib\site-packages\ansys\aedt\core\desktop.py", line 
+865, in __init__
+    result = self.__init_grpc()
+             ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\green\AppData\Local\Programs\Python\Python312\Lib\site-packages\ansys\aedt\core\desktop.py", line 
+3423, in __init_grpc
+    raise Exception(
+Exception: Failed to start new AEDT gRPC session on port 0 on machine 127.0.0.1.
+PyAEDT ERROR: **************************************************************
+PyAEDT ERROR:   File "C:\Users\green\AppData\Local\Programs\Python\Python312\Lib\site-packages\ansys\aedt\core\desktop.py", line 2245, in __del__
+PyAEDT ERROR:     self.__release_and_close_desktop(close_val, close_val)
+PyAEDT ERROR:   File "C:\Users\green\AppData\Local\Programs\Python\Python312\Lib\site-packages\ansys\aedt\core\desktop.py", line 2294, in __release_and_close_desktop
+PyAEDT ERROR:     projects = self.project_list
+PyAEDT ERROR:                ^^^^^^^^^^^^^^^^^
+PyAEDT ERROR:   File "C:\Users\green\AppData\Local\Programs\Python\Python312\Lib\site-packages\ansys\aedt\core\desktop.py", line 1852, in project_list
+PyAEDT ERROR:     return list(self.odesktop.GetProjectList())
+PyAEDT ERROR:                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PyAEDT ERROR: 'nonetype' object has no attribute 'getprojectlist' on __release_and_close_desktop
+PyAEDT ERROR: Method arguments: 
+PyAEDT ERROR:     close_projects = True 
+PyAEDT ERROR:     close_aedt_app = True 
+PyAEDT ERROR: **************************************************************
+EXIT 1

@@ -1,0 +1,11 @@
+parameter,min,typ,max,unit
+Frequency,1150.0,,1630.0,MHz
+Isolation,22.0,,,dB
+Insertion loss (excess),,,0.3,dB
+VSWR,,,1.2,:1
+Amplitude balance,-0.35,,0.35,dB
+Phase balance,,90,,deg
+Power,,,30.0,W CW avg
+Dimensions,,6.35 x 5.08 x 1.5,,mm
+Operating temperature,-55.0,,125.0,C
+MSL,,3,,(168 h)

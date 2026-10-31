@@ -1,0 +1,6 @@
+item,value
+Pins,"B input, E output, A/C/D/F ground"
+Package,"3.0 x 3.0 x 1.4 mm max, 6 pads"
+Impedance,"50 ohm in/out, no matching (measurement circuit p.2)"
+VNA markers p.3,"2489.5 MHz -1.558 dB, 2494.5 MHz -1.464 dB; 2390 MHz -46.73 dB, 2575 MHz -53.98 dB"
+VNA markers p.4,"S11 VSWR 1.044 / 1.114, S22 VSWR 1.050 / 1.117 at 2489.5 / 2494.5 MHz"
