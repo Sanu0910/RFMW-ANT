@@ -2,7 +2,7 @@
 
 Newest first.
 
-## 2026-11-01 - Rev A layout and fab package
+## 2026-11-01 - Rev A layout and fab package (130ba32)
 - New project on branch `proj17-crpa-4ch-lband-pcb`: 4-channel L-band CRPA active antenna PCB from the customer
   board `Gerber_4CH_GNSS.zip` (antenna spacing and board radius kept) and the project 16 chain, plus an
   RLM-63-2W+ limiter per band per channel.
