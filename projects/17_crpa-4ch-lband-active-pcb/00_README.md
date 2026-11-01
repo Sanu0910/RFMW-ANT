@@ -3,12 +3,13 @@
 Production PCB for the CRL BEL 4-element GNSS CRPA, L-band only (L1 + L2/L5). The antenna geometry is kept
 from the customer board `Gerber_4CH_GNSS.zip` (Ø200 mm round board, 4 stacked L1/L2 patch modules on a 92 mm
 square pitch with sequential 90° rotation, dual 0°/90° feeds per band). The RF chain is the one from
-project 16, with an RLM-63-2W+ limiter added in front of each LNA:
+project 16, with an RLM-63-2W+ limiter added in front of each LNA (Rev A) and a third SAW per band before the
+diplexer (Rev B):
 
 ```
-            L1 0/90 feeds -> HC125A -> RLM-63-2W+ -> TQP3M9037 -> B7504 -> TQP3M9037 -> B7504 ---+
-patch (xN)                                                                                         +-> DXP.02.A -> SMA  (CHn out)
-            L2 0/90 feeds -> HC125A -> RLM-63-2W+ -> TQP3M9037 -> B8889 -> TQP3M9037 -> B8889 ---+
+            L1 0/90 feeds -> HC125A -> RLM-63-2W+ -> TQP3M9037 -> B7504 -> TQP3M9037 -> B7504 -> B7504 ---+
+patch (xN)                                                                                                  +-> DXP.02.A -> SMA  (CHn out)
+            L2 0/90 feeds -> HC125A -> RLM-63-2W+ -> TQP3M9037 -> B8889 -> TQP3M9037 -> B8889 -> B8889 ---+
 x4 channels; all 16 LNAs biased from ONE +5 V input (J5) through the In1.Cu plane
 ```
 
@@ -18,8 +19,8 @@ x4 channels; all 16 LNAs biased from ONE +5 V input (J5) through the In1.Cu plan
 | Board | Ø200 mm (outline kept), **4-layer FR-4, 1.6 mm**, ENIG. L1 GND (antenna ground) / L2 +5V / L3 GND / L4 RF + all SMD |
 | 50 Ω line | 0.38 mm on L4 over L3 (0.21 mm 7628 prepreg), 0.30 mm gap to pour, via fences |
 | Channels | 4 identical (one layout rotated 4×): equal length per net; hybrid feed pairs matched (L1 2.718/2.718 mm, L2 7.082/7.082 mm) |
-| Gain / NF (CH, at RF out) | L1 38.1 dB / 1.06 dB, L5 41.8 dB / 0.82 dB, L2 39.9 dB / 0.86 dB (project 16 chain + limiter + routed lines) |
-| Bias | single +5 V input J5 (Micro-Fit 3.0): PTC, reverse-polarity P-FET, TVS; 1.12 A typ / 1.44 A max |
+| Gain / NF (CH, at RF out) | L1 37.2 dB / 1.06 dB, L5 40.9 dB / 0.82 dB, L2 38.4 dB / 0.86 dB (project 16 chain + limiter + 3rd SAW + routed lines) |
+| Bias | single +5 V input J5 (Micro-Fit 3.0): PTC, reverse-polarity P-FET, TVS; 1.12 A typ / 1.44 A max. Distributed by a solid **+5V plane on In1.Cu** (no tracks): 8 vias from J5, one via at each of the 16 LNA chokes; one connected island (`Images/bias_plane_In1Cu.png`) |
 | Check | kicad-cli DRC (zones refilled): **0 violations, 0 unconnected**; kicad-happy PCB + Gerber analyzers |
 
 ## Substrate choice (0.8 vs 1.6 mm)

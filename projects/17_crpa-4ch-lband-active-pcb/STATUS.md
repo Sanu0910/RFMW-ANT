@@ -2,7 +2,7 @@
 
 _Last updated: 2026-11-01. Update this file whenever the project changes (see `docs/CONVENTIONS.md`)._
 
-**State:** Rev A layout complete and DRC-clean (0 violations, 0 unconnected); fab package (Gerbers, drill, BOM,
+**State:** Rev B (3rd SAW per band before the DXP) layout complete and DRC-clean (0 violations, 0 unconnected); fab package (Gerbers, drill, BOM,
 CPL, IPC-D-356) and design report generated. Not yet ordered. L-band only (NavIC S-band not built, as requested).
 
 ## Done
@@ -13,6 +13,7 @@ CPL, IPC-D-356) and design report generated. Not yet ordered. L-band only (NavIC
 - Scripted placement + routing of one channel, rotated 4× about the array centre; single +5 V entry
 - GND via fences along all RF lines + 5 mm stitching grid; 4 solid planes
 - kicad-cli DRC clean; kicad-happy analyze_pcb / analyze_gerbers run and triaged
+- Rev B: 3rd SAW per band (B7504 / B8889) + 100 pF before the DXP; +5V plane connectivity verified (1 island, 57 pads, 28 vias)
 - RF budget from the project 16 cascade + limiter IL + routed line lengths; power budget
 - Schematics (project 16 style), cross-checked against the PCB part list; BOM CSV/XLSX; report PDF
 

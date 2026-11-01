@@ -5,3 +5,4 @@ Images/_debug_layout.json
 Images/dbg_*.png
 KiCad/*-backups/
 KiCad/fp-info-cache
+KiCad/.history/

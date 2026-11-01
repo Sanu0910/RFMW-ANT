@@ -322,6 +322,8 @@ def build_element(k):
     saw(c, n, ch, "L1", 1, s)
     lna_stage(c, n, ch, "L1", 2, s)
     saw(c, n, ch, "L1", 2, s)
+    saw_link(c, n, ch, "L1", s)          # 3rd SAW before the diplexer (customer request, Rev B)
+    saw(c, n, ch, "L1", 3, s)
     l1_end = c
 
     # ---- L2 chain -----------------------------------------------------------------
@@ -339,27 +341,29 @@ def build_element(k):
     assert Y2TURN + 2.7 < LINE1 - 0.5, f"L2 run ({Y2TURN:.2f}) too close to the L1 line ({LINE1})"
     c2.to(c2.p[0], Y2TURN)
     c2.turn(1.0, 0.0)
+    saw_link(c2, n, ch, "L2", s)         # 3rd SAW on the east run toward the diplexer
+    saw(c2, n, ch, "L2", 3, s)
 
     # ---- diplexer + output ---------------------------------------------------------
     dxp = add_fp(f"DX{n}", "DXP", ch, pads={"2": s("COM"), "7": s("L1_DXP"), "5": s("L2_DXP"),
                                             "1": "GND", "3": "GND", "4": "GND", "6": "GND", "8": "GND"})
     orient(dxp, "2", "6", -1 / math.sqrt(2), -1 / math.sqrt(2))
     # band pins face north-west; place so pin 6 sits at the chain meeting point
-    move_pad_to(dxp, "6", 28.5, 28.5)
+    move_pad_to(dxp, "6", 30.0, 30.0)
     p7, p5 = padL(dxp, "7"), padL(dxp, "5")
     assert p7[0] < p5[0] and p7[1] > p5[1], f"DXP band pins mirrored: L1 {p7}, L2 {p5}"
     # L1 port: series 4.7 nH (DNP shunt C at its chain side)
-    l1s = add_fp(f"L{n}41", "L4N7", ch, pads={"1": s("L1_S2OUT"), "2": s("L1_DXP")}, show_ref=False)
+    l1s = add_fp(f"L{n}41", "L4N7", ch, pads={"1": s("L1_S3OUT"), "2": s("L1_DXP")}, show_ref=False)
     c.part(l1s, "1", "2", 1.3, s("L1_DXP"))
-    shunt(f"C{n}41", "CDNP", ch, l1s, "1", s("L1_S2OUT"), 0, 1, off=1.0)
+    shunt(f"C{n}41", "CDNP", ch, l1s, "1", s("L1_S3OUT"), 0, 1, off=1.0)
     c.end(dxp, "7", mid=[(p7[0] - 1.6, c.p[1]), (p7[0] - 1.6, p7[1])])
     # L2 port: shunt 6.8 nH (SAW match) + shunt 1 pF, series 3.3 nH
-    l2s = add_fp(f"L{n}42", "L3N3", ch, pads={"1": s("L2_S2OUT"), "2": s("L2_DXP")}, show_ref=False)
+    l2s = add_fp(f"L{n}42", "L3N3", ch, pads={"1": s("L2_S3OUT"), "2": s("L2_DXP")}, show_ref=False)
     c2.part(l2s, "1", "2", 2.8, s("L2_DXP"))
     c2._b8889_out = None
     # both port shunts hang south of the run, side by side (north is the LNA bias cluster)
-    shunt(f"C{n}42", "C1P0", ch, l2s, "1", s("L2_S2OUT"), 0, 1, off=1.0, via_d=0.65)
-    shunt(f"L{n}44", "L6N8", ch, l2s, "1", s("L2_S2OUT"), 0, 1, off=1.0, via_d=0.65, shift=1.25)
+    shunt(f"C{n}42", "C1P0", ch, l2s, "1", s("L2_S3OUT"), 0, 1, off=1.0, via_d=0.65)
+    shunt(f"L{n}44", "L6N8", ch, l2s, "1", s("L2_S3OUT"), 0, 1, off=1.0, via_d=0.65, shift=1.25)
     c2.end(dxp, "5", mid=[(p5[0], c2.p[1])])
     dxp_gnd(dxp)
 
@@ -496,6 +500,19 @@ def lna_stage(c, n, ch, band, idx, s):
         move_pad_to(cp, "1", bx + dist * ux, by + dist * uy)
         track([(bx, by), padL(cp, "1")], "+5V", D.PWR_W)
         gnd_stub(cp, "2", side[0], side[1], 0.8)
+
+
+def saw_link(c, n, ch, band, s):
+    """100 pF between SAW 2 and SAW 3: gives each B8889 port its own 6.8 nH shunt pad and keeps
+    the SAWs DC-isolated from each other."""
+    b = "1" if band == "L1" else "2"
+    k = add_fp(f"C{n}{b}31", "C100P", ch, pads={"1": c.net, "2": s(f"{band}_S3IN")}, show_ref=False)
+    c.part(k, "1", "2", 1.4, s(f"{band}_S3IN"))
+    pend = getattr(c, "_b8889_out", None)
+    if pend:   # SAW 2 output shunt, on the side of the line away from the bias network
+        ux, uy = c.u
+        shunt(pend[0], "L6N8", ch, k, "1", pad(k, "1").GetNetname(), -uy, ux, off=1.0)
+        c._b8889_out = None
 
 
 def saw(c, n, ch, band, idx, s):
@@ -810,6 +827,11 @@ def write_parts():
     for t in board.GetTracks():
         if t.GetClass() == "PCB_TRACK":
             lens[t.GetNetname()] = lens.get(t.GetNetname(), 0.0) + ToMM(t.GetLength())
+    bias = dict(pads=sum(1 for fp in board.GetFootprints() for p in fp.Pads() if p.GetNetname() == "+5V"),
+                chokes=sum(1 for fp in board.GetFootprints() if fp.GetValue() == "18nH"),
+                vias=sum(1 for t in board.GetTracks() if t.GetClass() == "PCB_VIA" and t.GetNetname() == "+5V"),
+                plane="In1.Cu")
+    (PROJ / "Fab" / "_bias.json").write_text(json.dumps(bias))
     (PROJ / "Fab" / "_netlen.json").write_text(json.dumps({k: round(v, 3) for k, v in sorted(lens.items())}, indent=0))
 
 

@@ -32,6 +32,7 @@ spec.loader.exec_module(S)
 PARTS = json.loads((FAB / "_parts.json").read_text())
 NETLEN = json.loads((FAB / "_netlen.json").read_text())
 DRC = json.loads((FAB / "_drc.json").read_text())
+BIAS = json.loads((FAB / "_bias.json").read_text())
 
 
 # ----------------------------------------------------------------------------- BOM
@@ -128,6 +129,8 @@ def budget():
         for r in stages:
             g, nf = float(r["gain_db"]), float(r["nf_db"])
             st.append((r["stage"], g, nf))
+            if r["stage"] in ("B7504 #2", "B8889 #2"):          # Rev B: third SAW, same part
+                st.append((r["stage"].replace("#2", "#3 (Rev B)"), g, nf))
             if r["stage"].startswith("HC125A"):
                 st.append(("Line, hybrid -> limiter", -hyb_lim * LOSS_DB_PER_MM, hyb_lim * LOSS_DB_PER_MM))
                 il = lim_il(fmhz)
@@ -221,7 +224,7 @@ def saw_block(ax, x, y, ref, part, pin_out):
 
 def channel_sheet():
     n = "n"
-    fig, ax = sheet(20, 10.5, (-1.0, 49.0), (-12.8, 6.6),
+    fig, ax = sheet(22.5, 10.5, (-1.0, 55.0), (-12.8, 6.6),
                     "One CRPA channel (x4: n = 1..4, CH1..CH4) - L-band only: L1 and L2/L5 branches + DXP.02.A",
                     "Scripts/make_docs.py")
     outs = {}
@@ -267,8 +270,22 @@ def channel_sheet():
             S.dot(ax, e[0] + 0.15, yy)
             ee = S.ind_v(ax, e[0] + 0.15, yy, f"L{n}225", "6.8 nH", length=1.0)
             S.ground(ax, *ee)
-        S.w(ax, o2, (o2[0] + 0.5, yy))
-        nx = o2[0] + 0.5
+        xa = o2[0] + 0.4                                  # Rev B: 100 pF + 3rd SAW before the DXP
+        S.w(ax, o2, (xa + 0.3, yy))
+        if band == "L2":
+            S.dot(ax, xa, yy)
+            ee = S.ind_v(ax, xa, yy, f"L{n}226", "6.8 nH", length=1.0)
+            S.ground(ax, *ee)
+        e = S.cap_h(ax, xa + 0.3, yy, f"C{n}{b}31", "100 pF")
+        S.w(ax, e, (e[0] + 0.55, yy))
+        if band == "L2":
+            S.dot(ax, e[0] + 0.25, yy)
+            ee = S.ind_v(ax, e[0] + 0.25, yy, f"L{n}235", "6.8 nH", length=1.0)
+            S.ground(ax, *ee)
+        i3, o3 = saw_block(ax, e[0] + 0.8, yy, f"FL{n}{b}3", saw, spin)
+        S.w(ax, (e[0] + 0.55, yy), i3)
+        S.w(ax, o3, (o3[0] + 0.5, yy))
+        nx = o3[0] + 0.5
         S.dot(ax, nx, yy)
         if band == "L1":
             ee = S.cap_v(ax, nx, yy, f"C{n}41", "DNP")
@@ -286,11 +303,11 @@ def channel_sheet():
             S.w(ax, (nx + 1.2, yy), (nx + 2.1, yy))
             e = ind_h(ax, nx + 2.1, yy, f"L{n}42", "3.3 nH")
         outs[band] = e
-    dx = S.box(ax, 41.0, -2.0, 2.8, 3.2, f"DX{n}", "DXP.02.A\ndiplexer", pins_l=["7 L1", "5 L2/L5"],
+    dx = S.box(ax, 47.0, -2.0, 2.8, 3.2, f"DX{n}", "DXP.02.A\ndiplexer", pins_l=["7 L1", "5 L2/L5"],
                pins_r=["2 COM"], pins_b=["1,3,4,6,8"])
     S.ground(ax, *dx["1,3,4,6,8"])
-    S.w(ax, outs["L1"], (40.2, outs["L1"][1]), (40.2, dx["7 L1"][1]), dx["7 L1"])
-    S.w(ax, outs["L2"], (40.5, outs["L2"][1]), (40.5, dx["5 L2/L5"][1]), dx["5 L2/L5"])
+    S.w(ax, outs["L1"], (46.2, outs["L1"][1]), (46.2, dx["7 L1"][1]), dx["7 L1"])
+    S.w(ax, outs["L2"], (46.5, outs["L2"][1]), (46.5, dx["5 L2/L5"][1]), dx["5 L2/L5"])
     ox, oy = dx["2 COM"]
     e = ind_h(ax, ox, oy, f"L{n}43", "4.3 nH")
     S.dot(ax, e[0] + 0.2, oy)
@@ -301,11 +318,11 @@ def channel_sheet():
     S.w(ax, e, (e[0] + 0.3, oy))
     S.iport(ax, e[0] + 0.3, oy, f"J{n} SMA\nCH{n} RF OUT", side="r")
     notes = [
-        "Chain per band (project 16 + limiter): patch 0/90 feeds -> HC125A (pin1 RHCP out, pin2 iso 49.9 ohm) -> RLM-63-2W+ -> "
-        "LNA -> SAW -> LNA -> SAW -> DXP.02.A -> SMA.",
+        "Chain per band (project 16 + limiter + 3rd SAW, Rev B): patch 0/90 feeds -> HC125A (pin1 RHCP out, pin2 iso 49.9 ohm) -> "
+        "RLM-63-2W+ -> LNA -> SAW -> LNA -> SAW -> 100 pF -> SAW -> DXP.02.A -> SMA.",
         "LNA stage = TQP3M9037 eval network (project 16): 100 pF in/out, 18 nH choke to +5V, 100 pF + 1 uF at the choke. "
         "Pins 1,3,4,5,6(VPD),8 + paddle to GND (always on).",
-        "B8889 needs 6.8 nH shunt at both ports (L{n}215, L{n}216, L{n}225, L{n}44). DXP matching = Taoglas eval values "
+        "B8889 needs 6.8 nH shunt at both ports (L{n}215/216, L{n}225/226, L{n}235, L{n}44). DXP matching = Taoglas eval values "
         "(4.7 nH L1, 1 pF + 3.3 nH L2/L5, 1.5 pF + 4.3 nH common).",
         "Bias: no DC on the RF output - all LNAs run from the single +5V input J5 through the In1.Cu plane "
         "(sheet 'power'). C{n}43 blocks any receiver DC.",
@@ -426,8 +443,9 @@ def report(bom_rows, summ, pb):
         "Four identical RHCP channels on the customer's 200 mm round CRPA board. Antenna module positions (92 mm "
         "square pitch, sequential 90 deg rotation), feed-pin positions and the board outline are copied from the "
         "customer Gerber (Input/Gerber_4CH_GNSS.zip). Per channel and band: patch 0/90 feeds -> HC125A hybrid -> "
-        "RLM-63-2W+ limiter -> TQP3M9037 -> SAW -> TQP3M9037 -> SAW, then DXP.02.A combines L1 and L2/L5 onto one "
-        "SMA output per channel. The chain, values and matching are those of project 16; the limiter is new. "
+        "RLM-63-2W+ limiter -> TQP3M9037 -> SAW -> TQP3M9037 -> SAW -> 100 pF -> SAW, then DXP.02.A combines L1 and "
+        "L2/L5 onto one SMA output per channel. The chain, values and matching are those of project 16; the limiter "
+        "(Rev A) and the third SAW per band before the diplexer (Rev B) are new. "
         "All LNAs run from one +5 V input (J5). Only the L-band is built (no NavIC S-band), as requested.", B)]
     story.append(tbl([["Item", "Result"],
                       ["Board", "Ø200 mm, 4-layer FR-4 1.6 mm, ENIG, all SMD on the bottom (L4), antennas on top"],
@@ -460,6 +478,9 @@ def report(bom_rows, summ, pb):
            ["Limiter position", "after the hybrid, before LNA1 (one per band per channel, 8 total)",
             "Protects every LNA input; the hybrid (30 W) does not need protection. One limiter per band instead "
             "of one per feed halves the count."],
+           ["3rd SAW (Rev B)", "one more SAW per band right before the DXP (B7504 / B8889), 100 pF between "
+            "SAW 2 and SAW 3", "More out-of-band rejection at the output (customer request). Each B8889 port keeps "
+            "its own 6.8 nH shunt; the 100 pF gives each shunt its own pad. Costs 0.9-1.5 dB gain, no NF change."],
            ["Single bias point", "dedicated DC connector J5, no DC on any RF output",
             "A bias tee on only one channel would make that channel different (CRPA needs matched channels); "
             "1.1-1.4 A is also too much for a small coax bias inductor. C{n}43 blocks receiver DC."],
@@ -508,6 +529,16 @@ def report(bom_rows, summ, pb):
                       ["Drop J5 -> LNAs", f"{pb['drop_typ'] * 1000:.0f} mV typ / {pb['drop_max'] * 1000:.0f} mV max"],
                       ["Input range", "5.0 - 5.25 V at J5 (no regulator; TQP3M9037 max 5.25 V recommended)"]],
                      [45, 125]))
+    story.append(Paragraph("6a. How the bias reaches every LNA (+5V plane on In1.Cu)", H2))
+    story.append(Paragraph(
+        "There are no bias tracks to look for: layer 2 (In1.Cu) is one solid +5V copper plane over the whole board "
+        "(green below; the white dots are via clearances). J5 -> F1 -> Q1 feeds it through a ladder of 8 vias; "
+        "every LNA choke (18 nH) drops into it through its own via right at the choke, next to its 100 pF + 1 uF; "
+        f"each channel also has a 10 uF on the plane. From the board: {BIAS['pads']} pads on +5V "
+        f"({BIAS['chokes']} LNA chokes), {BIAS['vias']} +5V vias, plane on {BIAS['plane']}; the kicad-happy "
+        "connectivity graph reports +5V as one single island (all pads connected) and DRC reports 0 unconnected. "
+        "The plane sits between the L1 and L3 grounds, so the bias is shielded and never crosses an RF reference.", B))
+    story.append(img(IMG / "bias_plane_In1Cu.png", 110))
     story.append(Paragraph("7. Verification", H2))
     story.append(tbl([["Check", "Tool", "Result"],
                       ["DRC + zone refill", "kicad-cli 10.0.3 pcb drc", f"{n_drc} violations, {n_unc} unconnected"],

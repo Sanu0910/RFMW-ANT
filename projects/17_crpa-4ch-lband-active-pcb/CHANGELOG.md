@@ -2,6 +2,14 @@
 
 Newest first.
 
+## 2026-11-01 - Rev B: third SAW per band before the diplexer
+- Customer request: one more filter before the DXP. Each band gets a 3rd SAW of the same type (B7504 on L1,
+  B8889 on L2/L5), with a 100 pF between SAW 2 and SAW 3 so each B8889 port keeps its own 6.8 nH shunt.
+  +8 SAWs, +8 x 100 pF, +4 x 6.8 nH on the board. Gain -0.9 dB (L1/L5) / -1.5 dB (L2), NF unchanged.
+- DXP moved 1.5 mm outward to make room; DRC still 0 violations / 0 unconnected.
+- Bias question answered in the report (new section 6a): +5 V is a full plane on In1.Cu, not tracks; one island,
+  57 pads, 28 vias. New image `Images/bias_plane_In1Cu.png`; layer PDF now multipage with title blocks.
+
 ## 2026-11-01 - Rev A layout and fab package (130ba32)
 - New project on branch `proj17-crpa-4ch-lband-pcb`: 4-channel L-band CRPA active antenna PCB from the customer
   board `Gerber_4CH_GNSS.zip` (antenna spacing and board radius kept) and the project 16 chain, plus an
