@@ -2,7 +2,7 @@
 
 Newest first.
 
-## 2026-11-01 - Rev B: third SAW per band before the diplexer
+## 2026-11-01 - Rev B: third SAW per band before the diplexer (cceb0af)
 - Customer request: one more filter before the DXP. Each band gets a 3rd SAW of the same type (B7504 on L1,
   B8889 on L2/L5), with a 100 pF between SAW 2 and SAW 3 so each B8889 port keeps its own 6.8 nH shunt.
   +8 SAWs, +8 x 100 pF, +4 x 6.8 nH on the board. Gain -0.9 dB (L1/L5) / -1.5 dB (L2), NF unchanged.
