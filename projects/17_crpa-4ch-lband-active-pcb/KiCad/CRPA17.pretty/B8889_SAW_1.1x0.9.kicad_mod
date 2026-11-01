@@ -1,0 +1,18 @@
+(footprint "B8889_SAW_1.1x0.9"
+  (version 20241229)
+  (generator "crpa17_build_footprints")
+  (layer "F.Cu")
+  (descr "Qualcomm RF360 B8889 GNSS L2/L5 SAW, 1.1x0.9 mm 5 pads (1 in, 4 out, 2/3/5 GND). From CRL board")
+  (attr smd)
+  (property "Reference" "REF**" (at 0 -1.45 0) (layer "F.SilkS") (effects (font (size 0.6 0.6) (thickness 0.1))))
+  (property "Value" "B8889_SAW_1.1x0.9" (at 0 1.45 0) (layer "F.Fab") (effects (font (size 0.6 0.6) (thickness 0.1))))
+  (fp_rect (start -0.55 -0.45) (end 0.55 0.45) (stroke (width 0.1) (type solid)) (fill no) (layer "F.Fab"))
+  (fp_rect (start -0.825 -0.65) (end 0.75 0.65) (stroke (width 0.05) (type solid)) (fill no) (layer "F.CrtYd"))
+  (fp_circle (center -1.125 -0.95) (end -0.975 -0.95) (stroke (width 0.3) (type solid)) (fill yes) (layer "F.SilkS"))
+
+  (pad "1" smd rect (at -0.51 -0) (size 0.23 0.3) (layers "F.Cu" "F.Paste" "F.Mask"))
+  (pad "2" smd rect (at -0.125 0.25) (size 0.23 0.3) (layers "F.Cu" "F.Paste" "F.Mask"))
+  (pad "3" smd rect (at 0.26 0.25) (size 0.23 0.3) (layers "F.Cu" "F.Paste" "F.Mask"))
+  (pad "4" smd rect (at 0.26 -0.25) (size 0.23 0.3) (layers "F.Cu" "F.Paste" "F.Mask"))
+  (pad "5" smd rect (at -0.125 -0.25) (size 0.23 0.3) (layers "F.Cu" "F.Paste" "F.Mask"))
+)

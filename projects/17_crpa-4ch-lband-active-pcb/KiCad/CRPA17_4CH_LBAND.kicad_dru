@@ -1,0 +1,5 @@
+(version 1)
+# B7504 / B8889 SAW land patterns (from the customer board) have a 0.14 mm pad-to-pad gap
+(rule "SAW land pattern"
+  (condition "A.memberOfFootprint('FL*') && B.memberOfFootprint('FL*')")
+  (constraint clearance (min 0.10mm)))

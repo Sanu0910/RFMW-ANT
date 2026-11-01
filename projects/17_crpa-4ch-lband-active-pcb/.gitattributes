@@ -1,0 +1,7 @@
+*.pdf binary
+*.png binary
+*.zip binary
+*.xlsx binary
+*.gbr binary
+*.drl -text
+*.kicad_pcb -text
