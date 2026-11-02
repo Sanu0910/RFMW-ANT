@@ -2,7 +2,7 @@
 
 _Last updated: 2026-11-01. Update this file whenever the project changes (see `docs/CONVENTIONS.md`)._
 
-**State:** Rev B (3rd SAW per band before the DXP) layout complete and DRC-clean (0 violations, 0 unconnected); fab package (Gerbers, drill, BOM,
+**State:** Rev C (star bias, shield cans, GPDF6010.A footprint per data sheet) layout complete and DRC-clean (0 violations, 0 unconnected); fab package (Gerbers, drill, BOM,
 CPL, IPC-D-356) and design report generated. Not yet ordered. L-band only (NavIC S-band not built, as requested).
 
 ## Done
@@ -14,12 +14,15 @@ CPL, IPC-D-356) and design report generated. Not yet ordered. L-band only (NavIC
 - GND via fences along all RF lines + 5 mm stitching grid; 4 solid planes
 - kicad-cli DRC clean; kicad-happy analyze_pcb / analyze_gerbers run and triaged
 - Rev B: 3rd SAW per band (B7504 / B8889) + 100 pF before the DXP; +5V plane connectivity verified (1 island, 57 pads, 28 vias)
+- Rev C: star bias on In1.Cu (4 trunks + FB1-4 + 10 uF per channel, In1 otherwise GND); shield-can frame per
+  channel (octagon, via fence, RF notch); GPDF6010.A data sheet applied: centre screw grounded, D1.8 locating
+  holes, D3.5 feed clearance
 - RF budget from the project 16 cascade + limiter IL + routed line lengths; power budget
 - Schematics (project 16 style), cross-checked against the PCB part list; BOM CSV/XLSX; report PDF
 
 ## Open items
-- **Confirm antenna module drills / pin length** (A1, A2 in the report) - drills are [ASSUMED]
-- Confirm module outline <= 70 × 70 mm (SMA legs and J5 are in the free cross between modules)
+- Order / design the 4 shield cans to the outline file (6 mm high, RF exit notch)
+- NavIC S-band patches (product photo, on the axes) not on this board: decide before Rev D (A3)
 - Cross-check copied land patterns against vendor drawings (A5)
 - Pre-LNA band filtering and output gain level remain project 16 design decisions (O1, O2)
 - Optional: L3-L4 in RO4350B 0.254 mm (hybrid build) to save ~0.07 dB NF; shorten the 13.6 mm L1 hybrid->limiter line

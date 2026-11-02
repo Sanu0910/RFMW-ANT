@@ -27,3 +27,4 @@ Item,Qty,References,Value,MPN,Manufacturer,Footprint,Description,Fit
 26,2,TP1 TP2,TP,-,-,TestPoint:TestPoint_Pad_D1.5mm,test pad,SMT bottom
 27,4,C141 C241 C341 C441,DNP,-,-,Capacitor_SMD:C_0402_1005Metric,tuning position (not fitted),DNP
 28,4,ANT1 ANT2 ANT3 ANT4,L1/L2 stacked patch,existing module,customer,CRPA17:GNSS_StackedPatch_L1L2_4feed,"Stacked L1/L2 patch module, 4 probe feeds (supplied, fitted on top)","Customer supplied, hand fit (top)"
+29,4,FB1 FB2 FB3 FB4,600R@100MHz,BLM18KG601SN1D,Murata,Inductor_SMD:L_0603_1608Metric,"ferrite bead 1.3 A, per-channel bias isolation (star branch)",SMT bottom

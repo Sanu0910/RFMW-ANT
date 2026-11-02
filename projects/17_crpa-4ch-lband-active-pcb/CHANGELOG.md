@@ -2,6 +2,18 @@
 
 Newest first.
 
+## 2026-11-02 - Rev C: star bias, shield cans, GPDF6010.A footprint from its data sheet
+- Bias changed from a full +5V plane to a star: In1.Cu is now GND except 4 separate 0.8 mm trunks from the star
+  point after Q1, one per channel, each into its own ferrite FB{n} (BLM18KG601SN1D) + 10 uF, then 0.4 mm
+  branches to that channel's 4 LNA chokes. Routed by a grid router in build_pcb.py (avoids every through-hole);
+  CH1's branches replayed on CH2-4. Better channel-to-channel isolation, no plane cavity, third RF ground.
+- Shield can per channel (as on the customer product photo): octagonal 1.0 mm exposed GND frame land with GND
+  vias every 2 mm, 2.6 mm RF exit notch, SMA keep-out step. Outline CSV + drawing for the can maker.
+- Antenna module identified as Taoglas GPDF6010.A; data sheet SPE-21-8-111-G applied: centre screw pad is now
+  GND (DS: required for grounding), locating holes D1.8 (was 3.2 [ASSUMED]), feed clearance D3.5 (was D3.2).
+- Common-port chain (4.3 nH, 1.5 pF, 100 pF) re-routed east so the can clears the SMA body.
+- DRC 0 violations / 0 unconnected; BOM +4 ferrites.
+
 ## 2026-11-01 - Rev B: third SAW per band before the diplexer (cceb0af)
 - Customer request: one more filter before the DXP. Each band gets a 3rd SAW of the same type (B7504 on L1,
   B8889 on L2/L5), with a 100 pF between SAW 2 and SAW 3 so each B8889 port keeps its own 6.8 nH shunt.

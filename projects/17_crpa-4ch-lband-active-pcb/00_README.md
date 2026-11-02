@@ -10,17 +10,20 @@ diplexer (Rev B):
             L1 0/90 feeds -> HC125A -> RLM-63-2W+ -> TQP3M9037 -> B7504 -> TQP3M9037 -> B7504 -> B7504 ---+
 patch (xN)                                                                                                  +-> DXP.02.A -> SMA  (CHn out)
             L2 0/90 feeds -> HC125A -> RLM-63-2W+ -> TQP3M9037 -> B8889 -> TQP3M9037 -> B8889 -> B8889 ---+
-x4 channels; all 16 LNAs biased from ONE +5 V input (J5) through the In1.Cu plane
+x4 channels, each under its own shield can; all 16 LNAs biased from ONE +5 V input (J5),
+star-distributed on In1.Cu: one trunk + ferrite + 10 uF per channel
 ```
 
 ## Key results
 | Item | Value |
 |---|---|
-| Board | Ø200 mm (outline kept), **4-layer FR-4, 1.6 mm**, ENIG. L1 GND (antenna ground) / L2 +5V / L3 GND / L4 RF + all SMD |
+| Board | Ø200 mm (outline kept), **4-layer FR-4, 1.6 mm**, ENIG. L1 GND (antenna ground) / L2 GND + star bias traces / L3 GND / L4 RF + all SMD |
+| Antenna | **Taoglas GPDF6010.A** (identified from the product photo): footprint, D3.2 grounded centre screw, 4x D1.8 locating holes, D3.5 feed clearance per its data sheet |
+| Shielding | one soldered shield can per channel: octagonal 1.0 mm GND frame land + via fence, RF exit notch; outline `Fab/CRPA17_ShieldCan_outline.csv` |
 | 50 Ω line | 0.38 mm on L4 over L3 (0.21 mm 7628 prepreg), 0.30 mm gap to pour, via fences |
 | Channels | 4 identical (one layout rotated 4×): equal length per net; hybrid feed pairs matched (L1 2.718/2.718 mm, L2 7.082/7.082 mm) |
 | Gain / NF (CH, at RF out) | L1 37.2 dB / 1.06 dB, L5 40.9 dB / 0.82 dB, L2 38.4 dB / 0.86 dB (project 16 chain + limiter + 3rd SAW + routed lines) |
-| Bias | single +5 V input J5 (Micro-Fit 3.0): PTC, reverse-polarity P-FET, TVS; 1.12 A typ / 1.44 A max. Distributed by a solid **+5V plane on In1.Cu** (no tracks): 8 vias from J5, one via at each of the 16 LNA chokes; one connected island (`Images/bias_plane_In1Cu.png`) |
+| Bias | single +5 V input J5 (Micro-Fit 3.0): PTC, reverse-polarity P-FET, TVS; 1.12 A typ / 1.44 A max. **Star** on In1.Cu: 4 separate 0.8 mm trunks from the star point, per channel FB{n} (BLM18KG601) + 10 uF, then 0.4 mm branches to the 4 LNA chokes (`Images/bias_star_In1Cu.png`) |
 | Check | kicad-cli DRC (zones refilled): **0 violations, 0 unconnected**; kicad-happy PCB + Gerber analyzers |
 
 ## Substrate choice (0.8 vs 1.6 mm)
@@ -46,6 +49,6 @@ bash Scripts/build_all.sh      # KiCad 10 (C:/Program Files/KiCad/10.0, or set K
 `build_pcb.py` runs in KiCad's Python (pcbnew); zones are filled by `kicad-cli pcb drc --refill-zones --save-board`.
 
 ## Before ordering (see report §8)
-1. Confirm the antenna module drills and pin length (feed 1.1 mm, stud 3.2 mm, M3 3.2 mm NPTH are **[ASSUMED]**: the customer zip has no drill file; pins must pass 1.6 mm instead of 0.85 mm).
+1. Antenna drills/clearances now follow the GPDF6010.A data sheet (pins 2.5 mm long pass the 1.6 mm board). Order 4 shield cans (6 mm high) to `Fab/CRPA17_ShieldCan_outline.csv`.
 2. Order impedance control on L4 and resin-plugged + capped vias in the HC125A / TQP3M9037 / SAW ground pads.
 3. Supply J5 with 5.0-5.25 V (no regulator on board).

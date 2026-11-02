@@ -33,6 +33,7 @@ PARTS = json.loads((FAB / "_parts.json").read_text())
 NETLEN = json.loads((FAB / "_netlen.json").read_text())
 DRC = json.loads((FAB / "_drc.json").read_text())
 BIAS = json.loads((FAB / "_bias.json").read_text())
+SHIELD = json.loads((FAB / "_shield.json").read_text())
 
 
 # ----------------------------------------------------------------------------- BOM
@@ -334,7 +335,7 @@ def channel_sheet():
 
 
 def power_sheet(pb):
-    fig, ax = sheet(13, 6.2, (-1.0, 25.0), (-6.2, 6.0), "Single bias point: +5 V input, protection and distribution",
+    fig, ax = sheet(14.5, 6.6, (-1.0, 28.5), (-6.4, 6.4), "Single bias point: +5 V input, protection and star distribution",
                     "Scripts/make_docs.py")
     j = S.box(ax, 0.4, 2.0, 2.2, 1.6, "J5", "Micro-Fit 3.0\n43650-0215", pins_r=["1 +5V", "2 GND"])
     S.ground(ax, *(lambda p: (p[0] + 0.3, p[1]))(j["2 GND"]))
@@ -364,19 +365,64 @@ def power_sheet(pb):
     S.dot(ax, 18.5, y)
     S.w(ax, (18.5, y), (18.5, y + 0.8))
     ax.text(18.65, y + 0.85, "TP1", fontsize=7, color=S.NAME)
-    S.iport(ax, 21.0, y, "+5V plane (In1.Cu)\n8 vias -> 16 LNA chokes", side="r")
+    # star point: 4 separate In1.Cu trunks, one ferrite + 10 uF per channel
+    S.w(ax, (21.0, y), (21.0, y + 2.4))
+    S.w(ax, (21.0, y), (21.0, y - 3.6))
+    S.dot(ax, 21.0, y)
+    ax.text(19.2, y + 2.7, "star point (4 vias)", fontsize=6.5, color="#b35c00")
+    for i, yy in enumerate((y + 2.4, y + 0.8, y - 2.0, y - 3.6)):
+        n = i + 1
+        S.w(ax, (21.0, yy), (21.6, yy))
+        ax.plot([21.6, 22.6], [yy, yy], color=S.BODY, lw=3.2, solid_capstyle="butt", zorder=3)
+        ax.text(21.6, yy + 0.25, f"FB{n}", fontsize=6.5, color=S.NAME)
+        ax.text(21.6, yy - 0.42, "600R", fontsize=6.0, color=S.VAL)
+        S.w(ax, (22.6, yy), (24.0, yy))
+        ax.text(23.0, yy + 0.25, f"+5V_CH{n}", fontsize=6.3, color="#b35c00")
+        ax.text(23.0, yy - 0.42, f"C{n}90 10u -> 4 LNA chokes", fontsize=5.6, color="#404040")
     lines = [
         f"Load: {pb['n_lna']} x TQP3M9037 at 5 V: {pb['i_typ']:.2f} A typ / {pb['i_max']:.2f} A max "
         f"({pb['p_typ']:.1f} W); {pb['per_channel'] * 1000:.0f} mA per channel.",
-        f"Series drop J5 -> plane (PTC + FET + Cu, ~0.13 ohm): {pb['drop_typ'] * 1000:.0f} mV typ, "
-        f"{pb['drop_max'] * 1000:.0f} mV max. Supply 5.0-5.25 V at J5 -> 4.8-5.25 V at the LNAs "
-        "(TQP3M9037 rated 3.0-5.25 V).",
-        "Each LNA: 18 nH choke + 100 pF + 1 uF at the choke; each channel: 10 uF (C{n}90) on the plane.",
+        f"Series drop J5 -> LNAs (PTC + FET + trunk, < 0.3 ohm): {pb['drop_typ'] * 1000:.0f} mV typ, "
+        f"{pb['drop_max'] * 1000:.0f} mV max (+<=60 mV in the longest trunk). Supply 5.0-5.25 V at J5.",
+        "Star: each channel has its own 0.8 mm In1.Cu trunk from the star point, its own ferrite FB{n} + 10 uF, then "
+        "0.4 mm In1.Cu branches to its 4 chokes (18 nH + 100 pF + 1 uF at each).",
         "Do NOT exceed 5.25 V at J5 (no regulator on board). Reverse polarity: Q1 blocks; over-voltage: D1 clamps, F1 trips.",
     ]
     for k, t in enumerate(lines):
-        ax.text(-0.6, -2.8 - 0.62 * k, t, fontsize=7.0, color="#303030")
+        ax.text(-0.6, -3.9 - 0.62 * k, t, fontsize=7.0, color="#303030")
     save(fig, "schematic_power")
+
+
+def shield_files():
+    """Outline of the 4 shield cans for the can maker: CSV (board mm) + a dimensioned figure (CH1, local mm)."""
+    with open(FAB / "CRPA17_ShieldCan_outline.csv", "w", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["channel", "vertex", "x_mm", "y_mm", "note"])
+        for ch, pts in SHIELD["outline_board"].items():
+            for i, (x, y) in enumerate(pts):
+                w.writerow([ch, i, x, y, "frame centreline, KiCad board frame (y down), view from top"])
+    v = SHIELD["outline_local_ch1"]
+    fig, ax = plt.subplots(figsize=(7.5, 7.5))
+    xs, ys = zip(*(v + [v[0]]))
+    ax.plot(xs, ys, color="#b8860b", lw=3)
+    for i, (x, y) in enumerate(v):
+        ax.annotate(f"{i}: ({x:.2f}, {y:.2f})", (x, y), fontsize=7, xytext=(4, 4), textcoords="offset points")
+    for x, y in SHIELD["notches_local_ch1"]:
+        ax.plot(x, y, "rs", ms=8)
+        ax.annotate("RF exit notch 2.6 x 1.0 mm", (x, y), fontsize=7, color="r", xytext=(6, -12),
+                    textcoords="offset points")
+    ax.plot(0, 0, "k+", ms=12)
+    ax.annotate("antenna centre (0,0)", (0, 0), fontsize=7, xytext=(4, 4), textcoords="offset points")
+    ax.set_aspect("equal")
+    ax.invert_yaxis()
+    ax.grid(alpha=0.3)
+    ax.set_title(f"Shield can CH1 (CH2-4 = rotated -90/-180/-270 deg about the array centre)\n"
+                 f"frame land {SHIELD['frame_w']} mm, wall on the land centreline, height {SHIELD['height']} mm, "
+                 f"{SHIELD['frame_vias_per_channel']} GND vias", fontsize=9)
+    ax.set_xlabel("x mm (element-local, top view, y down)")
+    fig.tight_layout()
+    fig.savefig(IMG / "shield_can_outline.png", dpi=170)
+    plt.close(fig)
 
 
 def stackup_figure():
@@ -450,7 +496,9 @@ def report(bom_rows, summ, pb):
     story.append(tbl([["Item", "Result"],
                       ["Board", "Ø200 mm, 4-layer FR-4 1.6 mm, ENIG, all SMD on the bottom (L4), antennas on top"],
                       ["Channels", "4 x (L1 + L2/L5) -> 4 SMA outputs (J1..J4) at the board centre"],
-                      ["Bias", "single +5 V point J5 (Molex Micro-Fit), PTC + reverse-polarity P-FET + TVS, +5V plane on L2"],
+                      ["Bias", "single +5 V point J5 (Molex Micro-Fit), PTC + reverse-polarity P-FET + TVS; star distribution on L2: one trunk + ferrite + 10 uF per channel"],
+                      ["Shielding", "one soldered shield can per channel (octagonal frame land, GND via fence, RF exit notch), as on the customer product"],
+                      ["Antenna", f"{D.ANT_MODULE}: footprint, drills, clearances and grounded centre screw per its data sheet"],
                       ["Parts", f"{n_fp} placed footprints, {sum(r['Qty'] for r in bom_rows if r['Fit'] != 'DNP')} fitted "
                                 f"({len(bom_rows)} BOM lines)"],
                       ["DRC (kicad-cli, zones refilled)", f"{n_drc} violations, {n_unc} unconnected"],
@@ -468,7 +516,7 @@ def report(bom_rows, summ, pb):
             "(L3) is only 0.21 mm under the traces, so 50 ohm = 0.38 mm, close to the 0402 / DFN / SAW pad widths. "
             "On a 2-layer 0.8 mm board 50 ohm would be ~1.5 mm and on 1.6 mm ~3 mm, much wider than every pad "
             "(large steps), and the bias would have to cut the ground."],
-           ["Layer use", "L1 GND (antenna ground plane), L2 +5V plane, L3 GND, L4 RF + parts",
+           ["Layer use", "L1 GND (antenna ground plane), L2 GND + per-channel +5V star traces, L3 GND, L4 RF + parts",
             "Solid ground under the patches as on the original board; bias never crosses an RF reference; every SMD "
             "part on one side (one reflow pass)."],
            ["Material", "FR-4 (Tg170) instead of RO4350B", "Pre-LNA lines are short (see budget): FR-4 adds "
@@ -484,6 +532,18 @@ def report(bom_rows, summ, pb):
            ["Single bias point", "dedicated DC connector J5, no DC on any RF output",
             "A bias tee on only one channel would make that channel different (CRPA needs matched channels); "
             "1.1-1.4 A is also too much for a small coax bias inductor. C{n}43 blocks receiver DC."],
+           ["Bias distribution (Rev C)", "star: 4 separate 0.8 mm trunks on L2 from the star point after Q1; per "
+            "channel a ferrite (FB{n}, BLM18KG601) + 10 uF, then 0.4 mm branches to the 4 LNA chokes",
+            "Channels share nothing but the star point, so LNA leakage / noise in one channel is isolated from the "
+            "others by two ferrites; L2 is otherwise solid GND (no +5V plane cavity resonances, third RF ground)."],
+           ["Shield cans (Rev C)", "octagonal can per channel on a 1.0 mm exposed GND frame land with vias every 2 mm; "
+            "2.6 mm notch where the RF output leaves", "~40 dB gain per channel and 4 channels side by side: the cans "
+            "stop channel-to-channel and external coupling (the customer product uses cans too). Outline: "
+            "Fab/CRPA17_ShieldCan_outline.csv, Images/shield_can_outline.png."],
+           ["Antenna module (Rev C)", "Taoglas GPDF6010.A (from the product photo): D3.2 centre screw hole GROUNDED, "
+            "4x D1.8 locating holes at 29 mm, feed pins D0.9 in 1.1 mm holes, D3.5 copper-free around each feed",
+            "Data sheet SPE-21-8-111-G sec. 3.1, 4.3, 4.5: the screw is the antenna ground; pins are 2.5 mm long, so "
+            "they pass the 1.6 mm board."],
            ["Output connectors", "4 x SMA vertical (Amphenol 132134) at the board centre",
             "Short cable exit under the array, in the patch-free cross between modules, all channels equal."],
            ["Land patterns", "HC125A, TQP3M9037, B7504, B8889, DXP.02.A, antenna: copied from the customer board; "
@@ -529,16 +589,24 @@ def report(bom_rows, summ, pb):
                       ["Drop J5 -> LNAs", f"{pb['drop_typ'] * 1000:.0f} mV typ / {pb['drop_max'] * 1000:.0f} mV max"],
                       ["Input range", "5.0 - 5.25 V at J5 (no regulator; TQP3M9037 max 5.25 V recommended)"]],
                      [45, 125]))
-    story.append(Paragraph("6a. How the bias reaches every LNA (+5V plane on In1.Cu)", H2))
+    story.append(Paragraph("6a. Star bias distribution (In1.Cu)", H2))
+    tr = ", ".join(f"{k} {v} mm" for k, v in sorted(BIAS["trunks_mm"].items()))
     story.append(Paragraph(
-        "There are no bias tracks to look for: layer 2 (In1.Cu) is one solid +5V copper plane over the whole board "
-        "(green below; the white dots are via clearances). J5 -> F1 -> Q1 feeds it through a ladder of 8 vias; "
-        "every LNA choke (18 nH) drops into it through its own via right at the choke, next to its 100 pF + 1 uF; "
-        f"each channel also has a 10 uF on the plane. From the board: {BIAS['pads']} pads on +5V "
-        f"({BIAS['chokes']} LNA chokes), {BIAS['vias']} +5V vias, plane on {BIAS['plane']}; the kicad-happy "
-        "connectivity graph reports +5V as one single island (all pads connected) and DRC reports 0 unconnected. "
-        "The plane sits between the L1 and L3 grounds, so the bias is shielded and never crosses an RF reference.", B))
-    story.append(img(IMG / "bias_plane_In1Cu.png", 110))
+        "J5 -> F1 -> Q1 -> star point (4 vias). From there each channel has its own 0.8 mm trunk on In1.Cu "
+        f"({tr}), its own ferrite FB{{n}} + 10 uF C{{n}}90, and 0.4 mm In1.Cu branches to its 4 LNA bias vias "
+        "(18 nH choke + 100 pF + 1 uF at each). The rest of In1.Cu is GND. Routes were found by a grid router that "
+        "keeps every through-hole clear; CH1's branches are replayed on CH2-4 so all channels stay identical. "
+        f"From the board: {BIAS['pads']} bias pads ({BIAS['chokes']} chokes, {BIAS['ferrites']} ferrites), "
+        f"{BIAS['vias']} bias vias; DRC 0 unconnected.", B))
+    story.append(img(IMG / "bias_star_In1Cu.png", 105))
+    story.append(Paragraph("6b. Shield cans", H2))
+    story.append(Paragraph(
+        f"One can per channel, height {SHIELD['height']} mm (tallest part: RLM-63-2W+, 4.06 mm max; antenna nut "
+        f"about 2.4 mm). The frame land is {SHIELD['frame_w']} mm exposed copper (GND) with "
+        f"{SHIELD['frame_vias_per_channel']} GND vias per channel; the can wall sits on the land centreline. The RF "
+        "output leaves through a 2.6 mm x 1.0 mm notch in the wall (red square). Order as a two-piece frame + lid "
+        "(rework access) or a one-piece drawn can, tin-plated steel 0.2 mm.", B))
+    story.append(img(IMG / "shield_can_outline.png", 95))
     story.append(Paragraph("7. Verification", H2))
     story.append(tbl([["Check", "Tool", "Result"],
                       ["DRC + zone refill", "kicad-cli 10.0.3 pcb drc", f"{n_drc} violations, {n_unc} unconnected"],
@@ -554,12 +622,13 @@ def report(bom_rows, summ, pb):
                      [35, 45, 90]))
     story.append(Paragraph("8. Assumptions and open points", H2))
     ap = [["#", "Item", "Action"],
-          ["A1", f"Antenna feed-pin hole {D.ANT_FEED_DRILL} mm, centre stud {D.ANT_STUD_DRILL} mm, mounting "
-                 f"holes {D.ANT_MOUNT_DRILL} mm NPTH [ASSUMED] - the customer zip has no drill file",
-           "Confirm with the module drawing / original drill file before ordering"],
-          ["A2", "Module pins must reach through 1.6 mm (original board 0.85 mm)", "Check pin length (>= 2.1 mm)"],
-          ["A3", "Patch modules occupy <= 70 x 70 mm on top (SMA legs and J5 sit in the free cross)",
-           "Confirm module outline"],
+          ["R1", f"RESOLVED (Rev C): {D.ANT_MODULE} data sheet - pins D0.9 / 2.5 mm long (pass 1.6 mm), "
+                 f"holes {D.ANT_FEED_DRILL} mm, centre screw {D.ANT_STUD_DRILL} mm grounded, locating holes "
+                 f"{D.ANT_MOUNT_DRILL} mm, module D60.6 mm", "none"],
+          ["A3", "Future NavIC S-band patches (product photo: 4 square patches on the axes) are not on this board; "
+                 "the L2 star trunks and the SMA cluster use that area", "Decide S-band before Rev D"],
+          ["A6", "Antenna nut (bottom) is torqued after reflow; HC125A sits ~6 mm from the screw",
+           "Use a thin-wall socket, or fit the antenna before the shield cans"],
           ["A4", "FR-4 er 4.4 / tan d 0.02 for the 7628 prepreg", "Fab impedance report; adjust RF_W in crpa_design.py"],
           ["A5", "Land patterns of HC125A, DXP.02.A, B7504, B8889, TQP3M9037 copied from the customer board",
            "Cross-check against vendor drawings (not in the repository)"],
@@ -600,6 +669,7 @@ def main():
     channel_sheet()
     power_sheet(pb)
     stackup_figure()
+    shield_files()
     report(rows, summ, pb)
     for s in summ:
         print(f"{s['case']:<36} gain {s['gain_p17']:6.2f} dB  NF {s['nf_p17']:.3f} dB  (p16 {s['nf_p16']:.3f}, "

@@ -25,7 +25,7 @@ STACKUP = [
     ("F.Mask",     "mask",       0.010, 3.8,  "green LPI"),
     ("F.Cu",       "copper",     0.035, None, "L1: solid GND = antenna ground plane"),
     ("PP1",        "prepreg",    0.2104, 4.4, "7628 RC49%"),
-    ("In1.Cu",     "copper",     0.0152, None, "L2: +5V bias plane"),
+    ("In1.Cu",     "copper",     0.0152, None, "L2: GND + per-channel +5V star traces"),
     ("Core",       "core",       1.065, 4.6,  "FR-4 core"),
     ("In2.Cu",     "copper",     0.0152, None, "L3: solid GND, RF reference for L4"),
     ("PP2",        "prepreg",    0.2104, 4.4, "7628 RC49%"),
@@ -40,7 +40,10 @@ BOARD_THICKNESS = 1.6
 RF_W = 0.38          # 50 ohm track width
 RF_NECK_W = 0.20     # neck-down into fine-pitch pads (DFN-8, SAW)
 RF_GAP = 0.30        # RF copper to GND pour (zone clearance on B.Cu)
-PWR_W = 0.60         # +5V / bias track width
+PWR_W = 0.60         # +5V / bias track width (L4 stubs)
+TRUNK_W = 0.80       # In1.Cu star trunk per channel (0.36 A max, 15 um inner Cu: ~0.55 A at +10 C)
+BIAS_W = 0.40        # In1.Cu branch FB -> each LNA bias via (0.09 A)
+FB_AT = (12.0, 12.5) # element-local position of the channel ferrite FB{n} pad 1
 VIN_W = 1.00         # DC input tracks
 GND_W = 0.30         # short GND stubs to vias
 VIA_D, VIA_DRILL = 0.60, 0.30      # standard through via
@@ -49,10 +52,17 @@ FENCE_PITCH = 2.5    # GND via fence pitch along RF lines
 FENCE_OFFSET = 1.05  # fence via centre to track centre
 
 # Assumed module drills (not in the customer Gerber, which has no drill file)
-ANT_FEED_DRILL = 1.1   # [ASSUMED] feed pin hole (2.0 mm pad kept from customer board)
-ANT_STUD_DRILL = 3.2   # [ASSUMED] centre stud hole (7.0 mm pad kept)
-ANT_MOUNT_DRILL = 3.2  # [ASSUMED] 4x M3 clearance, NPTH (3.6 mm mask opening on customer board)
-ANT_FEED_ANTIPAD = 0.60  # copper clearance around feed pins on GND / +5V planes
+# Antenna module = Taoglas GPDF6010.A (identified from the customer product photo); values from its
+# data sheet SPE-21-8-111-G: sec. 3.1 mechanical drawing, sec. 4.3 footprint, sec. 4.5 copper clearance.
+ANT_MODULE = "Taoglas GPDF6010.A"
+ANT_FEED_DRILL = 1.1    # 4x solder pins D0.90 mm, 2.50 mm below the base (protrude 0.9 mm on 1.6 mm)
+ANT_STUD_DRILL = 3.2    # pin 3: centre screw hole D3.20 - must be GROUNDED (DS sec. 4.5 note)
+ANT_MOUNT_DRILL = 1.8   # 4x D1.80 NPTH at +/-29 mm for the D1.50 locating bosses (DS sec. 4.3)
+ANT_FEED_ANTIPAD = 0.75 # 2.0 pad + 0.75 = D3.5 copper-free on all layers (DS: D3.0 top/inner, D3.5 bottom)
+SHIELD_W = 1.0          # shield-can frame land on B.Cu (exposed, GND)
+SHIELD_MARGIN = 1.4     # frame centreline outside the outermost channel courtyard
+SHIELD_NOTCH = 2.6      # gap in the frame where the RF output leaves the can
+SHIELD_H = 6.0          # can height (RLM-63-2W+ TT1224 is 4.06 mm max, centre nut ~2.4 mm)
 
 # ----------------------------------------------------------------------------- parts
 LIB = "CRPA17"
@@ -81,6 +91,8 @@ PARTS = {
     "L4N7":  ("Inductor_SMD", "L_0402_1005Metric", "4.7nH", "LQW15AN4N7B00D", "Murata", "DXP L1 port series"),
     "L3N3":  ("Inductor_SMD", "L_0402_1005Metric", "3.3nH", "LQW15AN3N3B00D", "Murata", "DXP L2/L5 port series"),
     "L4N3":  ("Inductor_SMD", "L_0402_1005Metric", "4.3nH", "LQW15AN4N3B00D", "Murata", "DXP common port series"),
+    "FB":    ("Inductor_SMD", "L_0603_1608Metric", "600R@100MHz", "BLM18KG601SN1D", "Murata",
+              "ferrite bead 1.3 A, per-channel bias isolation (star branch)"),
     "R50":   ("Resistor_SMD", "R_0402_1005Metric", "49.9R", "ERJ-2RKF49R9X", "Panasonic", "hybrid isolated-port load"),
     "R10K":  ("Resistor_SMD", "R_0402_1005Metric", "10k", "ERJ-2RKF1002X", "Panasonic", "P-FET gate"),
     "SMA":   ("Connector_Coaxial", "SMA_Amphenol_132134_Vertical", "SMA", "132134", "Amphenol RF",

@@ -230,13 +230,13 @@ def main():
     for p in an:
         q = dict(pin=names[p["pin"]], x=round(p["x"], 3), y=round(p["y"], 3), shape="circle",
                  w=p["w"], h=p["w"], a=0, type="thru_hole", layers='"*.Cu" "*.Mask"')
-        q["drill"] = 3.2 if q["pin"] == "C" else 1.1          # [ASSUMED] pin / stud diameters
+        q["drill"] = 3.2 if q["pin"] == "C" else 1.1          # GPDF6010.A DS 4.3: D3.20 screw, D0.90 pins
         ant.append(q)
     holes = ""
     for hx, hy in ((-29, 0), (29, 0), (0, -29), (0, 29)):
-        holes += (f'  (pad "" np_thru_hole circle (at {hx} {hy}) (size 3.2 3.2) (drill 3.2) (layers "*.Cu" "*.Mask"))\n')
+        holes += (f'  (pad "" np_thru_hole circle (at {hx} {hy}) (size 1.8 1.8) (drill 1.8) (layers "*.Cu" "*.Mask"))\n')
     write_mod("GNSS_StackedPatch_L1L2_4feed", "Stacked L1/L2 patch module, 4 probe feeds (L1 0/90 at 5.5 mm, L2 0/90 at 12.25 mm), "
-              "centre stud, 4x M3 at 29 mm. From CRL board F.Cu; drills [ASSUMED]",
+              "centre screw (GND), 4x D1.8 locating holes at 29 mm. Taoglas GPDF6010.A, DS SPE-21-8-111-G sec. 4.3",
               ant, (64, 64), attr="through_hole", extra=holes.rstrip("\n"))
     report.append(("Antenna", ant, None))
 

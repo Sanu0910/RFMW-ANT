@@ -34,6 +34,10 @@ ITEMS = []          # every item created for the current element (for the rotati
 FPS = {}            # ref -> footprint
 BOM = []            # (ref, part key, channel)
 RF_TRACKS = []      # (x1, y1, x2, y2) board mm, for the via fence
+BIAS_VIAS = []      # LNA bias vias of the element being built (local)
+LOCAL_BIAS_ROUTES = []   # In1.Cu routes FB -> LNA bias vias, found on CH1 (board coords, k=0 frame)
+TRUNK_END = {}      # k -> local point of the +5V trunk via at FB{n} pad 1
+POWER_VIAS = []     # +5V vias at the star point (power block), board coords
 
 
 def net(name):
@@ -249,6 +253,301 @@ def gnd_stub(fp, num, nx, ny, dist=0.75):
     via(vx, vy, "GND")
 
 
+# ----------------------------------------------------------------------------- inner-layer router
+def _obstacles(net_name, layer=pcbnew.In1_Cu):
+    """(x, y, r) circles for every through-hole of another net, plus In1 segments of other nets."""
+    circ, segs = [], []
+    for fp in board.GetFootprints():
+        for p in fp.Pads():
+            if p.GetAttribute() in (pcbnew.PAD_ATTRIB_PTH, pcbnew.PAD_ATTRIB_NPTH):
+                if p.GetNetname() and p.GetNetname() == net_name:
+                    continue
+                bb = p.GetBoundingBox()
+                r = max(ToMM(bb.GetWidth()), ToMM(bb.GetHeight())) / 2
+                if fp.GetReference().startswith("ANT"):     # antenna pads carry a 0.6 mm local clearance
+                    r += D.ANT_FEED_ANTIPAD
+                circ.append((*xy(p.GetPosition()), r))
+    for t in board.GetTracks():
+        if t.GetNetname() == net_name:
+            continue
+        if t.GetClass() == "PCB_VIA":
+            circ.append((*xy(t.GetPosition()), ToMM(t.GetWidth(pcbnew.F_Cu)) / 2))
+        elif t.GetLayer() == layer:
+            segs.append((*xy(t.GetStart()), *xy(t.GetEnd()), ToMM(t.GetWidth()) / 2))
+    return circ, segs
+
+
+def route_inner(a, b, net_name, width, local_bbox=False, res=0.2, clr=0.40):
+    """Grid A* (8-connected) on In1.Cu from board point a to b, then line-of-sight smoothing.
+    Returns the polyline in board coordinates."""
+    import heapq
+    import numpy as np
+    circ, segs = _obstacles(net_name)
+    if local_bbox:
+        x0, y0 = L(-48, -48)
+        x1, y1 = L(48, 48)
+    else:
+        cx, cy = D.BOARD_CENTER
+        x0, y0, x1, y1 = cx - 100, cy - 100, cx + 100, cy + 100
+    nx, ny = int((x1 - x0) / res) + 1, int((y1 - y0) / res) + 1
+    blk = np.zeros((ny, nx), dtype=bool)
+    gx = x0 + np.arange(nx) * res
+    gy = y0 + np.arange(ny) * res
+    inf = clr + width / 2
+    for (px, py, r) in circ:
+        rr = r + inf
+        i0, i1 = max(0, int((px - rr - x0) / res)), min(nx, int((px + rr - x0) / res) + 2)
+        j0, j1 = max(0, int((py - rr - y0) / res)), min(ny, int((py + rr - y0) / res) + 2)
+        if i0 >= i1 or j0 >= j1:
+            continue
+        X, Y = np.meshgrid(gx[i0:i1], gy[j0:j1])
+        blk[j0:j1, i0:i1] |= (X - px) ** 2 + (Y - py) ** 2 < rr * rr
+    for (sx1, sy1, sx2, sy2, hw) in segs:
+        rr = hw + inf
+        i0 = max(0, int((min(sx1, sx2) - rr - x0) / res))
+        i1 = min(nx, int((max(sx1, sx2) + rr - x0) / res) + 2)
+        j0 = max(0, int((min(sy1, sy2) - rr - y0) / res))
+        j1 = min(ny, int((max(sy1, sy2) + rr - y0) / res) + 2)
+        if i0 >= i1 or j0 >= j1:
+            continue
+        X, Y = np.meshgrid(gx[i0:i1], gy[j0:j1])
+        dx, dy = sx2 - sx1, sy2 - sy1
+        l2 = dx * dx + dy * dy or 1e-12
+        t = np.clip(((X - sx1) * dx + (Y - sy1) * dy) / l2, 0, 1)
+        blk[j0:j1, i0:i1] |= (X - sx1 - t * dx) ** 2 + (Y - sy1 - t * dy) ** 2 < rr * rr
+    X, Y = np.meshgrid(gx, gy)
+    bcx, bcy = D.BOARD_CENTER
+    blk |= (X - bcx) ** 2 + (Y - bcy) ** 2 > (D.BOARD_RADIUS - 1.0 - width / 2) ** 2
+    st = (int(round((a[1] - y0) / res)), int(round((a[0] - x0) / res)))
+    gl = (int(round((b[1] - y0) / res)), int(round((b[0] - x0) / res)))
+    for c in (st, gl):           # the end vias are on this net: clear a small disc around them
+        blk[max(0, c[0] - 2):c[0] + 3, max(0, c[1] - 2):c[1] + 3] = False
+    g = np.full((ny, nx), np.inf, dtype=np.float32)
+    par = {}
+    g[st] = 0
+
+    def h(q):
+        dj, di = abs(q[0] - gl[0]), abs(q[1] - gl[1])
+        return max(dj, di) + 0.4142 * min(dj, di)
+    pq = [(h(st), st)]
+    steps = [(-1, 0, 1.0), (1, 0, 1.0), (0, -1, 1.0), (0, 1, 1.0), (-1, -1, 1.4142), (-1, 1, 1.4142),
+             (1, -1, 1.4142), (1, 1, 1.4142)]
+    while pq:
+        f, q = heapq.heappop(pq)
+        if q == gl:
+            break
+        gq = g[q]
+        if f - h(q) > gq + 1e-3:
+            continue
+        for dj, di, cst in steps:
+            r_ = (q[0] + dj, q[1] + di)
+            if not (0 <= r_[0] < ny and 0 <= r_[1] < nx) or blk[r_]:
+                continue
+            ng = gq + cst
+            if ng < g[r_]:
+                g[r_] = ng
+                par[r_] = q
+                heapq.heappush(pq, (ng + h(r_), r_))
+    if gl not in par:
+        raise RuntimeError(f"no inner route for {net_name} from {a} to {b}")
+    cells = [gl]
+    while cells[-1] != st:
+        cells.append(par[cells[-1]])
+    cells.reverse()
+
+    def free_line(p, q):
+        n_ = int(max(abs(q[0] - p[0]), abs(q[1] - p[1]))) * 2 + 1
+        for k_ in range(n_ + 1):
+            j = int(round(p[0] + (q[0] - p[0]) * k_ / n_))
+            i = int(round(p[1] + (q[1] - p[1]) * k_ / n_))
+            if blk[j, i]:
+                return False
+        return True
+    pts = [cells[0]]
+    i = 0
+    while i < len(cells) - 1:
+        j = len(cells) - 1
+        while j > i + 1 and not free_line(cells[i], cells[j]):
+            j -= 1
+        pts.append(cells[j])
+        i = j
+    out = [(x0 + c[1] * res, y0 + c[0] * res) for c in pts]
+    out[0], out[-1] = a, b
+    return out
+
+
+def inner_track(pts, nname, w):
+    track(pts, nname, w, layer=pcbnew.In1_Cu)
+
+
+def shield_geometry(n, ch):
+    """Octagon (8-DOP, 45 deg corners) around every bottom-side item of this channel except the SMA
+    and the RF-output track, SHIELD_MARGIN outside the outermost copper. Returns (vertices, notches)
+    in element-local coordinates; notches = points where the RF output track crosses the frame."""
+    pts = []
+    rfout = f"{ch}_RFOUT"
+    for it in ITEMS:
+        if isinstance(it, pcbnew.FOOTPRINT):
+            ref = it.GetReference()
+            if ref.startswith("J"):
+                continue
+            if ref.startswith("ANT"):           # top-side module: only its feed / screw pads matter
+                for p in it.Pads():
+                    if p.GetNumber():
+                        bb = p.GetBoundingBox()
+                        pts += [toL(ToMM(bb.GetLeft()), ToMM(bb.GetTop())), toL(ToMM(bb.GetRight()), ToMM(bb.GetBottom()))]
+                continue
+            boxes = []                          # pads + courtyard polygon, never the text
+            cy_ = it.GetCourtyard(pcbnew.B_CrtYd if it.IsFlipped() else pcbnew.F_CrtYd)
+            if cy_.OutlineCount():
+                boxes.append(cy_.BBox())
+            boxes += [p.GetBoundingBox() for p in it.Pads()]
+            for bb in boxes:
+                for X in (bb.GetLeft(), bb.GetRight()):
+                    for Y in (bb.GetTop(), bb.GetBottom()):
+                        pts.append(toL(ToMM(X), ToMM(Y)))
+        elif isinstance(it, pcbnew.PCB_TRACK):
+            if it.GetNetname() == rfout or it.GetLayer() == pcbnew.In1_Cu:
+                continue
+            hw = ToMM(it.GetWidth(pcbnew.F_Cu) if it.GetClass() == "PCB_VIA" else it.GetWidth()) / 2
+            for q in ((it.GetStart(), it.GetEnd()) if it.GetClass() != "PCB_VIA" else (it.GetPosition(),)):
+                x, y = toL(*xy(q))
+                pts += [(x - hw, y - hw), (x + hw, y + hw), (x - hw, y + hw), (x + hw, y - hw)]
+    m = D.SHIELD_MARGIN
+    dirs = [(math.cos(math.radians(a)), math.sin(math.radians(a))) for a in range(0, 360, 45)]
+    h = [max(px * dx + py * dy for px, py in pts) + m for dx, dy in dirs]
+    oct_ = []
+    for i in range(8):
+        (a1, b1), c1 = dirs[i], h[i]
+        (a2, b2), c2 = dirs[(i + 1) % 8], h[(i + 1) % 8]
+        det = a1 * b2 - a2 * b1
+        oct_.append(((c1 * b2 - c2 * b1) / det, (a1 * c2 - a2 * c1) / det))
+    # keep the can clear of the SMA body (6.35 mm square flange on the bottom): octagon minus a box
+    sma = next(it for it in ITEMS if isinstance(it, pcbnew.FOOTPRINT) and it.GetReference().startswith("J"))
+    sx, sy = toL(*xy(sma.GetPosition()))
+    kb = 3.175 + 0.6 + D.SHIELD_W / 2
+    poly = pcbnew.SHAPE_POLY_SET()
+    poly.NewOutline()
+    for x, y in oct_:
+        poly.Append(FromMM(x), FromMM(y))
+    box = pcbnew.SHAPE_POLY_SET()
+    box.NewOutline()
+    for x, y in ((sx - kb, sy - kb), (sx + 50, sy - kb), (sx + 50, sy + 50), (sx - kb, sy + 50)):
+        box.Append(FromMM(x), FromMM(y))
+    poly.BooleanSubtract(box)
+    ol = poly.Outline(0)
+    verts = [(ToMM(ol.CPoint(i).x), ToMM(ol.CPoint(i).y)) for i in range(ol.PointCount())]
+    verts = _merge_short_edges(verts, 1.0)     # no sub-mm jogs in a sheet-metal outline
+    nv = len(verts)
+    # where the RF output track leaves the octagon
+    notches = []
+    rf = [it for it in ITEMS if isinstance(it, pcbnew.PCB_TRACK) and it.GetClass() != "PCB_VIA"
+          and it.GetNetname() == rfout]
+    for t in rf:
+        p1, p2 = toL(*xy(t.GetStart())), toL(*xy(t.GetEnd()))
+        for i in range(nv):
+            q1, q2 = verts[i], verts[(i + 1) % nv]
+            x = _seg_cross(p1, p2, q1, q2)
+            if x:
+                notches.append((i, x))
+    return verts, notches
+
+
+def _merge_short_edges(v, lmin):
+    """Replace each edge shorter than lmin by the intersection of its two neighbouring edges."""
+    changed = True
+    while changed and len(v) > 4:
+        changed = False
+        n_ = len(v)
+        for i in range(n_):
+            a, b = v[i], v[(i + 1) % n_]
+            if math.dist(a, b) >= lmin:
+                continue
+            p0, p1 = v[(i - 1) % n_], a
+            q0, q1 = b, v[(i + 2) % n_]
+            d1 = (p1[0] - p0[0], p1[1] - p0[1])
+            d2 = (q1[0] - q0[0], q1[1] - q0[1])
+            den = d1[0] * d2[1] - d1[1] * d2[0]
+            if abs(den) < 1e-9:
+                new = b
+            else:
+                t = ((q0[0] - p0[0]) * d2[1] - (q0[1] - p0[1]) * d2[0]) / den
+                new = (p0[0] + t * d1[0], p0[1] + t * d1[1])
+            v = [w for j, w in enumerate(v) if j not in (i, (i + 1) % n_)]
+            v.insert(i if i < len(v) + 1 else len(v), new)
+            changed = True
+            break
+    return v
+
+
+def _seg_cross(p1, p2, q1, q2):
+    d = (p2[0] - p1[0]) * (q2[1] - q1[1]) - (p2[1] - p1[1]) * (q2[0] - q1[0])
+    if abs(d) < 1e-12:
+        return None
+    t = ((q1[0] - p1[0]) * (q2[1] - q1[1]) - (q1[1] - p1[1]) * (q2[0] - q1[0])) / d
+    u = ((q1[0] - p1[0]) * (p2[1] - p1[1]) - (q1[1] - p1[1]) * (p2[0] - p1[0])) / d
+    if 0 <= t <= 1 and 0 <= u <= 1:
+        return (p1[0] + t * (p2[0] - p1[0]), p1[1] + t * (p2[1] - p1[1]))
+    return None
+
+
+SHIELD = {}
+
+
+def shield_frame(k, n, ch):
+    """Exposed GND frame land (B.Cu + B.Mask opening) with stitching vias, notch at the RF exit."""
+    if k == 0:
+        verts, notches = shield_geometry(n, ch)
+        obs = Obstacles()
+        segs, vias_ = [], []
+        nv = len(verts)
+        for i in range(nv):
+            a, b = verts[i], verts[(i + 1) % nv]
+            cuts = sorted([x for j, x in notches if j == i], key=lambda q: math.dist(a, q))
+            pieces, cur = [], a
+            for x in cuts:
+                ln = math.dist(a, b)
+                ux, uy = (b[0] - a[0]) / ln, (b[1] - a[1]) / ln
+                g = D.SHIELD_NOTCH / 2
+                pieces.append((cur, (x[0] - g * ux, x[1] - g * uy)))
+                cur = (x[0] + g * ux, x[1] + g * uy)
+            pieces.append((cur, b))
+            for p, q in pieces:
+                ln = math.dist(p, q)
+                if ln < 0.3:
+                    continue
+                segs.append((p, q))
+                kk = max(1, int(ln / 2.0))
+                for t in range(kk + 1):
+                    vx, vy = p[0] + (q[0] - p[0]) * t / kk, p[1] + (q[1] - p[1]) * t / kk
+                    bx, by = L(vx, vy)
+                    if obs.free(bx, by, clr=0.3) and all(math.dist((vx, vy), w) > 1.2 for w in vias_):
+                        vias_.append((vx, vy))
+        SHIELD.update(verts=verts, segs=segs, vias=vias_, notches=[x for _, x in notches])
+    for p, q in SHIELD["segs"]:
+        track([p, q], "GND", D.SHIELD_W)
+        m = pcbnew.PCB_SHAPE(board)                      # solder-mask opening over the frame land
+        m.SetShape(pcbnew.SHAPE_T_SEGMENT)
+        m.SetStart(P(*L(*p)))
+        m.SetEnd(P(*L(*q)))
+        m.SetLayer(pcbnew.B_Mask)
+        m.SetWidth(FromMM(D.SHIELD_W + 0.1))
+        board.Add(m)
+        ITEMS.append(m)
+    for v in SHIELD["vias"]:
+        via(*v, "GND")
+    SHIELD_OUTLINES[ch] = [toL(*_rot_pt(L(*v), k)) for v in SHIELD["verts"]]
+
+
+SHIELD_OUTLINES = {}
+
+
+def _rot_pt(b, k):
+    dx, dy = b[0] - CX, b[1] - CY
+    a = math.radians(-90 * k)
+    return (CX + dx * math.cos(a) + dy * math.sin(a), CY - dx * math.sin(a) + dy * math.cos(a))
+
+
 # ----------------------------------------------------------------------------- one element
 def build_element(k):
     ch = D.CHANNEL_NAMES[k]
@@ -258,10 +557,13 @@ def build_element(k):
 
     # antenna module (top side), customer orientation for element 0
     ant = add_fp(f"ANT{n}", "ANT", ch, back=False, at=(0, 0), rot=0,
-                 pads={"C": s("ANT_STUD"), "L1_0": s("L1_F0"), "L1_90": s("L1_F90"),
+                 pads={"C": "GND", "L1_0": s("L1_F0"), "L1_90": s("L1_F90"),
                        "L2_0": s("L2_F0"), "L2_90": s("L2_F90")})
     for p in ant.Pads():
-        p.SetLocalClearance(D.ANT_FEED_ANTIPAD and FromMM(D.ANT_FEED_ANTIPAD))
+        if p.GetNumber().startswith("L"):        # feed pins: D3.5 copper keep-out (GPDF6010.A DS 4.5)
+            p.SetLocalClearance(FromMM(D.ANT_FEED_ANTIPAD))
+        elif p.GetNumber() == "C":               # centre screw: grounding point, solid to all planes
+            p.SetLocalZoneConnection(pcbnew.ZONE_CONNECTION_FULL)
 
     # ---- L1 hybrid: pins 3/4 face the L1 feeds (L1_90 -> 3, L1_0 -> 4: customer mapping)
     d1 = (-1 / math.sqrt(2), 1 / math.sqrt(2))     # outward diagonal of the L1 feeds
@@ -368,21 +670,46 @@ def build_element(k):
     dxp_gnd(dxp)
 
     # common: series 4.3 nH -> node (shunt 1.5 pF) -> 100 pF DC block -> SMA
+    # common port: leave pin 2 diagonally, run EAST (inside the shield can), then drop onto the SMA
+    # from the north. Keeps the can's 45 deg corner clear of the SMA body.
     cc = Chain(dxp, "2", s("COM"), (1 / math.sqrt(2), 1 / math.sqrt(2)))
+    p2 = padL(dxp, "2")
+    cc.to(p2[0] + 0.6, p2[1] + 0.6)
+    cc.turn(1.0, 0.0)
     lc = add_fp(f"L{n}43", "L4N3", ch, pads={"1": s("COM"), "2": s("COM_M")}, show_ref=False)
-    cc.part(lc, "1", "2", 1.5, s("COM_M"))
+    cc.part(lc, "1", "2", 0.9, s("COM_M"))
     cb = add_fp(f"C{n}43", "C100P", ch, pads={"1": s("COM_M"), "2": s("RFOUT")}, show_ref=False)
-    cc.part(cb, "1", "2", 1.2, s("RFOUT"))
-    shunt(f"C{n}44", "C1P5", ch, lc, "2", s("COM_M"), 1 / math.sqrt(2), -1 / math.sqrt(2), off=1.0)
+    cc.part(cb, "1", "2", 1.0, s("RFOUT"))
+    shunt(f"C{n}44", "C1P5", ch, cb, "1", s("COM_M"), 0, -1, off=1.0)   # same node as L43 pin 2
     sma = add_fp(f"J{n}", "SMA", ch, at=(40.5, 40.5), rot=0, pads={"1": s("RFOUT"), "2": "GND"})
     sp = padL(sma, "1")
-    cc.end(sma, "1", mid=[(cc.p[0], sp[1])])     # enter the SMA pin on-axis, between its GND legs
+    cc.end(sma, "1", mid=[(sp[0], cc.p[1])])     # east, then down onto the SMA pin between its GND legs
 
-    # local bulk decoupling for the 4 LNAs of this channel
-    blk = add_fp(f"C{n}90", "C10U", ch, at=(8.0, 14.5), rot=0, pads={"1": "+5V", "2": "GND"}, show_ref=False)
-    via(*_off(padL(blk, "1"), 0, -0.9), "+5V")
-    track([padL(blk, "1"), _off(padL(blk, "1"), 0, -0.9)], "+5V", D.PWR_W)
-    gnd_stub(blk, "2", 0, -1, 0.9)
+    # star branch entry: +5V trunk (In1.Cu) -> FB{n} ferrite -> +5V_CHn, 10 uF bulk, then In1.Cu
+    # traces to this channel's 4 LNA bias vias (routed once on CH1, replayed on CH2..CH4)
+    bnet = f"+5V_{ch}"
+    fb = add_fp(f"FB{n}", "FB", ch, pads={"1": "+5V", "2": bnet})
+    orient(fb, "1", "2", 1, 0, step=90)
+    move_pad_to(fb, "1", *D.FB_AT)
+    vin = _off(padL(fb, "1"), -1.1, 0)
+    track([padL(fb, "1"), vin], "+5V", D.PWR_W)
+    via(*vin, "+5V")
+    TRUNK_END[k] = vin
+    blk = add_fp(f"C{n}90", "C10U", ch, pads={"1": bnet, "2": "GND"}, show_ref=False)
+    orient(blk, "1", "2", 0, 1, step=90)
+    move_pad_to(blk, "1", padL(fb, "2")[0] + 2.4, padL(fb, "2")[1])
+    track([padL(fb, "2"), padL(blk, "1")], bnet, D.PWR_W)
+    gnd_stub(blk, "2", 0, 1, 1.0)
+    vch = _off(padL(fb, "2"), 0, -1.2)
+    track([padL(fb, "2"), vch], bnet, D.PWR_W)
+    via(*vch, bnet)
+    if k == 0:
+        for bv in BIAS_VIAS:
+            LOCAL_BIAS_ROUTES.append(route_inner(L(*vch), L(*bv[:2]), bnet, D.BIAS_W, local_bbox=True))
+    for path in LOCAL_BIAS_ROUTES:
+        inner_track([toL(*p) for p in path], bnet, D.BIAS_W)
+    BIAS_VIAS.clear()
+    shield_frame(k, n, ch)
 
 
 def _off(p, dx, dy):
@@ -417,7 +744,7 @@ def dxp_gnd(dxp):
         px, py = padL(dxp, num)
         dx, dy = px - cxy[0], py - cxy[1]
         nn = math.hypot(dx, dy)
-        gnd_stub(dxp, num, dx / nn, dy / nn, 1.0)
+        gnd_stub(dxp, num, dx / nn, dy / nn, 1.6 if num == "8" else 1.0)
 
 
 def lim_place(c, lim, pref_dx=0, pref_dy=0, gap=2.2):
@@ -441,7 +768,8 @@ def lim_place(c, lim, pref_dx=0, pref_dy=0, gap=2.2):
         cxy = toL(*xy(lim.GetPosition()))
         dx, dy = px - cxy[0], py - cxy[1]
         nn = math.hypot(dx, dy)
-        via(px + 0.35 * dx / nn, py + 0.35 * dy / nn, "GND")
+        via(px + 1.3 * dx / nn, py + 1.3 * dy / nn, "GND")      # outside the 1.52 x 1.65 pad (no solder wicking)
+        track([(px, py), (px + 1.3 * dx / nn, py + 1.3 * dy / nn)], "GND", 0.6)
 
 
 def lna_stage(c, n, ch, band, idx, s):
@@ -488,17 +816,19 @@ def lna_stage(c, n, ch, band, idx, s):
     # bias T: 18 nH choke perpendicular to the line, +5V via straight beyond it, 100 pF and
     # 1 uF either side of the choke end, each with its own GND via further out.
     side = (-vx, -vy)            # L1 line runs east: bias north; L2 line runs south: bias east
+    bnet = f"+5V_{ch}"           # this channel's own bias net (star branch behind FB{n})
     lb = shunt(f"L{n}{b}{idx}", "L18N", ch, cout, "1", s(f"{tag}OUT"), side[0], side[1], off=1.3,
-               other="+5V")
+               other=bnet)
     bx, by = padL(lb, "2")
     nx, ny = bx + 1.0 * side[0], by + 1.0 * side[1]
-    track([(bx, by), (nx, ny)], "+5V", D.PWR_W)
-    via(nx, ny, "+5V")
+    track([(bx, by), (nx, ny)], bnet, D.PWR_W)
+    via(nx, ny, bnet)
+    BIAS_VIAS.append((nx, ny, side))
     for j, (key, dist) in enumerate((("C100P", -1.4), ("C1U", 1.4))):
-        cp = add_fp(f"C{n}{b}{idx}{3 + j}", key, ch, pads={"1": "+5V", "2": "GND"}, show_ref=False)
+        cp = add_fp(f"C{n}{b}{idx}{3 + j}", key, ch, pads={"1": bnet, "2": "GND"}, show_ref=False)
         orient(cp, "1", "2", side[0], side[1], step=45)
         move_pad_to(cp, "1", bx + dist * ux, by + dist * uy)
-        track([(bx, by), padL(cp, "1")], "+5V", D.PWR_W)
+        track([(bx, by), padL(cp, "1")], bnet, D.PWR_W)
         gnd_stub(cp, "2", side[0], side[1], 0.8)
 
 
@@ -613,11 +943,12 @@ def power_block():
     gnd_stub(cs, "2", g, 0, 0.9)
     # +5V into the plane: 8 x 0.3 mm vias (about 0.5 A each, 1.44 A worst case total)
     last = spine
-    for i in range(4):
+    for i in range(2):                  # 4 vias = the star point, one per channel trunk
         vy = spine[1] + 1.8 + 1.4 * i
         track([last, (sx, vy)], "+5V", D.VIN_W)
         last = (sx, vy)
         for sgn in (-1, 1):
+            POWER_VIAS.append(L(sx + sgn * 0.95, vy))
             via(sx + sgn * 0.95, vy, "+5V")
             track([(sx, vy), (sx + sgn * 0.95, vy)], "+5V", D.PWR_W)
     tp1 = add_fp("TP1", "TP", ch, pads={"1": "+5V"})
@@ -631,7 +962,7 @@ def power_block():
 def zones():
     cx, cy = D.BOARD_CENTER
     r = D.BOARD_RADIUS - 0.5
-    for layer, nname in ((pcbnew.F_Cu, "GND"), (pcbnew.In1_Cu, "+5V"), (pcbnew.In2_Cu, "GND"),
+    for layer, nname in ((pcbnew.F_Cu, "GND"), (pcbnew.In1_Cu, "GND"), (pcbnew.In2_Cu, "GND"),
                          (pcbnew.B_Cu, "GND")):
         z = pcbnew.ZONE(board)
         z.SetLayer(layer)
@@ -651,7 +982,8 @@ def zones():
     # THT pins (SMA, J5) use thermal spokes so they can be hand-soldered
     for fp in board.GetFootprints():
         for p in fp.Pads():
-            if p.GetAttribute() == pcbnew.PAD_ATTRIB_PTH and p.GetNetname() == "GND":
+            if (p.GetAttribute() == pcbnew.PAD_ATTRIB_PTH and p.GetNetname() == "GND"
+                    and not fp.GetReference().startswith("ANT")):
                 p.SetLocalZoneConnection(pcbnew.ZONE_CONNECTION_THERMAL)
 
 
@@ -759,11 +1091,11 @@ def rot_k(x, y, k):
 def silk():
     cx, cy = D.ARRAY_CENTER
     text("CRL-BEL  CRPA 4CH L-BAND ACTIVE ANTENNA FE  REV A", cx, cy + 84, pcbnew.B_SilkS, 1.6, True)
-    text("FR-4 1.6 mm 4L: L1 GND / L2 +5V / L3 GND / L4 RF", cx, cy + 87.5, pcbnew.B_SilkS, 1.1, True)
+    text("FR-4 1.6 mm 4L: L1 GND / L2 GND + star bias / L3 GND / L4 RF", cx, cy + 87.5, pcbnew.B_SilkS, 1.1, True)
     text("+5V IN", cx - 7.0, cy - 84.0, pcbnew.B_SilkS, 1.2, True)
     text("CRL-BEL CRPA 4CH L-BAND - ANTENNA SIDE", cx, cy + 4.0, pcbnew.F_SilkS, 1.4, False)
     for k, name in enumerate(D.CHANNEL_NAMES):
-        rx, ry = rot_k(-13.5, -13.5, k)
+        rx, ry = rot_k(-5.5, -11.6, k)        # just outside the can, at the SMA
         text(name, cx + rx, cy + ry, pcbnew.B_SilkS, 1.5, True)
         rx, ry = rot_k(-46.0 - 22.0, -46.0 - 36.0, k)
         text(name, cx + rx, cy + ry, pcbnew.F_SilkS, 2.0, False)
@@ -827,11 +1159,18 @@ def write_parts():
     for t in board.GetTracks():
         if t.GetClass() == "PCB_TRACK":
             lens[t.GetNetname()] = lens.get(t.GetNetname(), 0.0) + ToMM(t.GetLength())
-    bias = dict(pads=sum(1 for fp in board.GetFootprints() for p in fp.Pads() if p.GetNetname() == "+5V"),
+    bias = dict(pads=sum(1 for fp in board.GetFootprints() for p in fp.Pads() if p.GetNetname().startswith("+5V")),
                 chokes=sum(1 for fp in board.GetFootprints() if fp.GetValue() == "18nH"),
-                vias=sum(1 for t in board.GetTracks() if t.GetClass() == "PCB_VIA" and t.GetNetname() == "+5V"),
-                plane="In1.Cu")
+                vias=sum(1 for t in board.GetTracks() if t.GetClass() == "PCB_VIA" and t.GetNetname().startswith("+5V")),
+                plane="none: star traces on In1.Cu", trunks_mm={k: round(v, 1) for k, v in TRUNK_PATHS.items()},
+                ferrites=sum(1 for fp in board.GetFootprints() if fp.GetReference().startswith("FB")))
     (PROJ / "Fab" / "_bias.json").write_text(json.dumps(bias))
+    (PROJ / "Fab" / "_shield.json").write_text(json.dumps(
+        {"outline_local_ch1": [[round(x, 3), round(y, 3)] for x, y in SHIELD["verts"]],
+         "outline_board": {c: [[round(x + CX + EX, 3), round(y + CY + EY, 3)] for x, y in v]
+                           for c, v in SHIELD_OUTLINES.items()},
+         "notches_local_ch1": [[round(x, 3), round(y, 3)] for x, y in SHIELD["notches"]],
+         "frame_vias_per_channel": len(SHIELD["vias"]), "frame_w": D.SHIELD_W, "height": D.SHIELD_H}, indent=1))
     (PROJ / "Fab" / "_netlen.json").write_text(json.dumps({k: round(v, 3) for k, v in sorted(lens.items())}, indent=0))
 
 
@@ -866,7 +1205,7 @@ def write_project():
             ],
             "meta": {"version": 4},
             "netclass_patterns": [{"netclass": "RF50", "pattern": "CH*"},
-                                  {"netclass": "PWR", "pattern": "+5V"}, {"netclass": "PWR", "pattern": "VIN*"}],
+                                  {"netclass": "PWR", "pattern": "+5V*"}, {"netclass": "PWR", "pattern": "VIN*"}],
         },
     }
     (KDIR / "CRPA17_4CH_LBAND.kicad_pro").write_text(json.dumps(pro, indent=2))
@@ -876,6 +1215,32 @@ def write_project():
         "(rule \"SAW land pattern\"\n"
         "  (condition \"A.memberOfFootprint('FL*') && B.memberOfFootprint('FL*')\")\n"
         "  (constraint clearance (min 0.10mm)))\n")
+
+
+def star_trunks():
+    """Star point = the +5V via ladder after Q1. One 0.8 mm In1.Cu trunk per channel to FB{n}."""
+    ends = {k: _rot_end(k) for k in range(4)}
+    used = set()
+    for k in sorted(range(4), key=lambda k: -math.dist(ends[k], POWER_VIAS[0])):   # longest first
+        best = min((i for i in range(len(POWER_VIAS)) if i not in used),
+                   key=lambda i: math.dist(POWER_VIAS[i], ends[k]))
+        used.add(best)
+        path = route_inner(POWER_VIAS[best], ends[k], "+5V", D.TRUNK_W)
+        ITEMS.clear()
+        track([toL(*p) for p in path], "+5V", D.TRUNK_W, layer=pcbnew.In1_Cu)
+        TRUNK_PATHS[D.CHANNEL_NAMES[k]] = sum(math.dist(p, q) for p, q in zip(path[:-1], path[1:]))
+    ITEMS.clear()
+
+
+def _rot_end(k):
+    """board coordinates of channel k's trunk via (element-local point rotated by -90k about the array centre)."""
+    bx, by = L(*TRUNK_END[k])
+    dx, dy = bx - CX, by - CY
+    a = math.radians(-90 * k)
+    return (CX + dx * math.cos(a) + dy * math.sin(a), CY - dx * math.sin(a) + dy * math.cos(a))
+
+
+TRUNK_PATHS = {}
 
 
 def main():
@@ -889,6 +1254,7 @@ def main():
         all_rf.extend(RF_TRACKS)
     ITEMS.clear()
     power_block()
+    star_trunks()
     fiducials()
     silk()
     zones()

@@ -21,9 +21,9 @@ rm -rf Fab/Gerbers && mkdir -p Fab/Gerbers Docs Images
 "$KI" pcb export ipcd356 --output Fab/CRPA17_4CH_LBAND.d356 "$PCB" >/dev/null
 "$KI" pcb export pdf --output Docs/CRPA17_layers.pdf --mode-multipage --scale 0 --include-border-title \
   --layers "F.Cu,In1.Cu,In2.Cu,B.Cu,B.Silkscreen,F.Silkscreen" --common-layers "Edge.Cuts" "$PCB" >/dev/null
-# the +5V bias plane (In1.Cu) as an image: shows where the single bias point reaches every LNA
+# In1.Cu as an image: GND plane + the per-channel +5V star traces from the single bias point
 "$KI" pcb export pdf --output Docs/_in1.pdf --scale 0 --layers "In1.Cu,Edge.Cuts" "$PCB" >/dev/null
-pdftoppm -r 90 -png -singlefile Docs/_in1.pdf Images/bias_plane_In1Cu >/dev/null 2>&1 || true
+pdftoppm -r 90 -png -singlefile Docs/_in1.pdf Images/bias_star_In1Cu >/dev/null 2>&1 || true
 rm -f Docs/_in1.pdf
 for side in top bottom; do
   "$KI" pcb render --side $side -w 2000 -h 2000 --quality high --background opaque \
