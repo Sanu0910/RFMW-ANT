@@ -2,7 +2,7 @@
 
 Newest first.
 
-## 2026-11-02 - Rev D: CLM-83-2W+ limiter, 1.5SMC6.8A input TVS
+## 2026-11-02 - Rev D: CLM-83-2W+ limiter, 1.5SMC6.8A input TVS (485c727)
 - Limiter RLM-63-2W+ (TT1224) -> Mini-Circuits CLM-83-2W+ (customer choice; data sheet Input/CLM-83-2W+.pdf).
   New footprint MiniCircuits_DL1721 from the DL1721 table + PL-377: 8 pads 0.46 x 0.76 mm at 0.66 pitch, GND paddle
   1.04 x 1.91 + 0.46 x 3.00 tabs (pad 9). IN 2 / OUT 7 face each other, so the limiter now sits in-line (the 5 mm
