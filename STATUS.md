@@ -49,3 +49,4 @@ Each project folder has its own `STATUS.md` and `CHANGELOG.md`.
 | 14 | MVDR beamforming explainer | Complete |
 | 15 | C-band 6×6 stacked-patch S11 debug | Report rev. 2 (root cause + redesign study, iteration 1 below target); full-array runs in progress |
 | 16 | GNSS L1 + L2/L5 + NavIC S active front end | L- and S-band simulated, reports + internal note (Draft A); AEDT scripted, not yet solved |
+| 17 | CRPA 4-ch L-band active antenna PCB | Rev C (3rd SAW, star bias, shield cans, GPDF6010.A per data sheet) DRC-clean, fab package + report; antenna module drills to confirm before ordering |

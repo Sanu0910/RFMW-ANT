@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "CRPA17")(type "KiCad")(uri "${KIPRJMOD}/CRPA17.pretty")(options "")(descr "Project 17 footprints (Scripts/build_footprints.py)"))
+)

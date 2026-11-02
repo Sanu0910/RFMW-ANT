@@ -16,6 +16,8 @@ yet: PyAEDT could not start a headless AEDT 2026 R1 gRPC session from the automa
 - Rejection / insertion loss / return loss / isolation / output noise / XPD / SFDR / worst case (`extra_rf.py`, report section 7A)
 - Report `Report/GNSS_FrontEnd_Simulation_Report.pdf` + `.docx` (22 pages), assumptions log, error log
 
+- Filter rejection document `Report/Filter_Rejection_Analysis.pdf/.docx` (for sharing, no internal marking)
+
 ## Open items
 - Internal note: fill Doc. No., prepared/checked/approved fields
 - S-band selectivity (Wi-Fi / LTE B41 overload) needs a narrower pre-filter - design decision
