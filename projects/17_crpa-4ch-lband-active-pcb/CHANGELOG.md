@@ -2,7 +2,7 @@
 
 Newest first.
 
-## 2026-11-02 - Rev C: star bias, shield cans, GPDF6010.A footprint from its data sheet
+## 2026-11-02 - Rev C: star bias, shield cans, GPDF6010.A footprint from its data sheet (b33eeda)
 - Bias changed from a full +5V plane to a star: In1.Cu is now GND except 4 separate 0.8 mm trunks from the star
   point after Q1, one per channel, each into its own ferrite FB{n} (BLM18KG601SN1D) + 10 uF, then 0.4 mm
   branches to that channel's 4 LNA chokes. Routed by a grid router in build_pcb.py (avoids every through-hole);
