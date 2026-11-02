@@ -187,6 +187,9 @@ def rf_link(a, b, nname, neck_a=False, neck_b=False, mid=None):
 
 
 FINE = {"TQP3M9037_DFN8_2x2", "B7504_SAW_0.9x0.7", "B8889_SAW_1.1x0.9", "DXP.02.A"}
+LIM_SPAN = 2.21      # CLM-83-2W+ (DL1721) pad 2 -> pad 7 centre distance, in-line
+LIM_EXIT = 1.8       # straight run past the limiter OUT before the chain may turn (clears the GND vias)
+LIM_GND = {q: "GND" for q in ("1", "3", "4", "5", "6", "8", "9")}
 
 
 def is_fine(fp):
@@ -615,10 +618,9 @@ def build_element(k):
     q1 = (p1[0] + 1.6 * d1[0], p1[1] + 1.6 * d1[1])    # leave pin 1 outward, clear of the GND cross
     c.to(*q1)
     LINE1 = 24.0
-    c.to(q1[0], LINE1 - 5.08 - 2.2)                      # limiter OUT then lands on LINE1
-    lim = add_fp(f"LM{n}1", "LIM", ch, pads={"1": s("L1_HYB"), "4": s("L1_LIM"), "2": "GND", "3": "GND",
-                                              "5": "GND", "6": "GND"})
-    lim_place(c, lim, pref_dx=+1)
+    c.to(q1[0], LINE1 - LIM_EXIT - LIM_SPAN - 2.2)       # limiter OUT, then LIM_EXIT on to LINE1
+    lim = add_fp(f"LM{n}1", "LIM", ch, pads={"2": s("L1_HYB"), "7": s("L1_LIM"), **LIM_GND})
+    lim_place(c, lim)
     c.turn(1.0, 0.0)                                     # east along y = LINE1
     lna_stage(c, n, ch, "L1", 1, s)
     saw(c, n, ch, "L1", 1, s)
@@ -630,10 +632,9 @@ def build_element(k):
 
     # ---- L2 chain -----------------------------------------------------------------
     c2 = Chain(h2, "1", s("L2_HYB"), (1.0, 0.0))
-    lim2 = add_fp(f"LM{n}2", "LIM", ch, pads={"1": s("L2_HYB"), "4": s("L2_LIM"), "2": "GND", "3": "GND",
-                                               "5": "GND", "6": "GND"})
+    lim2 = add_fp(f"LM{n}2", "LIM", ch, pads={"2": s("L2_HYB"), "7": s("L2_LIM"), **LIM_GND})
     c2.u = (1.0, 0.0)
-    lim_place(c2, lim2, pref_dy=+1, gap=4.5)
+    lim_place(c2, lim2, gap=4.5)
     c2.turn(0.0, 1.0)                                    # south from the limiter OUT pin
     lna_stage(c2, n, ch, "L2", 1, s)
     saw(c2, n, ch, "L2", 1, s)
@@ -747,29 +748,32 @@ def dxp_gnd(dxp):
         gnd_stub(dxp, num, dx / nn, dy / nn, 1.6 if num == "8" else 1.0)
 
 
-def lim_place(c, lim, pref_dx=0, pref_dy=0, gap=2.2):
-    """RLM-63-2W+: IN (1) and OUT (4) are diagonal; keep the body square to the chain and
-    accept the 5.08 mm lateral jog, toward the preferred side."""
-    ux, uy = c.u
-    best = None
-    for deg in (0, 90, 180, 270):
-        lim.SetOrientationDegrees(deg)
-        a, b = padL(lim, "1"), padL(lim, "4")
-        vx, vy = b[0] - a[0], b[1] - a[1]
-        along = vx * ux + vy * uy
-        lat = vx * pref_dx + vy * pref_dy
-        sc = (along > 4.0) * 100 + (lat > 0) * 10 + along
-        if best is None or sc > best[0]:
-            best = (sc, deg)
-    lim.SetOrientationDegrees(best[1])
-    c.part(lim, "1", "4", gap, c.net.replace("_HYB", "_LIM"), keep=True)
-    for num in ("2", "3", "5", "6"):
+def lim_place(c, lim, gap=2.2):
+    """CLM-83-2W+ (DL1721): IN (2) and OUT (7) face each other, so the limiter sits in-line.
+    GND as PL-377: 3 plugged vias in the paddle, a via off each paddle tab, pins 3-4 and 5-6 tied
+    with one via each, pins 1 and 8 their own via; all vias leave diagonally, away from the RF row.
+    The chain then runs LIM_EXIT straight on, so a following turn clears the GND pins 6/8."""
+    c.part(lim, "2", "7", gap, c.net.replace("_HYB", "_LIM"))
+    a, b = padL(lim, "2"), padL(lim, "7")
+    ux, uy = (b[0] - a[0]) / LIM_SPAN, (b[1] - a[1]) / LIM_SPAN
+    cx, cy = toL(*xy(lim.GetPosition()))
+    for t in (-0.66, 0.0, 0.66):                       # paddle, along the tab axis
+        via(cx - t * uy, cy + t * ux, "GND", D.EPVIA_D, D.EPVIA_DRILL)
+    for num, tied, along in (("1", None, -1), ("4", "3", -1), ("8", None, 1), ("5", "6", 1)):
         px, py = padL(lim, num)
-        cxy = toL(*xy(lim.GetPosition()))
-        dx, dy = px - cxy[0], py - cxy[1]
-        nn = math.hypot(dx, dy)
-        via(px + 1.3 * dx / nn, py + 1.3 * dy / nn, "GND")      # outside the 1.52 x 1.65 pad (no solder wicking)
-        track([(px, py), (px + 1.3 * dx / nn, py + 1.3 * dy / nn)], "GND", 0.6)
+        if tied:
+            track([padL(lim, tied), (px, py)], "GND", D.GND_W)
+        lat = (px - a[0]) * -uy + (py - a[1]) * ux        # side of the RF row
+        sx, sy = -uy * math.copysign(1, lat), ux * math.copysign(1, lat)
+        vx, vy = px + 0.85 * (along * ux + sx), py + 0.85 * (along * uy + sy)
+        track([(px, py), (vx, vy)], "GND", D.GND_W)
+        via(vx, vy, "GND")
+    for sg in (-1, 1):                                  # paddle tabs, outward past the body
+        tx, ty = cx - sg * 1.5 * uy, cy + sg * 1.5 * ux
+        vx, vy = cx - sg * 2.3 * uy, cy + sg * 2.3 * ux
+        track([(tx, ty), (vx, vy)], "GND", D.GND_W)
+        via(vx, vy, "GND")
+    c.to(b[0] + LIM_EXIT * ux, b[1] + LIM_EXIT * uy)
 
 
 def lna_stage(c, n, ch, band, idx, s):
@@ -778,7 +782,7 @@ def lna_stage(c, n, ch, band, idx, s):
     b = "1" if band == "L1" else "2"
     tag = f"{band}_A{idx}"
     cin = add_fp(f"C{n}{b}{idx}1", "C100P", ch, pads={"1": c.net, "2": s(f"{tag}IN")}, show_ref=False)
-    c.part(cin, "1", "2", 2.4 if c.fp.GetValue() == "RLM-63-2W+" else 1.2, s(f"{tag}IN"))
+    c.part(cin, "1", "2", 1.2, s(f"{tag}IN"))
     pend = getattr(c, "_b8889_out", None)
     if pend:   # B8889 output shunt 6.8 nH sits on the next stage's input-cap pad
         ref, (qx, qy) = pend
@@ -929,7 +933,7 @@ def power_block():
     move_pad_to(tv, "1", node[0] - g * 2.8, node[1])
     track([node, padL(tv, "1")], "+5V", D.VIN_W)
     gnd_stub(tv, "2", -g, 0, 1.9)
-    spine = (sx, node[1] + 3.2)
+    spine = (sx, node[1] + 4.6)                # clears the SMC (DO-214AB) TVS body
     track([node, spine], "+5V", D.VIN_W)
     cb = add_fp("C1", "C22U", ch, pads={"1": "+5V", "2": "GND"})
     orient(cb, "1", "2", -g, 0, step=90)

@@ -3,13 +3,13 @@
 Production PCB for the CRL BEL 4-element GNSS CRPA, L-band only (L1 + L2/L5). The antenna geometry is kept
 from the customer board `Gerber_4CH_GNSS.zip` (Ø200 mm round board, 4 stacked L1/L2 patch modules on a 92 mm
 square pitch with sequential 90° rotation, dual 0°/90° feeds per band). The RF chain is the one from
-project 16, with an RLM-63-2W+ limiter added in front of each LNA (Rev A) and a third SAW per band before the
-diplexer (Rev B):
+project 16, with a limiter added in front of each LNA (Rev A; CLM-83-2W+ since Rev D) and a third SAW per band
+before the diplexer (Rev B):
 
 ```
-            L1 0/90 feeds -> HC125A -> RLM-63-2W+ -> TQP3M9037 -> B7504 -> TQP3M9037 -> B7504 -> B7504 ---+
+            L1 0/90 feeds -> HC125A -> CLM-83-2W+ -> TQP3M9037 -> B7504 -> TQP3M9037 -> B7504 -> B7504 ---+
 patch (xN)                                                                                                  +-> DXP.02.A -> SMA  (CHn out)
-            L2 0/90 feeds -> HC125A -> RLM-63-2W+ -> TQP3M9037 -> B8889 -> TQP3M9037 -> B8889 -> B8889 ---+
+            L2 0/90 feeds -> HC125A -> CLM-83-2W+ -> TQP3M9037 -> B8889 -> TQP3M9037 -> B8889 -> B8889 ---+
 x4 channels, each under its own shield can; all 16 LNAs biased from ONE +5 V input (J5),
 star-distributed on In1.Cu: one trunk + ferrite + 10 uF per channel
 ```
@@ -22,8 +22,8 @@ star-distributed on In1.Cu: one trunk + ferrite + 10 uF per channel
 | Shielding | one soldered shield can per channel: octagonal 1.0 mm GND frame land + via fence, RF exit notch; outline `Fab/CRPA17_ShieldCan_outline.csv` |
 | 50 Ω line | 0.38 mm on L4 over L3 (0.21 mm 7628 prepreg), 0.30 mm gap to pour, via fences |
 | Channels | 4 identical (one layout rotated 4×): equal length per net; hybrid feed pairs matched (L1 2.718/2.718 mm, L2 7.082/7.082 mm) |
-| Gain / NF (CH, at RF out) | L1 37.2 dB / 1.06 dB, L5 40.9 dB / 0.82 dB, L2 38.4 dB / 0.86 dB (project 16 chain + limiter + 3rd SAW + routed lines) |
-| Bias | single +5 V input J5 (Micro-Fit 3.0): PTC, reverse-polarity P-FET, TVS; 1.12 A typ / 1.44 A max. **Star** on In1.Cu: 4 separate 0.8 mm trunks from the star point, per channel FB{n} (BLM18KG601) + 10 uF, then 0.4 mm branches to the 4 LNA chokes (`Images/bias_star_In1Cu.png`) |
+| Gain / NF (CH, at RF out) | L1 37.2 dB / 1.09 dB, L5 40.9 dB / 0.86 dB, L2 38.4 dB / 0.89 dB (project 16 chain + limiter + 3rd SAW + routed lines) |
+| Bias | single +5 V input J5 (Micro-Fit 3.0): PTC, reverse-polarity P-FET, 1.5SMC6.8A TVS; 1.12 A typ / 1.44 A max. **Star** on In1.Cu: 4 separate 0.8 mm trunks from the star point, per channel FB{n} (BLM18KG601) + 10 uF, then 0.4 mm branches to the 4 LNA chokes (`Images/bias_star_In1Cu.png`) |
 | Check | kicad-cli DRC (zones refilled): **0 violations, 0 unconnected**; kicad-happy PCB + Gerber analyzers |
 
 ## Substrate choice (0.8 vs 1.6 mm)
@@ -40,7 +40,7 @@ ground. Details in `Docs/CRPA17_PCB_Design_Report.pdf` §2.
 | `Docs/` | `CRPA17_PCB_Design_Report.pdf` (decisions, stack-up, schematic, budget, power, verification, assumptions, BOM), `CRPA17_layers.pdf`, `CRPA17_netlist.csv`, RF budget CSVs |
 | `Images/` | schematics (channel, power; project 16 style), stack-up, 3D renders top/bottom |
 | `Scripts/` | `crpa_design.py` (all parameters), `build_footprints.py`, `build_pcb.py`, `run_drc.sh`, `export_fab.sh`, `make_docs.py`, `plot_debug.py`, `build_all.sh` |
-| `Input/` | customer Gerber + RLM-63-2W+ data sheet, **not in git**: copy `Gerber_4CH_GNSS.zip` and `RLM-63-2W+.pdf` here to rebuild the footprints |
+| `Input/` | customer Gerber + CLM-83-2W+ data sheet, **not in git**: copy `Gerber_4CH_GNSS.zip` and `CLM-83-2W+.pdf` here to rebuild the footprints |
 
 ## Rebuild
 ```bash

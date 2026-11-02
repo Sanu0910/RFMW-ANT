@@ -1,6 +1,6 @@
 Item,Qty,References,Value,MPN,Manufacturer,Footprint,Description,Fit
 1,8,HY11 HY12 HY21 HY22 HY31 HY32 HY41 HY42,HC125A,HC125A,Taoglas,CRPA17:HC125A,90 deg hybrid coupler 1150-1630 MHz,SMT bottom
-2,8,LM11 LM12 LM21 LM22 LM31 LM32 LM41 LM42,RLM-63-2W+,RLM-63-2W+,Mini-Circuits,CRPA17:MiniCircuits_TT1224,"RF limiter 30-6000 MHz, 2 W, +11.5 dBm out",SMT bottom
+2,8,LM11 LM12 LM21 LM22 LM31 LM32 LM41 LM42,CLM-83-2W+,CLM-83-2W+,Mini-Circuits,CRPA17:MiniCircuits_DL1721,"RF limiter 30-8200 MHz, 2 W, +11.5 dBm out, DL1721 3x3 mm hermetic",SMT bottom
 3,16,U111 U112 U121 U122 U211 U212 U221 U222 U311 U312 U321 U322 U411 U412 U421 U422,TQP3M9037,TQP3M9037,Qorvo,CRPA17:TQP3M9037_DFN8_2x2,"LNA 0.4 dB NF, 5 V / 70 mA",SMT bottom
 4,12,FL111 FL112 FL113 FL211 FL212 FL213 FL311 FL312 FL313 FL411 FL412 FL413,B7504,B39162B7504L210,Qualcomm RF360,CRPA17:B7504_SAW_0.9x0.7,"SAW, GNSS L1/B1/G1",SMT bottom
 5,12,FL121 FL122 FL123 FL221 FL222 FL223 FL321 FL322 FL323 FL421 FL422 FL423,B8889,B39122B8889P810,Qualcomm RF360,CRPA17:B8889_SAW_1.1x0.9,"SAW, GNSS L2/L5",SMT bottom
@@ -21,7 +21,7 @@ Item,Qty,References,Value,MPN,Manufacturer,Footprint,Description,Fit
 20,1,R5,10k,ERJ-2RKF1002X,Panasonic,Resistor_SMD:R_0402_1005Metric,P-FET gate,SMT bottom
 21,1,F1,2A hold,MF-MSMF200-2,Bourns,Fuse:Fuse_1812_4532Metric,resettable fuse 1812,SMT bottom
 22,1,Q1,AO3401A,AO3401A,Alpha & Omega,Package_TO_SOT_SMD:SOT-23,"P-MOSFET -30 V -4 A, reverse-polarity protection (1 G, 2 S, 3 D)",SMT bottom
-23,1,D1,SMAJ5.0A,SMAJ5.0A,Littelfuse,Diode_SMD:D_SMA,TVS 5.0 V standoff,SMT bottom
+23,1,D1,1.5SMC6.8A,1.5SMC6.8A,Littelfuse,Diode_SMD:D_SMC,"TVS 1500 W, 5.8 V standoff / 6.8 V breakdown, SMC (DO-214AB)",SMT bottom
 24,4,J1 J2 J3 J4,SMA,132134,Amphenol RF,Connector_Coaxial:SMA_Amphenol_132134_Vertical,"SMA jack, vertical PCB, 50 ohm (fitted on bottom)",Hand solder (THT)
 25,1,J5,+5V IN,43650-0215,Molex,Connector_Molex:Molex_Micro-Fit_3.0_43650-0215_1x02_P3.00mm_Vertical,"Micro-Fit 3.0, 2 pos, single DC bias input",Hand solder (THT)
 26,2,TP1 TP2,TP,-,-,TestPoint:TestPoint_Pad_D1.5mm,test pad,SMT bottom

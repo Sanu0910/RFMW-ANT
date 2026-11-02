@@ -5,10 +5,10 @@ Sources
     land patterns copied from the customer board Input/Gerber_4CH_GNSS.zip
     (KiCad 10 Gerber X2 with pad attributes). The parts sit on the bottom of
     that board, so the observed pads are mirrored back to a top view here.
-  * RLM-63-2W+ (Mini-Circuits case TT1224): from the datasheet land pattern
-    (Input/RLM-63-2W+.pdf, PL-258): pads K x H = 1.52 x 1.65 mm, pitch D = 2.54,
-    outer span J = 7.62. Top view: 1-2-3 on one edge, 6-5-4 opposite,
-    IN = 1, OUT = 4, GND = 2,3,5,6.
+  * CLM-83-2W+ (Mini-Circuits case DL1721, 3x3 mm): from the datasheet land pattern
+    (Input/CLM-83-2W+.pdf, DL1721 table + PL-377): 8 pads 0.46 x 0.76 mm, pitch 0.66,
+    GND paddle 1.04 x 1.91 with 0.46 x 3.00 tabs. IN = 2, OUT = 7 (facing each other),
+    GND = 1,3,4,5,6,8 and paddle 9.
 
 Run with any Python 3 (no KiCad needed). Units mm, KiCad frame (y down).
 """
@@ -214,14 +214,22 @@ def main():
                    dx, (3.2, 3.2))
     report.append(("DXP.02.A", dx, bb))
 
-    # RLM-63-2W+ limiter, TT1224, from the datasheet land pattern (top view)
-    rl = []
-    for pin, (x, y) in {"1": (-2.54, -2.985), "2": (0, -2.985), "3": (2.54, -2.985),
-                        "4": (2.54, 2.985), "5": (0, 2.985), "6": (-2.54, 2.985)}.items():
-        rl.append(dict(pin=pin, x=x, y=y, shape="rect", w=1.52, h=1.65, a=0))
-    bb = write_mod("MiniCircuits_TT1224", "Mini-Circuits case TT1224 (RLM-63-2W+ limiter), PL-258 land pattern: 1 IN, 4 OUT, 2/3/5/6 GND",
-                   rl, (7.87, 6.35))
-    report.append(("TT1224", rl, bb))
+    # CLM-83-2W+ limiter, case DL1721 3x3 mm, land pattern from the data sheet (Input/CLM-83-2W+.pdf:
+    # DL1721 table P 0.46, Q 0.76, K 0.66, L 2.97, R 1.04, S 0.46, N 1.91, M 3.00; PL-377 top view).
+    # PL-377 orientation: two pad columns (left 1-2-3-4 bottom->top, right 5-6-7-8 top->bottom),
+    # pin 1 bottom-left, IN 2 and OUT 7 face each other across the GND paddle (pad 9, cross shape).
+    xc = 2.97 / 2 - 0.76 / 2                                    # 1.105: pad column centre
+    rows = (0.99, 0.33, -0.33, -0.99)                           # KiCad y (down): pin 1 at the bottom
+    cl = []
+    for i, y in enumerate(rows):
+        cl.append(dict(pin=str(1 + i), x=-xc, y=y, shape="rect", w=0.76, h=0.46, a=0))
+        cl.append(dict(pin=str(8 - i), x=xc, y=y, shape="rect", w=0.76, h=0.46, a=0))
+    cl.append(dict(pin="9", x=0, y=0, shape="rect", w=1.04, h=1.91, a=0))    # paddle
+    cl.append(dict(pin="9", x=0, y=0, shape="rect", w=0.46, h=3.00, a=0))    # paddle tabs
+    bb = write_mod("MiniCircuits_DL1721", "Mini-Circuits case DL1721 3x3 mm (CLM-83-2W+ limiter), PL-377 land pattern: "
+                   "2 IN, 7 OUT, 1/3/4/5/6/8 + paddle 9 GND",
+                   cl, (3.0, 3.0), crt_margin=0.2)
+    report.append(("DL1721", cl, bb))
 
     # Antenna module (top side, through-hole pins). Customer F.Cu, element 1, not mirrored.
     an = to_local(inst("Antenna_footprint", fcu), "L1(0)", "L2(90)", mirror=False, origin_pin="1")
