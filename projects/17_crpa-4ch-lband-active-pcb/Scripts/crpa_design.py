@@ -62,7 +62,7 @@ ANT_FEED_ANTIPAD = 0.75 # 2.0 pad + 0.75 = D3.5 copper-free on all layers (DS: D
 SHIELD_W = 1.0          # shield-can frame land on B.Cu (exposed, GND)
 SHIELD_MARGIN = 1.4     # frame centreline outside the outermost channel courtyard
 SHIELD_NOTCH = 2.6      # gap in the frame where the RF output leaves the can
-SHIELD_H = 6.0          # can height (RLM-63-2W+ TT1224 is 4.06 mm max, centre nut ~2.4 mm)
+SHIELD_H = 6.0          # can height (CLM-83-2W+ DL1721 is 1.14 mm max, centre nut ~2.4 mm)
 
 # ----------------------------------------------------------------------------- parts
 LIB = "CRPA17"
@@ -71,8 +71,8 @@ PARTS = {
     "ANT":   (LIB, "GNSS_StackedPatch_L1L2_4feed", "L1/L2 stacked patch", "existing module", "customer",
               "Stacked L1/L2 patch module, 4 probe feeds (supplied, fitted on top)"),
     "HYB":   (LIB, "HC125A", "HC125A", "HC125A", "Taoglas", "90 deg hybrid coupler 1150-1630 MHz"),
-    "LIM":   (LIB, "MiniCircuits_TT1224", "RLM-63-2W+", "RLM-63-2W+", "Mini-Circuits",
-              "RF limiter 30-6000 MHz, 2 W, +11.5 dBm out"),
+    "LIM":   (LIB, "MiniCircuits_DL1721", "CLM-83-2W+", "CLM-83-2W+", "Mini-Circuits",
+              "RF limiter 30-8200 MHz, 2 W, +11.5 dBm out, DL1721 3x3 mm hermetic"),
     "LNA":   (LIB, "TQP3M9037_DFN8_2x2", "TQP3M9037", "TQP3M9037", "Qorvo", "LNA 0.4 dB NF, 5 V / 70 mA"),
     "SAW_L1": (LIB, "B7504_SAW_0.9x0.7", "B7504", "B39162B7504L210", "Qualcomm RF360", "SAW, GNSS L1/B1/G1"),
     "SAW_L2": (LIB, "B8889_SAW_1.1x0.9", "B8889", "B39122B8889P810", "Qualcomm RF360", "SAW, GNSS L2/L5"),
@@ -102,7 +102,8 @@ PARTS = {
     "PTC":   ("Fuse", "Fuse_1812_4532Metric", "2A hold", "MF-MSMF200-2", "Bourns", "resettable fuse 1812"),
     "PFET":  ("Package_TO_SOT_SMD", "SOT-23", "AO3401A", "AO3401A", "Alpha & Omega",
               "P-MOSFET -30 V -4 A, reverse-polarity protection (1 G, 2 S, 3 D)"),
-    "TVS":   ("Diode_SMD", "D_SMA", "SMAJ5.0A", "SMAJ5.0A", "Littelfuse", "TVS 5.0 V standoff"),
+    "TVS":   ("Diode_SMD", "D_SMC", "1.5SMC6.8A", "1.5SMC6.8A", "Littelfuse",
+              "TVS 1500 W, 5.8 V standoff / 6.8 V breakdown, SMC (DO-214AB)"),
     "FID":   ("Fiducial", "Fiducial_1mm_Mask2mm", "FID", "-", "-", "fiducial"),
     "TP":    ("TestPoint", "TestPoint_Pad_D1.5mm", "TP", "-", "-", "test pad"),
 }

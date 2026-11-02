@@ -2,6 +2,19 @@
 
 Newest first.
 
+## 2026-11-02 - Rev D: CLM-83-2W+ limiter, 1.5SMC6.8A input TVS (485c727)
+- Limiter RLM-63-2W+ (TT1224) -> Mini-Circuits CLM-83-2W+ (customer choice; data sheet Input/CLM-83-2W+.pdf).
+  New footprint MiniCircuits_DL1721 from the DL1721 table + PL-377: 8 pads 0.46 x 0.76 mm at 0.66 pitch, GND paddle
+  1.04 x 1.91 + 0.46 x 3.00 tabs (pad 9). IN 2 / OUT 7 face each other, so the limiter now sits in-line (the 5 mm
+  diagonal jog is gone); GND: 3 plugged paddle vias, a via off each tab, pins 3-4 / 5-6 tied + 1 via, pins 1 / 8 own via.
+  The chain runs 1.8 mm straight past OUT before turning (clears the GND vias). MiniCircuits_TT1224 removed.
+- Input TVS SMAJ5.0A -> 1.5SMC6.8A (customer asked for "1.5SMC600A"; a 600 V part would not clamp a 5 V rail, the
+  6.8 V breakdown / 5.8 V standoff version was confirmed). Footprint D_SMA -> D_SMC; C1/C2/+5V star vias moved
+  1.4 mm down to clear the larger body. PTC F1 unchanged.
+- Budget: limiter IL 0.14-0.17 dB (data sheet, was 0.11-0.15), pre-LNA line L1 21.7 mm (was 20.0), L2/L5 15.9 mm
+  (was 15.3): NF L1 1.09 / L5 0.86 / L2 0.89 dB (+0.03 dB), gain -0.04 dB.
+- DRC 0 violations / 0 unconnected; Gerbers, drill, CPL, IPC-D-356, BOM, schematics, report regenerated.
+
 ## 2026-11-02 - Rev C: star bias, shield cans, GPDF6010.A footprint from its data sheet (b33eeda)
 - Bias changed from a full +5V plane to a star: In1.Cu is now GND except 4 separate 0.8 mm trunks from the star
   point after Q1, one per channel, each into its own ferrite FB{n} (BLM18KG601SN1D) + 10 uF, then 0.4 mm
