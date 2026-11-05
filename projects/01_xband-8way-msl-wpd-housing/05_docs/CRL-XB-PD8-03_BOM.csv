@@ -1,7 +1,7 @@
 part number,description,material,qty,note
 CRL-XB-PD8-03-01,"Base, machined (cavity, 9 connector bores, taps)",Aluminium EN AW-6061-T6,1,"Chromate conversion MIL-DTL-5541 Type II Class 3, clear (conductive), all over"
 CRL-XB-PD8-03-02,"Lid with channel cage, engraved (BEL logo, title, P/N, date, ports)",Aluminium EN AW-6061-T6,1,"Chromate conversion MIL-DTL-5541 Type II Class 3, clear (conductive), all over"
-CRL-XB-PD8-03-03,"Cage gasket, die-cut from CRL-XB-PD8-03_GASKET.dxf","Conductive elastomer sheet 0.5 mm, Ag/Al filled silicone (e.g. Parker Chomerics CHO-SEAL 1285), die-cut",1,"0.50 mm sheet, compressed to 0.35"
+CRL-XB-PD8-03-03,"Cage gasket, die-cut from 03_step/dxf_src/gasket.dxf (9 pieces, one set)","Conductive elastomer sheet 0.5 mm, Ag/Al filled silicone (e.g. Parker Chomerics CHO-SEAL 1285), die-cut",1,"0.50 mm sheet, compressed to 0.35; bond to the cage face"
 CRL-XB-PD8-03-PCB,RF board V3 (customer layout + 15 x M2 PTH),"Rogers RO4350B 0.762 mm (30 mil), er 3.48 (design) / 3.66 (process)",1,Wilkinson_8Way_XBand_RO4350B_30mil_FabricationReady_V3.dxf
 23030310,HUBER+SUHNER 23_SMA-50-0-272/133_N (item 23030310),"brass / BeCu, PTFE",9,pin soldered to the 50 ohm launch
 ISO 4762 M2.5 x 5 A2,connector flange screw,stainless A2,36,"0.35 N m, low-strength thread-lock"

@@ -36,7 +36,7 @@ def main(parts):
     for k in ("base", "lid", "gasket"):                       # masses for the report even when not rebuilt now
         if k not in res: res[k] = Hm.measure("%s_%s.step" % (pn, k.upper()))
     for k, r in res.items():
-        print("%-8s %d bodies, %.0f g" % (k, r.get("body_count", 0), r.get("total", {}).get("mass_g", 0)))
+        print("%-8s %d bodies, %.0f mm3" % (k, r.get("body_count", 0), r.get("total", {}).get("volume_mm3", 0)))
     if "report" in parts:
         import report
         report.write(B, holes, H, pcb, res)

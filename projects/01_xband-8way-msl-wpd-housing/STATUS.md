@@ -11,16 +11,14 @@ All 26 mechanical checks pass; the lowest channel resonance is 15.9 GHz (> 1.3 x
 - Housing: base with 9 connector bores and flange taps, 35 x M2.5 lid taps, 15 x M2 PCB taps, 4 x M3 mounting taps,
   dowels, earth point. Lid with cage channels, head pockets, dowel hole and slot, jacking holes, and the engraving.
 - RF sizing: 2D eigenmode solve of the channel network; 2D finite-difference Z0 of the line in its channel (49.2 vs 50.2 ohm open).
-- Drawings (4 A3 sheets), design report, BOM and hole table generated.
+- Drawings (4 A3 sheets), design report, BOM and hole table regenerated from the current code. Mass: base 263 g, lid 342 g.
+- Pushed to the public repo with the customer DXF (user decision, 2026-11-05).
 
 ## Open items
 1. **Rebuild the box / assembly / exploded STEPs.** That run was stopped because the PC was low on memory. Run
    `build_all.py box`, then `assy`, then `exploded`, one at a time; zip any STEP over 20 MB.
-2. **Regenerate the drawings and report** (`build_all.py report drawing`). The files in `04_drawings/` and `05_docs/` predate the
-   wall-view orientation fix and the gasket piece count in the BOM.
-3. Confirm with the customer that the bottom layer is solid ground [ASSUMED].
-4. Recommended: full-wave check (openEMS / HFSS) of one output branch inside its channel before production.
-5. The customer DXF is in `00_input/`. Decide whether it may be pushed to the public GitHub repo.
+2. Confirm with the customer that the bottom layer is solid ground [ASSUMED].
+3. Recommended: full-wave check (openEMS / HFSS) of one output branch inside its channel before production.
 
 ## Next step
-Item 2, then item 1.
+Item 1 (close other programs first), then item 2 with the customer.

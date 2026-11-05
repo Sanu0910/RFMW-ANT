@@ -84,8 +84,8 @@ def write(B, holes, H, pcb, res):
           "| Material / finish | %s / %s |" % (X["material"], X["finish"]),
           "| Engraving (lid top, %.1f deep) | BEL logo %.0f mm wide, \"%s\", \"P/N %s\", \"DATE %s\", port labels IN, 1-8 |" % (X["engrave_depth"], C.TEXT["logo_w"], C.TEXT["title"], pn, C.TEXT["date"]), ""]
     if res:
-        mass = {k: v.get("total", {}).get("mass_g", 0) for k, v in res.items()}
-        L += ["Machined mass (SolidCraft, aluminium): base %.0f g, lid %.0f g." % (mass.get("base", 0), mass.get("lid", 0)), ""]
+        vol = {k: v.get("total", {}).get("volume_mm3", 0) for k, v in res.items()}    # STEP carries no material: mass from volume
+        L += ["Machined mass (SolidCraft volume x Al 2.70 g/cm3): base %.0f g, lid %.0f g." % (vol.get("base", 0) * 2.70e-3, vol.get("lid", 0) * 2.70e-3), ""]
     L += ["## Why the lid has a cage", "",
           "An empty %.1f x %.1f mm cavity has its first box mode (TE110) at **%.2f GHz** and dozens more inside 8-12 GHz, so the" % (H.Lc, H.Wc, f_open),
           "divider would show deep notches and poor isolation. The lid therefore carries a solid block that fills the cavity and",
