@@ -16,3 +16,6 @@ freerouting*.log
 # local Python env and solver output
 .venv/
 **/sim/
+
+# KiCad 10 local history (its own nested git repo)
+**/.history/

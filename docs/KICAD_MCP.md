@@ -7,7 +7,7 @@ server uses as `KICAD_PYTHON`; `/home/user` is bind-mounted at the same path, so
 inside and outside.
 
 Verified: MCP `initialize`, `tools/list` (244 tools), `open_project` and `get_board_info` on
-`projects/07_ais140-2w-gnss-tracker`. Real-time IPC (live KiCad GUI) is not available headless — the server
+`projects/07_ais140-2w-gnss-tracker` (an earlier project, kept on the `proj17-crpa-4ch-lband-pcb` branch). Real-time IPC (live KiCad GUI) is not available headless — the server
 uses the SWIG backend on files.
 
 It is registered for this repository as `kicad` in `.mcp.json` (enabled in `.claude/settings.json`), so it connects in any session started after the install script has run. To register it elsewhere:

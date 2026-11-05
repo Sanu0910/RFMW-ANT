@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Commit and push a finished (or updated) project to GitHub, after the checks in LOCAL_SETUP.md.
 #
-#   bash tools/finish_project.sh projects/15_cband-6x6-dualpol-stacked-patch_match-debug "short summary of the change"
+#   bash tools/finish_project.sh projects/01_short-name "short summary of the change"
 #
 # - refuses to run if STATUS.md / CHANGELOG.md of that project were not touched since the last commit
 # - warns about files over 50 MB (GitHub rejects > 100 MB) and about simulation dumps not ignored

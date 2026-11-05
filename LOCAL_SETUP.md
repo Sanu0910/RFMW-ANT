@@ -139,18 +139,18 @@ Running things by hand:
 
 ```bash
 source .venv/bin/activate                         # project Python scripts
-cd projects/03_1bit-rba-mmwave-1x5_AWPL2026/02_python && python rba_array.py
+cd projects/NN_name/Scripts && python build_all.py
 
 source /opt/openEMS/venv/bin/activate             # openEMS simulations
-cd projects/15_cband-6x6-dualpol-stacked-patch_match-debug/02_openems && python sim_element.py
+cd projects/NN_name/openems && python sim_element.py
 
-kicad projects/13_bathroom-presence-sensor-switch/...   # KiCad GUI
+kicad projects/NN_name/KiCad/...                  # KiCad GUI
 /opt/hertzon-venv/bin/hertzon                     # Hertzon GUI
 ```
 
 ## 7. When a project is finished: push it to GitHub
 
-Tell Claude Code, for example: **"project 15 is done, push it"**. It follows this checklist (also in `CLAUDE.md`), and
+Tell Claude Code, for example: **"project 01 is done, push it"**. It follows this checklist (also in `CLAUDE.md`), and
 you can run the same steps yourself:
 
 1. **Regenerate** outputs with the project's builder scripts (`build_*.py`, `build_report.py`, ...) so DXFs, PDFs and
@@ -165,14 +165,14 @@ you can run the same steps yourself:
    pushes the current branch:
 
    ```bash
-   bash tools/finish_project.sh projects/15_cband-6x6-dualpol-stacked-patch_match-debug "S11 analysis report"
+   bash tools/finish_project.sh projects/01_short-name "S11 analysis report"
    ```
 
    Or by hand:
 
    ```bash
-   git add projects/15_cband-6x6-dualpol-stacked-patch_match-debug README.md STATUS.md
-   git commit -m "proj15: S11 analysis report"
+   git add projects/01_short-name README.md STATUS.md
+   git commit -m "proj01: S11 analysis report"
    git push
    ```
 
