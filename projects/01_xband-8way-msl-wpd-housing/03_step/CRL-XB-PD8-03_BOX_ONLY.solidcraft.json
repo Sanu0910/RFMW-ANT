@@ -1,0 +1,9070 @@
+{
+"commands": [
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0
+}
+},
+{
+"command": "sketch.rectangle.rounded",
+"params": {
+"p0": [
+-54.742002501260565,
+-68.54945263225011
+],
+"p1": [
+54.742002501260565,
+68.54945263225011
+],
+"radius": 2.0
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 13.219999999999999,
+"operation": "new",
+"body_name": "BASE"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 13.219999999999999
+}
+},
+{
+"command": "sketch.rectangle.rounded",
+"params": {
+"p0": [
+-49.742002501260565,
+-63.549452632250116
+],
+"p1": [
+49.742002501260565,
+63.549452632250116
+],
+"radius": 1.0
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 7.831999999999999,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"BASE"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 13.219999999999999
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-49.742002501260565,
+-63.549452632250116
+],
+"diameter": 2.4,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-49.742002501260565,
+63.549452632250116
+],
+"diameter": 2.4,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+49.742002501260565,
+-63.549452632250116
+],
+"diameter": 2.4,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+49.742002501260565,
+63.549452632250116
+],
+"diameter": 2.4,
+"connect": false
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 7.831999999999999,
+"direction": "negative",
+"profiles": "all",
+"operation": "cut",
+"targets": [
+"BASE"
+]
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-54.742002501260565,
+0.0,
+6.85
+],
+"direction": [
+1,
+0,
+0
+],
+"diameter": 4.25,
+"depth": 5.3
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-54.742002501260565,
+-4.32,
+2.5299999999999994
+],
+"direction": [
+1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-54.742002501260565,
+-4.32,
+11.17
+],
+"direction": [
+1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-54.742002501260565,
+4.32,
+2.5299999999999994
+],
+"direction": [
+1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-54.742002501260565,
+4.32,
+11.17
+],
+"direction": [
+1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+54.39,
+6.85
+],
+"direction": [
+-1,
+0,
+0
+],
+"diameter": 4.25,
+"depth": 5.3
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+50.07,
+2.5299999999999994
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+50.07,
+11.17
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+58.71,
+2.5299999999999994
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+58.71,
+11.17
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+38.07,
+6.85
+],
+"direction": [
+-1,
+0,
+0
+],
+"diameter": 4.25,
+"depth": 5.3
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+33.75,
+2.5299999999999994
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+33.75,
+11.17
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+42.39,
+2.5299999999999994
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+42.39,
+11.17
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+23.57,
+6.85
+],
+"direction": [
+-1,
+0,
+0
+],
+"diameter": 4.25,
+"depth": 5.3
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+19.25,
+2.5299999999999994
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+19.25,
+11.17
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+27.89,
+2.5299999999999994
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+27.89,
+11.17
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+7.25,
+6.85
+],
+"direction": [
+-1,
+0,
+0
+],
+"diameter": 4.25,
+"depth": 5.3
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+2.9299999999999997,
+2.5299999999999994
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+2.9299999999999997,
+11.17
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+11.57,
+2.5299999999999994
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+11.57,
+11.17
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+-7.25,
+6.85
+],
+"direction": [
+-1,
+0,
+0
+],
+"diameter": 4.25,
+"depth": 5.3
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+-11.57,
+2.5299999999999994
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+-11.57,
+11.17
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+-2.9299999999999997,
+2.5299999999999994
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+-2.9299999999999997,
+11.17
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+-23.57,
+6.85
+],
+"direction": [
+-1,
+0,
+0
+],
+"diameter": 4.25,
+"depth": 5.3
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+-27.89,
+2.5299999999999994
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+-27.89,
+11.17
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+-19.25,
+2.5299999999999994
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+-19.25,
+11.17
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+-38.07,
+6.85
+],
+"direction": [
+-1,
+0,
+0
+],
+"diameter": 4.25,
+"depth": 5.3
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+-42.39,
+2.5299999999999994
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+-42.39,
+11.17
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+-33.75,
+2.5299999999999994
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+-33.75,
+11.17
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+-54.39,
+6.85
+],
+"direction": [
+-1,
+0,
+0
+],
+"diameter": 4.25,
+"depth": 5.3
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+-58.71,
+2.5299999999999994
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+-58.71,
+11.17
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+-50.07,
+2.5299999999999994
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+54.742002501260565,
+-50.07,
+11.17
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+52.158,
+-66.049,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+46.458,
+-66.049,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+35.658,
+-66.049,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+29.958,
+-66.049,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+19.458,
+-66.049,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+7.458,
+-66.049,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-4.542,
+-66.049,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-16.242,
+-66.049,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-28.242,
+-66.049,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-40.242,
+-66.049,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-52.242,
+-66.049,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+52.242,
+65.951,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+52.242,
+45.751,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+52.242,
+15.251,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+52.242,
+-15.249,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+52.242,
+-45.749,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-52.158,
+66.049,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-46.458,
+66.049,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-35.658,
+66.049,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-29.958,
+66.049,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-19.458,
+66.049,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-7.458,
+66.049,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+4.542,
+66.049,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+16.242,
+66.049,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+28.242,
+66.049,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+40.242,
+66.049,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-52.242,
+-53.451,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-52.242,
+-38.151,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-52.242,
+-22.951,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-52.242,
+-7.651,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-52.242,
+7.649,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-52.242,
+18.049,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-52.242,
+30.049,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-52.242,
+42.049,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-52.242,
+54.049,
+13.219999999999999
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2.5",
+"depth": 4.6
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-45.64,
+7.75,
+5.388
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2",
+"depth": 4.5
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-45.64,
+-7.65,
+5.388
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2",
+"depth": 4.5
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+45.56,
+46.75,
+5.388
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2",
+"depth": 4.5
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+45.56,
+15.95,
+5.388
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2",
+"depth": 4.5
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+45.56,
+-14.85,
+5.388
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2",
+"depth": 4.5
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+45.56,
+-45.65,
+5.388
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2",
+"depth": 4.5
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-46.84,
+-60.65,
+5.388
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2",
+"depth": 4.5
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-46.84,
+60.55,
+5.388
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2",
+"depth": 4.5
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-2.64,
+40.15,
+5.388
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2",
+"depth": 4.5
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-2.84,
+-40.05,
+5.388
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2",
+"depth": 4.5
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+6.96,
+-0.05,
+5.388
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2",
+"depth": 4.5
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+19.36,
+-60.65,
+5.388
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2",
+"depth": 4.5
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-32.24,
+-34.45,
+5.388
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2",
+"depth": 4.5
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-32.04,
+34.55,
+5.388
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2",
+"depth": 4.5
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+19.16,
+60.55,
+5.388
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M2",
+"depth": 4.5
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-22.242,
+-66.049,
+0
+],
+"direction": [
+0,
+0,
+1
+],
+"thread": "M3",
+"depth": 6.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+24.708,
+-66.049,
+0
+],
+"direction": [
+0,
+0,
+1
+],
+"thread": "M3",
+"depth": 6.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-24.708,
+66.049,
+0
+],
+"direction": [
+0,
+0,
+1
+],
+"thread": "M3",
+"depth": 6.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+22.242,
+66.049,
+0
+],
+"direction": [
+0,
+0,
+1
+],
+"thread": "M3",
+"depth": 6.0
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 13.319999999999999
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-40.242,
+66.049
+],
+"diameter": 1.99,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+40.242,
+-66.049
+],
+"diameter": 1.99,
+"connect": false
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 5.1,
+"direction": "negative",
+"profiles": "all",
+"operation": "cut",
+"targets": [
+"BASE"
+]
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-54.742002501260565,
+-30.0,
+2.744
+],
+"direction": [
+1,
+0,
+0
+],
+"thread": "M3",
+"depth": 5.0
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-54.842002501260566,
+0.0,
+0.0
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/base_west_labels.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.4,
+"direction": "negative",
+"profiles": [
+{
+"point": [
+-17.5838,
+6.8615
+]
+},
+{
+"point": [
+-14.6915,
+6.8788
+]
+},
+{
+"point": [
+-11.6156,
+6.85
+]
+},
+{
+"point": [
+-9.5387,
+6.8268
+]
+},
+{
+"point": [
+19.7489,
+2.5505
+]
+},
+{
+"point": [
+22.1574,
+2.7208
+]
+},
+{
+"point": [
+26.1774,
+2.896
+]
+}
+],
+"operation": "cut",
+"targets": [
+"BASE"
+]
+}
+},
+{
+"command": "solid.chamfer",
+"params": {
+"edges": [
+[
+0.0,
+-68.54945263225011,
+0.0
+],
+[
+0.0,
+68.54945263225011,
+0.0
+],
+[
+-54.742002501260565,
+40.0,
+0.0
+],
+[
+54.742002501260565,
+62.0,
+0.0
+]
+],
+"distance": 0.5
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"BASE"
+],
+"color": "#b9c0c7"
+}
+},
+{
+"command": "material.assign",
+"params": {
+"bodies": [
+"BASE"
+],
+"material": "Aluminum"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 8.219999999999999
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-40.242,
+66.049
+],
+"diameter": 2.0
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"operation": "new",
+"body_name": "DOWEL1_D2x8"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"DOWEL1_D2x8"
+],
+"color": "#d0d4d8"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 8.219999999999999
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+40.242,
+-66.049
+],
+"diameter": 2.0
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"operation": "new",
+"body_name": "DOWEL2_D2x8"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"DOWEL2_D2x8"
+],
+"color": "#d0d4d8"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 13.219999999999999
+}
+},
+{
+"command": "sketch.rectangle.rounded",
+"params": {
+"p0": [
+-54.742002501260565,
+-68.54945263225011
+],
+"p1": [
+54.742002501260565,
+68.54945263225011
+],
+"radius": 2.0
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 4.0,
+"operation": "new",
+"body_name": "LID"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 13.219999999999999
+}
+},
+{
+"command": "sketch.rectangle.rounded",
+"params": {
+"p0": [
+-49.64200250126056,
+-63.449452632250114
+],
+"p1": [
+49.64200250126056,
+63.449452632250114
+],
+"radius": 0.9
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 6.6499999999999995,
+"direction": "negative",
+"operation": "join",
+"targets": [
+"LID"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+6.47
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/lid_channels.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 4.75,
+"direction": "positive",
+"profiles": [
+{
+"point": [
+-34.9399,
+-0.1188
+]
+}
+],
+"operation": "cut",
+"targets": [
+"LID"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+6.47
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/lid_screw_pockets.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 2.35,
+"direction": "positive",
+"profiles": [
+{
+"point": [
+-45.64,
+7.7925
+]
+},
+{
+"point": [
+-45.64,
+-7.6075
+]
+},
+{
+"point": [
+45.56,
+46.7925
+]
+},
+{
+"point": [
+45.56,
+15.9925
+]
+},
+{
+"point": [
+45.56,
+-14.8075
+]
+},
+{
+"point": [
+45.56,
+-45.6075
+]
+},
+{
+"point": [
+-46.84,
+-60.6075
+]
+},
+{
+"point": [
+-46.84,
+60.5925
+]
+},
+{
+"point": [
+-2.64,
+40.1925
+]
+},
+{
+"point": [
+-2.84,
+-40.0075
+]
+},
+{
+"point": [
+6.96,
+-0.0075
+]
+},
+{
+"point": [
+19.36,
+-60.6075
+]
+},
+{
+"point": [
+-32.24,
+-34.4075
+]
+},
+{
+"point": [
+-32.04,
+34.5925
+]
+},
+{
+"point": [
+19.16,
+60.5925
+]
+}
+],
+"operation": "cut",
+"targets": [
+"LID"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 17.32
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+52.158,
+-66.049
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+46.458,
+-66.049
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+35.658,
+-66.049
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+29.958,
+-66.049
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+19.458,
+-66.049
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+7.458,
+-66.049
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-4.542,
+-66.049
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-16.242,
+-66.049
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-28.242,
+-66.049
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-40.242,
+-66.049
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-52.242,
+-66.049
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+52.242,
+65.951
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+52.242,
+45.751
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+52.242,
+15.251
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+52.242,
+-15.249
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+52.242,
+-45.749
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-52.158,
+66.049
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-46.458,
+66.049
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-35.658,
+66.049
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-29.958,
+66.049
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-19.458,
+66.049
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-7.458,
+66.049
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+4.542,
+66.049
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+16.242,
+66.049
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+28.242,
+66.049
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+40.242,
+66.049
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-52.242,
+-53.451
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-52.242,
+-38.151
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-52.242,
+-22.951
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-52.242,
+-7.651
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-52.242,
+7.649
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-52.242,
+18.049
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-52.242,
+30.049
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-52.242,
+42.049
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-52.242,
+54.049
+],
+"diameter": 2.9,
+"connect": false
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 4.2,
+"direction": "negative",
+"profiles": "all",
+"operation": "cut",
+"targets": [
+"LID"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+17.32
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/lid_dowels.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 4.3,
+"direction": "negative",
+"profiles": [
+{
+"point": [
+-40.242,
+66.0655
+]
+},
+{
+"point": [
+40.242,
+-66.049
+]
+}
+],
+"operation": "cut",
+"targets": [
+"LID"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 17.32
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0.0,
+66.049
+],
+"diameter": 2.5,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0.0,
+-66.049
+],
+"diameter": 2.5,
+"connect": false
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 4.2,
+"direction": "negative",
+"profiles": "all",
+"operation": "cut",
+"targets": [
+"LID"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+17.32
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/lid_engraving.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.4,
+"direction": "negative",
+"profiles": [
+{
+"point": [
+-16.6749,
+19.3718
+]
+},
+{
+"point": [
+-25.2174,
+13.8558
+]
+},
+{
+"point": [
+-14.791,
+10.2807
+]
+},
+{
+"point": [
+-22.2069,
+8.442
+]
+},
+{
+"point": [
+-6.3781,
+3.4163
+]
+},
+{
+"point": [
+-16.4662,
+3.4368
+]
+},
+{
+"point": [
+-13.3484,
+3.304
+]
+},
+{
+"point": [
+-9.4027,
+3.3755
+]
+},
+{
+"point": [
+-3.081,
+3.4368
+]
+},
+{
+"point": [
+0.6772,
+3.3755
+]
+},
+{
+"point": [
+2.488,
+3.2733
+]
+},
+{
+"point": [
+-20.1972,
+3.3244
+]
+},
+{
+"point": [
+18.264,
+13.0795
+]
+},
+{
+"point": [
+5.8454,
+10.536
+]
+},
+{
+"point": [
+8.0237,
+6.8485
+]
+},
+{
+"point": [
+5.5466,
+3.3959
+]
+},
+{
+"point": [
+11.8071,
+3.4368
+]
+},
+{
+"point": [
+25.7266,
+3.4572
+]
+},
+{
+"point": [
+22.8283,
+3.3551
+]
+},
+{
+"point": [
+7.2729,
+3.2733
+]
+},
+{
+"point": [
+14.6978,
+3.3244
+]
+},
+{
+"point": [
+31.6925,
+3.1508
+]
+},
+{
+"point": [
+16.5956,
+3.2529
+]
+},
+{
+"point": [
+26.7364,
+3.1916
+]
+},
+{
+"point": [
+-34.5239,
+-8.0217
+]
+},
+{
+"point": [
+-32.5877,
+-8.1992
+]
+},
+{
+"point": [
+-30.8898,
+-7.8023
+]
+},
+{
+"point": [
+-27.655,
+-7.6236
+]
+},
+{
+"point": [
+-25.4367,
+-7.858
+]
+},
+{
+"point": [
+-21.9102,
+-7.7042
+]
+},
+{
+"point": [
+-19.4079,
+-7.8998
+]
+},
+{
+"point": [
+-17.6761,
+-8.1992
+]
+},
+{
+"point": [
+-16.5858,
+-7.7577
+]
+},
+{
+"point": [
+-12.131,
+-7.6236
+]
+},
+{
+"point": [
+-10.3429,
+-7.8043
+]
+},
+{
+"point": [
+-7.6532,
+-7.6994
+]
+},
+{
+"point": [
+-3.7371,
+-7.8495
+]
+},
+{
+"point": [
+-2.0975,
+-7.6265
+]
+},
+{
+"point": [
+1.762,
+-7.8127
+]
+},
+{
+"point": [
+5.4451,
+-7.8385
+]
+},
+{
+"point": [
+6.4354,
+-7.7577
+]
+},
+{
+"point": [
+10.5322,
+-7.7718
+]
+},
+{
+"point": [
+12.9948,
+-7.8275
+]
+},
+{
+"point": [
+17.6565,
+-7.7042
+]
+},
+{
+"point": [
+18.6401,
+-7.8376
+]
+},
+{
+"point": [
+19.7711,
+-7.4955
+]
+},
+{
+"point": [
+22.1141,
+-7.8376
+]
+},
+{
+"point": [
+24.8073,
+-7.7042
+]
+},
+{
+"point": [
+26.4676,
+-7.7718
+]
+},
+{
+"point": [
+28.9302,
+-7.8275
+]
+},
+{
+"point": [
+32.0297,
+-7.4955
+]
+},
+{
+"point": [
+35.0833,
+-7.8733
+]
+},
+{
+"point": [
+-31.5909,
+-13.9224
+]
+},
+{
+"point": [
+-29.4386,
+-13.9535
+]
+},
+{
+"point": [
+-27.2171,
+-13.9524
+]
+},
+{
+"point": [
+-23.8899,
+-14.1194
+]
+},
+{
+"point": [
+-19.6687,
+-13.8963
+]
+},
+{
+"point": [
+-17.351,
+-13.7645
+]
+},
+{
+"point": [
+-14.6588,
+-14.3953
+]
+},
+{
+"point": [
+-12.4093,
+-14.0415
+]
+},
+{
+"point": [
+-9.6348,
+-13.9081
+]
+},
+{
+"point": [
+-7.2061,
+-14.3953
+]
+},
+{
+"point": [
+-5.0116,
+-13.9224
+]
+},
+{
+"point": [
+-0.7191,
+-14.1003
+]
+},
+{
+"point": [
+0.978,
+-13.9659
+]
+},
+{
+"point": [
+2.9793,
+-14.3953
+]
+},
+{
+"point": [
+5.781,
+-13.7618
+]
+},
+{
+"point": [
+7.6843,
+-13.9579
+]
+},
+{
+"point": [
+14.8929,
+-13.9659
+]
+},
+{
+"point": [
+16.8941,
+-14.3953
+]
+},
+{
+"point": [
+19.1064,
+-14.5385
+]
+},
+{
+"point": [
+21.8569,
+-13.8919
+]
+},
+{
+"point": [
+26.3719,
+-13.9556
+]
+},
+{
+"point": [
+28.9422,
+-13.8564
+]
+},
+{
+"point": [
+31.7346,
+-14.2598
+]
+},
+{
+"point": [
+-31.8955,
+-19.9003
+]
+},
+{
+"point": [
+-29.3765,
+-19.5963
+]
+},
+{
+"point": [
+-27.4075,
+-19.9421
+]
+},
+{
+"point": [
+-24.5972,
+-19.6986
+]
+},
+{
+"point": [
+-19.7652,
+-19.5618
+]
+},
+{
+"point": [
+-17.3742,
+-19.8069
+]
+},
+{
+"point": [
+-16.1062,
+-20.1953
+]
+},
+{
+"point": [
+-13.8939,
+-20.3385
+]
+},
+{
+"point": [
+-11.7396,
+-20.3385
+]
+},
+{
+"point": [
+-9.9772,
+-20.1953
+]
+},
+{
+"point": [
+-7.5005,
+-19.6919
+]
+},
+{
+"point": [
+-4.6894,
+-19.5618
+]
+},
+{
+"point": [
+-2.5283,
+-19.6919
+]
+},
+{
+"point": [
+-1.2431,
+-19.7594
+]
+},
+{
+"point": [
+7.2767,
+-19.7254
+]
+},
+{
+"point": [
+9.282,
+-19.7535
+]
+},
+{
+"point": [
+11.5035,
+-19.7524
+]
+},
+{
+"point": [
+15.5484,
+-22.1002
+]
+},
+{
+"point": [
+18.0935,
+-22.1002
+]
+},
+{
+"point": [
+20.5796,
+-22.1002
+]
+},
+{
+"point": [
+23.0657,
+-22.1002
+]
+},
+{
+"point": [
+25.5518,
+-22.1002
+]
+},
+{
+"point": [
+28.0379,
+-22.1002
+]
+},
+{
+"point": [
+30.524,
+-22.1002
+]
+},
+{
+"point": [
+33.0691,
+-22.1002
+]
+},
+{
+"point": [
+-46.9391,
+-0.0
+]
+},
+{
+"point": [
+-44.8622,
+-0.0232
+]
+},
+{
+"point": [
+46.9545,
+53.7557
+]
+},
+{
+"point": [
+46.6449,
+38.0726
+]
+},
+{
+"point": [
+46.4912,
+23.5293
+]
+},
+{
+"point": [
+46.5911,
+7.3718
+]
+},
+{
+"point": [
+46.8087,
+-7.2971
+]
+},
+{
+"point": [
+45.6716,
+-23.5952
+]
+},
+{
+"point": [
+46.3672,
+-37.9471
+]
+},
+{
+"point": [
+46.2558,
+-54.4609
+]
+}
+],
+"operation": "cut",
+"targets": [
+"LID"
+]
+}
+},
+{
+"command": "solid.chamfer",
+"params": {
+"edges": [
+[
+0.0,
+-68.54945263225011,
+17.22
+],
+[
+0.0,
+68.54945263225011,
+17.22
+],
+[
+-54.742002501260565,
+40.0,
+17.22
+],
+[
+54.742002501260565,
+62.0,
+17.22
+]
+],
+"distance": 0.6
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"LID"
+],
+"color": "#a7b0b9"
+}
+},
+{
+"command": "material.assign",
+"params": {
+"bodies": [
+"LID"
+],
+"material": "Aluminum"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+52.158,
+-66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL1_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+52.158,
+-66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL1_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+52.158,
+-66.049,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL1_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL1_M2.5",
+"tools": [
+"SL1_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL1_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+46.458,
+-66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL2_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+46.458,
+-66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL2_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+46.458,
+-66.049,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL2_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL2_M2.5",
+"tools": [
+"SL2_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL2_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+35.658,
+-66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL3_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+35.658,
+-66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL3_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+35.658,
+-66.049,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL3_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL3_M2.5",
+"tools": [
+"SL3_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL3_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+29.958,
+-66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL4_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+29.958,
+-66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL4_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+29.958,
+-66.049,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL4_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL4_M2.5",
+"tools": [
+"SL4_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL4_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+19.458,
+-66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL5_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+19.458,
+-66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL5_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+19.458,
+-66.049,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL5_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL5_M2.5",
+"tools": [
+"SL5_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL5_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+7.458,
+-66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL6_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+7.458,
+-66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL6_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+7.458,
+-66.049,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL6_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL6_M2.5",
+"tools": [
+"SL6_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL6_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-4.542,
+-66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL7_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-4.542,
+-66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL7_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-4.542,
+-66.049,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL7_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL7_M2.5",
+"tools": [
+"SL7_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL7_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-16.242,
+-66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL8_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-16.242,
+-66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL8_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-16.242,
+-66.049,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL8_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL8_M2.5",
+"tools": [
+"SL8_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL8_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-28.242,
+-66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL9_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-28.242,
+-66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL9_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-28.242,
+-66.049,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL9_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL9_M2.5",
+"tools": [
+"SL9_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL9_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-40.242,
+-66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL10_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-40.242,
+-66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL10_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-40.242,
+-66.049,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL10_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL10_M2.5",
+"tools": [
+"SL10_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL10_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+-66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL11_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+-66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL11_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+-66.049,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL11_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL11_M2.5",
+"tools": [
+"SL11_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL11_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+52.242,
+65.951,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL12_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+52.242,
+65.951,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL12_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+52.242,
+65.951,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL12_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL12_M2.5",
+"tools": [
+"SL12_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL12_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+52.242,
+45.751,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL13_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+52.242,
+45.751,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL13_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+52.242,
+45.751,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL13_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL13_M2.5",
+"tools": [
+"SL13_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL13_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+52.242,
+15.251,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL14_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+52.242,
+15.251,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL14_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+52.242,
+15.251,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL14_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL14_M2.5",
+"tools": [
+"SL14_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL14_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+52.242,
+-15.249,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL15_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+52.242,
+-15.249,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL15_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+52.242,
+-15.249,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL15_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL15_M2.5",
+"tools": [
+"SL15_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL15_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+52.242,
+-45.749,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL16_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+52.242,
+-45.749,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL16_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+52.242,
+-45.749,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL16_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL16_M2.5",
+"tools": [
+"SL16_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL16_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.158,
+66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL17_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.158,
+66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL17_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.158,
+66.049,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL17_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL17_M2.5",
+"tools": [
+"SL17_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL17_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-46.458,
+66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL18_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-46.458,
+66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL18_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-46.458,
+66.049,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL18_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL18_M2.5",
+"tools": [
+"SL18_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL18_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-35.658,
+66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL19_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-35.658,
+66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL19_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-35.658,
+66.049,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL19_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL19_M2.5",
+"tools": [
+"SL19_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL19_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-29.958,
+66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL20_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-29.958,
+66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL20_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-29.958,
+66.049,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL20_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL20_M2.5",
+"tools": [
+"SL20_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL20_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-19.458,
+66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL21_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-19.458,
+66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL21_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-19.458,
+66.049,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL21_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL21_M2.5",
+"tools": [
+"SL21_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL21_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-7.458,
+66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL22_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-7.458,
+66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL22_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-7.458,
+66.049,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL22_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL22_M2.5",
+"tools": [
+"SL22_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL22_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+4.542,
+66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL23_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+4.542,
+66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL23_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+4.542,
+66.049,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL23_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL23_M2.5",
+"tools": [
+"SL23_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL23_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+16.242,
+66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL24_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+16.242,
+66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL24_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+16.242,
+66.049,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL24_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL24_M2.5",
+"tools": [
+"SL24_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL24_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+28.242,
+66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL25_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+28.242,
+66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL25_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+28.242,
+66.049,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL25_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL25_M2.5",
+"tools": [
+"SL25_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL25_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+40.242,
+66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL26_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+40.242,
+66.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL26_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+40.242,
+66.049,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL26_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL26_M2.5",
+"tools": [
+"SL26_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL26_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+-53.451,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL27_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+-53.451,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL27_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+-53.451,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL27_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL27_M2.5",
+"tools": [
+"SL27_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL27_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+-38.151,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL28_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+-38.151,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL28_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+-38.151,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL28_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL28_M2.5",
+"tools": [
+"SL28_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL28_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+-22.951,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL29_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+-22.951,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL29_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+-22.951,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL29_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL29_M2.5",
+"tools": [
+"SL29_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL29_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+-7.651,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL30_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+-7.651,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL30_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+-7.651,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL30_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL30_M2.5",
+"tools": [
+"SL30_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL30_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+7.649,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL31_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+7.649,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL31_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+7.649,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL31_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL31_M2.5",
+"tools": [
+"SL31_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL31_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+18.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL32_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+18.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL32_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+18.049,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL32_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL32_M2.5",
+"tools": [
+"SL32_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL32_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+30.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL33_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+30.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL33_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+30.049,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL33_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL33_M2.5",
+"tools": [
+"SL33_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL33_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+42.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL34_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+42.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL34_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+42.049,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL34_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL34_M2.5",
+"tools": [
+"SL34_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL34_M2.5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+54.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.7
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.3,
+"operation": "new",
+"body_name": "SL35_M2.5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+54.049,
+17.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SL35_M2.5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-52.242,
+54.049,
+18.52
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 0.8660254037844387,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7150000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SL35_M2.5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SL35_M2.5",
+"tools": [
+"SL35_M2.5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SL35_M2.5"
+],
+"color": "#3a3d42"
+}
+}
+]
+}

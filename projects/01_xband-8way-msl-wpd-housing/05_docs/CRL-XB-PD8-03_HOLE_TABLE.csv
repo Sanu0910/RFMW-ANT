@@ -1,0 +1,157 @@
+part,face,feature,X from SW corner (mm),Y from SW corner (mm),Z from base bottom (mm)
+BASE,top (wall),M2.5 tap 4.6 deep,106.900,2.500,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,101.200,2.500,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,90.400,2.500,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,84.700,2.500,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,74.200,2.500,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,62.200,2.500,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,50.200,2.500,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,38.500,2.500,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,26.500,2.500,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,14.500,2.500,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,2.500,2.500,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,106.984,134.500,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,106.984,114.300,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,106.984,83.800,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,106.984,53.300,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,106.984,22.800,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,2.584,134.598,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,8.284,134.598,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,19.084,134.598,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,24.784,134.598,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,35.284,134.598,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,47.284,134.598,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,59.284,134.598,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,70.984,134.598,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,82.984,134.598,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,94.984,134.598,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,2.500,15.098,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,2.500,30.398,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,2.500,45.598,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,2.500,60.898,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,2.500,76.198,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,2.500,86.598,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,2.500,98.598,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,2.500,110.598,13.220
+BASE,top (wall),M2.5 tap 4.6 deep,2.500,122.598,13.220
+BASE,top (floor),M2 tap 4.5 deep,9.102,76.299,5.388
+BASE,top (floor),M2 tap 4.5 deep,9.102,60.899,5.388
+BASE,top (floor),M2 tap 4.5 deep,100.302,115.299,5.388
+BASE,top (floor),M2 tap 4.5 deep,100.302,84.499,5.388
+BASE,top (floor),M2 tap 4.5 deep,100.302,53.699,5.388
+BASE,top (floor),M2 tap 4.5 deep,100.302,22.899,5.388
+BASE,top (floor),M2 tap 4.5 deep,7.902,7.899,5.388
+BASE,top (floor),M2 tap 4.5 deep,7.902,129.099,5.388
+BASE,top (floor),M2 tap 4.5 deep,52.102,108.699,5.388
+BASE,top (floor),M2 tap 4.5 deep,51.902,28.499,5.388
+BASE,top (floor),M2 tap 4.5 deep,61.702,68.499,5.388
+BASE,top (floor),M2 tap 4.5 deep,74.102,7.899,5.388
+BASE,top (floor),M2 tap 4.5 deep,22.502,34.099,5.388
+BASE,top (floor),M2 tap 4.5 deep,22.702,103.099,5.388
+BASE,top (floor),M2 tap 4.5 deep,73.902,129.099,5.388
+BASE,bottom,M3 tap 6.0 deep,32.500,2.500,0.000
+BASE,bottom,M3 tap 6.0 deep,79.450,2.500,0.000
+BASE,bottom,M3 tap 6.0 deep,30.034,134.598,0.000
+BASE,bottom,M3 tap 6.0 deep,76.984,134.598,0.000
+BASE,top (wall),"d2 press fit for 2 m6 dowel, 5.0 deep",14.500,134.598,13.220
+BASE,top (wall),"d2 press fit for 2 m6 dowel, 5.0 deep",94.984,2.500,13.220
+BASE,W wall,"d4.25 bore through (spigot), port IN",0.000,68.549,6.850
+BASE,W wall,M2.5 tap 4.0 deep (flange IN),0.000,64.229,2.530
+BASE,W wall,M2.5 tap 4.0 deep (flange IN),0.000,64.229,11.170
+BASE,W wall,M2.5 tap 4.0 deep (flange IN),0.000,72.869,2.530
+BASE,W wall,M2.5 tap 4.0 deep (flange IN),0.000,72.869,11.170
+BASE,E wall,"d4.25 bore through (spigot), port 1",109.484,122.939,6.850
+BASE,E wall,M2.5 tap 4.0 deep (flange 1),109.484,118.619,2.530
+BASE,E wall,M2.5 tap 4.0 deep (flange 1),109.484,118.619,11.170
+BASE,E wall,M2.5 tap 4.0 deep (flange 1),109.484,127.259,2.530
+BASE,E wall,M2.5 tap 4.0 deep (flange 1),109.484,127.259,11.170
+BASE,E wall,"d4.25 bore through (spigot), port 2",109.484,106.619,6.850
+BASE,E wall,M2.5 tap 4.0 deep (flange 2),109.484,102.299,2.530
+BASE,E wall,M2.5 tap 4.0 deep (flange 2),109.484,102.299,11.170
+BASE,E wall,M2.5 tap 4.0 deep (flange 2),109.484,110.939,2.530
+BASE,E wall,M2.5 tap 4.0 deep (flange 2),109.484,110.939,11.170
+BASE,E wall,"d4.25 bore through (spigot), port 3",109.484,92.119,6.850
+BASE,E wall,M2.5 tap 4.0 deep (flange 3),109.484,87.799,2.530
+BASE,E wall,M2.5 tap 4.0 deep (flange 3),109.484,87.799,11.170
+BASE,E wall,M2.5 tap 4.0 deep (flange 3),109.484,96.439,2.530
+BASE,E wall,M2.5 tap 4.0 deep (flange 3),109.484,96.439,11.170
+BASE,E wall,"d4.25 bore through (spigot), port 4",109.484,75.799,6.850
+BASE,E wall,M2.5 tap 4.0 deep (flange 4),109.484,71.479,2.530
+BASE,E wall,M2.5 tap 4.0 deep (flange 4),109.484,71.479,11.170
+BASE,E wall,M2.5 tap 4.0 deep (flange 4),109.484,80.119,2.530
+BASE,E wall,M2.5 tap 4.0 deep (flange 4),109.484,80.119,11.170
+BASE,E wall,"d4.25 bore through (spigot), port 5",109.484,61.299,6.850
+BASE,E wall,M2.5 tap 4.0 deep (flange 5),109.484,56.979,2.530
+BASE,E wall,M2.5 tap 4.0 deep (flange 5),109.484,56.979,11.170
+BASE,E wall,M2.5 tap 4.0 deep (flange 5),109.484,65.619,2.530
+BASE,E wall,M2.5 tap 4.0 deep (flange 5),109.484,65.619,11.170
+BASE,E wall,"d4.25 bore through (spigot), port 6",109.484,44.979,6.850
+BASE,E wall,M2.5 tap 4.0 deep (flange 6),109.484,40.659,2.530
+BASE,E wall,M2.5 tap 4.0 deep (flange 6),109.484,40.659,11.170
+BASE,E wall,M2.5 tap 4.0 deep (flange 6),109.484,49.299,2.530
+BASE,E wall,M2.5 tap 4.0 deep (flange 6),109.484,49.299,11.170
+BASE,E wall,"d4.25 bore through (spigot), port 7",109.484,30.479,6.850
+BASE,E wall,M2.5 tap 4.0 deep (flange 7),109.484,26.159,2.530
+BASE,E wall,M2.5 tap 4.0 deep (flange 7),109.484,26.159,11.170
+BASE,E wall,M2.5 tap 4.0 deep (flange 7),109.484,34.799,2.530
+BASE,E wall,M2.5 tap 4.0 deep (flange 7),109.484,34.799,11.170
+BASE,E wall,"d4.25 bore through (spigot), port 8",109.484,14.159,6.850
+BASE,E wall,M2.5 tap 4.0 deep (flange 8),109.484,9.839,2.530
+BASE,E wall,M2.5 tap 4.0 deep (flange 8),109.484,9.839,11.170
+BASE,E wall,M2.5 tap 4.0 deep (flange 8),109.484,18.479,2.530
+BASE,E wall,M2.5 tap 4.0 deep (flange 8),109.484,18.479,11.170
+BASE,W wall,M3 tap 5.0 deep (earth point),0.000,38.549,2.744
+LID,through,d2.9 clearance,106.900,2.500,17.220
+LID,through,d2.9 clearance,101.200,2.500,17.220
+LID,through,d2.9 clearance,90.400,2.500,17.220
+LID,through,d2.9 clearance,84.700,2.500,17.220
+LID,through,d2.9 clearance,74.200,2.500,17.220
+LID,through,d2.9 clearance,62.200,2.500,17.220
+LID,through,d2.9 clearance,50.200,2.500,17.220
+LID,through,d2.9 clearance,38.500,2.500,17.220
+LID,through,d2.9 clearance,26.500,2.500,17.220
+LID,through,d2.9 clearance,14.500,2.500,17.220
+LID,through,d2.9 clearance,2.500,2.500,17.220
+LID,through,d2.9 clearance,106.984,134.500,17.220
+LID,through,d2.9 clearance,106.984,114.300,17.220
+LID,through,d2.9 clearance,106.984,83.800,17.220
+LID,through,d2.9 clearance,106.984,53.300,17.220
+LID,through,d2.9 clearance,106.984,22.800,17.220
+LID,through,d2.9 clearance,2.584,134.598,17.220
+LID,through,d2.9 clearance,8.284,134.598,17.220
+LID,through,d2.9 clearance,19.084,134.598,17.220
+LID,through,d2.9 clearance,24.784,134.598,17.220
+LID,through,d2.9 clearance,35.284,134.598,17.220
+LID,through,d2.9 clearance,47.284,134.598,17.220
+LID,through,d2.9 clearance,59.284,134.598,17.220
+LID,through,d2.9 clearance,70.984,134.598,17.220
+LID,through,d2.9 clearance,82.984,134.598,17.220
+LID,through,d2.9 clearance,94.984,134.598,17.220
+LID,through,d2.9 clearance,2.500,15.098,17.220
+LID,through,d2.9 clearance,2.500,30.398,17.220
+LID,through,d2.9 clearance,2.500,45.598,17.220
+LID,through,d2.9 clearance,2.500,60.898,17.220
+LID,through,d2.9 clearance,2.500,76.198,17.220
+LID,through,d2.9 clearance,2.500,86.598,17.220
+LID,through,d2.9 clearance,2.500,98.598,17.220
+LID,through,d2.9 clearance,2.500,110.598,17.220
+LID,through,d2.9 clearance,2.500,122.598,17.220
+LID,through,d2 H7 (dowel),14.500,134.598,17.220
+LID,through,"d2 H7 x 3 slot, along the dowel line",94.984,2.500,17.220
+LID,through,M3 tap (jacking screw),54.742,134.598,17.220
+LID,through,M3 tap (jacking screw),54.742,2.500,17.220
+LID,cage face,"d5.2 pocket, 2.25 deep from the cage face",9.102,76.299,6.570
+LID,cage face,"d5.2 pocket, 2.25 deep from the cage face",9.102,60.899,6.570
+LID,cage face,"d5.2 pocket, 2.25 deep from the cage face",100.302,115.299,6.570
+LID,cage face,"d5.2 pocket, 2.25 deep from the cage face",100.302,84.499,6.570
+LID,cage face,"d5.2 pocket, 2.25 deep from the cage face",100.302,53.699,6.570
+LID,cage face,"d5.2 pocket, 2.25 deep from the cage face",100.302,22.899,6.570
+LID,cage face,"d5.2 pocket, 2.25 deep from the cage face",7.902,7.899,6.570
+LID,cage face,"d5.2 pocket, 2.25 deep from the cage face",7.902,129.099,6.570
+LID,cage face,"d5.2 pocket, 2.25 deep from the cage face",52.102,108.699,6.570
+LID,cage face,"d5.2 pocket, 2.25 deep from the cage face",51.902,28.499,6.570
+LID,cage face,"d5.2 pocket, 2.25 deep from the cage face",61.702,68.499,6.570
+LID,cage face,"d5.2 pocket, 2.25 deep from the cage face",74.102,7.899,6.570
+LID,cage face,"d5.2 pocket, 2.25 deep from the cage face",22.502,34.099,6.570
+LID,cage face,"d5.2 pocket, 2.25 deep from the cage face",22.702,103.099,6.570
+LID,cage face,"d5.2 pocket, 2.25 deep from the cage face",73.902,129.099,6.570

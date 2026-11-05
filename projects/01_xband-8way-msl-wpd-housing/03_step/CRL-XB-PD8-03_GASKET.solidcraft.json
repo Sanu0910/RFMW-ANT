@@ -1,0 +1,109 @@
+{
+"commands": [
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+6.22
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/gasket.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.35,
+"profiles": [
+{
+"point": [
+-42.1348,
+-33.4215
+]
+},
+{
+"point": [
+-41.9995,
+33.3711
+]
+},
+{
+"point": [
+38.2462,
+46.2364
+]
+},
+{
+"point": [
+28.4064,
+30.93
+]
+},
+{
+"point": [
+38.2523,
+15.4264
+]
+},
+{
+"point": [
+29.6004,
+0.0175
+]
+},
+{
+"point": [
+38.2584,
+-15.3836
+]
+},
+{
+"point": [
+28.4064,
+-30.71
+]
+},
+{
+"point": [
+38.2645,
+-46.1936
+]
+}
+],
+"operation": "new",
+"body_name": "GASKET"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"GASKET"
+],
+"color": "#4a4f55"
+}
+}
+]
+}

@@ -1,0 +1,131 @@
+"""Design report (markdown), BOM (CSV) and hole tables (CSV) -> ../05_docs."""
+import os, csv, math
+import config as C
+import geom as G
+import housing as Hm
+import z0_2d
+
+DOCS = os.path.join(C.ROOT, "05_docs")
+
+
+def datum(H, x, y):
+    """Drawing datum: outside south-west corner of the base, bottom face."""
+    return x + H.Lo / 2, y + H.Wo / 2
+
+
+def hole_tables(H):
+    X, K = C.BOX, C.CONN
+    rows = []
+    for x, y in H.lid_screws: rows.append(("BASE", "top (wall)", "M2.5 tap %.1f deep" % X["lid_tap_depth"], *datum(H, x, y), H.z_wall))
+    for x, y, w in H.holes: rows.append(("BASE", "top (floor)", "M2 tap %.1f deep" % X["pcb_tap_depth"], *datum(H, x, y), H.floor))
+    for x, y in H.mount: rows.append(("BASE", "bottom", "M3 tap %.1f deep" % X["mount_tap_depth"], *datum(H, x, y), 0.0))
+    for x, y in H.dowels: rows.append(("BASE", "top (wall)", "d2 press fit for 2 m6 dowel, %.1f deep" % X["dowel_depth"], *datum(H, x, y), H.z_wall))
+    for p in H.ports:
+        rows.append(("BASE", "%s wall" % p["wall"], "d%.2f bore through (spigot), port %s" % (K["bore_d"], p["label"]), *datum(H, p["face"][0], p["y"]), H.pin_z))
+        for hx, hy, hz in p["holes"]:
+            rows.append(("BASE", "%s wall" % p["wall"], "M2.5 tap %.1f deep (flange %s)" % (K["screw_tap_depth"], p["label"]), *datum(H, hx, hy), hz))
+    ex, ey, ez = H.earth
+    rows.append(("BASE", "W wall", "M3 tap %.1f deep (earth point)" % X["earth_depth"], *datum(H, ex, ey), ez))
+    for x, y in H.lid_screws: rows.append(("LID", "through", "d%.1f clearance" % X["lid_clear_d"], *datum(H, x, y), H.z_top))
+    rows.append(("LID", "through", "d2 H7 (dowel)", *datum(H, *H.dowels[0]), H.z_top))
+    rows.append(("LID", "through", "d2 H7 x 3 slot, along the dowel line", *datum(H, *H.dowels[1]), H.z_top))
+    for x, y in H.jacks: rows.append(("LID", "through", "M3 tap (jacking screw)", *datum(H, x, y), H.z_top))
+    for x, y, w in H.holes: rows.append(("LID", "cage face", "d%.1f pocket, %.2f deep from the cage face" % (C.CAGE["screw_pocket_d"], C.CAGE["screw_pocket_h"] - C.CAGE["gap"]), *datum(H, x, y), H.z_face))
+    return rows
+
+
+def bom(H, B):
+    X, K, Q = C.BOX, C.CONN, C.CAGE; pn = C.TEXT["pn"]
+    return [
+        [pn + "-01", "Base, machined (cavity, 9 connector bores, taps)", X["material"], 1, X["finish"]],
+        [pn + "-02", "Lid with channel cage, engraved (BEL logo, title, P/N, date, ports)", X["material"], 1, X["finish"]],
+        [pn + "-03", "Cage gasket, die-cut from 03_step/dxf_src/gasket.dxf (%d pieces, one set)" % len(Hm.gasket_regions(H)), Q["gasket"], 1,
+         "0.50 mm sheet, compressed to %.2f; bond to the cage face" % Q["gap"]],
+        [pn + "-PCB", "RF board V3 (customer layout + %d x M2 PTH)" % len(H.holes), C.BOARD["substrate"], 1, "Wilkinson_8Way_XBand_RO4350B_30mil_FabricationReady_V3.dxf"],
+        ["23030310", K["part"], "brass / BeCu, PTFE", len(H.ports), "pin soldered to the 50 ohm launch"],
+        ["ISO 4762 M2.5 x 5 A2", "connector flange screw", "stainless A2", 4 * len(H.ports), "0.35 N m, low-strength thread-lock"],
+        ["ISO 4762 M2 x 5 A2", "PCB hold-down / ground", "stainless A2", len(H.holes), "0.20 N m"],
+        ["ISO 7380 M2.5 x 8 A2", "lid screw, button head", "stainless A2", len(H.lid_screws), "0.35 N m, cross pattern"],
+        ["ISO 8734 2 m6 x 8", "dowel pin, lid location", "steel, hardened", 2, "pressed into the base"],
+        ["0402 thin-film resistor", "Wilkinson isolation resistor (values per customer CSV)", "-", len(B["res"]), "on the PCB"],
+    ]
+
+
+def write(B, holes, H, pcb, res):
+    os.makedirs(DOCS, exist_ok=True); pn = C.TEXT["pn"]; X, K, Q = C.BOX, C.CONN, C.CAGE
+    with open(os.path.join(DOCS, pn + "_BOM.csv"), "w", newline="") as fh:
+        w = csv.writer(fh); w.writerow(["part number", "description", "material", "qty", "note"]); w.writerows(bom(H, B))
+    with open(os.path.join(DOCS, pn + "_HOLE_TABLE.csv"), "w", newline="") as fh:
+        w = csv.writer(fh); w.writerow(["part", "face", "feature", "X from SW corner (mm)", "Y from SW corner (mm)", "Z from base bottom (mm)"])
+        for r in hole_tables(H): w.writerow([r[0], r[1], r[2], "%.3f" % r[3], "%.3f" % r[4], "%.3f" % r[5]])
+    # RF numbers
+    W50, t, h, er = 1.686, C.BOARD["cu"], C.BOARD["h"], C.BOARD["er"]
+    zc = [("open microstrip (no housing)", 20, 20, None)]
+    zc += [("pour at 4.22 only, no lid", 20, 20, C.BOARD["gnd_clearance"])]
+    zc += [("this housing: walls %.1f, lid %.1f above the board" % (Q["wall_offset"], Q["ch_air"]), Q["wall_offset"], Q["ch_air"], None)]
+    zc += [("walls on the pour edge (4.5), same lid", 4.515, Q["ch_air"], C.BOARD["gnd_clearance"])]
+    zrows = [(n,) + tuple(z0_2d.z0(W50, t, h, er, d, a, g, 0.04)) for n, d, a, g in zc]
+    modes, ee = G.channel_modes(H.channels.intersection(H.foot), 6)
+    f_open = G.C0 / 2 * math.sqrt(1 / H.Lc ** 2 + 1 / H.Wc ** 2)
+    L = []
+    L += ["# %s - %s: design report" % (pn, C.TEXT["title"]), "",
+          "Generated by `02_python/build_all.py` on %s. Every number below is computed from `config.py` and the customer DXF." % C.TEXT["date"], "",
+          "## Summary", "",
+          "| Item | Value |", "|---|---|",
+          "| Board | `Wilkinson_8Way_XBand_RO4350B_30mil_FabricationReady.dxf`: %.3f x %.3f mm, %s, 1 oz Cu |" % (B["L"], B["W"], C.BOARD["substrate"]),
+          "| Ports | IN on the west edge (y = 0); outputs 1-8 on the east edge at y = %s mm; 50 ohm line %.3f mm |" % (", ".join("%+.2f" % p["y"] for p in H.ports[1:]), H.ports[0]["w"]),
+          "| Outside | **%.2f x %.2f x %.2f mm** (base %.2f + lid plate %.1f) |" % (H.Lo, H.Wo, H.z_top, H.z_wall, X["t_lid"]),
+          "| Cavity | %.3f x %.3f mm (board + %.2f per side), corner reliefs d%.1f, floor %.3f mm |" % (H.Lc, H.Wc, X["clr"], X["corner_relief_d"], H.floor),
+          "| Connector axis | %.3f mm above the base bottom = PCB top + pin radius (pin rests on the trace) |" % H.pin_z,
+          "| Lid cage | block %.2f mm under the lid plate, face %.2f above the PCB; channels %.1f mm from the copper, %.1f mm air above the lines |" % (H.z_wall - H.z_face, Q["gap"], Q["wall_offset"], Q["ch_air"]),
+          "| Gasket | %s; %.2f mm compressed to %.2f |" % (Q["gasket"], Q["gasket_t"], Q["gap"]),
+          "| PCB v3 | %d x M2 plated holes d%.1f added in the ground pour; %d vias removed |" % (len(holes), C.PCB_HOLES["drill"], pcb["removed"]),
+          "| Screws | %d x M2.5x8 ISO 7380 (lid), %d x M2x5 ISO 4762 (PCB), %d x M2.5x5 ISO 4762 (connectors), 4 x M3 mounting taps |" % (len(H.lid_screws), len(holes), 4 * len(H.ports)),
+          "| Material / finish | %s / %s |" % (X["material"], X["finish"]),
+          "| Engraving (lid top, %.1f deep) | BEL logo %.0f mm wide, \"%s\", \"P/N %s\", \"DATE %s\", port labels IN, 1-8 |" % (X["engrave_depth"], C.TEXT["logo_w"], C.TEXT["title"], pn, C.TEXT["date"]), ""]
+    if res:
+        mass = {k: v.get("total", {}).get("mass_g", 0) for k, v in res.items()}
+        L += ["Machined mass (SolidCraft, aluminium): base %.0f g, lid %.0f g." % (mass.get("base", 0), mass.get("lid", 0)), ""]
+    L += ["## Why the lid has a cage", "",
+          "An empty %.1f x %.1f mm cavity has its first box mode (TE110) at **%.2f GHz** and dozens more inside 8-12 GHz, so the" % (H.Lc, H.Wc, f_open),
+          "divider would show deep notches and poor isolation. The lid therefore carries a solid block that fills the cavity and",
+          "rests on the board through a conductive gasket. Each line runs in its own milled channel %.1f mm from the copper." % Q["wall_offset"], "",
+          "### Channel resonances (2D eigenmodes of the channel network, E normal to the board)", "",
+          "Effective permittivity of the board + %.1f mm air stack: %.3f. Lowest modes:" % (Q["ch_air"], ee), "",
+          "| Mode | Air (GHz) | With PCB (GHz) | Location (x, y) | vs 1.3 x f_max = %.1f GHz |" % (1.3 * C.BOARD["band"][1]), "|---|---|---|---|---|"]
+    for i, (f, fl, x, y) in enumerate(modes):
+        L.append("| %d | %.2f | %.2f | (%.1f, %.1f) | %s |" % (i + 1, f, fl, x, y, "OK" if fl > 1.3 * C.BOARD["band"][1] else "**LOW**"))
+    L += ["", "Design history: with the channel walls on the pour edge (4.5 mm from the copper, the obvious choice) the merged",
+          "channels around the Wilkinson resistor sections were up to ~14 mm wide and resonated at 10.6-10.7 GHz, inside the band.",
+          "Moving the walls to %.1f mm pushed the lowest mode above %.1f GHz." % (Q["wall_offset"], modes[0][1] - 0.05), "",
+          "### Effect of the housing on the 50 ohm line (2D finite-difference Laplace solve, `z0_2d.py`)", "",
+          "| Cross-section | Z0 (ohm) | eps_eff |", "|---|---|---|"]
+    for n, z, e in zrows: L.append("| %s | %.2f | %.3f |" % (n, z, e))
+    dz = zrows[2][1] - zrows[0][1]; gam = abs(dz) / (2 * 50 + dz)
+    L += ["", "The housing lowers Z0 by %.2f ohm (reflection %.4f = %.0f dB): negligible against the connector launch." % (dz, gam, 20 * math.log10(gam)),
+          "The quasi-static generator of the board did not include a lid either, so the Wilkinson sections see the same small shift.", "",
+          "## Mechanical checks", "", "| Check | Value | Rule | Result |", "|---|---|---|---|"]
+    for n, v, rule, ok in H.checks(): L.append("| %s | %.2f | %s | %s |" % (n, v, rule, "OK" if ok else "**WARN**"))
+    L += ["", "## PCB v3 mounting holes (customer DXF frame)", "", "| Hole | x | y | Purpose |", "|---|---|---|---|"]
+    cx, cy = B["shift"]
+    for i, (x, y, w) in enumerate(holes): L.append("| H%d | %.2f | %.2f | %s |" % (i + 1, x + cx, y + cy, w))
+    L += ["", "Rules: the M2 head (d3.8) plus %.1f mm sits fully on the top-ground pour, centre >= %.1f mm from the board edge," % (C.PCB_HOLES["head_margin"], C.PCB_HOLES["edge_min"]),
+          "holes >= %.0f mm apart; launch holes in a band %.0f mm inside each connector edge. Outputs 2-3, 4-5 and 6-7 have no pour wide" % (C.PCB_HOLES["min_spacing"], C.PCB_HOLES["launch_dx"]),
+          "enough between them for a head, so each output pair shares one hole on its outer side; the cage face and gasket press",
+          "the ground beside every launch.", "",
+          "## Open points / assumptions", "",
+          "1. **Bottom layer = solid ground** [ASSUMED]: the DXF has top layers only. Confirm with the PCB designer.",
+          "2. **Resistor height 0.35 mm** (0402) [ASSUMED]; the channels leave %.2f mm above them." % (Q["ch_air"] - 0.35),
+          "3. **Copper pull-back 0.25 mm** at the board edge (generator default): the connector pin lies %.2f mm on the trace." % (K["spigot_len"] + K["pin_proj"] - X["wall"] - X["clr"] - 0.25),
+          "4. The east-wall seam between output flanges has no lid screw (bores and flange threads leave no room): largest gap",
+          "   %.1f mm. It is backed by the cage block (0.1 mm labyrinth, 6.6 mm deep) and the gasket; keep the lid seat flat to 0.03." % H.max_screw_gap(),
+          "5. Full-wave verification of the boxed divider (S-parameters with the lid) is not done here; the 2D numbers above size",
+          "   the cage. Recommended before production: openEMS / HFSS run of one output branch in its channel.", "",
+          "## Files", ""]
+    for d in ("01_pcb_v3", "03_step", "04_drawings", "05_docs"):
+        p = os.path.join(C.ROOT, d)
+        if os.path.isdir(p):
+            for f in sorted(os.listdir(p)):
+                if not f.endswith(".json") and os.path.isfile(os.path.join(p, f)): L.append("- `%s/%s`" % (d, f))
+    open(os.path.join(DOCS, pn + "_design_report.md"), "w", encoding="utf-8").write("\n".join(L) + "\n")
+    print("report: %d checks, lowest channel mode %.2f GHz" % (len(H.checks()), modes[0][1]))
