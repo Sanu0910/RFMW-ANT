@@ -7,7 +7,8 @@
 #
 # Skip steps with environment variables, e.g.  SKIP_OPENEMS=1 SKIP_HERTZON=1 bash tools/setup_local.sh
 #   SKIP_APT SKIP_NODE SKIP_CLAUDE SKIP_PYTHON SKIP_OPENEMS SKIP_KICAD SKIP_SOLIDCRAFT SKIP_HERTZON
-#   SKIP_EXTRAS (gds2openEMS, KiCadRoutingTools, Playwright, Octave)
+#   SKIP_EXTRAS (gds2openEMS, KiCadRoutingTools, Playwright, Octave, ngspice, KLayout, Meep/MPB, GNU Radio,
+#                LibrePCB, OpenOCD, CLI-Hub)
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
@@ -105,11 +106,15 @@ if ! skip SKIP_HERTZON; then
 fi
 
 if ! skip SKIP_EXTRAS; then
-  step "Extras: gds2openEMS, KiCadRoutingTools, Playwright (PDF reports), Octave"
+  step "Extras: gds2openEMS, KiCadRoutingTools, Playwright (PDF reports), Octave, RF/EDA apt packages, CLI-Hub"
   [ -x /opt/openEMS/venv/bin/python ] && { $SUDO bash tools/install_gds2openems.sh || echo "gds2openEMS failed (optional)"; }
   [ -d /opt/KiCadRoutingTools ] || $SUDO sh tools/install_krt.sh || echo "KiCadRoutingTools failed (optional)"
   node -e "require('playwright')" 2>/dev/null || { $SUDO npm install -g playwright && $SUDO npx -y playwright install --with-deps chromium; } || echo "Playwright failed (optional)"
   command -v octave >/dev/null || DEBIAN_FRONTEND=noninteractive $SUDO apt-get install -y -qq octave || true
+  for p in ngspice klayout meep mpb python3-meep gnuradio librepcb openocd; do   # one at a time: not all exist on 22.04
+    DEBIAN_FRONTEND=noninteractive $SUDO apt-get install -y -qq $p || echo "$p not in apt (optional)"
+  done
+  command -v cli-hub >/dev/null || pip3 install --user -q cli-anything-hub || echo "CLI-Hub failed (optional)"
 fi
 
 step "Git identity and GitHub login (needed to push)"

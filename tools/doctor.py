@@ -13,6 +13,20 @@ import json, os, shutil, subprocess, sys, threading, queue, time
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 G, Y, R, N = '\033[32m', '\033[33m', '\033[31m', '\033[0m'
 fails = 0
+WIN = os.name == 'nt'
+
+
+def git_bash():
+    """Git Bash on Windows: the checks below are POSIX shell, so they cannot run through cmd.exe."""
+    d = os.path.dirname(shutil.which('git') or '')
+    for _ in range(3):  # git.exe sits in Git\cmd, Git\bin or Git\mingw64\bin
+        if os.path.exists(os.path.join(d, 'bin', 'bash.exe')):
+            return os.path.join(d, 'bin', 'bash.exe')
+        d = os.path.dirname(d)
+    return 'bash'
+
+
+BASH = git_bash() if WIN else None
 
 
 def show(ok, name, info, required=True):
@@ -25,30 +39,41 @@ def show(ok, name, info, required=True):
 
 def run(cmd, timeout=60):
     try:
-        p = subprocess.run(cmd, shell=True, capture_output=True, text=True, timeout=timeout, cwd=ROOT)
-        return p.returncode == 0, (p.stdout + p.stderr).strip().splitlines()[-1:] or ['']
+        p = (subprocess.run([BASH, '-c', 'set -o pipefail; ' + cmd], capture_output=True, text=True, timeout=timeout, cwd=ROOT) if WIN
+             else subprocess.run(cmd, shell=True, capture_output=True, text=True, timeout=timeout, cwd=ROOT))
+        ok = p.returncode == 0
+        return ok, ((p.stdout if ok and p.stdout.strip() else p.stdout + p.stderr).strip().splitlines()[-1:] or [''])
     except Exception as e:  # noqa: BLE001
         return False, [str(e)]
 
 
 def check_tools():
     print('Tools')
-    py = os.path.join(ROOT, '.venv', 'bin', 'python')
-    py = py if os.path.exists(py) else sys.executable
+    py = os.path.join(ROOT, '.venv', 'Scripts', 'python.exe') if WIN else os.path.join(ROOT, '.venv', 'bin', 'python')
+    py = (py if os.path.exists(py) else sys.executable).replace('\\', '/')
+    kicad_win = 'k=$(ls -d "/c/Program Files/KiCad"/*/bin/kicad-cli.exe 2>/dev/null | sort -V | tail -1) && [ -n "$k" ] && "$k" version'
     for name, cmd, req in [
         ('git', 'git --version', True),
         ('git remote push access', 'git ls-remote --heads origin >/dev/null && echo reachable', True),
         ('node (>=18)', 'node --version', True),
         ('claude (Claude Code CLI)', 'claude --version', True),
         ('python deps (.venv)', f'"{py}" -c "import numpy,scipy,matplotlib,shapely,ezdxf,PIL,skrf; print(\'ok\')"', True),
-        ('openEMS + CSXCAD', '/opt/openEMS/venv/bin/python -c "import openEMS,CSXCAD; print(\'ok\')"', True),
+        ('openEMS + CSXCAD', '/opt/openEMS/venv/bin/python -c "import openEMS,CSXCAD; print(\'ok\')" || '
+                             f'"{py}" -c "import openEMS,CSXCAD; print(\'ok\')"', True),
         ('solidcraft-cli', 'solidcraft-cli --version', True),
-        ('KiCad 9 (kicad-cli)', '(command -v kicad-cli >/dev/null && kicad-cli version) || chroot /opt/kicad9 kicad-cli version', True),
+        ('KiCad (kicad-cli)', '(command -v kicad-cli >/dev/null && kicad-cli version) || '
+                              + (kicad_win if WIN else 'chroot /opt/kicad9 kicad-cli version'), True),
         ('Hertzon', '/opt/hertzon-venv/bin/python -c "import hertzon; print(hertzon.__version__ if hasattr(hertzon, \'__version__\') else \'ok\')"', False),
         ('gds2openEMS', '/opt/openEMS/venv/bin/python -c "import gds2openEMS" 2>/dev/null || ls ~/gds2openEMS >/dev/null && echo ok', False),
         ('KiCadRoutingTools', 'test -d /opt/KiCadRoutingTools && echo ok', False),
         ('Playwright Chromium (PDF reports)', 'NODE_PATH=$(npm root -g) node -e "require(\'playwright\')" && echo ok', False),
         ('GNU Octave (MATLAB scripts)', 'octave --version 2>/dev/null | head -1', False),
+        ('ngspice', 'ngspice --version 2>&1 | grep -m1 ngspice', False),
+        ('Qucsator-RF (Qucs-S)', '(qucsator_rf --version || "C:/Program Files/Qucs-S/bin/qucsator_rf.exe" --version || "/mnt/c/Program Files/Qucs-S/bin/qucsator_rf.exe" --version) | head -1', False),
+        ('Meep + MPB (FDTD / band structure)', 'python3 -c "import meep, meep.mpb; print(meep.__version__)"', False),
+        ('KLayout', 'klayout -v', False),
+        ('GNU Radio', 'gnuradio-config-info --version', False),
+        ('CLI-Hub (CLI-Anything)', 'cli-hub --version', False),
     ]:
         ok, out = run(cmd)
         show(ok, name, out[0][:70], req)

@@ -24,6 +24,7 @@ def jload(p):
 
 HEAVI = jload(XD / "crosscheck_heavi.json")
 CRF = jload(XD / "crosscheck_circuitrf.json")
+QUCS = jload(XD / "crosscheck_qucs.json")
 AEDT = jload(XD / "crosscheck_aedt.json")
 AEDT_RUN = jload(AP / "aedt_run.json")
 TODAY = dt.date.today().isoformat()
@@ -92,8 +93,8 @@ bl([
     f"{dme['lna2_backoff_db']:.1f} dB below LNA 2 P1dB; Iridium (1621 MHz, -20 dBm) reaches {iri['lna2_out']:+.1f} dBm "
     "in the L1 branch. There is no filter in front of LNA 1, so cellular uplinks at -10 dBm leave only ~7-10 dB "
     "back-off at LNA 1.",
-    "Three independent circuit solvers agree: scikit-rf (reference), heavi and circuitRF differ by < 0.01 dB in "
-    "band. " + ("ANSYS AEDT Circuit result: see section 10." if AEDT else "The ANSYS AEDT run is described in section 10."),
+    "Four independent circuit solvers agree: scikit-rf (reference), heavi, circuitRF and Qucsator-RF differ by "
+    "< 0.01 dB in band. " + ("ANSYS AEDT Circuit result: see section 10." if AEDT else "The ANSYS AEDT run is described in section 10."),
 ])
 p("Data quality: only the LNA S-parameters and noise parameters, the HC125A typical table and the datasheet spec "
   "tables are measured/extracted values. The SAW and diplexer Touchstone files are ESTIMATES built from digitized "
@@ -307,6 +308,9 @@ if HEAVI:
 if CRF:
     rows.append(["circuitRF 1.6.1 (CLI sparam)", "Netlist circuitRF/gnss_frontend.cnl, SnP blocks",
                  f"{max(v['max_abs_diff_db_inband'] for v in CRF.values()):.4f} dB", "Scripts/build_circuitrf.py"])
+if QUCS:
+    rows.append(["Qucsator-RF 1.0.7 (Qucs-S 26.1.1)", "Netlist QucsS/gnss_frontend.net, SPfile polar/cubic",
+                 f"{max(v['max_abs_diff_db_inband'] for v in QUCS.values()):.4f} dB", "Scripts/build_qucs.py"])
 if AEDT:
     rows.append(["ANSYS AEDT 2026 R1 Circuit (Nexxim LNA)", "PyAEDT-built schematic, Touchstone components",
                  f"{max(v['max_abs_diff_db_inband'] for v in AEDT.values()):.4f} dB", "Scripts/aedt_circuit.py"])
@@ -391,9 +395,10 @@ tab(["Folder", "Content"],
     [["Touchstone/", "TQP3M9037_5V.s2p (extracted, with noise), TQP3M9037_stage_5V_with_bias.s2p, HC125A.s4p, B7504.s2p, "
       "B8889_matched.s2p, DXP02A.s3p, PatchCP_ideal_RHCP_feed.s4p (estimated); SIM_*.s2p/.s3p (simulated results)"],
      ["Scripts/", "ds_data.py, models.py, simulate.py, build_extracted.py, make_schematics.py, aedt_circuit.py (PyAEDT), "
-      "build_circuitrf.py, crosscheck_heavi.py, make_report.py, build_all.py"],
+      "build_circuitrf.py, build_qucs.py, crosscheck_heavi.py, make_report.py, build_all.py"],
      ["ANSYS_Project/", "GNSS_L1_L2L5_FrontEnd.aedt (when AEDT runs), AEDT_System_3port.s3p, aedt_run.log"],
      ["circuitRF/", "gnss_frontend.cnl netlist and its circuitRF S-parameter result"],
+     ["QucsS/", "gnss_frontend.net Qucsator-RF netlist and its S-parameter result"],
      ["Report/", "this report (PDF and DOCX), error_log.md"],
      ["Images/", "schematics (PNG + SVG), connection diagram, all result plots"],
      ["Extracted_Data/", "36 CSV tables, Extracted_Parameters.xlsx, assumptions_log.md, results_*.csv, cross-check JSON"]],
@@ -418,6 +423,8 @@ TITLE = "GNSS L1 + L2/L5 Active Antenna Front End"
 SUBLINE = f"RFMW-ANT project 16 &nbsp;|&nbsp; {TODAY} &nbsp;|&nbsp; VDD +5 V &nbsp;|&nbsp; data: 8 supplied datasheets"
 MARKING = ""          # classification line printed in the header and footer of every page (empty = none)
 FOOTER = "RFMW-ANT project 16"
+LOGO = None           # optional logo image (cover + small in every page header)
+GROUP = ""            # optional group / department line (cover + every page header)
 SUB = "RF circuit models, Touchstone files, ANSYS Circuit automation and simulation report"
 
 
@@ -432,16 +439,27 @@ def render_docx(path):
     stl = doc.styles["Normal"]
     stl.font.name = "Calibri"
     stl.font.size = Pt(10)
+    if LOGO:
+        hp = sec.header.paragraphs[0]
+        hp.add_run().add_picture(str(LOGO), height=Cm(0.75))
+        rr = hp.add_run("		" + GROUP); rr.font.size = Pt(8); rr.bold = True
+        rr.font.color.rgb = RGBColor(0x1B, 0x2F, 0x8F)
+        sec.header.add_paragraph()
     if MARKING:
         for part in (sec.header, sec.footer):
-            hp = part.paragraphs[0]
+            hp = part.paragraphs[-1]
             hp.text = MARKING
             hp.alignment = WD_ALIGN_PARAGRAPH.CENTER
             hp.runs[0].font.size = Pt(8); hp.runs[0].bold = True
             hp.runs[0].font.color.rgb = RGBColor(0xB0, 0x10, 0x1A)
+    if LOGO:
+        doc.add_picture(str(LOGO), width=Cm(9.0))
+        doc.paragraphs[-1].alignment = WD_ALIGN_PARAGRAPH.CENTER
     doc.add_heading(TITLE, 0)
     doc.add_paragraph(SUB)
     doc.add_paragraph(SUBLINE.replace("&nbsp;", " "))
+    if GROUP:
+        gp = doc.add_paragraph(GROUP); gp.runs[0].bold = True; gp.alignment = WD_ALIGN_PARAGRAPH.CENTER
     for blk in C:
         k = blk[0]
         if k == "h1":
@@ -503,11 +521,19 @@ def render_pdf(path):
     h1s = ParagraphStyle("h1", parent=ss["Heading1"], fontSize=14, textColor=colors.HexColor("#1b2f8f"), spaceBefore=8)
     h2s = ParagraphStyle("h2", parent=ss["Heading2"], fontSize=11.5, textColor=colors.HexColor("#1b2f8f"))
     W = A4[0] - 3.6 * cm
-    story = [Paragraph(TITLE, ParagraphStyle("t", parent=ss["Title"], fontSize=20, textColor=colors.HexColor("#1b2f8f"))),
+    story = []
+    if LOGO:
+        from PIL import Image as PI
+        lw, lh = PI.open(LOGO).size
+        story += [Image(str(LOGO), width=9 * cm, height=9 * cm * lh / lw), Spacer(1, 12)]
+    story += [Paragraph(TITLE, ParagraphStyle("t", parent=ss["Title"], fontSize=20, textColor=colors.HexColor("#1b2f8f"))),
              Paragraph(SUB, ParagraphStyle("s", parent=body, fontSize=11, alignment=1)),
              Paragraph(SUBLINE,
                        ParagraphStyle("s2", parent=body, alignment=1, textColor=colors.HexColor("#52514e"))),
              Spacer(1, 10)]
+    if GROUP:
+        story.insert(len(story) - 1, Paragraph(f"<b>{GROUP}</b>", ParagraphStyle("g", parent=body, alignment=1,
+                                                   fontSize=10.5, textColor=colors.HexColor("#1b2f8f"))))
     for blk in C:
         k = blk[0]
         if k == "h1":
@@ -550,14 +576,24 @@ def render_pdf(path):
         cv.setFillColor(colors.HexColor("#808080"))
         cv.drawString(1.8 * cm, 1.0 * cm, f"{TITLE} - {FOOTER}")
         cv.drawRightString(A4[0] - 1.8 * cm, 1.0 * cm, f"page {doc_.page}")
+        if LOGO and doc_.page > 1:
+            from PIL import Image as PI
+            lw, lh = PI.open(LOGO).size
+            cv.drawImage(str(LOGO), 1.8 * cm, A4[1] - 1.55 * cm, width=0.7 * cm * lw / lh, height=0.7 * cm, mask="auto")
+            cv.setFont("Helvetica-Bold", 7.5)
+            cv.setFillColor(colors.HexColor("#1b2f8f"))
+            cv.drawRightString(A4[0] - 1.8 * cm, A4[1] - 1.25 * cm, GROUP)
+            cv.setStrokeColor(colors.HexColor("#00aeef")); cv.setLineWidth(0.8)
+            cv.line(1.8 * cm, A4[1] - 1.7 * cm, A4[0] - 1.8 * cm, A4[1] - 1.7 * cm)
         if MARKING:
             cv.setFont("Helvetica-Bold", 7.5)
             cv.setFillColor(colors.HexColor("#b0101a"))
-            cv.drawCentredString(A4[0] / 2, A4[1] - 0.9 * cm, MARKING)
+            cv.drawCentredString(A4[0] / 2, A4[1] - (0.6 if LOGO else 0.9) * cm, MARKING)
             cv.drawCentredString(A4[0] / 2, 0.55 * cm, MARKING)
         cv.restoreState()
 
-    SimpleDocTemplate(str(path), pagesize=A4, leftMargin=1.8 * cm, rightMargin=1.8 * cm, topMargin=1.6 * cm,
+    SimpleDocTemplate(str(path), pagesize=A4, leftMargin=1.8 * cm, rightMargin=1.8 * cm,
+                      topMargin=(2.1 if LOGO else 1.6) * cm,
                       bottomMargin=1.6 * cm, title=TITLE, author="RFMW-ANT").build(story, onFirstPage=foot, onLaterPages=foot)
 
 
