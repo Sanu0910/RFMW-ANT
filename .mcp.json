@@ -1,0 +1,28 @@
+{
+  "mcpServers": {
+    "solidcraft": {
+      "type": "stdio",
+      "command": "solidcraft-cli",
+      "args": ["mcp", "--allow-path", "."],
+      "env": {}
+    },
+    "kicad": {
+      "type": "stdio",
+      "command": "sh",
+      "args": ["tools/mcp/kicad.sh"],
+      "env": {}
+    },
+    "kicad-pro": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": ["kicad-mcp-pro", "--transport", "stdio", "--mode", "write", "--profile", "full"],
+      "env": {}
+    },
+    "hertzon": {
+      "type": "stdio",
+      "command": "sh",
+      "args": ["tools/mcp/hertzon.sh"],
+      "env": {}
+    }
+  }
+}
