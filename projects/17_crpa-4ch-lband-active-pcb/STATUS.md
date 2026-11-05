@@ -1,6 +1,6 @@
 # Status: 17_crpa-4ch-lband-active-pcb
 
-_Last updated: 2026-11-02. Update this file whenever the project changes (see `docs/CONVENTIONS.md`)._
+_Last updated: 2026-11-05. Update this file whenever the project changes (see `docs/CONVENTIONS.md`)._
 
 **State:** Rev D (CLM-83-2W+ limiters, 1.5SMC6.8A input TVS; on top of Rev C star bias, shield cans,
 GPDF6010.A footprint) layout complete and DRC-clean (0 violations, 0 unconnected); fab package (Gerbers, drill, BOM,

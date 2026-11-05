@@ -1,8 +1,3 @@
-# customer Gerber + vendor datasheet: kept local (copy Gerber_4CH_GNSS.zip and CLM-83-2W+.pdf here to rebuild footprints)
-Input/
-# layout debug dump / previews (Scripts/plot_debug.py)
-Images/_debug_layout.json
-Images/dbg_*.png
 KiCad/*-backups/
 KiCad/fp-info-cache
 KiCad/.history/

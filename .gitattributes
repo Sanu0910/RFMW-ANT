@@ -1,0 +1,15 @@
+# Never convert line endings in binary files (core.autocrlf=true would otherwise touch some PDFs)
+*.pdf     binary
+*.docx    binary
+*.xlsx    binary
+*.pptx    binary
+*.zip     binary
+*.png     binary
+*.jpg     binary
+*.jpeg    binary
+*.gif     binary
+*.step    binary
+*.stp     binary
+*.stl     binary
+*.mp4     binary
+*.npy     binary

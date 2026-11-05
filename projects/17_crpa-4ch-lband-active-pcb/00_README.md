@@ -38,9 +38,9 @@ ground. Details in `Docs/CRPA17_PCB_Design_Report.pdf` §2.
 | `Fab/` | **`CRPA17_4CH_LBAND_Gerbers.zip`** (Gerber X2, Excellon PTH/NPTH, drill map, job file), `Gerbers/`, **BOM** (`.csv`, `.xlsx`), CPL (bottom), IPC-D-356 |
 | `KiCad/` | `CRPA17_4CH_LBAND.kicad_pcb/.kicad_pro/.kicad_dru`, footprint library `CRPA17.pretty`, `fp-lib-table` |
 | `Docs/` | `CRPA17_PCB_Design_Report.pdf` (decisions, stack-up, schematic, budget, power, verification, assumptions, BOM), `CRPA17_layers.pdf`, `CRPA17_netlist.csv`, RF budget CSVs |
-| `Images/` | schematics (channel, power; project 16 style), stack-up, 3D renders top/bottom |
+| `Images/` | schematics (channel, power; project 16 style), stack-up, 3D renders top/bottom; `dbg_*.png` + `_debug_layout.json` layout debug snapshots |
 | `Scripts/` | `crpa_design.py` (all parameters), `build_footprints.py`, `build_pcb.py`, `run_drc.sh`, `export_fab.sh`, `make_docs.py`, `plot_debug.py`, `build_all.sh` |
-| `Input/` | customer Gerber + CLM-83-2W+ data sheet, **not in git**: copy `Gerber_4CH_GNSS.zip` and `CLM-83-2W+.pdf` here to rebuild the footprints |
+| `Input/` | customer Gerber `Gerber_4CH_GNSS.zip` + Mini-Circuits `CLM-83-2W+.pdf` / `RLM-63-2W+.pdf` data sheets (used to rebuild the footprints) |
 
 ## Rebuild
 ```bash
