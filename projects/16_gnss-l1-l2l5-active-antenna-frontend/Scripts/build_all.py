@@ -10,9 +10,11 @@
 3. make_schematics.py   schematic and connection-diagram images
 4. crosscheck_heavi.py  heavi cross-check (runs with the repo .venv python, where heavi lives)
 5. build_circuitrf.py   circuitRF netlist + CLI run + comparison
+   build_qucs.py        Qucsator-RF (Qucs-S) netlist + run + comparison
 6. aedt_circuit.py      ANSYS AEDT Circuit project (only with --aedt; needs AEDT + licence)
 7. make_report.py       PDF + DOCX report; make_internal_report.py  internal technical note;
    make_rejection_doc.py   filter rejection analysis document
+   make_bel_brief.py       graphics-first internal brief (RFM / Antenna Group, CRL-BG)
 """
 import json
 import subprocess
@@ -61,9 +63,11 @@ if __name__ == "__main__":
     if VENV_PY.exists():
         run("crosscheck_heavi.py", py=VENV_PY, required=False)
     run("build_circuitrf.py", required=False)
+    run("build_qucs.py", required=False)
     if "--aedt" in sys.argv:
         run("aedt_circuit.py", required=False)
     compare_aedt()
     run("make_report.py")
     run("make_internal_report.py")
     run("make_rejection_doc.py")
+    run("make_bel_brief.py")

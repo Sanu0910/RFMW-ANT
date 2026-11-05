@@ -2,7 +2,11 @@
 
 Newest first.
 
+## 2026-11-01
+- Fourth solver cross-check: Qucsator-RF 1.0.7 (Qucs-S 26.1.1). `Scripts/build_qucs.py` writes `QucsS/gnss_frontend.net` (same Touchstone files and bias parts as the circuitRF netlist), runs it, converts to `QucsS/gnss_frontend_qucs.s3p` and writes `Extracted_Data/crosscheck_qucs.json`: max in-band |dS| 0.0007 dB. SPfile interpolation must be polar/cubic: rectangular/linear gives up to 0.07 dB because `TQP3M9037_5V.s2p` has only 27 points. Added to `build_all.py` and to report section 10 (report regenerated).
+
 ## 2026-10-31
+- Graphics-first internal brief `Report/BEL_CRL_ActiveAntenna_RF_Brief.pdf/.docx` (20 pages, `Scripts/make_bel_brief.py`): BEL logo (`Images/bel_logo.png`, supplied by the user), RFM / Antenna Group, CRL-BG, internal marking; tables and plots only; section 5 expanded with the full L-band filter rejection (filter compliance table, skirts, L1 and L2/L5 near/out-of-band plots and tables, cross-band, per-stage, insertion loss), now 24 pages. Report renderer gained LOGO / GROUP options. Not pushed yet.
 - Shareable filter-rejection document `Report/Filter_Rejection_Analysis.pdf/.docx` (`Scripts/make_rejection_doc.py`, 10 pages): in-band IL and ripple per GNSS band, filter compliance with the data-sheet limits (L-band filters + TA1442A), near-band and out-of-band rejection after each filter stage and for the complete L1, L2/L5 and NavIC S chains, cross-band rejection, interference consequences; tables in `Extracted_Data/rejection_doc_*.csv`.
 - NavIC S-band branch added (user request, 2 new datasheets): Tai-Saw TA1442A 2492 MHz SAW and TTM/Xinger C2327J5003AHF hybrid; chain patch -> hybrid -> TQP3M9037 (Qorvo 2.3-2.6 GHz ref. design) -> TA1442A -> TQP3M9037 -> TA1442A, separate output (`Scripts/sband.py`, `TA1442A.s2p`, `C2327J5003AHF.s4p`, `SIM_SBand_2port.s2p`). Gain 35.0 dB, NF 1.17 dB; Wi-Fi ch 13 / LTE B41 overload LNA 2 and the TA1442A rating (3 dB BW ~62 MHz).
 - Simulator-style plots (`Scripts/aedt_style.py`: report window, Curve Info, marker tables, Smith chart) for L-band (`lband_aedt_plots.py`) and S-band.

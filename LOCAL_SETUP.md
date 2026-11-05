@@ -65,6 +65,8 @@ At the end it runs the check from step 5.
 | SolidCraft (`solidcraft-cli`, .deb from GitHub releases) | system | STEP models, **solidcraft** MCP server |
 | Hertzon (EMerge FEM) | `/opt/hertzon-venv` | FEM checks, **hertzon** MCP server |
 | gds2openEMS, KiCadRoutingTools, Playwright Chromium, GNU Octave | various | optional extras |
+| ngspice, KLayout, Meep + MPB (`python3-meep`), GNU Radio, LibrePCB, OpenOCD | apt | optional extras: SPICE, GDS/DXF layout, FDTD / band structure, SDR flowgraphs, PCB, JTAG |
+| CLI-Hub (`cli-anything-hub`, HKUDS/CLI-Anything) | pip --user | optional: registry of agent-ready CLIs (`cli-hub list`) |
 
 Skip parts you do not need, for example on a small laptop:
 
@@ -76,6 +78,16 @@ Variables: `SKIP_APT SKIP_NODE SKIP_CLAUDE SKIP_PYTHON SKIP_OPENEMS SKIP_KICAD S
 
 Not installable locally without a licence: **Ansys HFSS** (the `hfss_*.py` PyAEDT scripts need AEDT 2024.x) and
 **MATLAB** (use GNU Octave for the `.m` files).
+
+Windows-side apps (install from PowerShell, not WSL):
+
+| App | Install | Used for |
+|---|---|---|
+| Qucs-S (Qucsator-RF, ngspice, RF calculators) | `winget install -e --id TheQucsTeam.Qucs-S` | circuit S-parameter cross-check (project 16 `Scripts/build_qucs.py`; folder via `QUCS_BIN`) |
+| SDRangel | `winget install -e --id f4exb.sdrangel` | over-the-air tests with an SDR |
+
+The CLI-Anything generator plugin for Claude Code is installed from inside Claude Code:
+`/plugin marketplace add HKUDS/CLI-Anything`, then `/plugin install cli-anything`.
 
 ## 4. GitHub login and git identity (needed to push)
 

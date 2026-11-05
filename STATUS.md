@@ -20,6 +20,9 @@ Verified in the session of 2026-10-29:
 | Hertzon 0.2.6 (EMerge FEM) + MCP | Working (MCP registered as `hertzon` in `.mcp.json`, 33 tools) | `HairpinFilter.hzn` example solved headless: 91-point S2P over 2.0–2.9 GHz, passband S21 −2.3 dB / S11 −13 dB at 2.56 GHz | `bash tools/install_hertzon.sh` |
 | Backplane 0.10.0 | Working | Headless web UI answered HTTP 200 on port 3787 | `bash tools/install_backplane.sh` |
 | REA | Not installed | Not needed for RF/PCB work | `bash tools/install_rea.sh` |
+| Qucs-S 26.1.1 (Qucsator-RF 1.0.7, ngspice) | Working (local Windows, 2026-11-01) | Project 16 `build_qucs.py`: 3-port front end within 0.0007 dB of scikit-rf in band | `winget install -e --id TheQucsTeam.Qucs-S` |
+| ngspice 45.2, KLayout 0.30.0, Meep 1.29 + MPB, GNU Radio 3.10.12, LibrePCB, OpenOCD | Installed (local WSL Ubuntu 26.04, 2026-11-01) | Version / import checks (`tools/doctor.py`) | `apt-get install ngspice klayout meep mpb python3-meep gnuradio librepcb openocd` |
+| SDRangel 8.0.0, CLI-Hub 0.4.1 (CLI-Anything) | Installed (local Windows, 2026-11-01) | Version checks; CLI-Hub registry has no EDA/RF harness yet | `winget install -e --id f4exb.sdrangel`; `uv tool install cli-anything-hub` |
 
 Notes:
 - Use `DOCKER_MIRROR=mirror.gcr.io` for the KiCad install. Anonymous Docker Hub pulls hit HTTP 429 rate limits.
