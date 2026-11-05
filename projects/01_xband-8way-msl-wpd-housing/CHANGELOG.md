@@ -6,7 +6,7 @@ Newest first.
 - Wall elevations on sheet 1 were mirrored; they now show the view from outside (E wall: north on the right).
 - Report mass came from STEP import with no material (default density); now volume x Al 2.70: base 263 g, lid 342 g.
 - BOM: gasket listed as 9 die-cut pieces.
-- First commit 9910d1c (local); pushed with this update.
+- Commits 9910d1c (first build) and 44c0b2a (this refresh), pushed to origin/projects-v2.
 
 ## 2026-11-05 - Housing V3 first build
 - New project: housing CRL-XB-PD8-03 for the X-band 8-way microstrip Wilkinson board (RO4350B 30 mil), with
