@@ -1030,6 +1030,22 @@ def outline():
     s.SetLayer(pcbnew.Edge_Cuts)
     s.SetWidth(FromMM(0.1))
     board.Add(s)
+    f = pcbnew.FOOTPRINT(board)              # no solder mask on top: L1 GND (and the antenna bases) left bare ENIG (user).
+    f.SetReference("MASKT")                  # board-only footprint, so its GND / pin bridges are accepted by DRC
+    f.Reference().SetVisible(False)
+    f.Value().SetVisible(False)
+    f.SetAttributes(pcbnew.FP_BOARD_ONLY | pcbnew.FP_EXCLUDE_FROM_BOM | pcbnew.FP_EXCLUDE_FROM_POS_FILES)
+    f.SetAllowSolderMaskBridges(True)
+    f.SetPosition(P(*D.BOARD_CENTER))
+    m = pcbnew.PCB_SHAPE(f)
+    m.SetShape(pcbnew.SHAPE_T_CIRCLE)
+    m.SetCenter(P(*D.BOARD_CENTER))
+    m.SetEnd(P(D.BOARD_CENTER[0] + D.BOARD_RADIUS, D.BOARD_CENTER[1]))
+    m.SetLayer(pcbnew.F_Mask)
+    m.SetFilled(True)
+    m.SetWidth(0)
+    f.Add(m)
+    board.Add(f)
 
 
 # ----------------------------------------------------------------------------- DC input

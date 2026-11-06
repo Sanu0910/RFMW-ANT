@@ -22,3 +22,5 @@
 - RF budget / rejection / linearity / power (`rf_budget.py`, p16 Touchstone + board line lengths), drawing set
   `07_drawings/CRL-LS-CRPA4_DRAWINGS.pdf` (fab, array, assembly bottom/top, BC01, block diagram; `drawings.py`) and
   design report `05_docs/CRL-LS-CRPA4_design_report.md/.pdf` (`report.py`).
+- Top side (L1) left without solder mask (user): board-wide F.Mask opening (board-only footprint MASKT, mask bridges
+  allowed), so the L1 GND under the L and S patch bases is bare ENIG. Fab note 4 updated. DRC 0 / 0; Gerbers regenerated.

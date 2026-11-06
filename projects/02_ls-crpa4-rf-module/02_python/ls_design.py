@@ -28,7 +28,7 @@ S_FEED_R = 4.0                       # 4 pins D0.77 on D2.0 pads (customer S pat
 S_FEED_DRILL, S_FEED_PAD = 0.77, 2.0
 S_CENTRE_DRILL, S_CENTRE_PAD = 2.2, 4.0
 S_MOUNT = []                         # customer D2.2 fixing holes belonged to the S patch at r 70.8: not reused [OPEN]
-S_HYB_T = 8.0                        # hybrid centre distance from the S patch centre along the outward feed bisector
+S_HYB_T = 8.0                       # hybrid centre distance from the S patch centre along the outward feed bisector
 S_SMA_MAX_R = 93.0                   # S output SMA centre radius limit (flange + back-cover wall)
 
 # ----------------------------------------------------------------------------- stack-up

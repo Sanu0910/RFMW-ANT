@@ -39,3 +39,4 @@ Each project folder has its own `STATUS.md` and `CHANGELOG.md`.
 | 01 | X-band 8-way MSL divider housing V3 | Base, lid, gasket STEP + PCB V3 DXF + Gerbers + drawings done; assembly STEPs pending |
 | 02 | L/S-band 4-ch CRPA board + back cover | PCB Rev A DRC clean, fab package + BOM, back cover STEP, RF budget, drawings, design report; test boards + Rev B gain plan pending |
 | 03 | CRPA processor module (digitizer + anti-jam) | Study: reference review done; GNSS_JAM_PRO v1.0 case (PocketSDR v2.3) STEP + CNC drawings done; requirements and architecture choice pending |
+| 04 | X-band MSL cal-line base plates (15 / 65 mm THRU) | Plate + assembly STEP, CNC drawings, report done; cal PCB thickness to confirm before machining |

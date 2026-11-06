@@ -25,7 +25,8 @@ Files: `CRL-LS-CRPA4_Gerbers.zip` (Gerber X2 + Excellon PTH/NPTH + drill map), `
 3. **Controlled impedance on L4: 50 ohm +-10 % single-ended, 0.34 mm track over L3 (RO4350B 0.168 mm), 35 um finished Cu,
    with solder mask.** Coupon on the panel; report TDR.
 4. Finish ENIG (Ni 3-6 um, Au 0.05-0.10 um); soldermask green LPI both sides; legend white both sides; no mask on the
-   exposed shield-frame lands (1.5 mm GND rings on L4) - they carry the back-cover gasket.
+   exposed shield-frame lands (1.5 mm GND rings on L4) - they carry the back-cover gasket. **Top side (L1): no
+   solder mask at all** - the L1 GND plane under the L and S patches is bare ENIG.
 5. Vias: 0.30 mm drill / 0.60 mm pad standard. **Vias in pads (0.25 / 0.50 mm in the TQP3M9037, CLM-83-2W+ and SAW ground
    pads) resin-filled and capped, IPC-4761 Type VII.** Min. annular ring 0.125 mm.
 6. Min track / space 0.15 / 0.15 mm, min drill 0.25 mm; board edge to copper >= 0.5 mm.

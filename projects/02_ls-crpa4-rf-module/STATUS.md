@@ -6,7 +6,7 @@ _Last updated: 2026-11-06._
 lambda/2 (60.15 mm adjacent spacing, r 42.53 mm); fab package (Gerber X2 + Excellon zip, CPL, IPC-D-356, BOM CSV/XLSX
 40 lines / 313 placements, fab + assembly notes), PCB STEP and the combined L + S back cover STEP CRL-LS-CRPA4-BC01
 (464 g Al), RF budget (`rf_budget.py`), 6-sheet drawing set (`07_drawings/`) and design report
-(`05_docs/CRL-LS-CRPA4_design_report.pdf`) done. Test boards not built. Nothing committed.
+(`05_docs/CRL-LS-CRPA4_design_report.pdf`) done. Test boards not built.
 
 ## Done
 - Design basis, interface tables (`05_docs/`); the plug-in module idea is superseded by a full board (user, 2026-11-05)
@@ -16,6 +16,9 @@ lambda/2 (60.15 mm adjacent spacing, r 42.53 mm); fab package (Gerber X2 + Excel
   bisector, so both feeds are equal length; CLM-83 -> TQP3M9037 -> TA1442A x3 with 2 LNAs), 8 SMA, shield frames
   (L octagon + S frame sharing walls), star bias, power entry moved NNW, BEL logo top + bottom
 - `04_fab/Gerbers/` (14 files), `04_fab/CRL-LS-CRPA4_CPL_bottom.csv`, `06_step/CRL-LS-CRPA4_PCB.step`
+
+- Top side (L1) has no solder mask: bare ENIG GND under the L and S patch bases (user, 2026-11-06). The top legend
+  (BEL logo, title) is clipped by the mask opening in the Gerbers - decide whether to keep a top legend
 
 ## Open items
 1. Done 2026-11-06: combined back cover BC01 (`06_step/`, notes in `CRL-LS-CRPA4-BC01_NOTES.md`)
