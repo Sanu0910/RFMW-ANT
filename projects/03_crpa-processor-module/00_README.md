@@ -9,6 +9,11 @@ beam-forming (power inversion → MVDR / STAP) and the output to a GNSS / NavIC 
 ## Files
 | Folder / file | Content |
 |---|---|
+| `02_python/` | `build_case.py` (builds everything below), `config.py` (all case dimensions), `case.py` (SolidCraft parts + assembly), `drawing.py` (CNC drawings), `make_logo.py` (BEL CRL logo) |
+| `06_step/` | GNSS_JAM_PRO v1.0 case = PocketSDR v2.3 case design, CNC: `CRL-PSDR23-CASE-01` tube, `-02` ANT panel, `-03` USB panel, `_ASSY` / `_ASSY_EXPLODED` STEP + renders |
+| `07_drawings/CRL-PSDR23-CASE_DRAWINGS.pdf` | 4-sheet A3 CNC drawing set (tube, two panels, assembly + parts list) |
+| `00_reference/pocketsdr_v2.3/` | PocketSDR FE 2CH v2.3 source: kicad_pcb, schematic / PCB PDF, parts list, case + panel `.f3d`, panel `.3mf` |
+| `00_input/BEL_CRL_logo.png` | BEL logo with 'CENTRAL RESEARCH LABORATORY' in the BHARAT ELECTRONICS lettering (case marking) |
 | `05_docs/CRPA_reference_review.md` | Review of PocketSDR, max2771_fx2lp, the airborne STK CRPA study, polarization-crpa and the STM32 anti-jam gist; what each means for this module; candidate architectures; open inputs |
 
 ## References

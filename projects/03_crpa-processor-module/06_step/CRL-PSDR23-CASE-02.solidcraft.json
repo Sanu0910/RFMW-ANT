@@ -1,0 +1,495 @@
+{
+"commands": [
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-2.0,
+0,
+0
+],
+"x_dir": [
+0,
+1,
+0
+],
+"y_dir": [
+0,
+0,
+1
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-PSDR23-CASE-02_flange.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 2.0,
+"profiles": [
+{
+"point": [
+0.0,
+0.0
+]
+}
+],
+"operation": "new",
+"direction": "positive",
+"body_name": "PANEL_ANT"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0.0,
+0,
+0
+],
+"x_dir": [
+0,
+1,
+0
+],
+"y_dir": [
+0,
+0,
+1
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-PSDR23-CASE-02_spigot.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.0,
+"profiles": [
+{
+"point": [
+0.0,
+-4.025
+]
+},
+{
+"point": [
+0.0,
+2.725
+]
+}
+],
+"operation": "join",
+"direction": "positive",
+"targets": [
+"PANEL_ANT"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-5.95
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-PSDR23-CASE-02_lug_thick.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 3.85,
+"profiles": [
+{
+"point": [
+3.7496,
+7.8491
+]
+},
+{
+"point": [
+3.7496,
+-7.8491
+]
+}
+],
+"operation": "join",
+"targets": [
+"PANEL_ANT"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-0.4
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-PSDR23-CASE-02_lug_thin.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 2.0,
+"profiles": [
+{
+"point": [
+3.7496,
+7.8491
+]
+},
+{
+"point": [
+3.7496,
+-7.8491
+]
+}
+],
+"operation": "join",
+"targets": [
+"PANEL_ANT"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+1.6
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-PSDR23-CASE-02_blocks.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.5,
+"profiles": [
+{
+"point": [
+1.75,
+7.8
+]
+},
+{
+"point": [
+1.75,
+-7.8
+]
+}
+],
+"operation": "join",
+"targets": [
+"PANEL_ANT"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-2.1,
+0,
+0
+],
+"x_dir": [
+0,
+1,
+0
+],
+"y_dir": [
+0,
+0,
+1
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-PSDR23-CASE-02_thru.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 3.3,
+"profiles": [
+{
+"point": [
+0.0,
+0.0
+]
+}
+],
+"operation": "cut",
+"direction": "positive",
+"targets": [
+"PANEL_ANT"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-2.1,
+0,
+0
+],
+"x_dir": [
+0,
+1,
+0
+],
+"y_dir": [
+0,
+0,
+1
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-PSDR23-CASE-02_recess.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7,
+"profiles": [
+{
+"point": [
+0.0,
+0.0
+]
+}
+],
+"operation": "cut",
+"direction": "positive",
+"targets": [
+"PANEL_ANT"
+]
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+4.0,
+7.8,
+-5.95
+],
+"direction": [
+0,
+0,
+1
+],
+"diameter": 2.2,
+"depth": 3.9,
+"targets": [
+"PANEL_ANT"
+]
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+4.0,
+-7.8,
+-5.95
+],
+"direction": [
+0,
+0,
+1
+],
+"diameter": 2.2,
+"depth": 3.9,
+"targets": [
+"PANEL_ANT"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+1.7
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-PSDR23-CASE-02_nut.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 2.2,
+"profiles": [
+{
+"point": [
+4.0,
+8.8
+]
+},
+{
+"point": [
+4.0,
+-6.8
+]
+}
+],
+"operation": "cut",
+"direction": "negative",
+"targets": [
+"PANEL_ANT"
+]
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"PANEL_ANT"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "material.assign",
+"params": {
+"bodies": [
+"PANEL_ANT"
+],
+"material": "Aluminum"
+}
+}
+]
+}

@@ -1,0 +1,3194 @@
+{
+"commands": [
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+0
+],
+"x_dir": [
+0,
+1,
+0
+],
+"y_dir": [
+0,
+0,
+1
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-PSDR23-CASE-01_section.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 55.0,
+"profiles": [
+{
+"point": [
+-11.75,
+0.0
+]
+}
+],
+"operation": "new",
+"body_name": "TUBE"
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+4.0,
+7.8,
+-7.5
+],
+"direction": [
+0,
+0,
+1
+],
+"diameter": 2.4,
+"depth": 1.8
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+4.0,
+-7.8,
+-7.5
+],
+"direction": [
+0,
+0,
+1
+],
+"diameter": 2.4,
+"depth": 1.8
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+51.0,
+7.8,
+-7.5
+],
+"direction": [
+0,
+0,
+1
+],
+"diameter": 2.4,
+"depth": 1.8
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+51.0,
+-7.8,
+-7.5
+],
+"direction": [
+0,
+0,
+1
+],
+"diameter": 2.4,
+"depth": 1.8
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+7.6
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-PSDR23-CASE-01_top_mark.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.2,
+"profiles": [
+{
+"point": [
+18.9596,
+9.6431
+]
+},
+{
+"point": [
+14.5675,
+6.7201
+]
+},
+{
+"point": [
+20.507,
+4.5933
+]
+},
+{
+"point": [
+22.7687,
+4.4781
+]
+},
+{
+"point": [
+23.7119,
+4.5514
+]
+},
+{
+"point": [
+25.7399,
+4.5828
+]
+},
+{
+"point": [
+24.7635,
+4.5828
+]
+},
+{
+"point": [
+21.5565,
+4.6719
+]
+},
+{
+"point": [
+19.0825,
+4.6247
+]
+},
+{
+"point": [
+16.1942,
+4.0852
+]
+},
+{
+"point": [
+24.1437,
+1.3141
+]
+},
+{
+"point": [
+19.0605,
+1.4084
+]
+},
+{
+"point": [
+20.6938,
+1.3612
+]
+},
+{
+"point": [
+22.6618,
+1.3665
+]
+},
+{
+"point": [
+25.8161,
+1.2198
+]
+},
+{
+"point": [
+17.2348,
+1.4555
+]
+},
+{
+"point": [
+27.4059,
+4.63
+]
+},
+{
+"point": [
+28.3175,
+4.6142
+]
+},
+{
+"point": [
+30.2243,
+4.6142
+]
+},
+{
+"point": [
+32.3785,
+4.5985
+]
+},
+{
+"point": [
+34.6838,
+4.6247
+]
+},
+{
+"point": [
+36.1154,
+4.74
+]
+},
+{
+"point": [
+31.1242,
+4.5776
+]
+},
+{
+"point": [
+29.2666,
+4.5933
+]
+},
+{
+"point": [
+33.0793,
+4.6352
+]
+},
+{
+"point": [
+31.6345,
+3.1789
+]
+},
+{
+"point": [
+27.8653,
+1.3979
+]
+},
+{
+"point": [
+28.9132,
+1.5655
+]
+},
+{
+"point": [
+30.322,
+1.3508
+]
+},
+{
+"point": [
+33.4785,
+1.2617
+]
+},
+{
+"point": [
+31.2469,
+1.356
+]
+},
+{
+"point": [
+35.0296,
+1.3455
+]
+},
+{
+"point": [
+40.9626,
+4.63
+]
+},
+{
+"point": [
+42.8894,
+4.4466
+]
+},
+{
+"point": [
+45.2855,
+4.5357
+]
+},
+{
+"point": [
+46.2192,
+4.6823
+]
+},
+{
+"point": [
+37.0923,
+4.5619
+]
+},
+{
+"point": [
+38.3907,
+4.6823
+]
+},
+{
+"point": [
+41.9339,
+4.5409
+]
+},
+{
+"point": [
+39.0617,
+4.5514
+]
+},
+{
+"point": [
+43.4419,
+4.5514
+]
+},
+{
+"point": [
+40.7006,
+1.4293
+]
+},
+{
+"point": [
+39.1718,
+1.4608
+]
+},
+{
+"point": [
+43.7871,
+1.2303
+]
+},
+{
+"point": [
+36.0135,
+1.3036
+]
+},
+{
+"point": [
+41.2129,
+1.2512
+]
+},
+{
+"point": [
+10.0605,
+-3.4677
+]
+},
+{
+"point": [
+12.148,
+-3.3201
+]
+},
+{
+"point": [
+14.8136,
+-3.3118
+]
+},
+{
+"point": [
+17.2365,
+-3.3118
+]
+},
+{
+"point": [
+19.3175,
+-5.1571
+]
+},
+{
+"point": [
+21.7994,
+-2.823
+]
+},
+{
+"point": [
+24.0888,
+-3.0886
+]
+},
+{
+"point": [
+25.4795,
+-3.1635
+]
+},
+{
+"point": [
+29.0063,
+-5.1571
+]
+},
+{
+"point": [
+31.2161,
+-3.2754
+]
+},
+{
+"point": [
+33.6365,
+-3.29
+]
+},
+{
+"point": [
+37.478,
+-3.3009
+]
+},
+{
+"point": [
+38.8978,
+-5.1571
+]
+},
+{
+"point": [
+40.3819,
+-3.197
+]
+},
+{
+"point": [
+43.1159,
+-3.8497
+]
+},
+{
+"point": [
+44.4653,
+-4.3508
+]
+},
+{
+"point": [
+45.3781,
+-3.315
+]
+},
+{
+"point": [
+21.4166,
+-8.0104
+]
+},
+{
+"point": [
+22.8953,
+-8.0151
+]
+},
+{
+"point": [
+24.4071,
+-8.2473
+]
+},
+{
+"point": [
+25.5817,
+-8.3806
+]
+},
+{
+"point": [
+26.8415,
+-8.3806
+]
+},
+{
+"point": [
+27.9026,
+-8.2473
+]
+},
+{
+"point": [
+29.174,
+-7.9984
+]
+},
+{
+"point": [
+29.9447,
+-8.0104
+]
+},
+{
+"point": [
+31.9708,
+-7.9984
+]
+},
+{
+"point": [
+32.8218,
+-8.0151
+]
+}
+],
+"operation": "cut",
+"direction": "negative",
+"targets": [
+"TUBE"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-7.6
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+-1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-PSDR23-CASE-01_pn.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.2,
+"profiles": [
+{
+"point": [
+11.9301,
+-0.0021
+]
+},
+{
+"point": [
+14.0027,
+0.0062
+]
+},
+{
+"point": [
+15.218,
+0.1284
+]
+},
+{
+"point": [
+16.6769,
+-0.2199
+]
+},
+{
+"point": [
+17.7282,
+0.0151
+]
+},
+{
+"point": [
+19.3128,
+-0.0072
+]
+},
+{
+"point": [
+21.3074,
+0.0811
+]
+},
+{
+"point": [
+22.323,
+0.0062
+]
+},
+{
+"point": [
+24.0177,
+0.0014
+]
+},
+{
+"point": [
+25.1948,
+-0.0217
+]
+},
+{
+"point": [
+26.1179,
+-0.2199
+]
+},
+{
+"point": [
+26.7094,
+-0.0021
+]
+},
+{
+"point": [
+29.1168,
+0.1301
+]
+},
+{
+"point": [
+30.4915,
+-0.0072
+]
+},
+{
+"point": [
+31.8812,
+0.04
+]
+},
+{
+"point": [
+33.0729,
+-0.2199
+]
+},
+{
+"point": [
+33.6451,
+-0.0093
+]
+},
+{
+"point": [
+35.3601,
+-0.3383
+]
+},
+{
+"point": [
+37.2298,
+0.0062
+]
+},
+{
+"point": [
+38.838,
+0.04
+]
+},
+{
+"point": [
+39.9841,
+0.208
+]
+},
+{
+"point": [
+42.6992,
+0.1301
+]
+}
+],
+"operation": "cut",
+"direction": "negative",
+"targets": [
+"TUBE"
+]
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"TUBE"
+],
+"color": "#2b2d31"
+}
+},
+{
+"command": "material.assign",
+"params": {
+"bodies": [
+"TUBE"
+],
+"material": "Aluminum"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-2.0,
+0,
+0
+],
+"x_dir": [
+0,
+1,
+0
+],
+"y_dir": [
+0,
+0,
+1
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-PSDR23-CASE-02_flange.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 2.0,
+"profiles": [
+{
+"point": [
+0.0,
+0.0
+]
+}
+],
+"operation": "new",
+"direction": "positive",
+"body_name": "PANEL_ANT"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0.0,
+0,
+0
+],
+"x_dir": [
+0,
+1,
+0
+],
+"y_dir": [
+0,
+0,
+1
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-PSDR23-CASE-02_spigot.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.0,
+"profiles": [
+{
+"point": [
+0.0,
+-4.025
+]
+},
+{
+"point": [
+0.0,
+2.725
+]
+}
+],
+"operation": "join",
+"direction": "positive",
+"targets": [
+"PANEL_ANT"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-5.95
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-PSDR23-CASE-02_lug_thick.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 3.85,
+"profiles": [
+{
+"point": [
+3.7496,
+7.8491
+]
+},
+{
+"point": [
+3.7496,
+-7.8491
+]
+}
+],
+"operation": "join",
+"targets": [
+"PANEL_ANT"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-0.4
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-PSDR23-CASE-02_lug_thin.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 2.0,
+"profiles": [
+{
+"point": [
+3.7496,
+7.8491
+]
+},
+{
+"point": [
+3.7496,
+-7.8491
+]
+}
+],
+"operation": "join",
+"targets": [
+"PANEL_ANT"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+1.6
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-PSDR23-CASE-02_blocks.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.5,
+"profiles": [
+{
+"point": [
+1.75,
+7.8
+]
+},
+{
+"point": [
+1.75,
+-7.8
+]
+}
+],
+"operation": "join",
+"targets": [
+"PANEL_ANT"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-2.1,
+0,
+0
+],
+"x_dir": [
+0,
+1,
+0
+],
+"y_dir": [
+0,
+0,
+1
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-PSDR23-CASE-02_thru.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 3.3,
+"profiles": [
+{
+"point": [
+0.0,
+0.0
+]
+}
+],
+"operation": "cut",
+"direction": "positive",
+"targets": [
+"PANEL_ANT"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-2.1,
+0,
+0
+],
+"x_dir": [
+0,
+1,
+0
+],
+"y_dir": [
+0,
+0,
+1
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-PSDR23-CASE-02_recess.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.7,
+"profiles": [
+{
+"point": [
+0.0,
+0.0
+]
+}
+],
+"operation": "cut",
+"direction": "positive",
+"targets": [
+"PANEL_ANT"
+]
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+4.0,
+7.8,
+-5.95
+],
+"direction": [
+0,
+0,
+1
+],
+"diameter": 2.2,
+"depth": 3.9,
+"targets": [
+"PANEL_ANT"
+]
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+4.0,
+-7.8,
+-5.95
+],
+"direction": [
+0,
+0,
+1
+],
+"diameter": 2.2,
+"depth": 3.9,
+"targets": [
+"PANEL_ANT"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+1.7
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-PSDR23-CASE-02_nut.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 2.2,
+"profiles": [
+{
+"point": [
+4.0,
+8.8
+]
+},
+{
+"point": [
+4.0,
+-6.8
+]
+}
+],
+"operation": "cut",
+"direction": "negative",
+"targets": [
+"PANEL_ANT"
+]
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"PANEL_ANT"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "material.assign",
+"params": {
+"bodies": [
+"PANEL_ANT"
+],
+"material": "Aluminum"
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"PANEL_ANT"
+],
+"translate": [
+-18.0,
+0,
+0
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+57.0,
+0,
+0
+],
+"x_dir": [
+0,
+1,
+0
+],
+"y_dir": [
+0,
+0,
+1
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-PSDR23-CASE-03_flange.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 2.0,
+"profiles": [
+{
+"point": [
+0.0,
+0.0
+]
+}
+],
+"operation": "new",
+"direction": "negative",
+"body_name": "PANEL_USB"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+55.0,
+0,
+0
+],
+"x_dir": [
+0,
+1,
+0
+],
+"y_dir": [
+0,
+0,
+1
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-PSDR23-CASE-03_spigot.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.0,
+"profiles": [
+{
+"point": [
+0.0,
+-4.025
+]
+},
+{
+"point": [
+-7.925,
+1.55
+]
+}
+],
+"operation": "join",
+"direction": "negative",
+"targets": [
+"PANEL_USB"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-5.95
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-PSDR23-CASE-03_lug_thick.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 3.85,
+"profiles": [
+{
+"point": [
+51.2504,
+7.8491
+]
+},
+{
+"point": [
+51.2504,
+-7.8491
+]
+}
+],
+"operation": "join",
+"targets": [
+"PANEL_USB"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-0.4
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-PSDR23-CASE-03_lug_thin.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 2.0,
+"profiles": [
+{
+"point": [
+51.2504,
+7.8491
+]
+},
+{
+"point": [
+51.2504,
+-7.8491
+]
+}
+],
+"operation": "join",
+"targets": [
+"PANEL_USB"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+57.1,
+0,
+0
+],
+"x_dir": [
+0,
+1,
+0
+],
+"y_dir": [
+0,
+0,
+1
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-PSDR23-CASE-03_thru.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 3.3,
+"profiles": [
+{
+"point": [
+0.0,
+1.08
+]
+}
+],
+"operation": "cut",
+"direction": "negative",
+"targets": [
+"PANEL_USB"
+]
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+51.0,
+7.8,
+-5.95
+],
+"direction": [
+0,
+0,
+1
+],
+"diameter": 2.2,
+"depth": 3.9,
+"targets": [
+"PANEL_USB"
+]
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+51.0,
+-7.8,
+-5.95
+],
+"direction": [
+0,
+0,
+1
+],
+"diameter": 2.2,
+"depth": 3.9,
+"targets": [
+"PANEL_USB"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+1.7
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-PSDR23-CASE-03_nut.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 2.2,
+"profiles": [
+{
+"point": [
+51.0,
+8.8
+]
+},
+{
+"point": [
+51.0,
+-6.8
+]
+}
+],
+"operation": "cut",
+"direction": "negative",
+"targets": [
+"PANEL_USB"
+]
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"PANEL_USB"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "material.assign",
+"params": {
+"bodies": [
+"PANEL_USB"
+],
+"material": "Aluminum"
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"PANEL_USB"
+],
+"translate": [
+18.0,
+0,
+0
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+15.95
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/PSDR23_pcb.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.6,
+"profiles": [
+{
+"point": [
+27.5,
+0.025
+]
+}
+],
+"operation": "new",
+"body_name": "PCB"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"PCB"
+],
+"color": "#2f6b3a"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+17.55
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.rectangle.two_point",
+"params": {
+"p0": [
+11.049000000000007,
+-8.25
+],
+"p1": [
+27.549000000000007,
+8.25
+]
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 2.54,
+"operation": "new",
+"body_name": "SHIELD"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SHIELD"
+],
+"color": "#c9ccd0"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+17.55
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.rectangle.two_point",
+"params": {
+"p0": [
+33.899,
+-4.0
+],
+"p1": [
+41.899,
+4.0
+]
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.9,
+"operation": "new",
+"body_name": "U3"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"U3"
+],
+"color": "#2a2a2a"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0.6,
+0,
+0
+],
+"x_dir": [
+0,
+-1,
+0
+],
+"y_dir": [
+0,
+0,
+1
+]
+}
+}
+},
+{
+"command": "sketch.rectangle.two_point",
+"params": {
+"p0": [
+-2.6,
+15.4
+],
+"p1": [
+2.6,
+20.6
+]
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 2.0,
+"operation": "new",
+"body_name": "J4_SMA"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-1.4,
+0,
+0
+],
+"x_dir": [
+0,
+-1,
+0
+],
+"y_dir": [
+0,
+0,
+1
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+18.0
+],
+"diameter": 6.35
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 6.5,
+"operation": "new",
+"body_name": "J4_SMA_body"
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "J4_SMA",
+"tools": [
+"J4_SMA_body"
+],
+"operation": "join"
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-7.9,
+0,
+18.0
+],
+"direction": [
+1,
+0,
+0
+],
+"diameter": 4.6,
+"depth": 5.0
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"J4_SMA"
+],
+"color": "#d8c37a"
+}
+},
+{
+"command": "file.insert_step",
+"params": {
+"path": "C:/Program Files/KiCad/10.0/share/kicad/3dmodels/Connector_USB.3dshapes/USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal.step",
+"name": "J2_USB",
+"matrix": [
+[
+0.0,
+-1.0,
+0,
+52.599
+],
+[
+1.0,
+0.0,
+0,
+-0.0
+],
+[
+0,
+0,
+1,
+17.55
+]
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-17.5
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+-1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+4.0,
+-7.8
+],
+"diameter": 4.0
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.6,
+"operation": "new",
+"body_name": "SCR1_M2x10"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-17.5
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+4.0,
+7.8
+],
+"diameter": 2.0
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 10.0,
+"operation": "new",
+"body_name": "SCR1_M2x10_shank"
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SCR1_M2x10",
+"tools": [
+"SCR1_M2x10_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-19.1
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+-1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.rectangle.two_point",
+"params": {
+"p0": [
+2.9,
+-8.05
+],
+"p1": [
+5.1,
+-7.55
+]
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.8,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SCR1_M2x10"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-19.1
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+-1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.rectangle.two_point",
+"params": {
+"p0": [
+3.75,
+-8.9
+],
+"p1": [
+4.25,
+-6.699999999999999
+]
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.8,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SCR1_M2x10"
+]
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SCR1_M2x10"
+],
+"color": "#b8bcc2"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-0.2
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+-14.0,
+7.8
+],
+"radius": 2.3094,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.6,
+"operation": "new",
+"body_name": "NUT1_M2"
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-14.0,
+7.8,
+1.4000000000000001
+],
+"direction": [
+0,
+0,
+-1
+],
+"diameter": 1.6,
+"targets": [
+"NUT1_M2"
+]
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"NUT1_M2"
+],
+"color": "#a9adb3"
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"NUT1_M2"
+],
+"translate": [
+0,
+0,
+32.0
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-17.5
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+-1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+4.0,
+7.8
+],
+"diameter": 4.0
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.6,
+"operation": "new",
+"body_name": "SCR2_M2x10"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-17.5
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+4.0,
+-7.8
+],
+"diameter": 2.0
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 10.0,
+"operation": "new",
+"body_name": "SCR2_M2x10_shank"
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SCR2_M2x10",
+"tools": [
+"SCR2_M2x10_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-19.1
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+-1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.rectangle.two_point",
+"params": {
+"p0": [
+2.9,
+7.55
+],
+"p1": [
+5.1,
+8.05
+]
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.8,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SCR2_M2x10"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-19.1
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+-1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.rectangle.two_point",
+"params": {
+"p0": [
+3.75,
+6.699999999999999
+],
+"p1": [
+4.25,
+8.9
+]
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.8,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SCR2_M2x10"
+]
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SCR2_M2x10"
+],
+"color": "#b8bcc2"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-0.2
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+-14.0,
+-7.8
+],
+"radius": 2.3094,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.6,
+"operation": "new",
+"body_name": "NUT2_M2"
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-14.0,
+-7.8,
+1.4000000000000001
+],
+"direction": [
+0,
+0,
+-1
+],
+"diameter": 1.6,
+"targets": [
+"NUT2_M2"
+]
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"NUT2_M2"
+],
+"color": "#a9adb3"
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"NUT2_M2"
+],
+"translate": [
+0,
+0,
+32.0
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-17.5
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+-1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+51.0,
+-7.8
+],
+"diameter": 4.0
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.6,
+"operation": "new",
+"body_name": "SCR3_M2x10"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-17.5
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+51.0,
+7.8
+],
+"diameter": 2.0
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 10.0,
+"operation": "new",
+"body_name": "SCR3_M2x10_shank"
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SCR3_M2x10",
+"tools": [
+"SCR3_M2x10_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-19.1
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+-1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.rectangle.two_point",
+"params": {
+"p0": [
+49.9,
+-8.05
+],
+"p1": [
+52.1,
+-7.55
+]
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.8,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SCR3_M2x10"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-19.1
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+-1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.rectangle.two_point",
+"params": {
+"p0": [
+50.75,
+-8.9
+],
+"p1": [
+51.25,
+-6.699999999999999
+]
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.8,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SCR3_M2x10"
+]
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SCR3_M2x10"
+],
+"color": "#b8bcc2"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-0.2
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+69.0,
+7.8
+],
+"radius": 2.3094,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.6,
+"operation": "new",
+"body_name": "NUT3_M2"
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+69.0,
+7.8,
+1.4000000000000001
+],
+"direction": [
+0,
+0,
+-1
+],
+"diameter": 1.6,
+"targets": [
+"NUT3_M2"
+]
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"NUT3_M2"
+],
+"color": "#a9adb3"
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"NUT3_M2"
+],
+"translate": [
+0,
+0,
+32.0
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-17.5
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+-1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+51.0,
+7.8
+],
+"diameter": 4.0
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.6,
+"operation": "new",
+"body_name": "SCR4_M2x10"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-17.5
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+51.0,
+-7.8
+],
+"diameter": 2.0
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 10.0,
+"operation": "new",
+"body_name": "SCR4_M2x10_shank"
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SCR4_M2x10",
+"tools": [
+"SCR4_M2x10_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-19.1
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+-1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.rectangle.two_point",
+"params": {
+"p0": [
+49.9,
+7.55
+],
+"p1": [
+52.1,
+8.05
+]
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.8,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SCR4_M2x10"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-19.1
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+-1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.rectangle.two_point",
+"params": {
+"p0": [
+50.75,
+6.699999999999999
+],
+"p1": [
+51.25,
+8.9
+]
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.8,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SCR4_M2x10"
+]
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SCR4_M2x10"
+],
+"color": "#b8bcc2"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-0.2
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+69.0,
+-7.8
+],
+"radius": 2.3094,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.6,
+"operation": "new",
+"body_name": "NUT4_M2"
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+69.0,
+-7.8,
+1.4000000000000001
+],
+"direction": [
+0,
+0,
+-1
+],
+"diameter": 1.6,
+"targets": [
+"NUT4_M2"
+]
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"NUT4_M2"
+],
+"color": "#a9adb3"
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"NUT4_M2"
+],
+"translate": [
+0,
+0,
+32.0
+]
+}
+}
+]
+}
