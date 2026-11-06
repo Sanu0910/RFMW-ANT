@@ -1,0 +1,62 @@
+{
+ "chains": {
+  "L1": {
+   "case": "GPS L1 C/A (1575.42 MHz)",
+   "f_mhz": 1575.42,
+   "gain_db": 37.12,
+   "nf_db": 1.008,
+   "iip3_dbm": -7.9,
+   "ip1db_dbm": -20.4,
+   "saw_rating_dbm": 15.0,
+   "p_ant_saw1_dbm": -6.3,
+   "p_ant_saw2_dbm": -27.4
+  },
+  "L5": {
+   "case": "GPS L5 (1176.45 MHz)",
+   "f_mhz": 1176.45,
+   "gain_db": 40.82,
+   "nf_db": 0.789,
+   "iip3_dbm": -11.4,
+   "ip1db_dbm": -23.9,
+   "saw_rating_dbm": 5.0,
+   "p_ant_saw1_dbm": -18.2,
+   "p_ant_saw2_dbm": -40.9
+  },
+  "L2": {
+   "case": "GPS L2C (1227.60 MHz)",
+   "f_mhz": 1227.6000000000001,
+   "gain_db": 38.29,
+   "nf_db": 0.827,
+   "iip3_dbm": -10.4,
+   "ip1db_dbm": -22.9,
+   "saw_rating_dbm": 5.0,
+   "p_ant_saw1_dbm": -18.0,
+   "p_ant_saw2_dbm": -39.9
+  },
+  "S": {
+   "case": "NavIC S (2492.028 MHz)",
+   "f_mhz": 2492.028,
+   "gain_db": 33.02,
+   "nf_db": 1.347,
+   "iip3_dbm": -2.2,
+   "ip1db_dbm": -15.2,
+   "saw_rating_dbm": 10.0,
+   "p_ant_saw1_dbm": -8.4,
+   "p_ant_saw2_dbm": -26.1
+  }
+ },
+ "power": {
+  "i_typ_a": 1.68,
+  "i_max_a": 2.16,
+  "p_typ_w": 8.4,
+  "p_max_w": 11.34
+ },
+ "thermal": {
+  "theta_jc": 53.4,
+  "p_lna_w": 0.35000000000000003,
+  "dT_jc": 18.7,
+  "tcase_85": 85.0,
+  "tj_85": 103.7,
+  "tj_limit": 190.0
+ }
+}

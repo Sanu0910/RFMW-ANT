@@ -1,0 +1,79 @@
+d_mm,x,y,r,function
+0.77,-74.7,0.0,74.7,"S-band patch feed pin (4 per S element, 4.0 mm from its centre)"
+0.77,-70.7,-4.0,70.81,"S-band patch feed pin (4 per S element, 4.0 mm from its centre)"
+0.77,-70.7,4.0,70.81,"S-band patch feed pin (4 per S element, 4.0 mm from its centre)"
+0.77,-66.7,0.0,66.7,"S-band patch feed pin (4 per S element, 4.0 mm from its centre)"
+0.77,-4.0,-70.7,70.81,"S-band patch feed pin (4 per S element, 4.0 mm from its centre)"
+0.77,-4.0,70.7,70.81,"S-band patch feed pin (4 per S element, 4.0 mm from its centre)"
+0.77,0.0,-74.7,74.7,"S-band patch feed pin (4 per S element, 4.0 mm from its centre)"
+0.77,0.0,-66.7,66.7,"S-band patch feed pin (4 per S element, 4.0 mm from its centre)"
+0.77,0.0,66.7,66.7,"S-band patch feed pin (4 per S element, 4.0 mm from its centre)"
+0.77,0.0,74.7,74.7,"S-band patch feed pin (4 per S element, 4.0 mm from its centre)"
+0.77,4.0,-70.7,70.81,"S-band patch feed pin (4 per S element, 4.0 mm from its centre)"
+0.77,4.0,70.7,70.81,"S-band patch feed pin (4 per S element, 4.0 mm from its centre)"
+0.77,66.7,0.0,66.7,"S-band patch feed pin (4 per S element, 4.0 mm from its centre)"
+0.77,70.7,-4.0,70.81,"S-band patch feed pin (4 per S element, 4.0 mm from its centre)"
+0.77,70.7,4.0,70.81,"S-band patch feed pin (4 per S element, 4.0 mm from its centre)"
+0.77,74.7,0.0,74.7,"S-band patch feed pin (4 per S element, 4.0 mm from its centre)"
+1.0,-27.621,79.368,84.04,DC input header J (VDC/GND)
+1.0,-25.081,79.368,83.24,DC input header J (VDC/GND)
+1.1,-40.921,-25.079,47.99,S element / misc. [OPEN]
+1.1,-25.079,40.921,47.99,S element / misc. [OPEN]
+1.1,25.079,-40.921,47.99,S element / misc. [OPEN]
+1.1,40.921,25.079,47.99,S element / misc. [OPEN]
+1.35,-57.75,-45.5,73.52,"L-band patch feed pin (GPDF6010: L1 at 5.5 mm, L2 at 12.25 mm from centre)"
+1.35,-51.0,45.5,68.35,"L-band patch feed pin (GPDF6010: L1 at 5.5 mm, L2 at 12.25 mm from centre)"
+1.35,-45.5,-51.0,68.35,"L-band patch feed pin (GPDF6010: L1 at 5.5 mm, L2 at 12.25 mm from centre)"
+1.35,-45.5,-33.25,56.35,"L-band patch feed pin (GPDF6010: L1 at 5.5 mm, L2 at 12.25 mm from centre)"
+1.35,-45.5,57.75,73.52,"L-band patch feed pin (GPDF6010: L1 at 5.5 mm, L2 at 12.25 mm from centre)"
+1.35,-33.25,45.5,56.35,"L-band patch feed pin (GPDF6010: L1 at 5.5 mm, L2 at 12.25 mm from centre)"
+1.35,33.25,-45.5,56.35,"L-band patch feed pin (GPDF6010: L1 at 5.5 mm, L2 at 12.25 mm from centre)"
+1.35,45.5,-57.75,73.52,"L-band patch feed pin (GPDF6010: L1 at 5.5 mm, L2 at 12.25 mm from centre)"
+1.35,45.5,33.25,56.35,"L-band patch feed pin (GPDF6010: L1 at 5.5 mm, L2 at 12.25 mm from centre)"
+1.35,45.5,51.0,68.35,"L-band patch feed pin (GPDF6010: L1 at 5.5 mm, L2 at 12.25 mm from centre)"
+1.35,51.0,-45.5,68.35,"L-band patch feed pin (GPDF6010: L1 at 5.5 mm, L2 at 12.25 mm from centre)"
+1.35,57.75,45.5,73.52,"L-band patch feed pin (GPDF6010: L1 at 5.5 mm, L2 at 12.25 mm from centre)"
+1.36,-45.5,40.0,60.58,L-band patch feed pin (L1 90 deg)
+1.36,-40.0,-45.5,60.58,L-band patch feed pin (L1 90 deg)
+1.36,40.0,45.5,60.58,L-band patch feed pin (L1 90 deg)
+1.36,45.5,-40.0,60.58,L-band patch feed pin (L1 90 deg)
+2.2,-87.7,0.0,87.7,S element fixing / misc. M2 [ASSUMED]
+2.2,-70.7,-17.0,72.72,S element fixing / misc. M2 [ASSUMED]
+2.2,-70.7,17.0,72.72,S element fixing / misc. M2 [ASSUMED]
+2.2,-70.668,-0.032,70.67,S element fixing / misc. M2 [ASSUMED]
+2.2,-53.7,0.0,53.7,S element fixing / misc. M2 [ASSUMED]
+2.2,-17.0,-70.7,72.72,S element fixing / misc. M2 [ASSUMED]
+2.2,-17.0,70.7,72.72,S element fixing / misc. M2 [ASSUMED]
+2.2,-0.032,70.668,70.67,S element fixing / misc. M2 [ASSUMED]
+2.2,0.0,-87.7,87.7,S element fixing / misc. M2 [ASSUMED]
+2.2,0.0,-53.7,53.7,S element fixing / misc. M2 [ASSUMED]
+2.2,0.0,53.7,53.7,S element fixing / misc. M2 [ASSUMED]
+2.2,0.0,87.7,87.7,S element fixing / misc. M2 [ASSUMED]
+2.2,0.032,-70.668,70.67,S element fixing / misc. M2 [ASSUMED]
+2.2,17.0,-70.7,72.72,S element fixing / misc. M2 [ASSUMED]
+2.2,17.0,70.7,72.72,S element fixing / misc. M2 [ASSUMED]
+2.2,53.7,0.0,53.7,S element fixing / misc. M2 [ASSUMED]
+2.2,70.668,0.032,70.67,S element fixing / misc. M2 [ASSUMED]
+2.2,70.7,-17.0,72.72,S element fixing / misc. M2 [ASSUMED]
+2.2,70.7,17.0,72.72,S element fixing / misc. M2 [ASSUMED]
+2.2,87.7,0.0,87.7,S element fixing / misc. M2 [ASSUMED]
+3.2,-45.5,-45.5,64.35,L patch centre grounding screw (GPDF6010)
+3.2,-45.5,45.5,64.35,L patch centre grounding screw (GPDF6010)
+3.2,45.5,-45.5,64.35,L patch centre grounding screw (GPDF6010)
+3.2,45.5,45.5,64.35,L patch centre grounding screw (GPDF6010)
+3.6,-74.5,-45.5,87.3,"L patch fixing screw M3 (4 per element, +-29 mm)"
+3.6,-74.5,45.5,87.3,"L patch fixing screw M3 (4 per element, +-29 mm)"
+3.6,-45.5,-74.5,87.3,"L patch fixing screw M3 (4 per element, +-29 mm)"
+3.6,-45.5,-16.5,48.4,"L patch fixing screw M3 (4 per element, +-29 mm)"
+3.6,-45.5,16.5,48.4,"L patch fixing screw M3 (4 per element, +-29 mm)"
+3.6,-45.5,74.5,87.3,"L patch fixing screw M3 (4 per element, +-29 mm)"
+3.6,-16.5,-45.5,48.4,"L patch fixing screw M3 (4 per element, +-29 mm)"
+3.6,-16.5,45.5,48.4,"L patch fixing screw M3 (4 per element, +-29 mm)"
+3.6,16.5,-45.5,48.4,"L patch fixing screw M3 (4 per element, +-29 mm)"
+3.6,16.5,45.5,48.4,"L patch fixing screw M3 (4 per element, +-29 mm)"
+3.6,45.5,-74.5,87.3,"L patch fixing screw M3 (4 per element, +-29 mm)"
+3.6,45.5,-16.5,48.4,"L patch fixing screw M3 (4 per element, +-29 mm)"
+3.6,45.5,16.5,48.4,"L patch fixing screw M3 (4 per element, +-29 mm)"
+3.6,45.5,74.5,87.3,"L patch fixing screw M3 (4 per element, +-29 mm)"
+3.6,74.5,-45.5,87.3,"L patch fixing screw M3 (4 per element, +-29 mm)"
+3.6,74.5,45.5,87.3,"L patch fixing screw M3 (4 per element, +-29 mm)"

@@ -1,0 +1,26 @@
+parameter,min,typ,max,unit,condition
+Operational frequency range,700.0,,6000,MHz,
+Test frequency,,1950,,MHz,
+Gain,18.5,20.0,21.5,dB,1950 MHz
+Input return loss,,10,,dB,1950 MHz
+Output return loss,,11,,dB,1950 MHz
+Noise figure,,0.4,0.65,dB,1950 MHz
+Output P1dB,,20,,dBm,1950 MHz
+Output IP3,32.0,35,,dBm,"Pout=+5 dBm/tone, df=1 MHz"
+VPD on state,0.0,,0.4,V,
+VPD off state,2.5,3.3,VDD,V,
+IDD on,40.0,70,90,mA,
+IDD off,,3,4,mA,
+Shutdown pin current,,140,,uA,VPD>=2.5 V
+Rise time 10-90 %,,116,,ns,C1=10 pF
+Fall time 90-10 %,,340,,ns,C1=10 pF
+Thermal resistance theta_jc,,,53.4,C/W,channel to case
+Abs max supply voltage,,,7,V,
+Abs max RF input power CW,,,22,dBm,"50 ohm, 25 C"
+Storage temperature,-65.0,,150,C,
+Recommended VDD,3.0,4.2,5.25,V,
+Recommended Tcase,-40.0,,105,C,
+Tj for >1e6 h MTTF,,,190,C,
+ESD HBM,,Class 1B,,,JS-001-2014
+ESD CDM,,Class C2,,,JS-002-2014
+MSL,,1,,,J-STD-020

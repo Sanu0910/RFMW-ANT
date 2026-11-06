@@ -1,0 +1,16 @@
+item,value
+Storage temperature,-40 ... +85 C
+DC voltage,5.0 V max
+ESD MM,100 V
+ESD HBM,150 V
+ESD CDM,600 V
+Input power 915 MHz,"23 dBm (GSM 1:8, 5000 h @ 50 C)"
+Input power 1463 MHz,"15 dBm CW, 5000 h @ 50 C"
+Input power 1710 MHz,"15 dBm CW, 5000 h @ 50 C"
+Center frequency fc,1582.47 MHz typ
+Package,"0.9 x 0.7 x 0.50 mm, 4 pads"
+Pins,"1 input, 3 output, 2/4 ground"
+Impedance,"50 ohm in/out, no matching"
+Spec temperature,-30 ... +85 C
+MSL,3
+Group delay 1597.5-1605.9 MHz,typ 4.0 / max 15 ns

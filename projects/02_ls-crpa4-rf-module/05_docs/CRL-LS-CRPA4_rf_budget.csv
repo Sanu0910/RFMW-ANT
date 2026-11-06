@@ -1,0 +1,48 @@
+case,stage,gain_db,nf_db,gain_before_db,cum_gain_db,cum_nf_db,note
+GPS L1 C/A (1575.42 MHz),"Feed line, patch pin -> hybrid",-0.013,0.013,0.0,-0.01,0.013,2.7 mm
+GPS L1 C/A (1575.42 MHz),HC125A hybrid (RHCP combine),-0.361,0.361,-0.01,-0.37,0.374,p16 model
+GPS L1 C/A (1575.42 MHz),"Line, hybrid -> limiter",-0.069,0.069,-0.37,-0.44,0.442,14.7 mm
+GPS L1 C/A (1575.42 MHz),CLM-83-2W+ limiter,-0.165,0.165,-0.44,-0.61,0.607,p17
+GPS L1 C/A (1575.42 MHz),"Line, limiter -> LNA1",-0.02,0.02,-0.61,-0.63,0.627,
+GPS L1 C/A (1575.42 MHz),LNA1 TQP3M9037 + bias,21.953,0.372,-0.63,21.33,0.999,p16 model
+GPS L1 C/A (1575.42 MHz),B7504 #1,-0.893,0.893,21.33,20.43,1.005,
+GPS L1 C/A (1575.42 MHz),LNA2 TQP3M9037 + bias,21.953,0.372,20.43,42.39,1.008,
+GPS L1 C/A (1575.42 MHz),B7504 #2,-0.893,0.893,42.39,41.49,1.008,
+GPS L1 C/A (1575.42 MHz),B7504 #3,-0.893,0.893,41.49,40.6,1.008,
+GPS L1 C/A (1575.42 MHz),DXP.02.A combiner,-3.308,3.308,40.6,37.29,1.008,p16 model
+GPS L1 C/A (1575.42 MHz),Output line + DC block -> SMA,-0.175,0.175,37.29,37.12,1.008,
+GPS L5 (1176.45 MHz),"Feed line, patch pin -> hybrid",-0.027,0.027,0.0,-0.03,0.027,7.1 mm
+GPS L5 (1176.45 MHz),HC125A hybrid (RHCP combine),-0.191,0.191,-0.03,-0.22,0.218,p16 model
+GPS L5 (1176.45 MHz),"Line, hybrid -> limiter",-0.017,0.017,-0.22,-0.23,0.234,4.5 mm
+GPS L5 (1176.45 MHz),CLM-83-2W+ limiter,-0.138,0.138,-0.23,-0.37,0.372,p17
+GPS L5 (1176.45 MHz),"Line, limiter -> LNA1",-0.016,0.016,-0.37,-0.39,0.389,
+GPS L5 (1176.45 MHz),LNA1 TQP3M9037 + bias,23.606,0.394,-0.39,23.22,0.783,p16 model
+GPS L5 (1176.45 MHz),B8889 #1,-0.911,0.911,23.22,22.31,0.787,
+GPS L5 (1176.45 MHz),LNA2 TQP3M9037 + bias,23.606,0.394,22.31,45.91,0.789,
+GPS L5 (1176.45 MHz),B8889 #2,-0.911,0.911,45.91,45.0,0.789,
+GPS L5 (1176.45 MHz),B8889 #3,-0.911,0.911,45.0,44.09,0.789,
+GPS L5 (1176.45 MHz),DXP.02.A combiner,-3.138,3.138,44.09,40.95,0.789,p16 model
+GPS L5 (1176.45 MHz),Output line + DC block -> SMA,-0.132,0.132,40.95,40.82,0.789,
+GPS L2C (1227.60 MHz),"Feed line, patch pin -> hybrid",-0.027,0.027,0.0,-0.03,0.027,7.1 mm
+GPS L2C (1227.60 MHz),HC125A hybrid (RHCP combine),-0.217,0.217,-0.03,-0.24,0.244,p16 model
+GPS L2C (1227.60 MHz),"Line, hybrid -> limiter",-0.017,0.017,-0.24,-0.26,0.262,4.5 mm
+GPS L2C (1227.60 MHz),CLM-83-2W+ limiter,-0.142,0.142,-0.26,-0.4,0.404,p17
+GPS L2C (1227.60 MHz),"Line, limiter -> LNA1",-0.017,0.017,-0.4,-0.42,0.42,
+GPS L2C (1227.60 MHz),LNA1 TQP3M9037 + bias,23.386,0.396,-0.42,22.97,0.816,p16 model
+GPS L2C (1227.60 MHz),B8889 #1,-1.455,1.455,22.97,21.51,0.824,
+GPS L2C (1227.60 MHz),LNA2 TQP3M9037 + bias,23.386,0.396,21.51,44.9,0.826,
+GPS L2C (1227.60 MHz),B8889 #2,-1.455,1.455,44.9,43.44,0.826,
+GPS L2C (1227.60 MHz),B8889 #3,-1.455,1.455,43.44,41.99,0.826,
+GPS L2C (1227.60 MHz),DXP.02.A combiner,-3.555,3.555,41.99,38.43,0.827,p16 model
+GPS L2C (1227.60 MHz),Output line + DC block -> SMA,-0.137,0.137,38.43,38.29,0.827,
+NavIC S (2492.028 MHz),"Feed line, patch pin -> hybrid",-0.034,0.034,0.0,-0.03,0.034,5.2 mm
+NavIC S (2492.028 MHz),C2327J5003AHF hybrid (RHCP combine),-0.3,0.3,-0.03,-0.33,0.334,TTM Rev K typ excess IL
+NavIC S (2492.028 MHz),"Line, hybrid -> limiter",-0.05,0.05,-0.33,-0.38,0.384,7.6 mm
+NavIC S (2492.028 MHz),CLM-83-2W+ limiter,-0.3,0.3,-0.38,-0.68,0.684,"[ESTIMATE] 0.5 dB typ broadband, 0.17 dB at L1 (p17)"
+NavIC S (2492.028 MHz),"Line, limiter -> LNA1",-0.034,0.034,-0.68,-0.72,0.718,
+NavIC S (2492.028 MHz),LNA1 TQP3M9037 (2.3-2.6 GHz match),19.168,0.6,-0.72,18.45,1.318,NFmin 0.51 dB @2.5 GHz + 0.1 match [ESTIMATE]
+NavIC S (2492.028 MHz),TA1442A #1,-1.5,1.5,18.45,16.95,1.337,Tai-Saw model (p16 A24)
+NavIC S (2492.028 MHz),LNA2 TQP3M9037,19.168,0.6,16.95,36.12,1.347,
+NavIC S (2492.028 MHz),TA1442A #2,-1.5,1.5,36.12,34.62,1.347,
+NavIC S (2492.028 MHz),TA1442A #3,-1.5,1.5,34.62,33.12,1.347,
+NavIC S (2492.028 MHz),Output line + DC block -> SMA,-0.095,0.095,33.12,33.02,1.347,incl. SMA launch [ESTIMATE]

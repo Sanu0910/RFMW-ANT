@@ -1,6 +1,6 @@
 # Repository status: tools and projects
 
-_Last updated: 2026-11-05._
+_Last updated: 2026-11-06._
 
 Local machine: `bash tools/setup_local.sh`, then `python3 tools/doctor.py` (see `LOCAL_SETUP.md`). Cloud sessions start from a fresh container, so the tools below are **not installed** when a new session begins. Reinstall the ones a task needs with the commands in the last column (all need root; the container runs as root).
 
@@ -37,3 +37,4 @@ Each project folder has its own `STATUS.md` and `CHANGELOG.md`.
 | # | Project | State |
 |---|---|---|
 | 01 | X-band 8-way MSL divider housing V3 | Base, lid, gasket STEP + PCB V3 + drawings done; assembly STEPs pending |
+| 02 | L/S-band 4-ch CRPA board + back cover | PCB Rev A DRC clean, fab package + BOM, back cover STEP, RF budget, drawings, design report; test boards + Rev B gain plan pending |

@@ -1,0 +1,11 @@
+parameter,min,typ,max,unit
+Centre frequency Fc,,2492.0,,MHz
+Insertion loss 2489.5-2494.5 MHz,,1.55,2.0,dB
+Amplitude ripple 2489.5-2494.5 MHz,,0.2,1.0,dB
+VSWR 2489.5-2494.5 MHz,,1.2,1.8,
+Attenuation DC-2390 MHz,33.0,40.0,,dB
+Attenuation 2575-3000 MHz,43.0,50.0,,dB
+Temperature coefficient of frequency TCf,,-36.0,,ppm/C
+Max input power,,,10.0,dBm
+Max DC voltage,,,3.0,V
+Operating / storage temperature,-40.0,,85.0,C

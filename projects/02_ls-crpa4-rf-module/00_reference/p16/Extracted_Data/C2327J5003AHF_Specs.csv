@@ -1,0 +1,11 @@
+parameter,min,typ,max,unit
+Frequency,2300.0,,2700.0,MHz
+Port impedance,,50.0,,ohm
+Return loss,15.0,18.0,,dB
+Isolation,18.0,22.0,,dB
+"Insertion loss (excess, 10log(|Smi|^2+|Ski|^2))",,0.3,0.4,dB
+Amplitude balance,,0.1,0.9,dB
+Phase balance (relative to 90 deg),,4.0,8.0,deg
+Power handling @85 C,,,4.0,W
+Power handling @105 C,,,2.4,W
+Operating temperature,-55.0,,140.0,C

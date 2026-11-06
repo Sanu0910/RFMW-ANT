@@ -1,0 +1,27 @@
+row,pin,x_mod,y_mod,pad_w,pad_l,signal,main_board_trace
+T,T04,-5.487,12.737,1.35,2.54,IN_L2L5,RF 50 ohm (1.1 mm)
+T,T01,-10.974,12.737,1.35,2.54,"GND [ASSUMED: pour, no trace]",none
+T,T02,-9.145,12.737,1.35,2.54,IN_L1,RF 50 ohm (1.1 mm)
+T,T03,-7.316,12.737,1.35,2.54,TIE_A,0.3 mm tie
+T,T05,-3.658,12.737,1.35,2.54,"GND [ASSUMED: pour, no trace]",none
+T,T06,-1.829,12.737,1.35,2.54,"GND [ASSUMED: pour, no trace]",none
+T,T07,0.0,12.737,1.35,2.54,VDC_5V,"0.3 mm tie; DC (1.21 mm, via to In2 ring)"
+T,T08,1.829,12.737,1.35,2.54,"GND [ASSUMED: pour, no trace]",none
+T,T09,3.658,12.737,1.35,2.54,"GND [ASSUMED: pour, no trace]",none
+T,T10,5.487,12.737,1.35,2.54,IN_S,RF 50 ohm (1.1 mm)
+T,T11,7.316,12.737,1.35,2.54,"GND [ASSUMED: pour, no trace]",none
+T,T12,9.145,12.737,1.35,2.54,"GND [ASSUMED: pour, no trace]",none
+T,T13,10.974,12.737,1.35,2.54,"GND [ASSUMED: pour, no trace]",none
+B,B02,-9.145,-12.737,1.35,2.54,"GND [ASSUMED: pour, no trace]",none
+B,B03,-7.316,-12.737,1.35,2.54,"GND [ASSUMED: pour, no trace]",none
+B,B04,-5.487,-12.737,1.35,2.54,"GND [ASSUMED: pour, no trace]",none
+B,B06,-1.829,-12.737,1.35,2.54,"GND [ASSUMED: pour, no trace]",none
+B,B07,0.0,-12.737,1.35,2.54,"GND [ASSUMED: pour, no trace]",none
+B,B09,3.658,-12.737,1.35,2.54,"GND [ASSUMED: pour, no trace]",none
+B,B10,5.487,-12.737,1.35,2.54,OUT_L,RF 50 ohm (1.1 mm)
+B,B11,7.316,-12.737,1.35,2.54,TIE_B,0.3 mm tie
+B,B12,9.145,-12.737,1.35,2.54,OUT_S,RF 50 ohm (1.1 mm)
+B,B13,10.974,-12.737,1.35,2.54,"GND [ASSUMED: pour, no trace]",none
+B,B01,-10.974,-12.737,1.35,2.54,"GND [ASSUMED: pour, no trace]",none
+B,B05,-3.658,-12.737,1.35,2.54,"GND [ASSUMED: pour, no trace]",none
+B,B08,1.829,-12.737,1.35,2.54,"GND [ASSUMED: pour, no trace]",none

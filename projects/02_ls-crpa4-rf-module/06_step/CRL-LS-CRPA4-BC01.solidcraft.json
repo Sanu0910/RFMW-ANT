@@ -1,0 +1,1637 @@
+{
+"commands": [
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-11.0
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 200.0
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 10.7,
+"operation": "new",
+"body_name": "BC01"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-0.3
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/bc01_pocket.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 5.7,
+"direction": "negative",
+"profiles": [
+{
+"point": [
+-92.2005,
+0.4232
+]
+},
+{
+"point": [
+0.28,
+0.17
+]
+},
+{
+"point": [
+34.0215,
+-30.232
+]
+},
+{
+"point": [
+3.2555,
+66.0325
+]
+},
+{
+"point": [
+-63.106,
+4.1805
+]
+},
+{
+"point": [
+-35.6865,
+-35.489
+]
+},
+{
+"point": [
+-2.6955,
+-65.6925
+]
+},
+{
+"point": [
+-33.4615,
+30.572
+]
+},
+{
+"point": [
+36.2465,
+35.829
+]
+},
+{
+"point": [
+63.666,
+-3.8405
+]
+}
+],
+"operation": "cut",
+"targets": [
+"BC01"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-0.3
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/bc01_tunnels.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.0,
+"direction": "negative",
+"profiles": [
+{
+"point": [
+-13.321,
+-88.0333
+]
+},
+{
+"point": [
+88.674,
+-13.431
+]
+},
+{
+"point": [
+6.623,
+-12.2688
+]
+},
+{
+"point": [
+-11.968,
+-6.173
+]
+},
+{
+"point": [
+12.528,
+6.513
+]
+},
+{
+"point": [
+-6.063,
+12.6088
+]
+},
+{
+"point": [
+-88.114,
+13.771
+]
+},
+{
+"point": [
+13.881,
+88.3733
+]
+}
+],
+"operation": "cut",
+"targets": [
+"BC01"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-6.0
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/bc01_j5.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 4.0,
+"direction": "negative",
+"profiles": [
+{
+"point": [
+-35.72,
+86.17
+]
+}
+],
+"operation": "cut",
+"targets": [
+"BC01"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-11.0
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-4.719999999999999,
+5.170000000000002
+],
+"diameter": 11.5,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+16.80600000000001,
+88.564
+],
+"diameter": 11.5,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+5.280000000000001,
+5.170000000000002
+],
+"diameter": 11.5,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+88.674,
+-16.35600000000001
+],
+"diameter": 11.5,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+5.280000000000001,
+-4.829999999999998
+],
+"diameter": 11.5,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-16.245999999999995,
+-88.224
+],
+"diameter": 11.5,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-4.719999999999999,
+-4.829999999999998
+],
+"diameter": 11.5,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-88.114,
+16.695999999999998
+],
+"diameter": 11.5,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-74.22,
+45.67
+],
+"diameter": 6.2,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-16.22,
+45.67
+],
+"diameter": 6.2,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-45.22,
+16.67
+],
+"diameter": 6.2,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-45.22,
+74.67
+],
+"diameter": 6.2,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+16.78,
+45.67
+],
+"diameter": 6.2,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+74.78,
+45.67
+],
+"diameter": 6.2,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+45.78,
+16.67
+],
+"diameter": 6.2,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+45.78,
+74.67
+],
+"diameter": 6.2,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+16.78,
+-45.33
+],
+"diameter": 6.2,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+74.78,
+-45.33
+],
+"diameter": 6.2,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+45.78,
+-74.33
+],
+"diameter": 6.2,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+45.78,
+-16.33
+],
+"diameter": 6.2,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-74.22,
+-45.33
+],
+"diameter": 6.2,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-16.22,
+-45.33
+],
+"diameter": 6.2,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-45.22,
+-74.33
+],
+"diameter": 6.2,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-45.22,
+-16.33
+],
+"diameter": 6.2,
+"connect": false
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 5.0,
+"direction": "positive",
+"profiles": "all",
+"operation": "cut",
+"targets": [
+"BC01"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-11.0
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-4.719999999999999,
+5.170000000000002
+],
+"diameter": 6.8,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+16.80600000000001,
+88.564
+],
+"diameter": 6.8,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+5.280000000000001,
+5.170000000000002
+],
+"diameter": 6.8,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+88.674,
+-16.35600000000001
+],
+"diameter": 6.8,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+5.280000000000001,
+-4.829999999999998
+],
+"diameter": 6.8,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-16.245999999999995,
+-88.224
+],
+"diameter": 6.8,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-4.719999999999999,
+-4.829999999999998
+],
+"diameter": 6.8,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-88.114,
+16.695999999999998
+],
+"diameter": 6.8,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-74.22,
+45.67
+],
+"diameter": 3.4,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-16.22,
+45.67
+],
+"diameter": 3.4,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-45.22,
+16.67
+],
+"diameter": 3.4,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-45.22,
+74.67
+],
+"diameter": 3.4,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+16.78,
+45.67
+],
+"diameter": 3.4,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+74.78,
+45.67
+],
+"diameter": 3.4,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+45.78,
+16.67
+],
+"diameter": 3.4,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+45.78,
+74.67
+],
+"diameter": 3.4,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+16.78,
+-45.33
+],
+"diameter": 3.4,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+74.78,
+-45.33
+],
+"diameter": 3.4,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+45.78,
+-74.33
+],
+"diameter": 3.4,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+45.78,
+-16.33
+],
+"diameter": 3.4,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-74.22,
+-45.33
+],
+"diameter": 3.4,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-16.22,
+-45.33
+],
+"diameter": 3.4,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-45.22,
+-74.33
+],
+"diameter": 3.4,
+"connect": false
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-45.22,
+-16.33
+],
+"diameter": 3.4,
+"connect": false
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 12.0,
+"direction": "positive",
+"profiles": "all",
+"operation": "cut",
+"targets": [
+"BC01"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-11.0
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+-23.72,
+72.17
+],
+"diameter": 8.2,
+"connect": false
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 12.0,
+"direction": "positive",
+"profiles": "all",
+"operation": "cut",
+"targets": [
+"BC01"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+-11.0
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/bc01_engraving.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.3,
+"direction": "positive",
+"profiles": [
+{
+"point": [
+9.8335,
+37.8795
+]
+},
+{
+"point": [
+14.8828,
+34.5181
+]
+},
+{
+"point": [
+8.7188,
+32.4578
+]
+},
+{
+"point": [
+13.0137,
+31.488
+]
+},
+{
+"point": [
+3.8216,
+28.3494
+]
+},
+{
+"point": [
+9.7106,
+28.4217
+]
+},
+{
+"point": [
+7.7829,
+28.4157
+]
+},
+{
+"point": [
+5.5749,
+28.3614
+]
+},
+{
+"point": [
+1.9485,
+28.1928
+]
+},
+{
+"point": [
+-0.3584,
+28.3434
+]
+},
+{
+"point": [
+-1.5811,
+28.5181
+]
+},
+{
+"point": [
+11.8158,
+28.4639
+]
+},
+{
+"point": [
+-11.5217,
+34.1084
+]
+},
+{
+"point": [
+-3.4476,
+32.6084
+]
+},
+{
+"point": [
+-4.7362,
+30.4759
+]
+},
+{
+"point": [
+-3.2343,
+28.3434
+]
+},
+{
+"point": [
+-6.8633,
+28.241
+]
+},
+{
+"point": [
+-15.1687,
+28.4337
+]
+},
+{
+"point": [
+-13.4105,
+28.4699
+]
+},
+{
+"point": [
+-4.2969,
+28.3494
+]
+},
+{
+"point": [
+-8.6368,
+28.3253
+]
+},
+{
+"point": [
+-18.7181,
+28.2048
+]
+},
+{
+"point": [
+-9.7952,
+28.3253
+]
+},
+{
+"point": [
+-15.7577,
+28.2289
+]
+},
+{
+"point": [
+29.9486,
+23.2729
+]
+},
+{
+"point": [
+25.0173,
+22.9468
+]
+},
+{
+"point": [
+21.5276,
+23.3896
+]
+},
+{
+"point": [
+17.913,
+22.5795
+]
+},
+{
+"point": [
+15.7548,
+23.3896
+]
+},
+{
+"point": [
+11.1669,
+22.9183
+]
+},
+{
+"point": [
+8.189,
+22.5795
+]
+},
+{
+"point": [
+6.2006,
+23.2729
+]
+},
+{
+"point": [
+1.2693,
+22.9468
+]
+},
+{
+"point": [
+-3.2224,
+22.931
+]
+},
+{
+"point": [
+-6.0768,
+23.2666
+]
+},
+{
+"point": [
+-11.4724,
+23.3815
+]
+},
+{
+"point": [
+-13.9207,
+22.5795
+]
+},
+{
+"point": [
+-17.0631,
+22.8935
+]
+},
+{
+"point": [
+-20.0908,
+23.2729
+]
+},
+{
+"point": [
+-24.0458,
+23.0
+]
+},
+{
+"point": [
+-29.1264,
+22.9087
+]
+},
+{
+"point": [
+31.8393,
+16.9338
+]
+},
+{
+"point": [
+29.1287,
+16.6452
+]
+},
+{
+"point": [
+25.5382,
+16.5321
+]
+},
+{
+"point": [
+22.4009,
+16.9338
+]
+},
+{
+"point": [
+19.4877,
+16.6945
+]
+},
+{
+"point": [
+18.0238,
+16.5472
+]
+},
+{
+"point": [
+16.8103,
+16.9338
+]
+},
+{
+"point": [
+13.7939,
+16.6732
+]
+},
+{
+"point": [
+10.5091,
+16.5321
+]
+},
+{
+"point": [
+5.8241,
+16.7
+]
+},
+{
+"point": [
+4.1086,
+16.4096
+]
+},
+{
+"point": [
+2.4352,
+16.6781
+]
+},
+{
+"point": [
+0.2495,
+16.7
+]
+},
+{
+"point": [
+-0.8734,
+16.8638
+]
+},
+{
+"point": [
+-5.1924,
+16.651
+]
+},
+{
+"point": [
+-9.7903,
+16.6361
+]
+},
+{
+"point": [
+-11.9118,
+16.86
+]
+},
+{
+"point": [
+-14.1546,
+16.8638
+]
+},
+{
+"point": [
+-16.98,
+16.6043
+]
+},
+{
+"point": [
+-20.2673,
+16.8638
+]
+},
+{
+"point": [
+-22.6803,
+16.8659
+]
+},
+{
+"point": [
+-25.5336,
+17.0143
+]
+},
+{
+"point": [
+-28.5372,
+16.7514
+]
+},
+{
+"point": [
+-30.7326,
+16.6681
+]
+},
+{
+"point": [
+28.5982,
+-28.8366
+]
+},
+{
+"point": [
+27.1668,
+-28.5267
+]
+},
+{
+"point": [
+24.3503,
+-28.9535
+]
+},
+{
+"point": [
+21.9353,
+-28.6443
+]
+},
+{
+"point": [
+18.9501,
+-28.7
+]
+},
+{
+"point": [
+15.3165,
+-28.729
+]
+},
+{
+"point": [
+13.7534,
+-28.9733
+]
+},
+{
+"point": [
+11.6863,
+-28.7593
+]
+},
+{
+"point": [
+9.205,
+-28.7593
+]
+},
+{
+"point": [
+7.3108,
+-28.9733
+]
+},
+{
+"point": [
+5.0244,
+-28.7059
+]
+},
+{
+"point": [
+2.1141,
+-28.7
+]
+},
+{
+"point": [
+0.0618,
+-28.7059
+]
+},
+{
+"point": [
+-2.0485,
+-28.6175
+]
+},
+{
+"point": [
+-9.6931,
+-28.7531
+]
+},
+{
+"point": [
+-11.5397,
+-28.8655
+]
+},
+{
+"point": [
+-14.531,
+-28.7
+]
+},
+{
+"point": [
+-23.5499,
+-30.6756
+]
+},
+{
+"point": [
+-16.6752,
+64.4601
+]
+},
+{
+"point": [
+-20.3129,
+64.6365
+]
+},
+{
+"point": [
+-22.0754,
+65.0628
+]
+},
+{
+"point": [
+-28.6624,
+64.5124
+]
+},
+{
+"point": [
+-29.9331,
+64.8747
+]
+},
+{
+"point": [
+19.3425,
+76.23
+]
+},
+{
+"point": [
+15.922,
+76.113
+]
+},
+{
+"point": [
+13.2114,
+76.0024
+]
+},
+{
+"point": [
+9.5879,
+76.0084
+]
+},
+{
+"point": [
+80.0528,
+-12.3959
+]
+},
+{
+"point": [
+76.6323,
+-12.5129
+]
+},
+{
+"point": [
+73.7108,
+-12.5722
+]
+},
+{
+"point": [
+70.2983,
+-12.6176
+]
+},
+{
+"point": [
+-8.564,
+-73.0349
+]
+},
+{
+"point": [
+-11.9845,
+-73.1519
+]
+},
+{
+"point": [
+-14.6984,
+-73.2658
+]
+},
+{
+"point": [
+-18.3186,
+-73.2565
+]
+},
+{
+"point": [
+-69.2122,
+15.5102
+]
+},
+{
+"point": [
+-72.6327,
+15.3932
+]
+},
+{
+"point": [
+-75.6345,
+15.5781
+]
+},
+{
+"point": [
+-78.9667,
+15.2886
+]
+}
+],
+"operation": "cut",
+"targets": [
+"BC01"
+]
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"BC01"
+],
+"color": "#b9c0c7"
+}
+},
+{
+"command": "material.assign",
+"params": {
+"bodies": [
+"BC01"
+],
+"material": "Aluminum"
+}
+}
+]
+}

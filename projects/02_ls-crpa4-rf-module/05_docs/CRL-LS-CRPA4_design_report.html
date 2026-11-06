@@ -1,0 +1,1007 @@
+<!doctype html><html><head><meta charset='utf-8'><title>CRL-LS-CRPA4 design report</title><style>body{font-family:Segoe UI,Arial,sans-serif;font-size:10.5pt;line-height:1.38;margin:18mm 16mm;color:#111}
+h1{font-size:19pt;border-bottom:2px solid #1f4e79;padding-bottom:4px;color:#1f4e79}h2{font-size:13.5pt;color:#1f4e79;
+margin-top:20px;border-bottom:1px solid #c9d0d6}h3{font-size:11.5pt}table{border-collapse:collapse;margin:8px 0;font-size:8.6pt}
+td,th{border:1px solid #999;padding:2px 6px}th{background:#e8ecef}img{max-width:100%;border:1px solid #ddd;margin:6px 0}
+code{font-size:9pt;background:#f3f3f3;padding:0 2px}@page{size:A4;margin:12mm}</style></head><body><h1>CRL-LS-CRPA4 - L1 + L2/L5 + NavIC S 4-channel CRPA front end</h1>
+<h2>Design report, Rev A</h2>
+<p>BEL - CRL, Antenna / RFM lab. Date 06-11-2026. Project folder <code>projects/02_ls-crpa4-rf-module</code>.</p>
+<h2>1. Summary</h2>
+<p>CRL-LS-CRPA4 is a D200 mm, 4-layer active antenna board for a 4-element controlled-reception-pattern antenna (CRPA). Each
+element has a stacked GPS L1/L2 patch (GPDF6010.A) and a NavIC S patch (CRL-LS-SP01, BEL CRL). Every element feeds
+three filtered, amplified branches (L1, L2/L5, S): 2 LNAs and 3 SAW filters per branch, as in projects 16 and 17.
+L1 and L2/L5 are combined in a DXP.02.A diplexer per channel. Outputs: 4 L SMA + 4 S SMA, +5 V on one DC connector.
+A machined aluminium back cover (BC01) gives every chain its own shielded cavity.</p>
+<table>
+<thead>
+<tr>
+<th>Case</th>
+<th>Gain dB</th>
+<th>NF dB</th>
+<th>Input P1dB dBm</th>
+<th>IIP3 dBm</th>
+<th>2nd SAW rating dBm</th>
+<th>Antenna CW that reaches it dBm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPS L1 C/A (1575.42 MHz)</td>
+<td>37.1</td>
+<td>1.01</td>
+<td>-20.4</td>
+<td>-7.9</td>
+<td>15</td>
+<td>-27.4</td>
+</tr>
+<tr>
+<td>GPS L5 (1176.45 MHz)</td>
+<td>40.8</td>
+<td>0.79</td>
+<td>-23.9</td>
+<td>-11.4</td>
+<td>5</td>
+<td>-40.9</td>
+</tr>
+<tr>
+<td>GPS L2C (1227.60 MHz)</td>
+<td>38.3</td>
+<td>0.83</td>
+<td>-22.9</td>
+<td>-10.4</td>
+<td>5</td>
+<td>-39.9</td>
+</tr>
+<tr>
+<td>NavIC S (2492.028 MHz)</td>
+<td>33.0</td>
+<td>1.35</td>
+<td>-15.2</td>
+<td>-2.2</td>
+<td>10</td>
+<td>-26.1</td>
+</tr>
+</tbody>
+</table>
+<p>Supply 1.68 A typ / 2.16 A max at 5 V (8.4 W typ). Board DRC: 0 violations, 0 unconnected.
+Fabrication package complete (Gerber X2, Excellon, pick-and-place, IPC-D-356, BOM with 40 lines / 313 placements).</p>
+<p><strong>Key findings (section 7):</strong></p>
+<ol>
+<li>Weak rejection close to the bands: DME / TACAN 1150 9.9 dB; WiFi ch11 2462 4.4 dB; WiFi ch13 / BT high 2472-2480 2.2 dB; LTE B41 low 2506 -0.1 dB; LTE B7 UL 2535 5.9 dB.</li>
+<li>Gain and filter ratings: an in-band CW jammer of -41 dBm (L2/L5),
+   -27 dBm (L1) or -26 dBm (S) at the antenna drives the 2nd SAW to its
+   power rating. The input 1 dB compression point is -24 to -20 dBm (L) and
+   -15 dBm (S). For a CRPA, which must stay linear under jamming, this is the main Rev B item.</li>
+</ol>
+<h2>2. Design basis and decisions</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Decision</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bands</td>
+<td>GPS L1 1575.42; wide L2/L5 1164-1240; NavIC S 2492.028 MHz</td>
+<td>user, 2026-11-05</td>
+</tr>
+<tr>
+<td>Elements</td>
+<td>4, square, sequential rotation (-90 deg x k)</td>
+<td>customer board combine_model_2.0</td>
+</tr>
+<tr>
+<td>L spacing</td>
+<td>91.0 mm (0.48 lambda at L1)</td>
+<td>customer board</td>
+</tr>
+<tr>
+<td>S spacing</td>
+<td>60.15 mm = lambda/2 at 2492.028 MHz, R 42.53 mm</td>
+<td>user, 2026-11-06</td>
+</tr>
+<tr>
+<td>Chain</td>
+<td>limiter -&gt; LNA -&gt; SAW -&gt; LNA -&gt; SAW -&gt; SAW per branch</td>
+<td>projects 16 / 17</td>
+</tr>
+<tr>
+<td>Supply</td>
+<td>+5 V, one DC connector, reverse-polarity PFET, fuse, TVS</td>
+<td>user</td>
+</tr>
+<tr>
+<td>Outputs</td>
+<td>8 SMA (L and S separate) + DC</td>
+<td>user</td>
+</tr>
+<tr>
+<td>Board</td>
+<td>D200 mm, same size as the L-band board</td>
+<td>user</td>
+</tr>
+</tbody>
+</table>
+<h2>3. Architecture</h2>
+<p><img alt="block diagram" src="../07_drawings/CRL-LS-CRPA4_sheet6.png" /></p>
+<p>Per element: the patch feeds go to a 90 deg hybrid (HC125A for L1 and L2, Xinger C2327J5003AHF for S), which combines
+them into RHCP. The hybrid's isolated port goes to 50 ohm. Next comes a CLM-83-2W+ PIN limiter (CW +32 dBm, limited
+output +11.5 dBm typ), then the LNA / SAW cascade. S hybrid wiring: F0 -&gt; pin 4 (direct), F90 -&gt; pin 6 (coupled).
+This is RHCP because F90 sits +90 deg counter-clockwise (top view) from F0. <code>build_pcb.py</code> checks it on every build.</p>
+<h3>Array geometry</h3>
+<p><img alt="array" src="../07_drawings/CRL-LS-CRPA4_sheet2.png" /></p>
+<p>The S patches sit at lambda/2 (60.15 mm) so the S sub-array has no grating lobes and keeps full nulling
+depth. Each S patch clears its L neighbours by about 1 mm (25 x 25 mm patch). Mutual coupling L-to-S must be measured
+(section 9).</p>
+<h2>4. Stack-up and transmission lines</h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Type</th>
+<th>mm</th>
+<th>er</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F.Mask</td>
+<td>mask</td>
+<td>0.010</td>
+<td>3.8</td>
+<td>green LPI</td>
+</tr>
+<tr>
+<td>F.Cu</td>
+<td>copper</td>
+<td>0.035</td>
+<td></td>
+<td>L1: solid GND = antenna ground plane</td>
+</tr>
+<tr>
+<td>Core1</td>
+<td>core</td>
+<td>0.710</td>
+<td>4.4</td>
+<td>FR-4 high-Tg core (IT-180A)</td>
+</tr>
+<tr>
+<td>In1.Cu</td>
+<td>copper</td>
+<td>0.035</td>
+<td></td>
+<td>L2: GND + per-channel +5V star traces</td>
+</tr>
+<tr>
+<td>PP1</td>
+<td>prepreg</td>
+<td>0.540</td>
+<td>4.3</td>
+<td>FR-4 prepreg 2x2116 + 1x1080 (bonds FR-4 to RO4350B)</td>
+</tr>
+<tr>
+<td>In2.Cu</td>
+<td>copper</td>
+<td>0.035</td>
+<td></td>
+<td>L3: solid GND, RF reference for L4</td>
+</tr>
+<tr>
+<td>Core2</td>
+<td>core</td>
+<td>0.168</td>
+<td>3.66</td>
+<td>Rogers RO4350B 0.168 mm (6.6 mil), tan d 0.0037</td>
+</tr>
+<tr>
+<td>B.Cu</td>
+<td>copper</td>
+<td>0.035</td>
+<td></td>
+<td>L4: RF lines + all SMD parts, ENIG</td>
+</tr>
+<tr>
+<td>B.Mask</td>
+<td>mask</td>
+<td>0.010</td>
+<td>3.8</td>
+<td>green LPI</td>
+</tr>
+</tbody>
+</table>
+<p>The 50 ohm microstrip on L4 is 0.34 mm over the RO4350B 0.168 mm core to the L3 ground. Loss is 0.066 dB/cm at
+2.5 GHz, against 0.121 dB/cm for the same line on FR-4 7628. L1 is the solid antenna ground plane. L2 carries the
+per-channel +5 V star traces inside GND. Fence vias run along every RF line; frame vias sit at 2.5 mm pitch on every
+shield land.</p>
+<h2>5. Layout</h2>
+<p><img alt="bottom" src="img/render_bottom.png" /></p>
+<p>All SMD parts are on L4 (bottom); the patches are on L1 (top). Each L channel sits inside an octagonal ground frame,
+and each S chain inside a strip frame in the axis gap between L channels. Neighbouring frames share walls, so one
+cover wall serves both cavities. The TA1442A and C2327J5003AHF land patterns follow the vendor drawings (Tai-Saw Rev 1,
+TTM Rev K). Ground pads carry filled vias (IPC-4761 VII) for the lowest ground inductance.</p>
+<h2>6. RF budget (antenna feed -&gt; SMA, 25 C typical)</h2>
+<p>Data: project 16 Touchstone models (LNA, SAW, hybrid, diplexer), project 17 stage values for the L chain, this
+board's RF track lengths. Line loss is scaled with f^0.75 from 0.066 dB/cm at 2.5 GHz [ESTIMATE]. The CLM-83-2W+
+loss at S is 0.30 dB [ESTIMATE]. The S LNA noise figure is 0.60 dB (NFmin 0.51 dB at 2.5 GHz + 0.1 dB match) [ESTIMATE].</p>
+<p><strong>GPS L1 C/A (1575.42 MHz)</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Stage</th>
+<th>G dB</th>
+<th>NF dB</th>
+<th>Cum. G dB</th>
+<th>Cum. NF dB</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Feed line, patch pin -&gt; hybrid</td>
+<td>-0.013</td>
+<td>0.013</td>
+<td>-0.01</td>
+<td>0.013</td>
+<td>2.7 mm</td>
+</tr>
+<tr>
+<td>1</td>
+<td>HC125A hybrid (RHCP combine)</td>
+<td>-0.361</td>
+<td>0.361</td>
+<td>-0.37</td>
+<td>0.374</td>
+<td>p16 model</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Line, hybrid -&gt; limiter</td>
+<td>-0.069</td>
+<td>0.069</td>
+<td>-0.44</td>
+<td>0.442</td>
+<td>14.7 mm</td>
+</tr>
+<tr>
+<td>3</td>
+<td>CLM-83-2W+ limiter</td>
+<td>-0.165</td>
+<td>0.165</td>
+<td>-0.61</td>
+<td>0.607</td>
+<td>p17</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Line, limiter -&gt; LNA1</td>
+<td>-0.02</td>
+<td>0.02</td>
+<td>-0.63</td>
+<td>0.627</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>LNA1 TQP3M9037 + bias</td>
+<td>21.953</td>
+<td>0.372</td>
+<td>21.33</td>
+<td>0.999</td>
+<td>p16 model</td>
+</tr>
+<tr>
+<td>6</td>
+<td>B7504 #1</td>
+<td>-0.893</td>
+<td>0.893</td>
+<td>20.43</td>
+<td>1.005</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>LNA2 TQP3M9037 + bias</td>
+<td>21.953</td>
+<td>0.372</td>
+<td>42.39</td>
+<td>1.008</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>B7504 #2</td>
+<td>-0.893</td>
+<td>0.893</td>
+<td>41.49</td>
+<td>1.008</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>B7504 #3</td>
+<td>-0.893</td>
+<td>0.893</td>
+<td>40.6</td>
+<td>1.008</td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>DXP.02.A combiner</td>
+<td>-3.308</td>
+<td>3.308</td>
+<td>37.29</td>
+<td>1.008</td>
+<td>p16 model</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Output line + DC block -&gt; SMA</td>
+<td>-0.175</td>
+<td>0.175</td>
+<td>37.12</td>
+<td>1.008</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>GPS L5 (1176.45 MHz)</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Stage</th>
+<th>G dB</th>
+<th>NF dB</th>
+<th>Cum. G dB</th>
+<th>Cum. NF dB</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Feed line, patch pin -&gt; hybrid</td>
+<td>-0.027</td>
+<td>0.027</td>
+<td>-0.03</td>
+<td>0.027</td>
+<td>7.1 mm</td>
+</tr>
+<tr>
+<td>1</td>
+<td>HC125A hybrid (RHCP combine)</td>
+<td>-0.191</td>
+<td>0.191</td>
+<td>-0.22</td>
+<td>0.218</td>
+<td>p16 model</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Line, hybrid -&gt; limiter</td>
+<td>-0.017</td>
+<td>0.017</td>
+<td>-0.23</td>
+<td>0.234</td>
+<td>4.5 mm</td>
+</tr>
+<tr>
+<td>3</td>
+<td>CLM-83-2W+ limiter</td>
+<td>-0.138</td>
+<td>0.138</td>
+<td>-0.37</td>
+<td>0.372</td>
+<td>p17</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Line, limiter -&gt; LNA1</td>
+<td>-0.016</td>
+<td>0.016</td>
+<td>-0.39</td>
+<td>0.389</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>LNA1 TQP3M9037 + bias</td>
+<td>23.606</td>
+<td>0.394</td>
+<td>23.22</td>
+<td>0.783</td>
+<td>p16 model</td>
+</tr>
+<tr>
+<td>6</td>
+<td>B8889 #1</td>
+<td>-0.911</td>
+<td>0.911</td>
+<td>22.31</td>
+<td>0.787</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>LNA2 TQP3M9037 + bias</td>
+<td>23.606</td>
+<td>0.394</td>
+<td>45.91</td>
+<td>0.789</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>B8889 #2</td>
+<td>-0.911</td>
+<td>0.911</td>
+<td>45.0</td>
+<td>0.789</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>B8889 #3</td>
+<td>-0.911</td>
+<td>0.911</td>
+<td>44.09</td>
+<td>0.789</td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>DXP.02.A combiner</td>
+<td>-3.138</td>
+<td>3.138</td>
+<td>40.95</td>
+<td>0.789</td>
+<td>p16 model</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Output line + DC block -&gt; SMA</td>
+<td>-0.132</td>
+<td>0.132</td>
+<td>40.82</td>
+<td>0.789</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>GPS L2C (1227.60 MHz)</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Stage</th>
+<th>G dB</th>
+<th>NF dB</th>
+<th>Cum. G dB</th>
+<th>Cum. NF dB</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Feed line, patch pin -&gt; hybrid</td>
+<td>-0.027</td>
+<td>0.027</td>
+<td>-0.03</td>
+<td>0.027</td>
+<td>7.1 mm</td>
+</tr>
+<tr>
+<td>1</td>
+<td>HC125A hybrid (RHCP combine)</td>
+<td>-0.217</td>
+<td>0.217</td>
+<td>-0.24</td>
+<td>0.244</td>
+<td>p16 model</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Line, hybrid -&gt; limiter</td>
+<td>-0.017</td>
+<td>0.017</td>
+<td>-0.26</td>
+<td>0.262</td>
+<td>4.5 mm</td>
+</tr>
+<tr>
+<td>3</td>
+<td>CLM-83-2W+ limiter</td>
+<td>-0.142</td>
+<td>0.142</td>
+<td>-0.4</td>
+<td>0.404</td>
+<td>p17</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Line, limiter -&gt; LNA1</td>
+<td>-0.017</td>
+<td>0.017</td>
+<td>-0.42</td>
+<td>0.42</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>LNA1 TQP3M9037 + bias</td>
+<td>23.386</td>
+<td>0.396</td>
+<td>22.97</td>
+<td>0.816</td>
+<td>p16 model</td>
+</tr>
+<tr>
+<td>6</td>
+<td>B8889 #1</td>
+<td>-1.455</td>
+<td>1.455</td>
+<td>21.51</td>
+<td>0.824</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>LNA2 TQP3M9037 + bias</td>
+<td>23.386</td>
+<td>0.396</td>
+<td>44.9</td>
+<td>0.826</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>B8889 #2</td>
+<td>-1.455</td>
+<td>1.455</td>
+<td>43.44</td>
+<td>0.826</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>B8889 #3</td>
+<td>-1.455</td>
+<td>1.455</td>
+<td>41.99</td>
+<td>0.826</td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>DXP.02.A combiner</td>
+<td>-3.555</td>
+<td>3.555</td>
+<td>38.43</td>
+<td>0.827</td>
+<td>p16 model</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Output line + DC block -&gt; SMA</td>
+<td>-0.137</td>
+<td>0.137</td>
+<td>38.29</td>
+<td>0.827</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>NavIC S (2492.028 MHz)</strong></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Stage</th>
+<th>G dB</th>
+<th>NF dB</th>
+<th>Cum. G dB</th>
+<th>Cum. NF dB</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Feed line, patch pin -&gt; hybrid</td>
+<td>-0.034</td>
+<td>0.034</td>
+<td>-0.03</td>
+<td>0.034</td>
+<td>5.2 mm</td>
+</tr>
+<tr>
+<td>1</td>
+<td>C2327J5003AHF hybrid (RHCP combine)</td>
+<td>-0.3</td>
+<td>0.3</td>
+<td>-0.33</td>
+<td>0.334</td>
+<td>TTM Rev K typ excess IL</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Line, hybrid -&gt; limiter</td>
+<td>-0.05</td>
+<td>0.05</td>
+<td>-0.38</td>
+<td>0.384</td>
+<td>7.6 mm</td>
+</tr>
+<tr>
+<td>3</td>
+<td>CLM-83-2W+ limiter</td>
+<td>-0.3</td>
+<td>0.3</td>
+<td>-0.68</td>
+<td>0.684</td>
+<td>[ESTIMATE] 0.5 dB typ broadband, 0.17 dB at L1 (p17)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Line, limiter -&gt; LNA1</td>
+<td>-0.034</td>
+<td>0.034</td>
+<td>-0.72</td>
+<td>0.718</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>LNA1 TQP3M9037 (2.3-2.6 GHz match)</td>
+<td>19.168</td>
+<td>0.6</td>
+<td>18.45</td>
+<td>1.318</td>
+<td>NFmin 0.51 dB @2.5 GHz + 0.1 match [ESTIMATE]</td>
+</tr>
+<tr>
+<td>6</td>
+<td>TA1442A #1</td>
+<td>-1.5</td>
+<td>1.5</td>
+<td>16.95</td>
+<td>1.337</td>
+<td>Tai-Saw model (p16 A24)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>LNA2 TQP3M9037</td>
+<td>19.168</td>
+<td>0.6</td>
+<td>36.12</td>
+<td>1.347</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>TA1442A #2</td>
+<td>-1.5</td>
+<td>1.5</td>
+<td>34.62</td>
+<td>1.347</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>TA1442A #3</td>
+<td>-1.5</td>
+<td>1.5</td>
+<td>33.12</td>
+<td>1.347</td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>Output line + DC block -&gt; SMA</td>
+<td>-0.095</td>
+<td>0.095</td>
+<td>33.02</td>
+<td>1.347</td>
+<td>incl. SMA launch [ESTIMATE]</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="cascade" src="img/rf_cascade.png" /></p>
+<p>The system noise figure is set ahead of LNA1: hybrid, limiter and lines add 0.4-0.7 dB. Gain at the SMA is 33-41 dB,
+before the cable to the CRPA electronics.</p>
+<h2>7. Interference rejection, linearity and filter power</h2>
+<h3>7.1 Rejection</h3>
+<table>
+<thead>
+<tr>
+<th>Branch</th>
+<th>Interferer</th>
+<th>MHz</th>
+<th>Rejection dB (rel. pass band)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L1</td>
+<td>GSM900 / LTE B8 UL 900</td>
+<td>900</td>
+<td>&gt;80</td>
+</tr>
+<tr>
+<td>L1</td>
+<td>DME / TACAN 1150</td>
+<td>1150</td>
+<td>&gt;80</td>
+</tr>
+<tr>
+<td>L1</td>
+<td>Inmarsat UL 1643</td>
+<td>1643</td>
+<td>&gt;80</td>
+</tr>
+<tr>
+<td>L1</td>
+<td>Iridium 1621</td>
+<td>1621</td>
+<td>43.3</td>
+</tr>
+<tr>
+<td>L1</td>
+<td>LTE B3 UL 1747</td>
+<td>1747</td>
+<td>&gt;80</td>
+</tr>
+<tr>
+<td>L1</td>
+<td>LTE B1 UL 1950</td>
+<td>1950</td>
+<td>&gt;80</td>
+</tr>
+<tr>
+<td>L2/L5</td>
+<td>GSM900 / LTE B8 UL 900</td>
+<td>900</td>
+<td>&gt;80</td>
+</tr>
+<tr>
+<td>L2/L5</td>
+<td>DME / TACAN 1025</td>
+<td>1025</td>
+<td>&gt;80</td>
+</tr>
+<tr>
+<td>L2/L5</td>
+<td>DME / TACAN 1150</td>
+<td>1150</td>
+<td>9.9</td>
+</tr>
+<tr>
+<td>L2/L5</td>
+<td>Radar / ATC 1300</td>
+<td>1300</td>
+<td>&gt;80</td>
+</tr>
+<tr>
+<td>L2/L5</td>
+<td>GPS L1 1575</td>
+<td>1575</td>
+<td>&gt;80</td>
+</tr>
+<tr>
+<td>L2/L5</td>
+<td>LTE B3 UL 1747</td>
+<td>1747</td>
+<td>&gt;80</td>
+</tr>
+<tr>
+<td>S</td>
+<td>LTE B40 (2300-2400) 2350</td>
+<td>2350</td>
+<td>&gt;80</td>
+</tr>
+<tr>
+<td>S</td>
+<td>WiFi ch1 / BT low 2412</td>
+<td>2412</td>
+<td>&gt;80</td>
+</tr>
+<tr>
+<td>S</td>
+<td>WiFi ch6 2437</td>
+<td>2437</td>
+<td>45.0</td>
+</tr>
+<tr>
+<td>S</td>
+<td>WiFi ch11 2462</td>
+<td>2462</td>
+<td>4.4</td>
+</tr>
+<tr>
+<td>S</td>
+<td>WiFi ch13 / BT high 2472-2480</td>
+<td>2476</td>
+<td>2.2</td>
+</tr>
+<tr>
+<td>S</td>
+<td>LTE B41 low 2506</td>
+<td>2506</td>
+<td>-0.1</td>
+</tr>
+<tr>
+<td>S</td>
+<td>LTE B7 UL 2535</td>
+<td>2535</td>
+<td>5.9</td>
+</tr>
+<tr>
+<td>S</td>
+<td>LTE B41 / B7 2570</td>
+<td>2570</td>
+<td>&gt;80</td>
+</tr>
+<tr>
+<td>S</td>
+<td>LTE B41 2650</td>
+<td>2650</td>
+<td>&gt;80</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="rejection" src="img/rf_rejection.png" /></p>
+<p>The cascaded model gives over 100 dB far from the bands. A real board leaks around the filters (cover cavities,
+ground, bias lines), so anything above 80 dB is quoted as "&gt;80". Near-band results that matter:
+- <strong>NavIC S:</strong> the TA1442A curve stays within about 3 dB loss from roughly 2445 to 2540 MHz. The "5 MHz bandwidth"
+  in its datasheet is only the window it is specified over. WiFi channels 11-13, Bluetooth, LTE B41 (2496-2690,
+  used in India) and B7 uplink (2500-2570) therefore pass almost unattenuated. Wi-Fi ch6 gets 45 dB.
+- <strong>L2/L5:</strong> DME / TACAN replies up to 1150-1213 MHz overlap the wide 1164-1240 MHz band; only about 10 dB at 1150 MHz.
+- <strong>L1:</strong> Iridium (1616-1626 MHz) 43 dB; Inmarsat uplink &gt; 80 dB.</p>
+<h3>7.2 Linearity and SAW power rating</h3>
+<table>
+<thead>
+<tr>
+<th>Branch</th>
+<th>2nd SAW</th>
+<th>Rating</th>
+<th>Gain ahead of SAW #1 / #2</th>
+<th>CW at antenna that reaches the rating (SAW #1 / #2)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L1</td>
+<td>B7504</td>
+<td>15 dBm (out of band, 5000 h)</td>
+<td>about 21 / 42 dB</td>
+<td>-6.3 / -27.4 dBm</td>
+</tr>
+<tr>
+<td>L2/L5</td>
+<td>B8889</td>
+<td>5 dBm CW (2000 h at 55 C)</td>
+<td>about 23 / 45 dB</td>
+<td>-18.2 / -40.9 dBm</td>
+</tr>
+<tr>
+<td>S</td>
+<td>TA1442A</td>
+<td>10 dBm</td>
+<td>about 17 / 35 dB</td>
+<td>-8.4 / -26.1 dBm</td>
+</tr>
+</tbody>
+</table>
+<p>The limiter caps the LNA1 input at about +11.5 dBm, but LNA2 can still deliver +20 dBm into SAW #2. A jammer
+30-40 dB above the noise floor near the antenna is normal for a CRPA. The present gain distribution then overdrives
+SAW #2 and compresses the chain before the nulling electronics see the signal.</p>
+<p><strong>Rev B recommendations:</strong></p>
+<ol>
+<li>Cut the gain to about 25-28 dB per branch. Use one LNA ahead of the first SAW and a lower-gain second stage, or a
+   3-6 dB pad between LNA2 and SAW #2. This raises the input P1dB to about -10 dBm and keeps SAW #2 below rating.</li>
+<li>For S, add a second-stage filter with a sharp upper skirt (ceramic / BAW, LTE B41 and B7 rejection) or a
+   tighter S SAW. For L2/L5, decide whether the band must start at 1164 MHz (DME); 1166-1240 with a steeper
+   filter removes DME.</li>
+<li>Specify the receiver-side requirement: required gain at the antenna port, J/S to survive, recovery time.</li>
+</ol>
+<h2>8. Power and thermal</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LNAs</td>
+<td>24 x TQP3M9037, 70 mA typ / 90 mA max at 5 V</td>
+</tr>
+<tr>
+<td>Supply current</td>
+<td>1.68 A typ / 2.16 A max</td>
+</tr>
+<tr>
+<td>Power</td>
+<td>8.4 W typ / 11.3 W max (5.25 V)</td>
+</tr>
+<tr>
+<td>LNA dissipation</td>
+<td>0.35 W each, theta_jc 53.4 C/W -&gt; +18.7 C over the case</td>
+</tr>
+<tr>
+<td>Tj at 85 C case</td>
+<td>103.7 C (limit for &gt; 1e6 h MTTF: 190 C)</td>
+</tr>
+<tr>
+<td>Heat path</td>
+<td>exposed pad -&gt; filled vias -&gt; L3 / L2 GND -&gt; cover walls through the conductive gasket</td>
+</tr>
+</tbody>
+</table>
+<p>The thermal margin is large. The open point is the case temperature inside the sealed cover at the platform's maximum
+ambient (section 9).</p>
+<h2>9. Back cover BC01 (L + S)</h2>
+<p><img alt="cover" src="../07_drawings/CRL-LS-CRPA4_sheet5.png" /></p>
+<p>One machined Al 6061-T6 part, D200 mm, 11 mm high, 464 g, chromate conversion (conductive). Walls 1.2 mm wide run on
+every shield-frame land, so each L channel and each S chain has its own cavity. A form-in-place conductive gasket goes
+on the wall tops. RF tunnels 2.6 x 1.0 mm pass under the walls. There are 8 recessed SMA openings, an M8 DC
+receptacle, and 16 x M3 through cover, board and L patch. The outside face is engraved with the BEL logo, P/N,
+date, S/N and channel labels.</p>
+<h2>10. Manufacturing package</h2>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>04_fab/CRL-LS-CRPA4_Gerbers.zip</code></td>
+<td>Gerber X2 (4 Cu, mask, paste, silk, outline), Excellon PTH/NPTH + drill map</td>
+</tr>
+<tr>
+<td><code>04_fab/CRL-LS-CRPA4_CPL_bottom.csv</code></td>
+<td>pick-and-place, bottom side</td>
+</tr>
+<tr>
+<td><code>04_fab/CRL-LS-CRPA4.d356</code></td>
+<td>IPC-D-356 netlist for the bare-board electrical test</td>
+</tr>
+<tr>
+<td><code>04_fab/CRL-LS-CRPA4_BOM.csv / .xlsx</code></td>
+<td>40 lines incl. mechanical items</td>
+</tr>
+<tr>
+<td><code>04_fab/CRL-LS-CRPA4_FAB_NOTES.md</code></td>
+<td>stack-up, impedance, finish, via plugging, assembly and test</td>
+</tr>
+<tr>
+<td><code>06_step/CRL-LS-CRPA4_PCB.step</code>, <code>06_step/CRL-LS-CRPA4-BC01.step</code></td>
+<td>board and cover in one frame</td>
+</tr>
+<tr>
+<td><code>07_drawings/CRL-LS-CRPA4_DRAWINGS.pdf</code></td>
+<td>6 sheets: fab, array, assembly bottom / top, cover, block diagram</td>
+</tr>
+</tbody>
+</table>
+<h2>11. Open items and review gaps</h2>
+<ul>
+<li>Inputs needed: CRL-LS-SP01 drawing and measured S11 / axial ratio; L patch fixing holes (board D3.6 / D1.35 vs
+  GPDF6010.A D1.8 / D1.1); supply bus (5 V or 28 V); platform (MIL-STD-810 / 461 levels); CRPA processor gain /
+  match / delay requirements; radome; interference environment.</li>
+<li>Not yet built: test boards (one L channel, one S chain, THRU line) and their cover.</li>
+<li>Full list: <code>05_docs/CRL-LS-CRPA4_design_review_gaps.md</code>.</li>
+</ul>
+<h2>12. Assumptions</h2>
+<p>Values marked [ESTIMATE] / [ASSUMED] in the tables; project 16 <code>assumptions_log.md</code> (copied in <code>00_reference/p16</code>) for
+the component models. All data at 25 C typical; no temperature, part-to-part or ageing spread.</p></body></html>
