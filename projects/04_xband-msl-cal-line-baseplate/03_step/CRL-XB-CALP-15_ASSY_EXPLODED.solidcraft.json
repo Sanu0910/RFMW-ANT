@@ -1,0 +1,2790 @@
+{
+"commands": [
+{
+"command": "sketch.create",
+"params": {
+"plane": "XY",
+"offset": 0.0
+}
+},
+{
+"command": "sketch.rectangle.rounded",
+"params": {
+"p0": [
+-11.5,
+-15.5
+],
+"p1": [
+26.5,
+15.5
+],
+"radius": 3.0
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 5.49,
+"operation": "new",
+"body_name": "PLATE"
+}
+},
+{
+"command": "solid.chamfer",
+"params": {
+"edges": [
+[
+7.5,
+-15.5,
+0.0
+],
+[
+7.5,
+15.5,
+0.0
+],
+[
+-11.5,
+0.0,
+0.0
+],
+[
+26.5,
+0.0,
+0.0
+]
+],
+"distance": 0.5
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+5.49
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-XB-CALP-15_walls.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 8.36,
+"profiles": [
+{
+"point": [
+-9.0,
+0.0
+]
+},
+{
+"point": [
+24.0,
+0.0
+]
+}
+],
+"operation": "join",
+"targets": [
+"PLATE"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+5.49
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-XB-CALP-15_pocket.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.0,
+"profiles": [
+{
+"point": [
+7.5,
+0.0
+]
+}
+],
+"operation": "cut",
+"direction": "negative",
+"targets": [
+"PLATE"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+0
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-XB-CALP-15_underside.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 2.49,
+"profiles": [
+{
+"point": [
+7.5,
+7.3164
+]
+},
+{
+"point": [
+7.5,
+-7.3164
+]
+}
+],
+"operation": "cut",
+"targets": [
+"PLATE"
+]
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-11.5,
+0.0,
+6.85
+],
+"direction": [
+1,
+0,
+0
+],
+"diameter": 4.25,
+"depth": 5.5
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-11.5,
+-4.32,
+2.5299999999999994
+],
+"direction": [
+1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-11.5,
+-4.32,
+11.17
+],
+"direction": [
+1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-11.5,
+4.32,
+2.5299999999999994
+],
+"direction": [
+1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-11.5,
+4.32,
+11.17
+],
+"direction": [
+1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+26.5,
+0.0,
+6.85
+],
+"direction": [
+-1,
+0,
+0
+],
+"diameter": 4.25,
+"depth": 5.5
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+26.5,
+-4.32,
+2.5299999999999994
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+26.5,
+-4.32,
+11.17
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+26.5,
+4.32,
+2.5299999999999994
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+26.5,
+4.32,
+11.17
+],
+"direction": [
+-1,
+0,
+0
+],
+"thread": "M2.5",
+"depth": 4.0
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-2.3,
+-8.0,
+4.49
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M3",
+"depth": 4.99
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+-2.3,
+8.0,
+4.49
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M3",
+"depth": 4.99
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+17.3,
+-8.0,
+4.49
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M3",
+"depth": 4.99
+}
+},
+{
+"command": "solid.hole",
+"params": {
+"position": [
+17.3,
+8.0,
+4.49
+],
+"direction": [
+0,
+0,
+-1
+],
+"thread": "M3",
+"depth": 4.99
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0.0,
+-15.6,
+0.0
+],
+"x_dir": [
+1.0,
+0.0,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-XB-CALP-15_side_text.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.30000000000000004,
+"profiles": [
+{
+"point": [
+-8.3892,
+2.9924
+]
+},
+{
+"point": [
+-5.7984,
+3.0027
+]
+},
+{
+"point": [
+-4.2793,
+3.1554
+]
+},
+{
+"point": [
+-2.4557,
+2.7202
+]
+},
+{
+"point": [
+-1.1329,
+2.8551
+]
+},
+{
+"point": [
+0.6984,
+3.0218
+]
+},
+{
+"point": [
+2.3564,
+2.7202
+]
+},
+{
+"point": [
+3.0956,
+2.9924
+]
+},
+{
+"point": [
+6.105,
+3.1576
+]
+},
+{
+"point": [
+7.2055,
+3.1554
+]
+},
+{
+"point": [
+9.4129,
+3.0139
+]
+},
+{
+"point": [
+10.8929,
+2.7202
+]
+},
+{
+"point": [
+12.1981,
+2.5722
+]
+},
+{
+"point": [
+14.0245,
+2.9636
+]
+},
+{
+"point": [
+16.089,
+3.0027
+]
+},
+{
+"point": [
+18.0992,
+3.045
+]
+},
+{
+"point": [
+19.5319,
+3.255
+]
+},
+{
+"point": [
+22.9258,
+3.1576
+]
+}
+],
+"operation": "cut",
+"direction": "negative",
+"targets": [
+"PLATE"
+]
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+13.95
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-XB-CALP-15_wall_text.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.30000000000000004,
+"profiles": [
+{
+"point": [
+-9.2466,
+0.4036
+]
+},
+{
+"point": [
+-7.7775,
+-0.4651
+]
+},
+{
+"point": [
+23.5807,
+0.4036
+]
+},
+{
+"point": [
+25.1681,
+0.0019
+]
+}
+],
+"operation": "cut",
+"direction": "negative",
+"targets": [
+"PLATE"
+]
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"PLATE"
+],
+"color": "#b9c0c7"
+}
+},
+{
+"command": "material.assign",
+"params": {
+"bodies": [
+"PLATE"
+],
+"material": "Aluminum"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+14.49
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-XB-CALP-15_pcb.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.695,
+"profiles": [
+{
+"point": [
+7.5,
+0.0
+]
+}
+],
+"operation": "new",
+"body_name": "CAL_PCB"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"CAL_PCB"
+],
+"color": "#2f6b3a"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+0,
+0,
+16.185
+],
+"x_dir": [
+1,
+0,
+0
+],
+"y_dir": [
+0,
+1,
+0
+]
+}
+}
+},
+{
+"command": "sketch.insert_dxf",
+"params": {
+"path": "dxf_src/CRL-XB-CALP-15_pcb_cu.dxf"
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 0.035,
+"profiles": [
+{
+"point": [
+7.5,
+0.0715
+]
+},
+{
+"point": [
+-2.7912,
+0.0425
+]
+},
+{
+"point": [
+17.7912,
+0.0425
+]
+}
+],
+"operation": "new",
+"body_name": "CAL_PCB_TOP_CU"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"CAL_PCB_TOP_CU"
+],
+"color": "#c8823a"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-2.3,
+-8.0,
+24.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 5.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 3.0,
+"operation": "new",
+"body_name": "SP1_M3x6"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-2.3,
+-8.0,
+24.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 3.0
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 6.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SP1_M3x6_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-2.3,
+-8.0,
+27.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 1.4433756729740645,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.6500000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SP1_M3x6"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SP1_M3x6",
+"tools": [
+"SP1_M3x6_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SP1_M3x6"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-2.3,
+8.0,
+24.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 5.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 3.0,
+"operation": "new",
+"body_name": "SP2_M3x6"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-2.3,
+8.0,
+24.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 3.0
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 6.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SP2_M3x6_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-2.3,
+8.0,
+27.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 1.4433756729740645,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.6500000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SP2_M3x6"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SP2_M3x6",
+"tools": [
+"SP2_M3x6_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SP2_M3x6"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+17.3,
+-8.0,
+24.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 5.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 3.0,
+"operation": "new",
+"body_name": "SP3_M3x6"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+17.3,
+-8.0,
+24.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 3.0
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 6.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SP3_M3x6_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+17.3,
+-8.0,
+27.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 1.4433756729740645,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.6500000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SP3_M3x6"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SP3_M3x6",
+"tools": [
+"SP3_M3x6_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SP3_M3x6"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+17.3,
+8.0,
+24.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 5.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 3.0,
+"operation": "new",
+"body_name": "SP4_M3x6"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+17.3,
+8.0,
+24.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 3.0
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 6.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SP4_M3x6_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+17.3,
+8.0,
+27.22
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+1.0,
+0.0,
+-0.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 1.4433756729740645,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.6500000000000001,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SP4_M3x6"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SP4_M3x6",
+"tools": [
+"SP4_M3x6_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SP4_M3x6"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "file.insert_step",
+"params": {
+"path": "../00_vendor/HS_23_SMA-50-0-272-133_N_3D-outline_00051629-B.stp",
+"name": "J1_SMA"
+}
+},
+{
+"command": "body.rename",
+"params": {
+"body": "PartBody",
+"name": "J1_SMA"
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"J1_SMA"
+],
+"translate": [
+-19.131,
+0.0,
+6.85
+]
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"J1_SMA"
+],
+"color": "#d8c37a"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-35.09,
+-4.32,
+2.53
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 2.5,
+"operation": "new",
+"body_name": "SC_J1_1_M2.5x5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-35.09,
+-4.32,
+2.53
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 5.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SC_J1_1_M2.5x5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-37.59,
+-4.32,
+2.53
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 1.1547005383792517,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.375,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SC_J1_1_M2.5x5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SC_J1_1_M2.5x5",
+"tools": [
+"SC_J1_1_M2.5x5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SC_J1_1_M2.5x5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-35.09,
+-4.32,
+11.17
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 2.5,
+"operation": "new",
+"body_name": "SC_J1_2_M2.5x5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-35.09,
+-4.32,
+11.17
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 5.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SC_J1_2_M2.5x5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-37.59,
+-4.32,
+11.17
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 1.1547005383792517,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.375,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SC_J1_2_M2.5x5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SC_J1_2_M2.5x5",
+"tools": [
+"SC_J1_2_M2.5x5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SC_J1_2_M2.5x5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-35.09,
+4.32,
+2.53
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 2.5,
+"operation": "new",
+"body_name": "SC_J1_3_M2.5x5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-35.09,
+4.32,
+2.53
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 5.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SC_J1_3_M2.5x5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-37.59,
+4.32,
+2.53
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 1.1547005383792517,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.375,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SC_J1_3_M2.5x5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SC_J1_3_M2.5x5",
+"tools": [
+"SC_J1_3_M2.5x5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SC_J1_3_M2.5x5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-35.09,
+4.32,
+11.17
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 2.5,
+"operation": "new",
+"body_name": "SC_J1_4_M2.5x5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-35.09,
+4.32,
+11.17
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 5.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SC_J1_4_M2.5x5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+-37.59,
+4.32,
+11.17
+],
+"x_dir": [
+0.0,
+-1.0,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 1.1547005383792517,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.375,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SC_J1_4_M2.5x5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SC_J1_4_M2.5x5",
+"tools": [
+"SC_J1_4_M2.5x5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SC_J1_4_M2.5x5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "file.insert_step",
+"params": {
+"path": "../00_vendor/HS_23_SMA-50-0-272-133_N_3D-outline_00051629-B.stp",
+"name": "J2_SMA"
+}
+},
+{
+"command": "body.rename",
+"params": {
+"body": "PartBody",
+"name": "J2_SMA"
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"J2_SMA"
+],
+"axis": [
+0,
+0,
+1
+],
+"angle": 180.0
+}
+},
+{
+"command": "solid.move",
+"params": {
+"bodies": [
+"J2_SMA"
+],
+"translate": [
+34.131,
+0.0,
+6.85
+]
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"J2_SMA"
+],
+"color": "#d8c37a"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+50.09,
+-4.32,
+2.53
+],
+"x_dir": [
+0.0,
+1.0,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 2.5,
+"operation": "new",
+"body_name": "SC_J2_1_M2.5x5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+50.09,
+-4.32,
+2.53
+],
+"x_dir": [
+0.0,
+1.0,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 5.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SC_J2_1_M2.5x5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+52.59,
+-4.32,
+2.53
+],
+"x_dir": [
+0.0,
+1.0,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 1.1547005383792517,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.375,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SC_J2_1_M2.5x5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SC_J2_1_M2.5x5",
+"tools": [
+"SC_J2_1_M2.5x5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SC_J2_1_M2.5x5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+50.09,
+-4.32,
+11.17
+],
+"x_dir": [
+0.0,
+1.0,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 2.5,
+"operation": "new",
+"body_name": "SC_J2_2_M2.5x5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+50.09,
+-4.32,
+11.17
+],
+"x_dir": [
+0.0,
+1.0,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 5.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SC_J2_2_M2.5x5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+52.59,
+-4.32,
+11.17
+],
+"x_dir": [
+0.0,
+1.0,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 1.1547005383792517,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.375,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SC_J2_2_M2.5x5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SC_J2_2_M2.5x5",
+"tools": [
+"SC_J2_2_M2.5x5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SC_J2_2_M2.5x5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+50.09,
+4.32,
+2.53
+],
+"x_dir": [
+0.0,
+1.0,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 2.5,
+"operation": "new",
+"body_name": "SC_J2_3_M2.5x5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+50.09,
+4.32,
+2.53
+],
+"x_dir": [
+0.0,
+1.0,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 5.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SC_J2_3_M2.5x5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+52.59,
+4.32,
+2.53
+],
+"x_dir": [
+0.0,
+1.0,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 1.1547005383792517,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.375,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SC_J2_3_M2.5x5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SC_J2_3_M2.5x5",
+"tools": [
+"SC_J2_3_M2.5x5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SC_J2_3_M2.5x5"
+],
+"color": "#3a3d42"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+50.09,
+4.32,
+11.17
+],
+"x_dir": [
+0.0,
+1.0,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 4.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 2.5,
+"operation": "new",
+"body_name": "SC_J2_4_M2.5x5"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+50.09,
+4.32,
+11.17
+],
+"x_dir": [
+0.0,
+1.0,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.circle.center",
+"params": {
+"center": [
+0,
+0
+],
+"diameter": 2.5
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 5.0,
+"direction": "negative",
+"operation": "new",
+"body_name": "SC_J2_4_M2.5x5_shank"
+}
+},
+{
+"command": "sketch.create",
+"params": {
+"plane": {
+"origin": [
+52.59,
+4.32,
+11.17
+],
+"x_dir": [
+0.0,
+1.0,
+0.0
+],
+"y_dir": [
+0.0,
+0.0,
+1.0
+]
+}
+}
+},
+{
+"command": "sketch.polygon.inscribed",
+"params": {
+"center": [
+0,
+0
+],
+"radius": 1.1547005383792517,
+"sides": 6
+}
+},
+{
+"command": "sketch.finish",
+"params": {}
+},
+{
+"command": "solid.extrude",
+"params": {
+"distance": 1.375,
+"direction": "negative",
+"operation": "cut",
+"targets": [
+"SC_J2_4_M2.5x5"
+]
+}
+},
+{
+"command": "solid.combine",
+"params": {
+"target": "SC_J2_4_M2.5x5",
+"tools": [
+"SC_J2_4_M2.5x5_shank"
+],
+"operation": "join"
+}
+},
+{
+"command": "appearance.assign",
+"params": {
+"bodies": [
+"SC_J2_4_M2.5x5"
+],
+"color": "#3a3d42"
+}
+}
+]
+}
