@@ -127,9 +127,18 @@ def sheet_tube(H):
     dim(ax, (L, T["name_y"]), (L, 0), q(9), "%.1f" % -T["name_y"], horiz=False, fs=5.2)
     dim(ax, (L, T["date_y"]), (L, 0), q(4) - 0.0, "", horiz=False, fs=5.2)
     ax.text(L + q(5.5), T["date_y"] / 2 - 1.2, "%.1f" % -T["date_y"], fontsize=5.2, rotation=90, va="center")
+    for i, (_n, fn, x, y) in enumerate(H.leds):   # LED windows
+        ax.add_patch(Circle((x, y), T["led_d"] / 2, fc="white", ec=INK, lw=0.6, zorder=4))
+        lft = x < max(xx for _a, _b, xx, _c in H.leds) - 0.1   # inner hole: label on its left
+        ax.text(x - 1.3 if lft else x + 1.3, y - 1.9 if lft else (y + 0.6 if y > 6 else y - 1.6), "L%d" % (i + 1),
+                fontsize=5.0, color=RED, zorder=5, ha="right" if lft else "left")
+    xs = sorted({round(x, 2) for _n, _f, x, _y in H.leds}); ys = sorted({round(y, 2) for _n, _f, _x, y in H.leds})
+    for k, xx in enumerate(xs):
+        dim(ax, (0, W / 2), (xx, W / 2), q(4 + 5 * k), "%.2f" % xx, fs=5.0)
+    leader(ax, (xs[0] - 0.8, ys[-1] + 0.6), (xs[0] - q(34), W / 2 + q(6)), "3x Ø%.1f THRU (LED windows)" % T["led_d"], fs=5.0)
     ax.text(-q(4), W / 2 + q(2), "ANT end", fontsize=5.4, ha="left", color=RED)
     ax.text(L + q(4), W / 2 + q(2), "USB end", fontsize=5.4, ha="right", color=RED)
-    title(ax, L / 2, -W / 2 - q(19), "TOP VIEW (Z+, component side)  - marking")
+    title(ax, L / 2, -W / 2 - q(19), "TOP VIEW (Z+, component side)  - marking + LED windows")
 
     # bottom view: seen from below, Y mirrored
     ax2 = view(fig, 16, 52, (-q(16), L + q(14), -W / 2 - q(19), W / 2 + q(9)), s)
@@ -165,13 +174,16 @@ def sheet_tube(H):
     rows = [("ID", "Feature", "X", "Y", "Face")]
     for i, (x, y) in enumerate(H.holes):
         rows.append(("H%d" % (i + 1), "Ø%.1f THRU wall" % T["hole_d"], "%.2f" % x, "%+.2f" % y, "bottom (Z-)"))
+    for i, (n, fn, x, y) in enumerate(H.leds):
+        rows.append(("L%d" % (i + 1), "Ø%.1f THRU, %s %s" % (T["led_d"], n, fn), "%.2f" % x, "%+.2f" % y, "top (Z+)"))
     fig.text(0.452, 0.535, "HOLE TABLE  (X from the ANT end face, Y from the centre line)", fontsize=6.6, weight="bold")
     table(fig, 0.452, 0.515, rows, [0.025, 0.09, 0.04, 0.04, 0.05])
-    notes_block(fig, 0.452, 0.40, [
+    notes_block(fig, 0.452, 0.385, [
         "NOTES",
         "1. Material: %s." % C.MATERIAL["tube"],
         "2. Cut to length %.1f ±0.05; both ends faced square to the axis 0.05, deburred." % L,
-        "3. Holes H1-H4 in the bottom wall only; position ±0.05 to the ANT end face and the centre line.",
+        "3. Holes H1-H4 in the bottom wall, L1-L3 (LED windows, on the LED centres) in the top wall;",
+        "    position ±0.05 to the ANT end face and the centre line. Deburr; no anodize plug in L1-L3.",
         "4. Marking on the top face: laser marking preferred (hairlines 0.07). If engraved: %.1f deep, Ø0.2 engraver." % T["engrave"],
         "    Artwork: 00_input/BEL_CRL_logo.png and the text as drawn; %s.step governs." % C.PARTS["tube"],
         "5. Finish: %s." % C.FINISH,

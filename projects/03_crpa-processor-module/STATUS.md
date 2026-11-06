@@ -4,7 +4,8 @@ _Last updated: 2026-11-06._
 
 **State:** study. Five reference projects read; review written (`05_docs/CRPA_reference_review.md`).
 GNSS_JAM_PRO v1.0 case (PocketSDR v2.3 case design, CNC) modelled: STEP parts + assembly and a 4-sheet CNC
-drawing set (`06_step/`, `07_drawings/`), committed on projects-v2.
+drawing set (`06_step/`, `07_drawings/`), committed on projects-v2. Tube has 3 x Ø2.0 LED windows over
+LED1-3 (PWR / PLL / DATA); logo 34 mm wide to clear them.
 
 ## Done
 - Review of PocketSDR (incl. v0.15 array calibration / beam steering), max2771_fx2lp (2-element CRPA, spoof

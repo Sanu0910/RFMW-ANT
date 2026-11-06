@@ -39,6 +39,7 @@ PCB = dict(
     sma_axis_z=0.0,                            # J4 edge SMA axis = centre of the panel cut-out
     shield_k=(140.3, 105.95), shield=16.5, shield_h=2.54,   # Laird BMI-S-202-F, height [ASSUMED]
     u3_k=(158.9, 105.95), u3=8.0, u3_h=0.9,
+    leds_k=[("LED1", "PWR", 167.7011, 101.7), ("LED2", "PLL", 167.7011, 98.2), ("LED3", "DATA", 165.3511, 98.2)],  # 1608, F.Cu
 )
 
 # ---------------- tube (part -01): Al rectangular tube 25 x 15 x 1.5, L 55 ----------------
@@ -47,7 +48,8 @@ TUBE = dict(
     r_out=1.0, r_in=0.5,           # [ASSUMED] extrusion corner radii: check the bar
     hole_d=2.4,                    # [ASSUMED] M2 clearance, bottom wall only (source gives no tube drawing)
     hole_x=4.0, hole_y=7.8,        # = panel lug holes (4.0 from each end, +/-7.8)
-    logo_w=40.0, logo_y=5.4,       # logo on the top face (Z+), centred in X
+    logo_w=34.0, logo_y=5.4,       # logo on the top face (Z+), centred in X (34: clear of the LED holes, user 2026-11-06)
+    led_d=2.0,                     # LED window holes, top wall, centred on LED1-3 (user 2026-11-06)
     name_h=2.6, name_y=-4.6,       # GNSS_JAM_PRO_v1.0 (cap height, baseline Y)
     date_h=1.8, date_y=-8.9,       # date line
     engrave=0.10,                  # engraving / laser mark depth

@@ -26,6 +26,7 @@ class Case:
         self.hw, self.hh = T["W"] / 2, T["H"] / 2
         self.iw, self.ih = self.hw - T["wall"], self.hh - T["wall"]
         self.holes = [(x, s * T["hole_y"]) for x in (T["hole_x"], T["L"] - T["hole_x"]) for s in (1, -1)]
+        self.leds = [(n, f, self.X(kx), self.Y(ky)) for n, f, kx, ky in P["leds_k"]]   # LED windows, top wall
         self.usb_front = self.X(P["usb_k"][0]) + 3.675                  # USB4105 shell front (KiCad model)
         self.ends = {"ant": dict(sx=-1.0, xf=0.0), "usb": dict(sx=1.0, xf=self.L)}
 
@@ -91,6 +92,9 @@ class Case:
             True)
         ceil = self.ih - tol - (self.z_top + P["shield_h"])
         chk("Shield can to the tube ceiling (worst case)", "%.2f" % ceil, ">= 1.0", ceil >= 1.0)
+        lg = unary_union(A.logo_regions(C.LOGO_PNG, T["logo_w"], self.L / 2, T["logo_y"]))
+        gap = min(Point(x, y).distance(lg) for _n, _f, x, y in self.leds) - T["led_d"] / 2
+        chk("LED window holes clear of the logo engraving", "%.2f" % gap, ">= 0.8", gap >= 0.8)
         return r
 
 
@@ -136,6 +140,8 @@ def build_tube(s, H):
     extrude_regions(s, [H.tube_section()], plane([0, 0, 0], [0, 1, 0], [0, 0, 1]), H.L, pn + "_section", "new", nm)
     for x, y in H.holes:
         s.a("solid.hole", position=[x, y, -H.hh], direction=[0, 0, 1], diameter=T["hole_d"], depth=T["wall"] + 0.3)
+    for _n, _f, x, y in H.leds:   # LED windows through the top wall, on the LED centres
+        s.a("solid.hole", position=[x, y, H.hh], direction=[0, 0, -1], diameter=T["led_d"], depth=T["wall"] + 0.3)
     # top face (Z+), read with the ANT end on the left: logo, product name, date
     regs = A.logo_regions(C.LOGO_PNG, T["logo_w"], H.L / 2, T["logo_y"])
     regs += A.text_regions(C.TEXT["product"], T["name_h"], C.FONT_BOLD, H.L / 2, T["name_y"])

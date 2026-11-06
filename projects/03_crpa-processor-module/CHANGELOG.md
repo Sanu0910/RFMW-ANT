@@ -2,6 +2,12 @@
 
 Newest first.
 
+## 2026-11-06 - Case tube: 3 LED windows
+- Tube -01: 3 x Ø2.0 through holes in the top wall (L1-L3), centred on LED1 PWR / LED2 PLL / LED3 DATA from the
+  v2.3 board (KiCad/Gerber: X 46.70 / 46.70 / 44.35, Y +4.25 / +7.75 / +7.75 from the ANT end face and centre line).
+- Logo on the top face 40 -> 34 mm wide (still centred) so the holes clear the engraving by 1.22 mm; new fit check.
+- Drawing sheet 1: LED windows in the top view and the hole table, note 3. STEP, renders, drawings rebuilt.
+
 ## 2026-11-06 - GNSS_JAM_PRO v1.0 case (PocketSDR v2.3 case, CNC): STEP + drawings
 - PocketSDR FE 2CH v2.3 hardware copied to `00_reference/pocketsdr_v2.3/`. The `.f3d` bodies are Autodesk ASM
   binary (not readable without Fusion), so the case was rebuilt from the parts list (Al tube 25 x 15 x 1.5 x 55,
