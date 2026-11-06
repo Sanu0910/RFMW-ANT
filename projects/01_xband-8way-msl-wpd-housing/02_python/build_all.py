@@ -7,6 +7,7 @@ import config as C
 import geom as G
 import housing as Hm
 import pcb_v3
+import gerber_v3
 
 
 def main(parts):
@@ -15,6 +16,8 @@ def main(parts):
     holes, _ = G.place_holes(B)
     pcb = pcb_v3.build(B, holes)
     print("PCB v3: %d holes, %d vias removed -> %s" % (len(holes), pcb["removed"], os.path.relpath(pcb["path"], C.ROOT)))
+    gbr = gerber_v3.build()
+    print("PCB v3 Gerbers -> %s" % os.path.relpath(gbr["zip"], C.ROOT))
     H = Hm.Housing(B, holes)
     pn = C.TEXT["pn"]; res = {}
     if "base" in parts:

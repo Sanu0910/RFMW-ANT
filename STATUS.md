@@ -36,5 +36,5 @@ Each project folder has its own `STATUS.md` and `CHANGELOG.md`.
 
 | # | Project | State |
 |---|---|---|
-| 01 | X-band 8-way MSL divider housing V3 | Base, lid, gasket STEP + PCB V3 + drawings done; assembly STEPs pending |
+| 01 | X-band 8-way MSL divider housing V3 | Base, lid, gasket STEP + PCB V3 DXF + Gerbers + drawings done; assembly STEPs pending |
 | 02 | L/S-band 4-ch CRPA board + back cover | PCB Rev A DRC clean, fab package + BOM, back cover STEP, RF budget, drawings, design report; test boards + Rev B gain plan pending |

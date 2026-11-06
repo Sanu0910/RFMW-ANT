@@ -124,6 +124,7 @@ the ground beside every launch.
 ## Files
 
 - `01_pcb_v3/Wilkinson_8Way_XBand_RO4350B_30mil_FabricationReady_V3.dxf`
+- `01_pcb_v3/Wilkinson_8Way_XBand_RO4350B_30mil_FabricationReady_V3_gerber.zip`
 - `01_pcb_v3/Wilkinson_8Way_XBand_RO4350B_30mil_FabricationReady_V3_holes.csv`
 - `01_pcb_v3/Wilkinson_8Way_XBand_RO4350B_30mil_FabricationReady_V3_preview.png`
 - `03_step/CRL-XB-PD8-03_BASE.step`

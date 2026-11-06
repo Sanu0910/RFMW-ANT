@@ -2,6 +2,12 @@
 
 Newest first.
 
+## 2026-11-06 - PCB V3 Gerbers
+- New `02_python/gerber_v3.py` (run by `build_all.py`): Gerber X2 + Excellon set from the V3 DXF, in `01_pcb_v3/gerber_v3/`
+  and zipped as `01_pcb_v3/..._V3_gerber.zip`. Layers: F_Cu, B_Cu (solid ground [ASSUMED]), F/B_Mask (no mask [ASSUMED]),
+  F_Paste (42 x 0402 lands), Edge_Cuts, PTH drill (3086 x d0.20 vias + 15 x d2.40 M2 holes).
+- Checked by reading back with gerbonara: top copper area 8627.6 mm2 = DXF copper; drill counts match the DXF.
+
 ## 2026-11-05 - Drawings and report refreshed, pushed
 - Wall elevations on sheet 1 were mirrored; they now show the view from outside (E wall: north on the right).
 - Report mass came from STEP import with no material (default density); now volume x Al 2.70: base 263 g, lid 342 g.

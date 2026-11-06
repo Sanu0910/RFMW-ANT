@@ -1,0 +1,17 @@
+%TF.GenerationSoftware,RFMW-ANT,gerber_v3.py,1*%
+%TF.Part,Single*%
+%TF.SameCoordinates,Wilkinson_8Way_XBand_RO4350B_30mil_FabricationReady_V3*%
+%TF.FileFunction,Soldermask,Top*%
+%TF.FilePolarity,Negative*%
+%FSLAX46Y46*%
+%MOMM*%
+%LPD*%
+G01*
+G36*
+X-250000Y-63449453D02*
+X99034005Y-63449453D01*
+X99034005Y63449453D01*
+X-250000Y63449453D01*
+X-250000Y-63449453D01*
+G37*
+M02*
